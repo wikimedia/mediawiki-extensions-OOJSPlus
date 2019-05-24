@@ -1,0 +1,88 @@
+@color-size: 30px;
+@border-color: #fff;
+@control-hover-color: #e4e4e4;
+
+.oojsplus-color-picker-palette-color {
+	width: @color-size;
+	height: @color-size;
+	line-height: 0px;
+	font-size: 100px;
+	overflow: hidden;
+	display: inline-block;
+	cursor: pointer;
+	position: relative;
+	vertical-align: top;
+	&:before {
+		content: "\25A0";
+		margin-left: -10px;
+	}
+	&:after {
+		content: '';
+		position: absolute;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		width: @color-size;
+		height: @color-size;
+		box-shadow: inset 0 0 0 0 @border-color;
+		transition: box-shadow .1s ease;
+	}
+	&:hover:after, &.selected:after {
+		box-shadow: inset 0 0 0 3px @border-color;
+	}
+}
+
+.oojsplus-color-picker-controls {
+	.oo-ui-buttonWidget.oojsplus-color-picker-tool-button {
+		width: 50%;
+		margin: 0 !important; /* grrr */
+		&:hover {
+			background-color: @control-hover-color;
+		}
+		a {
+			text-align: center;
+			width: 100%;
+			span.oo-ui-iconElement-icon {
+				width: 100%;
+				background-size: 20px;
+				left: 0;
+			}
+		}
+		.color-sample {
+			width: 20px;
+			height: 20px;
+			position: absolute;
+			left: 2px;
+			-webkit-border-radius: 3px;
+			-moz-border-radius: 3px;
+			border-radius: 3px;
+			top: 5px;
+		}
+	}
+}
+
+/**
+ COLOR CLASSES
+ */
+.color-blue {
+	color: #0000FF;
+}
+.color-red {
+	color: #FF0000;
+}
+.color-aqua {
+	color: #00FFFF;
+}
+.color-orangered {
+	color: #FF4500;
+}
+.color-olive {
+	color: #808000;
+}
+.color-green {
+	color: #008000;
+}
+.color-yellow {
+	color: #FFFF00;
+}

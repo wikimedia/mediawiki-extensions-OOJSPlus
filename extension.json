@@ -1,0 +1,68 @@
+{
+	"name": "OOJSPlus",
+	"version": "",
+	"license-name": "GPL-3.0-only",
+	"author": [
+		"[http://www.hallowelt.com Hallo Welt! GmbH]"
+	],
+	"url": "http://www.hallowelt.com",
+	"descriptionmsg": "oojsplus-desc",
+	"requires": {
+		"MediaWiki": ">= 1.31.0"
+	},
+	"MessagesDirs": {
+		"OOJSPlus": "i18n"
+	},
+	"AutoloadNamespaces": {
+		"OOJSPlus\\": "src/",
+		"OOJSPlus\\Tests\\": "tests/phpunit"
+	},
+	"ResourceModules": {
+		"ext.oOJSPlus": {
+			"scripts": [
+				"ext.oOJSPlus.js"
+			],
+			"styles": [
+				"ext.oOJSPlus.less"
+			],
+			"dependencies": [
+				"oojs"
+			]
+		},
+		"ext.oOJSPlus.widgets": {
+			"dependencies": [
+				"ext.oOJSPlus.widgets.colorPicker"
+			]
+		},
+		"ext.oOJSPlus.widgets.colorPicker": {
+			"scripts": [
+				"OOJSPlus/widget/ColorPickerEmbeddable.js",
+				"OOJSPlus/mixin/ColorPickerPopup.js",
+				"OOJSPlus/widget/ColorPicker.js"
+			],
+			"styles": [
+				"stylesheet/colorPicker.less"
+			],
+			"messages": [
+				"oojsplus-color-picker-color-blue",
+				"oojsplus-color-picker-color-red",
+				"oojsplus-color-picker-color-green",
+				"oojsplus-color-picker-color-yellow",
+				"oojsplus-color-picker-color-orangered",
+				"oojsplus-color-picker-color-olive",
+				"oojsplus-color-picker-color-pink",
+				"oojsplus-color-picker-clear-label",
+				"oojsplus-color-picker-label"
+			],
+			"dependencies": [
+				"oojs-ui",
+				"ext.oOJSPlus"
+			]
+		}
+	},
+	"ResourceFileModulePaths": {
+		"localBasePath": "resources",
+		"remoteExtPath": "OOJSPlus/resources"
+	},
+	"manifest_version": 2
+}

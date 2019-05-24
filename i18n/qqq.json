@@ -1,0 +1,12 @@
+{
+	"oojsplus-desc": "Description of OOJSPlus for [[Special:Version]]",
+	"oojsplus-color-picker-color-blue": "Name of a field in a color-picker widget",
+	"oojsplus-color-picker-color-red": "Name of a field in a color-picker widget",
+	"oojsplus-color-picker-color-green": "Name of a field in a color-picker widget",
+	"oojsplus-color-picker-color-yellow": "Name of a field in a color-picker widget",
+	"oojsplus-color-picker-color-orangered": "Name of a field in a color-picker widget",
+	"oojsplus-color-picker-color-olive": "Name of a field in a color-picker widget",
+	"oojsplus-color-picker-color-pink": "Name of a field in a color-picker widget",
+	"oojsplus-color-picker-clear-label": "Label of a button that removes a color selection",
+	"oojsplus-color-picker-label": "Default label of a color-picker widget"
+}
