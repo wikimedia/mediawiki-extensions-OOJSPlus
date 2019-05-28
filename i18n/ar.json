@@ -1,0 +1,17 @@
+{
+	"@metadata": {
+		"authors": [
+			"ديفيد"
+		]
+	},
+	"oojsplus-desc": "يوفر ودجات ووظائف الأداة المساعدة لـOOJS",
+	"oojsplus-color-picker-color-blue": "أزرق",
+	"oojsplus-color-picker-color-red": "أحمر",
+	"oojsplus-color-picker-color-green": "أخضر",
+	"oojsplus-color-picker-color-yellow": "أصفر",
+	"oojsplus-color-picker-color-orangered": "أحمر برتقالي",
+	"oojsplus-color-picker-color-olive": "زيتوني",
+	"oojsplus-color-picker-color-pink": "زهري",
+	"oojsplus-color-picker-clear-label": "مسح اللون",
+	"oojsplus-color-picker-label": "منتقي الألوان"
+}

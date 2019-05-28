@@ -1,0 +1,16 @@
+{
+	"@metadata": {
+		"authors": [
+			"Eduardo Addad de Oliveira"
+		]
+	},
+	"oojsplus-color-picker-color-blue": "Azul",
+	"oojsplus-color-picker-color-red": "Vermelho",
+	"oojsplus-color-picker-color-green": "Verde",
+	"oojsplus-color-picker-color-yellow": "Amarelo",
+	"oojsplus-color-picker-color-orangered": "Laranja vermelho",
+	"oojsplus-color-picker-color-olive": "Verde-oliva",
+	"oojsplus-color-picker-color-pink": "Rosa",
+	"oojsplus-color-picker-clear-label": "Cor clara",
+	"oojsplus-color-picker-label": "Selecionador de cores"
+}

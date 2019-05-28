@@ -1,3 +1,17 @@
 {
-	"oojsplus-desc": "Stellt Widgets und Hilfsfunktionen für OOJS bereit"
+	"@metadata": {
+		"authors": [
+			"Mirzali"
+		]
+	},
+	"oojsplus-desc": "Stellt Widgets und Hilfsfunktionen für OOJS bereit",
+	"oojsplus-color-picker-color-blue": "Blau",
+	"oojsplus-color-picker-color-red": "Rot",
+	"oojsplus-color-picker-color-green": "Grün",
+	"oojsplus-color-picker-color-yellow": "Gelb",
+	"oojsplus-color-picker-color-orangered": "Orange rot",
+	"oojsplus-color-picker-color-olive": "Olivgrün",
+	"oojsplus-color-picker-color-pink": "Rosa",
+	"oojsplus-color-picker-clear-label": "klare Farbe",
+	"oojsplus-color-picker-label": "Farbwähler"
 }

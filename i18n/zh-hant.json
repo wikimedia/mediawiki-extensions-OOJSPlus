@@ -1,0 +1,17 @@
+{
+	"@metadata": {
+		"authors": [
+			"Kly"
+		]
+	},
+	"oojsplus-desc": "替 OOJS 提供小工具與實用功能",
+	"oojsplus-color-picker-color-blue": "藍",
+	"oojsplus-color-picker-color-red": "紅",
+	"oojsplus-color-picker-color-green": "綠",
+	"oojsplus-color-picker-color-yellow": "黃",
+	"oojsplus-color-picker-color-orangered": "橘紅",
+	"oojsplus-color-picker-color-olive": "橄欖綠",
+	"oojsplus-color-picker-color-pink": "粉紅",
+	"oojsplus-color-picker-clear-label": "清除色彩",
+	"oojsplus-color-picker-label": "色彩挑選器"
+}

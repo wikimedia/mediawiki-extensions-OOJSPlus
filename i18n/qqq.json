@@ -1,5 +1,10 @@
 {
-	"oojsplus-desc": "Description of OOJSPlus for [[Special:Version]]",
+	"@metadata": {
+		"authors": [
+			"Umherirrender"
+		]
+	},
+	"oojsplus-desc": "{{desc|name=OOJSPlus|url=https://www.mediawiki.org/wiki/Extension:OOJSPlus}}",
 	"oojsplus-color-picker-color-blue": "Name of a field in a color-picker widget",
 	"oojsplus-color-picker-color-red": "Name of a field in a color-picker widget",
 	"oojsplus-color-picker-color-green": "Name of a field in a color-picker widget",

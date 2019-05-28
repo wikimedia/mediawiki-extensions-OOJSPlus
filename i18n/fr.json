@@ -1,0 +1,15 @@
+{
+	"@metadata": {
+		"authors": [
+			"Wladek92"
+		]
+	},
+	"oojsplus-color-picker-color-blue": "Bleu",
+	"oojsplus-color-picker-color-red": "Rouge",
+	"oojsplus-color-picker-color-green": "Vert",
+	"oojsplus-color-picker-color-yellow": "Jaune",
+	"oojsplus-color-picker-color-orangered": "Rouge orangé",
+	"oojsplus-color-picker-color-olive": "Vert olive",
+	"oojsplus-color-picker-color-pink": "Rose",
+	"oojsplus-color-picker-clear-label": "Couleur claire"
+}

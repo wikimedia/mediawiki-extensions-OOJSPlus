@@ -1,0 +1,17 @@
+{
+	"@metadata": {
+		"authors": [
+			"Mirzali"
+		]
+	},
+	"oojsplus-desc": "OOJS için Widget'lar ve yardımcı işlevler sağlar",
+	"oojsplus-color-picker-color-blue": "Mavi",
+	"oojsplus-color-picker-color-red": "Kırmızı",
+	"oojsplus-color-picker-color-green": "Yeşil",
+	"oojsplus-color-picker-color-yellow": "Sarı",
+	"oojsplus-color-picker-color-orangered": "Turuncu kırmızı",
+	"oojsplus-color-picker-color-olive": "Zeytin yeşili",
+	"oojsplus-color-picker-color-pink": "Pembe",
+	"oojsplus-color-picker-clear-label": "Açık renk",
+	"oojsplus-color-picker-label": "Renk seçici"
+}
