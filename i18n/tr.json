@@ -1,10 +1,11 @@
 {
 	"@metadata": {
 		"authors": [
-			"Mirzali"
+			"Mirzali",
+			"Hedda"
 		]
 	},
-	"oojsplus-desc": "OOJS için Widget'lar ve yardımcı işlevler sağlar",
+	"oojsplus-desc": "OOJS için küçük araçlar ve yardımcı işlevler sağlar",
 	"oojsplus-color-picker-color-blue": "Mavi",
 	"oojsplus-color-picker-color-red": "Kırmızı",
 	"oojsplus-color-picker-color-green": "Yeşil",

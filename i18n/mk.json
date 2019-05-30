@@ -1,0 +1,17 @@
+{
+	"@metadata": {
+		"authors": [
+			"Bjankuloski06"
+		]
+	},
+	"oojsplus-desc": "Дава посреднички елементи и помагала за OOJS",
+	"oojsplus-color-picker-color-blue": "сина",
+	"oojsplus-color-picker-color-red": "црвена",
+	"oojsplus-color-picker-color-green": "зелена",
+	"oojsplus-color-picker-color-yellow": "жолта",
+	"oojsplus-color-picker-color-orangered": "алова",
+	"oojsplus-color-picker-color-olive": "маслинеста",
+	"oojsplus-color-picker-color-pink": "розова",
+	"oojsplus-color-picker-clear-label": "Отстрани боја",
+	"oojsplus-color-picker-label": "Избирач на боја"
+}

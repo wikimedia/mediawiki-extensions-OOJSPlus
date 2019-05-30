@@ -1,0 +1,13 @@
+{
+	"@metadata": {
+		"authors": [
+			"Harvest"
+		]
+	},
+	"oojsplus-color-picker-color-blue": "Azul",
+	"oojsplus-color-picker-color-red": "Rojo",
+	"oojsplus-color-picker-color-green": "Verde",
+	"oojsplus-color-picker-color-yellow": "Amarillo",
+	"oojsplus-color-picker-color-pink": "Rosa",
+	"oojsplus-color-picker-clear-label": "Borrar color"
+}

@@ -1,0 +1,17 @@
+{
+	"@metadata": {
+		"authors": [
+			"Joetaras"
+		]
+	},
+	"oojsplus-desc": "Dèje uigget e funziune de utilità pe OOJS",
+	"oojsplus-color-picker-color-blue": "Blu",
+	"oojsplus-color-picker-color-red": "Russe",
+	"oojsplus-color-picker-color-green": "Verde",
+	"oojsplus-color-picker-color-yellow": "Gialle",
+	"oojsplus-color-picker-color-orangered": "Arangione russe",
+	"oojsplus-color-picker-color-olive": "Alie",
+	"oojsplus-color-picker-color-pink": "Rose",
+	"oojsplus-color-picker-clear-label": "Pulizze 'u culore",
+	"oojsplus-color-picker-label": "Cattura culore"
+}

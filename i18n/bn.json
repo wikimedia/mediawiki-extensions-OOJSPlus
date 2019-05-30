@@ -1,0 +1,17 @@
+{
+	"@metadata": {
+		"authors": [
+			"আফতাবুজ্জামান"
+		]
+	},
+	"oojsplus-desc": "OOJS-এর জন্য উইজেট এবং উপযোগিতা ফাংশন সরবরাহ করে",
+	"oojsplus-color-picker-color-blue": "নীল",
+	"oojsplus-color-picker-color-red": "লাল",
+	"oojsplus-color-picker-color-green": "সবুজ",
+	"oojsplus-color-picker-color-yellow": "হলুদ",
+	"oojsplus-color-picker-color-orangered": "কমলা লাল",
+	"oojsplus-color-picker-color-olive": "জলপাই",
+	"oojsplus-color-picker-color-pink": "গোলাপী",
+	"oojsplus-color-picker-clear-label": "রঙ পরিষ্কার করুন",
+	"oojsplus-color-picker-label": "রঙ চয়নকারী"
+}

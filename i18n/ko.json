@@ -1,0 +1,17 @@
+{
+	"@metadata": {
+		"authors": [
+			"Ykhwong"
+		]
+	},
+	"oojsplus-desc": "OOJS의 소도구 및 유틸리티 기능을 제공합니다",
+	"oojsplus-color-picker-color-blue": "파란색",
+	"oojsplus-color-picker-color-red": "빨간색",
+	"oojsplus-color-picker-color-green": "녹색",
+	"oojsplus-color-picker-color-yellow": "노란색",
+	"oojsplus-color-picker-color-orangered": "오렌지 레드",
+	"oojsplus-color-picker-color-olive": "올리브",
+	"oojsplus-color-picker-color-pink": "분홍색",
+	"oojsplus-color-picker-clear-label": "색 지우기",
+	"oojsplus-color-picker-label": "색 선택기"
+}
