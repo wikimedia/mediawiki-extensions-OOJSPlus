@@ -1,0 +1,16 @@
+{
+	"@metadata": {
+		"authors": [
+			"A Chinese Wikipedian"
+		]
+	},
+	"oojsplus-color-picker-color-blue": "蓝色",
+	"oojsplus-color-picker-color-red": "红色",
+	"oojsplus-color-picker-color-green": "绿色",
+	"oojsplus-color-picker-color-yellow": "黄色",
+	"oojsplus-color-picker-color-orangered": "橙红",
+	"oojsplus-color-picker-color-olive": "橄榄树",
+	"oojsplus-color-picker-color-pink": "粉红色",
+	"oojsplus-color-picker-clear-label": "清色",
+	"oojsplus-color-picker-label": "拾色器"
+}
