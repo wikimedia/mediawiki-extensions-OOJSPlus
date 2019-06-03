@@ -1,9 +1,11 @@
 {
 	"@metadata": {
 		"authors": [
-			"Wladek92"
+			"Wladek92",
+			"Gomoko"
 		]
 	},
+	"oojsplus-desc": "Fournit des widgets et des fonctions utilitaires pour OOJS",
 	"oojsplus-color-picker-color-blue": "Bleu",
 	"oojsplus-color-picker-color-red": "Rouge",
 	"oojsplus-color-picker-color-green": "Vert",
