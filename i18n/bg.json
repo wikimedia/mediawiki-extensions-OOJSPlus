@@ -1,0 +1,17 @@
+{
+	"@metadata": {
+		"authors": [
+			"StanProg"
+		]
+	},
+	"oojsplus-desc": "Предоставя Джаджи и помощни функции за OOJS",
+	"oojsplus-color-picker-color-blue": "Синьо",
+	"oojsplus-color-picker-color-red": "Червено",
+	"oojsplus-color-picker-color-green": "Зелено",
+	"oojsplus-color-picker-color-yellow": "Жълто",
+	"oojsplus-color-picker-color-orangered": "Цинобър",
+	"oojsplus-color-picker-color-olive": "Маслинено",
+	"oojsplus-color-picker-color-pink": "Розово",
+	"oojsplus-color-picker-clear-label": "Изчистване на цвета",
+	"oojsplus-color-picker-label": "Средство за избиране на цвят"
+}
