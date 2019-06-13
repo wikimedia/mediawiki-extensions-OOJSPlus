@@ -1,0 +1,15 @@
+{
+	"@metadata": {
+		"authors": [
+			"Mainframe98"
+		]
+	},
+	"oojsplus-color-picker-color-blue": "Blauw",
+	"oojsplus-color-picker-color-red": "Rood",
+	"oojsplus-color-picker-color-green": "Groen",
+	"oojsplus-color-picker-color-yellow": "Geel",
+	"oojsplus-color-picker-color-orangered": "Oranje-rood",
+	"oojsplus-color-picker-color-olive": "Olijfgroen",
+	"oojsplus-color-picker-color-pink": "Roze",
+	"oojsplus-color-picker-label": "Kleurenkiezer"
+}
