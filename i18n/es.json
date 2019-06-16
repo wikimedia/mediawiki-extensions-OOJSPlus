@@ -1,13 +1,18 @@
 {
 	"@metadata": {
 		"authors": [
-			"Harvest"
+			"Harvest",
+			"Fitoschido"
 		]
 	},
+	"oojsplus-desc": "Proporciona «widgets» y funciones utilitarias para OOJS",
 	"oojsplus-color-picker-color-blue": "Azul",
 	"oojsplus-color-picker-color-red": "Rojo",
 	"oojsplus-color-picker-color-green": "Verde",
 	"oojsplus-color-picker-color-yellow": "Amarillo",
+	"oojsplus-color-picker-color-orangered": "Rojo anaranjado",
+	"oojsplus-color-picker-color-olive": "Aceituna",
 	"oojsplus-color-picker-color-pink": "Rosa",
-	"oojsplus-color-picker-clear-label": "Borrar color"
+	"oojsplus-color-picker-clear-label": "Quitar color",
+	"oojsplus-color-picker-label": "Selector de colores"
 }
