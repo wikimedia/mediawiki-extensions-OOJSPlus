@@ -9,12 +9,14 @@
 			clear: 'onClear'
 		} );
 
-		OOJSPlus.mixin.ColorPickerPopup.parent.call( this, $.extend( {
-			popup: {
-				width: '152px', // 150 for content and 2 for borders
-				padded: cfg.padded || false
-			}
-		} ), cfg );
+		var popupCfg = $.extend( {
+			width: '152px', // 150 for content and 2 for borders
+			padded: cfg.padded || false
+		}, cfg.popup || {} );
+
+		OOJSPlus.mixin.ColorPickerPopup.parent.call( this, {
+			popup: popupCfg
+		} );
 
 		this.popup.$body.append( this.embeddable.$element );
 
@@ -24,6 +26,7 @@
 	OO.inheritClass( OOJSPlus.mixin.ColorPickerPopup, OO.ui.mixin.PopupElement );
 
 	OOJSPlus.mixin.ColorPickerPopup.prototype.setValue = function( value ) {
+		this.emit( 'valueSet', value );
 		return this.embeddable.setValue( value );
 	};
 
