@@ -9,20 +9,20 @@
 		this.$currentColorShow = $( '<div>' )
 			.addClass( 'oojsplus-color-current' )
 			.css( 'color', 'transparent' );
-		this.value = cfg.value || {};
 
 		OOJSPlus.widget.ColorPickerWidget.parent.call( this, cfg );
 		OOJSPlus.mixin.ColorPickerPopup.call( this, cfg );
 		OO.EventEmitter.call( this );
 
-		this.setValue( this.value );
-		this.setCurrentColor();
-		this.$currentColorShow.insertBefore( this.$icon );
-
 		this.connect( this, {
 			click: 'togglePicker',
 			valueSet: 'onValueSet'
 		} );
+
+		if( cfg.value ) {
+			this.setValue( cfg.value  );
+		}
+		this.$currentColorShow.insertBefore( this.$icon );
 
 		this.$element.addClass( 'oojsplus-color-picker-widget' );
 		this.$element.append( this.colorPickerPopup.$element );
@@ -43,18 +43,17 @@
 	};
 
 	OOJSPlus.widget.ColorPickerWidget.prototype.onValueSet = function( value ) {
-		this.value = value;
 		this.setCurrentColor();
 	};
 
 	OOJSPlus.widget.ColorPickerWidget.prototype.setCurrentColor = function() {
-		if ( $.isEmptyObject( this.value ) ) {
+		if ( $.isEmptyObject( this.getValue() ) ) {
 			return this.$currentColorShow.css( 'color', 'transparent' );
 		}
-		if ( this.value.hasOwnProperty( 'code' ) ) {
-			return this.$currentColorShow.css( 'color', this.value.code );
-		} else if ( this.value.hasOwnProperty( 'class' ) ) {
-			return this.$currentColorShow.addClass( this.value.class );
+		if ( this.getValue().hasOwnProperty( 'code' ) ) {
+			return this.$currentColorShow.css( 'color', this.getValue().code );
+		} else if ( this.getValue().hasOwnProperty( 'class' ) ) {
+			return this.$currentColorShow.addClass( this.getValue().class );
 		}
 	};
 

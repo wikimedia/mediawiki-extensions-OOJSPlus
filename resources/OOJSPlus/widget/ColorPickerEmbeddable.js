@@ -76,6 +76,9 @@
 
 			var $color =  $( '<div>' )
 				.addClass( 'oojsplus-color-picker-palette-color' )
+				.addClass( 'oo-ui-widget' )
+				.addClass( 'oo-ui-widget-enabled' )
+				.css( 'pointer-events', 'auto' )
 				.attr( 'title', colorDef.name || '' );
 			if ( this.isCurrentValue( colorDef ) ) {
 				$color.addClass( 'selected' );
@@ -83,7 +86,7 @@
 			if ( colorDef.hasOwnProperty( 'class' ) ) {
 				$color.addClass( colorDef.class );
 			} else if ( colorDef.hasOwnProperty( 'code' ) ) {
-				$color.css( 'color', colorDef.code )
+				$color.css( 'color', colorDef.code );
 			}
 			$color.on( 'click', this.getReturnValue( colorDef ), function ( e ) {
 				this.emit( 'colorSelected', e.data );
@@ -161,11 +164,15 @@
 		if ( !this.enableCustomPicker ) {
 			return false;
 		}
-		var $tester = $('<input type="color" value="!" />')[0];
-		if( $tester.type === 'color' && $tester.value !== '!' ) {
+		var $tester = $('<input type="color" value="#ffffff" />')[0];
+		if( $tester.type === 'color' && $tester.value !== '#ffffff' ) {
 			return true;
 		}
 		return false;
+	};
+
+	OOJSPlus.widget.ColorPickerEmbeddable.prototype.getValue = function() {
+		return this.value;
 	};
 
 	OOJSPlus.widget.ColorPickerEmbeddable.prototype.setValue = function( value ) {
