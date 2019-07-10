@@ -1,4 +1,9 @@
 {
+	"@metadata": {
+		"authors": [
+			"Dejan Savuljesku <savuljesku@hallowelt.com>"
+		]
+	},
 	"oojsplus-desc": "Provides Widgets and utility functions for OOJS",
 	"oojsplus-color-picker-color-blue": "Blue",
 	"oojsplus-color-picker-color-red": "Red",

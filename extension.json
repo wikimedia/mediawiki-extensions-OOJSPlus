@@ -5,7 +5,7 @@
 	"author": [
 		"[http://www.hallowelt.com Hallo Welt! GmbH]"
 	],
-	"url": "http://www.hallowelt.com",
+	"url": "https://en.wiki.bluespice.com/wiki/Reference:OOJSPlus",
 	"descriptionmsg": "oojsplus-desc",
 	"requires": {
 		"MediaWiki": ">= 1.31.0"
