@@ -1,0 +1,17 @@
+{
+	"@metadata": {
+		"authors": [
+			"Hamilton Abreu"
+		]
+	},
+	"oojsplus-desc": "Fornece ''widgets'' e funções utilitárias para OOJS",
+	"oojsplus-color-picker-color-blue": "Azul",
+	"oojsplus-color-picker-color-red": "Vermelho",
+	"oojsplus-color-picker-color-green": "Verde",
+	"oojsplus-color-picker-color-yellow": "Amarelo",
+	"oojsplus-color-picker-color-orangered": "Vermelho alaranjado",
+	"oojsplus-color-picker-color-olive": "Verde-azeitona",
+	"oojsplus-color-picker-color-pink": "Rosa",
+	"oojsplus-color-picker-clear-label": "Transparente",
+	"oojsplus-color-picker-label": "Seletor de cores"
+}
