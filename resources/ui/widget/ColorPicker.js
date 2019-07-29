@@ -1,5 +1,5 @@
 ( function( mw, $ ) {
-	OOJSPlus.widget.ColorPickerWidget = function ooJSPlusColorPickerWidget( cfg ) {
+	OOJSPlus.ui.widget.ColorPickerWidget = function ooJSPlusColorPickerWidget( cfg ) {
 		cfg = cfg || {};
 		cfg = $.extend( {
 			title: mw.message( 'oojsplus-color-picker-label' ).text(),
@@ -10,8 +10,8 @@
 			.addClass( 'oojsplus-color-current' )
 			.css( 'color', 'transparent' );
 
-		OOJSPlus.widget.ColorPickerWidget.parent.call( this, cfg );
-		OOJSPlus.mixin.ColorPickerPopup.call( this, cfg );
+		OOJSPlus.ui.widget.ColorPickerWidget.parent.call( this, cfg );
+		OOJSPlus.ui.mixin.ColorPickerPopup.call( this, cfg );
 		OO.EventEmitter.call( this );
 
 		this.connect( this, {
@@ -28,11 +28,11 @@
 		this.$element.append( this.colorPickerPopup.$element );
 	};
 
-	OO.inheritClass( OOJSPlus.widget.ColorPickerWidget, OO.ui.ButtonWidget );
-	OO.mixinClass( OOJSPlus.widget.ColorPickerWidget, OOJSPlus.mixin.ColorPickerPopup );
-	OO.mixinClass( OOJSPlus.widget.ColorPickerWidget, OO.EventEmitter );
+	OO.inheritClass( OOJSPlus.ui.widget.ColorPickerWidget, OO.ui.ButtonWidget );
+	OO.mixinClass( OOJSPlus.ui.widget.ColorPickerWidget, OOJSPlus.ui.mixin.ColorPickerPopup );
+	OO.mixinClass( OOJSPlus.ui.widget.ColorPickerWidget, OO.EventEmitter );
 
-	OOJSPlus.widget.ColorPickerWidget.prototype.togglePicker = function( val ) {
+	OOJSPlus.ui.widget.ColorPickerWidget.prototype.togglePicker = function( val ) {
 		if ( val ) {
 			this.popup.toggle( val );
 		} else {
@@ -42,11 +42,11 @@
 		this.emit( 'togglePicker', this.popup.isVisible() );
 	};
 
-	OOJSPlus.widget.ColorPickerWidget.prototype.onValueSet = function( value ) {
+	OOJSPlus.ui.widget.ColorPickerWidget.prototype.onValueSet = function( value ) {
 		this.setCurrentColor();
 	};
 
-	OOJSPlus.widget.ColorPickerWidget.prototype.setCurrentColor = function() {
+	OOJSPlus.ui.widget.ColorPickerWidget.prototype.setCurrentColor = function() {
 		if ( $.isEmptyObject( this.getValue() ) ) {
 			return this.$currentColorShow.css( 'color', 'transparent' );
 		}

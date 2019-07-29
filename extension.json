@@ -13,6 +13,9 @@
 	"MessagesDirs": {
 		"OOJSPlus": "i18n"
 	},
+	"ExtensionMessagesFiles": {
+		"OOJSPlusAlias": "OOJSPlus.alias.php"
+	},
 	"AutoloadNamespaces": {
 		"OOJSPlus\\": "src/",
 		"OOJSPlus\\Tests\\": "tests/phpunit"
@@ -36,9 +39,9 @@
 		},
 		"ext.oOJSPlus.widgets.colorPicker": {
 			"scripts": [
-				"OOJSPlus/widget/ColorPickerEmbeddable.js",
-				"OOJSPlus/mixin/ColorPickerPopup.js",
-				"OOJSPlus/widget/ColorPicker.js"
+				"ui/widget/ColorPickerEmbeddable.js",
+				"ui/mixin/ColorPickerPopup.js",
+				"ui/widget/ColorPicker.js"
 			],
 			"styles": [
 				"stylesheet/colorPicker.less"
@@ -58,11 +61,56 @@
 				"oojs-ui",
 				"ext.oOJSPlus"
 			]
+		},
+		"ext.oOJSPlus.data": {
+			"scripts": [
+				"ui/data/column/Column.js",
+				"ui/data/column/Text.js",
+				"ui/data/column/Boolean.js",
+				"ui/data/column/Delete.js",
+				"ui/data/column/Url.js",
+				"ui/data/Grid.js",
+				"ui/data/Paginator.js",
+				"ui/data/paginator/Page.js",
+				"ui/data/tree/Item.js",
+				"ui/data/tree/DraggableItem.js",
+				"ui/data/Tree.js"
+			],
+			"styles": [
+				"stylesheet/data/main.less",
+				"stylesheet/data/grid.less",
+				"stylesheet/data/paginator.less",
+				"stylesheet/data/tree.less"
+			],
+			"dependencies": [
+				"oojs",
+				"oojs-ui",
+				"ext.oOJSPlus"
+			],
+			"messages": [
+				"oojsplus-data-delete-row-prompt",
+				"oojsplus-data-paginator-page-total-count-label",
+				"oojsplus-data-tree-new-root-item-label",
+				"oojsplus-data-tree-item-remove-label",
+				"oojsplus-data-tree-item-add-label"
+			]
+		},
+		"ext.oOJSPlus.demo": {
+			"scripts": [
+				"demo/GridDemo.js",
+				"demo/TreeDemo.js"
+			],
+			"dependencies": [
+				"ext.oOJSPlus.data"
+			]
 		}
 	},
 	"ResourceFileModulePaths": {
 		"localBasePath": "resources",
 		"remoteExtPath": "OOJSPlus/resources"
+	},
+	"SpecialPages": {
+		"OOJSPlusDemos": "OOJSPlus\\Special\\Demo"
 	},
 	"manifest_version": 2
 }
