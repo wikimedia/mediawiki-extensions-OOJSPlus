@@ -13,5 +13,11 @@
 	"oojsplus-color-picker-color-olive": "Name of a field in a color-picker widget",
 	"oojsplus-color-picker-color-pink": "Name of a field in a color-picker widget",
 	"oojsplus-color-picker-clear-label": "Label of a button that removes a color selection",
-	"oojsplus-color-picker-label": "Default label of a color-picker widget"
+	"oojsplus-color-picker-label": "Default label of a color-picker widget",
+	"oojsplus-data-delete-row-prompt": "Prompt text before user deletes a row in a grid",
+	"oojsplus-data-paginator-page-total-count-label": "Label for the total number of rows in a grid data source. \n $1 = Number of rows",
+	"oojsplusdemos": "Title for OOJSPlusDemos special page",
+	"oojsplus-data-tree-new-root-item-label": "Tree label for button that inserts new root node",
+	"oojsplus-data-tree-item-remove-label": "Tree label for the button in item options that removed the selected node",
+	"oojsplus-data-tree-item-add-label": "Tree label for the button in item options that adds new subnode to the selected node"
 }

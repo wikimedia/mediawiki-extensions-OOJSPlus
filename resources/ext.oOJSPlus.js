@@ -49,8 +49,16 @@
 	OOJSPlus = {
 		define: _define,
 		require: _require,
-		widget: {},
-		mixin: {}
+		ui: {
+			data: {
+				column: {},
+				paginator: {},
+				tree: {}
+			},
+			widget: {},
+			mixin: {}
+		}
+
 	}
 
 } )( mediaWiki, jQuery );

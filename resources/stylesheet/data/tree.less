@@ -1,0 +1,29 @@
+.tree-item {
+  display: block;
+  padding-left: 5px;
+  .tree-item-options-btn {
+    >.oo-ui-buttonElement-button {
+      &:focus, a:focus {
+        outline: transparent;
+        border-color: transparent !important;
+        box-shadow: none !important;
+      }
+    }
+    .tree-item-options-popup {
+      .oo-ui-buttonWidget {
+        display: block;
+      }
+    }
+  }
+  &.item-selected {
+    background-color: #eee;
+    a {
+      text-decoration: underline;
+    }
+    &:focus, a:focus {
+      outline: transparent;
+      border-color: transparent !important;
+      box-shadow: none !important;
+    }
+  }
+}
