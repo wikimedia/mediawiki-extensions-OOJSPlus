@@ -1,0 +1,11 @@
+{
+	"@metadata": {
+		"authors": [
+			"YaronSh"
+		]
+	},
+	"oojsplus-data-delete-row-prompt": "למחוק את השורה הזאת?",
+	"oojsplus-data-paginator-page-total-count-label": "{{PLURAL:$1|שורה אחת|$1 שורות}}",
+	"oojsplus-data-tree-item-remove-label": "הסרה",
+	"oojsplus-data-tree-item-add-label": "הוספת תת־פריט חדש"
+}

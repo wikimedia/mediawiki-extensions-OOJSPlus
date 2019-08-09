@@ -13,5 +13,11 @@
 	"oojsplus-color-picker-color-olive": "زيتوني",
 	"oojsplus-color-picker-color-pink": "زهري",
 	"oojsplus-color-picker-clear-label": "مسح اللون",
-	"oojsplus-color-picker-label": "منتقي الألوان"
+	"oojsplus-color-picker-label": "منتقي الألوان",
+	"oojsplus-data-delete-row-prompt": "هل أنت متأكد أنك تريد حذف هذا الصف؟",
+	"oojsplus-data-paginator-page-total-count-label": "{{PLURAL:$1|$1 صف|$1 صفوف}}",
+	"oojsplusdemos": "عروض OOJSPlus",
+	"oojsplus-data-tree-new-root-item-label": "إضافة عنصر جذر جديد",
+	"oojsplus-data-tree-item-remove-label": "إزالة",
+	"oojsplus-data-tree-item-add-label": "إضافة عنصر فرعي جديد"
 }

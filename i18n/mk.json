@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Bjankuloski06"
+			"Bjankuloski06",
+			"Vlad5250"
 		]
 	},
 	"oojsplus-desc": "Дава посреднички елементи и помагала за OOJS",
@@ -13,5 +14,11 @@
 	"oojsplus-color-picker-color-olive": "маслинеста",
 	"oojsplus-color-picker-color-pink": "розова",
 	"oojsplus-color-picker-clear-label": "Отстрани боја",
-	"oojsplus-color-picker-label": "Избирач на боја"
+	"oojsplus-color-picker-label": "Избирач на боја",
+	"oojsplus-data-delete-row-prompt": "Дали сте сигурни дека сакате да го избришете редов?",
+	"oojsplus-data-paginator-page-total-count-label": "{{PLURAL:$1|$1 ред|$1 реда}}",
+	"oojsplusdemos": "Показни на OOJSPlus",
+	"oojsplus-data-tree-new-root-item-label": "Додај нов основен предмет",
+	"oojsplus-data-tree-item-remove-label": "Отстрани",
+	"oojsplus-data-tree-item-add-label": "Додај нов потпредмет"
 }

@@ -13,5 +13,7 @@
 	"oojsplus-color-picker-color-olive": "올리브",
 	"oojsplus-color-picker-color-pink": "분홍색",
 	"oojsplus-color-picker-clear-label": "색 지우기",
-	"oojsplus-color-picker-label": "색 선택기"
+	"oojsplus-color-picker-label": "색 선택기",
+	"oojsplus-data-tree-item-remove-label": "제거",
+	"oojsplus-data-tree-item-add-label": "새 하위 항목 추가"
 }

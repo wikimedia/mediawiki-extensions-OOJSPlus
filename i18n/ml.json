@@ -1,0 +1,11 @@
+{
+	"@metadata": {
+		"authors": [
+			"Praveenp"
+		]
+	},
+	"oojsplus-data-delete-row-prompt": "ഈ വരി മായ്ക്കണം എന്ന് താങ്കൾക്കുറപ്പാണോ?",
+	"oojsplus-data-paginator-page-total-count-label": "{{PLURAL:$1|ഒരു വരി|$1 വരികൾ}}",
+	"oojsplus-data-tree-item-remove-label": "നീക്കം ചെയ്യുക",
+	"oojsplus-data-tree-item-add-label": "പുതിയ ഉപ ഇനം ചേർക്കുക"
+}
