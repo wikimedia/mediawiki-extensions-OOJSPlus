@@ -13,5 +13,11 @@
 	"oojsplus-color-picker-color-olive": "橄欖綠",
 	"oojsplus-color-picker-color-pink": "粉紅",
 	"oojsplus-color-picker-clear-label": "清除色彩",
-	"oojsplus-color-picker-label": "色彩挑選器"
+	"oojsplus-color-picker-label": "色彩挑選器",
+	"oojsplus-data-delete-row-prompt": "您確定要刪除此列？",
+	"oojsplus-data-paginator-page-total-count-label": "{{PLURAL:$1|$1 個列}}",
+	"oojsplusdemos": "OOJSPlus 樣本",
+	"oojsplus-data-tree-new-root-item-label": "添加新的根項目",
+	"oojsplus-data-tree-item-remove-label": "移除",
+	"oojsplus-data-tree-item-add-label": "添加新的子項目"
 }

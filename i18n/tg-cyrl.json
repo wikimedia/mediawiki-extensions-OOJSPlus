@@ -1,0 +1,11 @@
+{
+	"@metadata": {
+		"authors": [
+			"ToJack"
+		]
+	},
+	"oojsplus-data-delete-row-prompt": "Шумо ин сатрро ҳазф карданиед?",
+	"oojsplus-data-paginator-page-total-count-label": "{{PLURAL:$1|$1 сатр|$1 сатрҳо}}",
+	"oojsplus-data-tree-item-remove-label": "Пок кардан",
+	"oojsplus-data-tree-item-add-label": "Иловаи элементи фаръии нав"
+}
