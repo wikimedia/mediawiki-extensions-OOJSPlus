@@ -1,10 +1,10 @@
 ( function( mw, $ ) {
-	OOJSPlus.widget.ColorPickerEmbeddable = function ( cfg ) {
+	OOJSPlus.ui.widget.ColorPickerEmbeddable = function ( cfg ) {
 		cfg = cfg || {};
 
-		this.colors =  cfg.colors || OOJSPlus.widget.ColorPickerEmbeddable.static.defaultColors;
+		this.colors =  cfg.colors || OOJSPlus.ui.widget.ColorPickerEmbeddable.static.defaultColors;
 		this.value = cfg.value || null;
-		OOJSPlus.widget.ColorPickerEmbeddable.parent.call( this, cfg );
+		OOJSPlus.ui.widget.ColorPickerEmbeddable.parent.call( this, cfg );
 
 
 		this.verifyColors();
@@ -14,11 +14,11 @@
 		this.makeContent();
 	};
 
-	OO.inheritClass( OOJSPlus.widget.ColorPickerEmbeddable, OO.ui.Widget );
+	OO.inheritClass( OOJSPlus.ui.widget.ColorPickerEmbeddable, OO.ui.Widget );
 
-	OOJSPlus.widget.ColorPickerEmbeddable.static.tagName = 'div';
+	OOJSPlus.ui.widget.ColorPickerEmbeddable.static.tagName = 'div';
 
-	OOJSPlus.widget.ColorPickerEmbeddable.static.defaultColors = [
+	OOJSPlus.ui.widget.ColorPickerEmbeddable.static.defaultColors = [
 		{
 			code: '#0000FF',
 			name: mw.message( 'oojsplus-color-picker-color-blue' ).text()
@@ -54,7 +54,7 @@
 	];
 
 
-	OOJSPlus.widget.ColorPickerEmbeddable.prototype.makeContent = function() {
+	OOJSPlus.ui.widget.ColorPickerEmbeddable.prototype.makeContent = function() {
 		var mainColors = this.getColorButtons();
 		var $controls = this.getControls();
 		if ( this.value && this.customColorPicker ) {
@@ -69,7 +69,7 @@
 		);
 	};
 
-	OOJSPlus.widget.ColorPickerEmbeddable.prototype.getColorButtons = function() {
+	OOJSPlus.ui.widget.ColorPickerEmbeddable.prototype.getColorButtons = function() {
 		var colors = [];
 		for( var i = 0; i < this.colors.length; i++ ) {
 			var colorDef = this.colors[i];
@@ -96,7 +96,7 @@
 		return colors;
 	};
 
-	OOJSPlus.widget.ColorPickerEmbeddable.prototype.isCurrentValue = function( def ) {
+	OOJSPlus.ui.widget.ColorPickerEmbeddable.prototype.isCurrentValue = function( def ) {
 		if ( !this.value ) {
 			return false;
 		}
@@ -119,7 +119,7 @@
 		return false;
 	};
 
-	OOJSPlus.widget.ColorPickerEmbeddable.prototype.getControls = function() {
+	OOJSPlus.ui.widget.ColorPickerEmbeddable.prototype.getControls = function() {
 		var $controls = $( '<div>' )
 			.addClass( 'oojsplus-color-picker-controls' );
 		var clear = new OO.ui.ButtonWidget( {
@@ -137,7 +137,7 @@
 		$controls.append( clear.$element );
 
 		if ( this.showCustomColorPicker() ) {
-			this.customColorPicker = new OOJSPlus.widget.ColorPickerPopupCustomColor();
+			this.customColorPicker = new OOJSPlus.ui.widget.ColorPickerPopupCustomColor();
 			this.customColorPicker.on( 'colorSelected', function( color ) {
 				this.emit( 'colorSelected', { code: color } );
 			}.bind( this ) );
@@ -149,7 +149,7 @@
 		return $controls;
 	};
 
-	OOJSPlus.widget.ColorPickerEmbeddable.prototype.getReturnValue = function( def ) {
+	OOJSPlus.ui.widget.ColorPickerEmbeddable.prototype.getReturnValue = function( def ) {
 		switch( this.returnType ) {
 			case 'code':
 				return def.code || '';
@@ -160,7 +160,7 @@
 		}
 	};
 
-	OOJSPlus.widget.ColorPickerEmbeddable.prototype.showCustomColorPicker = function() {
+	OOJSPlus.ui.widget.ColorPickerEmbeddable.prototype.showCustomColorPicker = function() {
 		if ( !this.enableCustomPicker ) {
 			return false;
 		}
@@ -171,19 +171,19 @@
 		return false;
 	};
 
-	OOJSPlus.widget.ColorPickerEmbeddable.prototype.getValue = function() {
+	OOJSPlus.ui.widget.ColorPickerEmbeddable.prototype.getValue = function() {
 		return this.value;
 	};
 
-	OOJSPlus.widget.ColorPickerEmbeddable.prototype.setValue = function( value ) {
+	OOJSPlus.ui.widget.ColorPickerEmbeddable.prototype.setValue = function( value ) {
 		this.value = value;
 		this.makeContent();
 	};
 
-	OOJSPlus.widget.ColorPickerEmbeddable.prototype.verifyColors = function() {
+	OOJSPlus.ui.widget.ColorPickerEmbeddable.prototype.verifyColors = function() {
 		var verified = [];
 		if ( $.isArray( this.colors ) === false ) {
-			return this.colors = OOJSPlus.widget.ColorPickerPopup.static.defaultColors;
+			return this.colors = OOJSPlus.ui.widget.ColorPickerPopup.static.defaultColors;
 		}
 		for( var i = 0; i < this.colors.length; i++ ) {
 			var color = this.colors[i];
@@ -199,13 +199,13 @@
 		this.colors = verified;
 	};
 
-	OOJSPlus.widget.ColorPickerPopupCustomColor = function ( cfg ) {
+	OOJSPlus.ui.widget.ColorPickerPopupCustomColor = function ( cfg ) {
 		cfg = $.extend( {
 			icon: 'edit',
 			framed: false,
 			classes: [ 'oojsplus-color-picker-tool-button' ]
 		}, cfg );
-		OOJSPlus.widget.ColorPickerPopupCustomColor.parent.call( this, cfg );
+		OOJSPlus.ui.widget.ColorPickerPopupCustomColor.parent.call( this, cfg );
 		OO.EventEmitter.call( this );
 
 		this.$input = $( '<input>' )
@@ -224,10 +224,10 @@
 		} );
 	};
 
-	OO.inheritClass( OOJSPlus.widget.ColorPickerPopupCustomColor, OO.ui.ButtonWidget );
-	OO.mixinClass( OOJSPlus.widget.ColorPickerPopupCustomColor, OO.EventEmitter );
+	OO.inheritClass( OOJSPlus.ui.widget.ColorPickerPopupCustomColor, OO.ui.ButtonWidget );
+	OO.mixinClass( OOJSPlus.ui.widget.ColorPickerPopupCustomColor, OO.EventEmitter );
 
-	OOJSPlus.widget.ColorPickerPopupCustomColor.prototype.validate = function( color ) {
+	OOJSPlus.ui.widget.ColorPickerPopupCustomColor.prototype.validate = function( color ) {
 		var tester = /^#+([a-fA-F0-9]{6}|[a-fA-F0-9]{3})$/;
 		if ( !tester.test( color ) ) {
 			// Maybe a error message? Not really necessary, because this will
@@ -237,7 +237,7 @@
 		return true;
 	};
 
-	OOJSPlus.widget.ColorPickerPopupCustomColor.prototype.setValue = function( color ) {
+	OOJSPlus.ui.widget.ColorPickerPopupCustomColor.prototype.setValue = function( color ) {
 		var code;
 		if ( typeof color === 'object' && color.hasOwnProperty( 'code' ) ) {
 			code = color.code;
