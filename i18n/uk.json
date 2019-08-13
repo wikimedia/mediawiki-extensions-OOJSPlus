@@ -8,5 +8,11 @@
 	"oojsplus-color-picker-color-red": "Червоний",
 	"oojsplus-color-picker-color-green": "Зелений",
 	"oojsplus-color-picker-color-yellow": "Жовтий",
-	"oojsplus-color-picker-clear-label": "Очистити колір"
+	"oojsplus-color-picker-clear-label": "Очистити колір",
+	"oojsplus-data-delete-row-prompt": "Ви справді хочете видалити цей рядок?",
+	"oojsplus-data-paginator-page-total-count-label": "{{PLURAL:$1|$1 рядок|$1 рядки|$1 рядків}}",
+	"oojsplusdemos": "Демонстрації OOJSPlus",
+	"oojsplus-data-tree-new-root-item-label": "Додати новий кореневий елемент",
+	"oojsplus-data-tree-item-remove-label": "Вилучити",
+	"oojsplus-data-tree-item-add-label": "Додати новий піделемент"
 }

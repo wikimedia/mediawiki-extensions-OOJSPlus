@@ -9,5 +9,9 @@
 	"oojsplus-color-picker-color-green": "Verd",
 	"oojsplus-color-picker-color-yellow": "Groc",
 	"oojsplus-color-picker-color-olive": "Oliva",
-	"oojsplus-color-picker-color-pink": "Rosa"
+	"oojsplus-color-picker-color-pink": "Rosa",
+	"oojsplus-data-delete-row-prompt": "Esteu segur que voleu suprimir aquesta fila?",
+	"oojsplus-data-paginator-page-total-count-label": "{{PLURAL:$1|$1 fila|$1 files}}",
+	"oojsplusdemos": "Demostracions de l’OOJSPlus",
+	"oojsplus-data-tree-item-add-label": "Afegeix un subelement nou"
 }

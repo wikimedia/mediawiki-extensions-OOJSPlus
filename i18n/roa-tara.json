@@ -13,5 +13,11 @@
 	"oojsplus-color-picker-color-olive": "Alie",
 	"oojsplus-color-picker-color-pink": "Rose",
 	"oojsplus-color-picker-clear-label": "Pulizze 'u culore",
-	"oojsplus-color-picker-label": "Cattura culore"
+	"oojsplus-color-picker-label": "Cattura culore",
+	"oojsplus-data-delete-row-prompt": "Sì secure ca vuè ccu scangille sta righe?",
+	"oojsplus-data-paginator-page-total-count-label": "{{PLURAL:$1|$1 righe}}",
+	"oojsplusdemos": "Demo OOJSPlus",
+	"oojsplus-data-tree-new-root-item-label": "Aggiunge 'na vôsce radice nove",
+	"oojsplus-data-tree-item-remove-label": "Live",
+	"oojsplus-data-tree-item-add-label": "Aggiunge 'na sottovôsce"
 }
