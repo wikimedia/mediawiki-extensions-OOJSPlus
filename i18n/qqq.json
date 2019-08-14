@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Umherirrender"
+			"Umherirrender",
+			"Robby"
 		]
 	},
 	"oojsplus-desc": "{{desc|name=OOJSPlus|url=https://www.mediawiki.org/wiki/Extension:OOJSPlus}}",
@@ -18,6 +19,6 @@
 	"oojsplus-data-paginator-page-total-count-label": "Label for the total number of rows in a grid data source. \n $1 = Number of rows",
 	"oojsplusdemos": "Title for OOJSPlusDemos special page",
 	"oojsplus-data-tree-new-root-item-label": "Tree label for button that inserts new root node",
-	"oojsplus-data-tree-item-remove-label": "Tree label for the button in item options that removed the selected node",
+	"oojsplus-data-tree-item-remove-label": "Tree label for the button in item options that removed the selected node\n{{Identical|Remove}}",
 	"oojsplus-data-tree-item-add-label": "Tree label for the button in item options that adds new subnode to the selected node"
 }

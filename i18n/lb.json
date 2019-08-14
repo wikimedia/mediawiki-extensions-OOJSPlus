@@ -10,5 +10,7 @@
 	"oojsplus-color-picker-color-yellow": "Giel",
 	"oojsplus-color-picker-color-orangered": "Orangerout",
 	"oojsplus-color-picker-color-olive": "Olivgréng",
-	"oojsplus-color-picker-color-pink": "Rosa"
+	"oojsplus-color-picker-color-pink": "Rosa",
+	"oojsplus-data-paginator-page-total-count-label": "{{PLURAL:$1|$1 Rei|$1 Reien}}",
+	"oojsplus-data-tree-item-remove-label": "Ewechhuelen"
 }

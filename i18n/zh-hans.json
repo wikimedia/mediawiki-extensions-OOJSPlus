@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"A Chinese Wikipedian"
+			"A Chinese Wikipedian",
+			"Looong"
 		]
 	},
 	"oojsplus-color-picker-color-blue": "蓝色",
@@ -12,5 +13,11 @@
 	"oojsplus-color-picker-color-olive": "橄榄树",
 	"oojsplus-color-picker-color-pink": "粉红色",
 	"oojsplus-color-picker-clear-label": "清色",
-	"oojsplus-color-picker-label": "拾色器"
+	"oojsplus-color-picker-label": "拾色器",
+	"oojsplus-data-delete-row-prompt": "确定要删除该行吗？",
+	"oojsplus-data-paginator-page-total-count-label": "$1或一个$1行或多个$1行",
+	"oojsplusdemos": "OOJSPlus展示版本",
+	"oojsplus-data-tree-new-root-item-label": "添加一个新的根项目",
+	"oojsplus-data-tree-item-remove-label": "移除",
+	"oojsplus-data-tree-item-add-label": "添加新的子项目"
 }

@@ -1,0 +1,14 @@
+{
+	"@metadata": {
+		"authors": [
+			"Vlad5250"
+		]
+	},
+	"oojsplus-color-picker-color-blue": "Синий",
+	"oojsplus-color-picker-color-red": "Красный",
+	"oojsplus-color-picker-color-green": "Зелёный",
+	"oojsplus-color-picker-color-yellow": "Жёлтый",
+	"oojsplus-color-picker-color-pink": "Розовый",
+	"oojsplus-color-picker-clear-label": "Очистить цвет",
+	"oojsplus-data-delete-row-prompt": "Вы уверены, что хотите удалить эту строку?"
+}

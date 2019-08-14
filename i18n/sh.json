@@ -1,0 +1,16 @@
+{
+	"@metadata": {
+		"authors": [
+			"Vlad5250"
+		]
+	},
+	"oojsplus-desc": "Daje sučeljske elemente i pomagala za OOJS",
+	"oojsplus-color-picker-clear-label": "Ukloni boju",
+	"oojsplus-color-picker-label": "Izbiratelj boje",
+	"oojsplus-data-delete-row-prompt": "Želite li da obrišete ovu nizu?",
+	"oojsplus-data-paginator-page-total-count-label": "{{PLURAL:$1|$1 red|$1 reda|$1 redova}}",
+	"oojsplusdemos": "Pokazne OOJSPlusa",
+	"oojsplus-data-tree-new-root-item-label": "Dodaj novi osnovni stavak",
+	"oojsplus-data-tree-item-remove-label": "Ukloni",
+	"oojsplus-data-tree-item-add-label": "Dodaj novi podstavak"
+}
