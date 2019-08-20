@@ -89,8 +89,7 @@
 	};
 
 	OOJSPlus.ui.data.Tree.prototype.isLeaf = function( name ) {
-		var item = this.getItem( name );
-		return item.getChildNodes().length === 0;
+		return this.getChildNodes( name ).length === 0;
 	};
 
 	OOJSPlus.ui.data.Tree.prototype.getItem = function( name ) {
@@ -194,6 +193,7 @@
 			childOf: parent !== null ? parent.widget.getName() : null,
 			widget: widget
 		};
+
 		this.appendToParent( widget.getName(), parentName );
 		if ( parent ) {
 			this.reEvaluateParent(parent.widget.getName());
@@ -274,6 +274,9 @@
 		for ( var i = 0; i < items.length; i++ ) {
 			if ( items[i].hasOwnProperty( 'rendered' ) && items[i].rendered === true ) {
 				lastRendered = items[i];
+				if ( !this.isLeaf( lastRendered.widget.getName() ) ) {
+					lastRendered = this.getLastRendered( this.getChildNodes( lastRendered.widget.getName() ) );
+				}
 			}
 		}
 		return lastRendered;
