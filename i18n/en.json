@@ -19,5 +19,6 @@
 	"oojsplusdemos": "OOJSPlus demos",
 	"oojsplus-data-tree-new-root-item-label": "Add new root item",
 	"oojsplus-data-tree-item-remove-label": "Remove",
-	"oojsplus-data-tree-item-add-label": "Add new subitem"
+	"oojsplus-data-tree-item-add-label": "Add new subitem",
+	"oojsplus-stepprogressbar-default-final-label": "Done"
 }

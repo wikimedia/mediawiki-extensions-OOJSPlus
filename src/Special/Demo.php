@@ -24,6 +24,9 @@ class Demo extends UnlistedSpecialPage {
 		$this->getOutput()->addHTML( Html::element( 'div', [
 			'id' => 'oojsplus-data-demos-tree'
 		], 'TREE' ) );
+		$this->getOutput()->addHTML( Html::element( 'div', [
+			'id' => 'oojsplus-data-demos-stepsProgress'
+		], 'StepProgressBar' ) );
 		$this->getOutput()->addModules( "ext.oOJSPlus.demo" );
 	}
 }

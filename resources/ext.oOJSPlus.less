@@ -1,0 +1,62 @@
+/* StepProgressBar */
+@doneColor: green;
+@hoverColor: #e6e6e6;
+@todoColor: #c8c9ca;
+
+.oojsplus-widget-steps-progress {
+  margin: 0 !important; /* This is needed because something sets margin on all <ol>s in #bodyContent */
+  padding: 0;
+  list-style-type: none;
+  display: table;
+  width: 100%;
+  .steps-progress-step {
+    display: table-cell;
+    text-align: center;
+    line-height: 2em;
+    padding-left: 10px;
+    padding-right: 10px;
+    cursor: pointer;
+    &:hover {
+      background-color: @hoverColor;
+    }
+    &.disabled {
+      color: grey;
+      cursor: unset;
+      &:hover {
+        background-color: transparent;
+      }
+    }
+    &.final-step:not(.disabled) {
+      border-bottom: 4px solid @doneColor;
+      background-color: @doneColor;
+      color: white;
+      &:before {
+        display: block;
+        content: "\02714";
+        font-size: 28px;
+        color: #ffffff;
+      }
+    }
+    &.current {
+      background-color: @todoColor;
+    }
+    &.done {
+      border-bottom: 4px solid @doneColor;
+      &:before {
+        display: block;
+        content: "\02714";
+        font-size: 22px;
+        color: @doneColor;
+      }
+    }
+    &.todo {
+      border-bottom: 4px solid @todoColor;
+      &:before {
+        display: block;
+        content: "\0274D";
+        font-size: 18px;
+        color: grey;
+      }
+    }
+  }
+}

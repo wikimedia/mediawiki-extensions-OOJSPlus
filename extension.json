@@ -33,8 +33,24 @@
 			]
 		},
 		"ext.oOJSPlus.widgets": {
+			"scripts": [
+				"ui/widget/DynamicLabelTextInputWidget.js"
+			],
 			"dependencies": [
-				"ext.oOJSPlus.widgets.colorPicker"
+				"ext.oOJSPlus.widgets.colorPicker",
+				"ext.oOJSPlus.widgets.stepProgressBar"
+			]
+		},
+		"ext.oOJSPlus.widgets.stepProgressBar": {
+			"scripts": [
+				"ui/widget/StepProgressBar.js"
+			],
+			"messages": [
+				"oojsplus-stepprogressbar-default-final-label"
+			],
+			"dependencies": [
+				"oojs-ui",
+				"ext.oOJSPlus"
 			]
 		},
 		"ext.oOJSPlus.widgets.colorPicker": {
@@ -98,10 +114,12 @@
 		"ext.oOJSPlus.demo": {
 			"scripts": [
 				"demo/GridDemo.js",
-				"demo/TreeDemo.js"
+				"demo/TreeDemo.js",
+				"demo/StepProgressBarDemo.js"
 			],
 			"dependencies": [
-				"ext.oOJSPlus.data"
+				"ext.oOJSPlus.data",
+				"ext.oOJSPlus.widgets"
 			]
 		}
 	},
