@@ -1,0 +1,10 @@
+{
+	"@metadata": {
+		"authors": [
+			"WikiPhoenix"
+		]
+	},
+	"oojsplus-data-delete-row-prompt": "Är du säker på att du vill radera denna rad?",
+	"oojsplus-data-paginator-page-total-count-label": "{{PLURAL:$1|$1 rad|$1 rader}}",
+	"oojsplus-data-tree-item-remove-label": "Ta bort"
+}

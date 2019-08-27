@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Mainframe98"
+			"Mainframe98",
+			"RadioAzureus"
 		]
 	},
 	"oojsplus-color-picker-color-blue": "Blauw",
@@ -11,5 +12,6 @@
 	"oojsplus-color-picker-color-orangered": "Oranje-rood",
 	"oojsplus-color-picker-color-olive": "Olijfgroen",
 	"oojsplus-color-picker-color-pink": "Roze",
-	"oojsplus-color-picker-label": "Kleurenkiezer"
+	"oojsplus-color-picker-label": "Kleurenkiezer",
+	"oojsplus-data-tree-item-remove-label": "Verwijder"
 }

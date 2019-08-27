@@ -20,6 +20,5 @@
 	"oojsplusdemos": "Title for OOJSPlusDemos special page",
 	"oojsplus-data-tree-new-root-item-label": "Tree label for button that inserts new root node",
 	"oojsplus-data-tree-item-remove-label": "Tree label for the button in item options that removed the selected node\n{{Identical|Remove}}",
-	"oojsplus-data-tree-item-add-label": "Tree label for the button in item options that adds new subnode to the selected node",
-	"oojsplus-stepprogressbar-default-final-label": "Default label for the last step in StepProgressBar widget"
+	"oojsplus-data-tree-item-add-label": "Tree label for the button in item options that adds new subnode to the selected node"
 }
