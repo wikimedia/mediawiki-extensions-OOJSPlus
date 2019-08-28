@@ -19,5 +19,6 @@
 	"oojsplusdemos": "عروض OOJSPlus",
 	"oojsplus-data-tree-new-root-item-label": "إضافة عنصر جذر جديد",
 	"oojsplus-data-tree-item-remove-label": "إزالة",
-	"oojsplus-data-tree-item-add-label": "إضافة عنصر فرعي جديد"
+	"oojsplus-data-tree-item-add-label": "إضافة عنصر فرعي جديد",
+	"oojsplus-stepprogressbar-default-final-label": "تم"
 }

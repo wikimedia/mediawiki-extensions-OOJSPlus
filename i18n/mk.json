@@ -20,5 +20,6 @@
 	"oojsplusdemos": "Показни на OOJSPlus",
 	"oojsplus-data-tree-new-root-item-label": "Додај нов основен предмет",
 	"oojsplus-data-tree-item-remove-label": "Отстрани",
-	"oojsplus-data-tree-item-add-label": "Додај нов потпредмет"
+	"oojsplus-data-tree-item-add-label": "Додај нов потпредмет",
+	"oojsplus-stepprogressbar-default-final-label": "Готово"
 }

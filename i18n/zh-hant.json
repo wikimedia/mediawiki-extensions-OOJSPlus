@@ -19,5 +19,6 @@
 	"oojsplusdemos": "OOJSPlus 樣本",
 	"oojsplus-data-tree-new-root-item-label": "添加新的根項目",
 	"oojsplus-data-tree-item-remove-label": "移除",
-	"oojsplus-data-tree-item-add-label": "添加新的子項目"
+	"oojsplus-data-tree-item-add-label": "添加新的子項目",
+	"oojsplus-stepprogressbar-default-final-label": "完成"
 }

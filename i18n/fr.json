@@ -20,5 +20,6 @@
 	"oojsplusdemos": "Démos de OOJSPlus",
 	"oojsplus-data-tree-new-root-item-label": "Ajouter un nouvel élément racine",
 	"oojsplus-data-tree-item-remove-label": "Supprimer",
-	"oojsplus-data-tree-item-add-label": "Ajouter un nouveau sous-élément"
+	"oojsplus-data-tree-item-add-label": "Ajouter un nouveau sous-élément",
+	"oojsplus-stepprogressbar-default-final-label": "Fait"
 }
