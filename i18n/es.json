@@ -19,5 +19,6 @@
 	"oojsplus-data-paginator-page-total-count-label": "{{PLURAL:$1|$1 fila|$1 filas}}",
 	"oojsplusdemos": "Demostraciones de OOJSPlus",
 	"oojsplus-data-tree-item-remove-label": "Quitar",
-	"oojsplus-data-tree-item-add-label": "Añadir subelemento nuevo"
+	"oojsplus-data-tree-item-add-label": "Añadir subelemento nuevo",
+	"oojsplus-stepprogressbar-default-final-label": "Hecho"
 }
