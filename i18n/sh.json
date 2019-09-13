@@ -12,5 +12,6 @@
 	"oojsplusdemos": "Pokazne OOJSPlusa",
 	"oojsplus-data-tree-new-root-item-label": "Dodaj novi osnovni stavak",
 	"oojsplus-data-tree-item-remove-label": "Ukloni",
-	"oojsplus-data-tree-item-add-label": "Dodaj novi podstavak"
+	"oojsplus-data-tree-item-add-label": "Dodaj novi podstavak",
+	"oojsplus-stepprogressbar-default-final-label": "Gotovo"
 }

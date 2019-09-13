@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Railfail536"
+			"Railfail536",
+			"Rail"
 		]
 	},
 	"oojsplus-data-delete-row-prompt": "Czy na pewno chcesz usunąć ten wiersz?",
