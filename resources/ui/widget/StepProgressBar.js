@@ -88,12 +88,8 @@
 		if ( !this.steps.hasOwnProperty( step ) ) {
 			return;
 		}
-		var steps = Object.keys( this.steps );
-		if ( !this.maxStep ) {
-			this.maxStep = step;
-			return;
-		}
-		if ( steps.indexOf( step ) > steps.indexOf( this.maxStep ) ) {
+		if ( !this.isStepEnabled( step ) ) {
+			// If step is not enabled, it means it has not been reached yet
 			this.maxStep = step;
 		}
 	};
@@ -123,7 +119,24 @@
 	OOJSPlus.ui.widget.StepProgressBar.prototype.onStepClick = function( e ) {
 		var $item = $( e.target );
 		var id = $item.data( 'step-name' );
-		this.setStep ( id );
+		if ( this.isStepEnabled( id ) ) {
+			this.setStep ( id );
+		}
+	};
+
+	OOJSPlus.ui.widget.StepProgressBar.prototype.isStepEnabled = function( step ) {
+		if ( !this.steps.hasOwnProperty( step ) ) {
+			return false;
+		}
+		if ( !this.maxStep ) {
+			return false;
+		}
+		var steps = Object.keys( this.steps );
+		if ( steps.indexOf( step ) <= steps.indexOf( this.maxStep ) ) {
+			return true;
+		}
+
+		return false;
 	};
 
 	OOJSPlus.ui.widget.StepProgressBar.prototype.getCurrent = function() {
