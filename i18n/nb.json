@@ -1,0 +1,24 @@
+{
+	"@metadata": {
+		"authors": [
+			"Jon Harald Søby"
+		]
+	},
+	"oojsplus-desc": "Tilbyr widgeter og nyttige funksjoner for OOJS",
+	"oojsplus-color-picker-color-blue": "Blå",
+	"oojsplus-color-picker-color-red": "Rød",
+	"oojsplus-color-picker-color-green": "Grønn",
+	"oojsplus-color-picker-color-yellow": "Gul",
+	"oojsplus-color-picker-color-orangered": "Oransje",
+	"oojsplus-color-picker-color-olive": "Oliven",
+	"oojsplus-color-picker-color-pink": "Rosa",
+	"oojsplus-color-picker-clear-label": "Klar",
+	"oojsplus-color-picker-label": "Fargevelger",
+	"oojsplus-data-delete-row-prompt": "Er du sikker på at du vil slette denne raden?",
+	"oojsplus-data-paginator-page-total-count-label": "{{PLURAL:$1|$1 rad|$1 rader}}",
+	"oojsplusdemos": "OOJSPlus-demoer",
+	"oojsplus-data-tree-new-root-item-label": "Legg til nytt rotelement",
+	"oojsplus-data-tree-item-remove-label": "Fjern",
+	"oojsplus-data-tree-item-add-label": "Legg til nytt underelement",
+	"oojsplus-stepprogressbar-default-final-label": "Ferdig"
+}
