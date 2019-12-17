@@ -34,7 +34,11 @@
 		},
 		"ext.oOJSPlus.widgets": {
 			"scripts": [
-				"ui/widget/DynamicLabelTextInputWidget.js"
+				"ui/widget/DynamicLabelTextInputWidget.js",
+				"ui/widget/RangeWidget.js"
+			],
+			"styles": [
+				"stylesheet/rangeWidget.less"
 			],
 			"dependencies": [
 				"ext.oOJSPlus.widgets.colorPicker",
@@ -115,7 +119,8 @@
 			"scripts": [
 				"demo/GridDemo.js",
 				"demo/TreeDemo.js",
-				"demo/StepProgressBarDemo.js"
+				"demo/StepProgressBarDemo.js",
+				"demo/RangeDemo.js"
 			],
 			"dependencies": [
 				"ext.oOJSPlus.data",
