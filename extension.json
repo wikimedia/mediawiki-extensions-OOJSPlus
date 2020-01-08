@@ -126,6 +126,11 @@
 				"ext.oOJSPlus.data",
 				"ext.oOJSPlus.widgets"
 			]
+		},
+		"ext.oOJSPlus.icons":  {
+			"styles": [
+				"stylesheet/icons.css"
+			]
 		}
 	},
 	"ResourceFileModulePaths": {
