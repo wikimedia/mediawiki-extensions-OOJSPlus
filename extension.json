@@ -17,8 +17,10 @@
 		"OOJSPlusAlias": "OOJSPlus.alias.php"
 	},
 	"AutoloadNamespaces": {
-		"OOJSPlus\\": "src/",
-		"OOJSPlus\\Tests\\": "tests/phpunit"
+		"OOJSPlus\\": "src/"
+	},
+	"TestAutoloadNamespaces": {
+		"OOJSPlus\\Tests\\": "tests/phpunit/"
 	},
 	"ResourceModules": {
 		"ext.oOJSPlus": {
