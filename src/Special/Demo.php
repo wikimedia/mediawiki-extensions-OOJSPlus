@@ -1,8 +1,8 @@
 <?php
 namespace OOJSPlus\Special;
 
-use UnlistedSpecialPage;
 use Html;
+use UnlistedSpecialPage;
 
 class Demo extends UnlistedSpecialPage {
 	/**
