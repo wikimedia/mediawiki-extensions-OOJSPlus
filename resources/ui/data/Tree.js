@@ -7,9 +7,12 @@
 		this.allowDeletions = typeof cfg.allowDeletions !== 'undefined' ? cfg.allowDeletions : true;
 		this.allowAdditions = typeof cfg.allowAdditions !== 'undefined' ? cfg.allowAdditions : true;
 		this.structure = {};
-		this.itemsContainer = new OOJSPlus.ui.data.DraggableGroup();
-
-		this.itemsContainer.$element.addClass( 'items-cls' );
+		this.itemsContainer = new OOJSPlus.ui.data.DraggableGroup( this );
+		this.itemsContainer.connect( this, {
+			reorder: function( item, index ) {
+				this.emit( 'reorder', this.getItem( item.getName() ), index );
+			}
+		} );
 
 		this.$element.append( this.itemsContainer.$element );
 
@@ -37,6 +40,7 @@
 
 	OOJSPlus.ui.data.Tree.static.tagName = 'div';
 
+	/** Build structure from data */
 	OOJSPlus.ui.data.Tree.prototype.build = function( data, lvl, parent ) {
 		lvl = lvl || 0;
 		parent = parent || null;
@@ -67,6 +71,7 @@
 		}
 	};
 
+	/** Generate HTML */
 	OOJSPlus.ui.data.Tree.prototype.draw = function(  ) {
 		var lvl = 0;
 		this.itemsContainer.clearItems();
@@ -290,25 +295,36 @@
 		this.selectedItem.widget.$element.addClass( 'item-selected' );
 	};
 
-	OOJSPlus.ui.data.Tree.prototype.executeDrop = function( origin, target ) {
-		return;
-		this.structure[origin.widget.getName()].childOf = target.widget.getName();
-		var children = this.getChildNodes( origin.widget.getName(), true);
-		for( var i = 0; i < children.length; i++ ) {
-			var childName = children[i].widget.getName();
-			this.structure[childName].childOf = target.widget.getName();
-			this.structure.level = target.level + 1;
-			this.structure[childName].setLevel( target.level + 1 );
+	OOJSPlus.ui.data.Tree.prototype.moveChildren = function( parent, afterIndex ) {
+		var children = this.getChildNodes( parent );
+		for ( var i = 0; i < children.length; i++ ) {
+			var child = children[i];
+
+			afterIndex++;
+			this.itemsContainer.reorder( child.widget, afterIndex );
+			this.moveChildren( child.widget.getName(), afterIndex );
 		}
-		this.draw();
 	};
 
+	OOJSPlus.ui.data.Tree.prototype.getOrderedNames = function() {
+		var children = this.itemsContainer.getItems(),
+			names = [];
+		for ( var i = 0; i < children.length; i++ ) {
+			var child = children[i];
+			names.push( child.getName() );
+		}
+
+		return names;
+	};
 
 	/*DRAGGABLE GROUP*/
-	OOJSPlus.ui.data.DraggableGroup = function( cfg ) {
-		cfg = cfg || {};
+	OOJSPlus.ui.data.DraggableGroup = function( tree ) {
+		this.tree = tree;
+
+		var cfg =  {};
 		cfg.orientation = 'vertical';
 		cfg.draggable = true;
+		cfg.classes = [ 'items-cls' ];
 		OOJSPlus.ui.data.DraggableGroup.parent.call( this, cfg );
 		OO.ui.mixin.DraggableGroupElement.call( this, $.extend( {}, cfg, { $group: this.$element } ) );
 	};
@@ -318,4 +334,97 @@
 
 	OOJSPlus.ui.data.DraggableGroup.static.tagName = 'div';
 
+	OOJSPlus.ui.data.DraggableGroup.prototype.onDragOver = function ( e ) {
+		var overIndex, targetIndex,
+			item = this.getDragItem(),
+			dragItemIndex = item.getIndex();
+
+		// Get the OptionWidget item we are dragging over
+		overIndex = $( e.target ).closest( '.oo-ui-draggableElement' ).data( 'index' );
+
+
+		if ( overIndex !== undefined && overIndex !== dragItemIndex ) {
+			if( !this.dropAllowed( dragItemIndex, overIndex ) ) {
+				return;
+			}
+
+			targetIndex = overIndex + ( overIndex > dragItemIndex ? 1 : 0 );
+
+			if ( targetIndex > 0 ) {
+				this.$group.children().eq( targetIndex - 1 ).after( item.$element );
+			} else {
+				this.$group.prepend( item.$element );
+			}
+			// Move item in itemsOrder array
+			this.itemsOrder.splice( overIndex, 0,
+				this.itemsOrder.splice( dragItemIndex, 1 )[ 0 ]
+			);
+			this.updateIndexes();
+			this.emit( 'drag', item, targetIndex );
+		}
+
+		// Prevent default
+		e.preventDefault();
+	};
+
+	OOJSPlus.ui.data.DraggableGroup.prototype.dropAllowed = function ( dragItemIndex, overIndex ) {
+		var over = this.itemsOrder[overIndex];
+		var dragged = this.itemsOrder[dragItemIndex];
+		dragged = this.tree.getItem( dragged.getName() );
+		over = this.tree.getItem( over.getName() );
+		// Only allow re-arranging within level
+		if ( dragged.widget.getLevel() !== over.widget.getLevel() ) {
+			return false;
+		}
+
+		if ( dragged.childOf !== over.childOf ) {
+			return false;
+		}
+
+		if ( overIndex > dragItemIndex && this.tree.getChildNodes( over.widget.getName() ).length > 0 ) {
+			return false;
+		}
+
+		return true;
+	};
+
+	OOJSPlus.ui.data.DraggableGroup.prototype.onItemDropOrDragEnd = function () {
+		// For some reason cannot call parent of this function so its copy-pasted here
+		var targetIndex, originalIndex,
+			item = this.getDragItem();
+
+		// TODO: Figure out a way to configure a list of legally droppable
+		// elements even if they are not yet in the list
+		if ( item ) {
+			originalIndex = this.items.indexOf( item );
+			// If the item has moved forward, add one to the index to account for the left shift
+			targetIndex = item.getIndex() + ( item.getIndex() > originalIndex ? 1 : 0 );
+			if ( targetIndex !== originalIndex ) {
+				this.reorder( this.getDragItem(), targetIndex );
+				this.emit( 'reorder', this.getDragItem(), targetIndex );
+			}
+			this.updateIndexes();
+
+			var targetItem = this.getDragItem();
+			if ( targetItem ) {
+				this.tree.moveChildren( targetItem.getName(), targetIndex );
+			}
+
+		}
+		this.unsetDragItem();
+
+
+
+		// Return false to prevent propogation
+		return false;
+	};
+
+	OOJSPlus.ui.data.DraggableGroup.prototype.getIndexForItem = function ( itemName ) {
+		for( var i = 0; i < this.itemsOrder.length; i++ ) {
+			if ( this.itemsOrder[i].getName() === itemName ) {
+				return i;
+			}
+		}
+		return -1;
+	};
 } )( mediaWiki, jQuery );
