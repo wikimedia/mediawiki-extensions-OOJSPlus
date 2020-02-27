@@ -38,6 +38,10 @@
 		this.init();
 	};
 
+	OOJSPlus.ui.data.tree.Item.prototype.getLevel = function() {
+		return this.level;
+	};
+
 	OOJSPlus.ui.data.tree.Item.prototype.getName = function() {
 		return this.name;
 	};

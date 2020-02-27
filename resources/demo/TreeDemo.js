@@ -39,7 +39,7 @@
 	];
 
 	var tree = new OOJSPlus.ui.data.Tree( {
-		fixed: true, // Draggable items are still WIP
+		fixed: false, // Draggable items are still WIP
 		data: data
 	} );
 	$el.append( tree.$element );
