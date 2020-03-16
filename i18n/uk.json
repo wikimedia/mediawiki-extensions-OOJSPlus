@@ -1,18 +1,25 @@
 {
 	"@metadata": {
 		"authors": [
-			"Vlad5250"
+			"Vlad5250",
+			"Piramidion"
 		]
 	},
+	"oojsplus-desc": "Надає віджети та утилітарні функції для OOJS",
 	"oojsplus-color-picker-color-blue": "Синій",
 	"oojsplus-color-picker-color-red": "Червоний",
 	"oojsplus-color-picker-color-green": "Зелений",
 	"oojsplus-color-picker-color-yellow": "Жовтий",
+	"oojsplus-color-picker-color-orangered": "Помаранчево-червоний",
+	"oojsplus-color-picker-color-olive": "Оливковий",
+	"oojsplus-color-picker-color-pink": "Рожевий",
 	"oojsplus-color-picker-clear-label": "Очистити колір",
+	"oojsplus-color-picker-label": "Піпетка кольору",
 	"oojsplus-data-delete-row-prompt": "Ви справді хочете видалити цей рядок?",
 	"oojsplus-data-paginator-page-total-count-label": "{{PLURAL:$1|$1 рядок|$1 рядки|$1 рядків}}",
 	"oojsplusdemos": "Демонстрації OOJSPlus",
 	"oojsplus-data-tree-new-root-item-label": "Додати новий кореневий елемент",
 	"oojsplus-data-tree-item-remove-label": "Вилучити",
-	"oojsplus-data-tree-item-add-label": "Додати новий піделемент"
+	"oojsplus-data-tree-item-add-label": "Додати новий піделемент",
+	"oojsplus-stepprogressbar-default-final-label": "Готово"
 }
