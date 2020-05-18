@@ -27,23 +27,23 @@
 
 	OO.inheritClass( OOJSPlus.ui.mixin.ColorPickerPopup, OO.ui.mixin.PopupElement );
 
-	OOJSPlus.ui.mixin.ColorPickerPopup.prototype.setValue = function( value ) {
+	OOJSPlus.ui.mixin.ColorPickerPopup.prototype.setPickerValue = function( value ) {
 		this.embeddable.setValue( value );
 		this.emit( 'valueSet', value );
 	};
 
-	OOJSPlus.ui.mixin.ColorPickerPopup.prototype.getValue = function() {
+	OOJSPlus.ui.mixin.ColorPickerPopup.prototype.getPickerValue = function() {
 		return this.embeddable.getValue();
 	};
 
 	OOJSPlus.ui.mixin.ColorPickerPopup.prototype.onColorSelected = function( data ) {
-		this.setValue( data );
-		this.emit( 'colorSelected', [ data ] );
+		this.setPickerValue( data );
+		this.emit( 'colorSelected', data );
 		this.popup.toggle( false );
 	};
 
 	OOJSPlus.ui.mixin.ColorPickerPopup.prototype.onClear = function() {
-		this.setValue( {} );
+		this.setPickerValue( {} );
 		this.emit( 'clear' );
 		this.popup.toggle( false );
 	};

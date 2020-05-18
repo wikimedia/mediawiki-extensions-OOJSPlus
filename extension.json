@@ -1,6 +1,6 @@
 {
 	"name": "OOJSPlus",
-	"version": "0.1",
+	"version": "0.2",
 	"license-name": "GPL-3.0-only",
 	"author": [
 		"[http://www.hallowelt.com Hallo Welt! GmbH]"
@@ -63,7 +63,8 @@
 			"scripts": [
 				"ui/widget/ColorPickerEmbeddable.js",
 				"ui/mixin/ColorPickerPopup.js",
-				"ui/widget/ColorPicker.js"
+				"ui/widget/ColorPicker.js",
+				"ui/widget/HexColorPicker.js"
 			],
 			"styles": [
 				"stylesheet/colorPicker.less"
