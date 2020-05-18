@@ -16,7 +16,8 @@
 
 		this.connect( this, {
 			click: 'togglePicker',
-			valueSet: 'onValueSet'
+			colorSelected: 'colorChange',
+			clear: 'colorChange'
 		} );
 
 		if( cfg.value ) {
@@ -42,19 +43,30 @@
 		this.emit( 'togglePicker', this.popup.isVisible() );
 	};
 
-	OOJSPlus.ui.widget.ColorPickerWidget.prototype.onValueSet = function( value ) {
+	OOJSPlus.ui.widget.ColorPickerWidget.prototype.setValue = function( value ) {
+		this.setPickerValue( value );
 		this.setCurrentColor();
+	};
+
+	OOJSPlus.ui.widget.ColorPickerWidget.prototype.colorChange = function( value ) {
+		this.setCurrentColor();
+	};
+
+	OOJSPlus.ui.widget.ColorPickerWidget.prototype.getValue = function() {
+		return this.getPickerValue();
 	};
 
 	OOJSPlus.ui.widget.ColorPickerWidget.prototype.setCurrentColor = function() {
 		if ( $.isEmptyObject( this.getValue() ) ) {
 			return this.$currentColorShow.css( 'color', 'transparent' );
 		}
+
 		if ( this.getValue().hasOwnProperty( 'code' ) ) {
 			return this.$currentColorShow.css( 'color', this.getValue().code );
 		} else if ( this.getValue().hasOwnProperty( 'class' ) ) {
 			return this.$currentColorShow.addClass( this.getValue().class );
 		}
+
 	};
 
 
