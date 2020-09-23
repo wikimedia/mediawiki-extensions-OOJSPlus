@@ -3,6 +3,8 @@
 		cfg = cfg || {};
 
 		this.embeddable = new OOJSPlus.ui.widget.ColorPickerEmbeddable( cfg );
+		this.id = 'oojsplus-color-picker-popup-' + Math.floor( Math.random() * 100000 );
+		this.$element.attr( 'id', this.id );
 
 		this.embeddable.connect( this, {
 			colorSelected: 'onColorSelected',
@@ -23,6 +25,20 @@
 		this.popup.$body.append( this.embeddable.$element );
 
 		this.colorPickerPopup = this.popup;
+
+		$( 'body' ).click( function( e ) {
+			e.stopPropagation();
+			var $target = $( e.target );
+			if (
+				$target.attr( 'id' ) === this.id ||
+				$target.parents( '#' + this.id ).length > 0
+			) {
+				return;
+			}
+			this.popup.toggle( false );
+		}.bind( this ) );
+
+		this.$element.addClass( 'oojsplus-color-picker-popup' );
 	};
 
 	OO.inheritClass( OOJSPlus.ui.mixin.ColorPickerPopup, OO.ui.mixin.PopupElement );
