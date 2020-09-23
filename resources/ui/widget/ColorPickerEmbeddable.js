@@ -164,11 +164,8 @@
 		if ( !this.enableCustomPicker ) {
 			return false;
 		}
-		var $tester = $('<input type="color" value="#ffffff" />')[0];
-		if( $tester.type === 'color' && $tester.value !== '#ffffff' ) {
-			return true;
-		}
-		return false;
+		var $tester = $('<input type="color" value="!" />');
+		return $tester.attr('type') === 'color' && $tester.val() !== '!';
 	};
 
 	OOJSPlus.ui.widget.ColorPickerEmbeddable.prototype.getValue = function() {
