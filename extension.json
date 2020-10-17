@@ -59,6 +59,7 @@
 		"ext.oOJSPlus.widgets.colorPicker": {
 			"scripts": [
 				"ui/widget/ColorPickerEmbeddable.js",
+				"ui/widget/ColorPickerStandalone.js",
 				"ui/mixin/ColorPickerPopup.js",
 				"ui/widget/ColorPicker.js",
 				"ui/widget/HexColorPicker.js"
