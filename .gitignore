@@ -3,6 +3,7 @@
 *.swp
 node_modules/**
 vendor/**
+/.eslintcache
 
 composer.lock
 composer.phar

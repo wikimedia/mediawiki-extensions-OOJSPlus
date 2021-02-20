@@ -128,7 +128,7 @@
 				"ext.oOJSPlus.widgets"
 			]
 		},
-		"ext.oOJSPlus.icons":  {
+		"ext.oOJSPlus.icons": {
 			"styles": [
 				"stylesheet/icons.css"
 			]
