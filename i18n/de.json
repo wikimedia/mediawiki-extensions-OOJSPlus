@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"Gebu",
 			"Mirzali"
 		]
 	},
@@ -13,5 +14,6 @@
 	"oojsplus-color-picker-color-olive": "Olivgrün",
 	"oojsplus-color-picker-color-pink": "Rosa",
 	"oojsplus-color-picker-clear-label": "klare Farbe",
-	"oojsplus-color-picker-label": "Farbwähler"
+	"oojsplus-color-picker-label": "Farbwähler",
+	"oojsplus-data-tree-item-remove-label": "Entfernen"
 }
