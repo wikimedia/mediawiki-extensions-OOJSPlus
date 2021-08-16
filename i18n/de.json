@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Gebu",
-			"Mirzali"
+			"Mirzali",
+			"Zabe"
 		]
 	},
 	"oojsplus-desc": "Stellt Widgets und Hilfsfunktionen für OOJS bereit",
@@ -15,5 +16,6 @@
 	"oojsplus-color-picker-color-pink": "Rosa",
 	"oojsplus-color-picker-clear-label": "klare Farbe",
 	"oojsplus-color-picker-label": "Farbwähler",
-	"oojsplus-data-tree-item-remove-label": "Entfernen"
+	"oojsplus-data-tree-item-remove-label": "Entfernen",
+	"oojsplus-stepprogressbar-default-final-label": "Fertig"
 }
