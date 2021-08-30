@@ -20,5 +20,12 @@
 	"oojsplus-data-tree-new-root-item-label": "Add new root item",
 	"oojsplus-data-tree-item-remove-label": "Remove",
 	"oojsplus-data-tree-item-add-label": "Add new subitem",
-	"oojsplus-stepprogressbar-default-final-label": "Done"
+	"oojsplus-stepprogressbar-default-final-label": "Done",
+	"apihelp-query+allgroups-summary": "Lists all groups declared on wiki",
+	"apihelp-query+allgroups-param-prefix": "Prefix search term",
+	"apihelp-query+allgroups-param-dir": "Sorting direction",
+	"apihelp-query+allgroups-param-prop": "Properties to retrieve",
+	"apihelp-query+allgroups-paramvalue-prop-additional": "Is additional group",
+	"apihelp-query+allgroups-paramvalue-prop-displaytext": "Displaytext of the group",
+	"apihelp-query+allgroups-example": "List groups starting with \"s\""
 }
