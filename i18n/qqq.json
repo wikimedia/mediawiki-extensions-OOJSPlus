@@ -21,5 +21,12 @@
 	"oojsplus-data-tree-new-root-item-label": "Tree label for button that inserts new root node",
 	"oojsplus-data-tree-item-remove-label": "Tree label for the button in item options that removed the selected node\n{{Identical|Remove}}",
 	"oojsplus-data-tree-item-add-label": "Tree label for the button in item options that adds new subnode to the selected node",
-	"oojsplus-stepprogressbar-default-final-label": "Default label for the last step in StepProgressBar widget"
+	"oojsplus-stepprogressbar-default-final-label": "Default label for the last step in StepProgressBar widget",
+	"apihelp-query+allgroups-summary": "{{doc-apihelp-summary|query+allgroups}}",
+	"apihelp-query+allgroups-param-prefix": "{{doc-apihelp-param|query+allgroups|prefix}}",
+	"apihelp-query+allgroups-param-dir": "{{doc-apihelp-param|query+allgroups|dir}}",
+	"apihelp-query+allgroups-param-prop": "{{doc-apihelp-param|query+alltransclusions|prop|paramvalues=1}}",
+	"apihelp-query+allgroups-paramvalue-prop-additional": "{{doc-apihelp-paramvalue|query+allgroups|prop|additional}}",
+	"apihelp-query+allgroups-paramvalue-prop-displaytext": "{{doc-apihelp-paramvalue|query+allgroups|prop|displaytext}}",
+	"apihelp-query+allgroups-example": "{{doc-apihelp-example|query+allgroups}}"
 }

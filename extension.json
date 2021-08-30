@@ -13,6 +13,12 @@
 	"MessagesDirs": {
 		"OOJSPlus": "i18n"
 	},
+	"APIListModules": {
+		"allgroups": {
+			"class": "\\OOJSPlus\\Api\\ApiQueryAllGroups",
+			"services": [ "UserGroupManager" ]
+		}
+	},
 	"ExtensionMessagesFiles": {
 		"OOJSPlusAlias": "OOJSPlus.alias.php"
 	},
@@ -37,7 +43,9 @@
 		"ext.oOJSPlus.widgets": {
 			"scripts": [
 				"ui/widget/DynamicLabelTextInputWidget.js",
-				"ui/widget/RangeWidget.js"
+				"ui/widget/RangeWidget.js",
+				"ui/widget/GroupInputWidget.js",
+				"ui/widget/GroupMultiSelectWidget.js"
 			],
 			"styles": [
 				"stylesheet/rangeWidget.less"
@@ -119,18 +127,6 @@
 				"oojsplus-data-tree-item-add-label"
 			]
 		},
-		"ext.oOJSPlus.demo": {
-			"scripts": [
-				"demo/GridDemo.js",
-				"demo/TreeDemo.js",
-				"demo/StepProgressBarDemo.js",
-				"demo/RangeDemo.js"
-			],
-			"dependencies": [
-				"ext.oOJSPlus.data",
-				"ext.oOJSPlus.widgets"
-			]
-		},
 		"ext.oOJSPlus.icons":  {
 			"styles": [
 				"stylesheet/icons.css"
@@ -140,9 +136,6 @@
 	"ResourceFileModulePaths": {
 		"localBasePath": "resources",
 		"remoteExtPath": "OOJSPlus/resources"
-	},
-	"SpecialPages": {
-		"OOJSPlusDemos": "OOJSPlus\\Special\\Demo"
 	},
 	"manifest_version": 2
 }
