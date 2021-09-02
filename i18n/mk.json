@@ -21,5 +21,12 @@
 	"oojsplus-data-tree-new-root-item-label": "Додај нов основен предмет",
 	"oojsplus-data-tree-item-remove-label": "Отстрани",
 	"oojsplus-data-tree-item-add-label": "Додај нов потпредмет",
-	"oojsplus-stepprogressbar-default-final-label": "Готово"
+	"oojsplus-stepprogressbar-default-final-label": "Готово",
+	"apihelp-query+allgroups-summary": "Ги испишува сите групи наведени на вики",
+	"apihelp-query+allgroups-param-prefix": "Претставка за пребарувањето",
+	"apihelp-query+allgroups-param-dir": "Насока на подредување",
+	"apihelp-query+allgroups-param-prop": "Својства за добивање",
+	"apihelp-query+allgroups-paramvalue-prop-additional": "Е дополнителна група",
+	"apihelp-query+allgroups-paramvalue-prop-displaytext": "Приказен текст за групата",
+	"apihelp-query+allgroups-example": "Испиши групи што почнуваат со „с“"
 }
