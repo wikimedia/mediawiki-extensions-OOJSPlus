@@ -131,6 +131,17 @@
 			"styles": [
 				"stylesheet/icons.css"
 			]
+		},
+		"ext.oOJSPlus.formelements": {
+			"scripts": [
+				"ui/formelement/UserPicker.js",
+				"ui/formelement/GroupPicker.js"
+			],
+			"dependencies": [
+				"mediawiki.widgets.UserInputWidget",
+				"ext.oOJSPlus.widgets",
+				"ext.forms.widgets"
+			]
 		}
 	},
 	"ResourceFileModulePaths": {
