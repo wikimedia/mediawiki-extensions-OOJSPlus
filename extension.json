@@ -13,6 +13,11 @@
 	"MessagesDirs": {
 		"OOJSPlus": "i18n"
 	},
+	"APIListModules": {
+		"allcategories": {
+			"class": "\\OOJSPlus\\Api\\ApiQueryAllCategories"
+		}
+	},
 	"ExtensionMessagesFiles": {
 		"OOJSPlusAlias": "OOJSPlus.alias.php"
 	},
@@ -35,7 +40,8 @@
 		"ext.oOJSPlus.widgets": {
 			"scripts": [
 				"ui/widget/DynamicLabelTextInputWidget.js",
-				"ui/widget/RangeWidget.js"
+				"ui/widget/RangeWidget.js",
+				"ui/widget/CategoryMultiSelectWidget.js"
 			],
 			"styles": [
 				"stylesheet/rangeWidget.less"
