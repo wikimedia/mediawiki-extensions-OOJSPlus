@@ -17,6 +17,9 @@
 		"allgroups": {
 			"class": "\\OOJSPlus\\Api\\ApiQueryAllGroups",
 			"services": [ "UserGroupManager" ]
+		},
+		"allcategories": {
+			"class": "\\OOJSPlus\\Api\\ApiQueryAllCategories"
 		}
 	},
 	"ExtensionMessagesFiles": {
@@ -42,7 +45,8 @@
 				"ui/widget/DynamicLabelTextInputWidget.js",
 				"ui/widget/RangeWidget.js",
 				"ui/widget/GroupInputWidget.js",
-				"ui/widget/GroupMultiSelectWidget.js"
+				"ui/widget/GroupMultiSelectWidget.js",
+				"ui/widget/CategoryMultiSelectWidget.js"
 			],
 			"styles": [
 				"stylesheet/rangeWidget.less"
