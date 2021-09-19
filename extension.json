@@ -140,8 +140,7 @@
 			],
 			"dependencies": [
 				"mediawiki.widgets.UserInputWidget",
-				"ext.oOJSPlus.widgets",
-				"ext.forms.widgets"
+				"ext.oOJSPlus.widgets"
 			]
 		}
 	},

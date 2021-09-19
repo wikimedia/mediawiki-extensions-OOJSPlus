@@ -44,7 +44,7 @@ class ApiQueryAllCategories extends Base {
 	 */
 	private function fullSearch( $data, $search ) {
 		$search = mb_strtolower( $search );
-		return array_filter( $data, function ( $item ) use ( $search ) {
+		return array_filter( $data, static function ( $item ) use ( $search ) {
 			if ( !is_array( $item ) ) {
 				return false;
 			}
