@@ -82,7 +82,7 @@ class ApiQueryAllGroups extends ApiQueryBase {
 	 */
 	protected function getExamplesMessages() {
 		return [
-			'action=query&list=groups=agrpefix=s'
+			'action=query&list=allgroups&agprefix=s'
 			=> 'apihelp-query+allgroups-example',
 		];
 	}
