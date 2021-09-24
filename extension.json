@@ -15,8 +15,7 @@
 	},
 	"APIListModules": {
 		"allgroups": {
-			"class": "\\OOJSPlus\\Api\\ApiQueryAllGroups",
-			"services": [ "UserGroupManager" ]
+			"class": "\\OOJSPlus\\Api\\ApiQueryAllGroups"
 		},
 		"allcategories": {
 			"class": "\\OOJSPlus\\Api\\ApiQueryAllCategories"

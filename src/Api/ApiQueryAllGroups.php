@@ -5,26 +5,18 @@ namespace OOJSPlus\Api;
 use ApiBase;
 use ApiQuery;
 use ApiQueryBase;
-use ApiQueryBlockInfoTrait;
-use MediaWiki\User\UserGroupManager;
-use Wikimedia\ParamValidator\ParamValidator;
+use User;
 
 class ApiQueryAllGroups extends ApiQueryBase {
-	use ApiQueryBlockInfoTrait;
-
-	/** @var UserGroupManager */
-	private $userGroupManager;
 
 	/**
 	 * @param ApiQuery $query
 	 * @param string $moduleName
-	 * @param UserGroupManager $userGroupManager
 	 */
 	public function __construct(
-		ApiQuery $query, $moduleName, UserGroupManager $userGroupManager
+		ApiQuery $query, $moduleName
 	) {
 		parent::__construct( $query, $moduleName, 'ag' );
-		$this->userGroupManager = $userGroupManager;
 	}
 
 	/**
@@ -34,7 +26,7 @@ class ApiQueryAllGroups extends ApiQueryBase {
 		$params = $this->extractRequestParams();
 		// Returns list of filtered groups
 		$allGroups = $this->prefixSearch(
-			$this->userGroupManager->listAllGroups(), $params
+			array_values( User::getAllGroups() ), $params
 		);
 		$processed = $this->processProps( $allGroups, $params['prop'] );
 		$processed = $this->fullSearch( $processed, $params['contains'] );
@@ -69,15 +61,15 @@ class ApiQueryAllGroups extends ApiQueryBase {
 			'prefix' => null,
 			'contains' => null,
 			'dir' => [
-				ParamValidator::PARAM_DEFAULT => 'ascending',
-				ParamValidator::PARAM_TYPE => [
+				ApiBase::PARAM_DFLT => 'ascending',
+				ApiBase::PARAM_TYPE => [
 					'ascending',
 					'descending',
 				],
 			],
 			'prop' => [
-				ParamValidator::PARAM_ISMULTI => true,
-				ParamValidator::PARAM_TYPE => [
+				ApiBase::PARAM_ISMULTI => true,
+				ApiBase::PARAM_TYPE => [
 					'displaytext',
 				],
 				ApiBase::PARAM_HELP_MSG_PER_VALUE => [],
