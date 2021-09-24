@@ -23,9 +23,11 @@
 	"oojsplus-stepprogressbar-default-final-label": "Done",
 	"apihelp-query+allgroups-summary": "Lists all groups declared on wiki",
 	"apihelp-query+allgroups-param-prefix": "Prefix search term",
+	"apihelp-query+allgroups-param-contains": "Search for all user groups that contain this value.",
 	"apihelp-query+allgroups-param-dir": "Sorting direction",
 	"apihelp-query+allgroups-param-prop": "Properties to retrieve",
 	"apihelp-query+allgroups-paramvalue-prop-additional": "Is additional group",
 	"apihelp-query+allgroups-paramvalue-prop-displaytext": "Displaytext of the group",
-	"apihelp-query+allgroups-example": "List groups starting with \"s\""
+	"apihelp-query+allgroups-example": "List groups starting with \"s\"",
+	"apihelp-query+allcategories-param-contains": "Search for all category titles that contain this value."
 }
