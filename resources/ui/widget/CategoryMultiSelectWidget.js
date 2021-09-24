@@ -22,7 +22,7 @@
 			// Update with preset values
 			this.updateHiddenInput();
 			// Set the default value (it might be different from just being empty)
-			this.$hiddenInput.prop( 'defaultValue', this.getSelectedGroups().join( '\n' ) );
+			this.$hiddenInput.prop( 'defaultValue', this.getSelectedCategories().join( '\n' ) );
 		}
 
 		// Events
