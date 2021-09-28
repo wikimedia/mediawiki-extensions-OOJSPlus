@@ -1,0 +1,9 @@
+{
+	"@metadata": {
+		"authors": [
+			"McDutchie"
+		]
+	},
+	"apihelp-query+allgroups-param-contains": "Cercar tote le gruppos de usatores que contine iste valor.",
+	"apihelp-query+allcategories-param-contains": "Cercar tote le titulos de categorias que contine iste valor."
+}
