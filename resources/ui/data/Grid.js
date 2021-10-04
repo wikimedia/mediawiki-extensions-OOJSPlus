@@ -133,7 +133,8 @@
 				$cell: $cell
 			}, this.onCellClick.bind( this ) );
 			$cell.on( 'dblclick', {
-				$cell: $cell
+				$cell: $cell,
+				item: item
 			}, this.onCellDblClick.bind( this ) );
 			$row.append( $cell );
 		}
@@ -172,12 +173,14 @@
 	};
 
 	OOJSPlus.ui.data.GridWidget.prototype.onCellClick = function( e ) {
+		this.emit( 'cellClick', e );
 	};
 
 	OOJSPlus.ui.data.GridWidget.prototype.onCellDblClick = function( e ) {
 		var $cell = $( e.data.$cell );
 		var field = $cell.attr( 'data-column' );
 
+		this.emit( 'cellDblclick', e );
 		if( this.columns[field].isEditable() === false ) {
 			return;
 		}
