@@ -130,7 +130,8 @@
 
 			$cell.attr( 'data-idx', idx );
 			$cell.on( 'click', {
-				$cell: $cell
+				$cell: $cell,
+				item: item
 			}, this.onCellClick.bind( this ) );
 			$cell.on( 'dblclick', {
 				$cell: $cell,
