@@ -1,0 +1,18 @@
+{
+	"@metadata": {
+		"authors": [
+			"Jeeputer"
+		]
+	},
+	"oojsplus-color-picker-color-blue": "آبی",
+	"oojsplus-color-picker-color-red": "قمرز",
+	"oojsplus-color-picker-color-green": "سبز",
+	"oojsplus-color-picker-color-yellow": "زرد",
+	"oojsplus-color-picker-color-orangered": "نارنجی قرمز",
+	"oojsplus-color-picker-color-olive": "زیتونی",
+	"oojsplus-color-picker-color-pink": "صورتی",
+	"oojsplus-color-picker-clear-label": "پاکسازی رنگ",
+	"oojsplus-color-picker-label": "انتخابگر رنگ",
+	"oojsplus-data-tree-item-remove-label": "حذف",
+	"oojsplus-stepprogressbar-default-final-label": "انجام شد"
+}
