@@ -46,7 +46,8 @@
 				"ui/widget/RangeWidget.js",
 				"ui/widget/GroupInputWidget.js",
 				"ui/widget/GroupMultiSelectWidget.js",
-				"ui/widget/CategoryMultiSelectWidget.js"
+				"ui/widget/CategoryMultiSelectWidget.js",
+				"ui/widget/StoreDataInputWidget.js"
 			],
 			"styles": [
 				"stylesheet/rangeWidget.less"
@@ -141,6 +142,18 @@
 			"dependencies": [
 				"mediawiki.widgets.UserInputWidget",
 				"ext.oOJSPlus.widgets"
+			]
+		},
+		"ext.oOJSPlus.dialogs": {
+			"scripts": [
+				"ui/dialog/FormDialog.js",
+				"ui/booklet/DialogBookletPage.js",
+				"ui/booklet/DialogBooklet.js",
+				"ui/dialog/BookletDialog.js"
+			],
+			"dependencies": [
+				"oojs-ui",
+				"ext.oOJSPlus"
 			]
 		}
 	},

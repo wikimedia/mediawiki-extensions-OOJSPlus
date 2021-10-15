@@ -75,10 +75,12 @@
 				paginator: {},
 				tree: {}
 			},
+			dialog: {},
+			booklet: {},
 			widget: {},
 			mixin: {}
 		}
 
-	}
+	};
 
 } )( mediaWiki, jQuery );
