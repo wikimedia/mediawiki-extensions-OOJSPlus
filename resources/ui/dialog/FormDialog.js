@@ -66,6 +66,11 @@
 		return [ 'cancel', 'done' ];
 	};
 
+	OOJSPlus.ui.dialog.FormDialog.prototype.showErrors = function( errors ) {
+		OOJSPlus.ui.dialog.FormDialog.parent.prototype.showErrors.call( this, errors );
+		this.updateSize();
+	};
+
 	OOJSPlus.ui.dialog.FormDialog.prototype.getActionDefinitions = function() {
 		return {
 			done: { action: 'done', label: 'Done', flags: [ 'primary', 'progressive' ] },

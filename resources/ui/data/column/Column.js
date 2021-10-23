@@ -8,6 +8,7 @@
 		this.editable = cfg.editable || false;
 		this.width = cfg.width || false;
 		this.sortable = cfg.sortable === false ? false : true;
+		this.valueParser = cfg.valueParser || null;
 
 		this.sortingDirection = 0;
 
@@ -39,6 +40,9 @@
 	};
 
 	OOJSPlus.ui.data.column.Column.prototype.renderCell = function( value, row ) {
+		if ( this.valueParser ) {
+			value = this.valueParser( value, row );
+		}
 		var $cell = $( '<td>' ).addClass( 'oojsplus-data-gridWidget-cell' );
 		$cell.attr( 'data-column', this.id );
 		$cell.attr( 'data-value', value );

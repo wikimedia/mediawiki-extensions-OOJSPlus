@@ -13,6 +13,7 @@
 		this.deletable = cfg.deletable || false;
 		this.deletePrompt = cfg.deletePrompt || mw.message( 'oojsplus-data-delete-row-prompt' ).plain();
 		this.data = cfg.data || [];
+		this.allowDuplicates = cfg.allowDuplicates || false;
 
 		this.columns = {};
 		this.buildColumns( cfg.columns );
@@ -28,6 +29,8 @@
 		this.isDirty = false;
 
 		this.gridDataIndexCounter = 0;
+		this.noHeader = cfg.noHeader || false;
+		this.deleteNoConfirm = cfg.deleteNoConfirm || false;
 
 		this.addHeader();
 		this.addItems( this.data );
@@ -58,6 +61,8 @@
 				columnWidget = new OOJSPlus.ui.data.column.Boolean( column );
 			} else if( type === 'url' ) {
 				columnWidget = new OOJSPlus.ui.data.column.Url( column );
+			} else if ( type === 'icon' ) {
+				columnWidget = new OOJSPlus.ui.data.column.Icon( column );
 			}
 			columnWidget.on( 'columnSort', this.onColumnSort.bind( this ) );
 			this.columns[field] = columnWidget;
@@ -65,6 +70,9 @@
 	};
 
 	OOJSPlus.ui.data.GridWidget.prototype.addHeader = function() {
+		if ( this.noHeader ) {
+			return;
+		}
 		var $header = $( '<thead>' ).addClass( 'oojsplus-data-gridWidget-header' );
 		var $row = $( '<tr>' ).addClass( 'oojsplus-data-gridWidget-row' );
 		for( var field in this.columns ) {
@@ -87,6 +95,15 @@
 	};
 
 	OOJSPlus.ui.data.GridWidget.prototype.addItemsInternaly = function( data ) {
+		if ( !this.allowDuplicates ) {
+			var unique = [];
+			for ( var i = 0; i < data.length; i++ ) {
+				if ( !this.itemExists( unique, data[i] ) ) {
+					unique.push( data[i] );
+				}
+			}
+			data = unique;
+		}
 		for( var idx in data ) {
 			if( this.schemaFits( data[idx] ) ) {
 				this.gridData[this.gridDataIndexCounter] = data[idx];
@@ -97,6 +114,27 @@
 		this.paginator.setData( this.gridData );
 		this.paginator.reset();
 		this.paginator.next();
+	};
+
+	OOJSPlus.ui.data.GridWidget.prototype.itemExists = function( list, item ) {
+		if ( list.length === 0 ) {
+			return false;
+		}
+		for ( var i = 0; i < list.length; i ++ ) {
+			var different = false;
+			for ( var key in list[i] ) {
+				if ( !list[i].hasOwnProperty( key ) ) {
+					continue;
+				}
+				if ( item[key] !== list[i][key] ) {
+					different = true;
+				}
+			}
+			if ( !different ) {
+				return true;
+			}
+		}
+		return false;
 	};
 
 	OOJSPlus.ui.data.GridWidget.prototype.sortData = function( field, dir ) {
@@ -230,29 +268,37 @@
 	};
 
 	OOJSPlus.ui.data.GridWidget.prototype.onRowDelete = function( e ) {
-		OO.ui.confirm( this.deletePrompt ).done( function( confirmed ) {
-			if( !confirmed ) {
-				return;
-			}
-			var idx = e.data.rowIdx;
-			var row = this.gridData[idx];
-			// Update data
-			delete( this.gridData[idx] );
+		if ( this.deleteNoConfirm ) {
+			this.doDeleteRow( e );
+		} else {
+			OO.ui.confirm( this.deletePrompt ).done( function( confirmed ) {
+				if ( !confirmed ) {
+					return;
+				}
+				this.doDeleteRow( e );
+			}.bind( this ) );
+		}
+	};
 
-			var $row = $( e.data.$row );
-			$row.remove();
+	OOJSPlus.ui.data.GridWidget.prototype.doDeleteRow = function( e ) {
+		var idx = e.data.rowIdx;
+		var row = this.gridData[idx];
+		// Update data
+		delete( this.gridData[idx] );
 
-			this.emit( 'rowDeleteComplete', {
-				row: row
-			} );
+		var $row = $( e.data.$row );
+		$row.remove();
 
-			var newData = [];
-			$.each( this.gridData, function( k, item ) {
-				newData.push( item );
-			} );
+		this.emit( 'rowDeleteComplete', {
+			row: row
+		} );
 
-			this.drawGrid( newData );
-		}.bind( this ) );
+		var newData = [];
+		$.each( this.gridData, function( k, item ) {
+			newData.push( item );
+		} );
+
+		this.drawGrid( newData );
 	};
 
 	OOJSPlus.ui.data.GridWidget.prototype.onColumnSort = function( field ) {
