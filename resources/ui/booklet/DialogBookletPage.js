@@ -10,6 +10,8 @@
 
 		this.makePanel();
 
+		this.setData( cfg.data || {} );
+
 		this.$element.addClass( 'oojsplus-dialog-booklet-page' );
 	};
 
@@ -97,5 +99,31 @@
 			return $.Deferred().resolve( { action: 'close' } ).promise();
 		}
 		return $.Deferred().resolve( {} ).promise();
+	};
+
+	OOJSPlus.ui.booklet.DialogBookletPage.prototype.checkValidity = function( inputs ) {
+		var dfd = $.Deferred();
+
+		// Clone array
+		var toCheck = inputs.slice(0);
+		this.doCheckValidity( toCheck, dfd );
+
+		return dfd.promise();
+	};
+
+	OOJSPlus.ui.booklet.DialogBookletPage.prototype.doCheckValidity = function( inputs, dfd ) {
+		if ( inputs.length === 0 ) {
+			dfd.resolve();
+			return;
+		}
+		var input = inputs.shift();
+
+		input.getValidity().done( function() {
+			input.setValidityFlag( true );
+			this.doCheckValidity( inputs, dfd );
+		}.bind( this ) ).fail( function() {
+			input.setValidityFlag( false );
+			dfd.reject();
+		} );
 	};
 } )( mediaWiki, jQuery );

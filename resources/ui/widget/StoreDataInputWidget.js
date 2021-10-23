@@ -16,6 +16,7 @@
 		this.lookupMenu.$element.addClass( 'oojsplus-widget-storeDataInputWidget-menu' );
 
 		this.queryAction = config.queryAction;
+		this.additionalQueryParams = config.additionalQueryParams || {};
 		this.limit = config.limit || 9999;
 		this.labelField = config.labelField;
 		this.groupBy = config.groupBy || null;
@@ -103,10 +104,10 @@
 	 */
 	OOJSPlus.ui.widget.StoreDataInputWidget.prototype.getLookupRequest = function () {
 		var inputValue = this.value,
-			queryData = {
+			queryData = $.extend( {
 				action: this.queryAction,
 				limit: this.limit
-			};
+			}, this.additionalQueryParams );
 
 		if ( inputValue.trim() !== '' ) {
 			queryData.filter = JSON.stringify( [ {

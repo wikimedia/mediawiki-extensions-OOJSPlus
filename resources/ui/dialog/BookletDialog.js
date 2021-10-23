@@ -88,7 +88,7 @@
 		}
 
 		this.currentPage = page;
-		this.currentPage.setData( data );
+		this.currentPage.setData( data || {} );
 		this.booklet.setPage( name );
 		this.title.setLabel( page.getTitle() );
 		this.setSize( page.getSize() );
