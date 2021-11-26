@@ -107,6 +107,7 @@
 				"ui/data/column/Delete.js",
 				"ui/data/column/Url.js",
 				"ui/data/column/Icon.js",
+				"ui/data/column/Action.js",
 				"ui/data/Grid.js",
 				"ui/data/Paginator.js",
 				"ui/data/paginator/Page.js",
