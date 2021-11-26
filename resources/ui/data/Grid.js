@@ -63,10 +63,16 @@
 				columnWidget = new OOJSPlus.ui.data.column.Url( column );
 			} else if ( type === 'icon' ) {
 				columnWidget = new OOJSPlus.ui.data.column.Icon( column );
+			} else if ( type === 'action' ) {
+				columnWidget = new OOJSPlus.ui.data.column.Action( this, column );
 			}
 			columnWidget.on( 'columnSort', this.onColumnSort.bind( this ) );
 			this.columns[field] = columnWidget;
 		}
+	};
+
+	OOJSPlus.ui.data.GridWidget.prototype.onAction = function( id, row ) {
+		this.emit( 'action', id, row );
 	};
 
 	OOJSPlus.ui.data.GridWidget.prototype.addHeader = function() {
@@ -153,6 +159,13 @@
 
 	OOJSPlus.ui.data.GridWidget.prototype.schemaFits = function( item ) {
 		for( var field in this.columns ) {
+			if ( !this.columns.hasOwnProperty( field ) ) {
+				continue;
+			}
+			var column = this.columns[field];
+			if ( column instanceof OOJSPlus.ui.data.column.Action ) {
+				continue;
+			}
 			if( !( field in item ) ) {
 				return false;
 			}
