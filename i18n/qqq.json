@@ -26,7 +26,7 @@
 	"apihelp-query+allgroups-param-prefix": "{{doc-apihelp-param|query+allgroups|prefix}}",
 	"apihelp-query+allgroups-param-contains": "{{doc-apihelp-param|query+allgroups|contains}}",
 	"apihelp-query+allgroups-param-dir": "{{doc-apihelp-param|query+allgroups|dir}}",
-	"apihelp-query+allgroups-param-prop": "{{doc-apihelp-param|query+alltransclusions|prop|paramvalues=1}}",
+	"apihelp-query+allgroups-param-prop": "{{doc-apihelp-param|query+allgroups|prop|paramvalues=1}}",
 	"apihelp-query+allgroups-paramvalue-prop-additional": "{{doc-apihelp-paramvalue|query+allgroups|prop|additional}}",
 	"apihelp-query+allgroups-paramvalue-prop-displaytext": "{{doc-apihelp-paramvalue|query+allgroups|prop|displaytext}}",
 	"apihelp-query+allgroups-example": "{{doc-apihelp-example|query+allgroups}}",
