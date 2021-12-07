@@ -48,6 +48,14 @@
 		}
 		stopPropagation = stopPropagation || false;
 
+		if ( typeof value !== 'string' ) {
+			if ( value.length !== 2 ) {
+				return;
+			}
+			if ( value[ 0 ] === '' ) {
+				value = value[ 1 ];
+			}
+		}
 		value = value.trim();
 		OOJSPlus.ui.widget.HexColorPickerWidget.parent.prototype.setValue.call( this, value );
 		if ( !stopPropagation ) {
