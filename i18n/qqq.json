@@ -30,5 +30,10 @@
 	"apihelp-query+allgroups-paramvalue-prop-additional": "{{doc-apihelp-paramvalue|query+allgroups|prop|additional}}",
 	"apihelp-query+allgroups-paramvalue-prop-displaytext": "{{doc-apihelp-paramvalue|query+allgroups|prop|displaytext}}",
 	"apihelp-query+allgroups-example": "{{doc-apihelp-example|query+allgroups}}",
-	"apihelp-query+allcategories-param-contains": "{{doc-apihelp-param|query+allcategories|contains}}"
+	"apihelp-query+allcategories-param-contains": "{{doc-apihelp-param|query+allcategories|contains}}",
+	"oojsplus-dialog-action-done": "Label for action done in dialog",
+	"oojsplus-dialog-action-delete": "Label for action delete in dialog",
+	"oojsplus-dialog-action-create": "Label for action create in dialog",
+	"oojsplus-dialog-action-add": "Label for action add in dialog",
+	"oojsplus-dialog-action-cancel": "Label for action cancel in dialog"
 }

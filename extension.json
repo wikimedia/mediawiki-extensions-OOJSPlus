@@ -160,6 +160,13 @@
 			"dependencies": [
 				"oojs-ui",
 				"ext.oOJSPlus"
+			],
+			"messages": [
+				"oojsplus-dialog-action-done",
+				"oojsplus-dialog-action-delete",
+				"oojsplus-dialog-action-create",
+				"oojsplus-dialog-action-add",
+				"oojsplus-dialog-action-cancel"
 			]
 		}
 	},
