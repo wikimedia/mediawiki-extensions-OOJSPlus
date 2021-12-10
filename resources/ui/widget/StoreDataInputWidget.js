@@ -69,6 +69,10 @@
 		if ( item instanceof OO.ui.MenuOptionWidget ) {
 			this.selectedItem = item;
 			item = item.getLabel();
+		} else if ( this.selectedItem && this.selectedItem.getLabel() === item ) {
+			// On click in the field, it will re-set value. If this value is the same
+			// as the already selected item, do nothing.
+			return;
 		} else {
 			this.selectedItem = null;
 		}
