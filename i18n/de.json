@@ -29,5 +29,10 @@
 	"apihelp-query+allgroups-param-prop": "Abzufragende Eigenschaften",
 	"apihelp-query+allgroups-paramvalue-prop-additional": "Ist eine zusätzliche Gruppe",
 	"apihelp-query+allgroups-paramvalue-prop-displaytext": "Anzeigetext der Gruppe",
-	"apihelp-query+allgroups-example": "Gruppen auflisten, die mit „s“ beginnen"
+	"apihelp-query+allgroups-example": "Gruppen auflisten, die mit „s“ beginnen",
+	"oojsplus-dialog-action-done": "Fertig",
+	"oojsplus-dialog-action-delete": "Löschen",
+	"oojsplus-dialog-action-create": "Erstellen",
+	"oojsplus-dialog-action-add": "Hinzufügen",
+	"oojsplus-dialog-action-cancel": "Abbrechen"
 }

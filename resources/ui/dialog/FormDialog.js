@@ -73,11 +73,16 @@
 
 	OOJSPlus.ui.dialog.FormDialog.prototype.getActionDefinitions = function() {
 		return {
-			done: { action: 'done', label: 'Done', flags: [ 'primary', 'progressive' ] },
-			delete: { action: 'delete', label: 'Delete', flags: [ 'primary', 'destructive' ] },
-			create: { action: 'create', label: 'Create', flags: [ 'primary', 'progressive' ] },
-			add: { action: 'add', label: 'Add', flags: [ 'primary', 'progressive' ] },
-			cancel: { action: 'cancel', label: 'Cancel', flags: 'safe' }
+			done: { action: 'done', label: mw.message( 'oojsplus-dialog-action-done' ).plain(),
+				flags: [ 'primary', 'progressive' ] },
+			delete: { action: 'delete', label: mw.message( 'oojsplus-dialog-action-delete' ).plain(),
+				flags: [ 'primary', 'destructive' ] },
+			create: { action: 'create', label: mw.message( 'oojsplus-dialog-action-create' ).plain(),
+				flags: [ 'primary', 'progressive' ] },
+			add: { action: 'add', label: mw.message( 'oojsplus-dialog-action-add' ).plain(),
+				flags: [ 'primary', 'progressive' ] },
+			cancel: { action: 'cancel', label:  mw.message( 'oojsplus-dialog-action-cancel' ).plain(),
+				flags: 'safe' }
 		};
 	};
 
