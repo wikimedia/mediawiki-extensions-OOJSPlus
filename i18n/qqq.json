@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"Ajeje Brazorf",
 			"Robby",
 			"Umherirrender"
 		]
@@ -31,9 +32,9 @@
 	"apihelp-query+allgroups-paramvalue-prop-displaytext": "{{doc-apihelp-paramvalue|query+allgroups|prop|displaytext}}",
 	"apihelp-query+allgroups-example": "{{doc-apihelp-example|query+allgroups}}",
 	"apihelp-query+allcategories-param-contains": "{{doc-apihelp-param|query+allcategories|contains}}",
-	"oojsplus-dialog-action-done": "Label for action done in dialog",
-	"oojsplus-dialog-action-delete": "Label for action delete in dialog",
-	"oojsplus-dialog-action-create": "Label for action create in dialog",
-	"oojsplus-dialog-action-add": "Label for action add in dialog",
-	"oojsplus-dialog-action-cancel": "Label for action cancel in dialog"
+	"oojsplus-dialog-action-done": "Label for action done in dialog\n\n{{Identical|Done}}",
+	"oojsplus-dialog-action-delete": "Label for action delete in dialog\n\n{{Identical|Delete}}",
+	"oojsplus-dialog-action-create": "Label for action create in dialog\n\n{{Identical|Create}}",
+	"oojsplus-dialog-action-add": "Label for action add in dialog\n\n{{Identical|Add}}",
+	"oojsplus-dialog-action-cancel": "Label for action cancel in dialog\n\n{{Identical|Cancel}}"
 }
