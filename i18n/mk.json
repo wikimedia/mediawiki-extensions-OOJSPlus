@@ -30,5 +30,10 @@
 	"apihelp-query+allgroups-paramvalue-prop-additional": "Е дополнителна група",
 	"apihelp-query+allgroups-paramvalue-prop-displaytext": "Приказен текст за групата",
 	"apihelp-query+allgroups-example": "Испиши групи што почнуваат со „с“",
-	"apihelp-query+allcategories-param-contains": "Пребарај ги сите категориски наслови што ја содржат оваа вредност."
+	"apihelp-query+allcategories-param-contains": "Пребарај ги сите категориски наслови што ја содржат оваа вредност.",
+	"oojsplus-dialog-action-done": "Готово",
+	"oojsplus-dialog-action-delete": "Избриши",
+	"oojsplus-dialog-action-create": "Создај",
+	"oojsplus-dialog-action-add": "Додај",
+	"oojsplus-dialog-action-cancel": "Откажи"
 }
