@@ -103,6 +103,7 @@
 				"ui/data/column/Boolean.js",
 				"ui/data/column/Delete.js",
 				"ui/data/column/Url.js",
+				"ui/data/column/Date.js",
 				"ui/data/column/Icon.js",
 				"ui/data/column/Action.js",
 				"ui/data/Grid.js",
