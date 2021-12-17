@@ -7,16 +7,11 @@
 
 	OO.inheritClass( OOJSPlus.ui.data.column.Text, OOJSPlus.ui.data.column.Column );
 
-	OOJSPlus.ui.data.column.Text.prototype.renderCell = function( value ) {
+	OOJSPlus.ui.data.column.Text.prototype.renderCell = function( value, row ) {
+		value = this.getDisplayText( value, row );
 		var $cell = OOJSPlus.ui.data.column.Text.parent.prototype.renderCell.apply( this, [ value ] );
 		$cell.addClass( 'text-cell' );
 		return $cell;
-	};
-
-	OOJSPlus.ui.data.column.Text.prototype.getViewControls = function( value ) {
-		return new OO.ui.LabelWidget( {
-			label: value
-		} );
 	};
 
 	OOJSPlus.ui.data.column.Text.prototype.getEditControls = function( value ) {

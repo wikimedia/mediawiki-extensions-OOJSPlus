@@ -55,6 +55,7 @@
 
 			var type = column.type;
 			var columnWidget;
+			// TODO: Registry
 			if( type === 'text' ) {
 				columnWidget = new OOJSPlus.ui.data.column.Text( column );
 			} else if( type === 'boolean' ) {
@@ -63,6 +64,8 @@
 				columnWidget = new OOJSPlus.ui.data.column.Url( column );
 			} else if ( type === 'icon' ) {
 				columnWidget = new OOJSPlus.ui.data.column.Icon( column );
+			} else if ( type === 'date' ) {
+				columnWidget = new OOJSPlus.ui.data.column.Date( column );
 			} else if ( type === 'action' ) {
 				columnWidget = new OOJSPlus.ui.data.column.Action( this, column );
 			}
