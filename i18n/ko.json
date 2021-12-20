@@ -16,5 +16,10 @@
 	"oojsplus-color-picker-label": "색 선택기",
 	"oojsplus-data-tree-item-remove-label": "제거",
 	"oojsplus-data-tree-item-add-label": "새 하위 항목 추가",
-	"oojsplus-stepprogressbar-default-final-label": "완료"
+	"oojsplus-stepprogressbar-default-final-label": "완료",
+	"oojsplus-dialog-action-done": "완료",
+	"oojsplus-dialog-action-delete": "삭제",
+	"oojsplus-dialog-action-create": "만들기",
+	"oojsplus-dialog-action-add": "추가",
+	"oojsplus-dialog-action-cancel": "취소"
 }

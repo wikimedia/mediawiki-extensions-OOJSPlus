@@ -14,5 +14,9 @@
 	"oojsplus-data-delete-row-prompt": "Sidd Dir sécher datt Dir dës Rei läsche wëllt?",
 	"oojsplus-data-paginator-page-total-count-label": "{{PLURAL:$1|$1 Rei|$1 Reien}}",
 	"oojsplus-data-tree-item-remove-label": "Ewechhuelen",
-	"oojsplus-stepprogressbar-default-final-label": "Fäerdeg"
+	"oojsplus-stepprogressbar-default-final-label": "Fäerdeg",
+	"oojsplus-dialog-action-done": "Fäerdeg",
+	"oojsplus-dialog-action-delete": "Läschen",
+	"oojsplus-dialog-action-add": "Derbäisetzen",
+	"oojsplus-dialog-action-cancel": "Ofbriechen"
 }

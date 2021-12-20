@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Vlad5250"
+			"Vlad5250",
+			"Kareyac"
 		]
 	},
 	"oojsplus-color-picker-color-blue": "Синий",
@@ -10,5 +11,10 @@
 	"oojsplus-color-picker-color-yellow": "Жёлтый",
 	"oojsplus-color-picker-color-pink": "Розовый",
 	"oojsplus-color-picker-clear-label": "Очистить цвет",
-	"oojsplus-data-delete-row-prompt": "Вы уверены, что хотите удалить эту строку?"
+	"oojsplus-data-delete-row-prompt": "Вы уверены, что хотите удалить эту строку?",
+	"oojsplus-dialog-action-done": "Готово",
+	"oojsplus-dialog-action-delete": "Удалить",
+	"oojsplus-dialog-action-create": "Создать",
+	"oojsplus-dialog-action-add": "Добавить",
+	"oojsplus-dialog-action-cancel": "Отмена"
 }

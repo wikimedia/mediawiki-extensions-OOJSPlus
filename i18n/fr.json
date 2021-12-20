@@ -32,5 +32,10 @@
 	"apihelp-query+allgroups-paramvalue-prop-additional": "Est un groupe supplémentaire",
 	"apihelp-query+allgroups-paramvalue-prop-displaytext": "Displaytext du groupe",
 	"apihelp-query+allgroups-example": "Lister les groupes commençant par « s »",
-	"apihelp-query+allcategories-param-contains": "Recherchez tous les titres de catégorie qui contiennent cette valeur."
+	"apihelp-query+allcategories-param-contains": "Recherchez tous les titres de catégorie qui contiennent cette valeur.",
+	"oojsplus-dialog-action-done": "Terminé",
+	"oojsplus-dialog-action-delete": "Supprimer",
+	"oojsplus-dialog-action-create": "Créer",
+	"oojsplus-dialog-action-add": "Ajouter",
+	"oojsplus-dialog-action-cancel": "Annuler"
 }
