@@ -9,6 +9,7 @@
 		this.width = cfg.width || false;
 		this.sortable = cfg.sortable === false ? false : true;
 		this.valueParser = cfg.valueParser || null;
+		this.display = cfg.display || null;
 
 		this.sortingDirection = 0;
 
@@ -40,9 +41,7 @@
 	};
 
 	OOJSPlus.ui.data.column.Column.prototype.renderCell = function( value, row ) {
-		if ( this.valueParser ) {
-			value = this.valueParser( value, row );
-		}
+		value = this.getDisplayText( value, row );
 		var $cell = $( '<td>' ).addClass( 'oojsplus-data-gridWidget-cell' );
 		$cell.attr( 'data-column', this.id );
 		$cell.attr( 'data-value', value );
@@ -51,9 +50,24 @@
 		}
 		$cell.append( this.getViewControls( value ).$element );
 		return $cell;
-	}
+	};
 
 	OOJSPlus.ui.data.column.Column.prototype.getViewControls = function( value ) {
+		return new OO.ui.LabelWidget( {
+			label: value
+		} );
+	};
+
+	OOJSPlus.ui.data.column.Column.prototype.getDisplayText = function( value, row ) {
+		row = row || {};
+		if ( this.display && row.hasOwnProperty( this.display ) ) {
+			value = row[this.display];
+		}
+
+		if ( this.valueParser ) {
+			return this.valueParser( value, row );
+		}
+		return value;
 	};
 
 	OOJSPlus.ui.data.column.Column.prototype.getEditControls = function( value ) {

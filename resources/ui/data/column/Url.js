@@ -15,7 +15,7 @@
 		var $cell = $( '<td>' ).addClass( 'oojsplus-data-gridWidget-cell' );
 		$cell.attr( 'data-column', this.id );
 		$cell.attr( 'data-value', value );
-		$cell.addClass( 'boolean-cell' );
+		$cell.addClass( 'url-cell' );
 		$cell.append( this.getViewControls( value, row ).$element );
 		return $cell;
 	};
