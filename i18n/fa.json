@@ -14,5 +14,10 @@
 	"oojsplus-color-picker-clear-label": "پاکسازی رنگ",
 	"oojsplus-color-picker-label": "انتخابگر رنگ",
 	"oojsplus-data-tree-item-remove-label": "حذف",
-	"oojsplus-stepprogressbar-default-final-label": "انجام شد"
+	"oojsplus-stepprogressbar-default-final-label": "انجام شد",
+	"oojsplus-dialog-action-done": "انجام شد",
+	"oojsplus-dialog-action-delete": "حذف",
+	"oojsplus-dialog-action-create": "ایجاد",
+	"oojsplus-dialog-action-add": "افزودن",
+	"oojsplus-dialog-action-cancel": "لغو"
 }
