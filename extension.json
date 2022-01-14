@@ -16,7 +16,7 @@
 	"APIListModules": {
 		"allgroups": {
 			"class": "\\OOJSPlus\\Api\\ApiQueryAllGroups",
-			"services": [ "UserGroupManager" ]
+			"services": [ "MWStakeCommonUtilsFactory" ]
 		},
 		"allcategories": {
 			"class": "\\OOJSPlus\\Api\\ApiQueryAllCategories"

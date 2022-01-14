@@ -6,25 +6,26 @@ use ApiBase;
 use ApiQuery;
 use ApiQueryBase;
 use ApiQueryBlockInfoTrait;
-use MediaWiki\User\UserGroupManager;
+use MWStake\MediaWiki\Component\Utils\Utility\GroupHelper;
+use MWStake\MediaWiki\Component\Utils\UtilityFactory;
 use Wikimedia\ParamValidator\ParamValidator;
 
 class ApiQueryAllGroups extends ApiQueryBase {
 	use ApiQueryBlockInfoTrait;
 
-	/** @var UserGroupManager */
-	private $userGroupManager;
+	/** @var GroupHelper */
+	private $groupHelper;
 
 	/**
 	 * @param ApiQuery $query
 	 * @param string $moduleName
-	 * @param UserGroupManager $userGroupManager
+	 * @param UtilityFactory $utilityFactory
 	 */
 	public function __construct(
-		ApiQuery $query, $moduleName, UserGroupManager $userGroupManager
+		ApiQuery $query, $moduleName, UtilityFactory $utilityFactory
 	) {
 		parent::__construct( $query, $moduleName, 'ag' );
-		$this->userGroupManager = $userGroupManager;
+		$this->groupHelper = $utilityFactory->getGroupHelper();
 	}
 
 	/**
@@ -34,7 +35,7 @@ class ApiQueryAllGroups extends ApiQueryBase {
 		$params = $this->extractRequestParams();
 		// Returns list of filtered groups
 		$allGroups = $this->prefixSearch(
-			$this->userGroupManager->listAllGroups(), $params
+			$this->groupHelper->getAvailableGroups(), $params
 		);
 		$processed = $this->processProps( $allGroups, $params['prop'] );
 		$processed = $this->fullSearch( $processed, $params['contains'] );
