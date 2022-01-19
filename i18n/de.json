@@ -3,6 +3,7 @@
 		"authors": [
 			"Gebu",
 			"Mirzali",
+			"Mschlindwein",
 			"Zabe"
 		]
 	},
@@ -25,11 +26,13 @@
 	"oojsplus-stepprogressbar-default-final-label": "Fertig",
 	"apihelp-query+allgroups-summary": "Listet alle im Wiki eingetragenen Gruppen auf",
 	"apihelp-query+allgroups-param-prefix": "Präfix-Suchbegriff",
+	"apihelp-query+allgroups-param-contains": "Suche nach allen Benutzergruppen, die diesen Wert beinhalten.",
 	"apihelp-query+allgroups-param-dir": "Sortierrichtung",
 	"apihelp-query+allgroups-param-prop": "Abzufragende Eigenschaften",
 	"apihelp-query+allgroups-paramvalue-prop-additional": "Ist eine zusätzliche Gruppe",
 	"apihelp-query+allgroups-paramvalue-prop-displaytext": "Anzeigetext der Gruppe",
 	"apihelp-query+allgroups-example": "Gruppen auflisten, die mit „s“ beginnen",
+	"apihelp-query+allcategories-param-contains": "Suche nach allen Kategorietiteln, die diesen Wert enthalten.",
 	"oojsplus-dialog-action-done": "Fertig",
 	"oojsplus-dialog-action-delete": "Löschen",
 	"oojsplus-dialog-action-create": "Erstellen",
