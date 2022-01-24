@@ -4,7 +4,8 @@
 			"BaRaN6161 TURK",
 			"Hedda",
 			"Mirzali",
-			"MuratTheTurkish"
+			"MuratTheTurkish",
+			"Can"
 		]
 	},
 	"oojsplus-desc": "OOJS için küçük araçlar ve yardımcı işlevler sağlar",
@@ -23,5 +24,10 @@
 	"oojsplus-data-tree-new-root-item-label": "Yeni kök öğe ekle",
 	"oojsplus-data-tree-item-remove-label": "Kaldır",
 	"oojsplus-data-tree-item-add-label": "Yeni alt öğe ekle",
-	"oojsplus-stepprogressbar-default-final-label": "Yapıldı"
+	"oojsplus-stepprogressbar-default-final-label": "Yapıldı",
+	"oojsplus-dialog-action-done": "Tamam",
+	"oojsplus-dialog-action-delete": "Sil",
+	"oojsplus-dialog-action-create": "Oluştur",
+	"oojsplus-dialog-action-add": "Ekle",
+	"oojsplus-dialog-action-cancel": "İptal"
 }
