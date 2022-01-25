@@ -2,12 +2,13 @@
 	"@metadata": {
 		"authors": [
 			"Antsa",
-			"MITO"
+			"MITO",
+			"Moj"
 		]
 	},
 	"oojsplus-color-picker-color-blue": "Sininen",
 	"oojsplus-color-picker-color-red": "Punainen",
-	"oojsplus-color-picker-color-green": "Vihreiä",
+	"oojsplus-color-picker-color-green": "Vihreä",
 	"oojsplus-color-picker-color-olive": "Oliivi",
 	"oojsplus-color-picker-color-pink": "Pinkki",
 	"oojsplus-dialog-action-done": "Valmis",
