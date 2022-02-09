@@ -50,7 +50,8 @@
 				"ui/widget/GroupInputWidget.js",
 				"ui/widget/GroupMultiSelectWidget.js",
 				"ui/widget/CategoryMultiSelectWidget.js",
-				"ui/widget/StoreDataInputWidget.js"
+				"ui/widget/StoreDataInputWidget.js",
+				"ui/widget/MultiSelectFileWidget.js"
 			],
 			"styles": [
 				"stylesheet/rangeWidget.less"
