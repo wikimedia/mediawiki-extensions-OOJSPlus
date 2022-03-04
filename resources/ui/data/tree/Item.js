@@ -6,6 +6,7 @@
 		this.label = cfg.label;
 		this.tree = cfg.tree;
 		this.level = cfg.level;
+		this.childrenCount = cfg.childrenCount;
 		this.isLeaf = cfg.isLeaf || false;
 		this.allowAdditions = typeof cfg.allowAdditions !== 'undefined' ? cfg.allowAdditions : this.tree.allowAdditions;
 		this.labelAdd = typeof cfg.labelAdd !== 'undefined' ? cfg.labelAdd : this.tree.labelAdd;
@@ -61,10 +62,11 @@
 		if ( this.expander ) {
 			return;
 		}
-		this.expanded = true;
+		this.expanded = this.childrenCount > 0 ? true : false;
 		this.expander = new OO.ui.ButtonWidget( {
 			framed: false,
-			indicator: 'up'
+			indicator: this.childrenCount > 0 ? 'up' : 'down',
+			classes: [ 'oojsplus-data-tree-expander' ]
 		} );
 		this.expander.connect( this, {
 			click: 'onExpanderClick'
@@ -153,11 +155,15 @@
 	OOJSPlus.ui.data.tree.Item.prototype.onExpanderClick = function() {
 		if ( this.expanded ) {
 			this.tree.collapseNode( this.name );
+			this.expander.setIndicator( 'down' );
+			this.expanded = false;
 		} else {
-			this.tree.expandNode( this.name );
+			this.tree.assertNodeLoaded( this.name ).done( function() {
+				this.tree.expandNode( this.name );
+				this.expander.setIndicator( 'up' );
+				this.expanded = true;
+			}.bind( this ) );
 		}
-		this.expanded = !this.expanded;
-		this.expander.setIndicator( this.expanded ? 'up' : 'down' );
 	};
 
 	OOJSPlus.ui.data.tree.Item.prototype.setIsLeaf = function( isLeaf ) {
@@ -178,7 +184,9 @@
 	};
 
 	OOJSPlus.ui.data.tree.Item.prototype.changeVisibility = function( visible ) {
-		this.optionsPopup.toggle( false );
+		if ( this.optionsPopup ) {
+			this.optionsPopup.toggle( false );
+		}
 		if ( visible ) {
 			this.$element.show();
 		} else {
