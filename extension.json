@@ -113,7 +113,8 @@
 				"ui/data/paginator/Page.js",
 				"ui/data/tree/Item.js",
 				"ui/data/tree/DraggableItem.js",
-				"ui/data/Tree.js"
+				"ui/data/Tree.js",
+				"ui/data/StoreTree.js"
 			],
 			"styles": [
 				"stylesheet/data/main.less",

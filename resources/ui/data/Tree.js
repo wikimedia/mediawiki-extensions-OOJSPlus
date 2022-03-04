@@ -45,14 +45,23 @@
 		lvl = lvl || 0;
 		parent = parent || null;
 		for( var i = 0; i < data.length; i++ ) {
-			var item = data[i];
+			var item = data[i],
+				isLeaf = true;
+
+			if (
+				( item.hasOwnProperty( 'leaf' ) && item.leaf === false )  ||
+				( item.hasOwnProperty( 'items' ) && item.items.length > 0 )
+			) {
+				isLeaf = false;
+			}
 			var widget = new this.itemClass( {
 				name: item.name,
 				icon: item.icon || '',
 				label: item.label || '',
 				indicator: item.indicator || '',
 				level: lvl,
-				isLeaf: !item.hasOwnProperty( 'items' ) || item.items.length === 0,
+				isLeaf: isLeaf,
+				childrenCount: item.hasOwnProperty( 'items' ) ? item.items.length : 0,
 				tree: this
 			} );
 			widget.connect( this, {
@@ -126,17 +135,28 @@
 	};
 
 	OOJSPlus.ui.data.Tree.prototype.collapseNode = function( name ) {
-		var item = this.getItem( name );
 		this.foreachNode( this.getChildNodes( name, true ), function( node ) {
 			node.widget.hide();
 		} );
 	};
 
 	OOJSPlus.ui.data.Tree.prototype.expandNode = function( name ) {
-		var item = this.getItem( name );
 		this.foreachNode( this.getChildNodes( name, true ), function( node ) {
 			node.widget.show();
 		} );
+	};
+
+	OOJSPlus.ui.data.Tree.prototype.assertNodeLoaded = function( name ) {
+		var item = this.getItem( name ),
+			dfd = $.Deferred();
+
+		if ( !item ) {
+			dfd.reject();
+		} else {
+			dfd.resolve();
+		}
+
+		return dfd.promise();
 	};
 
 	OOJSPlus.ui.data.Tree.prototype.removeNode = function( name, subsequent ) {
@@ -146,7 +166,7 @@
 		this.structure[name].widget.remove();
 		delete( this.structure[name] );
 		if ( !subsequent ) {
-			var children = this.getChildNodes( name , true )
+			var children = this.getChildNodes( name , true );
 			this.reEvaluateParent( item.childOf );
 			this.foreachNode( children, function( node ) {
 				this.removeNode( node.widget.getName(), true );
