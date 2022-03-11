@@ -1,6 +1,9 @@
 {
 	"@metadata": {
 		"authors": [
+			"DDPAT",
+			"Ice bulldog",
+			"Piramidion",
 			"Vlad5250"
 		]
 	},
@@ -14,5 +17,20 @@
 	"oojsplusdemos": "Демонстрації OOJSPlus",
 	"oojsplus-data-tree-new-root-item-label": "Додати новий кореневий елемент",
 	"oojsplus-data-tree-item-remove-label": "Вилучити",
-	"oojsplus-data-tree-item-add-label": "Додати новий піделемент"
+	"oojsplus-data-tree-item-add-label": "Додати новий піделемент",
+	"oojsplus-desc": "Надає віджети та утилітарні функції для OOJS",
+	"oojsplus-color-picker-color-orangered": "Помаранчево-червоний",
+	"oojsplus-color-picker-color-olive": "Оливковий",
+	"oojsplus-color-picker-color-pink": "Рожевий",
+	"oojsplus-color-picker-label": "Піпетка кольору",
+	"oojsplus-stepprogressbar-default-final-label": "Готово",
+	"apihelp-query+allgroups-summary": "Список усіх груп, оголошених у вікі",
+	"apihelp-query+allgroups-param-prefix": "Термін пошуку за префіксом",
+	"apihelp-query+allgroups-param-contains": "Шукати усі групи користувачів, які містять це значення.",
+	"apihelp-query+allgroups-param-dir": "Напрямок сортування",
+	"apihelp-query+allgroups-param-prop": "Властивості для отримання",
+	"apihelp-query+allgroups-paramvalue-prop-additional": "Є додатковою групою",
+	"apihelp-query+allgroups-paramvalue-prop-displaytext": "Відображення тексту групи",
+	"apihelp-query+allgroups-example": "Список груп, що починаються на «s»",
+	"apihelp-query+allcategories-param-contains": "Шукати усі назви категорій, які містять це значення."
 }

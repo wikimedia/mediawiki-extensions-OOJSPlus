@@ -1,12 +1,19 @@
 {
 	"@metadata": {
 		"authors": [
-			"Antsa"
+			"Antsa",
+			"MITO",
+			"Moj"
 		]
 	},
 	"oojsplus-color-picker-color-blue": "Sininen",
 	"oojsplus-color-picker-color-red": "Punainen",
-	"oojsplus-color-picker-color-green": "Vihreiä",
+	"oojsplus-color-picker-color-green": "Vihreä",
 	"oojsplus-color-picker-color-olive": "Oliivi",
-	"oojsplus-color-picker-color-pink": "Pinkki"
+	"oojsplus-color-picker-color-pink": "Pinkki",
+	"oojsplus-dialog-action-done": "Valmis",
+	"oojsplus-dialog-action-delete": "Poista",
+	"oojsplus-dialog-action-create": "Luo",
+	"oojsplus-dialog-action-add": "Lisää",
+	"oojsplus-dialog-action-cancel": "Peruuta"
 }

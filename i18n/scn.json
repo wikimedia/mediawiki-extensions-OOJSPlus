@@ -1,0 +1,19 @@
+{
+	"@metadata": {
+		"authors": [
+			"Ajeje Brazorf"
+		]
+	},
+	"oojsplus-color-picker-color-blue": "blu",
+	"oojsplus-color-picker-color-red": "Russu",
+	"oojsplus-color-picker-color-green": "Virdi",
+	"oojsplus-color-picker-color-yellow": "Giàlinu",
+	"oojsplus-color-picker-color-olive": "Aliva",
+	"oojsplus-color-picker-color-pink": "Rosa",
+	"oojsplus-stepprogressbar-default-final-label": "Fattu",
+	"oojsplus-dialog-action-done": "Fattu",
+	"oojsplus-dialog-action-delete": "Cancella",
+	"oojsplus-dialog-action-create": "Crea",
+	"oojsplus-dialog-action-add": "Agghiunci",
+	"oojsplus-dialog-action-cancel": "Annulla"
+}

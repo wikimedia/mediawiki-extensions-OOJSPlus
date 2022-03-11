@@ -1,0 +1,12 @@
+{
+	"@metadata": {
+		"authors": [
+			"Kareyac"
+		]
+	},
+	"oojsplus-dialog-action-done": "Արված է",
+	"oojsplus-dialog-action-delete": "Ջնջել",
+	"oojsplus-dialog-action-create": "Ստեղծել",
+	"oojsplus-dialog-action-add": "Ավելացնել",
+	"oojsplus-dialog-action-cancel": "Չեղարկել"
+}

@@ -1,9 +1,11 @@
 {
 	"@metadata": {
 		"authors": [
-			"Mirzali",
+			"BaRaN6161 TURK",
+			"Can",
 			"Hedda",
-			"BaRaN6161 TURK"
+			"Mirzali",
+			"MuratTheTurkish"
 		]
 	},
 	"oojsplus-desc": "OOJS için küçük araçlar ve yardımcı işlevler sağlar",
@@ -11,8 +13,8 @@
 	"oojsplus-color-picker-color-red": "Kırmızı",
 	"oojsplus-color-picker-color-green": "Yeşil",
 	"oojsplus-color-picker-color-yellow": "Sarı",
-	"oojsplus-color-picker-color-orangered": "Vermilyon",
-	"oojsplus-color-picker-color-olive": "Zeytin rengi",
+	"oojsplus-color-picker-color-orangered": "Turuncu kırmızı",
+	"oojsplus-color-picker-color-olive": "Zeytin",
 	"oojsplus-color-picker-color-pink": "Pembe",
 	"oojsplus-color-picker-clear-label": "Rengi temizle",
 	"oojsplus-color-picker-label": "Renk seçici",
@@ -22,5 +24,10 @@
 	"oojsplus-data-tree-new-root-item-label": "Yeni kök öğe ekle",
 	"oojsplus-data-tree-item-remove-label": "Kaldır",
 	"oojsplus-data-tree-item-add-label": "Yeni alt öğe ekle",
-	"oojsplus-stepprogressbar-default-final-label": "Yapıldı"
+	"oojsplus-stepprogressbar-default-final-label": "Yapıldı",
+	"oojsplus-dialog-action-done": "Tamam",
+	"oojsplus-dialog-action-delete": "Sil",
+	"oojsplus-dialog-action-create": "Oluştur",
+	"oojsplus-dialog-action-add": "Ekle",
+	"oojsplus-dialog-action-cancel": "İptal"
 }

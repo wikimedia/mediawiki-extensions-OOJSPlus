@@ -1,7 +1,10 @@
 {
 	"@metadata": {
 		"authors": [
-			"Mirzali"
+			"Gebu",
+			"Mirzali",
+			"Mschlindwein",
+			"Zabe"
 		]
 	},
 	"oojsplus-desc": "Stellt Widgets und Hilfsfunktionen für OOJS bereit",
@@ -13,5 +16,26 @@
 	"oojsplus-color-picker-color-olive": "Olivgrün",
 	"oojsplus-color-picker-color-pink": "Rosa",
 	"oojsplus-color-picker-clear-label": "klare Farbe",
-	"oojsplus-color-picker-label": "Farbwähler"
+	"oojsplus-color-picker-label": "Farbwähler",
+	"oojsplus-data-delete-row-prompt": "Bist du sicher, dass du diese Zeile löschen willst?",
+	"oojsplus-data-paginator-page-total-count-label": "{{PLURAL:$1|$1 Zeile|$1 Zeilen}}",
+	"oojsplusdemos": "OOJSPlus-Demos",
+	"oojsplus-data-tree-new-root-item-label": "Neues Stammelement hinzufügen",
+	"oojsplus-data-tree-item-remove-label": "Entfernen",
+	"oojsplus-data-tree-item-add-label": "Neuen Unterpunkt hinzufügen",
+	"oojsplus-stepprogressbar-default-final-label": "Fertig",
+	"apihelp-query+allgroups-summary": "Listet alle im Wiki eingetragenen Gruppen auf",
+	"apihelp-query+allgroups-param-prefix": "Präfix-Suchbegriff",
+	"apihelp-query+allgroups-param-contains": "Suche nach allen Benutzergruppen, die diesen Wert beinhalten.",
+	"apihelp-query+allgroups-param-dir": "Sortierrichtung",
+	"apihelp-query+allgroups-param-prop": "Abzufragende Eigenschaften",
+	"apihelp-query+allgroups-paramvalue-prop-additional": "Ist eine zusätzliche Gruppe",
+	"apihelp-query+allgroups-paramvalue-prop-displaytext": "Anzeigetext der Gruppe",
+	"apihelp-query+allgroups-example": "Gruppen auflisten, die mit „s“ beginnen",
+	"apihelp-query+allcategories-param-contains": "Suche nach allen Kategorietiteln, die diesen Wert enthalten.",
+	"oojsplus-dialog-action-done": "Fertig",
+	"oojsplus-dialog-action-delete": "Löschen",
+	"oojsplus-dialog-action-create": "Erstellen",
+	"oojsplus-dialog-action-add": "Hinzufügen",
+	"oojsplus-dialog-action-cancel": "Abbrechen"
 }

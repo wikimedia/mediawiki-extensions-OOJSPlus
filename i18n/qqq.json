@@ -1,8 +1,9 @@
 {
 	"@metadata": {
 		"authors": [
-			"Umherirrender",
-			"Robby"
+			"Ajeje Brazorf",
+			"Robby",
+			"Umherirrender"
 		]
 	},
 	"oojsplus-desc": "{{desc|name=OOJSPlus|url=https://www.mediawiki.org/wiki/Extension:OOJSPlus}}",
@@ -26,9 +27,14 @@
 	"apihelp-query+allgroups-param-prefix": "{{doc-apihelp-param|query+allgroups|prefix}}",
 	"apihelp-query+allgroups-param-contains": "{{doc-apihelp-param|query+allgroups|contains}}",
 	"apihelp-query+allgroups-param-dir": "{{doc-apihelp-param|query+allgroups|dir}}",
-	"apihelp-query+allgroups-param-prop": "{{doc-apihelp-param|query+alltransclusions|prop|paramvalues=1}}",
+	"apihelp-query+allgroups-param-prop": "{{doc-apihelp-param|query+allgroups|prop|paramvalues=1}}",
 	"apihelp-query+allgroups-paramvalue-prop-additional": "{{doc-apihelp-paramvalue|query+allgroups|prop|additional}}",
 	"apihelp-query+allgroups-paramvalue-prop-displaytext": "{{doc-apihelp-paramvalue|query+allgroups|prop|displaytext}}",
 	"apihelp-query+allgroups-example": "{{doc-apihelp-example|query+allgroups}}",
-	"apihelp-query+allcategories-param-contains": "{{doc-apihelp-param|query+allcategories|contains}}"
+	"apihelp-query+allcategories-param-contains": "{{doc-apihelp-param|query+allcategories|contains}}",
+	"oojsplus-dialog-action-done": "Label for action done in dialog\n\n{{Identical|Done}}",
+	"oojsplus-dialog-action-delete": "Label for action delete in dialog\n\n{{Identical|Delete}}",
+	"oojsplus-dialog-action-create": "Label for action create in dialog\n\n{{Identical|Create}}",
+	"oojsplus-dialog-action-add": "Label for action add in dialog\n\n{{Identical|Add}}",
+	"oojsplus-dialog-action-cancel": "Label for action cancel in dialog\n\n{{Identical|Cancel}}"
 }

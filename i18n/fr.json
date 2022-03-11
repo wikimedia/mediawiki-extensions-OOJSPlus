@@ -1,8 +1,10 @@
 {
 	"@metadata": {
 		"authors": [
-			"Wladek92",
-			"Gomoko"
+			"DreZhsh",
+			"Gomoko",
+			"Thibaut120094",
+			"Wladek92"
 		]
 	},
 	"oojsplus-desc": "Fournit des widgets et des fonctions utilitaires pour OOJS",
@@ -15,11 +17,25 @@
 	"oojsplus-color-picker-color-pink": "Rose",
 	"oojsplus-color-picker-clear-label": "Couleur claire",
 	"oojsplus-color-picker-label": "Pipette de couleur",
-	"oojsplus-data-delete-row-prompt": "Êtes-vous sûr de vouloir supprimer cette ligne ?",
+	"oojsplus-data-delete-row-prompt": "Êtes-vous sûr de vouloir supprimer cette ligne ?",
 	"oojsplus-data-paginator-page-total-count-label": "{{PLURAL:$1|$1 ligne|$1 lignes}}",
 	"oojsplusdemos": "Démos de OOJSPlus",
 	"oojsplus-data-tree-new-root-item-label": "Ajouter un nouvel élément racine",
 	"oojsplus-data-tree-item-remove-label": "Supprimer",
 	"oojsplus-data-tree-item-add-label": "Ajouter un nouveau sous-élément",
-	"oojsplus-stepprogressbar-default-final-label": "Fait"
+	"oojsplus-stepprogressbar-default-final-label": "Fait",
+	"apihelp-query+allgroups-summary": "Liste tous les groupes déclarés sur le wiki",
+	"apihelp-query+allgroups-param-prefix": "Préfixe du terme de recherche",
+	"apihelp-query+allgroups-param-contains": "Rechercher tous les groupes d'utilisateurs qui contiennent cette valeur.",
+	"apihelp-query+allgroups-param-dir": "Direction de tri",
+	"apihelp-query+allgroups-param-prop": "Propriétés à récupérer",
+	"apihelp-query+allgroups-paramvalue-prop-additional": "Est un groupe supplémentaire",
+	"apihelp-query+allgroups-paramvalue-prop-displaytext": "Displaytext du groupe",
+	"apihelp-query+allgroups-example": "Lister les groupes commençant par « s »",
+	"apihelp-query+allcategories-param-contains": "Recherchez tous les titres de catégorie qui contiennent cette valeur.",
+	"oojsplus-dialog-action-done": "Terminé",
+	"oojsplus-dialog-action-delete": "Supprimer",
+	"oojsplus-dialog-action-create": "Créer",
+	"oojsplus-dialog-action-add": "Ajouter",
+	"oojsplus-dialog-action-cancel": "Annuler"
 }

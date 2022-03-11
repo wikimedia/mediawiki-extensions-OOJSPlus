@@ -20,5 +20,7 @@
 	"oojsplus-data-tree-new-root-item-label": "Legg til nytt rotelement",
 	"oojsplus-data-tree-item-remove-label": "Fjern",
 	"oojsplus-data-tree-item-add-label": "Legg til nytt underelement",
-	"oojsplus-stepprogressbar-default-final-label": "Ferdig"
+	"oojsplus-stepprogressbar-default-final-label": "Ferdig",
+	"oojsplus-dialog-action-create": "Opprett",
+	"oojsplus-dialog-action-cancel": "Avbryt"
 }
