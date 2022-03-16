@@ -67,3 +67,19 @@
 		box-shadow: none !important;
 	}
 }
+
+.placeholder-widget {
+	height: 5px;
+	.tree-item-options-btn {
+		display: none;
+	}
+}
+
+.static-tree .placeholder-widget {
+	display: none;
+}
+
+.tree-item:active.additem::before {
+	content: "\0274D";
+	color: grey;
+}

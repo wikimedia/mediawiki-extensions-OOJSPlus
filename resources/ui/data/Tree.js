@@ -7,6 +7,7 @@
 		this.allowDeletions = typeof cfg.allowDeletions !== 'undefined' ? cfg.allowDeletions : true;
 		this.allowAdditions = typeof cfg.allowAdditions !== 'undefined' ? cfg.allowAdditions : true;
 		this.structure = {};
+		this.placeholderWidgets = [];
 		this.itemsContainer = new OOJSPlus.ui.data.DraggableGroup( this );
 		this.itemsContainer.connect( this, {
 			reorder: function( item, index ) {
@@ -33,6 +34,9 @@
 		}
 
 		this.$element.addClass( 'oojsplus-data-treeWidget' );
+		if ( this.fixed ) {
+			this.$element.addClass( 'static-tree' );
+		}
 	};
 
 	OO.inheritClass( OOJSPlus.ui.data.Tree, OO.ui.Widget );
@@ -64,12 +68,14 @@
 				childrenCount: item.hasOwnProperty( 'items' ) ? item.items.length : 0,
 				tree: this
 			} );
+
 			widget.connect( this, {
 				selected: function( item ) {
 					this.setSelected( item );
 					this.emit( 'itemSelected', item );
 				}
 			} );
+
 			this.structure[item.name] = {
 				level: lvl,
 				childOf: parent ? parent.getName() : null,
@@ -81,7 +87,7 @@
 	};
 
 	/** Generate HTML */
-	OOJSPlus.ui.data.Tree.prototype.draw = function(  ) {
+	OOJSPlus.ui.data.Tree.prototype.draw = function() {
 		var lvl = 0;
 		this.itemsContainer.clearItems();
 		while ( this.drawLevel( lvl ) !== false ) {
@@ -108,6 +114,13 @@
 
 	OOJSPlus.ui.data.Tree.prototype.getItem = function( name ) {
 		if ( !this.structure.hasOwnProperty( name ) ) {
+			if ( this.placeholderWidgets.length ) {
+				for ( var i = 0; i< this.placeholderWidgets.length; i ++) {
+					if ( this.placeholderWidgets[i].name === name ) {
+						return this.placeholderWidgets[i];
+					}
+				}
+			}
 			throw Error( "Node " + name + " does not exist" );
 		}
 		return this.structure[name];
@@ -136,12 +149,23 @@
 
 	OOJSPlus.ui.data.Tree.prototype.collapseNode = function( name ) {
 		this.foreachNode( this.getChildNodes( name, true ), function( node ) {
+			for ( i = 0; i < this.placeholderWidgets.length; i++ ) {
+				if ( this.placeholderWidgets[i].name.includes( 'placeholder-' + name ) ) {
+					this.placeholderWidgets[i].hide();
+				}
+			}
+
 			node.widget.hide();
 		} );
 	};
 
 	OOJSPlus.ui.data.Tree.prototype.expandNode = function( name ) {
 		this.foreachNode( this.getChildNodes( name, true ), function( node ) {
+			for ( i = 0; i < this.placeholderWidgets.length; i++ ) {
+				if ( this.placeholderWidgets[i].name.includes( 'placeholder-' + name ) ) {
+					this.placeholderWidgets[i].show();
+				}
+			}
 			node.widget.show();
 		} );
 	};
@@ -230,6 +254,15 @@
 		}, this.structure[widget.getName()] );
 	};
 
+	OOJSPlus.ui.data.Tree.prototype.getParent = function( item ) {
+		for ( var name in this.structure ) {
+			if ( name === item ) {
+				return this.structure[item].childOf;
+			}
+		}
+		return '';
+	};
+
 	OOJSPlus.ui.data.Tree.prototype.getDataFromUser = function( parentName ) {
 		var instance,
 			dfd = $.Deferred(),
@@ -286,12 +319,26 @@
 				newIndex = this.itemsContainer.getItemIndex( lastRendered.widget );
 			}
 			if ( newIndex !== -1 ) {
-				index = newIndex + 1;
+				index = newIndex + 2;
 			}
 		}
 
 		this.structure[name].rendered = true;
 		this.itemsContainer.addItems( this.structure[name].widget, index );
+
+		var placeholderWidget = new this.itemClass( {
+			name: 'placeholder-'+ name,
+			icon: '',
+			label: '',
+			indicator: '',
+			level:  this.structure[name].level,
+			isLeaf: true,
+			childrenCount: 0,
+			tree: this,
+			classes: ['placeholder-widget']
+		} );
+		this.placeholderWidgets.push( placeholderWidget );
+		this.itemsContainer.addItems( placeholderWidget, index + 1 );
 	};
 
 	OOJSPlus.ui.data.Tree.prototype.getLastRendered = function( items ) {
@@ -299,9 +346,6 @@
 		for ( var i = 0; i < items.length; i++ ) {
 			if ( items[i].hasOwnProperty( 'rendered' ) && items[i].rendered === true ) {
 				lastRendered = items[i];
-				if ( !this.isLeaf( lastRendered.widget.getName() ) ) {
-					lastRendered = this.getLastRendered( this.getChildNodes( lastRendered.widget.getName() ) );
-				}
 			}
 		}
 		return lastRendered;
@@ -315,17 +359,6 @@
 		this.selectedItem.widget.$element.addClass( 'item-selected' );
 	};
 
-	OOJSPlus.ui.data.Tree.prototype.moveChildren = function( parent, afterIndex ) {
-		var children = this.getChildNodes( parent );
-		for ( var i = 0; i < children.length; i++ ) {
-			var child = children[i];
-
-			afterIndex++;
-			this.itemsContainer.reorder( child.widget, afterIndex );
-			this.moveChildren( child.widget.getName(), afterIndex );
-		}
-	};
-
 	OOJSPlus.ui.data.Tree.prototype.getOrderedNames = function() {
 		var children = this.itemsContainer.getItems(),
 			names = [];
@@ -337,10 +370,59 @@
 		return names;
 	};
 
+	OOJSPlus.ui.data.Tree.prototype.moveChildren = function( parentName, afterIndex ) {
+		var children = this.getChildNodes( parentName );
+		var parentItem = this.structure[parentName];
+		afterIndex++;
+		for ( var i = 0; i < children.length; i++ ) {
+			var child = children[i];
+			this.structure[child.widget.name].level = parentItem.level + 1;
+			this.structure[child.widget.name].widget.setLevel( parentItem.level + 1 );
+
+			this.itemsContainer.itemsOrder.splice( afterIndex, 0,
+				this.itemsContainer.itemsOrder.splice( child.widget.index, 1 )[ 0 ]
+			);
+			this.itemsContainer.reorder( child.widget, afterIndex );
+			this.itemsContainer.emit( 'reorder', child.widget, afterIndex );
+			this.itemsContainer.updateIndexes();
+
+			this.movePlaceholder( child.widget.getName(), child.widget.index );
+			this.moveChildren( child.widget.getName(), child.widget.index + 1 );
+		}
+	};
+
+	OOJSPlus.ui.data.Tree.prototype.movePlaceholder = function( name, afterIndex ) {
+		var parentItem = this.structure[name];
+		afterIndex++;
+
+		for ( i = 0; i < this.placeholderWidgets.length; i++ ) {
+			placeholderName = this.placeholderWidgets[i].name;
+			if ( placeholderName === 'placeholder-' + name ) {
+				widget = this.placeholderWidgets[i];
+				widget.setLevel( parentItem.level );
+
+				this.itemsContainer.itemsOrder.splice( afterIndex, 0,
+					this.itemsContainer.itemsOrder.splice( widget.index, 1 )[ 0 ]
+				);
+				this.itemsContainer.reorder( widget, afterIndex );
+				this.itemsContainer.emit( 'reorder', widget, afterIndex );
+				this.itemsContainer.updateIndexes();
+			}
+		}
+	};
+
+	OOJSPlus.ui.data.Tree.prototype.updateUI = function() {
+		for( var name in this.structure ) {
+			var item = this.structure[name];
+			this.reEvaluateParent( item.widget.name );
+			item.widget.updateUI();
+		}
+	};
+
 	/*DRAGGABLE GROUP*/
 	OOJSPlus.ui.data.DraggableGroup = function( tree ) {
 		this.tree = tree;
-
+		this.placeholder = true;
 		var cfg =  {};
 		cfg.orientation = 'vertical';
 		cfg.draggable = true;
@@ -362,13 +444,17 @@
 		// Get the OptionWidget item we are dragging over
 		overIndex = $( e.target ).closest( '.oo-ui-draggableElement' ).data( 'index' );
 
-
 		if ( overIndex !== undefined && overIndex !== dragItemIndex ) {
 			if( !this.dropAllowed( dragItemIndex, overIndex ) ) {
 				return;
 			}
 
 			targetIndex = overIndex + ( overIndex > dragItemIndex ? 1 : 0 );
+			if ( this.isPlaceholder( e.target ) ) {
+				this.placeholder = true;
+			} else {
+				this.placeholder = false;
+			}
 
 			if ( targetIndex > 0 ) {
 				this.$group.children().eq( targetIndex - 1 ).after( item.$element );
@@ -392,19 +478,9 @@
 		var dragged = this.itemsOrder[dragItemIndex];
 		dragged = this.tree.getItem( dragged.getName() );
 		over = this.tree.getItem( over.getName() );
-		// Only allow re-arranging within level
-		if ( dragged.widget.getLevel() !== over.widget.getLevel() ) {
+		if ( over.level < 1 ) {
 			return false;
 		}
-
-		if ( dragged.childOf !== over.childOf ) {
-			return false;
-		}
-
-		if ( overIndex > dragItemIndex && this.tree.getChildNodes( over.widget.getName() ).length > 0 ) {
-			return false;
-		}
-
 		return true;
 	};
 
@@ -416,24 +492,63 @@
 		// TODO: Figure out a way to configure a list of legally droppable
 		// elements even if they are not yet in the list
 		if ( item ) {
+			//item.removeDraggedClass();
 			originalIndex = this.items.indexOf( item );
 			// If the item has moved forward, add one to the index to account for the left shift
 			targetIndex = item.getIndex() + ( item.getIndex() > originalIndex ? 1 : 0 );
+
 			if ( targetIndex !== originalIndex ) {
-				this.reorder( this.getDragItem(), targetIndex );
-				this.emit( 'reorder', this.getDragItem(), targetIndex );
+				this.reorder( item, targetIndex );
+				this.emit( 'reorder', item, targetIndex );
 			}
+
 			this.updateIndexes();
 
 			var targetItem = this.getDragItem();
+
 			if ( targetItem ) {
-				this.tree.moveChildren( targetItem.getName(), targetIndex );
+				var newParentWidget = this.items[targetItem.index-1];
+				while ( newParentWidget.name.includes( 'placeholder' ) ) {
+					this.placeholder = true;
+					newParentWidget = this.items[newParentWidget.index -1];
+				}
+
+				if ( this.placeholder ) {
+					this.tree.structure[targetItem.name].level =
+						newParentWidget.isLeaf ? newParentWidget.getLevel(): newParentWidget.getLevel() + 1;
+
+					this.tree.structure[targetItem.name].widget.setLevel(
+						newParentWidget.isLeaf ? newParentWidget.getLevel() : newParentWidget.getLevel() + 1 );
+
+					this.tree.structure[targetItem.name].childOf =
+						newParentWidget.isLeaf ? this.tree.getParent( newParentWidget.name ) : newParentWidget.name;
+
+					this.tree.movePlaceholder( targetItem.getName(), targetItem.index );
+					this.tree.moveChildren( targetItem.getName(), targetItem.index + 1 );
+				}
+				else {
+					this.tree.movePlaceholder( newParentWidget.getName(), newParentWidget.index );
+
+					this.tree.structure[targetItem.name].level = newParentWidget.getLevel() + 1;
+					this.tree.structure[targetItem.name].widget.setLevel( newParentWidget.getLevel() + 1 );
+					this.tree.structure[targetItem.name].childOf = newParentWidget.name;
+
+					/** insert target widget after placeholder of parent widget */
+					this.itemsOrder.splice( newParentWidget.index + 2 , 0,
+						this.itemsOrder.splice( targetItem.index, 1 )[ 0 ]
+					);
+					this.reorder( targetItem, newParentWidget.index + 2 );
+					this.emit( 'reorder', targetItem, newParentWidget.index + 2 );
+					this.updateIndexes();
+
+					this.tree.movePlaceholder( targetItem.getName(), targetItem.index );
+					this.tree.moveChildren( targetItem.getName(), targetItem.index + 1 );
+				}
 			}
 
 		}
 		this.unsetDragItem();
-
-
+		this.tree.updateUI();
 
 		// Return false to prevent propogation
 		return false;
@@ -447,4 +562,16 @@
 		}
 		return -1;
 	};
+
+	OOJSPlus.ui.data.DraggableGroup.prototype.isPlaceholder = function ( item ) {
+		classList = $( item ).attr( "class" );
+		classes = classList.split( /\s+/ );
+
+		if ( classes.indexOf( 'placeholder-widget' ) != -1 ) {
+			return true;
+		}
+
+		return false;
+	};
+
 } )( mediaWiki, jQuery );
