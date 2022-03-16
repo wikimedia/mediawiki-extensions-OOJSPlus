@@ -10,4 +10,5 @@
 
 	OO.inheritClass( OOJSPlus.ui.data.tree.DraggableItem, OOJSPlus.ui.data.tree.Item );
 	OO.mixinClass(  OOJSPlus.ui.data.tree.DraggableItem, OO.ui.mixin.DraggableElement );
+
 } )( mediaWiki, jQuery );

@@ -36,7 +36,6 @@
 
 	OOJSPlus.ui.data.tree.Item.prototype.setLevel = function( level ) {
 		this.level = level;
-		this.init();
 	};
 
 	OOJSPlus.ui.data.tree.Item.prototype.getLevel = function() {
@@ -189,6 +188,7 @@
 		}
 		if ( visible ) {
 			this.$element.show();
+			this.optionsPopup.toggle( true );
 		} else {
 			this.$element.hide();
 		}
@@ -203,4 +203,27 @@
 		this.optionsPopup.popup.toggle( false );
 		this.tree.addSubnode( this.name );
 	};
+
+	OOJSPlus.ui.data.tree.Item.prototype.updateUI = function() {
+		this.removeLevelClass();
+		this.possiblyAddExpander();
+
+		this.$element.addClass( 'tree-lvl-' + this.level );
+		// Awesome
+		this.$element.css( {
+			'padding-left': this.isLeaf ? this.level * 25 + 20 : this.level * 25
+		} );
+	}
+
+	OOJSPlus.ui.data.tree.Item.prototype.removeLevelClass = function() {
+		classList = $( this.$element ).attr( "class" );
+		classes = classList.split( /\s+/ );
+
+		for ( var i = 0; i < classes.length; i++ ) {
+			if ( /tree-lvl-.*/.test( classes[i] ) ) {
+				this.$element.removeClass( classes[i] );
+			}
+		}
+	}
+
 } )( mediaWiki, jQuery );
