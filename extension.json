@@ -52,10 +52,12 @@
 				"ui/widget/GroupMultiSelectWidget.js",
 				"ui/widget/CategoryMultiSelectWidget.js",
 				"ui/widget/StoreDataInputWidget.js",
-				"ui/widget/MultiSelectFileWidget.js"
+				"ui/widget/MultiSelectFileWidget.js",
+				"ui/widget/ExpandablePanel.js"
 			],
 			"styles": [
-				"stylesheet/rangeWidget.less"
+				"stylesheet/rangeWidget.less",
+				"stylesheet/expandablePanel.less"
 			],
 			"dependencies": [
 				"ext.oOJSPlus.widgets.colorPicker",
