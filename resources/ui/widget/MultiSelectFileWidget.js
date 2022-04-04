@@ -6,6 +6,7 @@
 		this.uploadFiles = [];
 		// Parent constructor
 		OOJSPlus.ui.widget.MultiSelectFileWidget.parent.call( this, $.extend( {}, config, {} ) );
+		$( this.$input ).attr( 'multiple', 'true' );
 	}
 
 	OO.inheritClass( OOJSPlus.ui.widget.MultiSelectFileWidget, OO.ui.SelectFileWidget );
