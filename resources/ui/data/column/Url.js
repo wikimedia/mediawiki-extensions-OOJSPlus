@@ -5,6 +5,7 @@
 		OOJSPlus.ui.data.column.Url.parent.call( this, cfg );
 
 		this.urlProperty = cfg.urlProperty;
+		this.urlExternal = cfg.urlExternal || null;
 
 		this.$element.addClass( 'url-column' );
 	};
@@ -25,7 +26,8 @@
 		var linkButton = new OO.ui.ButtonWidget( {
 			href: url,
 			label: value,
-			framed: false
+			framed: false,
+			target: this.urlExternal
 		} );
 		return linkButton;
 	};
