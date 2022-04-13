@@ -1,6 +1,7 @@
 ( function( mw, $ ) {
 	OOJSPlus.ui.data.column.Boolean = function ( cfg ) {
 		OOJSPlus.ui.data.column.Boolean.parent.call( this, cfg );
+		this.editMode = cfg.editMode || false;
 
 		this.$element.addClass( 'boolean-column' );
 	};
@@ -14,6 +15,9 @@
 	};
 
 	OOJSPlus.ui.data.column.Boolean.prototype.getViewControls = function( value ) {
+		if( this.editMode ) {
+			return this.getEditControls( value );
+		}
 		if( typeof value === 'string' ) {
 			value = value === 'true' ? true : false;
 		}
