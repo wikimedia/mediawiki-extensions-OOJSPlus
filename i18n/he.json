@@ -1,11 +1,39 @@
 {
 	"@metadata": {
 		"authors": [
+			"Ex-Diktator",
 			"YaronSh"
 		]
 	},
 	"oojsplus-data-delete-row-prompt": "למחוק את השורה הזאת?",
 	"oojsplus-data-paginator-page-total-count-label": "{{PLURAL:$1|שורה אחת|$1 שורות}}",
 	"oojsplus-data-tree-item-remove-label": "הסרה",
-	"oojsplus-data-tree-item-add-label": "הוספת תת־פריט חדש"
+	"oojsplus-data-tree-item-add-label": "הוספת תת־פריט חדש",
+	"oojsplus-desc": "אספקת וידג'טים ופונקציות עזר ל-OOJS",
+	"oojsplus-color-picker-color-blue": "כחול",
+	"oojsplus-color-picker-color-red": "אדום",
+	"oojsplus-color-picker-color-green": "ירוק",
+	"oojsplus-color-picker-color-yellow": "צהוב",
+	"oojsplus-color-picker-color-orangered": "כתום",
+	"oojsplus-color-picker-color-olive": "זית",
+	"oojsplus-color-picker-color-pink": "ורוד",
+	"oojsplus-color-picker-clear-label": "שקוף",
+	"oojsplus-color-picker-label": "בורר צבעים",
+	"oojsplusdemos": "הדגמות של OOJSPlus",
+	"oojsplus-data-tree-new-root-item-label": "הוספת פריט שורש חדש",
+	"oojsplus-stepprogressbar-default-final-label": "סיום",
+	"apihelp-query+allgroups-summary": "רשימת כל הקבוצות המוצהרות בוויקי הזה",
+	"apihelp-query+allgroups-param-prefix": "מונח חיפוש עם תחילית",
+	"apihelp-query+allgroups-param-contains": "חיפוש כל קבוצות המשתמשים שמכילות את הערך הזה.",
+	"apihelp-query+allgroups-param-dir": "כיוון מיון",
+	"apihelp-query+allgroups-param-prop": "אילו מאפיינים לאחזר",
+	"apihelp-query+allgroups-paramvalue-prop-additional": "האם זאת קבוצה נוספת",
+	"apihelp-query+allgroups-paramvalue-prop-displaytext": "שם התצוגה של הקבוצה",
+	"apihelp-query+allgroups-example": "אחזור רשימת הקבוצות שמתחילת באות \"s\"",
+	"apihelp-query+allcategories-param-contains": "חיפוש כל כותרות הקטגוריות שמכילות את הערך הזה.",
+	"oojsplus-dialog-action-done": "בוצע",
+	"oojsplus-dialog-action-delete": "מחיקה",
+	"oojsplus-dialog-action-create": "יצירה",
+	"oojsplus-dialog-action-add": "הוספה",
+	"oojsplus-dialog-action-cancel": "ביטול"
 }
