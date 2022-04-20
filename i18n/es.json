@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"DiegoAmbrocio",
 			"Fitoschido",
 			"Harvest"
 		]
@@ -20,5 +21,10 @@
 	"oojsplusdemos": "Demostraciones de OOJSPlus",
 	"oojsplus-data-tree-item-remove-label": "Quitar",
 	"oojsplus-data-tree-item-add-label": "Añadir subelemento nuevo",
-	"oojsplus-stepprogressbar-default-final-label": "Hecho"
+	"oojsplus-stepprogressbar-default-final-label": "Hecho",
+	"oojsplus-dialog-action-done": "Hecho",
+	"oojsplus-dialog-action-delete": "Borrar",
+	"oojsplus-dialog-action-create": "Crear",
+	"oojsplus-dialog-action-add": "Añadir",
+	"oojsplus-dialog-action-cancel": "Cancelar"
 }
