@@ -6,6 +6,7 @@
 		this.label = cfg.label;
 		this.tree = cfg.tree;
 		this.level = cfg.level;
+		this.type = cfg.type;
 		this.childrenCount = cfg.childrenCount;
 		this.isLeaf = cfg.isLeaf || false;
 		this.allowAdditions = typeof cfg.allowAdditions !== 'undefined' ? cfg.allowAdditions : this.tree.allowAdditions;
