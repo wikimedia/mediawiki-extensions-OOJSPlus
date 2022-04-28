@@ -60,6 +60,7 @@
 			}
 			var widget = new this.itemClass( {
 				name: item.name,
+				type: item.type || '',
 				icon: item.icon || '',
 				label: item.label || '',
 				indicator: item.indicator || '',
