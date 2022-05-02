@@ -54,16 +54,9 @@
 			) {
 				isLeaf = false;
 			}
-			var widget = new this.itemClass( {
-				name: item.name,
-				icon: item.icon || '',
-				label: item.label || '',
-				indicator: item.indicator || '',
-				level: lvl,
-				isLeaf: isLeaf,
-				childrenCount: item.hasOwnProperty( 'items' ) ? item.items.length : 0,
-				tree: this
-			} );
+
+			var widget = this.createItemWidget( item, lvl, isLeaf );
+
 			widget.connect( this, {
 				selected: function( item ) {
 					this.setSelected( item );
@@ -78,6 +71,20 @@
 
 			this.build( item.items || [], lvl + 1, widget );
 		}
+	};
+
+	OOJSPlus.ui.data.Tree.prototype.createItemWidget = function( item, lvl, isLeaf ) {
+		return new this.itemClass( {
+			name: item.name,
+			type: item.type || '',
+			icon: item.icon || '',
+			label: item.label || '',
+			indicator: item.indicator || '',
+			level: lvl,
+			isLeaf: isLeaf,
+			childrenCount: item.hasOwnProperty( 'items' ) ? item.items.length : 0,
+			tree: this
+		} );
 	};
 
 	/** Generate HTML */
@@ -313,6 +320,7 @@
 		}
 		this.selectedItem = this.getItem( item.getName() );
 		this.selectedItem.widget.$element.addClass( 'item-selected' );
+		this.emit( 'itemSelected', item );
 	};
 
 	OOJSPlus.ui.data.Tree.prototype.moveChildren = function( parent, afterIndex ) {
