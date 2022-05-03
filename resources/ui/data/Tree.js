@@ -67,7 +67,7 @@
 				}
 			} );
 
-			this.structure[item.name] = {
+			this.structure[widget.getName()] = {
 				level: lvl,
 				childOf: parent ? parent.getName() : null,
 				widget: widget
@@ -229,16 +229,10 @@
 		if ( !data ) {
 			return;
 		}
-		// TODO: Duplicate code
-		var widget = new this.itemClass( $.extend( data, {
-			level: level,
-			isLeaf: true,
-			tree: this
-		} ) );
+		var widget = this.createItemWidget( data, level, true );
 		widget.connect( this, {
 			selected: function( item ) {
 				this.setSelected( item );
-				this.emit( 'itemSelected', item );
 			}
 		} );
 
@@ -358,10 +352,9 @@
 
 	OOJSPlus.ui.data.Tree.prototype.setSelected = function( item ) {
 		if ( this.selectedItem ) {
-			this.selectedItem.widget.$element.removeClass( 'item-selected' );
+			this.selectedItem.widget.deselect();
 		}
 		this.selectedItem = this.getItem( item.getName() );
-		this.selectedItem.widget.$element.addClass( 'item-selected' );
 		this.emit( 'itemSelected', item );
 	};
 

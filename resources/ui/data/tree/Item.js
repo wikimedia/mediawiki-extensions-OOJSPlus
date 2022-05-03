@@ -5,6 +5,7 @@
 		this.name = cfg.name;
 		this.label = cfg.label;
 		this.tree = cfg.tree;
+		this.icon = cfg.icon || '';
 		this.level = cfg.level;
 		this.type = cfg.type;
 		this.childrenCount = cfg.childrenCount;
@@ -24,6 +25,7 @@
 	OOJSPlus.ui.data.tree.Item.prototype.init = function() {
 		this.$element.children().remove();
 		this.possiblyAddExpander();
+		this.addIcon();
 		this.addLabel();
 		this.possiblyAddOptions();
 
@@ -31,7 +33,7 @@
 		this.$element.addClass( 'tree-lvl-' + this.level );
 		// Awesome
 		this.$element.css( {
-			'padding-left': this.isLeaf ? this.level * 25 + 20 : this.level * 25
+			'padding-left': this.isLeaf ? this.level * 25 + 30 : this.level * 25
 		} );
 	};
 
@@ -45,6 +47,10 @@
 
 	OOJSPlus.ui.data.tree.Item.prototype.getName = function() {
 		return this.name;
+	};
+
+	OOJSPlus.ui.data.tree.Item.prototype.getIcon = function() {
+		return this.icon;
 	};
 
 	OOJSPlus.ui.data.tree.Item.prototype.getChildNodes = function() {
@@ -65,13 +71,21 @@
 		this.expanded = this.childrenCount > 0 ? true : false;
 		this.expander = new OO.ui.ButtonWidget( {
 			framed: false,
-			indicator: this.childrenCount > 0 ? 'up' : 'down',
+			icon: this.childrenCount > 0 ? 'collapse' : 'expand',
 			classes: [ 'oojsplus-data-tree-expander' ]
 		} );
 		this.expander.connect( this, {
 			click: 'onExpanderClick'
 		} );
 		this.$element.prepend( this.expander.$element );
+	};
+
+	OOJSPlus.ui.data.tree.Item.prototype.addIcon = function() {
+		if ( !this.getIcon() ) {
+			return;
+		}
+		var iconWidget = new OO.ui.IconWidget( { icon: this.getIcon() } );
+		this.$element.append( iconWidget.$element );
 	};
 
 	OOJSPlus.ui.data.tree.Item.prototype.addLabel = function() {
@@ -81,10 +95,25 @@
 		} );
 		this.labelWidget.connect( this, {
 			click: function() {
+				this.select();
 				this.emit( 'selected', this );
 			}
 		} );
 		this.$element.append( this.labelWidget.$element );
+	};
+
+	OOJSPlus.ui.data.tree.Item.prototype.deselect = function() {
+		this.$element.removeClass( 'item-selected' );
+		if ( this.optionsPopup ) {
+			this.optionsPopup.$element.hide();
+		}
+	};
+
+	OOJSPlus.ui.data.tree.Item.prototype.select = function() {
+		this.$element.addClass( 'item-selected' );
+		if ( this.optionsPopup ) {
+			this.optionsPopup.$element.show();
+		}
 	};
 
 	OOJSPlus.ui.data.tree.Item.prototype.possiblyAddOptions = function() {
@@ -92,7 +121,8 @@
 		if ( this.allowDeletions ) {
 			this.removeNodeBtn = new OO.ui.ButtonWidget( {
 				framed: false,
-				label: this.labelDelete || mw.message( "oojsplus-data-tree-item-remove-label" ).text()
+				label: this.labelDelete || mw.message( "oojsplus-data-tree-item-remove-label" ).text(),
+				icon: 'close'
 			} );
 			this.removeNodeBtn.connect( this, {
 				click: 'onRemoveClick'
@@ -102,7 +132,8 @@
 		if ( this.allowAdditions ) {
 			this.addSubnodeBtn = new OO.ui.ButtonWidget( {
 				framed: false,
-				label: this.labelAdd || mw.message( "oojsplus-data-tree-item-add-label" ).text()
+				label: this.labelAdd || mw.message( "oojsplus-data-tree-item-add-label" ).text(),
+				icon: 'add'
 			} );
 			this.addSubnodeBtn.connect( this, {
 				click: 'onAddSubnodeClick'
@@ -112,20 +143,20 @@
 		if ( options.length === 0 ) {
 			return;
 		}
-		var optionsPanel = new OO.ui.PanelLayout( {
+		this.optionsPanel = new OO.ui.PanelLayout( {
 			expanded: false,
+			padded: true,
 			scrollable: false,
 			framed: false,
 			content: options
 		} );
 
 		this.optionsPopup = new OO.ui.PopupButtonWidget( {
-		 	icon: 'ellipsis',
+		 	indicator: 'down',
 			framed: false,
 			classes: [ 'tree-item-options-btn' ],
 			popup: {
-		 		$content: optionsPanel.$element,
-				padded: true,
+		 		$content: this.optionsPanel.$element,
 				width: 'auto',
 				align: 'forwards',
 				classes: [ 'tree-item-options-popup' ]
@@ -149,18 +180,19 @@
 			}
 		}.bind( this ) );*/
 
+		this.optionsPopup.$element.hide();
 		this.$element.append( this.optionsPopup.$element );
 	};
 
 	OOJSPlus.ui.data.tree.Item.prototype.onExpanderClick = function() {
 		if ( this.expanded ) {
 			this.tree.collapseNode( this.name );
-			this.expander.setIndicator( 'down' );
+			this.expander.setIcon( 'expand' );
 			this.expanded = false;
 		} else {
 			this.tree.assertNodeLoaded( this.name ).done( function() {
 				this.tree.expandNode( this.name );
-				this.expander.setIndicator( 'up' );
+				this.expander.setIcon( 'collapse' );
 				this.expanded = true;
 			}.bind( this ) );
 		}
@@ -212,9 +244,9 @@
 		this.$element.addClass( 'tree-lvl-' + this.level );
 		// Awesome
 		this.$element.css( {
-			'padding-left': this.isLeaf ? this.level * 25 + 20 : this.level * 25
+			'padding-left': this.isLeaf ? this.level * 25 + 30 : this.level * 25
 		} );
-	}
+	};
 
 	OOJSPlus.ui.data.tree.Item.prototype.removeLevelClass = function() {
 		classList = $( this.$element ).attr( "class" );
@@ -225,6 +257,6 @@
 				this.$element.removeClass( classes[i] );
 			}
 		}
-	}
+	};
 
 } )( mediaWiki, jQuery );
