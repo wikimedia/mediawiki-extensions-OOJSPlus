@@ -4,6 +4,7 @@
 			"DreZhsh",
 			"Gomoko",
 			"Thibaut120094",
+			"Verdy p",
 			"Wladek92"
 		]
 	},
@@ -37,5 +38,6 @@
 	"oojsplus-dialog-action-delete": "Supprimer",
 	"oojsplus-dialog-action-create": "Créer",
 	"oojsplus-dialog-action-add": "Ajouter",
-	"oojsplus-dialog-action-cancel": "Annuler"
+	"oojsplus-dialog-action-cancel": "Annuler",
+	"oojsplus-data-grid-widget-popup-title": "Davantage d’éléments"
 }
