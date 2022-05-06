@@ -8,37 +8,30 @@
 		this.icon = cfg.icon || '';
 		this.level = cfg.level;
 		this.type = cfg.type;
-		this.childrenCount = cfg.childrenCount;
-		this.isLeaf = cfg.isLeaf || false;
 		this.allowAdditions = typeof cfg.allowAdditions !== 'undefined' ? cfg.allowAdditions : this.tree.allowAdditions;
 		this.labelAdd = typeof cfg.labelAdd !== 'undefined' ? cfg.labelAdd : this.tree.labelAdd;
 		this.allowDeletions = typeof cfg.allowDeletions !== 'undefined' ? cfg.allowDeletions : this.tree.allowDeletions;
 		this.labelDelete = typeof cfg.labelDelete !== 'undefined' ? cfg.labelDelete : this.tree.labelDelete;
 
+		this.$element.addClass( 'oojs-ui-data-tree-item' );
 		this.init();
 	};
 
 	OO.inheritClass( OOJSPlus.ui.data.tree.Item, OO.ui.Widget );
 
-	OOJSPlus.ui.data.tree.Item.static.tagName = 'div';
+	OOJSPlus.ui.data.tree.Item.static.tagName = 'li';
 
 	OOJSPlus.ui.data.tree.Item.prototype.init = function() {
 		this.$element.children().remove();
-		this.possiblyAddExpander();
 		this.addIcon();
 		this.addLabel();
 		this.possiblyAddOptions();
-
-		this.$element.addClass( 'tree-item' );
-		this.$element.addClass( 'tree-lvl-' + this.level );
-		// Awesome
-		this.$element.css( {
-			'padding-left': this.isLeaf ? this.level * 25 + 30 : this.level * 25
-		} );
+		this.$element.attr( 'data-name', this.getName() );
 	};
 
 	OOJSPlus.ui.data.tree.Item.prototype.setLevel = function( level ) {
 		this.level = level;
+		this.$element.attr( 'data-level', this.level );
 	};
 
 	OOJSPlus.ui.data.tree.Item.prototype.getLevel = function() {
@@ -49,16 +42,32 @@
 		return this.name;
 	};
 
+	OOJSPlus.ui.data.tree.Item.prototype.getLabel = function() {
+		return this.label;
+	};
+
 	OOJSPlus.ui.data.tree.Item.prototype.getIcon = function() {
 		return this.icon;
 	};
 
-	OOJSPlus.ui.data.tree.Item.prototype.getChildNodes = function() {
-		return this.tree.getChildNodes( this.name );
+	OOJSPlus.ui.data.tree.Item.prototype.getChildren = function() {
+		var $ul = this.$element.find( '> ul.tree-node-list' ),
+			$children = $ul.find( '> li.oojs-ui-data-tree-item' ),
+			res = [];
+
+		for ( var i = 0; i < $children.length; i++ ) {
+			var name = $( $children[0] ).data( 'name' );
+			if ( this.tree.flat.hasOwnProperty( name ) ) {
+				res.push( this.tree.flat[name] );
+			}
+		}
+
+		return res;
 	};
 
 	OOJSPlus.ui.data.tree.Item.prototype.possiblyAddExpander = function() {
-		if ( this.isLeaf ) {
+		var childrenCount = this.getChildren().length;
+		if ( childrenCount === 0 ) {
 			if ( this.expander ) {
 				this.expander.$element.remove();
 				this.expander = null;
@@ -68,10 +77,10 @@
 		if ( this.expander ) {
 			return;
 		}
-		this.expanded = this.childrenCount > 0 ? true : false;
+		this.expanded = childrenCount > 0;
 		this.expander = new OO.ui.ButtonWidget( {
 			framed: false,
-			icon: this.childrenCount > 0 ? 'collapse' : 'expand',
+			icon: childrenCount > 0 ? 'subtract' : 'add',
 			classes: [ 'oojsplus-data-tree-expander' ]
 		} );
 		this.expander.connect( this, {
@@ -104,16 +113,10 @@
 
 	OOJSPlus.ui.data.tree.Item.prototype.deselect = function() {
 		this.$element.removeClass( 'item-selected' );
-		if ( this.optionsPopup ) {
-			this.optionsPopup.$element.hide();
-		}
 	};
 
 	OOJSPlus.ui.data.tree.Item.prototype.select = function() {
 		this.$element.addClass( 'item-selected' );
-		if ( this.optionsPopup ) {
-			this.optionsPopup.$element.show();
-		}
 	};
 
 	OOJSPlus.ui.data.tree.Item.prototype.possiblyAddOptions = function() {
@@ -162,101 +165,36 @@
 				classes: [ 'tree-item-options-popup' ]
 			}
 		} );
-		/*this.optionsPopup.$element.hide();
 
-		var leaveTimer;
-		this.$element.on( 'mouseenter mouseleave', function( e ) {
-			if ( !this.optionsPopup ) {
-				return;
-			}
-			if ( e.type === 'mouseenter' ) {
-				this.optionsPopup.$element.show();
-				this.optionsPopup.popup.toggle( false );
-			} else if ( e.type === 'mouseleave' ) {
-				clearTimeout( leaveTimer );
-				leaveTimer = setTimeout( function() {
-					this.optionsPopup.$element.hide();
-				}, 100 );
-			}
-		}.bind( this ) );*/
-
-		this.optionsPopup.$element.hide();
 		this.$element.append( this.optionsPopup.$element );
 	};
 
 	OOJSPlus.ui.data.tree.Item.prototype.onExpanderClick = function() {
 		if ( this.expanded ) {
-			this.tree.collapseNode( this.name );
-			this.expander.setIcon( 'expand' );
+			this.tree.collapseNode( this.getName() );
+			this.expander.setIcon( 'add' );
 			this.expanded = false;
 		} else {
 			this.tree.assertNodeLoaded( this.name ).done( function() {
-				this.tree.expandNode( this.name );
-				this.expander.setIcon( 'collapse' );
+				this.tree.expandNode( this.getName() );
+				this.expander.setIcon( 'subtract' );
 				this.expanded = true;
 			}.bind( this ) );
 		}
 	};
 
-	OOJSPlus.ui.data.tree.Item.prototype.setIsLeaf = function( isLeaf ) {
-		this.isLeaf = isLeaf;
-		this.possiblyAddExpander();
-	};
-
-	OOJSPlus.ui.data.tree.Item.prototype.show = function() {
-		this.changeVisibility( true );
-	};
-
-	OOJSPlus.ui.data.tree.Item.prototype.hide = function() {
-		this.changeVisibility( false );
-	};
-
-	OOJSPlus.ui.data.tree.Item.prototype.remove = function() {
-		this.$element.remove();
-	};
-
-	OOJSPlus.ui.data.tree.Item.prototype.changeVisibility = function( visible ) {
-		if ( this.optionsPopup ) {
-			this.optionsPopup.toggle( false );
-		}
-		if ( visible ) {
-			this.$element.show();
-			this.optionsPopup.toggle( true );
-		} else {
-			this.$element.hide();
-		}
-	};
-
 	OOJSPlus.ui.data.tree.Item.prototype.onRemoveClick = function() {
 		this.optionsPopup.popup.toggle( false );
-		this.tree.removeNode( this.name );
+		this.tree.removeNode( this.getName() );
 	};
 
 	OOJSPlus.ui.data.tree.Item.prototype.onAddSubnodeClick = function() {
 		this.optionsPopup.popup.toggle( false );
-		this.tree.addSubnode( this.name );
+		this.tree.addSubnode( this.getName() );
 	};
 
-	OOJSPlus.ui.data.tree.Item.prototype.updateUI = function() {
-		this.removeLevelClass();
+	OOJSPlus.ui.data.tree.Item.prototype.onChildrenChanged = function() {
 		this.possiblyAddExpander();
-
-		this.$element.addClass( 'tree-lvl-' + this.level );
-		// Awesome
-		this.$element.css( {
-			'padding-left': this.isLeaf ? this.level * 25 + 30 : this.level * 25
-		} );
-	};
-
-	OOJSPlus.ui.data.tree.Item.prototype.removeLevelClass = function() {
-		classList = $( this.$element ).attr( "class" );
-		classes = classList.split( /\s+/ );
-
-		for ( var i = 0; i < classes.length; i++ ) {
-			if ( /tree-lvl-.*/.test( classes[i] ) ) {
-				this.$element.removeClass( classes[i] );
-			}
-		}
 	};
 
 } )( mediaWiki, jQuery );

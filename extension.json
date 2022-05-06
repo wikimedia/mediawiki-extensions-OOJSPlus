@@ -114,7 +114,6 @@
 				"ui/data/Paginator.js",
 				"ui/data/paginator/Page.js",
 				"ui/data/tree/Item.js",
-				"ui/data/tree/DraggableItem.js",
 				"ui/data/Tree.js",
 				"ui/data/StoreTree.js"
 			],
@@ -127,7 +126,8 @@
 			"dependencies": [
 				"oojs",
 				"oojs-ui",
-				"ext.oOJSPlus"
+				"ext.oOJSPlus",
+				"jquery.ui"
 			],
 			"messages": [
 				"oojsplus-data-delete-row-prompt",
