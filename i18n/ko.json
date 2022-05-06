@@ -21,5 +21,6 @@
 	"oojsplus-dialog-action-delete": "삭제",
 	"oojsplus-dialog-action-create": "만들기",
 	"oojsplus-dialog-action-add": "추가",
-	"oojsplus-dialog-action-cancel": "취소"
+	"oojsplus-dialog-action-cancel": "취소",
+	"oojsplus-data-grid-widget-popup-title": "더 많은 항목"
 }

@@ -35,5 +35,6 @@
 	"oojsplus-dialog-action-delete": "Избриши",
 	"oojsplus-dialog-action-create": "Создај",
 	"oojsplus-dialog-action-add": "Додај",
-	"oojsplus-dialog-action-cancel": "Откажи"
+	"oojsplus-dialog-action-cancel": "Откажи",
+	"oojsplus-data-grid-widget-popup-title": "Уште предмети"
 }

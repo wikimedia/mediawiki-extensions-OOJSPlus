@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"A Chinese Wikipedian",
-			"Looong"
+			"Looong",
+			"Yining Chen"
 		]
 	},
 	"oojsplus-color-picker-color-blue": "蓝色",
@@ -20,5 +21,6 @@
 	"oojsplus-data-tree-new-root-item-label": "添加一个新的根项目",
 	"oojsplus-data-tree-item-remove-label": "移除",
 	"oojsplus-data-tree-item-add-label": "添加新的子项目",
-	"oojsplus-stepprogressbar-default-final-label": "完成"
+	"oojsplus-stepprogressbar-default-final-label": "完成",
+	"oojsplus-data-grid-widget-popup-title": "更多项目"
 }
