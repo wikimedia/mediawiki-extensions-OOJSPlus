@@ -6,32 +6,11 @@
 		this.data = cfg.data || [];
 		this.allowDeletions = typeof cfg.allowDeletions !== 'undefined' ? cfg.allowDeletions : true;
 		this.allowAdditions = typeof cfg.allowAdditions !== 'undefined' ? cfg.allowAdditions : true;
-		this.structure = {};
-		this.placeholderWidgets = [];
-		this.itemsContainer = new OOJSPlus.ui.data.DraggableGroup( this );
-		this.itemsContainer.connect( this, {
-			reorder: function( item, index ) {
-				this.emit( 'reorder', this.getItem( item.getName() ), index );
-			}
-		} );
-
-		this.$element.append( this.itemsContainer.$element );
-
-		this.itemClass = cfg.itemClass || ( this.fixed ? OOJSPlus.ui.data.tree.Item : OOJSPlus.ui.data.tree.DraggableItem );
-		this.build( this.data );
-		this.draw();
-
-		if ( this.allowAdditions ) {
-			this.newRootItemBtn = new OO.ui.ButtonWidget( {
-				label: mw.message( "oojsplus-data-tree-new-root-item-label" ).text(),
-				icon: 'add',
-				framed: false
-			} );
-			this.newRootItemBtn.connect( this, {
-				click: this.addSubnode
-			} );
-			this.$element.append( this.newRootItemBtn.$element );
-		}
+		this.$itemsContainer = new $( '<div>' ).addClass( 'oojsplus-data-tree-items' );
+		// Flat list of nodes
+		this.flat = {};
+		this.$element.append( this.$itemsContainer );
+		this.draw( this.build( this.data ) );
 
 		this.$element.addClass( 'oojsplus-data-treeWidget' );
 		if ( this.fixed ) {
@@ -40,14 +19,13 @@
 	};
 
 	OO.inheritClass( OOJSPlus.ui.data.Tree, OO.ui.Widget );
-	OO.mixinClass( OOJSPlus.ui.data.Tree, OO.ui.mixin.DraggableGroupElement );
 
 	OOJSPlus.ui.data.Tree.static.tagName = 'div';
 
 	/** Build structure from data */
-	OOJSPlus.ui.data.Tree.prototype.build = function( data, lvl, parent ) {
+	OOJSPlus.ui.data.Tree.prototype.build = function( data, lvl ) {
+		var nodes = {};
 		lvl = lvl || 0;
-		parent = parent || null;
 		for( var i = 0; i < data.length; i++ ) {
 			var item = data[i],
 				isLeaf = true;
@@ -66,165 +44,245 @@
 					this.emit( 'itemSelected', item );
 				}
 			} );
-
-			this.structure[widget.getName()] = {
-				level: lvl,
-				childOf: parent ? parent.getName() : null,
-				widget: widget
+			this.flat[widget.getName()] = widget;
+			nodes[widget.getName()] = {
+				widget: widget,
+				children: !isLeaf ? this.build( item.items || [], lvl + 1 ) : {}
 			};
-
-			this.build( item.items || [], lvl + 1, widget );
 		}
+
+		return nodes;
 	};
 
 	OOJSPlus.ui.data.Tree.prototype.createItemWidget = function( item, lvl, isLeaf ) {
-		return new this.itemClass( {
+		return new OOJSPlus.ui.data.tree.Item( {
 			name: item.name,
 			type: item.type || '',
 			icon: item.icon || '',
 			label: item.label || '',
 			indicator: item.indicator || '',
 			level: lvl,
-			isLeaf: isLeaf,
-			childrenCount: item.hasOwnProperty( 'items' ) ? item.items.length : 0,
 			tree: this
 		} );
 	};
 
 	/** Generate HTML */
-	OOJSPlus.ui.data.Tree.prototype.draw = function() {
-		var lvl = 0;
-		this.itemsContainer.clearItems();
-		while ( this.drawLevel( lvl ) !== false ) {
-			lvl++;
+	OOJSPlus.ui.data.Tree.prototype.draw = function( nodes ) {
+		this.$itemsContainer.children().remove();
+		this.$itemsContainer.append( this.doDraw( nodes ) );
+
+		if ( this.allowAdditions ) {
+			var addButton = new OO.ui.ButtonWidget( {
+				label: mw.message( 'oojsplus-data-tree-new-root-item-label' ).text(),
+				classes: [ 'tree-node-add' ],
+				framed: false
+			} );
+			addButton.connect( this, {
+				click: 'addSubnode'
+			} );
+			this.$itemsContainer.append( addButton.$element );
 		}
 	};
 
-	OOJSPlus.ui.data.Tree.prototype.drawLevel = function( lvl ) {
-		var hasItems = false;
-		for( var name in this.structure ) {
-			var item = this.structure[name];
-			if ( item.level !== lvl ) {
-				continue;
-			}
-			hasItems = true;
-			this.appendToParent( name, item.childOf );
-		}
-		return hasItems;
-	};
+	OOJSPlus.ui.data.Tree.prototype.doDraw = function( items, parent ) {
+		var $ul = $( '<ul>' ).addClass( 'tree-node-list' );
+		if ( !this.fixed ) {
+			var tree = this;
+			$ul.attr( 'data-level', parent ? parent.getLevel() + 1 : 0 ) ;
+			$ul.addClass( 'tree-sortable' ).sortable( {
+				connectWith: '.tree-sortable',
+				placeholder: "drop-target",
+				forceHelperSize: true,
+				items: '.oojs-ui-data-tree-item',
+				forcePlaceholderSize: true,
+				//containment: this.$element,
+				start: function( e, ui ) {
+					tree.$itemsContainer.addClass( 'in-drag' );
+					$( ui.item ).addClass( 'dragged' );
+					tree.onDragStart( tree.flat[$( ui.item ).data( 'name' )], $( this ), e, ui );
+				},
+				over: function( e, ui ) {
+					tree.onDragOver( $( this ), e, ui );
+				},
+				out: function( e, ui ) {
+					tree.onDragOut( $( this ), e, ui );
+				},
+				stop: function( e, ui ) {
+					tree.$itemsContainer.removeClass( 'in-drag' );
+					$( ui.item ).removeClass( 'dragged' );
+					tree.onDragStop( tree.flat[$( ui.item ).data( 'name' )], $( this ), e, ui );
+				},
+				receive: function( e, ui ) {
+					// When dropping to another level
+					tree._onListUpdate( $( this ), e, ui, true );
+				},
+				update: function( e, ui ) {
+					// When dropping to the same level
+					tree._onListUpdate( $( this ), e, ui );
+				},
+				remove: function( e, ui ) {
+					var $source = $( this ),
+						$parent = $source.data( 'level' ) === 0 ? null : $source.parent( 'li.oojs-ui-data-tree-item' );
 
-	OOJSPlus.ui.data.Tree.prototype.isLeaf = function( name ) {
-		return this.getChildNodes( name ).length === 0;
-	};
-
-	OOJSPlus.ui.data.Tree.prototype.getItem = function( name ) {
-		if ( !this.structure.hasOwnProperty( name ) ) {
-			if ( this.placeholderWidgets.length ) {
-				for ( var i = 0; i< this.placeholderWidgets.length; i ++) {
-					if ( this.placeholderWidgets[i].name === name ) {
-						return this.placeholderWidgets[i];
+					if ( $parent ) {
+						tree.reEvaluateParent( $parent.data( 'name' ) );
 					}
 				}
+			} ).disableSelection();
+		}
+		for ( var name in items ) {
+			if ( !items.hasOwnProperty( name ) ) {
+				continue;
 			}
-			throw Error( "Node " + name + " does not exist" );
-		}
-		return this.structure[name];
-	};
-
-	OOJSPlus.ui.data.Tree.prototype.getChildNodes = function( name, indirect ) {
-		indirect = indirect || false;
-		var children = [];
-		for( var itemName in this.structure ) {
-			var item = this.structure[itemName];
-			if ( item.childOf === name ) {
-				children.push( item );
-				if ( indirect ) {
-					children = children.concat( this.getChildNodes( itemName, true ) );
-				}
+			if ( !parent ) {
+				$ul.addClass( 'tree-root' );
 			}
-		}
-		return children;
-	};
-
-	OOJSPlus.ui.data.Tree.prototype.foreachNode = function( nodes, cb ) {
-		for( var i = 0; i < nodes.length; i++ ) {
-			cb.call( this, nodes[i] );
-		}
-	};
-
-	OOJSPlus.ui.data.Tree.prototype.collapseNode = function( name ) {
-		this.foreachNode( this.getChildNodes( name, true ), function( node ) {
-			for ( i = 0; i < this.placeholderWidgets.length; i++ ) {
-				if ( this.placeholderWidgets[i].name.includes( 'placeholder-' + name ) ) {
-					this.placeholderWidgets[i].hide();
-				}
-			}
-
-			node.widget.hide();
-		} );
-	};
-
-	OOJSPlus.ui.data.Tree.prototype.expandNode = function( name ) {
-		this.foreachNode( this.getChildNodes( name, true ), function( node ) {
-			for ( i = 0; i < this.placeholderWidgets.length; i++ ) {
-				if ( this.placeholderWidgets[i].name.includes( 'placeholder-' + name ) ) {
-					this.placeholderWidgets[i].show();
-				}
-			}
-			node.widget.show();
-		} );
-	};
-
-	OOJSPlus.ui.data.Tree.prototype.assertNodeLoaded = function( name ) {
-		var item = this.getItem( name ),
-			dfd = $.Deferred();
-
-		if ( !item ) {
-			dfd.reject();
-		} else {
-			dfd.resolve();
+			var $li = items[name].widget.$element;
+			$li.append( this.doDraw( items[name].children || {}, items[name].widget ) );
+			$ul.append( $li );
+			// Once we add children, re-evaluate parent
+			this.reEvaluateParent( name );
 		}
 
-		return dfd.promise();
+		return $ul;
 	};
 
-	OOJSPlus.ui.data.Tree.prototype.removeNode = function( name, subsequent ) {
-		subsequent = subsequent || false;
-		var item = this.getItem( name );
+	OOJSPlus.ui.data.Tree.prototype._onListUpdate = function( $targetList, e, ui, crossDrop ) {
+		var $item = $( ui.item ),
+			$parent = $targetList.data( 'level' ) === 0 ? null : $targetList.parent( 'li.oojs-ui-data-tree-item' ),
+			itemWidget = this.flat[$item.data( 'name' ) ],
+			$previous = null;
 
-		this.structure[name].widget.remove();
-		delete( this.structure[name] );
-		if ( !subsequent ) {
-			var children = this.getChildNodes( name , true );
-			this.reEvaluateParent( item.childOf );
-			this.foreachNode( children, function( node ) {
-				this.removeNode( node.widget.getName(), true );
-			} );
+		if ( $item.index() > 0 ) {
+			$previous = $targetList.children( 'li.oojs-ui-data-tree-item' ).eq( $item.index() - 1 );
 		}
-		this.emit( 'nodeRemoved', item );
+
+		this.onDrop(
+			$targetList, itemWidget,
+			$previous ? this.getItem( $previous.data( 'name' ) ) : null,
+			$parent ? this.flat[$parent.data( 'name' )]: null,
+			crossDrop || false
+		);
+	};
+
+	OOJSPlus.ui.data.Tree.prototype.onDrop = function( $targetList, item, previous, parent, crossDrop ) {
+		if ( parent ) {
+			this.reEvaluateParent( parent.getName() );
+		}
+		this.updateLevels( item, $targetList.data( 'level' ) );
+	};
+
+	OOJSPlus.ui.data.Tree.prototype.onDragStart = function( item, $target, e, ui  ) {
+		// STUB
+	};
+
+	OOJSPlus.ui.data.Tree.prototype.onDragOver = function( $target, e, ui ) {
+		// STUB
+	};
+
+	OOJSPlus.ui.data.Tree.prototype.onDragOut = function( $target, e, ui ) {
+		// STUB
+	};
+
+	OOJSPlus.ui.data.Tree.prototype.onDragStop = function( item, $target, e, ui  ) {
+		// STUB
 	};
 
 	OOJSPlus.ui.data.Tree.prototype.reEvaluateParent = function( name ) {
-		if ( !name ) {
+		var parent = this.getItem( name );
+		if ( !parent ) {
 			return;
 		}
-		var parent = this.getItem( name );
-		if ( this.getChildNodes( name ).length === 0 ) {
-			parent.widget.setIsLeaf( true );
-		} else {
-			parent.widget.setIsLeaf( false );
+		parent.onChildrenChanged();
+	};
+
+	OOJSPlus.ui.data.Tree.prototype.updateLevels = function( item, level ) {
+		item.setLevel( level );
+		var children = item.getChildren(),
+			newLevel = level + 1;
+		for ( var i = 0; i < children.length; i++ ) {
+			this.updateLevels( children[i], newLevel );
 		}
 	};
 
+	OOJSPlus.ui.data.Tree.prototype.isLeaf = function( name ) {
+		var node = this.getItem( name );
+		if ( !node ) {
+			return null;
+		}
+		return node.getChildren().length === 0;
+	};
+
+	OOJSPlus.ui.data.Tree.prototype.getNodes = function() {
+		// Get tree nodes, in order as they appear in the tree
+		var nodes = [];
+		this.$itemsContainer.find( 'li.oojs-ui-data-tree-item' ).each( function( k, el ) {
+			var name = $( el ).attr( 'data-name' ),
+				node = this.getItem( name );
+			if ( node ) {
+				nodes.push( node );
+			}
+		}.bind( this ) );
+
+		return nodes;
+	};
+
+	OOJSPlus.ui.data.Tree.prototype.getItem = function( name ) {
+		if ( !this.flat.hasOwnProperty( name ) ) {
+			return null;
+		}
+		return this.flat[name];
+	};
+
+	OOJSPlus.ui.data.Tree.prototype.collapseNode = function( name ) {
+		var node = this.getItem( name );
+		if ( !node ) {
+			return;
+		}
+		node.$element.find( 'ul.tree-node-list' ).hide();
+	};
+
+	OOJSPlus.ui.data.Tree.prototype.expandNode = function( name ) {
+		var node = this.getItem( name );
+		if ( !node ) {
+			return;
+		}
+		node.$element.find( 'ul.tree-node-list' ).show();
+	};
+
+	OOJSPlus.ui.data.Tree.prototype.assertNodeLoaded = function( name ) {
+		var dfd = $.Deferred();
+
+		if ( this.flat.hasOwnProperty( name ) ) {
+			dfd.resolve();
+		} else {
+			dfd.reject();
+		}
+		return dfd.promise();
+ 	};
+
+	OOJSPlus.ui.data.Tree.prototype.removeNode = function( name ) {
+		var node = this.getItem( name );
+		var subnodes = node.getChildren();
+		delete( this.flat[name] );
+		this.$itemsContainer.find( 'li[data-name="' + name + '"]' ).remove();
+		for ( var i = 0; i < subnodes.length; i++ ) {
+			delete( this.flat[subnodes[i]] );
+		}
+		this.emit( 'nodeRemoved', node );
+	};
+
 	OOJSPlus.ui.data.Tree.prototype.addSubnode = function( parentName ) {
+		console.log( parentName );
 		this.getDataFromUser( parentName ).done( function( data ) {
+			console.log( parentName );
 			this.addSubnodeWithData( data, parentName );
 		}.bind( this ) );
 	};
 
 	OOJSPlus.ui.data.Tree.prototype.addSubnodeWithData = function( data, parentName ) {
-		var parent = typeof parentName !== 'undefined' ? this.getItem( parentName ) : null;
-		var level = parent !== null ? parent.level + 1 : 0;
+		var parent = parentName ? this.getItem( parentName ) : null;
+		var level = parent !== null ? parent.getLevel() + 1 : 0;
 
 		if ( !data ) {
 			return;
@@ -236,30 +294,19 @@
 			}
 		} );
 
-		this.structure[widget.getName()] = {
-			level: level,
-			childOf: parent !== null ? parent.widget.getName() : null,
-			widget: widget
+		this.flat[widget.getName()] = widget;
+		var drawingConfig = {};
+		drawingConfig[widget.getName()] = {
+			widget: widget,
+			children: []
 		};
-
-		this.appendToParent( widget.getName(), parentName );
-		if ( parent ) {
-			this.reEvaluateParent(parent.widget.getName());
+		this.doDraw( drawingConfig, parent );
+		if ( !parent ) {
+ 			this.$itemsContainer.find( '.tree-root' ).append( widget.$element );
+		} else {
+			parent.$element.find( '> ul.tree-node-list' ).append( widget.$element );
 		}
 		this.emit( 'nodeAdded', widget );
-
-		return $.extend( {
-			name: widget.getName()
-		}, this.structure[widget.getName()] );
-	};
-
-	OOJSPlus.ui.data.Tree.prototype.getParent = function( item ) {
-		for ( var name in this.structure ) {
-			if ( name === item ) {
-				return this.structure[item].childOf;
-			}
-		}
-		return '';
 	};
 
 	OOJSPlus.ui.data.Tree.prototype.getDataFromUser = function( parentName ) {
@@ -307,270 +354,11 @@
 		return dfd.promise();
 	};
 
-	OOJSPlus.ui.data.Tree.prototype.appendToParent = function( name, parentName ) {
-		var index = this.itemsContainer.getItemCount(), newIndex = -1;
-		if ( parentName ) {
-			var siblings = this.getChildNodes( parentName );
-			var lastRendered = this.getLastRendered( siblings );
-			if ( !lastRendered ) {
-				newIndex = this.itemsContainer.getItemIndex( this.getItem( parentName ).widget );
-			} else {
-				newIndex = this.itemsContainer.getItemIndex( lastRendered.widget );
-			}
-			if ( newIndex !== -1 ) {
-				index = newIndex + 2;
-			}
-		}
-
-		this.structure[name].rendered = true;
-		this.itemsContainer.addItems( this.structure[name].widget, index );
-
-		var placeholderWidget = new this.itemClass( {
-			name: 'placeholder-'+ name,
-			icon: '',
-			label: '',
-			indicator: '',
-			level:  this.structure[name].level,
-			isLeaf: true,
-			childrenCount: 0,
-			tree: this,
-			classes: ['placeholder-widget']
-		} );
-		this.placeholderWidgets.push( placeholderWidget );
-		this.itemsContainer.addItems( placeholderWidget, index + 1 );
-	};
-
-	OOJSPlus.ui.data.Tree.prototype.getLastRendered = function( items ) {
-		var lastRendered = null;
-		for ( var i = 0; i < items.length; i++ ) {
-			if ( items[i].hasOwnProperty( 'rendered' ) && items[i].rendered === true ) {
-				lastRendered = items[i];
-			}
-		}
-		return lastRendered;
-	};
-
 	OOJSPlus.ui.data.Tree.prototype.setSelected = function( item ) {
 		if ( this.selectedItem ) {
-			this.selectedItem.widget.deselect();
+			this.selectedItem.deselect();
 		}
 		this.selectedItem = this.getItem( item.getName() );
 		this.emit( 'itemSelected', item );
 	};
-
-	OOJSPlus.ui.data.Tree.prototype.getOrderedNames = function() {
-		var children = this.itemsContainer.getItems(),
-			names = [];
-		for ( var i = 0; i < children.length; i++ ) {
-			var child = children[i];
-			names.push( child.getName() );
-		}
-
-		return names;
-	};
-
-	OOJSPlus.ui.data.Tree.prototype.moveChildren = function( parentName, afterIndex ) {
-		var children = this.getChildNodes( parentName );
-		var parentItem = this.structure[parentName];
-		afterIndex++;
-		for ( var i = 0; i < children.length; i++ ) {
-			var child = children[i];
-			this.structure[child.widget.name].level = parentItem.level + 1;
-			this.structure[child.widget.name].widget.setLevel( parentItem.level + 1 );
-
-			this.itemsContainer.itemsOrder.splice( afterIndex, 0,
-				this.itemsContainer.itemsOrder.splice( child.widget.index, 1 )[ 0 ]
-			);
-			this.itemsContainer.reorder( child.widget, afterIndex );
-			this.itemsContainer.emit( 'reorder', child.widget, afterIndex );
-			this.itemsContainer.updateIndexes();
-
-			this.movePlaceholder( child.widget.getName(), child.widget.index );
-			this.moveChildren( child.widget.getName(), child.widget.index + 1 );
-		}
-	};
-
-	OOJSPlus.ui.data.Tree.prototype.movePlaceholder = function( name, afterIndex ) {
-		var parentItem = this.structure[name];
-		afterIndex++;
-
-		for ( i = 0; i < this.placeholderWidgets.length; i++ ) {
-			placeholderName = this.placeholderWidgets[i].name;
-			if ( placeholderName === 'placeholder-' + name ) {
-				widget = this.placeholderWidgets[i];
-				widget.setLevel( parentItem.level );
-
-				this.itemsContainer.itemsOrder.splice( afterIndex, 0,
-					this.itemsContainer.itemsOrder.splice( widget.index, 1 )[ 0 ]
-				);
-				this.itemsContainer.reorder( widget, afterIndex );
-				this.itemsContainer.emit( 'reorder', widget, afterIndex );
-				this.itemsContainer.updateIndexes();
-			}
-		}
-	};
-
-	OOJSPlus.ui.data.Tree.prototype.updateUI = function() {
-		for( var name in this.structure ) {
-			var item = this.structure[name];
-			this.reEvaluateParent( item.widget.name );
-			item.widget.updateUI();
-		}
-	};
-
-	/*DRAGGABLE GROUP*/
-	OOJSPlus.ui.data.DraggableGroup = function( tree ) {
-		this.tree = tree;
-		this.placeholder = true;
-		var cfg =  {};
-		cfg.orientation = 'vertical';
-		cfg.draggable = true;
-		cfg.classes = [ 'items-cls' ];
-		OOJSPlus.ui.data.DraggableGroup.parent.call( this, cfg );
-		OO.ui.mixin.DraggableGroupElement.call( this, $.extend( {}, cfg, { $group: this.$element } ) );
-	};
-
-	OO.inheritClass( OOJSPlus.ui.data.DraggableGroup, OO.ui.Widget );
-	OO.mixinClass( OOJSPlus.ui.data.DraggableGroup, OO.ui.mixin.DraggableGroupElement );
-
-	OOJSPlus.ui.data.DraggableGroup.static.tagName = 'div';
-
-	OOJSPlus.ui.data.DraggableGroup.prototype.onDragOver = function ( e ) {
-		var overIndex, targetIndex,
-			item = this.getDragItem(),
-			dragItemIndex = item.getIndex();
-
-		// Get the OptionWidget item we are dragging over
-		overIndex = $( e.target ).closest( '.oo-ui-draggableElement' ).data( 'index' );
-
-		if ( overIndex !== undefined && overIndex !== dragItemIndex ) {
-			if( !this.dropAllowed( dragItemIndex, overIndex ) ) {
-				return;
-			}
-
-			targetIndex = overIndex + ( overIndex > dragItemIndex ? 1 : 0 );
-			if ( this.isPlaceholder( e.target ) ) {
-				this.placeholder = true;
-			} else {
-				this.placeholder = false;
-			}
-
-			if ( targetIndex > 0 ) {
-				this.$group.children().eq( targetIndex - 1 ).after( item.$element );
-			} else {
-				this.$group.prepend( item.$element );
-			}
-			// Move item in itemsOrder array
-			this.itemsOrder.splice( overIndex, 0,
-				this.itemsOrder.splice( dragItemIndex, 1 )[ 0 ]
-			);
-			this.updateIndexes();
-			this.emit( 'drag', item, targetIndex );
-		}
-
-		// Prevent default
-		e.preventDefault();
-	};
-
-	OOJSPlus.ui.data.DraggableGroup.prototype.dropAllowed = function ( dragItemIndex, overIndex ) {
-		var over = this.itemsOrder[overIndex];
-		var dragged = this.itemsOrder[dragItemIndex];
-		dragged = this.tree.getItem( dragged.getName() );
-		over = this.tree.getItem( over.getName() );
-		if ( over.level < 1 ) {
-			return false;
-		}
-		return true;
-	};
-
-	OOJSPlus.ui.data.DraggableGroup.prototype.onItemDropOrDragEnd = function () {
-		// For some reason cannot call parent of this function so its copy-pasted here
-		var targetIndex, originalIndex,
-			item = this.getDragItem();
-
-		// TODO: Figure out a way to configure a list of legally droppable
-		// elements even if they are not yet in the list
-		if ( item ) {
-			//item.removeDraggedClass();
-			originalIndex = this.items.indexOf( item );
-			// If the item has moved forward, add one to the index to account for the left shift
-			targetIndex = item.getIndex() + ( item.getIndex() > originalIndex ? 1 : 0 );
-
-			if ( targetIndex !== originalIndex ) {
-				this.reorder( item, targetIndex );
-				this.emit( 'reorder', item, targetIndex );
-			}
-
-			this.updateIndexes();
-
-			var targetItem = this.getDragItem();
-
-			if ( targetItem ) {
-				var newParentWidget = this.items[targetItem.index-1];
-				while ( newParentWidget.name.includes( 'placeholder' ) ) {
-					this.placeholder = true;
-					newParentWidget = this.items[newParentWidget.index -1];
-				}
-
-				if ( this.placeholder ) {
-					this.tree.structure[targetItem.name].level =
-						newParentWidget.isLeaf ? newParentWidget.getLevel(): newParentWidget.getLevel() + 1;
-
-					this.tree.structure[targetItem.name].widget.setLevel(
-						newParentWidget.isLeaf ? newParentWidget.getLevel() : newParentWidget.getLevel() + 1 );
-
-					this.tree.structure[targetItem.name].childOf =
-						newParentWidget.isLeaf ? this.tree.getParent( newParentWidget.name ) : newParentWidget.name;
-
-					this.tree.movePlaceholder( targetItem.getName(), targetItem.index );
-					this.tree.moveChildren( targetItem.getName(), targetItem.index + 1 );
-				}
-				else {
-					this.tree.movePlaceholder( newParentWidget.getName(), newParentWidget.index );
-
-					this.tree.structure[targetItem.name].level = newParentWidget.getLevel() + 1;
-					this.tree.structure[targetItem.name].widget.setLevel( newParentWidget.getLevel() + 1 );
-					this.tree.structure[targetItem.name].childOf = newParentWidget.name;
-
-					/** insert target widget after placeholder of parent widget */
-					this.itemsOrder.splice( newParentWidget.index + 2 , 0,
-						this.itemsOrder.splice( targetItem.index, 1 )[ 0 ]
-					);
-					this.reorder( targetItem, newParentWidget.index + 2 );
-					this.emit( 'reorder', targetItem, newParentWidget.index + 2 );
-					this.updateIndexes();
-
-					this.tree.movePlaceholder( targetItem.getName(), targetItem.index );
-					this.tree.moveChildren( targetItem.getName(), targetItem.index + 1 );
-				}
-			}
-
-		}
-		this.unsetDragItem();
-		this.tree.updateUI();
-
-		// Return false to prevent propogation
-		return false;
-	};
-
-	OOJSPlus.ui.data.DraggableGroup.prototype.getIndexForItem = function ( itemName ) {
-		for( var i = 0; i < this.itemsOrder.length; i++ ) {
-			if ( this.itemsOrder[i].getName() === itemName ) {
-				return i;
-			}
-		}
-		return -1;
-	};
-
-	OOJSPlus.ui.data.DraggableGroup.prototype.isPlaceholder = function ( item ) {
-		classList = $( item ).attr( "class" );
-		classes = classList.split( /\s+/ );
-
-		if ( classes.indexOf( 'placeholder-widget' ) != -1 ) {
-			return true;
-		}
-
-		return false;
-	};
-
 } )( mediaWiki, jQuery );
