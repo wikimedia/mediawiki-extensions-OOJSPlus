@@ -4,7 +4,8 @@
 			"DreZhsh",
 			"Gomoko",
 			"Thibaut120094",
-			"Wladek92"
+			"Wladek92",
+			"Verdy p"
 		]
 	},
 	"oojsplus-desc": "Fournit des widgets et des fonctions utilitaires pour OOJS",
@@ -37,5 +38,6 @@
 	"oojsplus-dialog-action-delete": "Supprimer",
 	"oojsplus-dialog-action-create": "Créer",
 	"oojsplus-dialog-action-add": "Ajouter",
-	"oojsplus-dialog-action-cancel": "Annuler"
+	"oojsplus-dialog-action-cancel": "Annuler",
+	"oojsplus-data-grid-widget-popup-title": "Davantage d’éléments"
 }
