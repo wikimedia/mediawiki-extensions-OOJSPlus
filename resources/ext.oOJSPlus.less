@@ -74,18 +74,39 @@
 	}
 }
 
-.placeholder-widget {
-	height: 5px;
-	.tree-item-options-btn {
-		display: none;
+.oojsplus-data-tree-items {
+	&.in-drag {
+		.oojs-ui-data-tree-item {
+			ul:empty:not( .ui-sortable-disabled ) {
+				margin-left: 50px;
+				height: 16px;
+				border: 2px dashed grey;
+				width: 100px;
+				border-radius: 5px;
+				margin-bottom: 4px;
+			}
+			&.dragged {
+				ul:empty {
+					display: none;
+				}
+			}
+ 		}
 	}
-}
-
-.static-tree .placeholder-widget {
-	display: none;
-}
-
-.tree-item:active.additem::before {
-	content: "\0274D";
-	color: grey;
+	ul.tree-node-list {
+		&.tree-root {
+			padding: 0;
+			margin: 0;
+		}
+		min-height: 1px;
+		list-style-type: none;
+	}
+	.drop-target {
+		min-height: 20px;
+		background-color: #bbb4b4 !important;
+		width: 100px;
+		border-radius: 5px;
+		&.invalid-target {
+			background-color: red !important;
+		}
+	}
 }
