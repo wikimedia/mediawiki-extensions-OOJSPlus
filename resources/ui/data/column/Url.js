@@ -5,6 +5,9 @@
 		OOJSPlus.ui.data.column.Url.parent.call( this, cfg );
 
 		this.urlProperty = cfg.urlProperty;
+		this.urlExternal = cfg.urlExternal || null;
+		this.limitShownData = cfg.limitShownData || false;
+		this.limitValue = cfg.limitValue || 2;
 
 		this.$element.addClass( 'url-column' );
 	};
@@ -35,6 +38,11 @@
 
 		var items = [];
 		for ( var i = 0; i < value.length; i++ ) {
+			if ( this.limitShownData &&
+					i > this.limitValue ) {
+						items.push( this.getDataPopup( value, url ) );
+						break
+					}
 			items.push( this.getViewSingleControl( value[i], url[i] ) );
 		}
 
@@ -52,6 +60,31 @@
 
 	OOJSPlus.ui.data.column.Url.prototype.sort = function( a, b ) {
 		return a.localeCompare( b );
+	};
+
+	OOJSPlus.ui.data.column.Url.prototype.getDataPopup = function( value, url ) {
+		return new OO.ui.PopupButtonWidget( {
+			icon: 'ellipsis',
+			label: mw.message( 'oojsplus-data-grid-widget-popup-title' ).plain(),
+			invisibleLabel: true,
+			$overlay: false,
+			framed: false,
+			popup: {
+				$content: this.getPopupContent( value, url ),
+				padded: true
+			}
+		})
+	};
+
+	OOJSPlus.ui.data.column.Url.prototype.getPopupContent = function( value, url ) {
+		$list = $('<ul>').addClass( 'oojsplus-data-gridWidget-popup-list' );
+		for ( var i = 0; i < value.length; i++ ) {
+			$list.append( $( '<li>' )
+				.append( $( '<a>' ).text( value[i] ).attr( {
+					href: url[i]
+				} ) ) );
+		}
+		return $list;
 	};
 
 } )( mediaWiki, jQuery );
