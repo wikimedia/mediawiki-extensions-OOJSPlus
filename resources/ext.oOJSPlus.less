@@ -61,19 +61,6 @@
   }
 }
 
-.oojsplus-data-tree-expander {
-	a {
-		width: 20px;
-		padding: 10px !important;
-		margin-right: 5px !important;
-	}
-	a:focus {
-		outline: none !important;
-		box-shadow: none !important;
-		border-color: transparent !important;
-	}
-}
-
 .oojsplus-data-tree-items {
 	&.in-drag {
 		.oojs-ui-data-tree-item {
@@ -92,16 +79,36 @@
 			}
  		}
 	}
+	.oojs-ui-data-tree-item {
+		position: relative;
+		padding-left: 30px;
+		.oojsplus-data-tree-expander {
+			position: absolute;
+			left: 0;
+			top: 5px;
+			a {
+				width: 20px;
+				padding: 10px !important;
+				margin-right: 5px !important;
+			}
+			a:focus {
+				outline: none !important;
+				box-shadow: none !important;
+				border-color: transparent !important;
+			}
+		}
+	}
+
 	ul.tree-node-list {
+		padding: 0;
 		&.tree-root {
-			padding: 0;
-			margin: 0;
 		}
 		min-height: 1px;
 		list-style-type: none;
 	}
 	.drop-target {
 		min-height: 20px;
+		margin-left: 30px;
 		background-color: #bbb4b4 !important;
 		width: 100px;
 		border-radius: 5px;
