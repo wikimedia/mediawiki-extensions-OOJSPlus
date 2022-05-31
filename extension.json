@@ -53,13 +53,15 @@
 				"ui/widget/CategoryMultiSelectWidget.js",
 				"ui/widget/StoreDataInputWidget.js",
 				"ui/widget/MultiSelectFileWidget.js",
-				"ui/widget/ExpandablePanel.js"
+				"ui/widget/ExpandablePanel.js",
+				"ui/widget/FilterableUserPicker.js"
 			],
 			"styles": [
 				"stylesheet/rangeWidget.less",
 				"stylesheet/expandablePanel.less"
 			],
 			"dependencies": [
+				"mediawiki.widgets.UserInputWidget",
 				"ext.oOJSPlus.widgets.colorPicker",
 				"ext.oOJSPlus.widgets.stepProgressBar"
 			]
@@ -152,7 +154,6 @@
 				"ui/formelement/GroupPicker.js"
 			],
 			"dependencies": [
-				"mediawiki.widgets.UserInputWidget",
 				"ext.oOJSPlus.widgets",
 				"ext.forms.widgets"
 			]
