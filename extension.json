@@ -104,17 +104,24 @@
 		},
 		"ext.oOJSPlus.data": {
 			"scripts": [
+				"ui/data/store/Store.js",
+				"ui/data/store/RemoteStore.js",
+				"ui/data/sorter/Sorter.js",
+				"ui/data/FilterFactory.js",
+				"ui/data/filter/Filter.js",
+				"ui/data/filter/String.js",
+				"ui/data/filter/Number.js",
+				"ui/data/filter/List.js",
 				"ui/data/column/Column.js",
 				"ui/data/column/Text.js",
+				"ui/data/column/Number.js",
 				"ui/data/column/Boolean.js",
-				"ui/data/column/Delete.js",
 				"ui/data/column/Url.js",
 				"ui/data/column/Date.js",
 				"ui/data/column/Icon.js",
 				"ui/data/column/Action.js",
 				"ui/data/Grid.js",
 				"ui/data/Paginator.js",
-				"ui/data/paginator/Page.js",
 				"ui/data/tree/Item.js",
 				"ui/data/Tree.js",
 				"ui/data/StoreTree.js"
@@ -137,7 +144,11 @@
 				"oojsplus-data-tree-new-root-item-label",
 				"oojsplus-data-tree-item-remove-label",
 				"oojsplus-data-tree-item-add-label",
-				"oojsplus-data-grid-widget-popup-title"
+				"oojsplus-data-grid-widget-popup-title",
+				"oojsplus-data-grid-filter-label",
+				"oojsplus-data-grid-filter-clear",
+				"oojsplus-data-grid-filter-number-operator",
+				"oojsplus-data-grid-filter-number-value"
 			]
 		},
 		"ext.oOJSPlus.icons": {

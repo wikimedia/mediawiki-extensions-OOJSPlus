@@ -73,7 +73,14 @@
 			data: {
 				column: {},
 				paginator: {},
-				tree: {}
+				tree: {},
+				filter: {},
+				store: {},
+				sorter: {},
+				registry: {
+					columnRegistry: new OO.Registry(),
+					filterRegistry: new OO.Registry()
+				}
 			},
 			dialog: {},
 			booklet: {},
