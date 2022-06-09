@@ -201,6 +201,10 @@
 				$row: $row,
 				rowIdx: idx
 			}, this.onRowDelete.bind( this ) );
+			$cell.find( '.oojsplus-data-gridWidget-delete' ).on( 'keyup', {
+				$row: $row,
+				rowIdx: idx
+			}, this.onRowDelete.bind( this ) );
 		}
 
 		$row.on( 'click', { $row: $row, item: item, idx: idx }, function( e ) {
@@ -284,15 +288,17 @@
 	};
 
 	OOJSPlus.ui.data.GridWidget.prototype.onRowDelete = function( e ) {
-		if ( this.deleteNoConfirm ) {
-			this.doDeleteRow( e );
-		} else {
-			OO.ui.confirm( this.deletePrompt ).done( function( confirmed ) {
-				if ( !confirmed ) {
-					return;
-				}
+		if ( e.type === 'click' || ( e.type === 'keyup' && e.key === 'Enter' ) ) {
+			if ( this.deleteNoConfirm ) {
 				this.doDeleteRow( e );
-			}.bind( this ) );
+			} else {
+				OO.ui.confirm( this.deletePrompt ).done( function( confirmed ) {
+					if ( !confirmed ) {
+						return;
+					}
+					this.doDeleteRow( e );
+				}.bind( this ) );
+			}
 		}
 	};
 
