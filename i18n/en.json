@@ -35,5 +35,6 @@
 	"oojsplus-dialog-action-create": "Create",
 	"oojsplus-dialog-action-add": "Add",
 	"oojsplus-dialog-action-cancel": "Cancel",
-	"oojsplus-data-grid-widget-popup-title": "More items"
+	"oojsplus-data-grid-widget-popup-title": "More items",
+	"oojsplus-data-grid-widget-remove-title": "Remove"
 }

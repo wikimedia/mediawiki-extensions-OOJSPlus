@@ -138,7 +138,8 @@
 				"oojsplus-data-tree-new-root-item-label",
 				"oojsplus-data-tree-item-remove-label",
 				"oojsplus-data-tree-item-add-label",
-				"oojsplus-data-grid-widget-popup-title"
+				"oojsplus-data-grid-widget-popup-title",
+				"oojsplus-data-grid-widget-remove-title"
 			]
 		},
 		"ext.oOJSPlus.icons":  {

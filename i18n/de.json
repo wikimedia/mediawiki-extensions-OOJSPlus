@@ -37,5 +37,6 @@
 	"oojsplus-dialog-action-delete": "Löschen",
 	"oojsplus-dialog-action-create": "Erstellen",
 	"oojsplus-dialog-action-add": "Hinzufügen",
-	"oojsplus-dialog-action-cancel": "Abbrechen"
+	"oojsplus-dialog-action-cancel": "Abbrechen",
+	"oojsplus-data-grid-widget-remove-title": "Entfernen"
 }
