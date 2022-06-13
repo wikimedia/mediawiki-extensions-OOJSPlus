@@ -15,8 +15,7 @@
 		this.load( cfg.store.rootNode ).done( function( data ) {
 			this.data = data;
 			this.loaded = true;
-			this.build( this.data );
-			this.draw();
+			this.draw( this.build( this.data ) );
 			this.emit( 'loaded' );
 		}.bind( this ) ).fail( function( response ) {
 			this.emit( 'load-fail', response );
@@ -26,16 +25,16 @@
 	OO.inheritClass( OOJSPlus.ui.data.StoreTree, OOJSPlus.ui.data.Tree );
 
 	/** Build structure from data */
-	OOJSPlus.ui.data.StoreTree.prototype.build = function( data, lvl, parent ) {
+	OOJSPlus.ui.data.StoreTree.prototype.build = function( data, lvl ) {
 		if ( this.loaded ) {
-			OOJSPlus.ui.data.StoreTree.parent.prototype.build.call( this, data, lvl, parent );
+			return OOJSPlus.ui.data.StoreTree.parent.prototype.build.call( this, data, lvl );
 		}
 	};
 
 	/** Generate HTML */
-	OOJSPlus.ui.data.StoreTree.prototype.draw = function() {
+	OOJSPlus.ui.data.StoreTree.prototype.draw = function( nodes ) {
 		if ( this.loaded ) {
-			OOJSPlus.ui.data.StoreTree.parent.prototype.draw.call( this );
+			OOJSPlus.ui.data.StoreTree.parent.prototype.draw.call( this, nodes );
 		}
 	};
 
