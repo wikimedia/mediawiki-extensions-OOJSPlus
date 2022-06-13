@@ -62,6 +62,7 @@
 			label: item.label || '',
 			indicator: item.indicator || '',
 			level: lvl,
+			leaf: item.leaf || false,
 			tree: this
 		} );
 	};
@@ -273,9 +274,7 @@
 	};
 
 	OOJSPlus.ui.data.Tree.prototype.addSubnode = function( parentName ) {
-		console.log( parentName );
 		this.getDataFromUser( parentName ).done( function( data ) {
-			console.log( parentName );
 			this.addSubnodeWithData( data, parentName );
 		}.bind( this ) );
 	};

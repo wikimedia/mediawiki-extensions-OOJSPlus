@@ -8,6 +8,7 @@
 		this.icon = cfg.icon || '';
 		this.level = cfg.level;
 		this.type = cfg.type;
+		this.leaf = cfg.leaf || false;
 		this.allowAdditions = typeof cfg.allowAdditions !== 'undefined' ? cfg.allowAdditions : this.tree.allowAdditions;
 		this.labelAdd = typeof cfg.labelAdd !== 'undefined' ? cfg.labelAdd : this.tree.labelAdd;
 		this.allowDeletions = typeof cfg.allowDeletions !== 'undefined' ? cfg.allowDeletions : this.tree.allowDeletions;
@@ -67,7 +68,8 @@
 
 	OOJSPlus.ui.data.tree.Item.prototype.possiblyAddExpander = function() {
 		var childrenCount = this.getChildren().length;
-		if ( childrenCount === 0 ) {
+
+		if ( childrenCount === 0 && this.leaf ) {
 			if ( this.expander ) {
 				this.expander.$element.remove();
 				this.expander = null;
