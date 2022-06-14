@@ -28,7 +28,7 @@
 		var button = new OO.ui.ButtonWidget( {
 			indicator: 'clear',
 			framed: false,
-			title: 'Delete',
+			title: mw.message( 'oojsplus-data-grid-widget-remove-title' ).text(),
 			flags: [
 				'destructive'
 			]
