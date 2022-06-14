@@ -37,5 +37,9 @@
 	"oojsplus-dialog-action-create": "Label for action create in dialog\n\n{{Identical|Create}}",
 	"oojsplus-dialog-action-add": "Label for action add in dialog\n\n{{Identical|Add}}",
 	"oojsplus-dialog-action-cancel": "Label for action cancel in dialog\n\n{{Identical|Cancel}}",
-	"oojsplus-data-grid-widget-popup-title": "Label for popup button to see all added items"
+	"oojsplus-data-grid-widget-popup-title": "Label for popup button to see all added items",
+	"oojsplus-data-grid-filter-label": "Label for the filter button",
+	"oojsplus-data-grid-filter-clear": "Label for the clear filter button",
+	"oojsplus-data-grid-filter-number-operator": "Label for the filter field",
+	"oojsplus-data-grid-filter-number-value": "Label for the filter field"
 }
