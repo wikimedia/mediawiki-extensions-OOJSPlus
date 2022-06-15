@@ -15,8 +15,14 @@ OOJSPlus.ui.data.sorter.Sorter.prototype.getValue = function() {
 	};
 };
 
-OOJSPlus.ui.data.sorter.Sorter.prototype.sort = function( data ) {
+OOJSPlus.ui.data.sorter.Sorter.prototype.sort = function( data, field ) {
 	return data.sort( function( a, b ) {
-		return a.localeCompare( b, undefined, { ignorePunctuation: true } );
-	} );
+		if ( this.direction === 'ASC' ) {
+			return a[field].localeCompare( b[field], undefined, { ignorePunctuation: true } );
+		}
+		if ( this.direction === 'DESC' ) {
+			return b[field].localeCompare( a[field], undefined, { ignorePunctuation: true } );
+		}
+		return 0;
+	}.bind( this ) );
 };
