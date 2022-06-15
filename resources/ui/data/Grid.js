@@ -8,6 +8,7 @@
 		this.style = cfg.style || 'none';
 		this.noHeader = cfg.noHeader || false;
 		this.border = cfg.border || 'none';
+		this.pageSize = cfg.pageSize || 25;
 		this.store = cfg.store || this.createLocalStore( cfg.data || [] );
 		this.paginator = new OOJSPlus.ui.data.Paginator( {
 			grid: this,
@@ -69,7 +70,7 @@
 
 	OOJSPlus.ui.data.GridWidget.prototype.createLocalStore = function( data ) {
 		return new OOJSPlus.ui.data.store.Store( {
-			data: data, pageSize: 25, remoteFilter: false, remoteSort: false
+			data: data, pageSize: this.pageSize, remoteFilter: false, remoteSort: false
 		} );
 	};
 
