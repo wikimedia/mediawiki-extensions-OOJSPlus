@@ -39,5 +39,9 @@
 	"oojsplus-dialog-action-create": "Créer",
 	"oojsplus-dialog-action-add": "Ajouter",
 	"oojsplus-dialog-action-cancel": "Annuler",
-	"oojsplus-data-grid-widget-popup-title": "Davantage d’éléments"
+	"oojsplus-data-grid-widget-popup-title": "Davantage d’éléments",
+	"oojsplus-data-grid-filter-label": "Filtrer",
+	"oojsplus-data-grid-filter-clear": "Effacer",
+	"oojsplus-data-grid-filter-number-operator": "Type",
+	"oojsplus-data-grid-filter-number-value": "Valeur"
 }

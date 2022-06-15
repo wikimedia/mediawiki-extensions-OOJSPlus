@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"Yahya",
 			"আফতাবুজ্জামান"
 		]
 	},
@@ -14,5 +15,9 @@
 	"oojsplus-color-picker-color-pink": "গোলাপী",
 	"oojsplus-color-picker-clear-label": "রঙ পরিষ্কার করুন",
 	"oojsplus-color-picker-label": "রঙ চয়নকারী",
-	"oojsplus-stepprogressbar-default-final-label": "সম্পন্ন"
+	"oojsplus-stepprogressbar-default-final-label": "সম্পন্ন",
+	"oojsplus-data-grid-filter-label": "ছাঁকনি",
+	"oojsplus-data-grid-filter-clear": "পরিষ্কার",
+	"oojsplus-data-grid-filter-number-operator": "ধরন",
+	"oojsplus-data-grid-filter-number-value": "মান"
 }
