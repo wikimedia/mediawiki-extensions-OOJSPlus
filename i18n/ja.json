@@ -1,0 +1,11 @@
+{
+	"@metadata": {
+		"authors": [
+			"MathXplore"
+		]
+	},
+	"oojsplus-data-grid-filter-label": "フィルター",
+	"oojsplus-data-grid-filter-clear": "クリア",
+	"oojsplus-data-grid-filter-number-operator": "タイプ",
+	"oojsplus-data-grid-filter-number-value": "値"
+}
