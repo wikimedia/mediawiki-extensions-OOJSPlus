@@ -18,5 +18,9 @@
 	"oojsplus-dialog-action-done": "Fäerdeg",
 	"oojsplus-dialog-action-delete": "Läschen",
 	"oojsplus-dialog-action-add": "Derbäisetzen",
-	"oojsplus-dialog-action-cancel": "Ofbriechen"
+	"oojsplus-dialog-action-cancel": "Ofbriechen",
+	"oojsplus-data-grid-filter-label": "Filteren",
+	"oojsplus-data-grid-filter-clear": "Eidel maachen",
+	"oojsplus-data-grid-filter-number-operator": "Typ",
+	"oojsplus-data-grid-filter-number-value": "Wäert"
 }

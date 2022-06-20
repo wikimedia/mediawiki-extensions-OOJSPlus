@@ -16,5 +16,9 @@
 	"oojsplus-dialog-action-delete": "Удалить",
 	"oojsplus-dialog-action-create": "Создать",
 	"oojsplus-dialog-action-add": "Добавить",
-	"oojsplus-dialog-action-cancel": "Отмена"
+	"oojsplus-dialog-action-cancel": "Отмена",
+	"oojsplus-data-grid-filter-label": "Фильтр",
+	"oojsplus-data-grid-filter-clear": "Очистить",
+	"oojsplus-data-grid-filter-number-operator": "Тип",
+	"oojsplus-data-grid-filter-number-value": "Значение"
 }
