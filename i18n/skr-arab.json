@@ -8,5 +8,8 @@
 	"oojsplus-color-picker-color-red": "رتا",
 	"oojsplus-color-picker-color-green": "ساوا",
 	"oojsplus-color-picker-color-yellow": "پیلا",
-	"oojsplus-data-tree-item-remove-label": "ہٹاؤ"
+	"oojsplus-data-tree-item-remove-label": "ہٹاؤ",
+	"oojsplus-data-grid-filter-clear": "صاف",
+	"oojsplus-data-grid-filter-number-operator": "قسم",
+	"oojsplus-data-grid-filter-number-value": "قدر"
 }

@@ -36,5 +36,9 @@
 	"oojsplus-dialog-action-create": "Создај",
 	"oojsplus-dialog-action-add": "Додај",
 	"oojsplus-dialog-action-cancel": "Откажи",
-	"oojsplus-data-grid-widget-popup-title": "Уште предмети"
+	"oojsplus-data-grid-widget-popup-title": "Уште предмети",
+	"oojsplus-data-grid-filter-label": "Филтрирај",
+	"oojsplus-data-grid-filter-clear": "Исчисти",
+	"oojsplus-data-grid-filter-number-operator": "Вид",
+	"oojsplus-data-grid-filter-number-value": "Вредност"
 }
