@@ -9,6 +9,9 @@ OO.inheritClass( OOJSPlus.ui.data.filter.List, OOJSPlus.ui.data.filter.Filter );
 OOJSPlus.ui.data.filter.List.prototype.getLayout = function() {
 	this.input = new OO.ui.CheckboxMultiselectInputWidget( {
 		options: this.list.map( function( i ) {
+			if ( typeof i === 'object' ) {
+				return i;
+			}
 			return { data: i };
 		} )
 	} );

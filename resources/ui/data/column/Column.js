@@ -93,8 +93,11 @@
 		return this.filterButton;
 	};
 
-	OOJSPlus.ui.data.column.Column.prototype.onFilterChange = function( filter ) {
+	OOJSPlus.ui.data.column.Column.prototype.onFilterChange = function( filter, closePopup ) {
 		this.emit( 'filter', filter, this.id );
+		if ( closePopup ) {
+			this.filterButton.getPopup().toggle( false );
+		}
 	};
 
 	OOJSPlus.ui.data.column.Column.prototype.renderCell = function( value, row ) {
@@ -131,10 +134,7 @@
 		if ( value instanceof OOJSPlus.ui.data.filter.Filter ) {
 			this.filter = value;
 			this.filter.connect( this, {
-				change: 'onFilterChange',
-				clear: function() {
-					this.filterButton.getPopup().toggle( false );
-				}
+				change: 'onFilterChange'
 			} );
 			return;
 		}
