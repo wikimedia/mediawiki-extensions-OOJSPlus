@@ -2,11 +2,15 @@
 	"@metadata": {
 		"authors": [
 			"Rail",
-			"Railfail536"
+			"Railfail536",
+			"Rzuwig"
 		]
 	},
 	"oojsplus-data-delete-row-prompt": "Czy na pewno chcesz usunąć ten wiersz?",
 	"oojsplus-data-paginator-page-total-count-label": "{{PLURAL:$1|$1 wiersz|$1 wiersze|$1 wierszy}}",
 	"oojsplus-data-tree-item-remove-label": "Usuń",
-	"oojsplus-stepprogressbar-default-final-label": "Gotowe"
+	"oojsplus-stepprogressbar-default-final-label": "Gotowe",
+	"oojsplus-data-grid-filter-label": "Filtr",
+	"oojsplus-data-grid-filter-number-operator": "Typ",
+	"oojsplus-data-grid-filter-number-value": "Wartość"
 }
