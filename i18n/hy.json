@@ -8,5 +8,7 @@
 	"oojsplus-dialog-action-delete": "Ջնջել",
 	"oojsplus-dialog-action-create": "Ստեղծել",
 	"oojsplus-dialog-action-add": "Ավելացնել",
-	"oojsplus-dialog-action-cancel": "Չեղարկել"
+	"oojsplus-dialog-action-cancel": "Չեղարկել",
+	"oojsplus-data-grid-filter-label": "Զտիչ",
+	"oojsplus-data-grid-filter-clear": "Մաքրել"
 }
