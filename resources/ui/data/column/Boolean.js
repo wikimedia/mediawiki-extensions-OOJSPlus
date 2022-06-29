@@ -6,8 +6,8 @@ OOJSPlus.ui.data.column.Boolean = function ( cfg ) {
 
 OO.inheritClass (OOJSPlus.ui.data.column.Boolean, OOJSPlus.ui.data.column.Column );
 
-OOJSPlus.ui.data.column.Boolean.prototype.renderCell = function( value ) {
-	var $cell = OOJSPlus.ui.data.column.Text.parent.prototype.renderCell.apply( this, [ value ] );
+OOJSPlus.ui.data.column.Boolean.prototype.renderCell = function( value, row ) {
+	var $cell = OOJSPlus.ui.data.column.Text.parent.prototype.renderCell.apply( this, value, row );
 	$cell.addClass( 'boolean-cell' );
 	return $cell;
 };

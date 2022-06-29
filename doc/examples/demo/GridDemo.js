@@ -75,6 +75,7 @@ var remoteGrid = new OOJSPlus.ui.data.GridWidget( {
 				type: "text",
 				valueParser: function ( value, row ) {
 					// value is the current field, equal to row.address in this case
+					// Can return a string, an OOJS ui widget, or OO.ui.HtmlSnippet
 					return value + ',' + row.zip + ' ' + row.city;
 				}
 			},
@@ -86,7 +87,15 @@ var remoteGrid = new OOJSPlus.ui.data.GridWidget( {
 			active: {
 				width: 30,
 				headerText: "Active",
-				type: "boolean"
+				type: "boolean",
+				filter: {
+					type: 'list',
+					list: [
+						// Specification for checkbox multiselect options
+						{ data: false, label: 'No' },
+						{ data: true, label: 'Yes' },
+					]
+				}
 			},
 			// Action field, not part of the data model, but triggers a certain action on the row
 			detailsAction: {

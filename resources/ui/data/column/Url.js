@@ -12,11 +12,8 @@ OOJSPlus.ui.data.column.Url = function ( cfg ) {
 OO.inheritClass( OOJSPlus.ui.data.column.Url, OOJSPlus.ui.data.column.Column );
 
 OOJSPlus.ui.data.column.Url.prototype.renderCell = function ( value, row ) {
-	var $cell = $( '<td>' ).addClass( 'oojsplus-data-gridWidget-cell' );
-	$cell.attr( 'data-column', this.id );
-	$cell.attr( 'data-value', value );
+	var $cell = OOJSPlus.ui.data.column.Url.parent.prototype.renderCell.call( this, value, row );
 	$cell.addClass( 'url-cell' );
-	$cell.append( this.getViewControls( value, row ).$element );
 	return $cell;
 };
 

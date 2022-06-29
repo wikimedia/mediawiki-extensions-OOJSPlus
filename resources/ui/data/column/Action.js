@@ -19,11 +19,11 @@ OOJSPlus.ui.data.column.Action.prototype.bindToGrid = function( grid ) {
 OOJSPlus.ui.data.column.Action.prototype.renderCell = function( value, row ) {
 	var $cell = $( '<td>' ).addClass( 'oojsplus-data-gridWidget-cell' );
 	$cell.addClass( 'action-cell' );
-	$cell.append( this.getViewControls( row ).$element );
+	$cell.append( this.getCellContent( value, row ) );
 	return $cell;
 };
 
-OOJSPlus.ui.data.column.Action.prototype.getViewControls = function( row ) {
+OOJSPlus.ui.data.column.Action.prototype.getViewControls = function( value, row ) {
 	var button =  new OO.ui.ButtonWidget( {
 		label: this.label,
 		icon: this.icon,
