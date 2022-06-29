@@ -7,8 +7,7 @@ OOJSPlus.ui.data.column.Text = function ( cfg ) {
 OO.inheritClass( OOJSPlus.ui.data.column.Text, OOJSPlus.ui.data.column.Column );
 
 OOJSPlus.ui.data.column.Text.prototype.renderCell = function( value, row ) {
-	value = this.getDisplayText( value, row );
-	var $cell = OOJSPlus.ui.data.column.Text.parent.prototype.renderCell.apply( this, [ value ] );
+	var $cell = OOJSPlus.ui.data.column.Text.parent.prototype.renderCell.call( this, value, row );
 	$cell.addClass( 'text-cell' );
 	return $cell;
 };
