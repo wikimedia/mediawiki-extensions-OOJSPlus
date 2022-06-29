@@ -101,18 +101,28 @@
 	};
 
 	OOJSPlus.ui.data.column.Column.prototype.renderCell = function( value, row ) {
-		value = this.getDisplayText( value, row );
 		var $cell = $( '<td>' ).addClass( 'oojsplus-data-gridWidget-cell' );
 		$cell.attr( 'data-column', this.id );
-		$cell.attr( 'data-value', value );
 		if( this.width ) {
 			$cell.css( 'width', this.width + 'px' );
 		}
-		$cell.append( this.getViewControls( value ).$element );
+		$cell.append( this.getCellContent( value, row ) );
+
 		return $cell;
 	};
 
-	OOJSPlus.ui.data.column.Column.prototype.getViewControls = function( value ) {
+	OOJSPlus.ui.data.column.Column.prototype.getCellContent = function( value, row ) {
+		value = this.getDisplayText( value, row );
+		if ( value instanceof OO.ui.Element ) {
+			return value.$element;
+		} else if( value instanceof OO.ui.HtmlSnippet ) {
+			return value.toString() || '';
+		}
+
+		return this.getViewControls( value, row ).$element;
+	};
+
+	OOJSPlus.ui.data.column.Column.prototype.getViewControls = function( value, row ) {
 		return new OO.ui.LabelWidget( {
 			label: value
 		} );
@@ -124,8 +134,8 @@
 			value = row[this.display];
 		}
 
-		if ( this.valueParser ) {
-			return this.valueParser( value, row );
+		if ( typeof this.valueParser === 'function' ) {
+			return this.valueParser.call( this, value, row );
 		}
 		return value;
 	};
