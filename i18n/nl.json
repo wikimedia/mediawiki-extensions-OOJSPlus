@@ -3,6 +3,7 @@
 		"authors": [
 			"Mainframe98",
 			"RadioAzureus",
+			"Rots61",
 			"Siebrand"
 		]
 	},
@@ -15,5 +16,6 @@
 	"oojsplus-color-picker-color-pink": "Roze",
 	"oojsplus-color-picker-label": "Kleurenkiezer",
 	"oojsplus-data-tree-item-remove-label": "Verwijderen",
-	"oojsplus-stepprogressbar-default-final-label": "Afgerond"
+	"oojsplus-stepprogressbar-default-final-label": "Afgerond",
+	"oojsplus-dialog-action-cancel": "Annuleren"
 }
