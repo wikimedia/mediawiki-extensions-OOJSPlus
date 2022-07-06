@@ -37,5 +37,7 @@
 	"oojsplus-dialog-action-delete": "Löschen",
 	"oojsplus-dialog-action-create": "Erstellen",
 	"oojsplus-dialog-action-add": "Hinzufügen",
-	"oojsplus-dialog-action-cancel": "Abbrechen"
+	"oojsplus-dialog-action-cancel": "Abbrechen",
+	"oojsplus-data-paginator-next": "Nächste Seite",
+	"oojsplus-data-paginator-previous": "Vorherige Seite"
 }
