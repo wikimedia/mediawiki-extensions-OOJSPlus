@@ -22,16 +22,17 @@
 
 		this.$table.addClass( 'style-' + this.style );
 		this.$table.addClass( 'border-' + this.border );
-		this.$element.append( this.$table, this.paginator.$element );
+		this.$element.append( this.$table );
+		if ( !cfg.hidePagination ) {
+			this.$element.append( this.paginator.$element );
+		}
 
 		this.makeLoadingOverlay();
-		this.store.load().done( function() {
-			this.paginator.init();
-		}.bind( this ) );
 		this.store.connect( this, {
 			loading: 'onStoreLoading',
 			loaded: 'onStoreLoaded'
 		} );
+		this.store.load();
 	};
 
 	OO.inheritClass( OOJSPlus.ui.data.GridWidget, OO.ui.Widget );
@@ -93,6 +94,7 @@
 	OOJSPlus.ui.data.GridWidget.prototype.onStoreLoaded = function( rows ) {
 		this.setActiveFilters( Object.keys( this.store.getFilters() ) );
 		this.$loadingOverlay.hide();
+		this.paginator.init();
 	};
 
 	OOJSPlus.ui.data.GridWidget.prototype.onStoreLoading = function() {
