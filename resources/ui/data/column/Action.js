@@ -17,9 +17,8 @@ OOJSPlus.ui.data.column.Action.prototype.bindToGrid = function( grid ) {
 };
 
 OOJSPlus.ui.data.column.Action.prototype.renderCell = function( value, row ) {
-	var $cell = $( '<td>' ).addClass( 'oojsplus-data-gridWidget-cell' );
+	$cell = OOJSPlus.ui.data.column.Action.parent.prototype.renderCell.call( this, value, row );
 	$cell.addClass( 'action-cell' );
-	$cell.append( this.getCellContent( value, row ) );
 	return $cell;
 };
 

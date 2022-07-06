@@ -29,6 +29,10 @@ OOJSPlus.ui.data.store.RemoteStore.prototype.doLoadData = function() {
 	return dfd.promise();
 };
 
+OOJSPlus.ui.data.store.RemoteStore.prototype.setData = function( data ) {
+	throw new Error( "Cannot set data of a remote store" );
+};
+
 OOJSPlus.ui.data.store.RemoteStore.prototype.getFiltersForRemote = function() {
 	var filters = [];
 	for ( var field in this.filters ) {

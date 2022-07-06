@@ -66,6 +66,16 @@ OOJSPlus.ui.data.store.Store.prototype.doLoadData = function() {
 	return $.Deferred().resolve( this.indexData( data ) ).promise();
 };
 
+OOJSPlus.ui.data.store.Store.prototype.setData = function( data ) {
+	this.data = {};
+	this.originalData = data;
+	this.load();
+};
+
+OOJSPlus.ui.data.store.Store.prototype.getData = function() {
+	return this.data;
+};
+
 OOJSPlus.ui.data.store.Store.prototype.filterIfLocal = function( data ) {
 	if ( !this.remoteFilter && !$.isEmptyObject( this.filters ) ) {
 		return this.localFilter( data );
