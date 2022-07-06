@@ -151,7 +151,9 @@
 				"oojsplus-data-grid-filter-label",
 				"oojsplus-data-grid-filter-clear",
 				"oojsplus-data-grid-filter-number-operator",
-				"oojsplus-data-grid-filter-number-value"
+				"oojsplus-data-grid-filter-number-value",
+				"oojsplus-data-paginator-next",
+				"oojsplus-data-paginator-previous"
 			]
 		},
 		"ext.oOJSPlus.icons":  {

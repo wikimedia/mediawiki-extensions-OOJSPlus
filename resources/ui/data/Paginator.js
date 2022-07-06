@@ -111,6 +111,7 @@
 
 		this.previousButton = new OO.ui.ButtonWidget( {
 			icon: 'previous',
+			title: mw.message( 'oojsplus-data-paginator-previous' ).plain(),
 			disabled: true
 		} );
 		this.previousButton.connect( this, {
@@ -118,7 +119,8 @@
 		} );
 
 		this.nextButton= new OO.ui.ButtonWidget( {
-			icon: 'next'
+			icon: 'next',
+			title: mw.message( 'oojsplus-data-paginator-next' ).plain(),
 		} );
 		this.nextButton.connect( this, {
 			click: 'next'
