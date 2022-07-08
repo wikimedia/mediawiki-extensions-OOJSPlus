@@ -28,6 +28,7 @@
 		}
 
 		this.makeLoadingOverlay();
+		this.initComplete = false;
 		this.store.connect( this, {
 			loading: 'onStoreLoading',
 			loaded: 'onStoreLoaded'
@@ -94,7 +95,10 @@
 	OOJSPlus.ui.data.GridWidget.prototype.onStoreLoaded = function( rows ) {
 		this.setActiveFilters( Object.keys( this.store.getFilters() ) );
 		this.$loadingOverlay.hide();
-		this.paginator.init();
+		if ( !this.initComplete ) {
+			this.initComplete = true;
+			this.paginator.init();
+		}
 	};
 
 	OOJSPlus.ui.data.GridWidget.prototype.onStoreLoading = function() {
