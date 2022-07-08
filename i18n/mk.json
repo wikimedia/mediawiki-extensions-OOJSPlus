@@ -40,5 +40,7 @@
 	"oojsplus-data-grid-filter-label": "Филтрирај",
 	"oojsplus-data-grid-filter-clear": "Исчисти",
 	"oojsplus-data-grid-filter-number-operator": "Вид",
-	"oojsplus-data-grid-filter-number-value": "Вредност"
+	"oojsplus-data-grid-filter-number-value": "Вредност",
+	"oojsplus-data-paginator-next": "Следна страница",
+	"oojsplus-data-paginator-previous": "Претходна страница"
 }

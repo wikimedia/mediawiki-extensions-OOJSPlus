@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"Mohanad Kh",
 			"ديفيد"
 		]
 	},
@@ -20,5 +21,7 @@
 	"oojsplus-data-tree-new-root-item-label": "إضافة عنصر جذر جديد",
 	"oojsplus-data-tree-item-remove-label": "إزالة",
 	"oojsplus-data-tree-item-add-label": "إضافة عنصر فرعي جديد",
-	"oojsplus-stepprogressbar-default-final-label": "تم"
+	"oojsplus-stepprogressbar-default-final-label": "تم",
+	"oojsplus-data-paginator-next": "الصفحة التالية",
+	"oojsplus-data-paginator-previous": "الصفحة السابقة"
 }
