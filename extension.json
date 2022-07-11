@@ -164,7 +164,8 @@
 				"ui/formelement/GroupPicker.js"
 			],
 			"dependencies": [
-				"ext.oOJSPlus.widgets"
+				"ext.oOJSPlus.widgets",
+				"ext.forms.widgets"
 			]
 		},
 		"ext.oOJSPlus.dialogs": {
