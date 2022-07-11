@@ -43,5 +43,7 @@
 	"oojsplus-data-grid-filter-label": "Filtrer",
 	"oojsplus-data-grid-filter-clear": "Effacer",
 	"oojsplus-data-grid-filter-number-operator": "Type",
-	"oojsplus-data-grid-filter-number-value": "Valeur"
+	"oojsplus-data-grid-filter-number-value": "Valeur",
+	"oojsplus-data-paginator-next": "Page suivante",
+	"oojsplus-data-paginator-previous": "Page précédente"
 }

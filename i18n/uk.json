@@ -4,7 +4,8 @@
 			"DDPAT",
 			"Ice bulldog",
 			"Piramidion",
-			"Vlad5250"
+			"Vlad5250",
+			"Пан Хаунд"
 		]
 	},
 	"oojsplus-desc": "Надає віджети та утилітарні функції для OOJS",
@@ -32,5 +33,7 @@
 	"apihelp-query+allgroups-paramvalue-prop-additional": "Є додатковою групою",
 	"apihelp-query+allgroups-paramvalue-prop-displaytext": "Відображення тексту групи",
 	"apihelp-query+allgroups-example": "Список груп, що починаються на «s»",
-	"apihelp-query+allcategories-param-contains": "Шукати усі назви категорій, які містять це значення."
+	"apihelp-query+allcategories-param-contains": "Шукати усі назви категорій, які містять це значення.",
+	"oojsplus-data-paginator-next": "Наступна сторінка",
+	"oojsplus-data-paginator-previous": "Попередня сторінка"
 }

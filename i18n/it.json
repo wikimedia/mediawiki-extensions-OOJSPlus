@@ -9,5 +9,7 @@
 	"oojsplus-color-picker-color-green": "Verde",
 	"oojsplus-color-picker-color-yellow": "Giallo",
 	"oojsplus-color-picker-color-pink": "Rosa",
-	"oojsplus-stepprogressbar-default-final-label": "Fatto"
+	"oojsplus-stepprogressbar-default-final-label": "Fatto",
+	"oojsplus-data-paginator-next": "Pagina successiva",
+	"oojsplus-data-paginator-previous": "Pagina precedente"
 }

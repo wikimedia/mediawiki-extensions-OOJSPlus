@@ -7,5 +7,7 @@
 	"oojsplus-data-grid-filter-label": "Athlina",
 	"oojsplus-data-grid-filter-clear": "Pathai",
 	"oojsplus-data-grid-filter-number-operator": "Pho",
-	"oojsplus-data-grid-filter-number-value": "Mâ"
+	"oojsplus-data-grid-filter-number-value": "Mâ",
+	"oojsplus-data-paginator-next": "Mialâ châhmia",
+	"oojsplus-data-paginator-previous": "Hnôhlâ châhmia"
 }
