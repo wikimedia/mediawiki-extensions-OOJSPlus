@@ -19,5 +19,7 @@
 	"oojsplus-dialog-action-delete": "حذف",
 	"oojsplus-dialog-action-create": "ایجاد",
 	"oojsplus-dialog-action-add": "افزودن",
-	"oojsplus-dialog-action-cancel": "لغو"
+	"oojsplus-dialog-action-cancel": "لغو",
+	"oojsplus-data-paginator-next": "صفحهٔ بعدی",
+	"oojsplus-data-paginator-previous": "صفحهٔ قبل"
 }
