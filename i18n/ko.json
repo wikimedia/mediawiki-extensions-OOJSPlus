@@ -23,5 +23,7 @@
 	"oojsplus-dialog-action-add": "추가",
 	"oojsplus-dialog-action-cancel": "취소",
 	"oojsplus-data-grid-widget-popup-title": "더 많은 항목",
-	"oojsplus-data-grid-filter-label": "필터"
+	"oojsplus-data-grid-filter-label": "필터",
+	"oojsplus-data-paginator-next": "다음 페이지",
+	"oojsplus-data-paginator-previous": "이전 페이지"
 }

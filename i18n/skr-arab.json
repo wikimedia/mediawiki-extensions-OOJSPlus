@@ -11,5 +11,7 @@
 	"oojsplus-data-tree-item-remove-label": "ہٹاؤ",
 	"oojsplus-data-grid-filter-clear": "صاف",
 	"oojsplus-data-grid-filter-number-operator": "قسم",
-	"oojsplus-data-grid-filter-number-value": "قدر"
+	"oojsplus-data-grid-filter-number-value": "قدر",
+	"oojsplus-data-paginator-next": "اڳلا ورقہ",
+	"oojsplus-data-paginator-previous": "پچھلا ورقہ"
 }
