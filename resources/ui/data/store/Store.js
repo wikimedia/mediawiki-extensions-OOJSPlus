@@ -54,10 +54,14 @@ OOJSPlus.ui.data.store.Store.prototype.load = function() {
 };
 
 OOJSPlus.ui.data.store.Store.prototype.reload = function() {
-	this.emit( 'reload' );
 	this.data = {};
 	this.offset = 0;
-	return this.load();
+	var loadPromise = this.load();
+	loadPromise.done( function() {
+		this.emit( 'reload' );
+	}.bind( this ) );
+
+	return loadPromise;
 };
 
 OOJSPlus.ui.data.store.Store.prototype.doLoadData = function() {
@@ -69,7 +73,7 @@ OOJSPlus.ui.data.store.Store.prototype.doLoadData = function() {
 OOJSPlus.ui.data.store.Store.prototype.setData = function( data ) {
 	this.data = {};
 	this.originalData = data;
-	this.load();
+	this.reload();
 };
 
 OOJSPlus.ui.data.store.Store.prototype.getData = function() {

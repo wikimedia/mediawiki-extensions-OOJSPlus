@@ -121,7 +121,8 @@
 				"ui/data/column/Icon.js",
 				"ui/data/column/Action.js",
 				"ui/data/Grid.js",
-				"ui/data/Paginator.js",
+				"ui/data/grid/Paginator.js",
+				"ui/data/grid/Toolbar.js",
 				"ui/data/tree/Item.js",
 				"ui/data/Tree.js",
 				"ui/data/StoreTree.js"
@@ -150,7 +151,9 @@
 				"oojsplus-data-grid-filter-number-operator",
 				"oojsplus-data-grid-filter-number-value",
 				"oojsplus-data-paginator-next",
-				"oojsplus-data-paginator-previous"
+				"oojsplus-data-paginator-previous",
+				"oojsplus-data-grid-toolbar-reload-label",
+				"oojsplus-data-paginator-page-count"
 			]
 		},
 		"ext.oOJSPlus.icons": {
