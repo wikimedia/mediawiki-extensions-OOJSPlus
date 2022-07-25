@@ -11,10 +11,6 @@
 		this.rows = {};
 		this.range = { start: 0, end: 0 };
 
-		// No page selected at start
-		// This value won't page if grid has only one page
-		this.currentPage = -1;
-
 		this.navigation = new OO.ui.HorizontalLayout();
 		this.staticControls = new OO.ui.HorizontalLayout();
 		this.$element.addClass( 'oojsplus-data-paginator' );
@@ -138,16 +134,11 @@
 
 		if ( this.total > this.pageSize ) {
 			// More than one page
-			if ( this.currentPage === -1 ) {
-				// That's first init, so we need to select first page
-				this.currentPage = 0;
-				this.currentRange = {start: 0, end: 0};
-				this.numberOfPages = Math.ceil( this.total / this.pageSize );
-				this.updateControls();
-				this.next();
-			} else {
-				this.updateControls();
-			}
+			this.currentPage = 0;
+			this.currentRange = { start: 0, end: 0 };
+			this.numberOfPages = Math.ceil( this.total / this.pageSize );
+			this.updateControls();
+			this.next();
 		} else {
 			// All can fit without paging
 			this.grid.setItems( Object.values( this.rows ) );
