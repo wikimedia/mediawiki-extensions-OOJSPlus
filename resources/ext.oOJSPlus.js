@@ -72,7 +72,7 @@
 		ui: {
 			data: {
 				column: {},
-				paginator: {},
+				grid: {},
 				tree: {},
 				filter: {},
 				store: {},
