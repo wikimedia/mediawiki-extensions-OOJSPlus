@@ -10,10 +10,12 @@
 		this.border = cfg.border || 'none';
 		this.pageSize = cfg.pageSize || 25;
 		this.store = cfg.store || this.createLocalStore( cfg.data || [] );
-		this.paginator = new OOJSPlus.ui.data.Paginator( {
+		this.paginator = new OOJSPlus.ui.data.grid.Paginator( {
 			grid: this,
 			store: this.store
 		} );
+		this.toolbar = typeof cfg.toolbar === 'undefined' ? this.makeToolbar() : cfg.toolbar;
+
 		this.data = cfg.data || [];
 
 		this.columns = {};
@@ -23,8 +25,8 @@
 		this.$table.addClass( 'style-' + this.style );
 		this.$table.addClass( 'border-' + this.border );
 		this.$element.append( this.$table );
-		if ( !cfg.hidePagination ) {
-			this.$element.append( this.paginator.$element );
+		if ( this.toolbar instanceof OOJSPlus.ui.data.grid.Toolbar ) {
+			this.$element.append( this.toolbar.$element );
 		}
 
 		this.makeLoadingOverlay();
@@ -32,7 +34,11 @@
 			loading: 'onStoreLoading',
 			loaded: 'onStoreLoaded'
 		} );
-		this.store.load();
+		this.store.load().done( function() {
+			if ( this.paginator instanceof OOJSPlus.ui.data.grid.Paginator ) {
+				this.paginator.init();
+			}
+		}.bind( this ) );
 	};
 
 	OO.inheritClass( OOJSPlus.ui.data.GridWidget, OO.ui.Widget );
@@ -75,6 +81,13 @@
 		} );
 	};
 
+	OOJSPlus.ui.data.GridWidget.prototype.makeToolbar = function() {
+		return new OOJSPlus.ui.data.grid.Toolbar( {
+			store: this.store,
+			paginator: this.paginator
+		} );
+	};
+
 	OOJSPlus.ui.data.GridWidget.prototype.makeLoadingOverlay = function( ) {
 		this.$loadingOverlay = $( '<div>' ).addClass( 'grid-loading-overlay' );
 		var progress = new OO.ui.ProgressBarWidget( { progress: false } );
@@ -86,15 +99,12 @@
 
 	OOJSPlus.ui.data.GridWidget.prototype.onFilter = function( filter, field ) {
 		this.clearItems();
-		this.store.filter( filter, field ).done( function() {
-			this.paginator.init();
-		}.bind( this ) );
+		this.store.filter( filter, field );
 	};
 
 	OOJSPlus.ui.data.GridWidget.prototype.onStoreLoaded = function( rows ) {
 		this.setActiveFilters( Object.keys( this.store.getFilters() ) );
 		this.$loadingOverlay.hide();
-		this.paginator.init();
 	};
 
 	OOJSPlus.ui.data.GridWidget.prototype.onStoreLoading = function() {
@@ -200,9 +210,7 @@
 
 	OOJSPlus.ui.data.GridWidget.prototype.onSort = function( sorter, field ) {
 		this.clearItems();
-		this.store.sort( sorter, field ).done( function() {
-			this.paginator.init();
-		}.bind( this ) );
+		this.store.sort( sorter, field );
 	};
 
 	OOJSPlus.ui.data.GridWidget.prototype.setItems = function( data ) {

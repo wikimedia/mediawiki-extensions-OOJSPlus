@@ -41,5 +41,7 @@
 	"oojsplus-data-grid-filter-number-operator": "Type",
 	"oojsplus-data-grid-filter-number-value": "Value",
 	"oojsplus-data-paginator-next": "Next page",
-	"oojsplus-data-paginator-previous": "Previous page"
+	"oojsplus-data-paginator-previous": "Previous page",
+	"oojsplus-data-grid-toolbar-reload-label": "Reload",
+	"oojsplus-data-paginator-page-count": "$1 of $2"
 }
