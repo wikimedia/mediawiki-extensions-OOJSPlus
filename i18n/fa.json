@@ -21,5 +21,7 @@
 	"oojsplus-dialog-action-add": "افزودن",
 	"oojsplus-dialog-action-cancel": "لغو",
 	"oojsplus-data-paginator-next": "صفحهٔ بعدی",
-	"oojsplus-data-paginator-previous": "صفحهٔ قبل"
+	"oojsplus-data-paginator-previous": "صفحهٔ قبل",
+	"oojsplus-data-grid-toolbar-reload-label": "تازه‌سازی",
+	"oojsplus-data-paginator-page-count": "$1 از $2"
 }

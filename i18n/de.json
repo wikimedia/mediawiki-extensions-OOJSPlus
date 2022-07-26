@@ -39,5 +39,12 @@
 	"oojsplus-dialog-action-add": "Hinzufügen",
 	"oojsplus-dialog-action-cancel": "Abbrechen",
 	"oojsplus-data-paginator-next": "Nächste Seite",
-	"oojsplus-data-paginator-previous": "Vorherige Seite"
+	"oojsplus-data-paginator-previous": "Vorherige Seite",
+	"oojsplus-data-grid-widget-popup-title": "Weitere Elemente",
+	"oojsplus-data-grid-filter-label": "Filter",
+	"oojsplus-data-grid-filter-clear": "Löschen",
+	"oojsplus-data-grid-filter-number-operator": "Typ",
+	"oojsplus-data-grid-filter-number-value": "Wert",
+	"oojsplus-data-grid-toolbar-reload-label": "Neu laden",
+	"oojsplus-data-paginator-page-count": "$1 von $2"
 }
