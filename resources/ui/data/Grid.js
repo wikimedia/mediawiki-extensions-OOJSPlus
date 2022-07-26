@@ -10,10 +10,7 @@
 		this.border = cfg.border || 'none';
 		this.pageSize = cfg.pageSize || 25;
 		this.store = cfg.store || this.createLocalStore( cfg.data || [] );
-		this.paginator = new OOJSPlus.ui.data.grid.Paginator( {
-			grid: this,
-			store: this.store
-		} );
+		this.paginator = typeof cfg.paginator === 'undefined' ? this.makePaginator() : cfg.paginator;
 		this.toolbar = typeof cfg.toolbar === 'undefined' ? this.makeToolbar() : cfg.toolbar;
 
 		this.data = cfg.data || [];
@@ -32,11 +29,18 @@
 		this.makeLoadingOverlay();
 		this.store.connect( this, {
 			loading: 'onStoreLoading',
-			loaded: 'onStoreLoaded'
+			loaded: 'onStoreLoaded',
+			reload: function( data ) {
+				if ( !( this.paginator instanceof OOJSPlus.ui.data.grid.Paginator ) ) {
+					this.setItems( Object.values( data ) );
+				}
+			}
 		} );
-		this.store.load().done( function() {
+		this.store.load().done( function( data ) {
 			if ( this.paginator instanceof OOJSPlus.ui.data.grid.Paginator ) {
 				this.paginator.init();
+			} else {
+				this.setItems( Object.values( data ) );
 			}
 		}.bind( this ) );
 	};
@@ -85,6 +89,13 @@
 		return new OOJSPlus.ui.data.grid.Toolbar( {
 			store: this.store,
 			paginator: this.paginator
+		} );
+	};
+
+	OOJSPlus.ui.data.GridWidget.prototype.makePaginator = function() {
+		return new OOJSPlus.ui.data.grid.Paginator( {
+			grid: this,
+			store: this.store
 		} );
 	};
 
