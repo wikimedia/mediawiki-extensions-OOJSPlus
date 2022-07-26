@@ -301,7 +301,7 @@
 		};
 		this.doDraw( drawingConfig, parent );
 		if ( !parent ) {
- 			this.$itemsContainer.find( '.tree-root' ).append( widget.$element );
+ 			this.$itemsContainer.find( '> ul.tree-node-list' ).append( widget.$element );
 		} else {
 			parent.$element.find( '> ul.tree-node-list' ).append( widget.$element );
 		}
