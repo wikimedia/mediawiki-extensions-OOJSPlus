@@ -57,8 +57,8 @@ OOJSPlus.ui.data.store.Store.prototype.reload = function() {
 	this.data = {};
 	this.offset = 0;
 	var loadPromise = this.load();
-	loadPromise.done( function() {
-		this.emit( 'reload' );
+	loadPromise.done( function( data ) {
+		this.emit( 'reload', data );
 	}.bind( this ) );
 
 	return loadPromise;
