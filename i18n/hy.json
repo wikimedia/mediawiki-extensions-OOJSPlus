@@ -10,5 +10,7 @@
 	"oojsplus-dialog-action-add": "Ավելացնել",
 	"oojsplus-dialog-action-cancel": "Չեղարկել",
 	"oojsplus-data-grid-filter-label": "Զտիչ",
-	"oojsplus-data-grid-filter-clear": "Մաքրել"
+	"oojsplus-data-grid-filter-clear": "Մաքրել",
+	"oojsplus-data-grid-toolbar-reload-label": "Վերբեռնել",
+	"oojsplus-data-paginator-page-count": "$1-ը $2-ից"
 }

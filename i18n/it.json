@@ -11,5 +11,6 @@
 	"oojsplus-color-picker-color-pink": "Rosa",
 	"oojsplus-stepprogressbar-default-final-label": "Fatto",
 	"oojsplus-data-paginator-next": "Pagina successiva",
-	"oojsplus-data-paginator-previous": "Pagina precedente"
+	"oojsplus-data-paginator-previous": "Pagina precedente",
+	"oojsplus-data-paginator-page-count": "$1 di $2"
 }

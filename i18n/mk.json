@@ -42,5 +42,7 @@
 	"oojsplus-data-grid-filter-number-operator": "Вид",
 	"oojsplus-data-grid-filter-number-value": "Вредност",
 	"oojsplus-data-paginator-next": "Следна страница",
-	"oojsplus-data-paginator-previous": "Претходна страница"
+	"oojsplus-data-paginator-previous": "Претходна страница",
+	"oojsplus-data-grid-toolbar-reload-label": "Превчитај",
+	"oojsplus-data-paginator-page-count": "$1 од $2"
 }

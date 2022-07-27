@@ -1,0 +1,9 @@
+{
+	"@metadata": {
+		"authors": [
+			"Fraxinus.cs"
+		]
+	},
+	"oojsplus-data-grid-toolbar-reload-label": "Znovu načíst",
+	"oojsplus-data-paginator-page-count": "$1 z $2"
+}
