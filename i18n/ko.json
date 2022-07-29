@@ -25,5 +25,7 @@
 	"oojsplus-data-grid-widget-popup-title": "더 많은 항목",
 	"oojsplus-data-grid-filter-label": "필터",
 	"oojsplus-data-paginator-next": "다음 페이지",
-	"oojsplus-data-paginator-previous": "이전 페이지"
+	"oojsplus-data-paginator-previous": "이전 페이지",
+	"oojsplus-data-grid-toolbar-reload-label": "다시 불러오기",
+	"oojsplus-data-paginator-page-count": "$2 중 $1"
 }
