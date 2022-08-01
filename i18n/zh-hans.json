@@ -3,6 +3,7 @@
 		"authors": [
 			"A Chinese Wikipedian",
 			"Looong",
+			"Wzl19371",
 			"Yining Chen"
 		]
 	},
@@ -22,5 +23,7 @@
 	"oojsplus-data-tree-item-remove-label": "移除",
 	"oojsplus-data-tree-item-add-label": "添加新的子项目",
 	"oojsplus-stepprogressbar-default-final-label": "完成",
-	"oojsplus-data-grid-widget-popup-title": "更多项目"
+	"oojsplus-data-grid-widget-popup-title": "更多项目",
+	"oojsplus-data-grid-toolbar-reload-label": "重新加载",
+	"oojsplus-data-paginator-page-count": "第$1页，共$2页"
 }
