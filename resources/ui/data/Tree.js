@@ -55,34 +55,17 @@
 	};
 
 	OOJSPlus.ui.data.Tree.prototype.createItemWidget = function( item, lvl, isLeaf ) {
-		return new OOJSPlus.ui.data.tree.Item( {
-			name: item.name,
-			type: item.type || '',
-			icon: item.icon || '',
-			label: item.label || '',
-			indicator: item.indicator || '',
+		return new OOJSPlus.ui.data.tree.Item( $.extend( {}, {
 			level: lvl,
-			leaf: item.leaf || false,
+			leaf: false,
 			tree: this
-		} );
+		}, item ) );
 	};
 
 	/** Generate HTML */
 	OOJSPlus.ui.data.Tree.prototype.draw = function( nodes ) {
 		this.$itemsContainer.children().remove();
 		this.$itemsContainer.append( this.doDraw( nodes ) );
-
-		if ( this.allowAdditions ) {
-			var addButton = new OO.ui.ButtonWidget( {
-				label: mw.message( 'oojsplus-data-tree-new-root-item-label' ).text(),
-				classes: [ 'tree-node-add' ],
-				framed: false
-			} );
-			addButton.connect( this, {
-				click: 'addSubnode'
-			} );
-			this.$itemsContainer.append( addButton.$element );
-		}
 	};
 
 	OOJSPlus.ui.data.Tree.prototype.doDraw = function( items, parent ) {
