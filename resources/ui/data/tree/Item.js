@@ -6,6 +6,7 @@
 		this.label = cfg.label;
 		this.tree = cfg.tree;
 		this.icon = cfg.icon || '';
+		this.buttonCfg = cfg;
 		this.level = cfg.level;
 		this.type = cfg.type;
 		this.leaf = cfg.leaf || false;
@@ -24,7 +25,6 @@
 
 	OOJSPlus.ui.data.tree.Item.prototype.init = function() {
 		this.$element.children().remove();
-		this.addIcon();
 		this.addLabel();
 		this.possiblyAddOptions();
 		this.$element.attr( 'data-name', this.getName() );
@@ -69,13 +69,14 @@
 	OOJSPlus.ui.data.tree.Item.prototype.possiblyAddExpander = function() {
 		var childrenCount = this.getChildren().length;
 
-		if ( childrenCount === 0 && this.leaf ) {
+		if ( childrenCount === 0 || this.leaf ) {
 			if ( this.expander ) {
 				this.expander.$element.remove();
 				this.expander = null;
 			}
 			return;
 		}
+
 		if ( this.expander ) {
 			return;
 		}
@@ -91,25 +92,16 @@
 		this.$element.prepend( this.expander.$element );
 	};
 
-	OOJSPlus.ui.data.tree.Item.prototype.addIcon = function() {
-		if ( !this.getIcon() ) {
-			return;
-		}
-		var iconWidget = new OO.ui.IconWidget( { icon: this.getIcon() } );
-		this.$element.append( iconWidget.$element );
-	};
-
 	OOJSPlus.ui.data.tree.Item.prototype.addLabel = function() {
-		this.labelWidget = new OO.ui.ButtonWidget( {
+		this.labelWidget = new OO.ui.ButtonWidget( $.extend( {}, {
 			framed: false,
-			label: this.label
-		} );
-		this.labelWidget.connect( this, {
-			click: function() {
-				this.select();
-				this.emit( 'selected', this );
-			}
-		} );
+			icon: this.getIcon()
+		}, this.buttonCfg ) );
+		// Do not use OOJS event handler here - blocks propagation
+		this.labelWidget.$element.on( 'click', function( e ) {
+			this.select();
+			this.emit( 'selected', this );
+		}.bind( this ) );
 		this.$element.append( this.labelWidget.$element );
 	};
 

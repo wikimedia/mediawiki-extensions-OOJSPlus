@@ -5,6 +5,9 @@
 		{
 			name: 'root-1',
 			label: 'Root 1',
+			// Item Definition supports all configs of OO.ui.ButtonWidget,
+			href: 'https://bluespice.com',
+			target: '_blank',
 			items: [
 				{
 					name: 'level-1-1',
@@ -43,6 +46,12 @@
 		data: data
 	} );
 	$el.append( tree.$element );
+
+	// Adding new root note (or any other node)
+	// ---> open dialog for user to type the details of the node
+	tree.addSubnode( 'root-1' ); // Insert below "root-1" node. Pass null (or nothing) to add to root
+	// ---> ... or, if you already have the data
+	tree.addSubnodeWithData( { name: 'mysubnode', label: 'Subnode' }, 'root-1' );
 
 
 } )( mediaWiki, jQuery );
