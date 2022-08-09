@@ -54,7 +54,8 @@
 				"ui/widget/StoreDataInputWidget.js",
 				"ui/widget/MultiSelectFileWidget.js",
 				"ui/widget/ExpandablePanel.js",
-				"ui/widget/FilterableUserPicker.js"
+				"ui/widget/FilterableUserPicker.js",
+				"ui/widget/ButtonWidget.js"
 			],
 			"styles": [
 				"stylesheet/rangeWidget.less",
@@ -63,7 +64,9 @@
 			"dependencies": [
 				"mediawiki.widgets.UserInputWidget",
 				"ext.oOJSPlus.widgets.colorPicker",
-				"ext.oOJSPlus.widgets.stepProgressBar"
+				"ext.oOJSPlus.widgets.stepProgressBar",
+				"oojs-ui",
+				"ext.oOJSPlus"
 			]
 		},
 		"ext.oOJSPlus.widgets.stepProgressBar": {
@@ -137,10 +140,9 @@
 				"stylesheet/data/tree.less"
 			],
 			"dependencies": [
-				"oojs",
-				"oojs-ui",
-				"ext.oOJSPlus",
-				"jquery.ui"
+				"jquery.ui",
+				"ext.oOJSPlus.widgets",
+				"ext.oOJSPlus.IDGenerator"
 			],
 			"messages": [
 				"oojsplus-data-delete-row-prompt",
@@ -190,6 +192,15 @@
 				"oojsplus-dialog-action-create",
 				"oojsplus-dialog-action-add",
 				"oojsplus-dialog-action-cancel"
+			]
+		},
+		"ext.oOJSPlus.IDGenerator": {
+			"scripts": [
+				"IDGenerator.js"
+			],
+			"dependencies": [
+				"oojs-ui",
+				"ext.oOJSPlus"
 			]
 		}
 	},

@@ -14,8 +14,17 @@
 		this.labelAdd = typeof cfg.labelAdd !== 'undefined' ? cfg.labelAdd : this.tree.labelAdd;
 		this.allowDeletions = typeof cfg.allowDeletions !== 'undefined' ? cfg.allowDeletions : this.tree.allowDeletions;
 		this.labelDelete = typeof cfg.labelDelete !== 'undefined' ? cfg.labelDelete : this.tree.labelDelete;
+		this.expanded = true;
+		if ( cfg.hasOwnProperty( 'expanded' ) ) {
+			this.expanded = cfg.expanded
+		}
 
-		this.$element.addClass( 'oojs-ui-data-tree-item' );
+		if ( this.buttonCfg.hasOwnProperty( 'classes' ) ) {
+			this.buttonCfg.classes.push( 'oojsplus-data-tree-label' );
+		} else {
+			this.buttonCfg.classes = [ 'oojsplus-data-tree-label' ];
+		}
+
 		this.init();
 	};
 
@@ -27,7 +36,10 @@
 		this.$element.children().remove();
 		this.addLabel();
 		this.possiblyAddOptions();
+		this.$element.addClass( 'oojs-ui-data-tree-item' );
 		this.$element.attr( 'data-name', this.getName() );
+		this.$element.attr( 'role', 'treeitem' );
+		this.$element.attr( 'aria-expanded', this.expanded );
 	};
 
 	OOJSPlus.ui.data.tree.Item.prototype.setLevel = function( level ) {
@@ -80,10 +92,10 @@
 		if ( this.expander ) {
 			return;
 		}
-		this.expanded = childrenCount > 0;
-		this.expander = new OO.ui.ButtonWidget( {
+
+		this.expander = new OOJSPlus.ui.widget.ButtonWidget( {
 			framed: false,
-			icon: childrenCount > 0 ? 'subtract' : 'add',
+			icon: this.expanded ? 'subtract' : 'add',
 			classes: [ 'oojsplus-data-tree-expander' ]
 		} );
 		this.expander.connect( this, {
@@ -93,10 +105,14 @@
 	};
 
 	OOJSPlus.ui.data.tree.Item.prototype.addLabel = function() {
-		this.labelWidget = new OO.ui.ButtonWidget( $.extend( {}, {
-			framed: false,
-			icon: this.getIcon()
-		}, this.buttonCfg ) );
+		this.labelWidget = new OOJSPlus.ui.widget.ButtonWidget(
+			$.extend( {},
+			{
+				framed: false,
+				icon: this.getIcon()
+			}, this.buttonCfg )
+		);
+
 		// Do not use OOJS event handler here - blocks propagation
 		this.labelWidget.$element.on( 'click', function( e ) {
 			this.select();
