@@ -4,13 +4,21 @@
 
 		this.fixed = cfg.fixed || false;
 		this.data = cfg.data || [];
+		this.labelledby = cfg.labelledby || '';
+		this.id = cfg.id || 'oojsplus-data-tree';
+		this.idGenerator = new OOJSPlus.IDGenerator( { id: this.id } );
 		this.allowDeletions = typeof cfg.allowDeletions !== 'undefined' ? cfg.allowDeletions : true;
 		this.allowAdditions = typeof cfg.allowAdditions !== 'undefined' ? cfg.allowAdditions : true;
 		this.$itemsContainer = new $( '<div>' ).addClass( 'oojsplus-data-tree-items' );
+		this.expanded = true;
+		if ( cfg.hasOwnProperty( 'expanded' ) ) {
+			this.expanded = cfg.expanded
+		}
+
 		// Flat list of nodes
 		this.flat = {};
 		this.$element.append( this.$itemsContainer );
-		this.draw( this.build( this.data ) );
+		this.draw( this.build( this.data ), this.labelledby );
 
 		this.$element.addClass( 'oojsplus-data-treeWidget' );
 		if ( this.fixed ) {
@@ -36,7 +44,7 @@
 			) {
 				isLeaf = false;
 			}
-			var widget = this.createItemWidget( item, lvl, isLeaf );
+			var widget = this.createItemWidget( item, lvl, isLeaf, this.idGenerator.generate(), this.expanded );
 
 			widget.connect( this, {
 				selected: function( item ) {
@@ -54,22 +62,31 @@
 		return nodes;
 	};
 
-	OOJSPlus.ui.data.Tree.prototype.createItemWidget = function( item, lvl, isLeaf ) {
+	OOJSPlus.ui.data.Tree.prototype.createItemWidget = function( item, lvl, isLeaf, id, expanded ) {
 		return new OOJSPlus.ui.data.tree.Item( $.extend( {}, {
 			level: lvl,
 			leaf: false,
-			tree: this
+			tree: this,
+			id: id,
+			expanded: expanded
 		}, item ) );
 	};
 
 	/** Generate HTML */
-	OOJSPlus.ui.data.Tree.prototype.draw = function( nodes ) {
+	OOJSPlus.ui.data.Tree.prototype.draw = function( nodes, labelledby ) {
 		this.$itemsContainer.children().remove();
-		this.$itemsContainer.append( this.doDraw( nodes ) );
+		this.$itemsContainer.append( this.doDraw( nodes, null, labelledby, true ) );
 	};
 
-	OOJSPlus.ui.data.Tree.prototype.doDraw = function( items, parent ) {
+	OOJSPlus.ui.data.Tree.prototype.doDraw = function( items, parent, labelledby, expanded ) {
 		var $ul = $( '<ul>' ).addClass( 'tree-node-list' );
+		$ul.attr( 'id', this.idGenerator.generate() );
+		$ul.attr( 'role', 'tree' );
+
+		if ( labelledby ) {
+			$ul.attr( 'aria-labelledby', labelledby );
+		}
+
 		if ( !this.fixed ) {
 			var tree = this;
 			$ul.attr( 'data-level', parent ? parent.getLevel() + 1 : 0 ) ;
@@ -122,10 +139,16 @@
 				$ul.addClass( 'tree-root' );
 			}
 			var $li = items[name].widget.$element;
-			$li.append( this.doDraw( items[name].children || {}, items[name].widget ) );
+			var $labelEl =  $( $li ).find( '> .oojsplus-data-tree-label' );
+			var itemId = $labelEl.attr( 'id' );
+			$li.append( this.doDraw( items[name].children || {}, items[name].widget, itemId, this.expanded ) );
 			$ul.append( $li );
 			// Once we add children, re-evaluate parent
 			this.reEvaluateParent( name );
+		}
+
+		if ( expanded !== true ) {
+			$ul.hide();
 		}
 
 		return $ul;
@@ -223,7 +246,9 @@
 		if ( !node ) {
 			return;
 		}
-		node.$element.find( 'ul.tree-node-list' ).hide();
+		var element = node.$element.find( '> ul.tree-node-list' );
+		$( element ).hide();
+		$( node.$element ).attr( 'aria-expanded', 'false' );
 	};
 
 	OOJSPlus.ui.data.Tree.prototype.expandNode = function( name ) {
@@ -231,7 +256,9 @@
 		if ( !node ) {
 			return;
 		}
-		node.$element.find( 'ul.tree-node-list' ).show();
+		var element = node.$element.find( '> ul.tree-node-list' );
+		$( element ).show();
+		$( node.$element ).attr( 'aria-expanded', 'true' );
 	};
 
 	OOJSPlus.ui.data.Tree.prototype.assertNodeLoaded = function( name ) {
@@ -269,7 +296,9 @@
 		if ( !data ) {
 			return;
 		}
-		var widget = this.createItemWidget( data, level, true );
+
+		var widgetId = this.idGenerator.generate();
+		var widget = this.createItemWidget( data, level, true, widgetId, this.expanded );
 		widget.connect( this, {
 			selected: function( item ) {
 				this.setSelected( item );
@@ -282,7 +311,7 @@
 			widget: widget,
 			children: []
 		};
-		this.doDraw( drawingConfig, parent );
+		this.doDraw( drawingConfig, parent, widgetId, this.expanded );
 		if ( !parent ) {
  			this.$itemsContainer.find( '> ul.tree-node-list' ).append( widget.$element );
 		} else {
