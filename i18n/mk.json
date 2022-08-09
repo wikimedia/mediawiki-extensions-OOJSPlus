@@ -18,7 +18,6 @@
 	"oojsplus-data-delete-row-prompt": "Дали сте сигурни дека сакате да го избришете редов?",
 	"oojsplus-data-paginator-page-total-count-label": "{{PLURAL:$1|$1 ред|$1 реда}}",
 	"oojsplusdemos": "Показни на OOJSPlus",
-	"oojsplus-data-tree-new-root-item-label": "Додај нов основен предмет",
 	"oojsplus-data-tree-item-remove-label": "Отстрани",
 	"oojsplus-data-tree-item-add-label": "Додај нов потпредмет",
 	"oojsplus-stepprogressbar-default-final-label": "Готово",

@@ -18,7 +18,6 @@
 	"oojsplus-data-delete-row-prompt": "למחוק את השורה הזאת?",
 	"oojsplus-data-paginator-page-total-count-label": "{{PLURAL:$1|שורה אחת|$1 שורות}}",
 	"oojsplusdemos": "הדגמות של OOJSPlus",
-	"oojsplus-data-tree-new-root-item-label": "הוספת פריט שורש חדש",
 	"oojsplus-data-tree-item-remove-label": "הסרה",
 	"oojsplus-data-tree-item-add-label": "הוספת תת־פריט חדש",
 	"oojsplus-stepprogressbar-default-final-label": "סיום",

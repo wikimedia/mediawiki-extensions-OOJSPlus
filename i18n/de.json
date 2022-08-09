@@ -20,7 +20,6 @@
 	"oojsplus-data-delete-row-prompt": "Bist du sicher, dass du diese Zeile löschen willst?",
 	"oojsplus-data-paginator-page-total-count-label": "{{PLURAL:$1|$1 Zeile|$1 Zeilen}}",
 	"oojsplusdemos": "OOJSPlus-Demos",
-	"oojsplus-data-tree-new-root-item-label": "Neues Stammelement hinzufügen",
 	"oojsplus-data-tree-item-remove-label": "Entfernen",
 	"oojsplus-data-tree-item-add-label": "Neuen Unterpunkt hinzufügen",
 	"oojsplus-stepprogressbar-default-final-label": "Fertig",

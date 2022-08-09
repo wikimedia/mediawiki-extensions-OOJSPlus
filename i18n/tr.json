@@ -21,7 +21,6 @@
 	"oojsplus-data-delete-row-prompt": "Bu satırı silmek istediğinize emin misiniz?",
 	"oojsplus-data-paginator-page-total-count-label": "{{PLURAL:$1|$1 satır|$1 satır}}",
 	"oojsplusdemos": "OOJSPlus demoları",
-	"oojsplus-data-tree-new-root-item-label": "Yeni kök öğe ekle",
 	"oojsplus-data-tree-item-remove-label": "Kaldır",
 	"oojsplus-data-tree-item-add-label": "Yeni alt öğe ekle",
 	"oojsplus-stepprogressbar-default-final-label": "Yapıldı",
