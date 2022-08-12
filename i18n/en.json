@@ -17,7 +17,6 @@
 	"oojsplus-data-delete-row-prompt": "Are you sure you want to delete this row?",
 	"oojsplus-data-paginator-page-total-count-label": "{{PLURAL:$1|$1 row|$1 rows}}",
 	"oojsplusdemos": "OOJSPlus demos",
-	"oojsplus-data-tree-new-root-item-label": "Add new root item",
 	"oojsplus-data-tree-item-remove-label": "Remove",
 	"oojsplus-data-tree-item-add-label": "Add new subitem",
 	"oojsplus-stepprogressbar-default-final-label": "Done",
