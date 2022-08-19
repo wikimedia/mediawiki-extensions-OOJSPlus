@@ -14,6 +14,7 @@
 		if ( cfg.hasOwnProperty( 'expanded' ) ) {
 			this.expanded = cfg.expanded
 		}
+		this.style = cfg.style || {};
 
 		// Flat list of nodes
 		this.flat = {};
@@ -62,13 +63,14 @@
 		return nodes;
 	};
 
-	OOJSPlus.ui.data.Tree.prototype.createItemWidget = function( item, lvl, isLeaf, id, expanded ) {
+	OOJSPlus.ui.data.Tree.prototype.createItemWidget = function( item, lvl, isLeaf, labelledby, expanded ) {
 		return new OOJSPlus.ui.data.tree.Item( $.extend( {}, {
 			level: lvl,
 			leaf: false,
 			tree: this,
-			id: id,
-			expanded: expanded
+			labelledby: labelledby,
+			expanded: expanded,
+			style: this.style
 		}, item ) );
 	};
 
