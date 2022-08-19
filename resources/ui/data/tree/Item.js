@@ -10,6 +10,13 @@
 		this.level = cfg.level;
 		this.type = cfg.type;
 		this.leaf = cfg.leaf || false;
+		this.style = cfg.style || {}
+		if ( !this.style.hasOwnProperty( 'IconExpand' ) ) {
+			this.style.IconExpand = 'add';
+		}
+		if ( !this.style.hasOwnProperty( 'IconCollapse' ) ) {
+			this.style.IconCollapse = 'subtract';
+		}
 		this.allowAdditions = typeof cfg.allowAdditions !== 'undefined' ? cfg.allowAdditions : this.tree.allowAdditions;
 		this.labelAdd = typeof cfg.labelAdd !== 'undefined' ? cfg.labelAdd : this.tree.labelAdd;
 		this.allowDeletions = typeof cfg.allowDeletions !== 'undefined' ? cfg.allowDeletions : this.tree.allowDeletions;
@@ -24,6 +31,10 @@
 		} else {
 			this.buttonCfg.classes = [ 'oojsplus-data-tree-label' ];
 		}
+		if ( this.buttonCfg.hasOwnProperty( 'labelledby' ) ) {
+			this.buttonCfg.id = this.buttonCfg.labelledby;
+			delete this.buttonCfg.labelledby;
+		}
 
 		this.init();
 	};
@@ -34,12 +45,14 @@
 
 	OOJSPlus.ui.data.tree.Item.prototype.init = function() {
 		this.$element.children().remove();
+		this.$wrapper = $( '<div>' );
 		this.addLabel();
 		this.possiblyAddOptions();
 		this.$element.addClass( 'oojs-ui-data-tree-item' );
 		this.$element.attr( 'data-name', this.getName() );
 		this.$element.attr( 'role', 'treeitem' );
 		this.$element.attr( 'aria-expanded', this.expanded );
+		this.$element.append( this.$wrapper );
 	};
 
 	OOJSPlus.ui.data.tree.Item.prototype.setLevel = function( level ) {
@@ -84,7 +97,7 @@
 		if ( ( !this.leaf || childrenCount > 0 ) && !this.expander  ) {
 			this.expander = new OOJSPlus.ui.widget.ButtonWidget( {
 				framed: false,
-				icon: this.expanded ? 'subtract' : 'add',
+				icon: this.expanded ? this.style.IconCollapse : this.style.IconExpand,
 				classes: [ 'oojsplus-data-tree-expander' ]
 			} );
 			this.expander.connect( this, {
@@ -92,10 +105,9 @@
 			} );
 			this.$element.prepend( this.expander.$element );
 		} else if ( this.expander ) {
-			
 			this.expander.$element.remove();
 			this.expander = null;
-		}		
+		}
 	};
 
 	OOJSPlus.ui.data.tree.Item.prototype.addLabel = function() {
@@ -103,7 +115,7 @@
 			$.extend( {},
 			{
 				framed: false,
-				icon: this.getIcon()
+				icon: this.getIcon(),
 			}, this.buttonCfg )
 		);
 
@@ -112,7 +124,7 @@
 			this.select();
 			this.emit( 'selected', this );
 		}.bind( this ) );
-		this.$element.append( this.labelWidget.$element );
+		this.$wrapper.append( this.labelWidget.$element );
 	};
 
 	OOJSPlus.ui.data.tree.Item.prototype.deselect = function() {
@@ -170,18 +182,18 @@
 			}
 		} );
 
-		this.$element.append( this.optionsPopup.$element );
+		this.$wrapper.append( this.optionsPopup.$element );
 	};
 
 	OOJSPlus.ui.data.tree.Item.prototype.onExpanderClick = function() {
 		if ( this.expanded ) {
 			this.tree.collapseNode( this.getName() );
-			this.expander.setIcon( 'add' );
+			this.expander.setIcon( this.style.IconExpand );
 			this.expanded = false;
 		} else {
 			this.tree.assertNodeLoaded( this.name ).done( function() {
 				this.tree.expandNode( this.getName() );
-				this.expander.setIcon( 'subtract' );
+				this.expander.setIcon( this.style.IconCollapse );
 				this.expanded = true;
 			}.bind( this ) );
 		}
