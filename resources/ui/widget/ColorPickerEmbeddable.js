@@ -179,7 +179,7 @@
 
 	OOJSPlus.ui.widget.ColorPickerEmbeddable.prototype.verifyColors = function() {
 		var verified = [];
-		if ( $.isArray( this.colors ) === false ) {
+		if ( Array.isArray( this.colors ) === false ) {
 			return this.colors = OOJSPlus.ui.widget.ColorPickerPopup.static.defaultColors;
 		}
 		for( var i = 0; i < this.colors.length; i++ ) {
