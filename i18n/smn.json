@@ -1,9 +1,11 @@
 {
 	"@metadata": {
 		"authors": [
-			"Seipinne"
+			"Seipinne",
+			"Yupik"
 		]
 	},
 	"oojsplus-dialog-action-create": "Räähti",
-	"oojsplus-dialog-action-add": "Lasseet"
+	"oojsplus-dialog-action-add": "Lasseet",
+	"oojsplus-dialog-action-cancel": "Jooskâ"
 }
