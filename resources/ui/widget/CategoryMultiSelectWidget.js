@@ -67,6 +67,7 @@
 				action: 'query',
 				list: 'allcategories',
 				accontains: inputValue,
+				aclimit: 255
 			} ).done( function ( response ) {
 				var suggestions = response.query.allcategories,
 					selected = this.getSelectedCategories();
