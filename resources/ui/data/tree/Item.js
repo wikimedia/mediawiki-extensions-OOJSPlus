@@ -81,27 +81,21 @@
 	OOJSPlus.ui.data.tree.Item.prototype.possiblyAddExpander = function() {
 		var childrenCount = this.getChildren().length;
 
-		if ( childrenCount === 0 || this.leaf ) {
-			if ( this.expander ) {
-				this.expander.$element.remove();
-				this.expander = null;
-			}
-			return;
-		}
-
-		if ( this.expander ) {
-			return;
-		}
-
-		this.expander = new OOJSPlus.ui.widget.ButtonWidget( {
-			framed: false,
-			icon: this.expanded ? 'subtract' : 'add',
-			classes: [ 'oojsplus-data-tree-expander' ]
-		} );
-		this.expander.connect( this, {
-			click: 'onExpanderClick'
-		} );
-		this.$element.prepend( this.expander.$element );
+		if ( ( !this.leaf || childrenCount > 0 ) && !this.expander  ) {
+			this.expander = new OOJSPlus.ui.widget.ButtonWidget( {
+				framed: false,
+				icon: this.expanded ? 'subtract' : 'add',
+				classes: [ 'oojsplus-data-tree-expander' ]
+			} );
+			this.expander.connect( this, {
+				click: 'onExpanderClick'
+			} );
+			this.$element.prepend( this.expander.$element );
+		} else if ( this.expander ) {
+			
+			this.expander.$element.remove();
+			this.expander = null;
+		}		
 	};
 
 	OOJSPlus.ui.data.tree.Item.prototype.addLabel = function() {
