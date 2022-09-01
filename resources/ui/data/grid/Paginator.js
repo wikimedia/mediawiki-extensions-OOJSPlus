@@ -115,6 +115,7 @@
 
 	OOJSPlus.ui.data.grid.Paginator.prototype.paginate = function() {
 		this.navigation.clearItems();
+		this.grid.setItems( [] );
 
 		this.currentPage = 0;
 		this.currentRange = { start: 0, end: 0 };
