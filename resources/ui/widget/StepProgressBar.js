@@ -46,7 +46,7 @@
 	OOJSPlus.ui.widget.StepProgressBar.prototype.addStep = function( name, config ) {
 		var classes = ['steps-progress-step', 'todo', 'disabled'].concat( config.classes || [] );
 		var $stepItem = $( '<li>' )
-			.addClass( classes.join( ' ' ) )
+			.addClass( classes )
 			.attr( 'data-step-name', name )
 			.html( config.label );
 		$stepItem.on( 'click', this.onStepClick.bind( this ) );
