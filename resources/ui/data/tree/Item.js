@@ -124,6 +124,14 @@
 			this.select();
 			this.emit( 'selected', this );
 		}.bind( this ) );
+
+		this.labelWidget.$element.on( 'keyup', function( e ) {
+			if(( e.keyCode == 13 ) || ( e.keyCode == 32 )) {
+				this.select();
+				this.emit( 'selected', this );
+			}
+		}.bind( this ) );
+
 		this.$wrapper.append( this.labelWidget.$element );
 	};
 
