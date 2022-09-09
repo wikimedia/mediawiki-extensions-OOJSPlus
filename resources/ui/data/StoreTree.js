@@ -34,7 +34,7 @@
 	/** Generate HTML */
 	OOJSPlus.ui.data.StoreTree.prototype.draw = function( nodes ) {
 		if ( this.loaded ) {
-			OOJSPlus.ui.data.StoreTree.parent.prototype.draw.call( this, nodes );
+			OOJSPlus.ui.data.StoreTree.parent.prototype.draw.call( this, nodes, this.labelledby );
 		}
 	};
 
