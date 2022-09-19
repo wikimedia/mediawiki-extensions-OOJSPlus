@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Jon Harald Søby"
+			"Jon Harald Søby",
+			"McDutchie"
 		]
 	},
 	"oojsplus-desc": "Tilbyr widgeter og nyttige funksjoner for OOJS",
@@ -12,7 +13,7 @@
 	"oojsplus-color-picker-color-orangered": "Oransje",
 	"oojsplus-color-picker-color-olive": "Oliven",
 	"oojsplus-color-picker-color-pink": "Rosa",
-	"oojsplus-color-picker-clear-label": "Klar",
+	"oojsplus-color-picker-clear-label": "Fjern fargen",
 	"oojsplus-color-picker-label": "Fargevelger",
 	"oojsplus-data-delete-row-prompt": "Er du sikker på at du vil slette denne raden?",
 	"oojsplus-data-paginator-page-total-count-label": "{{PLURAL:$1|$1 rad|$1 rader}}",
