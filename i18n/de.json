@@ -2,6 +2,7 @@
 	"@metadata": {
 		"authors": [
 			"Gebu",
+			"McDutchie",
 			"Mirzali",
 			"Mschlindwein",
 			"Zabe"
@@ -15,7 +16,7 @@
 	"oojsplus-color-picker-color-orangered": "Orange rot",
 	"oojsplus-color-picker-color-olive": "Olivgrün",
 	"oojsplus-color-picker-color-pink": "Rosa",
-	"oojsplus-color-picker-clear-label": "klare Farbe",
+	"oojsplus-color-picker-clear-label": "Farbe löschen",
 	"oojsplus-color-picker-label": "Farbwähler",
 	"oojsplus-data-delete-row-prompt": "Bist du sicher, dass du diese Zeile löschen willst?",
 	"oojsplus-data-paginator-page-total-count-label": "{{PLURAL:$1|$1 Zeile|$1 Zeilen}}",
