@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"Amire80",
 			"Ex-Diktator",
 			"YaronSh"
 		]
@@ -13,7 +14,7 @@
 	"oojsplus-color-picker-color-orangered": "כתום",
 	"oojsplus-color-picker-color-olive": "זית",
 	"oojsplus-color-picker-color-pink": "ורוד",
-	"oojsplus-color-picker-clear-label": "שקוף",
+	"oojsplus-color-picker-clear-label": "ניקוי הצבע",
 	"oojsplus-color-picker-label": "בורר צבעים",
 	"oojsplus-data-delete-row-prompt": "למחוק את השורה הזאת?",
 	"oojsplus-data-paginator-page-total-count-label": "{{PLURAL:$1|שורה אחת|$1 שורות}}",

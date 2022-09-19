@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Hamilton Abreu"
+			"Hamilton Abreu",
+			"McDutchie"
 		]
 	},
 	"oojsplus-desc": "Fornece ''widgets'' e funções utilitárias para OOJS",
@@ -12,6 +13,6 @@
 	"oojsplus-color-picker-color-orangered": "Vermelho alaranjado",
 	"oojsplus-color-picker-color-olive": "Verde-azeitona",
 	"oojsplus-color-picker-color-pink": "Rosa",
-	"oojsplus-color-picker-clear-label": "Transparente",
+	"oojsplus-color-picker-clear-label": "Limpar a cor",
 	"oojsplus-color-picker-label": "Seletor de cores"
 }

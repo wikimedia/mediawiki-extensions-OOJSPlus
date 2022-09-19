@@ -2,6 +2,7 @@
 	"@metadata": {
 		"authors": [
 			"Ajeje Brazorf",
+			"McDutchie",
 			"Robby",
 			"Umherirrender"
 		]
@@ -14,7 +15,7 @@
 	"oojsplus-color-picker-color-orangered": "Name of a field in a color-picker widget",
 	"oojsplus-color-picker-color-olive": "Name of a field in a color-picker widget",
 	"oojsplus-color-picker-color-pink": "Name of a field in a color-picker widget",
-	"oojsplus-color-picker-clear-label": "Label of a button that removes a color selection",
+	"oojsplus-color-picker-clear-label": "Label of a button that removes a color selection\n{{doc-important|That means ''clear'' is a verb here. This message is about ''clearing a colour'' as in resetting it, '''not''' about ''a clear colour''!}}",
 	"oojsplus-color-picker-label": "Default label of a color-picker widget",
 	"oojsplus-data-delete-row-prompt": "Prompt text before user deletes a row in a grid",
 	"oojsplus-data-paginator-page-total-count-label": "Label for the total number of rows in a grid data source. \n $1 = Number of rows",
