@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Eduardo Addad de Oliveira",
-			"Eduardoaddad"
+			"Eduardoaddad",
+			"McDutchie"
 		]
 	},
 	"oojsplus-desc": "Fornece widgets e funções de utilidade para o OOJS",
@@ -13,7 +14,7 @@
 	"oojsplus-color-picker-color-orangered": "Laranja vermelho",
 	"oojsplus-color-picker-color-olive": "Verde-oliva",
 	"oojsplus-color-picker-color-pink": "Rosa",
-	"oojsplus-color-picker-clear-label": "Cor clara",
+	"oojsplus-color-picker-clear-label": "Limpar a cor",
 	"oojsplus-color-picker-label": "Selecionador de cores",
 	"oojsplus-data-delete-row-prompt": "Tem certeza de que deseja excluir esta linha?",
 	"oojsplus-data-paginator-page-total-count-label": "{{PLURAL:$1|$1 linha|$1 linhas}}",
