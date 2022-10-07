@@ -54,19 +54,24 @@
 				"ui/widget/StoreDataInputWidget.js",
 				"ui/widget/MultiSelectFileWidget.js",
 				"ui/widget/ExpandablePanel.js",
+				"ui/widget/UserWidget.js",
+				"ui/widget/UserMenuOption.js",
+				"ui/widget/UserPicker.js",
 				"ui/widget/FilterableUserPicker.js",
 				"ui/widget/ButtonWidget.js"
 			],
 			"styles": [
 				"stylesheet/rangeWidget.less",
-				"stylesheet/expandablePanel.less"
+				"stylesheet/expandablePanel.less",
+				"stylesheet/userPicker.less"
 			],
 			"dependencies": [
 				"mediawiki.widgets.UserInputWidget",
 				"ext.oOJSPlus.widgets.colorPicker",
 				"ext.oOJSPlus.widgets.stepProgressBar",
 				"oojs-ui",
-				"ext.oOJSPlus"
+				"ext.oOJSPlus",
+				"ext.mws.commonwebapis"
 			]
 		},
 		"ext.oOJSPlus.widgets.stepProgressBar": {

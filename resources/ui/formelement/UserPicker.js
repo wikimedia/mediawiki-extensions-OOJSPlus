@@ -14,8 +14,8 @@
 
 	mw.ext.forms.formElement.UserPicker.prototype.getWidgets = function() {
 		return {
-			view: OO.ui.LabelWidget,
-			edit: OOJSPlus.ui.widget.FilterableUserPicker
+			view: OOJSPlus.ui.widget.UserWidget,
+			edit: OOJSPlus.ui.widget.UserPickerWidget
 		};
 	};
 
