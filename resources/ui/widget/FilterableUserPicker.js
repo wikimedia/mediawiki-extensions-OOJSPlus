@@ -1,5 +1,5 @@
 OOJSPlus.ui.widget.FilterableUserPicker = function( config ) {
-	// Parent constructor
+	//Deprecated since 4.2.3 - Use OOJSPlus.ui.widget.EnhanchedUserPickerWidget instead
 	OOJSPlus.ui.widget.FilterableUserPicker.parent.call( this, $.extend( {}, config, {} ) );
 
 	this.rights = config.rights || null;
