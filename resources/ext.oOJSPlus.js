@@ -87,7 +87,6 @@
 			widget: {},
 			mixin: {}
 		}
-
 	};
 
 } )( mediaWiki, jQuery );
