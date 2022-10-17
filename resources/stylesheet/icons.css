@@ -90,3 +90,8 @@
   /* @embed */
   background-image: url( '../images/icons/borders/color.svg' );
 }
+
+.oo-ui-icon-alignCenter {
+  /* @embed */
+  background-image: url( '../images/icons/align-center.svg' );
+}
