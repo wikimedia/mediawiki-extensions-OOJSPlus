@@ -176,7 +176,8 @@
 		"ext.oOJSPlus.formelements": {
 			"scripts": [
 				"ui/formelement/UserPicker.js",
-				"ui/formelement/GroupPicker.js"
+				"ui/formelement/GroupPicker.js",
+				"ui/formelement/GroupMultiselect.js"
 			],
 			"dependencies": [
 				"ext.oOJSPlus.widgets",

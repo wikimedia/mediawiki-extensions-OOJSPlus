@@ -7,6 +7,7 @@
 		// Parent constructor
 		OOJSPlus.ui.widget.GroupMultiSelectWidget.parent.call( this, $.extend( {}, config, {} ) );
 
+		this.groupType = config.groupType || '';
 		// Mixin constructors
 		OO.ui.mixin.PendingElement.call( this, $.extend( {}, config, { $pending: this.$handle } ) );
 
@@ -42,6 +43,55 @@
 		return this.getValue();
 	};
 
+	OOJSPlus.ui.widget.GroupMultiSelectWidget.prototype.setValue = function ( value ) {
+		if ( !value ) {
+			return OOJSPlus.ui.widget.GroupMultiSelectWidget.parent.prototype.setValue.call( this, value );
+		}
+		this.setDisabled( true );
+		this.pushPending();
+		value = Array.isArray( value ) ? value : [ value ];
+		var promises = [];
+		for ( var i = 0; i < value.length; i++ ) {
+			promises.push( this.getGroupData( value[i] ) );
+		}
+
+		var originalAllowArbitrary = this.allowArbitrary;
+		Promise.all( promises ).then( function ( groups ) {
+			this.allowArbitrary = true;
+			for ( var i = 0; i < groups.length; i++ ) {
+				if ( !groups[i] || $.isEmptyObject( groups[i] ) ) {
+					continue;
+				}
+				this.addTag( groups[i].group_name, groups[i].displayname );
+			}
+			this.allowArbitrary = originalAllowArbitrary;
+			this.emit( 'change', this.getSelectedGroups() );
+			this.setDisabled( false );
+			this.popPending();
+		}.bind( this ) );
+	};
+
+	OOJSPlus.ui.widget.GroupMultiSelectWidget.prototype.getGroupData = function ( group ) {
+		if ( typeof group === 'object' ) {
+			if ( group.hasOwnProperty( 'group_name' ) ) {
+				group = group.group_name;
+			} else {
+				group = '';
+			}
+		}
+		if ( !group ) {
+			return $.Deferred().resolve().promise();
+		}
+		var dfd = $.Deferred();
+		mws.commonwebapis.group.getByGroupName( group ).done( function ( data ) {
+			dfd.resolve( data );
+		} ).fail( function() {
+			dfd.resolve( { group_name: group } );
+		} );
+
+		return dfd.promise();
+	};
+
 	/**
 	 * Update autocomplete menu with items
 	 *
@@ -57,28 +107,32 @@
 			this.inputValue = inputValue;
 		}
 
-		this.api.abort(); // Abort all unfinished api requests
+		var filters = [];
+		if ( this.groupType ) {
+			filters.push( {
+				type: 'string',
+				property: 'group_type',
+				value: this.groupType,
+				operator: 'eq'
+			} );
+		}
 
 		if ( inputValue.length > 0 ) {
 			this.pushPending();
 
-			this.api.get( {
-				action: 'query',
-				list: 'allgroups',
-				agcontains: inputValue,
-				agprop: 'displaytext'
-			} ).done( function ( response ) {
-				var suggestions = response.query.allgroups,
-					selected = this.getSelectedGroups();
-
+			mws.commonwebapis.group.query( {
+				query: inputValue,
+				filter: JSON.stringify( filters )
+			} ).done( function( response ) {
+				var selectedGroups = this.getSelectedGroups();
 				// Remove usernames, which are already selected from suggestions
-				suggestions = suggestions.map( function ( group ) {
-					if ( selected.indexOf( group.name ) === -1 ) {
+				var suggestions = response.map( function ( group ) {
+					if ( selectedGroups.indexOf( group.group_name ) === -1 ) {
 						// This is necessary in oder to match actual group names
 						return new OO.ui.MenuOptionWidget( {
-							data: group.name,
-							label: group.displaytext || group.name,
-							id: group.name
+							data: group.group_name,
+							label: group.displayname || group.group_name,
+							id: group.group_name
 						} );
 					}
 					return undefined;
@@ -99,8 +153,10 @@
 				this.menu.toggle( true );
 
 				this.popPending();
-			}.bind( this ) ).fail( this.popPending.bind( this ) );
-
+			}.bind( this ) ).fail( function( e ) {
+				this.popPending();
+				console.error( e );
+			}.bind( this ) );
 		} else {
 			this.menu.clearItems();
 			this.menu.toggle( false );
