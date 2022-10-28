@@ -51,8 +51,10 @@ OOJSPlus.ui.widget.UserPickerWidget.prototype.getLookupCacheDataFromResponse = f
 OOJSPlus.ui.widget.UserPickerWidget.prototype.getValidity = function () {
 	if ( this.selectedUser ) {
 		return $.Deferred().resolve().promise();
+	} else if ( this.required ) {
+		return $.Deferred().reject().promise();
 	}
-	return $.Deferred().reject().promise();
+	return $.Deferred().resolve().promise();
 };
 
 OOJSPlus.ui.widget.UserPickerWidget.prototype.onLookupMenuChoose = function ( item ) {
