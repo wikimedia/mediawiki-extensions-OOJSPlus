@@ -7,5 +7,6 @@
 	"oojsplus-dialog-action-delete": "Izbriši",
 	"oojsplus-dialog-action-cancel": "Prekliči",
 	"oojsplus-dialog-action-add": "Dodaj",
-	"oojsplus-dialog-action-done": "Končano"
+	"oojsplus-dialog-action-done": "Končano",
+	"oojsplus-dialog-action-create": "Ustvari"
 }
