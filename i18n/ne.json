@@ -2,8 +2,10 @@
 	"@metadata": {
 		"authors": [
 			"Bada Kaji",
-			"बडा काजी"
+			"बडा काजी",
+			"पर्वत सुबेदी"
 		]
 	},
+	"oojsplus-dialog-action-delete": "मेट्ने",
 	"oojsplus-dialog-action-add": "थप्नुहोस्"
 }
