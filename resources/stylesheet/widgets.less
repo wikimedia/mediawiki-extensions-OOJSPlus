@@ -1,0 +1,76 @@
+.oojsplus-ui-widget-buttonselectwidget {
+	display: table;
+	width: 100%;
+	.oojsplus-ui-widget-buttonoptionwidget {
+		display: table-cell;
+		background-color: #eeeeee;
+		padding: 10px !important;
+		border-right: 1px solid #a6a6a6;
+		&:last-child {
+			border-right: none;
+		}
+		&:hover {
+			background-color: #cecece
+		}
+		a {
+			&:hover {
+				background-color: transparent !important;
+			}
+			font-size: 1.1rem;
+			padding-left: 6rem;
+			padding-right: 1rem;
+			.oo-ui-iconElement {
+				width: 4rem;
+			}
+		}
+		cursor: pointer;
+		.oojsplus-ui-widget-buttonoptionwidget-check {
+			display: none;
+		}
+		&.oo-ui-optionWidget-selected {
+			background-color: #b1b1b1;
+			.oojsplus-ui-widget-buttonoptionwidget-check {
+				position: absolute;
+				display: block;
+				right: 10px;
+				top: 10px;
+				width: 35px;
+				height: 35px;
+			}
+		}
+		.oojsplus-ui-widget-buttonoptionwidget-desc {
+			display: block;
+			word-break: break-word;
+			white-space: normal;
+		}
+	}
+	&.button-selectwidget-big {
+		a {
+			font-size: 1.5rem;
+		}
+	}
+	&.button-selectwidget-list {
+		display: block;
+		width: 100%;
+		.oojsplus-ui-widget-buttonoptionwidget {
+			border-right: none;
+			display: block;
+			width: 100%;
+			&:first-of-type {
+				margin-left: 0 !important;
+			}
+		}
+	}
+	@media screen and (max-width: 760px) {
+		display: block;
+		width: 100%;
+		.oojsplus-ui-widget-buttonoptionwidget {
+			border-right: none;
+			display: block;
+			width: 100%;
+			&:first-of-type {
+				margin-left: 0 !important;
+			}
+		}
+	}
+}
