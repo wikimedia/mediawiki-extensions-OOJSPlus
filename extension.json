@@ -58,12 +58,17 @@
 				"ui/widget/UserMenuOption.js",
 				"ui/widget/UserPicker.js",
 				"ui/widget/FilterableUserPicker.js",
-				"ui/widget/ButtonWidget.js"
+				"ui/widget/ButtonWidget.js",
+				"ui/widget/ButtonSelectWidget.js",
+				"ui/widget/ButtonOptionWidget.js",
+				"ui/widget/ToggleMultiSelectInputWidget.js",
+				"ui/widget/MenuOptionWithDescription.js"
 			],
 			"styles": [
 				"stylesheet/rangeWidget.less",
 				"stylesheet/expandablePanel.less",
-				"stylesheet/userPicker.less"
+				"stylesheet/userPicker.less",
+				"stylesheet/widgets.less"
 			],
 			"dependencies": [
 				"mediawiki.widgets.UserInputWidget",
