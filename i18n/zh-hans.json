@@ -2,6 +2,7 @@
 	"@metadata": {
 		"authors": [
 			"A Chinese Wikipedian",
+			"LittlePaw365",
 			"Looong",
 			"McDutchie",
 			"Wzl19371",
@@ -15,7 +16,7 @@
 	"oojsplus-color-picker-color-orangered": "橙红",
 	"oojsplus-color-picker-color-olive": "橄榄树",
 	"oojsplus-color-picker-color-pink": "粉红色",
-	"oojsplus-color-picker-clear-label": "清色",
+	"oojsplus-color-picker-clear-label": "清除颜色",
 	"oojsplus-color-picker-label": "拾色器",
 	"oojsplus-data-delete-row-prompt": "确定要删除该行吗？",
 	"oojsplus-data-paginator-page-total-count-label": "$1或一个$1行或多个$1行",
