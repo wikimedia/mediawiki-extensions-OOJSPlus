@@ -10,7 +10,7 @@
 	"oojsplus-data-paginator-page-total-count-label": "{{PLURAL:$1|שורה אחת|$1 שורות}}",
 	"oojsplus-data-tree-item-remove-label": "הסרה",
 	"oojsplus-data-tree-item-add-label": "הוספת תת־פריט חדש",
-	"oojsplus-desc": "אספקת וידג'טים ופונקציות עזר ל-OOJS",
+	"oojsplus-desc": "אספקת כלים ופונקציות עזר ל־OOJS",
 	"oojsplus-color-picker-color-blue": "כחול",
 	"oojsplus-color-picker-color-red": "אדום",
 	"oojsplus-color-picker-color-green": "ירוק",
@@ -36,5 +36,7 @@
 	"oojsplus-dialog-action-delete": "מחיקה",
 	"oojsplus-dialog-action-create": "יצירה",
 	"oojsplus-dialog-action-add": "הוספה",
-	"oojsplus-dialog-action-cancel": "ביטול"
+	"oojsplus-dialog-action-cancel": "ביטול",
+	"oojsplus-data-paginator-next": "הדף הבא",
+	"oojsplus-data-paginator-previous": "הדף הקודם"
 }
