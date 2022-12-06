@@ -59,6 +59,7 @@
 				"ui/widget/UserPicker.js",
 				"ui/widget/FilterableUserPicker.js",
 				"ui/widget/ButtonWidget.js"
+				"ui/widget/CategoryInputWidget.js"
 			],
 			"styles": [
 				"stylesheet/rangeWidget.less",
