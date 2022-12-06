@@ -59,7 +59,8 @@
 				"ui/widget/ButtonSelectWidget.js",
 				"ui/widget/ButtonOptionWidget.js",
 				"ui/widget/ToggleMultiSelectInputWidget.js",
-				"ui/widget/MenuOptionWithDescription.js"
+				"ui/widget/MenuOptionWithDescription.js",
+				"ui/widget/CategoryInputWidget.js"
 			],
 			"styles": [
 				"stylesheet/rangeWidget.less",
