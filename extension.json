@@ -58,7 +58,7 @@
 				"ui/widget/UserMenuOption.js",
 				"ui/widget/UserPicker.js",
 				"ui/widget/FilterableUserPicker.js",
-				"ui/widget/ButtonWidget.js"
+				"ui/widget/ButtonWidget.js",
 				"ui/widget/CategoryInputWidget.js"
 			],
 			"styles": [
