@@ -6,7 +6,10 @@ OOJSPlus.ui.widget.UserPickerWidget = function( cfg ) {
 	this.excludeGroups = cfg.excludeGroups || null;
 	this.menuItemConfig = cfg.menuItemConfig || {};
 
-	OOJSPlus.ui.widget.UserPickerWidget.parent.call( this, $.extend( {}, cfg, { autocomplete: false } ) );
+	OOJSPlus.ui.widget.UserPickerWidget.parent.call( this, $.extend( {}, cfg, {
+		autocomplete: false,
+		allowSuggestionsWhenEmpty: false,
+	} ) );
 
 	this.$element.addClass( 'oojsplus-UserPicker' );
 
@@ -45,6 +48,10 @@ OOJSPlus.ui.widget.UserPickerWidget.prototype.getValidity = function () {
 };
 
 OOJSPlus.ui.widget.UserPickerWidget.prototype.getLookupCacheDataFromResponse = function ( response ) {
+	if ( this.$input.val() === '' ) {
+		// Seems that config alone does not prevent the menu from opening on empty input
+		return [];
+	}
 	return response || [];
 };
 
@@ -62,6 +69,7 @@ OOJSPlus.ui.widget.UserPickerWidget.prototype.onLookupMenuChoose = function ( it
 	this.setLookupsDisabled( true );
 	this.ignoreChange = true;
 	this.setValue( item );
+	this.emit( 'choose', item );
 	this.ignoreChange = false;
 	this.setLookupsDisabled( false );
 };
@@ -137,6 +145,7 @@ OOJSPlus.ui.widget.UserPickerWidget.prototype.getLookupRequest = function () {
 			property: 'groups',
 		} );
 	}
+
 	return this.makeLookup( {
 		query: inputValue,
 		filter: JSON.stringify( filters ),
