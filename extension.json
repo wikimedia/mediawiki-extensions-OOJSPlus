@@ -153,7 +153,8 @@
 			"dependencies": [
 				"jquery.ui",
 				"ext.oOJSPlus.widgets",
-				"ext.oOJSPlus.IDGenerator"
+				"ext.oOJSPlus.IDGenerator",
+				"oojs-ui.styles.icons-layout"
 			],
 			"messages": [
 				"oojsplus-data-delete-row-prompt",
