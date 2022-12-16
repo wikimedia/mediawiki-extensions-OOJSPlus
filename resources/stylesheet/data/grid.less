@@ -1,6 +1,5 @@
 .oojsplus-data-gridWidget {
 	background-color: white;
-	padding: 10px;
 	position: relative;
 	.oojsplus-data-gridWidget-table {
 		width: 100%;
@@ -8,16 +7,9 @@
 		border-spacing: 0;
 		.oojsplus-data-gridWidget-row {
 			.oojsplus-data-gridWidget-cell {
-				border: 1px solid transparent;
-				padding-left: 5px;
-				padding-right: 5px;
+				padding: 8px 5px;
 				.boolean-cell {
 					min-width: 20px;
-				}
-				&.oojsplus-data-gridWidget-column-header {
-					.oo-ui-buttonWidget a {
-						color: grey !important;
-					}
 				}
 			}
 			&.row-selected td {
@@ -26,24 +18,23 @@
 		}
 		.oojsplus-data-gridWidget-header {
 			tr th {
-				.oo-ui-labelWidget {
-					font-weight: bold;
+				.oo-ui-labelElement-label {
+					font-weight: normal;
 				}
 				position: relative;
 				background-color: transparent !important;
 				border-bottom: 1px solid #e3e3e3;
-				padding-left: 5px;
-				padding-right: 5px;
 				border-right: 1px solid #e3e3e3 !important;
 				&:last-of-type {
 					border-right: none !important;
 				}
 				.header-button {
-					font-size: 1.1em;
+					font-size: 1em;
+					margin-right: 4px;
 				}
 				.filter-button {
 					position: absolute;
-					top: 3px;
+					top: 8px;
 					right: 0;
 				}
 			}
@@ -51,10 +42,10 @@
 		&.style-differentiate-rows {
 			.oojsplus-data-gridWidget-row {
 				&:nth-child(odd) td {
-					background-color: #e3e3e3;
+					background-color: #F0F0F0;
 				}
 				&.row-selected td {
-					background-color: #a5a5a5 !important;
+					background-color: #e3e3e3 !important;
 				}
 			}
 		}
@@ -75,6 +66,18 @@
 				border-top: 1px solid #e3e3e3 !important;
 				border-bottom: 1px solid #e3e3e3 !important;
 			}
+		}
+		.oo-ui-buttonElement.oo-ui-widget-enabled .oo-ui-iconElement-icon {
+			opacity: 0.4;
+			&:hover {
+				opacity: 0.8;
+			}
+		}
+		> a.oo-ui-buttonElement-button:hover {
+			background-color: transparent;
+		}
+		.oo-ui-buttonElement-frameless a:hover {
+			background-color: transparent;
 		}
 	}
 	.grid-loading-overlay {
