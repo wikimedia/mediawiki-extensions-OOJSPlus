@@ -103,7 +103,11 @@
 			click: 'next'
 		} );
 
-		this.navigation.addItems( [ this.previousButton, this.currentPageWidget, this.nextButton ] );
+		this.currentEntriesShown = new OO.ui.LabelWidget( {
+			classes: [ 'current-entries-visible' ]
+		} );
+
+		this.navigation.addItems( [ this.previousButton, this.currentPageWidget, this.nextButton, this.currentEntriesShown ] );
 		this.hasPages = true;
 	};
 
@@ -152,5 +156,18 @@
 		this.nextButton.setDisabled( this.currentPage === this.numberOfPages );
 		this.previousButton.setDisabled( this.currentPage === 1 );
 		this.updatePageCount();
+		this.calculateShowedEntries();
+	};
+
+	OOJSPlus.ui.data.grid.Paginator.prototype.calculateShowedEntries = function() {
+		var start = 1 + this.pageSize * ( this.currentPage - 1 );
+		var end = this.pageSize * this.currentPage;
+		if ( end > this.total ) {
+			end = this.total;
+		}
+
+		this.currentEntriesShown.setLabel(
+			start + ' - ' + end + '/' + this.total
+		);
 	};
 } )( mediaWiki, jQuery );
