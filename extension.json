@@ -129,6 +129,7 @@
 				"ui/data/filter/String.js",
 				"ui/data/filter/Number.js",
 				"ui/data/filter/List.js",
+				"ui/data/filter/User.js",
 				"ui/data/column/Column.js",
 				"ui/data/column/Text.js",
 				"ui/data/column/Number.js",
