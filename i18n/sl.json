@@ -9,5 +9,6 @@
 	"oojsplus-dialog-action-add": "Dodaj",
 	"oojsplus-dialog-action-done": "Končano",
 	"oojsplus-dialog-action-create": "Ustvari",
-	"oojsplus-desc": "Zagotavlja gradnike in uporabne funkcije za OOJS"
+	"oojsplus-desc": "Zagotavlja gradnike in uporabne funkcije za OOJS",
+	"apihelp-query+allgroups-param-prop": "Lastnosti za pridobitev"
 }
