@@ -5,6 +5,7 @@
 		]
 	},
 	"oojsplus-desc": "Zagotavlja gradnike in uporabne funkcije za OOJS",
+	"apihelp-query+allgroups-param-prop": "Lastnosti za pridobitev",
 	"oojsplus-dialog-action-done": "Končano",
 	"oojsplus-dialog-action-delete": "Izbriši",
 	"oojsplus-dialog-action-create": "Ustvari",
