@@ -74,7 +74,7 @@
 			popup: {
 				head: false,
 				$overlay: true,
-				autoClose: true,
+				autoClose: false,
 				$content: this.filter.$element,
 				padded: true,
 				align: 'force-left',
