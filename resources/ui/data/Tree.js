@@ -14,6 +14,7 @@
 		if ( cfg.hasOwnProperty( 'expanded' ) ) {
 			this.expanded = cfg.expanded
 		}
+		this.style = cfg.style || {};
 
 		// Flat list of nodes
 		this.flat = {};
@@ -49,7 +50,6 @@
 			widget.connect( this, {
 				selected: function( item ) {
 					this.setSelected( item );
-					this.emit( 'itemSelected', item );
 				}
 			} );
 			this.flat[widget.getName()] = widget;
@@ -62,13 +62,14 @@
 		return nodes;
 	};
 
-	OOJSPlus.ui.data.Tree.prototype.createItemWidget = function( item, lvl, isLeaf, id, expanded ) {
+	OOJSPlus.ui.data.Tree.prototype.createItemWidget = function( item, lvl, isLeaf, labelledby, expanded ) {
 		return new OOJSPlus.ui.data.tree.Item( $.extend( {}, {
 			level: lvl,
-			leaf: false,
+			leaf: isLeaf,
 			tree: this,
-			id: id,
-			expanded: expanded
+			labelledby: labelledby,
+			expanded: expanded,
+			style: this.style
 		}, item ) );
 	};
 
@@ -139,7 +140,7 @@
 				$ul.addClass( 'tree-root' );
 			}
 			var $li = items[name].widget.$element;
-			var $labelEl =  $( $li ).find( '> .oojsplus-data-tree-label' );
+			var $labelEl =  $( $li ).find( '> div > .oojsplus-data-tree-label' );
 			var itemId = $labelEl.attr( 'id' );
 			$li.append( this.doDraw( items[name].children || {}, items[name].widget, itemId, this.expanded ) );
 			$ul.append( $li );
