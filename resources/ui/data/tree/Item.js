@@ -93,8 +93,7 @@
 
 	OOJSPlus.ui.data.tree.Item.prototype.possiblyAddExpander = function() {
 		var childrenCount = this.getChildren().length;
-
-		if ( ( !this.leaf || childrenCount > 0 ) && !this.expander  ) {
+		if ( ( !this.leaf && childrenCount > 0 ) && !this.expander ) {
 			this.expander = new OOJSPlus.ui.widget.ButtonWidget( {
 				framed: false,
 				icon: this.expanded ? this.style.IconCollapse : this.style.IconExpand,
@@ -104,7 +103,7 @@
 				click: 'onExpanderClick'
 			} );
 			this.$element.prepend( this.expander.$element );
-		} else if ( this.expander ) {
+		} else if ( this.expander && childrenCount === 0 ) {
 			this.expander.$element.remove();
 			this.expander = null;
 		}
@@ -179,7 +178,7 @@
 		} );
 
 		this.optionsPopup = new OO.ui.PopupButtonWidget( {
-		 	indicator: 'down',
+		 	icon: 'menu',
 			framed: false,
 			classes: [ 'tree-item-options-btn' ],
 			popup: {
