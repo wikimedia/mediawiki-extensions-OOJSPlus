@@ -15,7 +15,7 @@
 	"oojsplus-color-picker-clear-label": "Clear color",
 	"oojsplus-color-picker-label": "Color picker",
 	"oojsplus-data-delete-row-prompt": "Are you sure you want to delete this row?",
-	"oojsplus-data-paginator-page-total-count-label": "{{PLURAL:$1|$1 row|$1 rows}}",
+	"oojsplus-data-paginator-page-total-count-label": "{{PLURAL:$1|$1 entry|$1 entries}}",
 	"oojsplusdemos": "OOJSPlus demos",
 	"oojsplus-data-tree-item-remove-label": "Remove",
 	"oojsplus-data-tree-item-add-label": "Add new subitem",
