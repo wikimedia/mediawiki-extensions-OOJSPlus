@@ -17,7 +17,7 @@
 	"oojsplus-color-picker-clear-label": "Rader color",
 	"oojsplus-color-picker-label": "Selector de colores",
 	"oojsplus-data-delete-row-prompt": "Es tu secur de voler deler iste linea?",
-	"oojsplus-data-paginator-page-total-count-label": "$1 linea{{PLURAL:$1||s}}",
+	"oojsplus-data-paginator-page-total-count-label": "$1 entrata{{PLURAL:$1||s}}",
 	"oojsplusdemos": "Demonstrationes de OOJSPlus",
 	"oojsplus-data-tree-item-remove-label": "Remover",
 	"oojsplus-data-tree-item-add-label": "Adder nove subelemento",
