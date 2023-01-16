@@ -21,7 +21,7 @@
 	"oojsplus-color-picker-clear-label": "Počisti barvo",
 	"oojsplus-color-picker-label": "Izbiralnik barv",
 	"oojsplus-data-delete-row-prompt": "Ali res želite izbrisati to vrstico?",
-	"oojsplus-data-paginator-page-total-count-label": "{{PLURAL:$1|$1 vrstica|$1 vrstici|$1 vrstice|$1 vrstic}}",
+	"oojsplus-data-paginator-page-total-count-label": "{{PLURAL:$1|$1 vnos|$1 vnosa|$1 vnosi|$1 vnosov}}",
 	"oojsplusdemos": "Demonstracije OOJSPlus",
 	"oojsplus-data-tree-item-remove-label": "Odstrani",
 	"oojsplus-data-tree-item-add-label": "Dodaj nov podpredmet",

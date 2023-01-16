@@ -8,7 +8,7 @@
 	"oojsplus-color-picker-clear-label": "Ukloni boju",
 	"oojsplus-color-picker-label": "Izbiratelj boje",
 	"oojsplus-data-delete-row-prompt": "Želite li da obrišete ovu nizu?",
-	"oojsplus-data-paginator-page-total-count-label": "{{PLURAL:$1|$1 red|$1 reda|$1 redova}}",
+	"oojsplus-data-paginator-page-total-count-label": "{{PLURAL:$1|$1 unos|$1 unosa}}",
 	"oojsplusdemos": "Pokazne OOJSPlusa",
 	"oojsplus-data-tree-new-root-item-label": "Dodaj novi osnovni stavak",
 	"oojsplus-data-tree-item-remove-label": "Ukloni",
