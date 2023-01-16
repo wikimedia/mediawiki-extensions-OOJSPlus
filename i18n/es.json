@@ -17,7 +17,7 @@
 	"oojsplus-color-picker-clear-label": "Quitar color",
 	"oojsplus-color-picker-label": "Selector de colores",
 	"oojsplus-data-delete-row-prompt": "¿Confirmas que quieres eliminar esta fila?",
-	"oojsplus-data-paginator-page-total-count-label": "{{PLURAL:$1|$1 fila|$1 filas}}",
+	"oojsplus-data-paginator-page-total-count-label": "{{PLURAL:$1|$1 entrada|$1 entradas}}",
 	"oojsplusdemos": "Demostraciones de OOJSPlus",
 	"oojsplus-data-tree-item-remove-label": "Quitar",
 	"oojsplus-data-tree-item-add-label": "Añadir subelemento nuevo",

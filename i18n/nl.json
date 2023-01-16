@@ -2,6 +2,7 @@
 	"@metadata": {
 		"authors": [
 			"Mainframe98",
+			"McDutchie",
 			"RadioAzureus",
 			"Rots61",
 			"Siebrand"
@@ -15,6 +16,7 @@
 	"oojsplus-color-picker-color-olive": "Olijfgroen",
 	"oojsplus-color-picker-color-pink": "Roze",
 	"oojsplus-color-picker-label": "Kleurenkiezer",
+	"oojsplus-data-paginator-page-total-count-label": "$1 rij{{PLURAL:$1||en}}",
 	"oojsplus-data-tree-item-remove-label": "Verwijderen",
 	"oojsplus-stepprogressbar-default-final-label": "Afgerond",
 	"oojsplus-dialog-action-cancel": "Annuleren"
