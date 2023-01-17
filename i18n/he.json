@@ -17,7 +17,7 @@
 	"oojsplus-color-picker-clear-label": "ניקוי הצבע",
 	"oojsplus-color-picker-label": "בורר צבעים",
 	"oojsplus-data-delete-row-prompt": "למחוק את השורה הזאת?",
-	"oojsplus-data-paginator-page-total-count-label": "{{PLURAL:$1|שורה אחת|$1 שורות}}",
+	"oojsplus-data-paginator-page-total-count-label": "{{PLURAL:$1|רשומה אחת|$1 רשומות}}",
 	"oojsplusdemos": "הדגמות של OOJSPlus",
 	"oojsplus-data-tree-item-remove-label": "הסרה",
 	"oojsplus-data-tree-item-add-label": "הוספת תת־פריט חדש",
