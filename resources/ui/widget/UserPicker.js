@@ -7,13 +7,16 @@ OOJSPlus.ui.widget.UserPickerWidget = function( cfg ) {
 	this.menuItemConfig = cfg.menuItemConfig || {};
 
 	OOJSPlus.ui.widget.UserPickerWidget.parent.call( this, $.extend( {}, cfg, {
-		autocomplete: false,
-		allowSuggestionsWhenEmpty: false,
+		autocomplete: false
 	} ) );
+
+	this.lookupMenu.connect( this, {
+		toggle: 'onLookupMenuToggle'
+	} );
 
 	this.$element.addClass( 'oojsplus-UserPicker' );
 
-	this.connect( this, { change: 'unselectUser' } );
+	this.connect( this, { change: 'deselectUser' } );
 };
 
 OO.inheritClass( OOJSPlus.ui.widget.UserPickerWidget, mw.widgets.UserInputWidget );
@@ -22,7 +25,7 @@ OOJSPlus.ui.widget.UserPickerWidget.prototype.getSelectedUser = function () {
 	return this.selectedUser;
 };
 
-OOJSPlus.ui.widget.UserPickerWidget.prototype.unselectUser = function () {
+OOJSPlus.ui.widget.UserPickerWidget.prototype.deselectUser = function () {
 	if ( this.ignoreChange ) {
 		return;
 	}
@@ -47,8 +50,26 @@ OOJSPlus.ui.widget.UserPickerWidget.prototype.getValidity = function () {
 	return dfd.promise();
 };
 
+OOJSPlus.ui.widget.UserPickerWidget.prototype.onLookupMenuToggle = function ( visible ) {
+	if ( this.lookupInputFocused ) {
+		this.focus();
+	}
+};
+
+OOJSPlus.ui.widget.UserPickerWidget.prototype.onLookupInputFocus = function () {
+	if ( this.lookupInputFocused ) {
+		return;
+	}
+	// Return parent value
+	return OOJSPlus.ui.widget.UserPickerWidget.parent.prototype.onLookupInputFocus.call( this );
+};
+
+OOJSPlus.ui.widget.UserPickerWidget.prototype.focus = function () {
+	this.$input.focus();
+};
+
 OOJSPlus.ui.widget.UserPickerWidget.prototype.getLookupCacheDataFromResponse = function ( response ) {
-	if ( this.$input.val() === '' ) {
+	if ( !this.allowSuggestionsWhenEmpty && this.$input.val() === '' ) {
 		// Seems that config alone does not prevent the menu from opening on empty input
 		return [];
 	}
@@ -85,6 +106,9 @@ OOJSPlus.ui.widget.UserPickerWidget.prototype.onEdit = function () {
 OOJSPlus.ui.widget.UserPickerWidget.prototype.setValue = function ( item ) {
 	if ( !( item instanceof OOJSPlus.ui.widget.UserMenuOptionWidget ) ) {
 		if ( !item ) {
+			this.$input.val( '' );
+			this.value = '';
+			this.deselectUser();
 			return;
 		}
 		this.setDisabled( true );
@@ -149,6 +173,7 @@ OOJSPlus.ui.widget.UserPickerWidget.prototype.getLookupRequest = function () {
 	return this.makeLookup( {
 		query: inputValue,
 		filter: JSON.stringify( filters ),
+		limit: inputValue !== '' ? 10 : 5
 	} );
 };
 
@@ -163,6 +188,5 @@ OOJSPlus.ui.widget.UserPickerWidget.prototype.getLookupMenuOptionsFromData = fun
 		user = data[ i ] || {};
 		items.push( new OOJSPlus.ui.widget.UserMenuOptionWidget( $.extend( {}, this.menuItemConfig, user ) ) );
 	}
-
 	return items;
 };
