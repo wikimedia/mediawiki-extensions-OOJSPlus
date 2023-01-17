@@ -7,7 +7,7 @@
 		]
 	},
 	"oojsplus-data-delete-row-prompt": "למחוק את השורה הזאת?",
-	"oojsplus-data-paginator-page-total-count-label": "{{PLURAL:$1|שורה אחת|$1 שורות}}",
+	"oojsplus-data-paginator-page-total-count-label": "{{PLURAL:$1|רשומה אחת|$1 רשומות}}",
 	"oojsplus-data-tree-item-remove-label": "הסרה",
 	"oojsplus-data-tree-item-add-label": "הוספת תת־פריט חדש",
 	"oojsplus-desc": "אספקת כלים ופונקציות עזר ל־OOJS",
