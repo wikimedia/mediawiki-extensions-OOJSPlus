@@ -9,5 +9,6 @@
 	"oojsplus-dialog-action-add": "Lasseet",
 	"oojsplus-dialog-action-cancel": "Jooskâ",
 	"oojsplus-data-tree-item-remove-label": "Siho",
-	"oojsplus-dialog-action-delete": "Siho"
+	"oojsplus-dialog-action-delete": "Siho",
+	"oojsplus-data-grid-filter-label": "Sillee"
 }
