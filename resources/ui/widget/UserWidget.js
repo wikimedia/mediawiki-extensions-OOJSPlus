@@ -1,7 +1,7 @@
 OOJSPlus.ui.widget.UserWidget = function( cfg ) {
 	this.user = cfg || {};
 
-	OOJSPlus.ui.widget.UserWidget.parent.call( this, {} );
+	OOJSPlus.ui.widget.UserWidget.parent.call( this, cfg );
 	OO.ui.mixin.PendingElement.call( this, {} );
 
 	this.showRawUsername = cfg.showRawUsername === undefined ? true : cfg.showRawUsername;
