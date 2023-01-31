@@ -16,6 +16,7 @@
 	"oojsplus-color-picker-color-pink": "গোলাপী",
 	"oojsplus-color-picker-clear-label": "রঙ পরিষ্কার করুন",
 	"oojsplus-color-picker-label": "রঙ চয়নকারী",
+	"oojsplus-data-paginator-page-total-count-label": "{{PLURAL:$1|$1টি ভুক্তি}}",
 	"oojsplus-stepprogressbar-default-final-label": "সম্পন্ন",
 	"oojsplus-data-grid-filter-label": "ছাঁকনি",
 	"oojsplus-data-grid-filter-clear": "পরিষ্কার",
