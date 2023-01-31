@@ -1,9 +1,8 @@
 .oojsplus-data-toolbar {
-	background-color: #f8f8f8;
 	padding: 5px;
 	position: relative;
 	height: 46px;
-	border-top: 1px solid #b3b3b3;
+	border-top: 1px solid #e3e3e3;
 	.static-controls {
 		position: absolute;
 		top: 7px;
@@ -15,6 +14,24 @@
 				border-radius: 26px;
 			}
 		}
+		.oo-ui-buttonElement-frameless .oo-ui-buttonElement-button {
+			&:hover {
+				background-color: transparent;
+			}
+			.oo-ui-iconElement-icon {
+				opacity: 0.4;
+				&:hover {
+					opacity: 0.8;
+				}
+			}
+		}
+	}
+	label {
+		font-size: 0.9em;
+	}
+
+	.current-entries-visible {
+		color: #747474;
 	}
 
 }
