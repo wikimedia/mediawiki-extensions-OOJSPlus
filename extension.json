@@ -74,7 +74,9 @@
 				"ext.oOJSPlus.widgets.stepProgressBar",
 				"oojs-ui",
 				"ext.oOJSPlus",
-				"ext.mws.commonwebapis"
+				"ext.mws.commonwebapis",
+				"oojs-ui.styles.icons-content",
+				"oojs-ui.styles.icons-interactions"
 			]
 		},
 		"ext.oOJSPlus.widgets.stepProgressBar": {
