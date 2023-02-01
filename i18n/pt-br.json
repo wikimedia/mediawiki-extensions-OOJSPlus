@@ -22,5 +22,18 @@
 	"oojsplus-data-tree-new-root-item-label": "Adicionar novo item raiz",
 	"oojsplus-data-tree-item-remove-label": "Remover",
 	"oojsplus-data-tree-item-add-label": "Adicionar novo subitem",
-	"oojsplus-stepprogressbar-default-final-label": "Feito"
+	"oojsplus-stepprogressbar-default-final-label": "Feito",
+	"oojsplus-dialog-action-done": "Feito",
+	"oojsplus-dialog-action-delete": "Excluir",
+	"oojsplus-dialog-action-create": "Criar",
+	"oojsplus-dialog-action-add": "Adicionar",
+	"oojsplus-dialog-action-cancel": "Cancelar",
+	"oojsplus-data-grid-filter-label": "Filtrar",
+	"oojsplus-data-grid-filter-clear": "Limpar",
+	"oojsplus-data-grid-filter-number-operator": "Tipo",
+	"oojsplus-data-grid-filter-number-value": "Valor",
+	"oojsplus-data-paginator-next": "Próxima página",
+	"oojsplus-data-paginator-previous": "Página anterior",
+	"oojsplus-data-grid-toolbar-reload-label": "Recarregar",
+	"oojsplus-data-paginator-page-count": "$1 de $2"
 }
