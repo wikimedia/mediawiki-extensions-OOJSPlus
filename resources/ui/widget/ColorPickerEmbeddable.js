@@ -64,6 +64,7 @@
 		this.$element.append(
 			$( '<div>' )
 				.addClass( 'oojsplus-color-picker-main-grid' )
+				.css( 'width', 150  + 'px' )
 				.append( mainColors ),
 			$controls
 		);
