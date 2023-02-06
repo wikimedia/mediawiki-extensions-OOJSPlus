@@ -36,6 +36,13 @@
 	"oojsplus-dialog-action-create": "יצירה",
 	"oojsplus-dialog-action-add": "הוספה",
 	"oojsplus-dialog-action-cancel": "ביטול",
+	"oojsplus-data-grid-widget-popup-title": "עוד פריטים",
+	"oojsplus-data-grid-filter-label": "סינון",
+	"oojsplus-data-grid-filter-clear": "ניקוי",
+	"oojsplus-data-grid-filter-number-operator": "סוג",
+	"oojsplus-data-grid-filter-number-value": "ערך",
 	"oojsplus-data-paginator-next": "הדף הבא",
-	"oojsplus-data-paginator-previous": "הדף הקודם"
+	"oojsplus-data-paginator-previous": "הדף הקודם",
+	"oojsplus-data-grid-toolbar-reload-label": "רענון",
+	"oojsplus-data-paginator-page-count": "$1 מתוך $2"
 }
