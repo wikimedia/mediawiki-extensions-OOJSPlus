@@ -1,5 +1,5 @@
 OOJSPlus.ui.data.store.RemoteStore = function ( cfg ) {
-	this.action = cfg.action;
+	this.action = cfg.action || {};
 	this.total = 0;
 	this.api = new mw.Api();
 
@@ -20,7 +20,7 @@ OOJSPlus.ui.data.store.RemoteStore.prototype.doLoadData = function() {
 	} ).done( function( response ) {
 		if ( response.hasOwnProperty( 'results' ) ) {
 			this.total = response.total;
-			dfd.resolve( this.indexData( this.possiblyFilter( response.results ) ) );
+			dfd.resolve( this.indexData( response.results ) );
 		}
 	}.bind( this ) ).fail( function( e ) {
 		dfd.reject( e );

@@ -42,5 +42,6 @@
 	"oojsplus-data-paginator-next": "Next page",
 	"oojsplus-data-paginator-previous": "Previous page",
 	"oojsplus-data-grid-toolbar-reload-label": "Reload",
-	"oojsplus-data-paginator-page-count": "$1 of $2"
+	"oojsplus-data-paginator-page-count": "$1 of $2",
+	"oojsplus-data-grid-filter-boolean": "Value"
 }
