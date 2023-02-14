@@ -123,11 +123,13 @@
 			"scripts": [
 				"ui/data/store/Store.js",
 				"ui/data/store/RemoteStore.js",
+				"ui/data/store/RemoteRestStore.js",
 				"ui/data/sorter/Sorter.js",
 				"ui/data/FilterFactory.js",
 				"ui/data/filter/Filter.js",
 				"ui/data/filter/String.js",
 				"ui/data/filter/Number.js",
+				"ui/data/filter/Boolean.js",
 				"ui/data/filter/List.js",
 				"ui/data/filter/User.js",
 				"ui/data/column/Column.js",
@@ -138,6 +140,7 @@
 				"ui/data/column/Date.js",
 				"ui/data/column/Icon.js",
 				"ui/data/column/Action.js",
+				"ui/data/column/User.js",
 				"ui/data/Grid.js",
 				"ui/data/grid/Paginator.js",
 				"ui/data/grid/Toolbar.js",
@@ -170,7 +173,8 @@
 				"oojsplus-data-paginator-next",
 				"oojsplus-data-paginator-previous",
 				"oojsplus-data-grid-toolbar-reload-label",
-				"oojsplus-data-paginator-page-count"
+				"oojsplus-data-paginator-page-count",
+				"oojsplus-data-grid-filter-boolean"
 			]
 		},
 		"ext.oOJSPlus.icons": {
