@@ -1,13 +1,15 @@
 OOJSPlus.ui.data.column.Boolean = function ( cfg ) {
+	cfg = cfg || {};
+	cfg.align = 'center';
 	OOJSPlus.ui.data.column.Boolean.parent.call( this, cfg );
-
+	this.showOnlyTrue = cfg.onlyShowTrue || false;
 	this.$element.addClass( 'boolean-column' );
 };
 
-OO.inheritClass (OOJSPlus.ui.data.column.Boolean, OOJSPlus.ui.data.column.Column );
+OO.inheritClass( OOJSPlus.ui.data.column.Boolean, OOJSPlus.ui.data.column.Column );
 
 OOJSPlus.ui.data.column.Boolean.prototype.renderCell = function( value, row ) {
-	var $cell = OOJSPlus.ui.data.column.Text.parent.prototype.renderCell.apply( this, value, row );
+	var $cell = OOJSPlus.ui.data.column.Boolean.parent.prototype.renderCell.call( this, value, row );
 	$cell.addClass( 'boolean-cell' );
 	return $cell;
 };
@@ -17,7 +19,7 @@ OOJSPlus.ui.data.column.Boolean.prototype.getViewControls = function( value ) {
 		value = value === 'true';
 	}
 	return new OO.ui.IconWidget( {
-		icon: value ? 'check' : 'close'
+		icon: value ? 'check' : this.showOnlyTrue ? '' : 'close'
 	} );
 };
 

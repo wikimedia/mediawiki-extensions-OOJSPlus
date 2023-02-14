@@ -35,7 +35,6 @@ OOJSPlus.ui.widget.UserWidget = function( cfg ) {
 		}
 
 	}.bind( this ) );
-
 };
 
 OO.inheritClass( OOJSPlus.ui.widget.UserWidget, OO.ui.Widget );
@@ -64,7 +63,9 @@ OOJSPlus.ui.widget.UserWidget.prototype.assertUserData = function () {
 	if ( misses ) {
 		this.pushPending();
 		mws.commonwebapis.user.getByUsername( this.user.user_name ).done( function ( data ) {
-			this.user = data;
+			if ( !$.isEmptyObject( data ) ) {
+				this.user = data;
+			}
 			this.popPending();
 			dfd.resolve();
 		}.bind( this ) ).fail( function() {

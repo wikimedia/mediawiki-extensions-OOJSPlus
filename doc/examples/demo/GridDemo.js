@@ -19,36 +19,33 @@ var store = new OOJSPlus.ui.data.store.Store( {
 var grid = new OOJSPlus.ui.data.GridWidget( {
 	pageSize: 10,
 	columns: {
-		columns: {
-			firstName: {
-				headerText: "First name",
-				type: "text",
-				sortable: true,
-				filter: {
-					type: 'text'
-				}
-			},
-			lastName: {
-				headerText: "Last name",
-				type: "text",
-				sortable: true
-			},
-			address: {
-				headerText: "Address",
-				type: "text"
-			},
-			userpage: {
-				headerText: "User page",
-				type: "url",
-				urlProperty: "up_url"
-			},
-			active: {
-				width: 30,
-				headerText: "Active",
-				type: "boolean"
+		firstName: {
+			headerText: "First name",
+			type: "text",
+			sortable: true,
+			filter: {
+				type: 'text'
 			}
-
 		},
+		lastName: {
+			headerText: "Last name",
+			type: "text",
+			sortable: true
+		},
+		address: {
+			headerText: "Address",
+			type: "text"
+		},
+		userpage: {
+			headerText: "User page",
+			type: "url",
+			urlProperty: "up_url"
+		},
+		active: {
+			width: 30,
+			headerText: "Active",
+			type: "boolean"
+		}
 	},
 	store: store,
 } );
@@ -56,56 +53,54 @@ var grid = new OOJSPlus.ui.data.GridWidget( {
 // Remote store
 var remoteGrid = new OOJSPlus.ui.data.GridWidget( {
 	columns: {
-		columns: {
-			firstName: {
-				headerText: "First name",
-				type: "text",
-				sortable: true
-			},
-			lastName: {
-				headerText: "Last name",
-				type: "text",
-				sortable: true,
-				filter: {
-					type: 'text'
-				}
-			},
-			address: {
-				headerText: "Address",
-				type: "text",
-				valueParser: function ( value, row ) {
-					// value is the current field, equal to row.address in this case
-					// Can return a string, an OOJS ui widget, or OO.ui.HtmlSnippet
-					return value + ',' + row.zip + ' ' + row.city;
-				}
-			},
-			userpage: {
-				headerText: "User page",
-				type: "url",
-				urlProperty: "up_url"
-			},
-			active: {
-				width: 30,
-				headerText: "Active",
-				type: "boolean",
-				filter: {
-					type: 'list',
-					list: [
-						// Specification for checkbox multiselect options
-						{ data: false, label: 'No' },
-						{ data: true, label: 'Yes' },
-					]
-				}
-			},
-			// Action field, not part of the data model, but triggers a certain action on the row
-			detailsAction: {
-				type: "action",
-				actionId: 'details',
-				title: 'Show more info',
-				icon: 'infoFilled'
-			}
-
+		firstName: {
+			headerText: "First name",
+			type: "text",
+			sortable: true
 		},
+		lastName: {
+			headerText: "Last name",
+			type: "text",
+			sortable: true,
+			filter: {
+				type: 'text'
+			}
+		},
+		address: {
+			headerText: "Address",
+			type: "text",
+			valueParser: function ( value, row ) {
+				// value is the current field, equal to row.address in this case
+				// Can return a string, an OOJS ui widget, or OO.ui.HtmlSnippet
+				return value + ',' + row.zip + ' ' + row.city;
+			}
+		},
+		userpage: {
+			headerText: "User page",
+			type: "url",
+			urlProperty: "up_url"
+		},
+		active: {
+			width: 30,
+			headerText: "Active",
+			type: "boolean",
+			filter: {
+				type: 'list',
+				list: [
+					// Specification for checkbox multiselect options
+					{ data: false, label: 'No' },
+					{ data: true, label: 'Yes' },
+				]
+			}
+		},
+		// Action field, not part of the data model, but triggers a certain action on the row
+		detailsAction: {
+			type: "action",
+			actionId: 'details',
+			title: 'Show more info',
+			icon: 'infoFilled'
+		}
+
 	},
 	store: new OOJSPlus.ui.data.store.RemoteStore( {
 		action: 'my-api-store',
