@@ -2,6 +2,7 @@
 	OOJSPlus.ui.data.column.Column = function ( cfg ) {
 		OOJSPlus.ui.data.column.Column.parent.call( this, cfg );
 
+		this.align = cfg.align || 'left';
 		this.id = cfg.id;
 		this.type = cfg.type;
 		this.headerText = cfg.headerText || '';
@@ -49,6 +50,7 @@
 			label: this.headerText,
 			classes: [ 'header-button' ]
 		} );
+		this.headerButton.$element.css( 'margin-right', '20px' );
 
 		if ( this.sorter ) {
 			this.headerButton.connect( this, {
@@ -106,6 +108,10 @@
 		if( this.width ) {
 			$cell.css( 'width', this.width + 'px' );
 		}
+		if ( this.align !== 'left' ) {
+			$cell.css( { 'text-align': this.align } );
+		}
+		$cell.css( 'margin-right', '10px' );
 		$cell.append( this.getCellContent( value, row ) );
 
 		return $cell;
@@ -119,12 +125,22 @@
 			return value.toString() || '';
 		}
 
+		if ( value === null ) {
+			// Do not render null cells
+			return;
+		}
 		return this.getViewControls( value, row ).$element;
 	};
 
 	OOJSPlus.ui.data.column.Column.prototype.getViewControls = function( value, row ) {
+		var snippet = value;
+		// Snippet value to max 250 chars
+		if ( typeof value === 'string' && value.length > 120 ) {
+			snippet = value.substr( 0, 120 ) + '...';
+		}
 		return new OO.ui.LabelWidget( {
-			label: value
+			label: snippet || value.toString(),
+			title: value
 		} );
 	};
 
