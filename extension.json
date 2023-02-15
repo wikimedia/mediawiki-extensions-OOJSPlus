@@ -10,7 +10,7 @@
 	"requires": {
 		"MediaWiki": ">= 1.32.0"
 	},
-	"callback": "mwsInitComponents",
+	"callback": "OOJSPlus\\Extension::callback",
 	"MessagesDirs": {
 		"OOJSPlus": "i18n"
 	},
@@ -183,11 +183,25 @@
 			"scripts": [
 				"ui/formelement/UserPicker.js",
 				"ui/formelement/GroupPicker.js",
-				"ui/formelement/GroupMultiselect.js"
+				"ui/formelement/GroupMultiselect.js",
+				"ui/formelement/UserMultiselect.js",
+				"ui/formelement/TitleMultiselect.js",
+				"ui/formelement/DatePicker.js"
+			],
+			"messages": [
+				"oojsplus-formelement-type-user-picker",
+				"oojsplus-formelement-type-group-picker",
+				"oojsplus-formelement-type-group-multiselect",
+				"oojsplus-formelement-type-user-multiselect",
+				"oojsplus-formelement-type-title-multiselect",
+				"oojsplus-formelement-type-date-picker"
 			],
 			"dependencies": [
+				"ext.forms.formelements.bootstrap",
 				"ext.oOJSPlus.widgets",
-				"ext.forms.widgets"
+				"mediawiki.widgets.UsersMultiselectWidget",
+				"mediawiki.widgets.TitlesMultiselectWidget",
+				"mediawiki.widgets.DateInputWidget"
 			]
 		},
 		"ext.oOJSPlus.dialogs": {

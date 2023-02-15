@@ -1,24 +1,29 @@
 ( function ( mw, $ ) {
-	mw.ext.forms.formElement.GroupMultiselect = function() {};
+	OOJSPlus.formelement.GroupMultiselect = function() {
+		OOJSPlus.formelement.GroupMultiselect.parent.call( this );
+	};
 
-	OO.inheritClass( mw.ext.forms.formElement.GroupMultiselect, mw.ext.forms.formElement.InputFormElement );
+	OO.inheritClass( OOJSPlus.formelement.GroupMultiselect, mw.ext.forms.formElement.InputFormElement );
 
-	mw.ext.forms.formElement.GroupMultiselect.prototype.getElementConfig = function() {
-		var config = mw.ext.forms.formElement.GroupMultiselect.parent.prototype.getElementConfigInternal.call( this );
+	OOJSPlus.formelement.GroupMultiselect.prototype.getElementConfig = function() {
+		var config = OOJSPlus.formelement.GroupMultiselect.parent.prototype.getElementConfigInternal.call( this );
 		return this.returnConfig( config );
 	};
 
-	mw.ext.forms.formElement.GroupMultiselect.prototype.getType = function() {
+	OOJSPlus.formelement.GroupMultiselect.prototype.getType = function() {
 		return "group_multiselect";
 	};
 
-	mw.ext.forms.formElement.GroupMultiselect.prototype.getWidgets = function() {
+	OOJSPlus.formelement.GroupMultiselect.prototype.getWidgets = function() {
 		return {
 			view: OO.ui.LabelWidget,
 			edit: OOJSPlus.ui.widget.GroupMultiSelectWidget
 		};
 	};
 
-	mw.ext.forms.registry.Type.register( "group_multiselect", new mw.ext.forms.formElement.GroupMultiselect() );
+	OOJSPlus.formelement.GroupMultiselect.prototype.getDisplayName = function() {
+		return mw.message( 'oojsplus-formelement-type-group-multiselect' ).text();
+	};
 
+	mw.ext.forms.registry.Type.register( "group_multiselect", new OOJSPlus.formelement.GroupMultiselect() );
 } )( mediaWiki, jQuery );
