@@ -1,24 +1,30 @@
 ( function ( mw, $ ) {
-	mw.ext.forms.formElement.UserPicker = function() {};
+	OOJSPlus.formelement.UserPicker = function() {
+		OOJSPlus.formelement.UserPicker.parent.call( this );
+	};
 
-	OO.inheritClass( mw.ext.forms.formElement.UserPicker, mw.ext.forms.formElement.InputFormElement );
+	OO.inheritClass( OOJSPlus.formelement.UserPicker, mw.ext.forms.formElement.InputFormElement );
 
-	mw.ext.forms.formElement.UserPicker.prototype.getElementConfig = function() {
-		var config = mw.ext.forms.formElement.UserPicker.parent.prototype.getElementConfigInternal.call( this );
+	OOJSPlus.formelement.UserPicker.prototype.getElementConfig = function() {
+		var config = OOJSPlus.formelement.UserPicker.parent.prototype.getElementConfigInternal.call( this );
 		return this.returnConfig( config );
 	};
 
-	mw.ext.forms.formElement.UserPicker.prototype.getType = function() {
+	OOJSPlus.formelement.UserPicker.prototype.getType = function() {
 		return "user_picker";
 	};
 
-	mw.ext.forms.formElement.UserPicker.prototype.getWidgets = function() {
+	OOJSPlus.formelement.UserPicker.prototype.getWidgets = function() {
 		return {
 			view: OOJSPlus.ui.widget.UserWidget,
 			edit: OOJSPlus.ui.widget.UserPickerWidget
 		};
 	};
 
-	mw.ext.forms.registry.Type.register( "user_picker", new mw.ext.forms.formElement.UserPicker() );
+	OOJSPlus.formelement.UserPicker.prototype.getDisplayName = function() {
+		return mw.message( 'oojsplus-formelement-type-user-picker' ).text();
+	};
+
+	mw.ext.forms.registry.Type.register( "user_picker", new OOJSPlus.formelement.UserPicker() );
 
 } )( mediaWiki, jQuery );

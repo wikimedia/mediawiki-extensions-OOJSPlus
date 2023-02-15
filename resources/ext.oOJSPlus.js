@@ -69,6 +69,7 @@
 
 	OOJSPlus = {
 		define: _define,
+		formelement: {},
 		ui: {
 			data: {
 				column: {},
