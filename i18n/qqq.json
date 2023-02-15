@@ -46,5 +46,11 @@
 	"oojsplus-data-paginator-previous": "Label for button to switch to previous page",
 	"oojsplus-data-grid-toolbar-reload-label": "Label for the reload button in the data grid",
 	"oojsplus-data-paginator-page-count": "Current page text in grid pagination.\n$1-current page number\n$2-total page count",
-	"oojsplus-data-grid-filter-boolean": "Label for the grid filter boolean field"
+	"oojsplus-data-grid-filter-boolean": "Label for the grid filter boolean field",
+	"oojsplus-formelement-type-user-picker": "Label for the form element",
+	"oojsplus-formelement-type-group-picker": "Label for the form element",
+	"oojsplus-formelement-type-group-multiselect": "Label for the form element",
+	"oojsplus-formelement-type-user-multiselect": "Label for the form element",
+	"oojsplus-formelement-type-title-multiselect": "Label for the form element",
+	"oojsplus-formelement-type-date-picker": "Label for the form element"
 }

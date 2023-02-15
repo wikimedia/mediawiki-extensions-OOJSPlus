@@ -1,24 +1,30 @@
 ( function ( mw, $ ) {
-	mw.ext.forms.formElement.GroupPicker = function() {};
+	OOJSPlus.formelement.GroupPicker = function() {
+		OOJSPlus.formelement.GroupPicker.parent.call( this );
+	};
 
-	OO.inheritClass( mw.ext.forms.formElement.GroupPicker, mw.ext.forms.formElement.InputFormElement );
+	OO.inheritClass( OOJSPlus.formelement.GroupPicker, mw.ext.forms.formElement.InputFormElement );
 
-	mw.ext.forms.formElement.GroupPicker.prototype.getElementConfig = function() {
-		var config = mw.ext.forms.formElement.GroupPicker.parent.prototype.getElementConfigInternal.call( this );
+	OOJSPlus.formelement.GroupPicker.prototype.getElementConfig = function() {
+		var config = OOJSPlus.formelement.GroupPicker.parent.prototype.getElementConfigInternal.call( this );
 		return this.returnConfig( config );
 	};
 
-	mw.ext.forms.formElement.GroupPicker.prototype.getType = function() {
+	OOJSPlus.formelement.GroupPicker.prototype.getType = function() {
 		return "group_picker";
 	};
 
-	mw.ext.forms.formElement.GroupPicker.prototype.getWidgets = function() {
+	OOJSPlus.formelement.GroupPicker.prototype.getWidgets = function() {
 		return {
 			view: OO.ui.LabelWidget,
 			edit: OOJSPlus.ui.widget.GroupInputWidget
 		};
 	};
 
-	mw.ext.forms.registry.Type.register( "group_picker", new mw.ext.forms.formElement.GroupPicker() );
+	OOJSPlus.formelement.GroupPicker.prototype.getDisplayName = function() {
+		return mw.message( 'oojsplus-formelement-type-group-picker' ).text();
+	};
+
+	mw.ext.forms.registry.Type.register( "group_picker", new OOJSPlus.formelement.GroupPicker() );
 
 } )( mediaWiki, jQuery );
