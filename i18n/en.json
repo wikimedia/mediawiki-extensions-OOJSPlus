@@ -43,5 +43,11 @@
 	"oojsplus-data-paginator-previous": "Previous page",
 	"oojsplus-data-grid-toolbar-reload-label": "Reload",
 	"oojsplus-data-paginator-page-count": "$1 of $2",
-	"oojsplus-data-grid-filter-boolean": "Value"
+	"oojsplus-data-grid-filter-boolean": "Value",
+	"oojsplus-formelement-type-user-picker": "User input",
+	"oojsplus-formelement-type-group-picker": "Group input",
+	"oojsplus-formelement-type-group-multiselect": "Group multiselect",
+	"oojsplus-formelement-type-user-multiselect": "User multiselect",
+	"oojsplus-formelement-type-title-multiselect": "Title multiselect",
+	"oojsplus-formelement-type-date-picker": "Date picker"
 }
