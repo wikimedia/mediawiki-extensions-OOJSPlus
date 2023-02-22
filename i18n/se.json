@@ -7,5 +7,7 @@
 	"oojsplus-data-grid-filter-label": "Silli",
 	"oojsplus-dialog-action-delete": "Sihko",
 	"oojsplus-data-tree-item-remove-label": "Sihko",
-	"oojsplus-data-paginator-next": "Čuovvovaš siidu"
+	"oojsplus-data-paginator-next": "Čuovvovaš siidu",
+	"oojsplus-dialog-action-cancel": "Šluhtte",
+	"oojsplus-data-grid-filter-clear": "Gurre"
 }
