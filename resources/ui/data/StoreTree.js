@@ -43,6 +43,10 @@
 		this.emit( 'collapse-expand' );
 	};
 
+	OOJSPlus.ui.data.StoreTree.prototype.addSubnodeWithData = function( ) {
+		// This is not supported by StoreTree at the moment
+	};
+
 	OOJSPlus.ui.data.StoreTree.prototype.collapseNode = function( name ) {
 		OOJSPlus.ui.data.StoreTree.parent.prototype.collapseNode.call( this, name );
 		this.emit( 'collapse-expand' );
@@ -95,14 +99,23 @@
 		var data = [];
 		for ( var i = 0; i < rawData.results.length; i++ ) {
 			var item = rawData.results[i];
-			data.push( {
-				name: item.id,
-				label: item.text,
-				leaf: item.leaf
-			} );
+			data.push( this.parseResultItem( item ) );
 		}
-
 		return data;
+	};
+
+	OOJSPlus.ui.data.StoreTree.prototype.parseResultItem = function( item ) {
+		if ( item.items.length > 0) {
+			item.items.forEach( function( part, index ) {
+				this[index] = this.parseResultItem( part );
+			}, item.items );
+		}
+		return {
+			name: item.id,
+			label: item.text,
+			leaf: item.leaf,
+			items: item.items
+		};
 	};
 
 } )( mediaWiki, jQuery );
