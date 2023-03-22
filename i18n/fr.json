@@ -47,5 +47,12 @@
 	"oojsplus-data-paginator-next": "Page suivante",
 	"oojsplus-data-paginator-previous": "Page précédente",
 	"oojsplus-data-grid-toolbar-reload-label": "Recharger",
-	"oojsplus-data-paginator-page-count": "$1 sur $2"
+	"oojsplus-data-paginator-page-count": "$1 sur $2",
+	"oojsplus-data-grid-filter-boolean": "Valeur",
+	"oojsplus-formelement-type-user-picker": "Entrée d’utilisateur",
+	"oojsplus-formelement-type-group-picker": "Entrée de groupe",
+	"oojsplus-formelement-type-group-multiselect": "Sélecteur multiple de groupes",
+	"oojsplus-formelement-type-user-multiselect": "Sélecteur multiple d’utilisateurs",
+	"oojsplus-formelement-type-title-multiselect": "Sélecteur multiple de titres",
+	"oojsplus-formelement-type-date-picker": "Sélecteur d’image"
 }
