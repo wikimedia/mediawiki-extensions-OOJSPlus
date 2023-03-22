@@ -19,7 +19,7 @@
 	"oojsplus-color-picker-color-olive": "Oljčna",
 	"oojsplus-color-picker-color-pink": "Rožnata",
 	"oojsplus-color-picker-clear-label": "Počisti barvo",
-	"oojsplus-color-picker-label": "Izbiralnik barv",
+	"oojsplus-color-picker-label": "Izbirnik barv",
 	"oojsplus-data-delete-row-prompt": "Ali res želite izbrisati to vrstico?",
 	"oojsplus-data-paginator-page-total-count-label": "{{PLURAL:$1|$1 vnos|$1 vnosa|$1 vnosi|$1 vnosov}}",
 	"oojsplusdemos": "Demonstracije OOJSPlus",
@@ -42,5 +42,12 @@
 	"oojsplus-data-paginator-next": "Naslednja stran",
 	"oojsplus-data-paginator-previous": "Prejšnja stran",
 	"oojsplus-data-grid-toolbar-reload-label": "Naloži znova",
-	"oojsplus-data-paginator-page-count": "$1 od $2"
+	"oojsplus-data-paginator-page-count": "$1 od $2",
+	"oojsplus-data-grid-filter-boolean": "Vrednost",
+	"oojsplus-formelement-type-user-picker": "Uporabniški vnos",
+	"oojsplus-formelement-type-group-picker": "Skupinski vnos",
+	"oojsplus-formelement-type-group-multiselect": "Večizbirnik skupin",
+	"oojsplus-formelement-type-user-multiselect": "Večizbirnik uporabnikov",
+	"oojsplus-formelement-type-title-multiselect": "Večizbirnik naslovov",
+	"oojsplus-formelement-type-date-picker": "Izbirnik datuma"
 }
