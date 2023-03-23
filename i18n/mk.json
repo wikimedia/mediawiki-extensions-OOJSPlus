@@ -16,7 +16,7 @@
 	"oojsplus-color-picker-clear-label": "Отстрани боја",
 	"oojsplus-color-picker-label": "Избирач на боја",
 	"oojsplus-data-delete-row-prompt": "Дали сте сигурни дека сакате да го избришете редов?",
-	"oojsplus-data-paginator-page-total-count-label": "{{PLURAL:$1|$1 ред|$1 реда}}",
+	"oojsplus-data-paginator-page-total-count-label": "{{PLURAL:$1|$1 ставка|$1 ставки}}",
 	"oojsplusdemos": "Показни на OOJSPlus",
 	"oojsplus-data-tree-item-remove-label": "Отстрани",
 	"oojsplus-data-tree-item-add-label": "Додај нов потпредмет",
@@ -43,5 +43,12 @@
 	"oojsplus-data-paginator-next": "Следна страница",
 	"oojsplus-data-paginator-previous": "Претходна страница",
 	"oojsplus-data-grid-toolbar-reload-label": "Превчитај",
-	"oojsplus-data-paginator-page-count": "$1 од $2"
+	"oojsplus-data-paginator-page-count": "$1 од $2",
+	"oojsplus-data-grid-filter-boolean": "Вредност",
+	"oojsplus-formelement-type-user-picker": "Кориснички внос",
+	"oojsplus-formelement-type-group-picker": "Групен внос",
+	"oojsplus-formelement-type-group-multiselect": "Групно повеќекратно избирање",
+	"oojsplus-formelement-type-user-multiselect": "Корисничко повеќекратно избирање",
+	"oojsplus-formelement-type-title-multiselect": "Повеќекратно избирање на наслови",
+	"oojsplus-formelement-type-date-picker": "Избирач на датуми"
 }
