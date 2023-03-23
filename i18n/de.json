@@ -46,5 +46,6 @@
 	"oojsplus-data-paginator-next": "Nächste Seite",
 	"oojsplus-data-paginator-previous": "Vorherige Seite",
 	"oojsplus-data-grid-toolbar-reload-label": "Neu laden",
-	"oojsplus-data-paginator-page-count": "$1 von $2"
+	"oojsplus-data-paginator-page-count": "$1 von $2",
+	"oojsplus-data-tree-item-remove-confirm-label": "Element \"$1\" entfernen?"
 }
