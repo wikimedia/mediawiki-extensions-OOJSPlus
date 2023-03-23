@@ -52,5 +52,6 @@
 	"oojsplus-formelement-type-group-multiselect": "Label for the form element",
 	"oojsplus-formelement-type-user-multiselect": "Label for the form element",
 	"oojsplus-formelement-type-title-multiselect": "Label for the form element",
-	"oojsplus-formelement-type-date-picker": "Label for the form element"
+	"oojsplus-formelement-type-date-picker": "Label for the form element",
+	"oojsplus-data-tree-item-remove-confirm-label": "Label for confirm that element should be removed\nParameters:\n *$1 - name of element"
 }

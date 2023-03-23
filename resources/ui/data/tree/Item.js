@@ -208,8 +208,16 @@
 	};
 
 	OOJSPlus.ui.data.tree.Item.prototype.onRemoveClick = function() {
-		this.optionsPopup.popup.toggle( false );
-		this.tree.removeNode( this.getName() );
+		var me = this;
+		OO.ui.confirm(
+			mw.message( 'oojsplus-data-tree-item-remove-confirm-label', me.getLabel() ).plain()
+		).done( function ( confirmed ) {
+			if ( !confirmed ) {
+				return;
+			}
+			me.optionsPopup.popup.toggle( false );
+			me.tree.removeNode( me.getName() );
+		} );
 	};
 
 	OOJSPlus.ui.data.tree.Item.prototype.onAddSubnodeClick = function() {

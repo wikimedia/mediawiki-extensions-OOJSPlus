@@ -49,5 +49,6 @@
 	"oojsplus-formelement-type-group-multiselect": "Group multiselect",
 	"oojsplus-formelement-type-user-multiselect": "User multiselect",
 	"oojsplus-formelement-type-title-multiselect": "Title multiselect",
-	"oojsplus-formelement-type-date-picker": "Date picker"
+	"oojsplus-formelement-type-date-picker": "Date picker",
+	"oojsplus-data-tree-item-remove-confirm-label": "Remove element \"$1\"?"
 }
