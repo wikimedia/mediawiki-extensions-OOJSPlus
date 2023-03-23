@@ -44,5 +44,10 @@
 	"oojsplus-data-grid-toolbar-reload-label": "Recargar",
 	"oojsplus-data-paginator-page-count": "$1 de $2",
 	"oojsplus-data-grid-filter-boolean": "Valor",
-	"oojsplus-formelement-type-user-picker": "Entrata de usator"
+	"oojsplus-formelement-type-user-picker": "Entrata de usator",
+	"oojsplus-formelement-type-group-picker": "Entrata de gruppo",
+	"oojsplus-formelement-type-group-multiselect": "Selector de gruppos multiple",
+	"oojsplus-formelement-type-user-multiselect": "Selector de usatores multiple",
+	"oojsplus-formelement-type-title-multiselect": "Selector de titulos multiple",
+	"oojsplus-formelement-type-date-picker": "Selector de datas"
 }

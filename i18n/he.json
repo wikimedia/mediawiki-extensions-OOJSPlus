@@ -45,5 +45,12 @@
 	"oojsplus-data-grid-filter-number-operator": "סוג",
 	"oojsplus-data-grid-filter-number-value": "ערך",
 	"oojsplus-data-grid-toolbar-reload-label": "רענון",
-	"oojsplus-data-paginator-page-count": "$1 מתוך $2"
+	"oojsplus-data-paginator-page-count": "$1 מתוך $2",
+	"oojsplus-data-grid-filter-boolean": "ערך",
+	"oojsplus-formelement-type-user-picker": "קלט משתמש",
+	"oojsplus-formelement-type-group-picker": "קלט קבוצה",
+	"oojsplus-formelement-type-group-multiselect": "בחירה מרובה של קבוצה",
+	"oojsplus-formelement-type-user-multiselect": "בחירה מרובה של משתמש",
+	"oojsplus-formelement-type-title-multiselect": "בחירה מרובת של כותרת",
+	"oojsplus-formelement-type-date-picker": "בורר תאריכים"
 }
