@@ -12,5 +12,6 @@
 	"oojsplus-stepprogressbar-default-final-label": "Fatto",
 	"oojsplus-data-paginator-next": "Pagina successiva",
 	"oojsplus-data-paginator-previous": "Pagina precedente",
-	"oojsplus-data-paginator-page-count": "$1 di $2"
+	"oojsplus-data-paginator-page-count": "$1 di $2",
+	"oojsplus-data-grid-filter-boolean": "Valore"
 }

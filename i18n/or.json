@@ -1,0 +1,14 @@
+{
+	"@metadata": {
+		"authors": [
+			"Chinmayee Mishra"
+		]
+	},
+	"oojsplus-data-grid-filter-boolean": "ମୂଲ୍ୟ",
+	"oojsplus-formelement-type-user-picker": "ଉପଯୋଗକର୍ତ୍ତା ଇନପୁଟ୍ |",
+	"oojsplus-formelement-type-group-picker": "ଗୋଷ୍ଠୀ ଇନପୁଟ୍ |",
+	"oojsplus-formelement-type-group-multiselect": "ଗୋଷ୍ଠୀ ମଲ୍ଟିସେଲେକ୍ଟ |",
+	"oojsplus-formelement-type-user-multiselect": "ବ୍ୟବହାରକାରୀ ମଲ୍ଟିସେଲେକ୍ଟ |",
+	"oojsplus-formelement-type-title-multiselect": "ଆଖ୍ୟା ବହୁବିଧ ଚୟନ |",
+	"oojsplus-formelement-type-date-picker": "ତାରିଖ ଚୟନକର୍ତ୍ତା |"
+}

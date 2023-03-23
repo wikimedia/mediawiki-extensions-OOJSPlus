@@ -3,6 +3,7 @@
 		"authors": [
 			"DreZhsh",
 			"Gomoko",
+			"McDutchie",
 			"Thibaut120094",
 			"Verdy p",
 			"Wladek92"
@@ -54,5 +55,5 @@
 	"oojsplus-formelement-type-group-multiselect": "Sélecteur multiple de groupes",
 	"oojsplus-formelement-type-user-multiselect": "Sélecteur multiple d’utilisateurs",
 	"oojsplus-formelement-type-title-multiselect": "Sélecteur multiple de titres",
-	"oojsplus-formelement-type-date-picker": "Sélecteur d’image"
+	"oojsplus-formelement-type-date-picker": "Sélecteur de date"
 }

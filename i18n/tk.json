@@ -4,5 +4,10 @@
 			"TayfunEt."
 		]
 	},
-	"oojsplus-data-grid-toolbar-reload-label": "Gaýtadan ýükläň"
+	"oojsplus-data-grid-toolbar-reload-label": "Gaýtadan ýükläň",
+	"oojsplus-formelement-type-user-picker": "Ulanyjy giriş",
+	"oojsplus-formelement-type-group-picker": "Topar giriş",
+	"oojsplus-formelement-type-user-multiselect": "Ulanyjy köp saýlaw",
+	"oojsplus-formelement-type-title-multiselect": "Adyň köp saýlawy",
+	"oojsplus-formelement-type-date-picker": "Sene saýlaýjy"
 }
