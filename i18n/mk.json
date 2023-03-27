@@ -51,5 +51,6 @@
 	"oojsplus-formelement-type-group-multiselect": "Групно повеќекратно избирање",
 	"oojsplus-formelement-type-user-multiselect": "Корисничко повеќекратно избирање",
 	"oojsplus-formelement-type-title-multiselect": "Повеќекратно избирање на наслови",
-	"oojsplus-formelement-type-date-picker": "Избирач на датуми"
+	"oojsplus-formelement-type-date-picker": "Избирач на датуми",
+	"oojsplus-data-tree-item-remove-confirm-label": "Да го отстранам елементот „$1“?"
 }

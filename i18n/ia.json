@@ -49,5 +49,6 @@
 	"oojsplus-formelement-type-group-multiselect": "Selector de gruppos multiple",
 	"oojsplus-formelement-type-user-multiselect": "Selector de usatores multiple",
 	"oojsplus-formelement-type-title-multiselect": "Selector de titulos multiple",
-	"oojsplus-formelement-type-date-picker": "Selector de datas"
+	"oojsplus-formelement-type-date-picker": "Selector de datas",
+	"oojsplus-data-tree-item-remove-confirm-label": "Remover elemento \"$1\"?"
 }

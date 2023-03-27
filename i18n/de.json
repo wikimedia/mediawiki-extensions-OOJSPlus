@@ -48,5 +48,5 @@
 	"oojsplus-data-grid-filter-number-value": "Wert",
 	"oojsplus-data-grid-toolbar-reload-label": "Neu laden",
 	"oojsplus-data-paginator-page-count": "$1 von $2",
-	"oojsplus-data-tree-item-remove-confirm-label": "Element \"$1\" entfernen?"
+	"oojsplus-data-tree-item-remove-confirm-label": "Element „$1“ entfernen?"
 }
