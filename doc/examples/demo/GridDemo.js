@@ -16,10 +16,40 @@ var store = new OOJSPlus.ui.data.store.Store( {
 	remoteSort: false
 } );
 
+/**
+ * Column definition:
+ * dataKey : {
+ *     headerText: "Column header text",
+ *     type: "text" | "number" | "boolean" | "url" | "user" | "date" | "icon" | "action",
+ *     align: "left" | "center" | "right",
+ *     // Optional properties:
+ *     sortable: true | false,
+ *     filter: {
+ *          type: "text" | "number" | "boolean" | "list" | "user"
+ *     },
+ *     sticky: true | false, // Only on first column
+ *     width: {number},
+ *     // If you want to display a different value than the one in the data model, you can specify the "display" property
+ *     display: {string},
+ *     valueParser: function ( value, row ) {
+ *          //return {string} | {OO.ui.Widget} | {OO.ui.HtmlSnippet}
+ *     },
+ *     urlProperty: {string}, // Only for type "url", data key that holds the URL
+ *     onlyShowTrue: true | false, // Only for type "boolean", if true, only show true values, show nothing for false
+ *
+ * }
+ * @type {OOJSPlus.ui.data.GridWidget}
+ */
+
 var grid = new OOJSPlus.ui.data.GridWidget( {
 	pageSize: 10,
 	columns: {
 		firstName: {
+			// For grids with a lot of columns that might extends outside the viewport,
+			// you can specify the first column to be sticky. It means that even if you scroll the table, the first
+			// column will always be visible. If `sticky` is specified, column must have a width specified as well
+			sticky: true,
+			width: 200,
 			headerText: "First name",
 			type: "text",
 			sortable: true,
@@ -56,7 +86,12 @@ var remoteGrid = new OOJSPlus.ui.data.GridWidget( {
 		firstName: {
 			headerText: "First name",
 			type: "text",
-			sortable: true
+			sortable: true,
+			// You can change the field that will be used for display of this column
+			// This is useful if you want to perform filtering/sorting on a "raw" field value,
+			// but want to display a "formatted" value.
+			// In that case, you can specify the formatted value as the "display" property
+			display: 'firstName_formatted'
 		},
 		lastName: {
 			headerText: "Last name",
@@ -78,7 +113,7 @@ var remoteGrid = new OOJSPlus.ui.data.GridWidget( {
 		userpage: {
 			headerText: "User page",
 			type: "url",
-			urlProperty: "up_url"
+			urlProperty: "up_url",
 		},
 		active: {
 			width: 30,
