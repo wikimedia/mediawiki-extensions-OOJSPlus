@@ -97,8 +97,12 @@
 
 		this.filterButton.popup.connect( this, {
 			toggle: function( visible ) {
+				this.emit( 'filterToggle', this.filterButton, visible );
 				if ( visible ) {
+					this.filterButton.setIcon( 'close' );
 					this.filter.focus();
+				} else {
+					this.filterButton.setIcon( 'funnel' );
 				}
 			}
 		} );
