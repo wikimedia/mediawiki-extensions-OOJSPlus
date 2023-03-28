@@ -44,12 +44,17 @@ OOJSPlus.ui.data.column.Url.prototype.getViewControls = function( value, row ) {
 };
 
 OOJSPlus.ui.data.column.Url.prototype.getViewSingleControl = function ( label, url ) {
-	return new OO.ui.ButtonWidget( {
+	var btn = new OO.ui.ButtonWidget( {
 		href: url,
 		label: label,
 		framed: false,
-		target: this.urlExternal
+		target: this.urlExternal,
+		classes: [ 'oojsplus-data-gridWidget-url-button' ]
 	} );
+	if( this.width ) {
+		btn.$element.css( 'width', this.width + 'px' );
+	}
+	return btn;
 };
 
 OOJSPlus.ui.data.column.Url.prototype.sort = function( a, b ) {
