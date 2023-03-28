@@ -5,6 +5,8 @@
 		this.align = cfg.align || 'left';
 		this.id = cfg.id;
 		this.type = cfg.type;
+		this.sticky = cfg.sticky || false;
+
 		this.headerText = cfg.headerText || '';
 		if ( cfg.filter instanceof OOJSPlus.ui.data.filter.Filter ) {
 			this.setFilter( cfg.filter );
@@ -29,6 +31,10 @@
 		this.display = cfg.display || null;
 		this.filterButton = null;
 
+		if ( this.sticky && !this.width ) {
+			throw new Error( 'Sticky columns must have a width set' );
+		}
+
 		this.$element.addClass( 'oojsplus-data-gridWidget-column' );
 	};
 
@@ -43,6 +49,11 @@
 		var $cell = $( '<th>' ).addClass( 'oojsplus-data-gridWidget-cell oojsplus-data-gridWidget-column-header' );
 		if( this.width ) {
 			$cell.css( 'width', this.width + 'px' );
+			$cell.css( 'min-width', this.width + 'px' );
+			$cell.css( 'max-width', this.width + 'px' );
+		}
+		if ( this.sticky ) {
+			$cell.addClass( 'sticky-col' );
 		}
 
 		this.headerButton = new OO.ui.ButtonWidget( {
@@ -107,6 +118,8 @@
 		$cell.attr( 'data-column', this.id );
 		if( this.width ) {
 			$cell.css( 'width', this.width + 'px' );
+			$cell.css( 'min-width', this.width + 'px' );
+			$cell.css( 'max-width', this.width + 'px' );
 		}
 		if ( this.align !== 'left' ) {
 			$cell.css( { 'text-align': this.align } );
@@ -114,6 +127,9 @@
 		$cell.css( 'margin-right', '10px' );
 		$cell.append( this.getCellContent( value, row ) );
 
+		if ( this.sticky ) {
+			$cell.addClass( 'sticky-col' );
+		}
 		return $cell;
 	};
 
