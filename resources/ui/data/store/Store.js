@@ -3,6 +3,7 @@ OOJSPlus.ui.data.store.Store = function ( cfg ) {
 	this.autoLoad = typeof cfg.autoLoad === 'undefined' ? true : !!cfg.autoLoad;
 	this.originalData = cfg.data || [];
 	this.data = {};
+	this.queryString = cfg.query || '';
 	this.filters = {};
 	var filters = cfg.filter || {};
 	for ( var filterField in filters ) {
@@ -165,6 +166,20 @@ OOJSPlus.ui.data.store.Store.prototype.filter = function( filter, field ) {
 	} else {
 		this.filters[field] = filter;
 	}
+	return this.reload();
+};
+
+OOJSPlus.ui.data.store.Store.prototype.query = function( query ) {
+	this.queryString = query;
+	return this.reload();
+};
+
+OOJSPlus.ui.data.store.Store.prototype.getQuery = function() {
+	return this.queryString;
+};
+
+OOJSPlus.ui.data.store.Store.prototype.clearQuery = function() {
+	this.queryString = '';
 	return this.reload();
 };
 
