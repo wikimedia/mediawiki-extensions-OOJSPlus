@@ -13,6 +13,7 @@ OOJSPlus.ui.data.store.RemoteRestStore.prototype.doLoadData = function() {
 			start: this.offset,
 			limit: this.limit,
 			filter: this.getFiltersForRemote(),
+			query: this.getQuery(),
 			sort: this.getSortForRemote()
 		};
 

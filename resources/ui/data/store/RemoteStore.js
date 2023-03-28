@@ -16,6 +16,7 @@ OOJSPlus.ui.data.store.RemoteStore.prototype.doLoadData = function() {
 		start: this.offset,
 		limit: this.limit,
 		filter: this.getFiltersForRemote(),
+		query: this.getQuery(),
 		sort: this.getSortForRemote()
 	} ).done( function( response ) {
 		if ( response.hasOwnProperty( 'results' ) ) {
