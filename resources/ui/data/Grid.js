@@ -73,6 +73,7 @@
 			}
 			columnWidget.connect( this, {
 				filter: 'onFilter',
+				filterToggle: 'onFilterToggle',
 				sort: 'onSort'
 			} );
 			this.columns[field] = columnWidget;
@@ -84,6 +85,17 @@
 			data: data, pageSize: this.pageSize, remoteFilter: false, remoteSort: false
 		} );
 	};
+
+	OOJSPlus.ui.data.GridWidget.prototype.onFilterToggle = function( filterButton, visible ) {
+		// Prevent multiple open filters at the same time
+		if ( visible ) {
+			if ( this.openedFilter ) {
+				this.openedFilter.popup.toggle( false );
+			}
+			this.openedFilter = filterButton;
+		}
+	};
+
 
 	OOJSPlus.ui.data.GridWidget.prototype.makeToolbar = function() {
 		return new OOJSPlus.ui.data.grid.Toolbar( {
