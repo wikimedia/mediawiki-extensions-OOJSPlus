@@ -21,7 +21,7 @@
 
 		this.$table.addClass( 'style-' + this.style );
 		this.$table.addClass( 'border-' + this.border );
-		this.$element.append( this.$table );
+		this.$element.append( $( '<div>' ).addClass( 'grid-container' ).append( this.$table ) );
 		if ( this.toolbar instanceof OOJSPlus.ui.data.grid.Toolbar ) {
 			this.$element.append( this.toolbar.$element );
 		}
