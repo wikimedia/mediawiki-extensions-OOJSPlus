@@ -50,6 +50,13 @@
 						position: absolute;
 						top: 8px;
 						right: 0;
+						&:focus, &:focus-visible,
+						a:focus, a:focus-visible,
+						span:focus, span:focus-visible{
+							box-shadow: none;
+							outline: none;
+							border: none;
+						}
 					}
 				}
 			}

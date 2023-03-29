@@ -51,6 +51,7 @@
 				"ui/widget/StoreDataInputWidget.js",
 				"ui/widget/MultiSelectFileWidget.js",
 				"ui/widget/ExpandablePanel.js",
+				"ui/widget/ExpandableLabelWidget.js",
 				"ui/widget/UserWidget.js",
 				"ui/widget/UserMenuOption.js",
 				"ui/widget/UserPicker.js",
@@ -129,6 +130,7 @@
 				"ui/data/filter/Boolean.js",
 				"ui/data/filter/List.js",
 				"ui/data/filter/User.js",
+				"ui/data/filter/Date.js",
 				"ui/data/column/Column.js",
 				"ui/data/column/Text.js",
 				"ui/data/column/Number.js",
@@ -155,7 +157,9 @@
 				"jquery.ui",
 				"ext.oOJSPlus.widgets",
 				"ext.oOJSPlus.IDGenerator",
-				"oojs-ui.styles.icons-layout"
+				"oojs-ui.styles.icons-layout",
+				"oojs-ui.styles.icons-interactions",
+				"mediawiki.widgets.DateInputWidget"
 			],
 			"messages": [
 				"oojsplus-data-delete-row-prompt",
@@ -165,7 +169,7 @@
 				"oojsplus-data-grid-widget-popup-title",
 				"oojsplus-data-grid-filter-label",
 				"oojsplus-data-grid-filter-clear",
-				"oojsplus-data-grid-filter-number-operator",
+				"oojsplus-data-grid-filter-operator",
 				"oojsplus-data-grid-filter-number-value",
 				"oojsplus-data-paginator-next",
 				"oojsplus-data-paginator-previous",
