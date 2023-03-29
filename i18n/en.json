@@ -37,7 +37,6 @@
 	"oojsplus-data-grid-widget-popup-title": "More items",
 	"oojsplus-data-grid-filter-label": "Filter",
 	"oojsplus-data-grid-filter-clear": "Clear",
-	"oojsplus-data-grid-filter-number-operator": "Type",
 	"oojsplus-data-grid-filter-number-value": "Value",
 	"oojsplus-data-paginator-next": "Next page",
 	"oojsplus-data-paginator-previous": "Previous page",
@@ -50,5 +49,6 @@
 	"oojsplus-formelement-type-user-multiselect": "User multiselect",
 	"oojsplus-formelement-type-title-multiselect": "Title multiselect",
 	"oojsplus-formelement-type-date-picker": "Date picker",
-	"oojsplus-data-tree-item-remove-confirm-label": "Remove element \"$1\"?"
+	"oojsplus-data-tree-item-remove-confirm-label": "Remove element \"$1\"?",
+	"oojsplus-data-grid-filter-operator": "Comparison type"
 }

@@ -17,6 +17,8 @@
 			this.filter = null;
 		}
 		this.width = cfg.width || false;
+		this.maxWidth = cfg.maxWidth || this.width;
+		this.minWidth = cfg.minWidth || this.width;
 		this.sortable = cfg.sortable || false;
 		if ( cfg.hasOwnProperty( 'sorter' ) && cfg.sorter instanceof OOJSPlus.ui.data.sorter.Sorter ) {
 			this.sortable = true;
@@ -47,11 +49,7 @@
 
 	OOJSPlus.ui.data.column.Column.prototype.getHeader = function( data ) {
 		var $cell = $( '<th>' ).addClass( 'oojsplus-data-gridWidget-cell oojsplus-data-gridWidget-column-header' );
-		if( this.width ) {
-			$cell.css( 'width', this.width + 'px' );
-			$cell.css( 'min-width', this.width + 'px' );
-			$cell.css( 'max-width', this.width + 'px' );
-		}
+		this.setWidth( $cell );
 		if ( this.sticky ) {
 			$cell.addClass( 'sticky-col' );
 		}
@@ -120,11 +118,7 @@
 	OOJSPlus.ui.data.column.Column.prototype.renderCell = function( value, row ) {
 		var $cell = $( '<td>' ).addClass( 'oojsplus-data-gridWidget-cell' );
 		$cell.attr( 'data-column', this.id );
-		if( this.width ) {
-			$cell.css( 'width', this.width + 'px' );
-			$cell.css( 'min-width', this.width + 'px' );
-			$cell.css( 'max-width', this.width + 'px' );
-		}
+		this.setWidth( $cell );
 		if ( this.align !== 'left' ) {
 			$cell.css( { 'text-align': this.align } );
 		}
@@ -153,15 +147,7 @@
 	};
 
 	OOJSPlus.ui.data.column.Column.prototype.getViewControls = function( value, row ) {
-		var snippet = value;
-		// Snippet value to max 250 chars
-		if ( typeof value === 'string' && value.length > 120 ) {
-			snippet = value.substr( 0, 120 ) + '...';
-		}
-		return new OO.ui.LabelWidget( {
-			label: snippet || value.toString(),
-			title: value
-		} );
+		return new OOJSPlus.ui.widget.ExpandableLabelWidget( { label: value, maxLength: 40 } );
 	};
 
 	OOJSPlus.ui.data.column.Column.prototype.getDisplayText = function( value, row ) {
@@ -218,6 +204,18 @@
 			return;
 		}
 		this.filterButton.setFlags( { 'primary': active, 'progressive': active } );
+	};
+
+	OOJSPlus.ui.data.column.Column.prototype.setWidth = function( $item ) {
+		if( this.width ) {
+			$item.css( 'width', this.width + 'px' );
+		}
+		if ( this.minWidth ) {
+			$item.css( 'min-width', this.minWidth + 'px' );
+		}
+		if ( this.maxWidth ) {
+			$item.css( 'max-width', this.maxWidth + 'px' );
+		}
 	};
 
 
