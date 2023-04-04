@@ -93,6 +93,8 @@
 				this.openedFilter.popup.toggle( false );
 			}
 			this.openedFilter = filterButton;
+		} else {
+			this.openedFilter = null;
 		}
 	};
 
@@ -171,6 +173,8 @@
 		for( var i = 0; i < data.length; i++ ) {
 			if ( this.schemaFits( data[i] ) ) {
 				this.appendItem( data[i] );
+			} else {
+				console.error( 'Row does not fit schema: ' + JSON.stringify( data[i] ) );
 			}
 		}
 	};
