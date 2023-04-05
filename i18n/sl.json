@@ -50,5 +50,6 @@
 	"oojsplus-formelement-type-user-multiselect": "Večizbirnik uporabnikov",
 	"oojsplus-formelement-type-title-multiselect": "Večizbirnik naslovov",
 	"oojsplus-formelement-type-date-picker": "Izbirnik datuma",
-	"oojsplus-data-tree-item-remove-confirm-label": "Odstranim element »$1«?"
+	"oojsplus-data-tree-item-remove-confirm-label": "Odstranim element »$1«?",
+	"oojsplus-data-grid-filter-operator": "Vrsta primerjave"
 }
