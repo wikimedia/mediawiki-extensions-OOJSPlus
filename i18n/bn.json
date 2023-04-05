@@ -20,7 +20,6 @@
 	"oojsplus-stepprogressbar-default-final-label": "সম্পন্ন",
 	"oojsplus-data-grid-filter-label": "ছাঁকনি",
 	"oojsplus-data-grid-filter-clear": "পরিষ্কার",
-	"oojsplus-data-grid-filter-number-operator": "ধরন",
 	"oojsplus-data-grid-filter-number-value": "মান",
 	"oojsplus-data-grid-toolbar-reload-label": "পুনঃলোড করুন",
 	"oojsplus-data-paginator-page-count": "$2-এর $1"

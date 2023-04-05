@@ -42,7 +42,6 @@
 	"oojsplus-data-grid-widget-popup-title": "Davantage d’éléments",
 	"oojsplus-data-grid-filter-label": "Filtrer",
 	"oojsplus-data-grid-filter-clear": "Effacer",
-	"oojsplus-data-grid-filter-number-operator": "Type",
 	"oojsplus-data-grid-filter-number-value": "Valeur",
 	"oojsplus-data-paginator-next": "Page suivante",
 	"oojsplus-data-paginator-previous": "Page précédente",
@@ -55,5 +54,6 @@
 	"oojsplus-formelement-type-user-multiselect": "Sélecteur multiple d’utilisateurs",
 	"oojsplus-formelement-type-title-multiselect": "Sélecteur multiple de titres",
 	"oojsplus-formelement-type-date-picker": "Sélecteur de date",
-	"oojsplus-data-tree-item-remove-confirm-label": "Supprimer l’élément « $1 » ?"
+	"oojsplus-data-tree-item-remove-confirm-label": "Supprimer l’élément « $1 » ?",
+	"oojsplus-data-grid-filter-operator": "Type de comparaison"
 }

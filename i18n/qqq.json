@@ -40,7 +40,6 @@
 	"oojsplus-data-grid-widget-popup-title": "Label for popup button to see all added items",
 	"oojsplus-data-grid-filter-label": "Label for the filter button\n{{identical|Filter}}",
 	"oojsplus-data-grid-filter-clear": "Label for the clear filter button",
-	"oojsplus-data-grid-filter-operator": "Label for the filter field\n{{identical|Comparison type}}",
 	"oojsplus-data-grid-filter-number-value": "Label for the filter field\n{{identical|Value}}",
 	"oojsplus-data-paginator-next": "Label for button to switch to next page",
 	"oojsplus-data-paginator-previous": "Label for button to switch to previous page",
@@ -53,5 +52,6 @@
 	"oojsplus-formelement-type-user-multiselect": "Label for the form element",
 	"oojsplus-formelement-type-title-multiselect": "Label for the form element",
 	"oojsplus-formelement-type-date-picker": "Label for the form element",
-	"oojsplus-data-tree-item-remove-confirm-label": "Label for confirm that element should be removed\nParameters:\n *$1 - name of element"
+	"oojsplus-data-tree-item-remove-confirm-label": "Label for confirm that element should be removed\nParameters:\n *$1 - name of element",
+	"oojsplus-data-grid-filter-operator": "Label for the filter field\n{{identical|Comparison type}}"
 }

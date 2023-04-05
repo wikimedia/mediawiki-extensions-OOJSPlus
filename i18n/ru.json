@@ -20,7 +20,6 @@
 	"oojsplus-dialog-action-cancel": "Отмена",
 	"oojsplus-data-grid-filter-label": "Фильтр",
 	"oojsplus-data-grid-filter-clear": "Очистить",
-	"oojsplus-data-grid-filter-number-operator": "Тип",
 	"oojsplus-data-grid-filter-number-value": "Значение",
 	"oojsplus-data-grid-toolbar-reload-label": "Обновить",
 	"oojsplus-data-paginator-page-count": "$1 из $2",
