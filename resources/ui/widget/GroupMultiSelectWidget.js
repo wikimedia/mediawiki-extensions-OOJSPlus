@@ -7,7 +7,11 @@
 		// Parent constructor
 		OOJSPlus.ui.widget.GroupMultiSelectWidget.parent.call( this, $.extend( {}, config, {} ) );
 
-		this.groupType = config.groupType || '';
+		if ( !config.hasOwnProperty( 'groupTypes' ) && config.hasOwnProperty( 'groupType' ) ) {
+			// B/C
+			config.groupTypes = [ config.groupType ];
+		}
+		this.groupTypes = config.groupTypes || [];
 		// Mixin constructors
 		OO.ui.mixin.PendingElement.call( this, $.extend( {}, config, { $pending: this.$handle } ) );
 
@@ -108,12 +112,12 @@
 		}
 
 		var filters = [];
-		if ( this.groupType ) {
+		if ( this.groupTypes.length > 0 ) {
 			filters.push( {
-				type: 'string',
+				type: 'list',
 				property: 'group_type',
-				value: this.groupType,
-				operator: 'eq'
+				value: this.groupTypes,
+				operator: 'in'
 			} );
 		}
 
