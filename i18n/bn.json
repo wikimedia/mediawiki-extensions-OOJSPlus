@@ -23,5 +23,6 @@
 	"oojsplus-data-grid-filter-number-value": "মান",
 	"oojsplus-data-grid-toolbar-reload-label": "পুনঃলোড করুন",
 	"oojsplus-data-paginator-page-count": "$2-এর $1",
-	"oojsplus-data-paginator-page-total-count-label": "{{PLURAL:$1|$1টি ভুক্তি}}"
+	"oojsplus-data-paginator-page-total-count-label": "{{PLURAL:$1|$1টি ভুক্তি}}",
+	"oojsplus-data-grid-filter-operator": "তুলনার ধরন"
 }

@@ -53,5 +53,6 @@
 	"oojsplus-formelement-type-user-multiselect": "בחירה מרובה של משתמש",
 	"oojsplus-formelement-type-title-multiselect": "בחירה מרובת של כותרת",
 	"oojsplus-formelement-type-date-picker": "בורר תאריכים",
-	"oojsplus-data-tree-item-remove-confirm-label": "להסיר את הרכיב \"$1\"?"
+	"oojsplus-data-tree-item-remove-confirm-label": "להסיר את הרכיב \"$1\"?",
+	"oojsplus-data-grid-filter-operator": "סוג השוואה"
 }
