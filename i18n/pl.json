@@ -3,7 +3,8 @@
 		"authors": [
 			"Rail",
 			"Railfail536",
-			"Rzuwig"
+			"Rzuwig",
+			"WaldiSt"
 		]
 	},
 	"oojsplus-data-delete-row-prompt": "Czy na pewno chcesz usunąć ten wiersz?",
@@ -11,5 +12,7 @@
 	"oojsplus-data-tree-item-remove-label": "Usuń",
 	"oojsplus-stepprogressbar-default-final-label": "Gotowe",
 	"oojsplus-data-grid-filter-label": "Filtr",
-	"oojsplus-data-grid-filter-number-value": "Wartość"
+	"oojsplus-data-grid-filter-number-value": "Wartość",
+	"oojsplus-data-grid-filter-boolean": "Wartość",
+	"oojsplus-data-grid-filter-operator": "Rodzaj porównania"
 }
