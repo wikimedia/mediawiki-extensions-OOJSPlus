@@ -24,5 +24,6 @@
 	"oojsplus-data-tree-item-add-label": "添加新的子項目",
 	"oojsplus-stepprogressbar-default-final-label": "完成",
 	"oojsplus-data-grid-filter-number-operator": "類型",
-	"oojsplus-data-grid-filter-number-value": "值"
+	"oojsplus-data-grid-filter-number-value": "值",
+	"oojsplus-data-grid-filter-boolean": "值"
 }
