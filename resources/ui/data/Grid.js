@@ -12,6 +12,7 @@
 		this.store = cfg.store || this.createLocalStore( cfg.data || [] );
 		this.paginator = typeof cfg.paginator === 'undefined' ? this.makePaginator() : cfg.paginator;
 		this.toolbar = typeof cfg.toolbar === 'undefined' ? this.makeToolbar() : cfg.toolbar;
+		this.sticky = false;
 
 		this.data = cfg.data || [];
 
@@ -21,7 +22,12 @@
 
 		this.$table.addClass( 'style-' + this.style );
 		this.$table.addClass( 'border-' + this.border );
-		this.$element.append( $( '<div>' ).addClass( 'grid-container' ).append( this.$table ) );
+		this.checkForStickyColumn();
+		var classes = 'grid-container';
+		if ( this.sticky ) {
+			classes += ' sticky-container';
+		}
+		this.$element.append( $( '<div>' ).addClass( classes ).append( this.$table ) );
 		if ( this.toolbar instanceof OOJSPlus.ui.data.grid.Toolbar ) {
 			this.$element.append( this.toolbar.$element );
 		}
@@ -77,6 +83,18 @@
 				sort: 'onSort'
 			} );
 			this.columns[field] = columnWidget;
+		}
+	};
+
+	OOJSPlus.ui.data.GridWidget.prototype.checkForStickyColumn = function() {
+		for ( var columnKey in this.columns ) {
+			if ( !this.columns.hasOwnProperty( columnKey ) ) {
+				continue;
+			}
+			if ( this.columns[ columnKey ].sticky ) {
+				this.sticky = true;
+				break;
+			}
 		}
 	};
 
