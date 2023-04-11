@@ -23,5 +23,6 @@
 	"oojsplus-data-paginator-next": "صفحهٔ بعدی",
 	"oojsplus-data-paginator-previous": "صفحهٔ قبل",
 	"oojsplus-data-grid-toolbar-reload-label": "تازه‌سازی",
-	"oojsplus-data-paginator-page-count": "$1 از $2"
+	"oojsplus-data-paginator-page-count": "$1 از $2",
+	"oojsplus-data-grid-filter-boolean": "مقدار"
 }

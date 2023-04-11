@@ -38,7 +38,6 @@
 	"oojsplus-data-grid-widget-popup-title": "Уште предмети",
 	"oojsplus-data-grid-filter-label": "Филтрирај",
 	"oojsplus-data-grid-filter-clear": "Исчисти",
-	"oojsplus-data-grid-filter-number-operator": "Вид",
 	"oojsplus-data-grid-filter-number-value": "Вредност",
 	"oojsplus-data-paginator-next": "Следна страница",
 	"oojsplus-data-paginator-previous": "Претходна страница",
@@ -51,5 +50,6 @@
 	"oojsplus-formelement-type-user-multiselect": "Корисничко повеќекратно избирање",
 	"oojsplus-formelement-type-title-multiselect": "Повеќекратно избирање на наслови",
 	"oojsplus-formelement-type-date-picker": "Избирач на датуми",
-	"oojsplus-data-tree-item-remove-confirm-label": "Да го отстранам елементот „$1“?"
+	"oojsplus-data-tree-item-remove-confirm-label": "Да го отстранам елементот „$1“?",
+	"oojsplus-data-grid-filter-operator": "Вид на споредба"
 }
