@@ -4,19 +4,7 @@ OOJSPlus.ui.data.store.Store = function ( cfg ) {
 	this.originalData = cfg.data || [];
 	this.data = {};
 	this.queryString = cfg.query || '';
-	this.filters = {};
-	var filters = cfg.filter || {};
-	for ( var filterField in filters ) {
-		if ( !filters.hasOwnProperty( filterField ) ) {
-			continue;
-		}
-		if ( filters[filterField] instanceof OOJSPlus.ui.data.filter.Filter ) {
-			this.filters[filterField] = filters[filterField];
-		} else if ( !$.isEmptyObject( filters[filterField] ) ) {
-			var filterFactory = new OOJSPlus.ui.data.FilterFactory();
-			this.filters[filterField] = filterFactory.makeFilter( filters[filterField] );
-		}
-	}
+	this.filters = this.filtersFromData( cfg.filter || {} );
 	this.sorters = {};
 	var sorters = cfg.sorter || {};
 	for ( var sortField in sorters ) {
@@ -158,6 +146,24 @@ OOJSPlus.ui.data.store.Store.prototype.localSort = function( data ) {
 	return data;
 };
 
+OOJSPlus.ui.data.store.Store.prototype.multiFilter = function( data ) {
+	var filters = this.filtersFromData( data );
+	for ( var field in filters ) {
+		if ( !filters.hasOwnProperty( field ) ) {
+			continue;
+		}
+		if ( !filters[field].getValue() ) {
+			if ( this.filters.hasOwnProperty( field ) ) {
+				delete( this.filters[field] );
+			}
+		} else {
+			this.filters[field] = filters[field];
+		}
+	}
+
+	return this.reload();
+};
+
 OOJSPlus.ui.data.store.Store.prototype.filter = function( filter, field ) {
 	if ( !filter.getValue() ) {
 		if ( this.filters.hasOwnProperty( field ) ) {
@@ -186,6 +192,23 @@ OOJSPlus.ui.data.store.Store.prototype.clearQuery = function() {
 OOJSPlus.ui.data.store.Store.prototype.clearFilters = function() {
 	this.filters = {};
 	return this.reload();
+};
+
+OOJSPlus.ui.data.store.Store.prototype.filtersFromData = function( data ) {
+	var result = {};
+	for ( var filterField in data ) {
+		if ( !data.hasOwnProperty( filterField ) ) {
+			continue;
+		}
+		if ( data[filterField] instanceof OOJSPlus.ui.data.filter.Filter ) {
+			result[filterField] = data[filterField];
+		} else if ( !$.isEmptyObject( data[filterField] ) ) {
+			var filterFactory = new OOJSPlus.ui.data.FilterFactory();
+			result[filterField] = filterFactory.makeFilter( data[filterField] );
+		}
+	}
+
+	return result;
 };
 
 
