@@ -16,7 +16,7 @@
 	"oojsplus-color-picker-clear-label": "Fjern fargen",
 	"oojsplus-color-picker-label": "Fargevelger",
 	"oojsplus-data-delete-row-prompt": "Er du sikker på at du vil slette denne raden?",
-	"oojsplus-data-paginator-page-total-count-label": "{{PLURAL:$1|$1 rad|$1 rader}}",
+	"oojsplus-data-paginator-page-total-count-label": "$1 {{PLURAL:$1|oppføring|oppføringer}}",
 	"oojsplusdemos": "OOJSPlus-demoer",
 	"oojsplus-data-tree-new-root-item-label": "Legg til nytt rotelement",
 	"oojsplus-data-tree-item-remove-label": "Fjern",
