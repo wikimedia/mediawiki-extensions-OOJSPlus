@@ -29,6 +29,7 @@
 		} );
 
 		this.staticControls.$element.addClass( 'static-controls' );
+		this.addTools( cfg.tools || [] );
 		this.staticControls.addItems( [ reloadBtn, this.totalWidget ] );
 
 		if ( this.paginator instanceof OOJSPlus.ui.data.grid.Paginator ) {
@@ -48,5 +49,15 @@
 		}
 		var labelMessage = mw.message( 'oojsplus-data-paginator-page-total-count-label', this.total ).parse();
 		this.totalWidget.setLabel( labelMessage );
+	};
+
+	OOJSPlus.ui.data.grid.Toolbar.prototype.addTools = function( tools ) {
+		var validTools = [];
+		for ( var i = 0; i < tools.length; i++ ) {
+			if ( tools[i] instanceof OO.ui.ButtonWidget ) {
+				validTools.push( tools[i] );
+			}
+		}
+		this.staticControls.addItems( validTools );
 	};
 } )( mediaWiki, jQuery );

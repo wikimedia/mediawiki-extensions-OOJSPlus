@@ -1,4 +1,28 @@
 ( function( mw, $ ) {
+	/**
+	 * Column definition:
+	 * dataKey : {
+	 *     headerText: "Column header text",
+	 *     type: "text" | "number" | "boolean" | "url" | "user" | "date" | "icon" | "action",
+	 *     align: "left" | "center" | "right",
+	 *     // Optional properties:
+	 *     sortable: true | false,
+	 *     filter: {
+	 *          type: "text" | "number" | "boolean" | "list" | "user"
+	 *     },
+	 *     sticky: true | false, // Only on first column
+	 *     width: {number},
+	 *     // If you want to display a different value than the one in the data model, you can specify the "display" property
+	 *     display: {string},
+	 *     valueParser: function ( value, row ) {
+	 *          //return {string} | {OO.ui.Widget} | {OO.ui.HtmlSnippet}
+	 *     },
+	 *     urlProperty: {string}, // Only for type "url", data key that holds the URL
+	 *     onlyShowTrue: true | false, // Only for type "boolean", if true, only show true values, show nothing for false
+	 *     hidden: true|false, // Hide by default. Default to `false`
+	 *
+	 * }
+	 */
 	OOJSPlus.ui.data.column.Column = function ( cfg ) {
 		OOJSPlus.ui.data.column.Column.parent.call( this, cfg );
 
@@ -6,6 +30,7 @@
 		this.id = cfg.id;
 		this.type = cfg.type;
 		this.sticky = cfg.sticky || false;
+		this.hidden = cfg.hidden || false;
 
 		this.headerText = cfg.headerText || '';
 		if ( cfg.filter instanceof OOJSPlus.ui.data.filter.Filter ) {
@@ -216,6 +241,14 @@
 		if ( this.maxWidth ) {
 			$item.css( 'max-width', this.maxWidth + 'px' );
 		}
+	};
+
+	OOJSPlus.ui.data.column.Column.prototype.canChangeVisibility = function() {
+		return !this.sticky;
+	};
+
+	OOJSPlus.ui.data.column.Column.prototype.getVisibility = function() {
+		return this.canChangeVisibility() ? ( this.hidden ? 'hidden' : 'visible' ) : 'visible';
 	};
 
 

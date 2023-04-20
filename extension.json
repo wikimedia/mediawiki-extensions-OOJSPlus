@@ -178,7 +178,8 @@
 				"oojsplus-data-grid-toolbar-reload-label",
 				"oojsplus-data-paginator-page-count",
 				"oojsplus-data-grid-filter-boolean",
-				"oojsplus-data-tree-item-remove-confirm-label"
+				"oojsplus-data-tree-item-remove-confirm-label",
+				"oojsplus-data-grid-toolbar-settings-columns-label"
 			]
 		},
 		"ext.oOJSPlus.icons": {

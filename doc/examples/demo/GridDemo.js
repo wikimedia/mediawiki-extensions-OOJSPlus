@@ -36,11 +36,28 @@ var store = new OOJSPlus.ui.data.store.Store( {
  *     },
  *     urlProperty: {string}, // Only for type "url", data key that holds the URL
  *     onlyShowTrue: true | false, // Only for type "boolean", if true, only show true values, show nothing for false
+ *     hidden: true|false, // Hide by default. Default to `false`
  *
  * }
  * @type {OOJSPlus.ui.data.GridWidget}
  */
 
+/**
+ * Definition of the grid
+ * {
+ *     style: 'none'|'differentiate-rows' // Default to 'none'
+ *     border: 'none'|'all'|'horizontal'|'vertical' // Default to 'none'
+ *     noHeader: true|false // Hide header if true. Default to false
+ *     pageSize: {number}, // Default to 10, also affected by the store's pageSize
+ *     columns: { {definition of the columns}  }, // See Column.js
+ *     store: {OOJSPlus.ui.data.store.Store}, // See Store.js
+ *     data: {Array}, // Data to use if no store is specified (only evaluated if no store is specified)
+ *     paginator: {Instance of OOJSPlus.ui.data.grid.Paginator}|null. Nul for no pagination. If not specified, a default paginator will be used
+ *     toolbar: {Instance of OOJSPlus.ui.data.grid.Toolbar}|null. Null for no toolbar. If not specified, a default toolbar will be used
+ *     tools: {Array of OO.ui.ButtonWidget or subclasses of it (eg. OO.ui.PopupButtonWidget)}. Tools to add to the toolbar
+ * }
+ * @type {OOJSPlus.ui.data.GridWidget}
+ */
 var grid = new OOJSPlus.ui.data.GridWidget( {
 	pageSize: 10,
 	columns: {
@@ -64,6 +81,8 @@ var grid = new OOJSPlus.ui.data.GridWidget( {
 		},
 		address: {
 			headerText: "Address",
+			// Hide by default
+			hidden: true,
 			type: "text"
 		},
 		userpage: {
