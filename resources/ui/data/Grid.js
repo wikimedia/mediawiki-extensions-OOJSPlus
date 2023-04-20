@@ -1,4 +1,20 @@
 ( function( mw, $ ) {
+	/**
+	 * Definition of the grid
+	 * {
+	 *     style: 'none'|'differentiate-rows' // Default to 'none'
+	 *     border: 'none'|'all'|'horizontal'|'vertical' // Default to 'none'
+	 *     noHeader: true|false // Hide header if true. Default to false
+	 *     pageSize: {number}, // Default to 10, also affected by the store's pageSize
+	 *     columns: { {definition of the columns}  }, // See Column.js
+	 *     store: {OOJSPlus.ui.data.store.Store}, // See Store.js
+	 *     data: {Array}, // Data to use if no store is specified (only evaluated if no store is specified)
+	 *     paginator: {Instance of OOJSPlus.ui.data.grid.Paginator}|null. Nul for no pagination. If not specified, a default paginator will be used
+	 *     toolbar: {Instance of OOJSPlus.ui.data.grid.Toolbar}|null. Null for no toolbar. If not specified, a default toolbar will be used
+	 *     tools: {Array of OO.ui.ButtonWidget or subclasses of it (eg. OO.ui.PopupButtonWidget)}. Tools to add to the toolbar
+	 * }
+	 * @type {OOJSPlus.ui.data.GridWidget}
+	 */
 	OOJSPlus.ui.data.GridWidget = function( cfg ) {
 		OOJSPlus.ui.data.GridWidget.parent.call( this, cfg );
 
@@ -10,15 +26,19 @@
 		this.border = cfg.border || 'none';
 		this.pageSize = cfg.pageSize || 25;
 		this.store = cfg.store || this.createLocalStore( cfg.data || [] );
-		this.paginator = typeof cfg.paginator === 'undefined' ? this.makePaginator() : cfg.paginator;
-		this.toolbar = typeof cfg.toolbar === 'undefined' ? this.makeToolbar() : cfg.toolbar;
 		this.sticky = false;
+		this.initialized = false;
 
 		this.data = cfg.data || [];
+		this.alwaysVisibleColumns = [];
+		this.visibleColumns = [];
 
 		this.columns = {};
 		this.buildColumns( cfg.columns );
 		this.addHeader();
+		this.paginator = typeof cfg.paginator === 'undefined' ? this.makePaginator() : cfg.paginator;
+		this.toolbar = typeof cfg.toolbar === 'undefined' ?
+			this.makeToolbar( ( cfg.tools || [] ).concat( this.getGridSettingsWidget() ) ) : cfg.toolbar;
 
 		this.$table.addClass( 'style-' + this.style );
 		this.$table.addClass( 'border-' + this.border );
@@ -66,7 +86,6 @@
 				column.id = field;
 				var type = column.type || 'text';
 
-
 				var columnClass = OOJSPlus.ui.data.registry.columnRegistry.lookup( type );
 				if ( !columnClass ) {
 					console.error( 'OOJSPlus.data: Tried to instantiate non-registered column for type: ' + type );
@@ -74,6 +93,12 @@
 				}
 				columnWidget = new columnClass( column );
 				columnWidget.bindToGrid( this );
+				if ( !columnWidget.canChangeVisibility() ) {
+					this.alwaysVisibleColumns.push( field );
+				}
+				if ( columnWidget.getVisibility() === 'visible' ) {
+					this.visibleColumns.push( field );
+				}
 			} else {
 				columnWidget = column;
 			}
@@ -117,10 +142,11 @@
 	};
 
 
-	OOJSPlus.ui.data.GridWidget.prototype.makeToolbar = function() {
+	OOJSPlus.ui.data.GridWidget.prototype.makeToolbar = function( tools ) {
 		return new OOJSPlus.ui.data.grid.Toolbar( {
 			store: this.store,
-			paginator: this.paginator
+			paginator: this.paginator,
+			tools: tools
 		} );
 	};
 
@@ -175,6 +201,7 @@
 				continue;
 			}
 			var $cell = this.columns[field].getHeader();
+			$cell.attr( 'data-field', field );
 			// Set the default filter values from the store
 			var filters = this.store.getFilters();
 			if ( filters.hasOwnProperty( field ) ) {
@@ -185,6 +212,66 @@
 		$header.append( $row );
 
 		this.$table.append( $header );
+	};
+
+	OOJSPlus.ui.data.GridWidget.prototype.getGridSettingsWidget = function() {
+		var options = [];
+		for ( var field in this.columns ) {
+			if ( !this.columns.hasOwnProperty( field ) ) {
+				continue;
+			}
+			if ( this.alwaysVisibleColumns.indexOf( field ) !== -1 ) {
+				continue;
+			}
+			options.push( {
+				data: field,
+				label: this.columns[field].headerText || field
+			} );
+		}
+		var columnsWidget = new OO.ui.CheckboxMultiselectInputWidget( {
+			options: options,
+			value: this.visibleColumns
+		} );
+		var columnSelectorLayout = new OO.ui.FieldLayout( columnsWidget, {
+			label: mw.message( "oojsplus-data-grid-toolbar-settings-columns-label" ).text()
+		} );
+		columnsWidget.connect( this, {
+			change: 'onColumnVisibilityChange'
+		} );
+
+		var settingsPanel = new OO.ui.PanelLayout( {
+			expanded: false,
+			padded: true,
+		} );
+		settingsPanel.$element.append( columnSelectorLayout.$element );
+
+		return new OO.ui.PopupButtonWidget( {
+			icon: 'settings',
+			classes: [ 'oojsplus-data-gridWidget-column-selector' ],
+			framed: false,
+			popup: {
+				$content: settingsPanel.$element,
+				padded: true,
+				align: 'backwards',
+				autoFlip: true,
+				verticalPosition: 'top'
+			}
+		} );
+	};
+
+	OOJSPlus.ui.data.GridWidget.prototype.onColumnVisibilityChange = function( visible ) {
+		visible = visible.concat( this.alwaysVisibleColumns );
+		for ( var field in this.columns ) {
+			if ( !this.columns.hasOwnProperty( field ) ) {
+				continue;
+			}
+			this.setColumnVisibility( field, visible.indexOf( field ) !== -1 );
+		}
+	};
+
+	OOJSPlus.ui.data.GridWidget.prototype.setColumnVisibility = function( field, visible ) {
+		// Find cells by data `field` attribute
+		this.$table.find( '[data-field="' + field + '"]' ).toggle( visible );
 	};
 
 	OOJSPlus.ui.data.GridWidget.prototype.addItemsInternally = function( data ) {
@@ -220,6 +307,7 @@
 				continue;
 			}
 			var $cell = this.columns[columnField].renderCell( item[columnField], item );
+			$cell.attr( 'data-field', columnField );
 			$cell.on( 'click', {
 				$cell: $cell,
 				item: item
@@ -261,6 +349,10 @@
 	OOJSPlus.ui.data.GridWidget.prototype.setItems = function( data ) {
 		this.$table.children( ':not(.oojsplus-data-gridWidget-header)' ).remove();
 		this.addItemsInternally( data );
+		if ( !this.initialized ) {
+			this.onColumnVisibilityChange( this.visibleColumns );
+			this.initialized = true;
+		}
 		this.emit( 'datasetChange' );
 	};
 } )( mediaWiki, jQuery );
