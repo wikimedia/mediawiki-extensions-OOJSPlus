@@ -50,5 +50,6 @@
 	"oojsplus-formelement-type-title-multiselect": "Title multiselect",
 	"oojsplus-formelement-type-date-picker": "Date picker",
 	"oojsplus-data-tree-item-remove-confirm-label": "Remove element \"$1\"?",
-	"oojsplus-data-grid-filter-operator": "Comparison type"
+	"oojsplus-data-grid-filter-operator": "Comparison type",
+	"oojsplus-data-grid-toolbar-settings-columns-label": "Columns"
 }
