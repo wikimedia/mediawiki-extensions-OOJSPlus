@@ -27,7 +27,6 @@
 		this.pageSize = cfg.pageSize || 25;
 		this.store = cfg.store || this.createLocalStore( cfg.data || [] );
 		this.sticky = false;
-		this.initialized = false;
 
 		this.data = cfg.data || [];
 		this.alwaysVisibleColumns = [];
@@ -236,7 +235,7 @@
 			label: mw.message( "oojsplus-data-grid-toolbar-settings-columns-label" ).text()
 		} );
 		columnsWidget.connect( this, {
-			change: 'onColumnVisibilityChange'
+			change: 'setColumnsVisibility'
 		} );
 
 		var settingsPanel = new OO.ui.PanelLayout( {
@@ -259,17 +258,18 @@
 		} );
 	};
 
-	OOJSPlus.ui.data.GridWidget.prototype.onColumnVisibilityChange = function( visible ) {
+	OOJSPlus.ui.data.GridWidget.prototype.setColumnsVisibility = function( visible ) {
+		this.visibleColumns = visible;
 		visible = visible.concat( this.alwaysVisibleColumns );
 		for ( var field in this.columns ) {
 			if ( !this.columns.hasOwnProperty( field ) ) {
 				continue;
 			}
-			this.setColumnVisibility( field, visible.indexOf( field ) !== -1 );
+			this.doSetColumnVisibility( field, visible.indexOf( field ) !== -1 );
 		}
 	};
 
-	OOJSPlus.ui.data.GridWidget.prototype.setColumnVisibility = function( field, visible ) {
+	OOJSPlus.ui.data.GridWidget.prototype.doSetColumnVisibility = function( field, visible ) {
 		// Find cells by data `field` attribute
 		this.$table.find( '[data-field="' + field + '"]' ).toggle( visible );
 	};
@@ -349,10 +349,8 @@
 	OOJSPlus.ui.data.GridWidget.prototype.setItems = function( data ) {
 		this.$table.children( ':not(.oojsplus-data-gridWidget-header)' ).remove();
 		this.addItemsInternally( data );
-		if ( !this.initialized ) {
-			this.onColumnVisibilityChange( this.visibleColumns );
-			this.initialized = true;
-		}
+		this.setColumnsVisibility( this.visibleColumns );
+
 		this.emit( 'datasetChange' );
 	};
 } )( mediaWiki, jQuery );
