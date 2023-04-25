@@ -48,5 +48,10 @@
 	"oojsplus-data-grid-filter-number-value": "Wert",
 	"oojsplus-data-grid-toolbar-reload-label": "Neu laden",
 	"oojsplus-data-paginator-page-count": "$1 von $2",
-	"oojsplus-data-tree-item-remove-confirm-label": "Element „$1“ entfernen?"
+	"oojsplus-data-tree-item-remove-confirm-label": "Element „$1“ entfernen?",
+	"oojsplus-data-grid-filter-boolean": "Wert",
+	"oojsplus-formelement-type-user-picker": "Benutzereingabe",
+	"oojsplus-formelement-type-date-picker": "Datumsauswahl",
+	"oojsplus-data-grid-filter-operator": "Vergleichstyp",
+	"oojsplus-data-grid-toolbar-settings-columns-label": "Spalten"
 }
