@@ -1,5 +1,6 @@
 OOJSPlus.ui.data.filter.User = function ( cfg ) {
 	this.list = cfg.list || [];
+	this.$overlay = cfg.$overlay || true;
 	OOJSPlus.ui.data.filter.User.parent.call( this, cfg );
 };
 
@@ -7,7 +8,7 @@ OO.inheritClass( OOJSPlus.ui.data.filter.User, OOJSPlus.ui.data.filter.List );
 
 OOJSPlus.ui.data.filter.User.prototype.getLayout = function() {
 	this.input = new OOJSPlus.ui.widget.UserPickerWidget( {
-		$overlay: true,
+		$overlay: this.$overlay,
 	} );
 	this.input.lookupMenu.$element.css( 'z-index', 100000 );
 	this.input.lookupMenu.connect( this, {
