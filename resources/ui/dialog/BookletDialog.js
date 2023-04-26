@@ -53,6 +53,7 @@
 		for ( var i = 0; i < pages.length; i++ ) {
 			if ( pages[i] instanceof OOJSPlus.ui.booklet.DialogBookletPage ) {
 				pages[i].setDialog( this );
+				pages[i].init();
 				this.pages.push( pages[i] );
 			}
 		}
@@ -60,7 +61,8 @@
 			outlined: false,
 			showMenu: false,
 			expanded: true,
-			pages: this.pages
+			pages: this.pages,
+			$overlay: this.$overlay
 		} );
 
 		this.$body.append( this.booklet.$element );
