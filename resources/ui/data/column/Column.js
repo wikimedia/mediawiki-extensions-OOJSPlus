@@ -6,6 +6,7 @@
 		this.id = cfg.id;
 		this.type = cfg.type;
 		this.sticky = cfg.sticky || false;
+		this.$overlay = cfg.$overlay || true;
 
 		this.headerText = cfg.headerText || '';
 		if ( cfg.filter instanceof OOJSPlus.ui.data.filter.Filter ) {
@@ -81,10 +82,10 @@
 			classes: [ 'filter-button' ],
 			framed: false,
 			title: mw.message( 'oojsplus-data-grid-filter-label' ).text(),
-			$overlay: true,
+			$overlay: this.$overlay,
 			popup: {
 				head: false,
-				$overlay: true,
+				$overlay: this.$overlay,
 				autoClose: false,
 				$content: this.filter.$element,
 				padded: true,

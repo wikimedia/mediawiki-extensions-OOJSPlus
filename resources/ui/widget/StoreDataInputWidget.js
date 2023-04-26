@@ -1,7 +1,7 @@
 ( function () {
 	OOJSPlus.ui.widget.StoreDataInputWidget = function( config ) {
 		config = config || {};
-		config.$overlay = true;
+		config.$overlay = config.$overlay || true;
 
 		OOJSPlus.ui.widget.StoreDataInputWidget.parent.call( this, $.extend( {}, config, { autocomplete: false } ) );
 

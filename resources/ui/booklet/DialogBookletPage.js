@@ -7,10 +7,7 @@
 
 		this.dialog = null;
 		this.pageData = {};
-
-		this.makePanel();
-
-		this.setData( cfg.data || {} );
+		this.data = cfg.data || {};
 
 		this.$element.addClass( 'oojsplus-dialog-booklet-page' );
 	};
@@ -26,6 +23,11 @@
 		for ( var i = 0; i < items.length; i++ ) {
 			this.$element.append( items[i].$element );
 		}
+	};
+
+	OOJSPlus.ui.booklet.DialogBookletPage.prototype.init = function() {
+		this.makePanel();
+		this.setData( this.data );
 	};
 
 	OOJSPlus.ui.booklet.DialogBookletPage.prototype.getItems = function() {
