@@ -51,5 +51,6 @@
 	"oojsplus-formelement-type-title-multiselect": "Повеќекратно избирање на наслови",
 	"oojsplus-formelement-type-date-picker": "Избирач на датуми",
 	"oojsplus-data-tree-item-remove-confirm-label": "Да го отстранам елементот „$1“?",
-	"oojsplus-data-grid-filter-operator": "Вид на споредба"
+	"oojsplus-data-grid-filter-operator": "Вид на споредба",
+	"oojsplus-data-grid-toolbar-settings-columns-label": "Столбови"
 }
