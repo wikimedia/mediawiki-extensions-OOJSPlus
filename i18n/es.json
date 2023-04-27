@@ -26,5 +26,6 @@
 	"oojsplus-dialog-action-delete": "Borrar",
 	"oojsplus-dialog-action-create": "Crear",
 	"oojsplus-dialog-action-add": "Añadir",
-	"oojsplus-dialog-action-cancel": "Cancelar"
+	"oojsplus-dialog-action-cancel": "Cancelar",
+	"oojsplus-data-grid-toolbar-settings-columns-label": "Columnas"
 }
