@@ -16,8 +16,8 @@
 
 	OOJSPlus.formelement.TitleMultiselect.prototype.getWidgets = function() {
 		return {
-			view: mw.widgets.TitlesMultiselectWidget,
-			edit: mw.widgets.TitlesMultiselectWidget
+			view: OO.ui.LabelWidget,
+			edit: OOJSPlus.ui.widget.TitleMultiselectWidget
 		};
 	};
 

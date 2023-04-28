@@ -61,7 +61,11 @@
 				"ui/widget/ButtonOptionWidget.js",
 				"ui/widget/ToggleMultiSelectInputWidget.js",
 				"ui/widget/MenuOptionWithDescription.js",
-				"ui/widget/CategoryInputWidget.js"
+				"ui/widget/CategoryInputWidget.js",
+				"ui/mixin/TitleQuery.js",
+				"ui/widget/TitleInputWidget.js",
+				"ui/widget/TitleMultiselectWidget.js",
+				"ui/widget/FileSearchWidget.js"
 			],
 			"styles": [
 				"stylesheet/rangeWidget.less",
