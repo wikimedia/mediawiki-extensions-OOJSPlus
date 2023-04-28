@@ -39,17 +39,6 @@ OOJSPlus.ui.widget.UserPickerWidget.prototype.abortRequest = function () {
 	// DO NOTHING
 };
 
-OOJSPlus.ui.widget.UserPickerWidget.prototype.getValidity = function () {
-	var dfd = $.Deferred();
-
-	if ( this.getSelectedUser() !== null ) {
-		dfd.resolve();
-	} else {
-		dfd.reject();
-	}
-	return dfd.promise();
-};
-
 OOJSPlus.ui.widget.UserPickerWidget.prototype.onLookupMenuToggle = function ( visible ) {
 	if ( this.lookupInputFocused ) {
 		this.focus();
