@@ -25,5 +25,7 @@
 	"oojsplus-data-paginator-next": "Sljedeća stranica",
 	"oojsplus-data-paginator-previous": "Prethodna stranica",
 	"oojsplus-data-grid-toolbar-reload-label": "Ponovno učitaj",
-	"oojsplus-data-paginator-page-count": "$1 od $2"
+	"oojsplus-data-paginator-page-count": "$1 od $2",
+	"oojsplus-data-grid-filter-boolean": "Vrijednost",
+	"oojsplus-data-grid-toolbar-settings-columns-label": "Stupaca"
 }
