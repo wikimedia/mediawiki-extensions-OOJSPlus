@@ -27,7 +27,6 @@
 		this.colorPickerPopup = this.popup;
 
 		$( 'body' ).click( function( e ) {
-			e.stopPropagation();
 			var $target = $( e.target );
 			if (
 				$target.attr( 'id' ) === this.id ||
