@@ -75,6 +75,7 @@
 			],
 			"dependencies": [
 				"mediawiki.widgets.UserInputWidget",
+				"mediawiki.widgets",
 				"ext.oOJSPlus.widgets.colorPicker",
 				"ext.oOJSPlus.widgets.stepProgressBar",
 				"oojs-ui",
