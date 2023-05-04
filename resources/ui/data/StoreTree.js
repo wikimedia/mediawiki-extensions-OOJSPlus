@@ -105,9 +105,10 @@
 	};
 
 	OOJSPlus.ui.data.StoreTree.prototype.parseResultItem = function( item ) {
+		var me = this;
 		if ( item.items.length > 0) {
 			item.items.forEach( function( part, index ) {
-				this[index] = this.parseResultItem( part );
+				this[index] = me.parseResultItem( part );
 			}, item.items );
 		}
 		return {
