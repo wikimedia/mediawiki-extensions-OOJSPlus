@@ -16,6 +16,8 @@
 	 * @type {OOJSPlus.ui.data.GridWidget}
 	 */
 	OOJSPlus.ui.data.GridWidget = function( cfg ) {
+		mw.hook( 'oojsplus.grid.init' ).fire( this, cfg );
+
 		OOJSPlus.ui.data.GridWidget.parent.call( this, cfg );
 
 		this.$element.addClass( 'oojsplus-data-gridWidget' );
@@ -177,6 +179,13 @@
 
 	OOJSPlus.ui.data.GridWidget.prototype.onStoreLoading = function() {
 		this.$loadingOverlay.show();
+	};
+
+	OOJSPlus.ui.data.GridWidget.prototype.setLoading = function( loading ) {
+		if ( !this.$loadingOverlay ) {
+			return;
+		}
+		loading ? this.$loadingOverlay.show() : this.$loadingOverlay.hide();
 	};
 
 	OOJSPlus.ui.data.GridWidget.prototype.setActiveFilters = function( fields ) {
