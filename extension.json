@@ -49,6 +49,7 @@
 				"ui/widget/GroupMultiSelectWidget.js",
 				"ui/widget/CategoryMultiSelectWidget.js",
 				"ui/widget/StoreDataInputWidget.js",
+				"ui/widget/StoreDataTagMultiselectWidget.js",
 				"ui/widget/MultiSelectFileWidget.js",
 				"ui/widget/ExpandablePanel.js",
 				"ui/widget/ExpandableLabelWidget.js",
@@ -184,7 +185,8 @@
 				"oojsplus-data-paginator-page-count",
 				"oojsplus-data-grid-filter-boolean",
 				"oojsplus-data-tree-item-remove-confirm-label",
-				"oojsplus-data-grid-toolbar-settings-columns-label"
+				"oojsplus-data-grid-toolbar-settings-columns-label",
+				"oojsplus-data-grid-grouper-no-group"
 			]
 		},
 		"ext.oOJSPlus.icons": {

@@ -7,6 +7,7 @@
 	 *     noHeader: true|false // Hide header if true. Default to false
 	 *     pageSize: {number}, // Default to 10, also affected by the store's pageSize
 	 *     columns: { {definition of the columns}  }, // See Column.js
+	 *     unspecifiedGroupHeader: 'No group selected', // If store has a groupField, this will be the header for the unspecified group
 	 *     store: {OOJSPlus.ui.data.store.Store}, // See Store.js
 	 *     data: {Array}, // Data to use if no store is specified (only evaluated if no store is specified)
 	 *     paginator: {Instance of OOJSPlus.ui.data.grid.Paginator}|null. Nul for no pagination. If not specified, a default paginator will be used
@@ -29,6 +30,8 @@
 		this.pageSize = cfg.pageSize || 25;
 		this.store = cfg.store || this.createLocalStore( cfg.data || [] );
 		this.sticky = false;
+		this.groupers = {};
+		this.unspecifiedGroupHeader = cfg.unspecifiedGroupHeader || null;
 
 		this.data = cfg.data || [];
 		this.alwaysVisibleColumns = [];
@@ -38,6 +41,20 @@
 		this.buildColumns( cfg.columns );
 		this.addHeader();
 		this.paginator = typeof cfg.paginator === 'undefined' ? this.makePaginator() : cfg.paginator;
+		this.paginator.connect( this, {
+			// Reset group headers when switching pages. This is done in order to insert a fresh header
+			// on the other page, even if the group is the same
+			next: function() {
+				if ( this.store.groupField ) {
+					this.currentGroupHeader = null;
+				}
+			},
+			previous: function() {
+				if ( this.store.groupField ) {
+					this.currentGroupHeader = null;
+				}
+			}
+		} );
 		this.toolbar = typeof cfg.toolbar === 'undefined' ?
 			this.makeToolbar( ( cfg.tools || [] ).concat( this.getGridSettingsWidget() ) ) : cfg.toolbar;
 
@@ -309,8 +326,76 @@
 		return true;
 	};
 
+	OOJSPlus.ui.data.GridWidget.prototype.addGroupHeader = function( value, $row ) {
+		// Used for "current" group, for incrementing the counter
+		this.currentGroupHeader = {
+			value: value,
+			counter: new OO.ui.LabelWidget( {
+				data: 1,
+				label: '(' + 1 + ')'
+			} )
+		};
+
+		// Determine if group is expanded or not. Useful only when switching pages, to carry over the state
+		var groupExpanded = true;
+		if ( this.groupers.hasOwnProperty( value ) && !this.groupers[value].expanded ) {
+			groupExpanded = false;
+			$row.hide();
+		}
+		this.groupers[value] = {
+			expanded: groupExpanded,
+			rows: [ $row ]
+		}
+		var expandButton = new OO.ui.ButtonWidget( {
+				icon: groupExpanded ? 'collapse' : 'expand',
+				framed: false,
+				data: value
+			} ),
+			grid = this;
+		expandButton.connect( expandButton, {
+			click: function() {
+				if ( grid.groupers.hasOwnProperty( this.getData() ) ) {
+					var expanded = grid.groupers[this.getData()].expanded;
+					for ( var i = 0; i < grid.groupers[this.getData()].rows.length; i++ ) {
+						var row = grid.groupers[this.getData()].rows[i];
+						expanded ? row.hide() : row.show();
+					}
+					this.setIcon( expanded ? 'expand' : 'collapse' );
+					grid.groupers[this.getData()].expanded = !expanded;
+				}
+			}
+		} );
+
+		var headerLayout = new OO.ui.HorizontalLayout( {
+			items: [
+				expandButton,
+				new OO.ui.LabelWidget( {
+					label: value || this.unspecifiedGroupHeader || mw.message( 'oojsplus-data-grid-grouper-no-group' ).text(),
+				} ),
+				this.currentGroupHeader.counter
+			]
+		} );
+		var $grouperCell = $( '<td>' )
+		.attr( 'colspan', Object.keys( this.columns ).length )
+		.append( headerLayout.$element ),
+			$grouperRow = $( '<tr>' ).addClass( 'oojsplus-data-gridWidget-group-header' ).append( $grouperCell );
+		this.$table.append( $grouperRow );
+	};
+
 	OOJSPlus.ui.data.GridWidget.prototype.appendItem = function( item ) {
 		var $row = $( '<tr>' ).addClass( 'oojsplus-data-gridWidget-row' );
+		if ( this.store.groupField ) {
+			if ( this.currentGroupHeader && this.currentGroupHeader.value === item[this.store.groupField] ) {
+				// If we already started a group, and the current item is in the same group, just increment the counter
+				this.currentGroupHeader.counter.setData( this.currentGroupHeader.counter.getData() + 1 );
+				this.currentGroupHeader.counter.setLabel( '(' + this.currentGroupHeader.counter.getData() + ')' );
+				this.groupers[this.currentGroupHeader.value].rows.push( $row );
+				this.groupers[this.currentGroupHeader.value].expanded ? $row.show() : $row.hide();
+			} else {
+				// If new group is detected, add a new group header
+				this.addGroupHeader( item[this.store.groupField] || '', $row );
+			}
+		}
 		for( var columnField in this.columns ) {
 			if ( !this.columns.hasOwnProperty( columnField ) ) {
 				continue;

@@ -58,6 +58,7 @@
 			this.currentPage--;
 			this.grid.setItems( [] );
 		}.bind( this ) );
+		this.emit( 'next' );
 	};
 
 	OOJSPlus.ui.data.grid.Paginator.prototype.assertLoaded = function( max ) {
@@ -79,7 +80,7 @@
 		this.grid.clearItems();
 		this.grid.setItems( this.subsetRows( this.range ) );
 		this.updateControls();
-
+		this.emit( 'previous' );
 	};
 
 	OOJSPlus.ui.data.grid.Paginator.prototype.createControls = function() {
