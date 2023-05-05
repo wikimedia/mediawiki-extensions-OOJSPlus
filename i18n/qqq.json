@@ -54,5 +54,6 @@
 	"oojsplus-formelement-type-title-multiselect": "Label for the form element",
 	"oojsplus-formelement-type-date-picker": "Label for the form element",
 	"oojsplus-data-tree-item-remove-confirm-label": "Label for confirm that element should be removed\nParameters:\n *$1 - name of element",
-	"oojsplus-data-grid-toolbar-settings-columns-label": "Field label"
+	"oojsplus-data-grid-toolbar-settings-columns-label": "Field label",
+	"oojsplus-data-grid-grouper-no-group": "Label for the grid group if no group name is specified"
 }
