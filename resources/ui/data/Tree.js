@@ -11,8 +11,15 @@
 		this.allowAdditions = typeof cfg.allowAdditions !== 'undefined' ? cfg.allowAdditions : true;
 		this.$itemsContainer = new $( '<div>' ).addClass( 'oojsplus-data-tree-items' );
 		this.expanded = true;
+		this.$containTo = false;
+		if ( !this.fixed ) {
+			this.$containTo = cfg.$containTo === 'self' ? this.$element : cfg.$containTo || false;
+			if ( this.$containTo ) {
+				this.$containTo.addClass( 'oojsplus-data-tree-contain-to' );
+			}
+		}
 		if ( cfg.hasOwnProperty( 'expanded' ) ) {
-			this.expanded = cfg.expanded
+			this.expanded = cfg.expanded;
 		}
 		this.style = cfg.style || {};
 
@@ -93,11 +100,11 @@
 			$ul.attr( 'data-level', parent ? parent.getLevel() + 1 : 0 ) ;
 			$ul.addClass( 'tree-sortable' ).sortable( {
 				connectWith: '.tree-sortable',
+				containment: this.$containTo,
 				placeholder: "drop-target",
 				forceHelperSize: true,
 				items: '.oojs-ui-data-tree-item',
 				forcePlaceholderSize: true,
-				//containment: this.$element,
 				start: function( e, ui ) {
 					tree.$itemsContainer.addClass( 'in-drag' );
 					$( ui.item ).addClass( 'dragged' );
