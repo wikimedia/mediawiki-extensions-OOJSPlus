@@ -53,5 +53,9 @@
 	"oojsplus-formelement-type-user-picker": "Benutzereingabe",
 	"oojsplus-formelement-type-date-picker": "Datumsauswahl",
 	"oojsplus-data-grid-filter-operator": "Vergleichstyp",
-	"oojsplus-data-grid-toolbar-settings-columns-label": "Spalten"
+	"oojsplus-data-grid-toolbar-settings-columns-label": "Spalten",
+	"oojsplus-formelement-type-group-picker": "Gruppeneingabe",
+	"oojsplus-formelement-type-group-multiselect": "Gruppen-Mehrfachauswahl",
+	"oojsplus-formelement-type-user-multiselect": "Benutzer-Mehrfachauswahl",
+	"oojsplus-formelement-type-title-multiselect": "Titel-Mehrfachauswahl"
 }
