@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Mohanad Kh",
-			"ديفيد"
+			"ديفيد",
+			"Alshamiri1"
 		]
 	},
 	"oojsplus-desc": "يوفر ودجات ووظائف الأداة المساعدة لـOOJS",
@@ -16,11 +17,30 @@
 	"oojsplus-color-picker-clear-label": "مسح اللون",
 	"oojsplus-color-picker-label": "منتقي الألوان",
 	"oojsplus-data-delete-row-prompt": "هل أنت متأكد أنك تريد حذف هذا الصف؟",
-	"oojsplus-data-paginator-page-total-count-label": "{{PLURAL:$1|$1 صف|$1 صفوف}}",
+	"oojsplus-data-paginator-page-total-count-label": "{{PLURAL:$1| دخول $1 | إدخالات $1 }}",
 	"oojsplusdemos": "عروض OOJSPlus",
 	"oojsplus-data-tree-item-remove-label": "إزالة",
 	"oojsplus-data-tree-item-add-label": "إضافة عنصر فرعي جديد",
 	"oojsplus-stepprogressbar-default-final-label": "تم",
+	"apihelp-query+allgroups-summary": "يسرد جميع المجموعات المعلنة في الويكي",
+	"apihelp-query+allgroups-param-prefix": "مصطلح البحث البادئة",
+	"apihelp-query+allgroups-param-contains": "ابحث عن كافة مجموعات المستخدمين التي تحتوي على هذه القيمة.",
+	"apihelp-query+allgroups-param-dir": "اتجاه الفرز",
+	"apihelp-query+allgroups-param-prop": "خصائص لاستردادها",
+	"apihelp-query+allgroups-paramvalue-prop-additional": "هي مجموعة إضافية",
+	"apihelp-query+allgroups-paramvalue-prop-displaytext": "نص العرض للمجموعة",
+	"apihelp-query+allgroups-example": "قائمة المجموعات التي تبدأ بـ \"s\"",
+	"apihelp-query+allcategories-param-contains": "ابحث عن جميع عناوين الفئات التي تحتوي على هذه القيمة.",
+	"oojsplus-dialog-action-done": "تم",
+	"oojsplus-dialog-action-delete": "حذف",
+	"oojsplus-dialog-action-create": "أنشئ",
+	"oojsplus-dialog-action-add": "أضف",
+	"oojsplus-dialog-action-cancel": "إلغاء",
+	"oojsplus-data-grid-widget-popup-title": "المزيد من العناصر",
+	"oojsplus-data-grid-filter-label": "مرشح",
+	"oojsplus-data-grid-filter-number-value": "القيمة",
 	"oojsplus-data-paginator-next": "الصفحة التالية",
-	"oojsplus-data-paginator-previous": "الصفحة السابقة"
+	"oojsplus-data-paginator-previous": "الصفحة السابقة",
+	"oojsplus-data-grid-toolbar-reload-label": "إعادة تحميل",
+	"oojsplus-data-paginator-page-count": "$1 من $2"
 }
