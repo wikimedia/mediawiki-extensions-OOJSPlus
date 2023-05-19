@@ -53,5 +53,6 @@
 	"oojsplus-data-grid-filter-operator": "نوع المقارنة",
 	"oojsplus-data-grid-toolbar-settings-columns-label": "اعمدة",
 	"oojsplus-data-grid-toolbar-reload-label": "إعادة تحميل",
-	"oojsplus-formelement-type-date-picker": "منتقي التاريخ"
+	"oojsplus-formelement-type-date-picker": "منتقي التاريخ",
+	"oojsplus-data-grid-filter-clear": "مسح"
 }
