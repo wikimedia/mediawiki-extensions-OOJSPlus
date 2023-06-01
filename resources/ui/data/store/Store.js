@@ -1,9 +1,24 @@
+/**
+ * {
+ *     autoload: true, // Whether to autoload the store, or require explicit .load() call
+ *     data: [], // Array of objects to load (not with RemoteStore)
+ *     query: 'string', // Query to send to the server or locally filter specified {data}
+ *     remoteFilter: true | false, // Whether to filter remotely or locally
+ *     remoteSort: true | false, // Whether to sort remotely or locally
+ *     pageSize: 25, // Number of items per page
+ *     filter: { array_of_filters },
+ *     sorter: { array_of_sorters },
+ *     groupField: 'string' // Field to group by. If specified, store is responsible for properly sorting by groupField
+ * }
+ * @type {OOJSPlus.ui.data.store.Store}
+ */
 OOJSPlus.ui.data.store.Store = function ( cfg ) {
 	OO.EventEmitter.call( this );
 	this.autoLoad = typeof cfg.autoLoad === 'undefined' ? true : !!cfg.autoLoad;
 	this.originalData = cfg.data || [];
 	this.data = {};
 	this.queryString = cfg.query || '';
+	this.groupField = cfg.groupField || null;
 	this.filters = this.filtersFromData( cfg.filter || {} );
 	this.sorters = {};
 	var sorters = cfg.sorter || {};

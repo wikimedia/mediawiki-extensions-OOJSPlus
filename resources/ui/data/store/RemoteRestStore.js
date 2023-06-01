@@ -1,3 +1,18 @@
+/**
+ * {
+ *     autoload: true, // Whether to autoload the store, or require explicit .load() call
+ *     data: [], // Array of objects to load (not with RemoteStore)
+ *     query: 'string', // Query to send to the server or locally filter specified {data}
+ *     remoteFilter: true | false, // Whether to filter remotely or locally
+ *     remoteSort: true | false, // Whether to sort remotely or locally
+ *     pageSize: 25, // Number of items per page
+ *     filter: { array_of_filters },
+ *     sorter: { array_of_sorters },
+ *     groupField: 'string' // Field to group by. If specified, store is responsible for properly sorting by groupField
+ *     path: 'string', // REST API path (to be appended to {wiki/rest.php )
+ * }
+ * @type {OOJSPlus.ui.data.store.Store}
+ */
 OOJSPlus.ui.data.store.RemoteRestStore = function ( cfg ) {
 	this.path = cfg.path;
 	this.request = null;
