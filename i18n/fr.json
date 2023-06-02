@@ -58,5 +58,6 @@
 	"oojsplus-formelement-type-date-picker": "Sélecteur de date",
 	"oojsplus-data-tree-item-remove-confirm-label": "Supprimer l’élément « $1 » ?",
 	"oojsplus-data-grid-filter-operator": "Type de comparaison",
-	"oojsplus-data-grid-toolbar-settings-columns-label": "Colonnes"
+	"oojsplus-data-grid-toolbar-settings-columns-label": "Colonnes",
+	"oojsplus-data-grid-grouper-no-group": "(aucun groupe)"
 }

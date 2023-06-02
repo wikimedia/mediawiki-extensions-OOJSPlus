@@ -57,5 +57,6 @@
 	"oojsplus-formelement-type-group-picker": "Gruppeneingabe",
 	"oojsplus-formelement-type-group-multiselect": "Gruppen-Mehrfachauswahl",
 	"oojsplus-formelement-type-user-multiselect": "Benutzer-Mehrfachauswahl",
-	"oojsplus-formelement-type-title-multiselect": "Titel-Mehrfachauswahl"
+	"oojsplus-formelement-type-title-multiselect": "Titel-Mehrfachauswahl",
+	"oojsplus-data-grid-grouper-no-group": "(keine Gruppe)"
 }

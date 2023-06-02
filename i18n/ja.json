@@ -11,5 +11,6 @@
 	"oojsplus-data-paginator-next": "次のページ",
 	"oojsplus-data-paginator-previous": "前のページ",
 	"oojsplus-data-grid-toolbar-reload-label": "再読み込み",
-	"oojsplus-data-grid-filter-boolean": "値"
+	"oojsplus-data-grid-filter-boolean": "値",
+	"oojsplus-data-grid-grouper-no-group": "(グループなし)"
 }
