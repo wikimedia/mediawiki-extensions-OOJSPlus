@@ -173,7 +173,7 @@
 	};
 
 	OOJSPlus.ui.data.column.Column.prototype.getViewControls = function( value, row ) {
-		return new OOJSPlus.ui.widget.ExpandableLabelWidget( { label: value, maxLength: 40 } );
+		return new OOJSPlus.ui.widget.ExpandableLabelWidget( { label: value || '', maxLength: 40 } );
 	};
 
 	OOJSPlus.ui.data.column.Column.prototype.getDisplayText = function( value, row ) {
