@@ -257,24 +257,24 @@
 			options: options,
 			value: this.visibleColumns
 		} );
-		var columnSelectorLayout = new OO.ui.FieldLayout( columnsWidget, {
-			label: mw.message( "oojsplus-data-grid-toolbar-settings-columns-label" ).text()
-		} );
+
 		columnsWidget.connect( this, {
 			change: 'setColumnsVisibility'
 		} );
 
 		var settingsPanel = new OO.ui.PanelLayout( {
 			expanded: false,
-			padded: true,
+			padded: false,
 		} );
-		settingsPanel.$element.append( columnSelectorLayout.$element );
+		settingsPanel.$element.append( columnsWidget.$element );
 
 		return new OO.ui.PopupButtonWidget( {
 			icon: 'settings',
 			classes: [ 'oojsplus-data-gridWidget-column-selector' ],
 			framed: false,
 			popup: {
+				head: true,
+				label: mw.message( "oojsplus-data-grid-toolbar-settings-columns-label" ).text(),
 				$content: settingsPanel.$element,
 				padded: true,
 				align: 'backwards',
