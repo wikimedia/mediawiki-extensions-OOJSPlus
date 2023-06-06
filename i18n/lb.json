@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Robby"
+			"Robby",
+			"Volvox"
 		]
 	},
 	"oojsplus-color-picker-color-blue": "Blo",
@@ -21,5 +22,6 @@
 	"oojsplus-dialog-action-cancel": "Ofbriechen",
 	"oojsplus-data-grid-filter-label": "Filteren",
 	"oojsplus-data-grid-filter-clear": "Eidel maachen",
-	"oojsplus-data-grid-filter-number-value": "Wäert"
+	"oojsplus-data-grid-filter-number-value": "Wäert",
+	"oojsplus-data-grid-grouper-no-group": "(keng Grupp)"
 }
