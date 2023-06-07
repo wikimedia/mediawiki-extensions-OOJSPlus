@@ -41,20 +41,23 @@
 		this.buildColumns( cfg.columns );
 		this.addHeader();
 		this.paginator = typeof cfg.paginator === 'undefined' ? this.makePaginator() : cfg.paginator;
-		this.paginator.connect( this, {
-			// Reset group headers when switching pages. This is done in order to insert a fresh header
-			// on the other page, even if the group is the same
-			next: function() {
-				if ( this.store.groupField ) {
-					this.currentGroupHeader = null;
+		if ( this.paginator ) {
+			this.paginator.connect( this, {
+				// Reset group headers when switching pages. This is done in order to insert a fresh header
+				// on the other page, even if the group is the same
+				next: function() {
+					if ( this.store.groupField ) {
+						this.currentGroupHeader = null;
+					}
+				},
+				previous: function() {
+					if ( this.store.groupField ) {
+						this.currentGroupHeader = null;
+					}
 				}
-			},
-			previous: function() {
-				if ( this.store.groupField ) {
-					this.currentGroupHeader = null;
-				}
-			}
-		} );
+			} );
+		}
+
 		this.toolbar = typeof cfg.toolbar === 'undefined' ?
 			this.makeToolbar( ( cfg.tools || [] ).concat( this.getGridSettingsWidget() ) ) : cfg.toolbar;
 
