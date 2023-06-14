@@ -2,6 +2,7 @@
 	"@metadata": {
 		"authors": [
 			"Alshamiri1",
+			"Asma",
 			"Mohanad Kh",
 			"ديفيد"
 		]
@@ -54,5 +55,6 @@
 	"oojsplus-data-grid-toolbar-settings-columns-label": "اعمدة",
 	"oojsplus-data-grid-toolbar-reload-label": "إعادة تحميل",
 	"oojsplus-formelement-type-date-picker": "منتقي التاريخ",
-	"oojsplus-data-grid-filter-clear": "مسح"
+	"oojsplus-data-grid-filter-clear": "مسح",
+	"oojsplus-data-grid-grouper-no-group": "(لا مجموعة)"
 }
