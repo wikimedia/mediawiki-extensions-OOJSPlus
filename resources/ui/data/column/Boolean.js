@@ -18,13 +18,15 @@ OOJSPlus.ui.data.column.Boolean.prototype.getViewControls = function( value ) {
 	if( typeof value === 'string' ) {
 		value = value === 'true';
 	}
-	return new OO.ui.IconWidget( {
-		icon: value ? 'check' : this.showOnlyTrue ? '' : 'close'
+	var widget = new OO.ui.IconWidget( {
+		icon: value ? 'color-check' : this.showOnlyTrue ? '' : 'color-cross'
 	} );
+	widget.$element.attr( 'aria-label', value ? 'checked' : 'unchecked' );
+	return widget;
 };
 
 OOJSPlus.ui.data.column.Boolean.prototype.sort = function( a, b ) {
-	if( a === b ) {
+	if ( a === b ) {
 		return 0;
 	}
 	else if( a === true && b === false ) {

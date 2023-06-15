@@ -167,7 +167,8 @@
 				"ext.oOJSPlus.IDGenerator",
 				"oojs-ui.styles.icons-layout",
 				"oojs-ui.styles.icons-interactions",
-				"mediawiki.widgets.DateInputWidget"
+				"mediawiki.widgets.DateInputWidget",
+				"ext.oOJSPlus.icons"
 			],
 			"messages": [
 				"oojsplus-data-delete-row-prompt",
