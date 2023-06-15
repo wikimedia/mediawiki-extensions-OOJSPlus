@@ -95,3 +95,14 @@
   /* @embed */
   background-image: url( '../images/icons/align-center.svg' );
 }
+
+.oo-ui-icon-color-check {
+  /* @embed */
+  background-image: url( '../images/icons/tick.png' );
+}
+
+.oo-ui-icon-color-cross {
+  /* @embed */
+  background-image: url( '../images/icons/cross.png' );
+}
+
