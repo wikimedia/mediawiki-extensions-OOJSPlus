@@ -25,5 +25,6 @@
 	"oojsplus-stepprogressbar-default-final-label": "完成",
 	"oojsplus-data-grid-filter-number-operator": "類型",
 	"oojsplus-data-grid-filter-number-value": "值",
-	"oojsplus-data-grid-filter-boolean": "值"
+	"oojsplus-data-grid-filter-boolean": "值",
+	"oojsplus-data-grid-grouper-no-group": "（無群組）"
 }
