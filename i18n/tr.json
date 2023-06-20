@@ -5,7 +5,8 @@
 			"Can",
 			"Hedda",
 			"Mirzali",
-			"MuratTheTurkish"
+			"MuratTheTurkish",
+			"Asma"
 		]
 	},
 	"oojsplus-desc": "OOJS için küçük araçlar ve yardımcı işlevler sağlar",
@@ -28,5 +29,6 @@
 	"oojsplus-dialog-action-delete": "Sil",
 	"oojsplus-dialog-action-create": "Oluştur",
 	"oojsplus-dialog-action-add": "Ekle",
-	"oojsplus-dialog-action-cancel": "İptal"
+	"oojsplus-dialog-action-cancel": "İptal",
+	"oojsplus-data-grid-grouper-no-group": "(grup yok)"
 }

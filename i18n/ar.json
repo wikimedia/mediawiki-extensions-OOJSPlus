@@ -3,7 +3,8 @@
 		"authors": [
 			"Mohanad Kh",
 			"ديفيد",
-			"Alshamiri1"
+			"Alshamiri1",
+			"Asma"
 		]
 	},
 	"oojsplus-desc": "يوفر ودجات ووظائف الأداة المساعدة لـOOJS",
@@ -53,5 +54,6 @@
 	"oojsplus-formelement-type-date-picker": "منتقي التاريخ",
 	"oojsplus-data-tree-item-remove-confirm-label": "هل تريد إزالة العنصر \" $1 \"؟",
 	"oojsplus-data-grid-filter-operator": "نوع المقارنة",
-	"oojsplus-data-grid-toolbar-settings-columns-label": "اعمدة"
+	"oojsplus-data-grid-toolbar-settings-columns-label": "اعمدة",
+	"oojsplus-data-grid-grouper-no-group": "(لا مجموعة)"
 }
