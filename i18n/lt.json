@@ -43,5 +43,8 @@
 	"oojsplus-data-tree-item-remove-confirm-label": "Pašalinti elementą „$1“?",
 	"oojsplus-data-grid-filter-operator": "Palyginimo tipas",
 	"oojsplus-data-grid-toolbar-settings-columns-label": "Stulpeliai",
-	"oojsplus-data-grid-grouper-no-group": "(nėra grupės)"
+	"oojsplus-data-grid-grouper-no-group": "(nėra grupės)",
+	"oojsplus-formelement-type-group-multiselect": "Kelių grupių pasirinkimas",
+	"oojsplus-formelement-type-user-multiselect": "Kelių naudotojų pasirinkimas",
+	"oojsplus-formelement-type-title-multiselect": "Kelių pavadinimų pasirinkimas"
 }
