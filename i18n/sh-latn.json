@@ -1,0 +1,31 @@
+{
+	"@metadata": {
+		"authors": [
+			"Winston Sung"
+		]
+	},
+	"oojsplus-desc": "Daje sučeljske elemente i pomagala za OOJS",
+	"oojsplus-color-picker-clear-label": "Ukloni boju",
+	"oojsplus-color-picker-label": "Izbiratelj boje",
+	"oojsplus-data-delete-row-prompt": "Želite li da obrišete ovu nizu?",
+	"oojsplus-data-paginator-page-total-count-label": "{{PLURAL:$1|$1 unos|$1 unosa}}",
+	"oojsplusdemos": "Pokazne OOJSPlusa",
+	"oojsplus-data-tree-item-remove-label": "Ukloni",
+	"oojsplus-data-tree-item-add-label": "Dodaj novi podstavak",
+	"oojsplus-stepprogressbar-default-final-label": "Gotovo",
+	"oojsplus-dialog-action-done": "Gotovo",
+	"oojsplus-dialog-action-delete": "Izbriši",
+	"oojsplus-dialog-action-create": "Napravi",
+	"oojsplus-dialog-action-add": "Dodaj",
+	"oojsplus-dialog-action-cancel": "Otkaži",
+	"oojsplus-data-grid-widget-popup-title": "Još stavki",
+	"oojsplus-data-grid-filter-label": "Filter",
+	"oojsplus-data-grid-filter-clear": "Očisti",
+	"oojsplus-data-grid-filter-number-value": "Vrijednost",
+	"oojsplus-data-paginator-next": "Sljedeća stranica",
+	"oojsplus-data-paginator-previous": "Prethodna stranica",
+	"oojsplus-data-grid-toolbar-reload-label": "Ponovno učitaj",
+	"oojsplus-data-paginator-page-count": "$1 od $2",
+	"oojsplus-data-grid-filter-boolean": "Vrijednost",
+	"oojsplus-data-grid-toolbar-settings-columns-label": "Stupaca"
+}
