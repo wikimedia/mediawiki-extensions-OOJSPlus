@@ -66,7 +66,8 @@
 				"ui/mixin/TitleQuery.js",
 				"ui/widget/TitleInputWidget.js",
 				"ui/widget/TitleMultiselectWidget.js",
-				"ui/widget/FileSearchWidget.js"
+				"ui/widget/FileSearchWidget.js",
+				"ui/widget/LinkWidget.js"
 			],
 			"styles": [
 				"stylesheet/rangeWidget.less",
