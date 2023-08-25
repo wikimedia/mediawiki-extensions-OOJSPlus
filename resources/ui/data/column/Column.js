@@ -32,6 +32,7 @@
 		this.sticky = cfg.sticky || false;
 		this.hidden = cfg.hidden || false;
 		this.$overlay = cfg.$overlay || true;
+		this.autoClosePopup = cfg.autoClosePopup || false;
 
 		this.headerText = cfg.headerText || '';
 		if ( cfg.filter instanceof OOJSPlus.ui.data.filter.Filter ) {
@@ -111,7 +112,7 @@
 			popup: {
 				head: false,
 				$overlay: this.$overlay,
-				autoClose: false,
+				autoClose: this.autoClosePopup,
 				$content: this.filter.$element,
 				padded: true,
 				align: 'force-left',
