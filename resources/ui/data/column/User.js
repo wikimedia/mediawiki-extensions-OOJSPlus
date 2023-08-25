@@ -1,6 +1,8 @@
 OOJSPlus.ui.data.column.User = function ( cfg ) {
 	cfg = cfg || {};
 	OOJSPlus.ui.data.column.User.parent.call( this, cfg );
+
+	this.showImage = cfg.showImage || false;
 	this.$element.addClass( 'user-column' );
 };
 
@@ -18,7 +20,7 @@ OOJSPlus.ui.data.column.User.prototype.getViewControls = function( value ) {
 	}
 	return new OOJSPlus.ui.widget.UserWidget( {
 		user_name: value,
-		showImage: false,
+		showImage: this.showImage,
 		showLink: true,
 		showRawUsername: false
 	} );
