@@ -28,14 +28,16 @@
 		this.noHeader = cfg.noHeader || false;
 		this.border = cfg.border || 'none';
 		this.pageSize = cfg.pageSize || 25;
+		this.multiSelect = cfg.multiSelect || false;
 		this.store = cfg.store || this.createLocalStore( cfg.data || [] );
 		this.sticky = false;
 		this.groupers = {};
 		this.unspecifiedGroupHeader = cfg.unspecifiedGroupHeader || null;
-
 		this.data = cfg.data || [];
 		this.alwaysVisibleColumns = [];
 		this.visibleColumns = [];
+
+		this.selectedRows = [];
 
 		this.columns = {};
 		this.buildColumns( cfg.columns );
@@ -90,6 +92,10 @@
 				this.setItems( Object.values( data ) );
 			}
 		}.bind( this ) );
+
+		this.connect( this, {
+			selected: 'clickOnRow'
+		} );
 	};
 
 	OO.inheritClass( OOJSPlus.ui.data.GridWidget, OO.ui.Widget );
@@ -97,6 +103,16 @@
 	OOJSPlus.ui.data.GridWidget.static.tagName = 'div';
 
 	OOJSPlus.ui.data.GridWidget.prototype.buildColumns = function( cfg ) {
+		if ( this.multiSelect ) {
+			var multiselect = {}
+			multiselect.check = {
+				type: 'selection',
+				title: mw.message( 'oojsplus-data-grid-selection-column-label' ).text(),
+				actionId: 'checkRow'
+			};
+			cfg = Object.assign( multiselect, cfg );
+		}
+
 		for( var field in cfg ) {
 			if ( !cfg.hasOwnProperty( field ) ) {
 				continue;
@@ -161,7 +177,6 @@
 			this.openedFilter = null;
 		}
 	};
-
 
 	OOJSPlus.ui.data.GridWidget.prototype.makeToolbar = function( tools ) {
 		return new OOJSPlus.ui.data.grid.Toolbar( {
@@ -387,6 +402,7 @@
 
 	OOJSPlus.ui.data.GridWidget.prototype.appendItem = function( item ) {
 		var $row = $( '<tr>' ).addClass( 'oojsplus-data-gridWidget-row' );
+		$( $row ).attr( 'id', this.getItemID( item ) );
 		if ( this.store.groupField ) {
 			if ( this.currentGroupHeader && this.currentGroupHeader.value === item[this.store.groupField] ) {
 				// If we already started a group, and the current item is in the same group, just increment the counter
@@ -416,11 +432,10 @@
 			$row.append( $cell );
 		}
 
-		$row.on( 'click', { $row: $row, item: item }, function( e ) {
-			$( '.oojsplus-data-gridWidget-row' ).removeClass( 'row-selected' );
-			e.data.$row.addClass( 'row-selected' );
-			this.emit( 'rowSelected', e.data );
-		}.bind( this ) );
+		if ( !this.multiSelect ) {
+			$row.on( 'click', { $row: $row, item: item },
+				this.clickOnRow.bind( this ) );
+		}
 
 		this.$table.append( $row );
 	};
@@ -449,5 +464,38 @@
 		this.setColumnsVisibility( this.visibleColumns );
 
 		this.emit( 'datasetChange' );
+	};
+
+	OOJSPlus.ui.data.GridWidget.prototype.clickOnRow = function( e ) {
+		if ( !this.multiSelect ) {
+			$( '.oojsplus-data-gridWidget-row' ).removeClass( 'row-selected' );
+			e.data.$row.addClass( 'row-selected' );
+		} else {
+			var positionInArray = this.selectedRows.indexOf( e.data.item );
+			if ( positionInArray >= 0 ) {
+				this.selectedRows.splice( positionInArray, 1 );
+			} else {
+				this.selectedRows.push( e.data.item );
+			}
+		}
+		this.emit( 'rowSelected', e.data );
+	};
+
+	OOJSPlus.ui.data.GridWidget.prototype.getSelectedRows = function( ) {
+		return this.selectedRows;
+	};
+
+	OOJSPlus.ui.data.GridWidget.prototype.getItemID = function( item ) {
+		let itemText = JSON.stringify( item );
+		let hash = 0;
+		for ( let i = 0; i < itemText.length; i++ ) {
+			hash = itemText.charCodeAt( i ) + ( ( hash << 5 ) - hash );
+		}
+		let uniqueId = "";
+		for ( let i = 0; i < 32; i++ ) {
+			let char = Math.floor( Math.random() * 16 ).toString( 16 );
+			uniqueId += char;
+		}
+		return uniqueId;
 	};
 } )( mediaWiki, jQuery );
