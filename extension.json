@@ -67,7 +67,8 @@
 				"ui/widget/TitleInputWidget.js",
 				"ui/widget/TitleMultiselectWidget.js",
 				"ui/widget/FileSearchWidget.js",
-				"ui/widget/LinkWidget.js"
+				"ui/widget/LinkWidget.js",
+				"ui/widget/CheckboxInputWidget.js"
 			],
 			"styles": [
 				"stylesheet/rangeWidget.less",
@@ -149,6 +150,7 @@
 				"ui/data/column/Icon.js",
 				"ui/data/column/Action.js",
 				"ui/data/column/User.js",
+				"ui/data/column/Selection.js",
 				"ui/data/Grid.js",
 				"ui/data/grid/Paginator.js",
 				"ui/data/grid/Toolbar.js",
@@ -188,7 +190,8 @@
 				"oojsplus-data-grid-filter-boolean",
 				"oojsplus-data-tree-item-remove-confirm-label",
 				"oojsplus-data-grid-toolbar-settings-columns-label",
-				"oojsplus-data-grid-grouper-no-group"
+				"oojsplus-data-grid-grouper-no-group",
+				"oojsplus-data-grid-selection-column-label"
 			]
 		},
 		"ext.oOJSPlus.icons": {

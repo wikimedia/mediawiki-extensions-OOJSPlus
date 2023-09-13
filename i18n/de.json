@@ -51,5 +51,5 @@
 	"oojsplus-formelement-type-date-picker": "Datumsauswahl",
 	"oojsplus-data-tree-item-remove-confirm-label": "Element „$1“ entfernen?",
 	"oojsplus-data-grid-filter-operator": "Vergleichstyp",
-	"oojsplus-data-grid-toolbar-settings-columns-label": "Spalten"
+	"oojsplus-data-grid-selection-column-label": "Auswählen"
 }
