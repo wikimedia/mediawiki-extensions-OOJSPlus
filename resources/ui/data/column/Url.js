@@ -44,10 +44,9 @@ OOJSPlus.ui.data.column.Url.prototype.getViewControls = function( value, row ) {
 };
 
 OOJSPlus.ui.data.column.Url.prototype.getViewSingleControl = function ( label, url ) {
-	var btn = new OO.ui.ButtonWidget( {
+	var btn = new OOJSPlus.ui.widget.LinkWidget( {
 		href: url,
 		label: label,
-		framed: false,
 		target: this.urlExternal,
 		classes: [ 'oojsplus-data-gridWidget-url-button' ]
 	} );
