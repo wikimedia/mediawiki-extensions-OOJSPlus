@@ -26,6 +26,10 @@ OOJSPlus.ui.data.filter.Boolean.prototype.getFilterValue = function() {
 	};
 };
 
+OOJSPlus.ui.data.filter.Boolean.prototype.focus = function() {
+	this.valueWidget.focus();
+};
+
 OOJSPlus.ui.data.filter.Boolean.prototype.setValue = function( value ) {
 	OOJSPlus.ui.data.filter.Boolean.parent.prototype.setValue.call( this, value );
 	this.valueWidget.setValue( value.value );
