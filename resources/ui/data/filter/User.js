@@ -36,6 +36,10 @@ OOJSPlus.ui.data.filter.User.prototype.setValue = function( value ) {
 	this.input.setValue( value.value );
 };
 
+OOJSPlus.ui.data.filter.User.prototype.focus = function() {
+	this.input.focus();
+};
+
 OOJSPlus.ui.data.filter.User.prototype.clearValues = function() {
 	OOJSPlus.ui.data.filter.User.parent.prototype.clearValues.call( this );
 	this.clearPicker();

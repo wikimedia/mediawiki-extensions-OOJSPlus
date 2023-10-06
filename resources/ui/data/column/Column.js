@@ -108,7 +108,6 @@
 			classes: [ 'filter-button' ],
 			framed: false,
 			title: mw.message( 'oojsplus-data-grid-filter-label' ).text(),
-			$overlay: this.$overlay,
 			popup: {
 				head: false,
 				$overlay: this.$overlay,
