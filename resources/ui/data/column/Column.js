@@ -33,6 +33,7 @@
 		this.hidden = cfg.hidden || false;
 		this.$overlay = cfg.$overlay || true;
 		this.autoClosePopup = cfg.autoClosePopup || false;
+		this.maxLabelLength = cfg.maxLabelLength || false;
 
 		this.headerText = cfg.headerText || '';
 		if ( cfg.filter instanceof OOJSPlus.ui.data.filter.Filter ) {
@@ -173,7 +174,7 @@
 	};
 
 	OOJSPlus.ui.data.column.Column.prototype.getViewControls = function( value, row ) {
-		return new OOJSPlus.ui.widget.ExpandableLabelWidget( { label: value || '', maxLength: 40 } );
+		return new OOJSPlus.ui.widget.ExpandableLabelWidget( { label: value || '', maxLength: this.maxLabelLength } );
 	};
 
 	OOJSPlus.ui.data.column.Column.prototype.getDisplayText = function( value, row ) {
