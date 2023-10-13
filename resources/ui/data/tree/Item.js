@@ -111,7 +111,7 @@
 	};
 
 	OOJSPlus.ui.data.tree.Item.prototype.addLabel = function() {
-		this.labelWidget = new OOJSPlus.ui.widget.ButtonWidget(
+		this.labelWidget = new OOJSPlus.ui.widget.LinkWidget(
 			$.extend( {},
 			{
 				framed: false,

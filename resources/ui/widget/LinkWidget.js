@@ -3,7 +3,7 @@ OOJSPlus.ui.widget.LinkWidget = function( cfg ) {
 
 	var text = cfg.label || '';
 	var classes = cfg.classes || [];
-	classes.push(  'oojs-link-widget' );
+	classes.push(  'oojsplus-ui-widget-linkwidget-label' );
 
 	this.$link = $( '<a>' );
 
@@ -18,10 +18,12 @@ OOJSPlus.ui.widget.LinkWidget = function( cfg ) {
 	var attrClasses = classes.join( ' ' );
 	this.$link.attr( 'class', attrClasses );
 
-	this.$link.text( text );
+	this.$link.append( $( '<span>' ).text( text ) );
 	cfg.label = this.$link;
 
-	OOJSPlus.ui.widget.LinkWidget.parent.call( this, cfg );
+	OOJSPlus.ui.widget.LinkWidget.super.call( this, cfg );
+
+	OO.ui.mixin.IconElement.call( this, cfg );
 
 	OO.ui.mixin.TabIndexedElement.call( this, $.extend( {
 		$tabIndexed: this.$link
@@ -33,7 +35,9 @@ OOJSPlus.ui.widget.LinkWidget = function( cfg ) {
 	this.noFollow = false;
 	this.rel = [];
 
-	this.$element.addClass( 'oojsplus-link-widget' );
+	this.$icon.prependTo( this.$element );
+
+	this.$element.addClass( 'oojsplus-ui-widget-linkwidget' );
 	if ( cfg.rel !== undefined ) {
 		this.setRel( cfg.rel );
 	} else {
@@ -44,6 +48,8 @@ OOJSPlus.ui.widget.LinkWidget = function( cfg ) {
 OO.inheritClass( OOJSPlus.ui.widget.LinkWidget, OO.ui.LabelWidget );
 OO.mixinClass( OOJSPlus.ui.widget.LinkWidget, OO.ui.mixin.TabIndexedElement );
 OO.mixinClass( OOJSPlus.ui.widget.LinkWidget, OO.ui.mixin.AccessKeyedElement );
+OO.mixinClass( OOJSPlus.ui.widget.LinkWidget, OO.ui.mixin.IconElement );
+
 
 OOJSPlus.ui.widget.LinkWidget.static.tagName = 'span';
 
