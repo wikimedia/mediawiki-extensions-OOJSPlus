@@ -11,6 +11,11 @@ OO.inheritClass( OOJSPlus.ui.widget.ExpandableLabelWidget, OO.ui.LabelWidget );
 
 OOJSPlus.ui.widget.ExpandableLabelWidget.prototype.trim = function() {
 	var text = this.fullLabel;
+	if ( !this.maxLength ) {
+		this.setTitle( this.fullLabel );
+		this.setLabel( text );
+		return;
+	}
 	if ( text.length > this.maxLength ) {
 		text = text.substr( 0, this.maxLength ) ;
 		this.setTitle( this.fullLabel );
