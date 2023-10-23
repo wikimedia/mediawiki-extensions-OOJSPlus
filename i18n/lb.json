@@ -24,5 +24,6 @@
 	"oojsplus-data-grid-filter-clear": "Eidel maachen",
 	"oojsplus-data-grid-filter-number-operator": "Typ",
 	"oojsplus-data-grid-filter-number-value": "Wäert",
-	"oojsplus-data-grid-grouper-no-group": "(keng Grupp)"
+	"oojsplus-data-grid-grouper-no-group": "(keng Grupp)",
+	"oojsplus-data-grid-selection-column-label": "Eraussichen"
 }

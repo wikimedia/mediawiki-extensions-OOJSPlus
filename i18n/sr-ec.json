@@ -5,5 +5,6 @@
 		]
 	},
 	"oojsplus-data-grid-widget-popup-title": "Више ставки",
-	"oojsplus-data-grid-filter-boolean": "Вредност"
+	"oojsplus-data-grid-filter-boolean": "Вредност",
+	"oojsplus-data-grid-selection-column-label": "Изабери"
 }
