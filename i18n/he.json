@@ -54,5 +54,6 @@
 	"oojsplus-data-tree-item-remove-confirm-label": "להסיר את הרכיב \"$1\"?",
 	"oojsplus-data-grid-filter-operator": "סוג השוואה",
 	"oojsplus-data-grid-toolbar-settings-columns-label": "עמודות",
-	"oojsplus-data-grid-grouper-no-group": "(ללא קבוצה)"
+	"oojsplus-data-grid-grouper-no-group": "(ללא קבוצה)",
+	"oojsplus-data-grid-selection-column-label": "בחירה"
 }
