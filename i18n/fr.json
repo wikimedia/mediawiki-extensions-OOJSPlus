@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"BlueCamille",
 			"DreZhsh",
 			"Gomoko",
 			"McDutchie",
@@ -59,5 +60,6 @@
 	"oojsplus-data-tree-item-remove-confirm-label": "Supprimer l’élément « $1 » ?",
 	"oojsplus-data-grid-filter-operator": "Type de comparaison",
 	"oojsplus-data-grid-toolbar-settings-columns-label": "Colonnes",
-	"oojsplus-data-grid-grouper-no-group": "(aucun groupe)"
+	"oojsplus-data-grid-grouper-no-group": "(aucun groupe)",
+	"oojsplus-data-grid-selection-column-label": "Sélectionner"
 }
