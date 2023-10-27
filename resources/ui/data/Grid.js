@@ -403,6 +403,8 @@
 	OOJSPlus.ui.data.GridWidget.prototype.appendItem = function( item ) {
 		var $row = $( '<tr>' ).addClass( 'oojsplus-data-gridWidget-row' );
 		$( $row ).attr( 'id', this.getItemID( item ) );
+		$row.addClass( item.classes || [] );
+
 		if ( this.store.groupField ) {
 			if ( this.currentGroupHeader && this.currentGroupHeader.value === item[this.store.groupField] ) {
 				// If we already started a group, and the current item is in the same group, just increment the counter
