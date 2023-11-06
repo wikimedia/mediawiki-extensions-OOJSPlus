@@ -28,5 +28,6 @@
 	"oojsplus-data-paginator-previous": "이전 페이지",
 	"oojsplus-data-grid-toolbar-reload-label": "다시 불러오기",
 	"oojsplus-data-paginator-page-count": "$2 중 $1",
-	"oojsplus-data-grid-grouper-no-group": "(그룹 없음)"
+	"oojsplus-data-grid-grouper-no-group": "(그룹 없음)",
+	"oojsplus-data-grid-selection-column-label": "선택"
 }
