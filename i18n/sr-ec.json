@@ -1,10 +1,14 @@
 {
 	"@metadata": {
 		"authors": [
-			"Milicevic01"
+			"Milicevic01",
+			"Kizule"
 		]
 	},
 	"oojsplus-data-grid-widget-popup-title": "Више ставки",
+	"oojsplus-data-paginator-next": "Следећа страница",
+	"oojsplus-data-paginator-previous": "Претходна страница",
 	"oojsplus-data-grid-filter-boolean": "Вредност",
+	"oojsplus-data-grid-toolbar-settings-columns-label": "Колоне",
 	"oojsplus-data-grid-selection-column-label": "Изабери"
 }
