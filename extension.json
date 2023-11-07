@@ -68,7 +68,8 @@
 				"ui/widget/TitleMultiselectWidget.js",
 				"ui/widget/FileSearchWidget.js",
 				"ui/widget/LinkWidget.js",
-				"ui/widget/CheckboxInputWidget.js"
+				"ui/widget/CheckboxInputWidget.js",
+				"ui/widget/LabelWidget.js"
 			],
 			"styles": [
 				"stylesheet/rangeWidget.less",
