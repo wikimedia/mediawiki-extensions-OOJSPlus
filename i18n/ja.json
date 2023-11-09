@@ -1,9 +1,20 @@
 {
 	"@metadata": {
 		"authors": [
+			"LaMagiaaa",
 			"MathXplore"
 		]
 	},
+	"oojsplus-color-picker-color-blue": "青",
+	"oojsplus-color-picker-color-red": "赤",
+	"oojsplus-color-picker-color-green": "緑",
+	"oojsplus-color-picker-color-yellow": "黄色",
+	"oojsplus-color-picker-color-orangered": "オレンジレッド",
+	"oojsplus-color-picker-color-olive": "オリーブ",
+	"oojsplus-color-picker-color-pink": "ピンク",
+	"oojsplus-color-picker-clear-label": "色をクリア",
+	"oojsplus-color-picker-label": "カラーピッカー",
+	"oojsplus-dialog-action-delete": "削除",
 	"oojsplus-data-grid-filter-label": "フィルター",
 	"oojsplus-data-grid-filter-clear": "クリア",
 	"oojsplus-data-grid-filter-number-value": "値",
