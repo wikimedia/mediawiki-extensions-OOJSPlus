@@ -3,7 +3,8 @@
 		"authors": [
 			"DiegoAmbrocio",
 			"Fitoschido",
-			"Harvest"
+			"Harvest",
+			"No se"
 		]
 	},
 	"oojsplus-desc": "Proporciona «widgets» y funciones utilitarias para OOJS",
@@ -27,5 +28,6 @@
 	"oojsplus-dialog-action-create": "Crear",
 	"oojsplus-dialog-action-add": "Añadir",
 	"oojsplus-dialog-action-cancel": "Cancelar",
+	"oojsplus-data-grid-toolbar-reload-label": "Recargar",
 	"oojsplus-data-grid-toolbar-settings-columns-label": "Columnas"
 }
