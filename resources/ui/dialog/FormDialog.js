@@ -88,6 +88,7 @@
 
 	OOJSPlus.ui.dialog.FormDialog.prototype.setTitle = function( title ) {
 		this.title.setLabel( title );
+		this.titleLabel = title;
 	};
 
 	OOJSPlus.ui.dialog.FormDialog.prototype.show = function() {
