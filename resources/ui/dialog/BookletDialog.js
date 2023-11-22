@@ -92,7 +92,7 @@
 		this.currentPage = page;
 		this.currentPage.setData( data || {} );
 		this.booklet.setPage( name );
-		this.title.setLabel( page.getTitle() );
+		this.setTitle( page.getTitle() );
 		this.setSize( page.getSize() );
 		this.actions.setMode( name );
 		this.mode = name;
