@@ -1,12 +1,13 @@
 {
 	"@metadata": {
 		"authors": [
+			"BlueCamille",
 			"DreZhsh",
 			"Gomoko",
+			"McDutchie",
 			"Thibaut120094",
 			"Verdy p",
-			"Wladek92",
-			"McDutchie"
+			"Wladek92"
 		]
 	},
 	"oojsplus-desc": "Fournit des widgets et des fonctions utilitaires pour OOJS.",
@@ -56,5 +57,7 @@
 	"oojsplus-formelement-type-date-picker": "Sélecteur de date",
 	"oojsplus-data-tree-item-remove-confirm-label": "Supprimer l’élément « $1 » ?",
 	"oojsplus-data-grid-filter-operator": "Type de comparaison",
-	"oojsplus-data-grid-toolbar-settings-columns-label": "Colonnes"
+	"oojsplus-data-grid-toolbar-settings-columns-label": "Colonnes",
+	"oojsplus-data-grid-grouper-no-group": "(aucun groupe)",
+	"oojsplus-data-grid-selection-column-label": "Sélectionner"
 }
