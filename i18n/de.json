@@ -2,10 +2,10 @@
 	"@metadata": {
 		"authors": [
 			"Gebu",
+			"McDutchie",
 			"Mirzali",
 			"Mschlindwein",
-			"Zabe",
-			"McDutchie"
+			"Zabe"
 		]
 	},
 	"oojsplus-desc": "Stellt Widgets und Hilfsfunktionen für OOJS bereit",

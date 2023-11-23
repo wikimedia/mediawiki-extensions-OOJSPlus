@@ -1,13 +1,13 @@
 {
 	"@metadata": {
 		"authors": [
+			"BlueCamille",
 			"DreZhsh",
 			"Gomoko",
+			"McDutchie",
 			"Thibaut120094",
 			"Verdy p",
-			"Wladek92",
-			"McDutchie",
-			"BlueCamille"
+			"Wladek92"
 		]
 	},
 	"oojsplus-desc": "Fournit des widgets et des fonctions utilitaires pour OOJS.",
