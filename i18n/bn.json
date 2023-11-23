@@ -23,5 +23,6 @@
 	"oojsplus-data-grid-filter-number-value": "মান",
 	"oojsplus-data-grid-toolbar-reload-label": "পুনঃলোড করুন",
 	"oojsplus-data-paginator-page-count": "$2-এর $1",
-	"oojsplus-data-grid-filter-operator": "তুলনার ধরন"
+	"oojsplus-data-grid-filter-operator": "তুলনার ধরন",
+	"oojsplus-data-grid-selection-column-label": "নির্বাচন করুন"
 }

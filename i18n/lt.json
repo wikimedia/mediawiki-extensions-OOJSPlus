@@ -1,8 +1,50 @@
 {
 	"@metadata": {
 		"authors": [
-			"Eitvys200"
+			"Eitvys200",
+			"Nokeoo"
 		]
 	},
-	"oojsplus-data-tree-item-remove-label": "Pašalinti"
+	"oojsplus-data-tree-item-remove-label": "Pašalinti",
+	"oojsplus-desc": "Teikia valdiklius ir paslaugų funkcijas OOJS",
+	"oojsplus-color-picker-color-blue": "Mėlyna",
+	"oojsplus-color-picker-color-red": "Raudona",
+	"oojsplus-color-picker-color-green": "Žalia",
+	"oojsplus-color-picker-color-yellow": "Geltona",
+	"oojsplus-color-picker-color-orangered": "Oranžinė raudona",
+	"oojsplus-color-picker-color-olive": "Alyvuogių",
+	"oojsplus-color-picker-color-pink": "Rožinė",
+	"oojsplus-color-picker-clear-label": "Šalinti spalvą",
+	"oojsplus-color-picker-label": "Spalvų rinkiklis",
+	"oojsplus-data-delete-row-prompt": "Ar tikrai norite ištrinti šią eilutę?",
+	"oojsplus-data-paginator-page-total-count-label": "{{PLURAL:$1|$1 įrašas|$1 įrašai}}",
+	"oojsplusdemos": "OOJSPlus demonstracinės versijos",
+	"oojsplus-stepprogressbar-default-final-label": "Atlikta",
+	"apihelp-query+allgroups-param-dir": "Rūšiavimo kryptis",
+	"apihelp-query+allgroups-param-prop": "Savybės gavimui",
+	"apihelp-query+allgroups-paramvalue-prop-additional": "Yra papildoma grupė",
+	"oojsplus-dialog-action-done": "Atlikta",
+	"oojsplus-dialog-action-delete": "Trinti",
+	"oojsplus-dialog-action-create": "Sukurti",
+	"oojsplus-dialog-action-add": "Pridėti",
+	"oojsplus-dialog-action-cancel": "Atšaukti",
+	"oojsplus-data-grid-widget-popup-title": "Daugiau elementų",
+	"oojsplus-data-grid-filter-label": "Filtras",
+	"oojsplus-data-grid-filter-clear": "Išvalyti",
+	"oojsplus-data-grid-filter-number-value": "Reikšmė",
+	"oojsplus-data-paginator-next": "Kitas puslapis",
+	"oojsplus-data-paginator-previous": "Ankstesnis puslapis",
+	"oojsplus-data-grid-toolbar-reload-label": "Įkelti iš naujo",
+	"oojsplus-data-paginator-page-count": "$1 iš $2",
+	"oojsplus-data-grid-filter-boolean": "Reikšmė",
+	"oojsplus-formelement-type-user-picker": "Naudojo įvestis",
+	"oojsplus-formelement-type-group-picker": "Grupės įvestis",
+	"oojsplus-formelement-type-group-multiselect": "Kelių grupių pasirinkimas",
+	"oojsplus-formelement-type-user-multiselect": "Kelių naudotojų pasirinkimas",
+	"oojsplus-formelement-type-title-multiselect": "Kelių pavadinimų pasirinkimas",
+	"oojsplus-formelement-type-date-picker": "Datos rinkiklis",
+	"oojsplus-data-tree-item-remove-confirm-label": "Pašalinti elementą „$1“?",
+	"oojsplus-data-grid-filter-operator": "Palyginimo tipas",
+	"oojsplus-data-grid-toolbar-settings-columns-label": "Stulpeliai",
+	"oojsplus-data-grid-grouper-no-group": "(nėra grupės)"
 }
