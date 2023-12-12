@@ -10,6 +10,7 @@ OOJSPlus.ui.data.filter.Date.prototype.getLayout = function() {
 	this.makeOperatorWidget();
 
 	this.input = new mw.widgets.CalendarWidget(  );
+	this.input.$element.addClass( 'oojsplus-date-filter' );
 	this.input.upButton.$element.remove();
 	this.input.connect( this, {
 		change: 'changeValue'
