@@ -2,12 +2,14 @@ OOJSPlus.ui.data.filter.String = function ( cfg ) {
 	OOJSPlus.ui.data.filter.String.parent.call( this, cfg );
 	this.operator = cfg.operator || 'ct';
 	this.value = this.getFilterValue();
+	this.$element.addClass( 'oojsplus-string-filter' );
 };
 
 OO.inheritClass( OOJSPlus.ui.data.filter.String, OOJSPlus.ui.data.filter.Filter );
 
 OOJSPlus.ui.data.filter.String.prototype.getLayout = function() {
 	this.input = new OO.ui.TextInputWidget();
+
 	this.input.connect( this, {
 		change: 'changeValue'
 	} );
