@@ -3,16 +3,16 @@
 	position: relative;
 	.grid-container {
 		padding-bottom: 10px;
+		width: 100%;
+		overflow-x: auto;
 		&.sticky-container {
-			overflow-x: auto;
-
 			.oojsplus-data-gridWidget-header {
 				position: relative;
 				z-index: 10;
 			}
 		}
 		.oojsplus-data-gridWidget-table {
-			width: 100%;
+			min-width: 100%;
 			border-collapse: collapse;
 			border-spacing: 0;
 			.oojsplus-data-gridWidget-row {
@@ -150,4 +150,10 @@
 .oojsplus-data-gridWidget-popup-list {
 	list-style-type: none;
 	margin-left: 0;
+}
+
+.grid-col-resizable-helper {
+	border-right: 2px solid grey;
+	z-index: 10000 !important;
+	background-color: rgba(255, 255, 255, 0.55);
 }

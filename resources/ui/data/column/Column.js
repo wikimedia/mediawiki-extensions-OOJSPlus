@@ -34,6 +34,7 @@
 		this.$overlay = cfg.$overlay || true;
 		this.autoClosePopup = cfg.autoClosePopup || false;
 		this.maxLabelLength = cfg.maxLabelLength || false;
+		this.resizable = cfg.resizable || false;
 
 		this.headerText = cfg.headerText || '';
 		if ( cfg.filter instanceof OOJSPlus.ui.data.filter.Filter ) {
@@ -45,8 +46,8 @@
 			this.filter = null;
 		}
 		this.width = cfg.width || false;
-		this.maxWidth = cfg.maxWidth || this.width;
-		this.minWidth = cfg.minWidth || this.width;
+		this.maxWidth = cfg.maxWidth || false;
+		this.minWidth = cfg.minWidth || false;
 		this.sortable = cfg.sortable || false;
 		if ( cfg.hasOwnProperty( 'sorter' ) && cfg.sorter instanceof OOJSPlus.ui.data.sorter.Sorter ) {
 			this.sortable = true;
@@ -96,6 +97,24 @@
 		}
 		$cell.append( this.headerButton.$element );
 
+		if ( this.resizable ) {
+			var resizeCfg = {
+				handles: 'e',
+				helper: 'grid-col-resizable-helper',
+				stop: function ( e, ui ) {
+					// After resizing, set also the min-width of the cell
+					// That is the only way to make the table overflow (and therefore set the correct width)
+					$( this ).css( 'min-width', ui.size.width );
+				}
+			};
+			if ( this.minWidth ) {
+				resizeCfg.minWidth = this.minWidth;
+			}
+			if ( this.maxWidth ) {
+				resizeCfg.maxWidth = this.maxWidth;
+			}
+			$cell.resizable( resizeCfg );
+		}
 		if ( this.filter ) {
 			$cell.append( this.createFilterLayout( data ).$element );
 		}
@@ -145,7 +164,6 @@
 	OOJSPlus.ui.data.column.Column.prototype.renderCell = function( value, row ) {
 		var $cell = $( '<td>' ).addClass( 'oojsplus-data-gridWidget-cell' );
 		$cell.attr( 'data-column', this.id );
-		this.setWidth( $cell );
 		if ( this.align !== 'left' ) {
 			$cell.css( { 'text-align': this.align } );
 		}
@@ -236,6 +254,7 @@
 	OOJSPlus.ui.data.column.Column.prototype.setWidth = function( $item ) {
 		if( this.width ) {
 			$item.css( 'width', this.width + 'px' );
+			$item.css( 'min-width', this.width + 'px' );
 		}
 		if ( this.minWidth ) {
 			$item.css( 'min-width', this.minWidth + 'px' );
