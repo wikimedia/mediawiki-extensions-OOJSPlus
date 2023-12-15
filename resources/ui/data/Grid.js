@@ -13,6 +13,8 @@
 	 *     paginator: {Instance of OOJSPlus.ui.data.grid.Paginator}|null. Nul for no pagination. If not specified, a default paginator will be used
 	 *     toolbar: {Instance of OOJSPlus.ui.data.grid.Toolbar}|null. Null for no toolbar. If not specified, a default toolbar will be used
 	 *     tools: {Array of OO.ui.ButtonWidget or subclasses of it (eg. OO.ui.PopupButtonWidget)}. Tools to add to the toolbar
+	 *     orderable: true|false, // Default to true
+	 *     resizable: true|false, // Default to true
 	 * }
 	 * @type {OOJSPlus.ui.data.GridWidget}
 	 */
@@ -23,6 +25,10 @@
 
 		this.$element.addClass( 'oojsplus-data-gridWidget' );
 		this.$table = $( '<table>' ).addClass( 'oojsplus-data-gridWidget-table' );
+		this.$table.append( $( '<thead>' ).addClass( 'oojsplus-data-gridWidget-header' ) );
+		this.$table.append( $( '<tbody>' ) );
+		this.$wrapper = $( '<div>' );
+		this.$element.append( this.$wrapper.append( this.$table ) );
 
 		this.style = cfg.style || 'none';
 		this.noHeader = cfg.noHeader || false;
@@ -34,6 +40,8 @@
 		this.groupers = {};
 		this.unspecifiedGroupHeader = cfg.unspecifiedGroupHeader || null;
 		this.data = cfg.data || [];
+		this.resizable = typeof cfg.resizable === 'undefined' ? true : cfg.resizable;
+		this.orderable = typeof cfg.orderable === 'undefined' ? true : cfg.orderable;
 		this.alwaysVisibleColumns = [];
 		this.visibleColumns = [];
 
@@ -70,7 +78,7 @@
 		if ( this.sticky ) {
 			classes += ' sticky-container';
 		}
-		this.$element.append( $( '<div>' ).addClass( classes ).append( this.$table ) );
+		this.$wrapper.addClass( classes );
 		if ( this.toolbar instanceof OOJSPlus.ui.data.grid.Toolbar ) {
 			this.$element.append( this.toolbar.$element );
 		}
@@ -96,6 +104,10 @@
 		this.connect( this, {
 			selected: 'clickOnRow'
 		} );
+
+		if ( this.orderable ) {
+			this.$table.sorttable( {} );
+		}
 	};
 
 	OO.inheritClass( OOJSPlus.ui.data.GridWidget, OO.ui.Widget );
@@ -128,7 +140,7 @@
 					console.error( 'OOJSPlus.data: Tried to instantiate non-registered column for type: ' + type );
 					columnClass = OOJSPlus.ui.data.registry.columnRegistry.lookup( 'text' );
 				}
-				columnWidget = new columnClass( column );
+				columnWidget = new columnClass( $.extend( column, { resizable: this.resizable } ) );
 				columnWidget.bindToGrid( this );
 				if ( !columnWidget.canChangeVisibility() ) {
 					this.alwaysVisibleColumns.push( field );
@@ -237,7 +249,7 @@
 		if ( this.noHeader ) {
 			return;
 		}
-		var $header = $( '<thead>' ).addClass( 'oojsplus-data-gridWidget-header' );
+		var $header = this.$table.find( 'thead' );
 		var $row = $( '<tr>' ).addClass( 'oojsplus-data-gridWidget-row oojsplus-data-gridWidget-header' );
 		for( var field in this.columns ) {
 			if ( !this.columns.hasOwnProperty( field ) ) {
@@ -253,8 +265,6 @@
 			$row.append( $cell );
 		}
 		$header.append( $row );
-
-		this.$table.append( $header );
 	};
 
 	OOJSPlus.ui.data.GridWidget.prototype.getGridSettingsWidget = function() {
@@ -421,7 +431,9 @@
 				this.addGroupHeader( item[this.store.groupField] || '', $row );
 			}
 		}
-		for( var columnField in this.columns ) {
+		var sortedColumns = this.getCurrentColumnOrder();
+		for( var i = 0; i < sortedColumns.length; i++ ) {
+			var columnField = sortedColumns[i];
 			if ( !this.columns.hasOwnProperty( columnField ) ) {
 				continue;
 			}
@@ -443,11 +455,11 @@
 				this.clickOnRow.bind( this ) );
 		}
 
-		this.$table.append( $row );
+		this.$table.find( 'tbody' ).append( $row );
 	};
 
 	OOJSPlus.ui.data.GridWidget.prototype.clearItems = function() {
-		this.$table.find( 'tr' ).not( 'thead tr').remove();
+		this.$table.find( 'tbody' ).find( 'tr' ).remove();
 	};
 
 	OOJSPlus.ui.data.GridWidget.prototype.onCellClick = function( e ) {
@@ -465,7 +477,7 @@
 	};
 
 	OOJSPlus.ui.data.GridWidget.prototype.setItems = function( data ) {
-		this.$table.children( ':not(.oojsplus-data-gridWidget-header)' ).remove();
+		this.clearItems();
 		this.addItemsInternally( data );
 		this.setColumnsVisibility( this.visibleColumns );
 
@@ -503,5 +515,20 @@
 			uniqueId += char;
 		}
 		return uniqueId;
+	};
+
+	OOJSPlus.ui.data.GridWidget.prototype.getCurrentColumnOrder = function() {
+		// Get all th's and read out data-field attribute
+		var $head = this.$table.find( 'thead' );
+		if ( !this.orderable || $head.length === 0 ) {
+			// No header
+			return Object.keys( this.columns );
+		}
+		var $ths = $head.find( 'th' );
+		var columnOrder = [];
+		for ( var i = 0; i < $ths.length; i++ ) {
+			columnOrder.push( $( $ths[i] ).attr( 'data-field' ) );
+		}
+		return columnOrder;
 	};
 } )( mediaWiki, jQuery );

@@ -35,7 +35,7 @@ OOJSPlus.ui.data.column.Url.prototype.getViewControls = function( value, row ) {
 		if ( this.limitShownData &&
 				i > this.limitValue ) {
 					items.push( this.getDataPopup( value, url ) );
-					break
+					break;
 				}
 		items.push( this.getViewSingleControl( value[i], url[i] ) );
 	}
@@ -50,9 +50,6 @@ OOJSPlus.ui.data.column.Url.prototype.getViewSingleControl = function ( label, u
 		target: this.urlExternal,
 		classes: [ 'oojsplus-data-gridWidget-url-button' ]
 	} );
-	if( this.width ) {
-		btn.$element.css( 'width', this.width + 'px' );
-	}
 	return btn;
 };
 
