@@ -266,6 +266,10 @@
 			if ( this.alwaysVisibleColumns.indexOf( field ) !== -1 ) {
 				continue;
 			}
+			if ( this.columns[field].type === 'action' || this.columns[field].type === 'selection' ) {
+				// Do not allow hiding of "system" columns
+				continue;
+			}
 			options.push( {
 				data: field,
 				label: this.columns[field].headerText || field
