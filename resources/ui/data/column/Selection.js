@@ -49,4 +49,8 @@ OOJSPlus.ui.data.column.Selection.prototype.getHeader = function() {
 	return $( '<th>' ).addClass( 'oojsplus-data-gridWidget-cell oojsplus-data-gridWidget-column-header' );
 };
 
+OOJSPlus.ui.data.column.Selection.prototype.canChangeVisibility = function() {
+	return false;
+};
+
 OOJSPlus.ui.data.registry.columnRegistry.register( 'selection', OOJSPlus.ui.data.column.Selection );
