@@ -42,6 +42,11 @@
 		this.data = cfg.data || [];
 		this.resizable = typeof cfg.resizable === 'undefined' ? true : cfg.resizable;
 		this.orderable = typeof cfg.orderable === 'undefined' ? true : cfg.orderable;
+		if ( this.noHeader ) {
+			// Cannot be orderable and/or resizable without header
+			this.orderable = false;
+			this.resizable = false;
+		}
 		this.alwaysVisibleColumns = [];
 		this.visibleColumns = [];
 
