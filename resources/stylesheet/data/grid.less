@@ -52,10 +52,15 @@
 					.header-button {
 						font-size: 1em;
 						margin-right: 4px;
+						white-space: break-spaces;
+						a {
+							white-space: break-spaces;
+						}
 					}
 					.filter-button {
 						position: absolute;
-						top: 8px;
+						top: 0px;
+						height: 100%;
 						right: 0;
 						&:focus, &:focus-visible,
 						a:focus, a:focus-visible,
@@ -63,6 +68,10 @@
 							box-shadow: none;
 							outline: none;
 							border: none;
+						}
+						a {
+							height: 100%;
+							vertical-align: middle;
 						}
 					}
 				}
