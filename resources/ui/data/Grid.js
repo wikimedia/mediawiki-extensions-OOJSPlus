@@ -26,7 +26,7 @@
 		this.$element.addClass( 'oojsplus-data-gridWidget' );
 		this.$table = $( '<table>' ).addClass( 'oojsplus-data-gridWidget-table' );
 		this.$table.append( $( '<thead>' ).addClass( 'oojsplus-data-gridWidget-header' ) );
-		this.$table.append( $( '<tbody>' ) );
+		this.$table.append( $( '<tbody>' ).addClass( 'oojsplus-data-gridWidget-tbody' ) );
 		this.$wrapper = $( '<div>' );
 		this.$element.append( this.$wrapper.append( this.$table ) );
 
@@ -356,7 +356,8 @@
 			if ( column instanceof OOJSPlus.ui.data.column.Action ) {
 				continue;
 			}
-			if( !( field in item ) ) {
+			var relevantField = column.display || field;
+			if( !( relevantField in item ) ) {
 				return false;
 			}
 		}
@@ -460,11 +461,11 @@
 				this.clickOnRow.bind( this ) );
 		}
 
-		this.$table.find( 'tbody' ).append( $row );
+		this.$table.find( 'tbody.oojsplus-data-gridWidget-tbody' ).append( $row );
 	};
 
 	OOJSPlus.ui.data.GridWidget.prototype.clearItems = function() {
-		this.$table.find( 'tbody' ).find( 'tr' ).remove();
+		this.$table.find( 'tbody.oojsplus-data-gridWidget-tbody' ).find( 'tr' ).remove();
 	};
 
 	OOJSPlus.ui.data.GridWidget.prototype.onCellClick = function( e ) {

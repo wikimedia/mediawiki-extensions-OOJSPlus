@@ -14,6 +14,7 @@
 	 *     width: {number},
 	 *     // If you want to display a different value than the one in the data model, you can specify the "display" property
 	 *     display: {string},
+	 *     html: true | false, // Only for type "text", if true, the value is treated as HTML
 	 *     valueParser: function ( value, row ) {
 	 *          //return {string} | {OO.ui.Widget} | {OO.ui.HtmlSnippet}
 	 *     },
@@ -127,10 +128,10 @@
 			icon: 'funnel',
 			classes: [ 'filter-button' ],
 			framed: false,
+			$overlay: this.$overlay,
 			title: mw.message( 'oojsplus-data-grid-filter-label' ).text(),
 			popup: {
 				head: false,
-				$overlay: this.$overlay,
 				autoClose: this.autoClosePopup,
 				$content: this.filter.$element,
 				padded: true,
@@ -227,17 +228,25 @@
 		return this.type;
 	};
 
-	OOJSPlus.ui.data.column.Column.prototype.toggleSort = function() {
+	OOJSPlus.ui.data.column.Column.prototype.toggleSort = function( clearOnly ) {
+		clearOnly = clearOnly || false;
 		var directions = [ null, 'ASC', 'DESC' ],
 			indicators = [ '', 'up', 'down' ],
 			index = directions.indexOf( this.sortingDirection ),
 			newIndex = index + 1 === directions.length ? 0 : index + 1,
 			indicator = indicators[newIndex];
 
+		if ( clearOnly ) {
+			newIndex = 0;
+			indicator = indicators[0];
+		}
 		this.sortingDirection = directions[newIndex];
 		this.headerButton.setIndicator( indicator );
 		this.sorter.setDirection( this.sortingDirection );
-		this.emit( 'sort', this.sortingDirection === null ? null : this.sorter, this.id );
+
+		if ( !clearOnly ) {
+			this.emit( 'sort', this.sortingDirection === null ? null : this.sorter, this.id );
+		}
 	};
 
 	OOJSPlus.ui.data.column.Column.prototype.getSorter = function() {
