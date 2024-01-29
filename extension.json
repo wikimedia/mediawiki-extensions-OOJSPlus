@@ -193,7 +193,8 @@
 				"oojsplus-data-tree-item-remove-confirm-label",
 				"oojsplus-data-grid-toolbar-settings-columns-label",
 				"oojsplus-data-grid-grouper-no-group",
-				"oojsplus-data-grid-selection-column-label"
+				"oojsplus-data-grid-selection-column-label",
+				"oojsplus-data-grid-filter-close"
 			]
 		},
 		"ext.oOJSPlus.icons": {

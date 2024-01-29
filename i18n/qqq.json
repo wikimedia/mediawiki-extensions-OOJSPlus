@@ -56,5 +56,6 @@
 	"oojsplus-data-grid-filter-operator": "Label for the filter field\n{{identical|Comparison type}}",
 	"oojsplus-data-grid-toolbar-settings-columns-label": "Field label",
 	"oojsplus-data-grid-grouper-no-group": "Label for the grid group if no group name is specified",
-	"oojsplus-data-grid-selection-column-label": "Label for selection column"
+	"oojsplus-data-grid-selection-column-label": "Label for selection column",
+	"oojsplus-data-grid-filter-close": "Close filter popup tooltip"
 }

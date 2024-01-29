@@ -117,6 +117,13 @@
 			$cell.resizable( resizeCfg );
 		}
 		if ( this.filter ) {
+			this.filter.connect( this, {
+				closePopup: function() {
+					if ( this.filterButton ) {
+						this.filterButton.getPopup().toggle( false );
+					}
+				}
+			} );
 			$cell.append( this.createFilterLayout( data ).$element );
 		}
 
@@ -144,10 +151,7 @@
 			toggle: function( visible ) {
 				this.emit( 'filterToggle', this.filterButton, visible );
 				if ( visible ) {
-					this.filterButton.setIcon( 'close' );
 					this.filter.focus();
-				} else {
-					this.filterButton.setIcon( 'funnel' );
 				}
 			}
 		} );

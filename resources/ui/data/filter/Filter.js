@@ -8,7 +8,7 @@ OOJSPlus.ui.data.filter.Filter = function ( cfg ) {
 	this.label = new OO.ui.LabelWidget( { label: mw.message( 'oojsplus-data-grid-filter-label' ).text() } );
 
 	this.$element.append( new OO.ui.HorizontalLayout( {
-		items: [ this.label, this.getClearButton() ],
+		items: [ this.label, this.getCloseButton(), this.getClearButton()  ],
 		classes: [ 'grid-filter-popup-head' ]
 	} ).$element );
 	this.$element.append( this.getLayout().$element );
@@ -30,9 +30,10 @@ OOJSPlus.ui.data.filter.Filter.prototype.focus = function() {
 
 OOJSPlus.ui.data.filter.Filter.prototype.getClearButton = function() {
 	this.clearButton = new OO.ui.ButtonWidget( {
-		framed: false,
+		framed: true,
 		label: mw.message( 'oojsplus-data-grid-filter-clear' ).text(),
 		flags: [ 'primary', 'destructive' ],
+		classes: [ 'grid-filter-popup-clear' ],
 		disabled: true
 	} );
 
@@ -44,6 +45,22 @@ OOJSPlus.ui.data.filter.Filter.prototype.getClearButton = function() {
 		}
 	} );
 	return this.clearButton;
+};
+
+OOJSPlus.ui.data.filter.Filter.prototype.getCloseButton = function() {
+	this.closeButton = new OO.ui.ButtonWidget( {
+		framed: false,
+		title: mw.message( 'oojsplus-data-grid-filter-close' ).text(),
+		classes: [ 'grid-filter-popup-close' ],
+		icon: 'close'
+	} );
+
+	this.closeButton.connect( this, {
+		click: function() {
+			this.emit( 'closePopup' );
+		}
+	} );
+	return this.closeButton;
 };
 
 OOJSPlus.ui.data.filter.Filter.prototype.getValue = function() {
