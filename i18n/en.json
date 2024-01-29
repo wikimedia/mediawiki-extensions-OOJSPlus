@@ -53,5 +53,6 @@
 	"oojsplus-data-grid-filter-operator": "Comparison type",
 	"oojsplus-data-grid-toolbar-settings-columns-label": "Columns",
 	"oojsplus-data-grid-grouper-no-group": "(no group)",
-	"oojsplus-data-grid-selection-column-label": "Select"
+	"oojsplus-data-grid-selection-column-label": "Select",
+	"oojsplus-data-grid-filter-close": "Close"
 }
