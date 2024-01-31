@@ -57,5 +57,6 @@
 	"oojsplus-data-grid-filter-operator": "סוג השוואה",
 	"oojsplus-data-grid-toolbar-settings-columns-label": "עמודות",
 	"oojsplus-data-grid-grouper-no-group": "(ללא קבוצה)",
-	"oojsplus-data-grid-selection-column-label": "בחירה"
+	"oojsplus-data-grid-selection-column-label": "בחירה",
+	"oojsplus-data-grid-filter-close": "סגירה"
 }

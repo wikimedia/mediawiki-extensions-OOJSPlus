@@ -56,5 +56,6 @@
 	"oojsplus-data-grid-filter-operator": "Вид на споредба",
 	"oojsplus-data-grid-toolbar-settings-columns-label": "Столбови",
 	"oojsplus-data-grid-grouper-no-group": "(без група)",
-	"oojsplus-data-grid-selection-column-label": "Избери"
+	"oojsplus-data-grid-selection-column-label": "Избери",
+	"oojsplus-data-grid-filter-close": "Затвори"
 }
