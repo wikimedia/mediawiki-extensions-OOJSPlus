@@ -10,5 +10,6 @@
 	"oojsplus-data-paginator-next": "Следећа страница",
 	"oojsplus-data-paginator-previous": "Претходна страница",
 	"oojsplus-data-grid-toolbar-settings-columns-label": "Колоне",
-	"oojsplus-data-grid-selection-column-label": "Изабери"
+	"oojsplus-data-grid-selection-column-label": "Изабери",
+	"oojsplus-data-grid-filter-close": "Затвори"
 }
