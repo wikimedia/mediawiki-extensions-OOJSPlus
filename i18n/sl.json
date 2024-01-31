@@ -53,5 +53,6 @@
 	"oojsplus-data-grid-filter-operator": "Vrsta primerjave",
 	"oojsplus-data-grid-toolbar-settings-columns-label": "Stolpci",
 	"oojsplus-data-grid-grouper-no-group": "(ni skupine)",
-	"oojsplus-data-grid-selection-column-label": "Izberite"
+	"oojsplus-data-grid-selection-column-label": "Izberite",
+	"oojsplus-data-grid-filter-close": "Zapri"
 }

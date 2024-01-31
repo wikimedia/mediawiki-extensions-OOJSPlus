@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"Butko",
 			"Kareyac",
 			"Person or Persons Unknown",
 			"Vlad5250"
@@ -23,5 +24,6 @@
 	"oojsplus-data-grid-filter-number-value": "Значение",
 	"oojsplus-data-grid-toolbar-reload-label": "Обновить",
 	"oojsplus-data-paginator-page-count": "$1 из $2",
-	"oojsplus-data-tree-item-remove-confirm-label": "Удалить элемент \"$1\"?"
+	"oojsplus-data-tree-item-remove-confirm-label": "Удалить элемент \"$1\"?",
+	"oojsplus-data-grid-filter-close": "Закрыть"
 }
