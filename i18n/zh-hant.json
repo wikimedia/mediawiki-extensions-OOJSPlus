@@ -55,5 +55,6 @@
 	"oojsplus-data-grid-filter-operator": "比較類型",
 	"oojsplus-data-grid-toolbar-settings-columns-label": "欄",
 	"oojsplus-data-grid-grouper-no-group": "（無群組）",
-	"oojsplus-data-grid-selection-column-label": "選擇"
+	"oojsplus-data-grid-selection-column-label": "選擇",
+	"oojsplus-data-grid-filter-close": "關閉"
 }
