@@ -15,10 +15,9 @@
 	};
 
 	OOJSPlus.formelement.UserMultiselect.prototype.getWidgets = function() {
-		// TODO: We should have our own widget for this
 		return {
-			view: mw.widgets.UsersMultiselectWidget,
-			edit: mw.widgets.UsersMultiselectWidget
+			view: OOJSPlus.ui.widget.UsersMultiselectWidget,
+			edit: OOJSPlus.ui.widget.UsersMultiselectWidget
 		};
 	};
 

@@ -55,6 +55,7 @@
 				"ui/widget/ExpandableLabelWidget.js",
 				"ui/widget/UserWidget.js",
 				"ui/widget/UserMenuOption.js",
+				"ui/widget/UserMultiselectWidget.js",
 				"ui/widget/UserPicker.js",
 				"ui/widget/FilterableUserPicker.js",
 				"ui/widget/ButtonWidget.js",
@@ -79,6 +80,7 @@
 			],
 			"dependencies": [
 				"mediawiki.widgets.UserInputWidget",
+				"mediawiki.widgets.UsersMultiselectWidget",
 				"mediawiki.widgets",
 				"ext.oOJSPlus.widgets.colorPicker",
 				"ext.oOJSPlus.widgets.stepProgressBar",
