@@ -61,9 +61,9 @@
 			return this.$currentColorShow.css( 'color', 'transparent' );
 		}
 
-		if ( this.getValue().hasOwnProperty( 'code' ) ) {
+		if ( this.getValue().hasOwnProperty( 'code' ) && this.getValue().code !== '' ) {
 			return this.$currentColorShow.css( 'color', this.getValue().code );
-		} else if ( this.getValue().hasOwnProperty( 'class' ) ) {
+		} else if ( this.getValue().hasOwnProperty( 'class' ) && this.getValue().class !== '' ) {
 			this.$currentColorShow.css( 'color', '' );
 			return this.$currentColorShow.addClass( this.getValue().class );
 		}
