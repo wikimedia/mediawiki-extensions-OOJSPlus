@@ -11,5 +11,6 @@
 	"oojsplus-data-grid-filter-boolean": "Вредност",
 	"oojsplus-data-grid-toolbar-settings-columns-label": "Колоне",
 	"oojsplus-data-grid-selection-column-label": "Изабери",
-	"oojsplus-data-grid-filter-close": "Затвори"
+	"oojsplus-data-grid-filter-close": "Затвори",
+	"oojsplus-data-grid-toolbar-reload-label": "Освежи"
 }
