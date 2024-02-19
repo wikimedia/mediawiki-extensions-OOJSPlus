@@ -5,6 +5,7 @@
 			"DreZhsh",
 			"Gomoko",
 			"McDutchie",
+			"SleaY",
 			"Thibaut120094",
 			"Verdy p",
 			"Wladek92"
@@ -59,5 +60,6 @@
 	"oojsplus-data-grid-filter-operator": "Type de comparaison",
 	"oojsplus-data-grid-toolbar-settings-columns-label": "Colonnes",
 	"oojsplus-data-grid-grouper-no-group": "(aucun groupe)",
-	"oojsplus-data-grid-selection-column-label": "Sélectionner"
+	"oojsplus-data-grid-selection-column-label": "Sélectionner",
+	"oojsplus-data-grid-filter-close": "Fermer"
 }
