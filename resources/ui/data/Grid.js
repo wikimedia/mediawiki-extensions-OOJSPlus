@@ -341,8 +341,6 @@
 		for( var i = 0; i < data.length; i++ ) {
 			if ( this.schemaFits( data[i] ) ) {
 				this.appendItem( data[i] );
-			} else {
-				console.error( 'Row does not fit schema: ' + JSON.stringify( data[i] ) );
 			}
 		}
 	};
@@ -358,6 +356,10 @@
 			}
 			var relevantField = column.display || field;
 			if( !( relevantField in item ) ) {
+				console.error( 'OOJSPlus.ui.data.Grid: Missing field in row data', {
+					field: relevantField,
+					row: item
+				} );
 				return false;
 			}
 		}
