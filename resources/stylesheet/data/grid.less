@@ -25,7 +25,9 @@
 						background-color: white;
 						position: -webkit-sticky;
 						position: sticky;
-						left: 0;
+						/* Needed to accommodate the border, padding below increased as to not change the layout */
+						left: -2px;
+						padding: 10px 5px;
 						z-index: 3;
 						background-clip: padding-box; /* fix for cell border */
 					}
