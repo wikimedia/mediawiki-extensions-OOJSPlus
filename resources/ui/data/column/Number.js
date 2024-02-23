@@ -12,4 +12,8 @@ OOJSPlus.ui.data.column.Number.prototype.renderCell = function( value, row ) {
 	return $cell;
 };
 
+OOJSPlus.ui.data.column.Number.prototype.getViewControls = function( value, row ) {
+	return new OOJSPlus.ui.widget.ExpandableLabelWidget( { label: value.toString() || '', maxLength: this.maxLabelLength } );
+};
+
 OOJSPlus.ui.data.registry.columnRegistry.register( 'number', OOJSPlus.ui.data.column.Number );
