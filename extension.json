@@ -71,7 +71,8 @@
 				"ui/widget/LabelWidget.js",
 				"ui/widget/CategoryMultiSelectWidget.js",
 				"ui/widget/CategoryInputWidget.js",
-				"ui/widget/NamespaceInputWidget.js"
+				"ui/widget/NamespaceInputWidget.js",
+				"ui/widget/ImageWidget.js"
 			],
 			"messages": [
 				"oojsplus-namespace-content",
@@ -162,6 +163,7 @@
 				"ui/data/column/Action.js",
 				"ui/data/column/User.js",
 				"ui/data/column/Selection.js",
+				"ui/data/column/Image.js",
 				"ui/data/Grid.js",
 				"ui/data/grid/Paginator.js",
 				"ui/data/grid/Toolbar.js",
