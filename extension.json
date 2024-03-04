@@ -47,7 +47,6 @@
 				"ui/widget/RangeWidget.js",
 				"ui/widget/GroupInputWidget.js",
 				"ui/widget/GroupMultiSelectWidget.js",
-				"ui/widget/CategoryMultiSelectWidget.js",
 				"ui/widget/StoreDataInputWidget.js",
 				"ui/widget/StoreDataTagMultiselectWidget.js",
 				"ui/widget/MultiSelectFileWidget.js",
@@ -63,14 +62,15 @@
 				"ui/widget/ButtonOptionWidget.js",
 				"ui/widget/ToggleMultiSelectInputWidget.js",
 				"ui/widget/MenuOptionWithDescription.js",
-				"ui/widget/CategoryInputWidget.js",
 				"ui/mixin/TitleQuery.js",
 				"ui/widget/TitleInputWidget.js",
 				"ui/widget/TitleMultiselectWidget.js",
 				"ui/widget/FileSearchWidget.js",
 				"ui/widget/LinkWidget.js",
 				"ui/widget/CheckboxInputWidget.js",
-				"ui/widget/LabelWidget.js"
+				"ui/widget/LabelWidget.js",
+				"ui/widget/CategoryMultiSelectWidget.js",
+				"ui/widget/CategoryInputWidget.js"
 			],
 			"styles": [
 				"stylesheet/rangeWidget.less",
