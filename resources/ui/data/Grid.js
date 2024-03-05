@@ -30,6 +30,10 @@
 		this.$wrapper = $( '<div>' );
 		this.$element.append( this.$wrapper.append( this.$table ) );
 
+		OO.ui.mixin.PendingElement.call( this, {
+			$pending: $(this.$table).find( 'thead' )
+		} );
+
 		this.style = cfg.style || 'none';
 		this.noHeader = cfg.noHeader || false;
 		this.border = cfg.border || 'none';
@@ -88,7 +92,6 @@
 			this.$element.append( this.toolbar.$element );
 		}
 
-		this.makeLoadingOverlay();
 		this.store.connect( this, {
 			loading: 'onStoreLoading',
 			loaded: 'onStoreLoaded',
@@ -116,6 +119,7 @@
 	};
 
 	OO.inheritClass( OOJSPlus.ui.data.GridWidget, OO.ui.Widget );
+	OO.mixinClass( OOJSPlus.ui.data.GridWidget, OO.ui.mixin.PendingElement );
 
 	OOJSPlus.ui.data.GridWidget.static.tagName = 'div';
 
@@ -210,15 +214,6 @@
 		} );
 	};
 
-	OOJSPlus.ui.data.GridWidget.prototype.makeLoadingOverlay = function( ) {
-		this.$loadingOverlay = $( '<div>' ).addClass( 'grid-loading-overlay' );
-		var progress = new OO.ui.ProgressBarWidget( { progress: false } );
-
-		this.$loadingOverlay.append( progress.$element );
-		this.$element.append( this.$loadingOverlay );
-		this.$loadingOverlay.hide();
-	};
-
 	OOJSPlus.ui.data.GridWidget.prototype.onFilter = function( filter, field ) {
 		this.clearItems();
 		this.store.filter( filter, field );
@@ -226,18 +221,15 @@
 
 	OOJSPlus.ui.data.GridWidget.prototype.onStoreLoaded = function( rows ) {
 		this.setActiveFilters( Object.keys( this.store.getFilters() ) );
-		this.$loadingOverlay.hide();
+		this.popPending();
 	};
 
 	OOJSPlus.ui.data.GridWidget.prototype.onStoreLoading = function() {
-		this.$loadingOverlay.show();
+		this.pushPending();
 	};
 
 	OOJSPlus.ui.data.GridWidget.prototype.setLoading = function( loading ) {
-		if ( !this.$loadingOverlay ) {
-			return;
-		}
-		loading ? this.$loadingOverlay.show() : this.$loadingOverlay.hide();
+		loading ? this.pushPending() : this.popPending();
 	};
 
 	OOJSPlus.ui.data.GridWidget.prototype.setActiveFilters = function( fields ) {
