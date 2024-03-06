@@ -234,8 +234,9 @@
 
 	OOJSPlus.ui.data.column.Column.prototype.toggleSort = function( clearOnly ) {
 		clearOnly = clearOnly || false;
-		var directions = [ null, 'ASC', 'DESC' ],
-			indicators = [ '', 'up', 'down' ],
+		var sortOptions = this.getSortOptions(),
+			directions = sortOptions.directions,
+			indicators = sortOptions.indicators,
 			index = directions.indexOf( this.sortingDirection ),
 			newIndex = index + 1 === directions.length ? 0 : index + 1,
 			indicator = indicators[newIndex];
@@ -285,5 +286,10 @@
 		return this.canChangeVisibility() ? ( this.hidden ? 'hidden' : 'visible' ) : 'visible';
 	};
 
-
+	OOJSPlus.ui.data.column.Column.prototype.getSortOptions = function() {
+		return {
+			directions: [ null, 'ASC', 'DESC' ],
+			indicators: [ '', 'up', 'down' ]
+		};
+	};
 } )( mediaWiki, jQuery );
