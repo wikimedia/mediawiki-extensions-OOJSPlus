@@ -89,7 +89,9 @@
 			label: this.headerText,
 			classes: [ 'header-button' ]
 		} );
-		this.headerButton.$element.css( 'margin-right', '20px' );
+		if ( this.sortable ) {
+			this.headerButton.$element.css( 'margin-right', '20px' );
+		}
 
 		if ( this.sorter ) {
 			this.headerButton.connect( this, {
