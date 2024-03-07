@@ -24,13 +24,7 @@ OO.inheritClass( OOJSPlus.ui.data.store.RemoteRestStore, OOJSPlus.ui.data.store.
 
 OOJSPlus.ui.data.store.RemoteRestStore.prototype.doLoadData = function() {
 	var dfd = $.Deferred(),
-		data = {
-			start: this.offset,
-			limit: this.limit,
-			filter: this.getFiltersForRemote(),
-			query: this.getQuery(),
-			sort: this.getSortForRemote()
-		};
+		data = this.getRequestData();
 
 	this.request = $.ajax( {
 		method: 'GET',
@@ -57,4 +51,14 @@ OOJSPlus.ui.data.store.RemoteRestStore.prototype.doLoadData = function() {
 	}.bind( this ) );
 
 	return dfd.promise();
+};
+
+OOJSPlus.ui.data.store.RemoteRestStore.prototype.getRequestData = function() {
+	return {
+		start: this.offset,
+		limit: this.limit,
+		filter: this.getFiltersForRemote(),
+		query: this.getQuery(),
+		sort: this.getSortForRemote()
+	};
 };
