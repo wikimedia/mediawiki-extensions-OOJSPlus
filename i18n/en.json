@@ -54,5 +54,9 @@
 	"oojsplus-data-grid-toolbar-settings-columns-label": "Columns",
 	"oojsplus-data-grid-grouper-no-group": "(no group)",
 	"oojsplus-data-grid-selection-column-label": "Select",
-	"oojsplus-data-grid-filter-close": "Close"
+	"oojsplus-data-grid-filter-close": "Close",
+	"oojsplus-namespace-content": "Content namespaces",
+	"oojsplus-namespace-system": "System namespaces",
+	"oojsplus-namespace-content-talk": "Content talk namespaces",
+	"oojsplus-namespace-system-talk": "System talk namespaces"
 }

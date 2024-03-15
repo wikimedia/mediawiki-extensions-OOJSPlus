@@ -70,7 +70,14 @@
 				"ui/widget/CheckboxInputWidget.js",
 				"ui/widget/LabelWidget.js",
 				"ui/widget/CategoryMultiSelectWidget.js",
-				"ui/widget/CategoryInputWidget.js"
+				"ui/widget/CategoryInputWidget.js",
+				"ui/widget/NamespaceInputWidget.js"
+			],
+			"messages": [
+				"oojsplus-namespace-content",
+				"oojsplus-namespace-system",
+				"oojsplus-namespace-content-talk",
+				"oojsplus-namespace-system-talk"
 			],
 			"styles": [
 				"stylesheet/rangeWidget.less",
