@@ -24,3 +24,7 @@ OOJSPlus.ui.widget.CategoryMultiSelectWidget.prototype.getLookupMenuOptionsFromD
 	}
 	return items;
 };
+
+OOJSPlus.ui.widget.CategoryMultiSelectWidget.prototype.getSelectedCategories = function () {
+	return this.getValue();
+};
