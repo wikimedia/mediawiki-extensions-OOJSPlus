@@ -14,7 +14,7 @@
 
 		this.$element.addClass( 'oojsplus-widget-storeDataInputWidget' );
 		this.lookupMenu.$element.addClass( 'oojsplus-widget-storeDataInputWidget-menu' );
-
+		this.queryMinChars = config.queryMinChars || 0;
 		this.queryAction = config.queryAction;
 		this.additionalQueryParams = config.additionalQueryParams || {};
 		this.limit = config.limit || 9999;
@@ -23,7 +23,6 @@
 		this.groupLabelCallback = config.groupLabelCallback || null;
 
 		this.selectedItem = null;
-
 		this.lookupMenu.filterFromInput = false;
 	};
 
@@ -185,6 +184,16 @@
 			return data[this.groupBy];
 		}
 		return labelCallback( data[this.groupBy], data );
+	};
+
+	OOJSPlus.ui.widget.StoreDataInputWidget.prototype.onLookupInputChange = function () {
+		value = this.getValue();
+		if ( value.length != 0 && value.length < this.queryMinChars ) {
+			return;
+		}
+		if ( this.lookupInputFocused ) {
+			this.populateLookupMenu();
+		}
 	};
 
 }() );
