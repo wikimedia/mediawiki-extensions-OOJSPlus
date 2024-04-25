@@ -7,9 +7,11 @@
 			"McDutchie",
 			"Wzl19371",
 			"Xyb",
-			"Yining Chen"
+			"Yining Chen",
+			"沈澄心"
 		]
 	},
+	"oojsplus-desc": "为OOJS提供小部件和实用功能",
 	"oojsplus-color-picker-color-blue": "蓝色",
 	"oojsplus-color-picker-color-red": "红色",
 	"oojsplus-color-picker-color-green": "绿色",
@@ -25,7 +27,24 @@
 	"oojsplus-data-tree-item-remove-label": "移除",
 	"oojsplus-data-tree-item-add-label": "添加新的子项目",
 	"oojsplus-stepprogressbar-default-final-label": "完成",
+	"apihelp-query+allgroups-param-prefix": "前缀搜索词",
+	"apihelp-query+allgroups-param-dir": "排序方向",
+	"oojsplus-dialog-action-done": "完成",
+	"oojsplus-dialog-action-delete": "删除",
+	"oojsplus-dialog-action-create": "创建",
+	"oojsplus-dialog-action-add": "添加",
+	"oojsplus-dialog-action-cancel": "取消",
 	"oojsplus-data-grid-widget-popup-title": "更多项目",
+	"oojsplus-data-grid-filter-label": "筛选",
+	"oojsplus-data-grid-filter-clear": "清除",
+	"oojsplus-data-grid-filter-number-value": "值",
+	"oojsplus-data-paginator-next": "下一页",
+	"oojsplus-data-paginator-previous": "上一页",
 	"oojsplus-data-grid-toolbar-reload-label": "重新加载",
-	"oojsplus-data-paginator-page-count": "第$1页，共$2页"
+	"oojsplus-data-paginator-page-count": "第$1页，共$2页",
+	"oojsplus-data-grid-filter-boolean": "值",
+	"oojsplus-formelement-type-user-picker": "用户输入",
+	"oojsplus-data-grid-toolbar-settings-columns-label": "列",
+	"oojsplus-data-grid-selection-column-label": "选择",
+	"oojsplus-data-grid-filter-close": "关闭"
 }
