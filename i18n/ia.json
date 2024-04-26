@@ -54,5 +54,9 @@
 	"oojsplus-data-grid-toolbar-settings-columns-label": "Columnas",
 	"oojsplus-data-grid-grouper-no-group": "(necun gruppo)",
 	"oojsplus-data-grid-selection-column-label": "Selection",
-	"oojsplus-data-grid-filter-close": "Clauder"
+	"oojsplus-data-grid-filter-close": "Clauder",
+	"oojsplus-namespace-content": "Spatios de nomines de contento",
+	"oojsplus-namespace-system": "Spatios de nomines del systema",
+	"oojsplus-namespace-content-talk": "Spatios de nomines de discussion de contento",
+	"oojsplus-namespace-system-talk": "Spatios de nomines de discussion del systema"
 }

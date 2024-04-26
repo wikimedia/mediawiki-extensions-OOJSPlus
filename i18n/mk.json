@@ -55,5 +55,9 @@
 	"oojsplus-data-grid-toolbar-settings-columns-label": "Столбови",
 	"oojsplus-data-grid-grouper-no-group": "(без група)",
 	"oojsplus-data-grid-selection-column-label": "Избери",
-	"oojsplus-data-grid-filter-close": "Затвори"
+	"oojsplus-data-grid-filter-close": "Затвори",
+	"oojsplus-namespace-content": "Содржински именски простори",
+	"oojsplus-namespace-system": "Системски именски простори",
+	"oojsplus-namespace-content-talk": "Содржински разговорни именски простори",
+	"oojsplus-namespace-system-talk": "Системски разговорни именски простори"
 }
