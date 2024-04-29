@@ -56,5 +56,9 @@
 	"oojsplus-data-grid-toolbar-settings-columns-label": "עמודות",
 	"oojsplus-data-grid-grouper-no-group": "(ללא קבוצה)",
 	"oojsplus-data-grid-selection-column-label": "בחירה",
-	"oojsplus-data-grid-filter-close": "סגירה"
+	"oojsplus-data-grid-filter-close": "סגירה",
+	"oojsplus-namespace-content": "מרחבי שם של תוכן",
+	"oojsplus-namespace-system": "מרחבי שם של מערכת",
+	"oojsplus-namespace-content-talk": "מרחבי שם לשיחות על תוכן",
+	"oojsplus-namespace-system-talk": "מרחבי שם לשיחות על מערכת"
 }
