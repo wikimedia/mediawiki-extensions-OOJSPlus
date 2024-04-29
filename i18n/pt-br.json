@@ -6,7 +6,7 @@
 			"McDutchie"
 		]
 	},
-	"oojsplus-desc": "Fornece widgets e funções de utilidade para o OOJS",
+	"oojsplus-desc": "Fornece widgets e fun\u00e7\u00f5es de utilidade para o OOJS",
 	"oojsplus-color-picker-color-blue": "Azul",
 	"oojsplus-color-picker-color-red": "Vermelho",
 	"oojsplus-color-picker-color-green": "Verde",
@@ -18,7 +18,7 @@
 	"oojsplus-color-picker-label": "Selecionador de cores",
 	"oojsplus-data-delete-row-prompt": "Tem certeza de que deseja excluir esta linha?",
 	"oojsplus-data-paginator-page-total-count-label": "{{PLURAL:$1|$1 linha|$1 linhas}}",
-	"oojsplusdemos": "Demonstrações do OOJSPlus",
+	"oojsplusdemos": "Demonstra\u00e7\u00f5es do OOJSPlus",
 	"oojsplus-data-tree-item-remove-label": "Remover",
 	"oojsplus-data-tree-item-add-label": "Adicionar novo subitem",
 	"oojsplus-stepprogressbar-default-final-label": "Feito",
@@ -31,8 +31,8 @@
 	"oojsplus-data-grid-filter-clear": "Limpar",
 	"oojsplus-data-grid-filter-number-operator": "Tipo",
 	"oojsplus-data-grid-filter-number-value": "Valor",
-	"oojsplus-data-paginator-next": "Próxima página",
-	"oojsplus-data-paginator-previous": "Página anterior",
+	"oojsplus-data-paginator-next": "Pr\u00f3xima p\u00e1gina",
+	"oojsplus-data-paginator-previous": "P\u00e1gina anterior",
 	"oojsplus-data-grid-toolbar-reload-label": "Recarregar",
 	"oojsplus-data-paginator-page-count": "$1 de $2"
 }
