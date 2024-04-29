@@ -4,8 +4,9 @@
 			"Bosogo"
 		]
 	},
-	"oojsplus-dialog-action-done": "Даяр",
-	"oojsplus-dialog-action-create": "Түзүү",
-	"oojsplus-dialog-action-add": "Кошуу",
-	"oojsplus-dialog-action-cancel": "Жокко чыгаруу"
+	"oojsplus-dialog-action-done": "\u0414\u0430\u044f\u0440",
+	"oojsplus-dialog-action-create": "\u0422\u04af\u0437\u04af\u04af",
+	"oojsplus-dialog-action-add": "\u041a\u043e\u0448\u0443\u0443",
+	"oojsplus-dialog-action-cancel": "\u0416\u043e\u043a\u043a\u043e \u0447\u044b\u0433\u0430\u0440\u0443\u0443",
+	"oojsplus-data-grid-filter-close": "\u0416\u0430\u0431\u0443\u0443"
 }

@@ -7,7 +7,7 @@
 			"No se"
 		]
 	},
-	"oojsplus-desc": "Proporciona «widgets» y funciones utilitarias para OOJS",
+	"oojsplus-desc": "Proporciona \u00abwidgets\u00bb y funciones utilitarias para OOJS",
 	"oojsplus-color-picker-color-blue": "Azul",
 	"oojsplus-color-picker-color-red": "Rojo",
 	"oojsplus-color-picker-color-green": "Verde",
@@ -17,16 +17,16 @@
 	"oojsplus-color-picker-color-pink": "Rosa",
 	"oojsplus-color-picker-clear-label": "Quitar color",
 	"oojsplus-color-picker-label": "Selector de colores",
-	"oojsplus-data-delete-row-prompt": "¿Confirmas que quieres eliminar esta fila?",
+	"oojsplus-data-delete-row-prompt": "\u00bfConfirmas que quieres eliminar esta fila?",
 	"oojsplus-data-paginator-page-total-count-label": "{{PLURAL:$1|$1 entrada|$1 entradas}}",
 	"oojsplusdemos": "Demostraciones de OOJSPlus",
 	"oojsplus-data-tree-item-remove-label": "Quitar",
-	"oojsplus-data-tree-item-add-label": "Añadir subelemento nuevo",
+	"oojsplus-data-tree-item-add-label": "A\u00f1adir subelemento nuevo",
 	"oojsplus-stepprogressbar-default-final-label": "Hecho",
 	"oojsplus-dialog-action-done": "Hecho",
 	"oojsplus-dialog-action-delete": "Borrar",
 	"oojsplus-dialog-action-create": "Crear",
-	"oojsplus-dialog-action-add": "Añadir",
+	"oojsplus-dialog-action-add": "A\u00f1adir",
 	"oojsplus-dialog-action-cancel": "Cancelar",
 	"oojsplus-data-grid-toolbar-settings-columns-label": "Columnas",
 	"oojsplus-data-grid-toolbar-reload-label": "Recargar"

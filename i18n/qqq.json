@@ -2,13 +2,13 @@
 	"@metadata": {
 		"authors": [
 			"Ajeje Brazorf",
-			"Jon Harald Søby",
+			"Jon Harald S\u00f8by",
 			"McDutchie",
 			"Robby",
 			"Umherirrender"
 		]
 	},
-	"oojsplus-desc": "{{desc|name=OOJSPlus|url=https://www.mediawiki.org/wiki/Extension:OOJSPlus}}",
+	"oojsplus-desc": "{{desc|name=OOJSPlus|url=https:\/\/www.mediawiki.org\/wiki\/Extension:OOJSPlus}}",
 	"oojsplus-color-picker-color-blue": "Name of a field in a color-picker widget",
 	"oojsplus-color-picker-color-red": "Name of a field in a color-picker widget",
 	"oojsplus-color-picker-color-green": "Name of a field in a color-picker widget",
@@ -58,7 +58,7 @@
 	"oojsplus-data-grid-toolbar-settings-columns-label": "Field label",
 	"oojsplus-data-grid-grouper-no-group": "Label for the grid group if no group name is specified",
 	"oojsplus-data-grid-selection-column-label": "Label for selection column",
-	"oojsplus-data-grid-filter-close": "Close filter popup tooltip",
+	"oojsplus-data-grid-filter-close": "Used as title of a button",
 	"oojsplus-namespace-content": "Grouping label for content namespace",
 	"oojsplus-namespace-system": "Grouping label for system namespace",
 	"oojsplus-namespace-content-talk": "Grouping label for content talk namespace",
