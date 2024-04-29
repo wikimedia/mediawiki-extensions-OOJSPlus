@@ -46,5 +46,9 @@
 	"oojsplus-formelement-type-user-picker": "用户输入",
 	"oojsplus-data-grid-toolbar-settings-columns-label": "列",
 	"oojsplus-data-grid-selection-column-label": "选择",
-	"oojsplus-data-grid-filter-close": "关闭"
+	"oojsplus-data-grid-filter-close": "关闭",
+	"oojsplus-namespace-content": "内容命名空间",
+	"oojsplus-namespace-system": "系统命名空间",
+	"oojsplus-namespace-content-talk": "内容讨论命名空间",
+	"oojsplus-namespace-system-talk": "系统讨论命名空间"
 }
