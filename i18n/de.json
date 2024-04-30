@@ -5,6 +5,7 @@
 			"McDutchie",
 			"Mirzali",
 			"Mschlindwein",
+			"TomatoCake",
 			"Zabe"
 		]
 	},
@@ -57,5 +58,9 @@
 	"oojsplus-data-grid-filter-operator": "Vergleichstyp",
 	"oojsplus-data-grid-toolbar-settings-columns-label": "Spalten",
 	"oojsplus-data-grid-grouper-no-group": "(keine Gruppe)",
-	"oojsplus-data-grid-selection-column-label": "Auswählen"
+	"oojsplus-data-grid-selection-column-label": "Auswählen",
+	"oojsplus-namespace-content": "Inhaltsnamensräume",
+	"oojsplus-namespace-system": "Systemnamensräume",
+	"oojsplus-namespace-content-talk": "Inhaltsdiskussionsnamensräume",
+	"oojsplus-namespace-system-talk": "Systemdiskussionsnamensräume"
 }
