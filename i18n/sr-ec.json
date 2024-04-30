@@ -5,12 +5,12 @@
 			"Milicevic01"
 		]
 	},
-	"oojsplus-data-grid-widget-popup-title": "\u0412\u0438\u0448\u0435 \u0441\u0442\u0430\u0432\u043a\u0438",
-	"oojsplus-data-grid-filter-boolean": "\u0412\u0440\u0435\u0434\u043d\u043e\u0441\u0442",
-	"oojsplus-data-paginator-next": "\u0421\u043b\u0435\u0434\u0435\u045b\u0430 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0430",
-	"oojsplus-data-paginator-previous": "\u041f\u0440\u0435\u0442\u0445\u043e\u0434\u043d\u0430 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0430",
-	"oojsplus-data-grid-toolbar-settings-columns-label": "\u041a\u043e\u043b\u043e\u043d\u0435",
-	"oojsplus-data-grid-selection-column-label": "\u0418\u0437\u0430\u0431\u0435\u0440\u0438",
-	"oojsplus-data-grid-filter-close": "\u0417\u0430\u0442\u0432\u043e\u0440\u0438",
-	"oojsplus-data-grid-toolbar-reload-label": "\u041e\u0441\u0432\u0435\u0436\u0438"
+	"oojsplus-data-grid-widget-popup-title": "Више ставки",
+	"oojsplus-data-grid-filter-boolean": "Вредност",
+	"oojsplus-data-paginator-next": "Следећа страница",
+	"oojsplus-data-paginator-previous": "Претходна страница",
+	"oojsplus-data-grid-toolbar-settings-columns-label": "Колоне",
+	"oojsplus-data-grid-selection-column-label": "Изабери",
+	"oojsplus-data-grid-filter-close": "Затвори",
+	"oojsplus-data-grid-toolbar-reload-label": "Освежи"
 }
