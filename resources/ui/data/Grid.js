@@ -343,7 +343,8 @@
 				continue;
 			}
 			var column = this.columns[field];
-			if ( column instanceof OOJSPlus.ui.data.column.Action ) {
+			if ( column instanceof OOJSPlus.ui.data.column.Action ||
+				column instanceof OOJSPlus.ui.data.column.Image ) {
 				continue;
 			}
 			var relevantField = column.display || field;
