@@ -5,6 +5,7 @@
 			"Ice bulldog",
 			"Piramidion",
 			"Vlad5250",
+			"Ата",
 			"Пан Хаунд"
 		]
 	},
@@ -19,7 +20,7 @@
 	"oojsplus-color-picker-clear-label": "Очистити колір",
 	"oojsplus-color-picker-label": "Піпетка кольору",
 	"oojsplus-data-delete-row-prompt": "Ви справді хочете видалити цей рядок?",
-	"oojsplus-data-paginator-page-total-count-label": "{{PLURAL:$1|$1 рядок|$1 рядки|$1 рядків}}",
+	"oojsplus-data-paginator-page-total-count-label": "{{PLURAL:$1|$1 запис|$1 записи|$1 записів}}",
 	"oojsplusdemos": "Демонстрації OOJSPlus",
 	"oojsplus-data-tree-item-remove-label": "Вилучити",
 	"oojsplus-data-tree-item-add-label": "Додати новий піделемент",
