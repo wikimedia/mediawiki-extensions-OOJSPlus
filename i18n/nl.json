@@ -57,5 +57,10 @@
 	"oojsplus-data-grid-filter-operator": "Vergelijkingstype",
 	"oojsplus-data-grid-toolbar-settings-columns-label": "Kolommen",
 	"oojsplus-data-grid-grouper-no-group": "(geen groep)",
-	"oojsplus-data-grid-selection-column-label": "Selectie"
+	"oojsplus-data-grid-selection-column-label": "Selectie",
+	"oojsplus-data-grid-filter-close": "Sluiten",
+	"oojsplus-namespace-content": "Inhoudsnaamruimten",
+	"oojsplus-namespace-system": "Systeemnaamruimten",
+	"oojsplus-namespace-content-talk": "Inhoudsoverlegnaamruimten",
+	"oojsplus-namespace-system-talk": "Systeemoverlegnaamruimten"
 }
