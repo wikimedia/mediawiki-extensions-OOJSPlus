@@ -13,11 +13,11 @@ OOJSPlus.ui.widget.CategoryInputWidget = function( config ) {
 
 OO.inheritClass( OOJSPlus.ui.widget.CategoryInputWidget, OOJSPlus.ui.widget.TitleInputWidget );
 
-OOJSPlus.ui.widget.CategoryMultiSelectWidget.prototype.makeLookup = function ( query, data ) {
+OOJSPlus.ui.widget.CategoryInputWidget.prototype.makeLookup = function ( query, data ) {
 	return mws.commonwebapis.category.query( query, data );
 };
 
-OOJSPlus.ui.widget.CategoryMultiSelectWidget.prototype.getLookupMenuOptionsFromData = function ( data ) {
+OOJSPlus.ui.widget.CategoryInputWidget.prototype.getLookupMenuOptionsFromData = function ( data ) {
 	var len, i, items = [];
 
 	for ( i = 0, len = data.length; i < len; i++ ) {
