@@ -301,6 +301,8 @@
 			icon: 'settings',
 			classes: [ 'oojsplus-data-gridWidget-column-selector' ],
 			framed: false,
+			label: 'Settings',
+			invisibleLabel: true,
 			popup: {
 				head: true,
 				label: mw.message( "oojsplus-data-grid-toolbar-settings-columns-label" ).text(),

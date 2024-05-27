@@ -6,6 +6,8 @@ OOJSPlus.ui.data.column.Action = function ( cfg ) {
 	this.title = cfg.title || '';
 	this.id = cfg.actionId;
 	this.label = cfg.label || '';
+	this.headerText = cfg.headerText || '';
+	this.invisibleHeader = cfg.invisibleHeader || false;
 
 	this.$element.addClass( 'action-column' );
 };
@@ -39,7 +41,17 @@ OOJSPlus.ui.data.column.Action.prototype.getViewControls = function( value, row 
 };
 
 OOJSPlus.ui.data.column.Action.prototype.getHeader = function() {
-	return $( '<th>' ).addClass( 'oojsplus-data-gridWidget-cell oojsplus-data-gridWidget-column-header' );
+	var $cell = $( '<th>' ).addClass( 'oojsplus-data-gridWidget-cell oojsplus-data-gridWidget-column-header' );
+	if ( this.headerText.length <= 0 ) {
+		return $cell;
+	}
+	var label = new OO.ui.LabelWidget( {
+		label: this.headerText,
+		classes: [ 'header-label' ],
+		framed: false,
+		invisibleLabel: this.invisibleHeader
+	} );
+	return $cell.append( label.$element );
 };
 
 OOJSPlus.ui.data.column.Action.prototype.canChangeVisibility = function() {
