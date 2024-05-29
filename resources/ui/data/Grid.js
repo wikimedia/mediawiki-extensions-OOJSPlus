@@ -490,7 +490,7 @@
 		this.clearItems();
 		this.addItemsInternally( data );
 		this.setColumnsVisibility( this.visibleColumns );
-
+		this.popPending();
 		this.emit( 'datasetChange' );
 	};
 
