@@ -221,15 +221,21 @@
 
 	OOJSPlus.ui.data.GridWidget.prototype.onStoreLoaded = function( rows ) {
 		this.setActiveFilters( Object.keys( this.store.getFilters() ) );
-		this.popPending();
+		this.setLoading( false );
 	};
 
 	OOJSPlus.ui.data.GridWidget.prototype.onStoreLoading = function() {
-		this.pushPending();
+		this.setLoading( true );
 	};
 
 	OOJSPlus.ui.data.GridWidget.prototype.setLoading = function( loading ) {
-		loading ? this.pushPending() : this.popPending();
+		if ( loading ) {
+			this.pushPending();
+			return;
+		}
+		while ( this.isPending() ) {
+			this.popPending();
+		}
 	};
 
 	OOJSPlus.ui.data.GridWidget.prototype.setActiveFilters = function( fields ) {
@@ -483,7 +489,7 @@
 		this.clearItems();
 		this.addItemsInternally( data );
 		this.setColumnsVisibility( this.visibleColumns );
-		this.popPending();
+		this.setLoading( false );
 		this.emit( 'datasetChange' );
 	};
 
