@@ -180,6 +180,8 @@
 		if ( this.sticky ) {
 			$cell.addClass( 'sticky-col' );
 		}
+
+		this.setWidth( $cell );
 		return $cell;
 	};
 
