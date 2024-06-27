@@ -73,7 +73,7 @@ OOJSPlus.ui.data.store.RemoteStore.prototype.getSortForRemote = function() {
 		if ( !this.sorters.hasOwnProperty( field ) ) {
 			continue;
 		}
-		sorters.push(
+		sorters.unshift(
 			$.extend( {}, this.sorters[field].getValue(), { property: field } )
 		);
 	}
