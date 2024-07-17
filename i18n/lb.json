@@ -12,7 +12,7 @@
 	"oojsplus-color-picker-color-orangered": "Orangerout",
 	"oojsplus-color-picker-color-olive": "Olivgréng",
 	"oojsplus-color-picker-color-pink": "Rosa",
-	"oojsplus-data-delete-row-prompt": "Sidd Dir sécher datt Dir dës Rei läsche wëllt?",
+	"oojsplus-data-delete-row-prompt": "Sidd Dir sécher, datt Dir dës Zeil läsche wëllt?",
 	"oojsplus-data-paginator-page-total-count-label": "{{PLURAL:$1|$1 Rei|$1 Reien}}",
 	"oojsplus-data-tree-item-remove-label": "Ewechhuelen",
 	"oojsplus-stepprogressbar-default-final-label": "Fäerdeg",
