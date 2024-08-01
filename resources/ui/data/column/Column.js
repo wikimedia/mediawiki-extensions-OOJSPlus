@@ -154,6 +154,8 @@
 				this.emit( 'filterToggle', this.filterButton, visible );
 				if ( visible ) {
 					this.filter.focus();
+				} else {
+					this.filterButton.focus();
 				}
 			}
 		} );

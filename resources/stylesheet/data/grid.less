@@ -64,13 +64,6 @@
 						top: 0px;
 						height: 100%;
 						right: 0;
-						&:focus, &:focus-visible,
-						a:focus, a:focus-visible,
-						span:focus, span:focus-visible{
-							box-shadow: none;
-							outline: none;
-							border: none;
-						}
 						a {
 							height: 100%;
 							vertical-align: middle;
@@ -107,9 +100,9 @@
 				}
 			}
 			.oo-ui-buttonElement.oo-ui-widget-enabled .oo-ui-iconElement-icon {
-				opacity: 0.4;
-				&:hover {
-					opacity: 0.8;
+				opacity: 0.8;
+				&.oo-ui-image-progressive {
+					opacity: 1;
 				}
 			}
 			> a.oo-ui-buttonElement-button:hover {
