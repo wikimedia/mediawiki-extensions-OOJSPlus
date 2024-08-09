@@ -3,6 +3,7 @@ OOJSPlus.ui.data.filter.Filter = function ( cfg ) {
 	this.type = cfg.type;
 	this.conditionValue = cfg.value || '';
 	this.value = this.getFilterValue();
+	this.filterName = '';
 	this.closePopupOnChange = cfg.closePopupOnChange || false;
 
 	this.label = new OO.ui.LabelWidget( { label: mw.message( 'oojsplus-data-grid-filter-label' ).text() } );
@@ -26,6 +27,14 @@ OOJSPlus.ui.data.filter.Filter.prototype.getType = function() {
 
 OOJSPlus.ui.data.filter.Filter.prototype.focus = function() {
 	// STUB
+};
+
+OOJSPlus.ui.data.filter.Filter.prototype.setName = function( name ) {
+	this.filterName = name;
+};
+
+OOJSPlus.ui.data.filter.Filter.prototype.getName = function() {
+	return this.filterName;
 };
 
 OOJSPlus.ui.data.filter.Filter.prototype.getClearButton = function() {
