@@ -24,6 +24,9 @@
 		OOJSPlus.ui.data.GridWidget.parent.call( this, cfg );
 
 		this.$element.addClass( 'oojsplus-data-gridWidget' );
+		this.$filterCnt = $( '<div>' ).attr( 'id', 'grid-filter-announcement' )
+			.attr( 'aria-live', 'polite' ).addClass( 'visually-hidden' );
+		this.$element.append( this.$filterCnt );
 		this.$table = $( '<table>' ).addClass( 'oojsplus-data-gridWidget-table' );
 		this.$table.append( $( '<thead>' ).addClass( 'oojsplus-data-gridWidget-header' ) );
 		this.$table.append( $( '<tbody>' ).addClass( 'oojsplus-data-gridWidget-tbody' ) );
@@ -309,7 +312,7 @@
 			framed: false,
 			label: 'Settings',
 			invisibleLabel: true,
-			$overlay: true,
+			$overlay: this.$overlay,
 			popup: {
 				head: true,
 				label: mw.message( "oojsplus-data-grid-toolbar-settings-columns-label" ).text(),
@@ -491,7 +494,30 @@
 		this.addItemsInternally( data );
 		this.setColumnsVisibility( this.visibleColumns );
 		this.setLoading( false );
+		this.adjustFilterAnnouncement();
 		this.emit( 'datasetChange' );
+	};
+
+	OOJSPlus.ui.data.GridWidget.prototype.adjustFilterAnnouncement = function() {
+		var filters = this.store.getFilters();
+		var filterKeys = Object.keys( filters );
+		if ( filterKeys.length === 0 ) {
+			this.$filterCnt.text( mw.message( 'oojsplus-data-grid-filter-update-no-filter' ).text() );
+		} else {
+			var filterNames = '';
+			filterKeys.forEach( key => {
+				if ( filterKeys[ filterKeys.length - 1] !== key ) {
+					filterNames += filters[ key ].getName() + ', ';
+				} else {
+					filterNames += filters[ key ].getName() + '. ';
+				}
+			} );
+			var filterAnnouncement = mw.message( 'oojsplus-data-grid-filter-update-active-filter',
+				filterKeys.length, filterNames ).text();
+			filterAnnouncement += mw.message( 'oojsplus-data-grid-filter-update-results',
+				Object.keys( this.store.getData() ).length ).text();
+			this.$filterCnt.text( filterAnnouncement );
+		}
 	};
 
 	OOJSPlus.ui.data.GridWidget.prototype.clickOnRow = function( e ) {

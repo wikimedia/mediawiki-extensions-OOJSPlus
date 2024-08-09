@@ -91,11 +91,17 @@
 		} );
 		if ( this.sortable ) {
 			this.headerButton.$element.css( 'margin-right', '20px' );
+			var direction = this.sorter.getValue().direction ?  this.sorter.getValue().direction : 'other';
+			$cell.attr( 'aria-sort', direction );
 		}
 
 		if ( this.sorter ) {
 			this.headerButton.connect( this, {
-				click: 'toggleSort'
+				click: function () {
+					this.toggleSort();
+					var direction = this.sorter.getValue().direction ?  this.sorter.getValue().direction : 'other';
+					$cell.attr( 'aria-sort', direction );
+				}
 			} );
 		}
 		$cell.append( this.headerButton.$element );
@@ -221,6 +227,7 @@
 	OOJSPlus.ui.data.column.Column.prototype.setFilter = function( value ) {
 		if ( value instanceof OOJSPlus.ui.data.filter.Filter ) {
 			this.filter = value;
+			this.filter.setName( this.headerText );
 			this.filter.connect( this, {
 				change: 'onFilterChange'
 			} );
@@ -230,6 +237,7 @@
 			if ( !value.hasOwnProperty( 'type' ) || value.type !== this.filter.getType() ) {
 				return;
 			}
+			this.filter.setName( this.headerText );
 			this.filter.setValue( value );
 		}
 	};

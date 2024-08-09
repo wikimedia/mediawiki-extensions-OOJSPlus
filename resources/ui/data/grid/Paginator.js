@@ -116,6 +116,7 @@
 		this.currentPageWidget.setLabel(
 			mw.message( 'oojsplus-data-paginator-page-count', this.currentPage, this.numberOfPages ).plain()
 		);
+		this.currentPageWidget.$element.attr( 'tabindex', 0 );
 	};
 
 	OOJSPlus.ui.data.grid.Paginator.prototype.paginate = function() {
