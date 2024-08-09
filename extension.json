@@ -205,7 +205,10 @@
 				"oojsplus-data-grid-toolbar-settings-columns-label",
 				"oojsplus-data-grid-grouper-no-group",
 				"oojsplus-data-grid-selection-column-label",
-				"oojsplus-data-grid-filter-close"
+				"oojsplus-data-grid-filter-close",
+				"oojsplus-data-grid-filter-update-active-filter",
+				"oojsplus-data-grid-filter-update-results",
+				"oojsplus-data-grid-filter-update-no-filter"
 			]
 		},
 		"ext.oOJSPlus.icons": {
