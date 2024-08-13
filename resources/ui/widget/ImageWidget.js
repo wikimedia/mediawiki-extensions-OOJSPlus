@@ -61,8 +61,12 @@ OOJSPlus.ui.widget.ImageWidget.prototype.createWidget = function () {
 				.attr( 'alt', this.fileName )
 				.attr( 'src', this.fileUrl )
 				.attr( 'width', this.width )
-				.attr( 'height', this.height );
-	$( $image ).on( 'click', function () {
+				.attr( 'height', this.height )
+				.attr( 'tabindex', 0 );
+	$( $image ).on( 'click keypress', function ( event ) {
+		if ( event.type === 'keypress'  && event.keyCode !== 13 ) {
+			return;
+		}
 		this.emit( "preview", this.fileName, this.fileUrl );
 	}.bind( this ) );
 
