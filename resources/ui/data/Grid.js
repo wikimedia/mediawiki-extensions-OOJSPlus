@@ -310,7 +310,7 @@
 			icon: 'settings',
 			classes: [ 'oojsplus-data-gridWidget-column-selector' ],
 			framed: false,
-			label: 'Settings',
+			label: mw.message( 'oojsplus-data-grid-toolbar-settings-aria-label' ).text(),
 			invisibleLabel: true,
 			$overlay: this.$overlay,
 			popup: {

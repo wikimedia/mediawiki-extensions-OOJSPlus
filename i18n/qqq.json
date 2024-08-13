@@ -65,5 +65,6 @@
 	"oojsplus-namespace-system-talk": "Grouping label for system talk namespace",
 	"oojsplus-data-grid-filter-update-active-filter": "Label for applied filtering\nParameters:\n* $1 - number of filters\n* $2 - list of names of filters",
 	"oojsplus-data-grid-filter-update-results": "Label for results found from filtering\nParameters:\n* $1 - number of results",
-	"oojsplus-data-grid-filter-update-no-filter": "Label for no applied filter in grid"
+	"oojsplus-data-grid-filter-update-no-filter": "Label for no applied filter in grid",
+	"oojsplus-data-grid-toolbar-settings-aria-label": "Invisible label for settings button in grid"
 }
