@@ -208,7 +208,8 @@
 				"oojsplus-data-grid-filter-close",
 				"oojsplus-data-grid-filter-update-active-filter",
 				"oojsplus-data-grid-filter-update-results",
-				"oojsplus-data-grid-filter-update-no-filter"
+				"oojsplus-data-grid-filter-update-no-filter",
+				"oojsplus-data-grid-toolbar-settings-aria-label"
 			]
 		},
 		"ext.oOJSPlus.icons": {
