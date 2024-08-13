@@ -38,6 +38,7 @@
 		this.resizable = cfg.resizable || false;
 
 		this.headerText = cfg.headerText || '';
+		this.invisibleLabel = cfg.invisibleLabel || false;
 		if ( cfg.filter instanceof OOJSPlus.ui.data.filter.Filter ) {
 			this.setFilter( cfg.filter );
 		} else if ( !$.isEmptyObject( cfg.filter ) ) {
@@ -87,6 +88,7 @@
 		this.headerButton = new OO.ui.ButtonWidget( {
 			framed: false,
 			label: this.headerText,
+			invisibleLabel: this.invisibleLabel,
 			classes: [ 'header-button' ]
 		} );
 		if ( this.sortable ) {
