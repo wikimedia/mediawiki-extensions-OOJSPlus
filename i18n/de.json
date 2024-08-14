@@ -59,11 +59,12 @@
 	"oojsplus-data-grid-toolbar-settings-columns-label": "Spalten",
 	"oojsplus-data-grid-grouper-no-group": "(keine Gruppe)",
 	"oojsplus-data-grid-selection-column-label": "Auswählen",
+	"oojsplus-data-grid-filter-close": "Schließen",
 	"oojsplus-namespace-content": "Inhaltsnamensräume",
 	"oojsplus-namespace-system": "Systemnamensräume",
 	"oojsplus-namespace-content-talk": "Inhaltsdiskussionsnamensräume",
 	"oojsplus-namespace-system-talk": "Systemdiskussionsnamensräume",
-	"oojsplus-data-grid-filter-update-active-filter": "$1 {{PLURAL:$1|Filter|Filter}} angewandt: $2",
+	"oojsplus-data-grid-filter-update-active-filter": "$1 {{PLURAL:$1|Filter}} angewandt: $2",
 	"oojsplus-data-grid-filter-update-results": "$1 {{PLURAL:$1|Ergebnis|Ergebnisse}} gefunden",
 	"oojsplus-data-grid-filter-update-no-filter": "Kein Filter angewandt"
 }
