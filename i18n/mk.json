@@ -59,5 +59,8 @@
 	"oojsplus-namespace-content": "Содржински именски простори",
 	"oojsplus-namespace-system": "Системски именски простори",
 	"oojsplus-namespace-content-talk": "Содржински разговорни именски простори",
-	"oojsplus-namespace-system-talk": "Системски разговорни именски простори"
+	"oojsplus-namespace-system-talk": "Системски разговорни именски простори",
+	"oojsplus-data-grid-filter-update-active-filter": "{{PLURAL:$1|Применет $1 филтер|Применети $1 филтри}}: $2",
+	"oojsplus-data-grid-filter-update-results": "Пронајдов $1 {{PLURAL:$1|ставка|ставки}}",
+	"oojsplus-data-grid-filter-update-no-filter": "Немате применето филтер"
 }
