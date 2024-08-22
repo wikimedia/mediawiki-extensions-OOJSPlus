@@ -63,5 +63,6 @@
 	"oojsplus-namespace-system-talk": "系統討論命名空間",
 	"oojsplus-data-grid-filter-update-active-filter": "套用 $1 {{PLURAL:$1|個篩選}}：$2",
 	"oojsplus-data-grid-filter-update-results": "找到 $1 {{PLURAL:$1|個結果}}",
-	"oojsplus-data-grid-filter-update-no-filter": "未套用篩選"
+	"oojsplus-data-grid-filter-update-no-filter": "未套用篩選",
+	"oojsplus-data-grid-toolbar-settings-aria-label": "設定"
 }
