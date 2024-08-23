@@ -1,8 +1,10 @@
 {
 	"@metadata": {
 		"authors": [
+			"ChiK",
 			"Mahaveer Indra"
 		]
 	},
-	"oojsplus-data-grid-filter-update-results": "$1ದಾತ್ {{PLURAL:$1|result|ನಾಡಿನ ಫಲಿತಾಂಸೊ}}ಲು"
+	"oojsplus-data-grid-filter-update-results": "$1ದಾತ್ {{PLURAL:$1|result|ನಾಡಿನ ಫಲಿತಾಂಸೊ}}ಲು",
+	"oojsplus-data-grid-toolbar-settings-aria-label": "ಸಂಯೋಜನೆಲು"
 }
