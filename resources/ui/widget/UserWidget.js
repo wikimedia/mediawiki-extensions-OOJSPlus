@@ -9,13 +9,12 @@ OOJSPlus.ui.widget.UserWidget = function( cfg ) {
 	this.showLink = cfg.showLink || false;
 
 	this.$element.addClass( 'oojsplus-user-widget' );
-
+	this.$nameBox = $( '<div>' ).addClass( 'user-name-cnt' );
 	this.assertUserData().done( function() {
-		var $nameBox = $( '<div>' ).addClass( 'user-name-cnt' );
 
-		$nameBox.append( $( '<span>' ).addClass( 'user-display' ).text( this.getDisplayName() ) );
+		this.$nameBox.append( $( '<span>' ).addClass( 'user-display' ).text( this.getDisplayName() ) );
 		if ( this.showRawUsername && this.getDisplayName() !== this.user.user_name ) {
-			$nameBox.append( $( '<span>' ).addClass( 'user-username' ).text( this.user.user_name ) );
+			this.$nameBox.append( $( '<span>' ).addClass( 'user-username' ).text( this.user.user_name ) );
 		}
 		if ( this.showImage ) {
 			var $userImage = $( '<span>' ).addClass( 'user-image' );
@@ -26,13 +25,14 @@ OOJSPlus.ui.widget.UserWidget = function( cfg ) {
 			}
 			this.$element.append( $userImage );
 		}
-		this.$element.append( $nameBox );
+		this.$element.append( this.$nameBox );
 
 		if ( this.showLink && this.user.hasOwnProperty( 'page_url' ) ) {
 			// Wrap content of this.$element in a link
 			var $link = $( '<a>' ).attr( 'href', this.user.page_url ).append( this.$element.html() );
 			this.$element.html( $link );
 		}
+		this.emit( 'loaded' );
 
 	}.bind( this ) );
 };
