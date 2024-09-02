@@ -3,7 +3,8 @@
 		"authors": [
 			"Amire80",
 			"Ex-Diktator",
-			"YaronSh"
+			"YaronSh",
+			"Freddy9"
 		]
 	},
 	"oojsplus-desc": "אספקת כלים ופונקציות עזר ל־OOJS",
@@ -63,5 +64,6 @@
 	"oojsplus-namespace-system-talk": "מרחבי שם לשיחות על מערכת",
 	"oojsplus-data-grid-filter-update-active-filter": "{{PLURAL:$1|הוחל מסנן אחד|הוחלו $1 מסננים}}: $2",
 	"oojsplus-data-grid-filter-update-results": "{{PLURAL:$1|נמצאה תוצאה אחת|נמצאו $1 תוצאות}}",
-	"oojsplus-data-grid-filter-update-no-filter": "לא הוחל מסנן"
+	"oojsplus-data-grid-filter-update-no-filter": "לא הוחל מסנן",
+	"oojsplus-data-grid-toolbar-settings-aria-label": "הגדרות"
 }
