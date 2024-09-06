@@ -25,5 +25,9 @@
 	"oojsplus-data-grid-toolbar-reload-label": "تازه‌سازی",
 	"oojsplus-data-paginator-page-count": "$1 از $2",
 	"oojsplus-data-grid-filter-boolean": "مقدار",
-	"oojsplus-data-grid-selection-column-label": "انتخاب"
+	"oojsplus-data-grid-selection-column-label": "انتخاب",
+	"oojsplus-data-grid-filter-update-active-filter": "$1 پالایه {{PLURAL:$1|اعمال شد}}: $2",
+	"oojsplus-data-grid-filter-update-results": "$1 {{PLURAL:$1|نتیجه}} یافت شد",
+	"oojsplus-data-grid-filter-update-no-filter": "پالایه‌ای اعمال نشده است",
+	"oojsplus-data-grid-toolbar-settings-aria-label": "تنظیمات"
 }

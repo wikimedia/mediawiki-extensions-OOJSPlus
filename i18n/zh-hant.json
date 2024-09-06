@@ -56,5 +56,13 @@
 	"oojsplus-data-grid-toolbar-settings-columns-label": "欄",
 	"oojsplus-data-grid-grouper-no-group": "（無群組）",
 	"oojsplus-data-grid-selection-column-label": "選擇",
-	"oojsplus-data-grid-filter-close": "關閉"
+	"oojsplus-data-grid-filter-close": "關閉",
+	"oojsplus-namespace-content": "內容命名空間",
+	"oojsplus-namespace-system": "系統命名空間",
+	"oojsplus-namespace-content-talk": "內容討論命名空間",
+	"oojsplus-namespace-system-talk": "系統討論命名空間",
+	"oojsplus-data-grid-filter-update-active-filter": "套用 $1 {{PLURAL:$1|個篩選}}：$2",
+	"oojsplus-data-grid-filter-update-results": "找到 $1 {{PLURAL:$1|個結果}}",
+	"oojsplus-data-grid-filter-update-no-filter": "未套用篩選",
+	"oojsplus-data-grid-toolbar-settings-aria-label": "設定"
 }

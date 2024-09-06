@@ -1,8 +1,9 @@
 {
 	"@metadata": {
 		"authors": [
+			"Don Alessandro",
 			"Mansur"
 		]
 	},
-	"oojsplus-data-grid-selection-column-label": "Сайларга"
+	"oojsplus-data-grid-selection-column-label": "Сайлау"
 }
