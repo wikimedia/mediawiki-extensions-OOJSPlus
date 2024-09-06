@@ -26,7 +26,13 @@ OOJSPlus.ui.data.filter.Filter.prototype.getType = function() {
 };
 
 OOJSPlus.ui.data.filter.Filter.prototype.focus = function() {
-	// STUB
+	let focusableElements = 'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])';
+	let firstFocusableElement = this.$element[0].querySelector( focusableElements );
+
+	// If there is a focusable element, focus on it
+	if ( firstFocusableElement ) {
+		firstFocusableElement.focus();
+	}
 };
 
 OOJSPlus.ui.data.filter.Filter.prototype.setName = function( name ) {

@@ -26,10 +26,6 @@ OOJSPlus.ui.data.filter.Number.prototype.getLayout = function() {
 	} );
 };
 
-OOJSPlus.ui.data.filter.Number.prototype.focus = function() {
-	this.input.focus();
-};
-
 OOJSPlus.ui.data.filter.Number.prototype.makeOperatorWidget = function() {
 	this.operatorWidget = new OO.ui.ButtonSelectWidget( {
 		items: [
@@ -51,10 +47,6 @@ OOJSPlus.ui.data.filter.Number.prototype.makeOperatorWidget = function() {
 	this.operatorWidget.connect( this, {
 		select: 'changeOperator'
 	} );
-};
-
-OOJSPlus.ui.data.filter.Number.prototype.focus = function() {
-	this.input.focus();
 };
 
 OOJSPlus.ui.data.filter.Number.prototype.getFilterValue = function() {
