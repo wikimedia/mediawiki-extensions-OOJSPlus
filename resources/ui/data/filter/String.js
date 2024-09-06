@@ -17,10 +17,6 @@ OOJSPlus.ui.data.filter.String.prototype.getLayout = function() {
 	return this.input;
 };
 
-OOJSPlus.ui.data.filter.String.prototype.focus = function() {
-	this.input.focus();
-};
-
 OOJSPlus.ui.data.filter.String.prototype.getFilterValue = function() {
 	return {
 		value: this.conditionValue,
