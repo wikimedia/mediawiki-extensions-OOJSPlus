@@ -25,5 +25,6 @@
 	"oojsplus-data-paginator-page-count": "$2-এর $1",
 	"oojsplus-data-grid-filter-operator": "তুলনার ধরন",
 	"oojsplus-data-grid-selection-column-label": "নির্বাচন করুন",
-	"oojsplus-data-grid-filter-update-results": "$1টি {{PLURAL:$1|ফলাফল}} পাওয়া গেছে"
+	"oojsplus-data-grid-filter-update-results": "$1টি {{PLURAL:$1|ফলাফল}} পাওয়া গেছে",
+	"oojsplus-data-grid-toolbar-settings-aria-label": "সেটিংস"
 }
