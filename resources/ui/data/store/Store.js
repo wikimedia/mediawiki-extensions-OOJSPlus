@@ -120,6 +120,10 @@ OOJSPlus.ui.data.store.Store.prototype.getPageSize = function() {
 	return this.limit;
 };
 
+OOJSPlus.ui.data.store.Store.prototype.setPageSize = function( limit ) {
+	this.limit = limit;
+};
+
 OOJSPlus.ui.data.store.Store.prototype.setOffset = function( offset ) {
 	this.offset = offset;
 };
