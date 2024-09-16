@@ -33,10 +33,6 @@ OOJSPlus.ui.data.filter.Date.prototype.changeOperator = function( operator ) {
 	}
 };
 
-OOJSPlus.ui.data.filter.Date.prototype.focus = function() {
-	// NOOP
-};
-
 OOJSPlus.ui.data.filter.Date.prototype.getFilterValue = function() {
 	return {
 		value: this.convertToFilterDate( this.conditionValue ),
