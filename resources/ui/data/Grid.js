@@ -506,10 +506,13 @@
 		} else {
 			var filterNames = '';
 			filterKeys.forEach( key => {
+				var filterName = filters[ key ].getName();
+				var filterValue = filters[ key ].getFilterValue()['value'];
+				filterNames += mw.message( 'oojsplus-data-grid-filter-list-with-value', filterName, filterValue ).text()
 				if ( filterKeys[ filterKeys.length - 1] !== key ) {
-					filterNames += filters[ key ].getName() + ', ';
+					filterNames += ', ';
 				} else {
-					filterNames += filters[ key ].getName() + '. ';
+					filterNames += '.';
 				}
 			} );
 			var filterAnnouncement = mw.message( 'oojsplus-data-grid-filter-update-active-filter',

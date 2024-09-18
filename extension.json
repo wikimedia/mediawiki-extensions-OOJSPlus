@@ -209,7 +209,9 @@
 				"oojsplus-data-grid-filter-update-active-filter",
 				"oojsplus-data-grid-filter-update-results",
 				"oojsplus-data-grid-filter-update-no-filter",
-				"oojsplus-data-grid-toolbar-settings-aria-label"
+				"oojsplus-data-grid-toolbar-settings-aria-label",
+				"oojsplus-data-grid-filter-title",
+				"oojsplus-data-grid-filter-list-with-value"
 			]
 		},
 		"ext.oOJSPlus.icons": {
