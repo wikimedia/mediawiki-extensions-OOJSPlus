@@ -85,16 +85,22 @@
 			$cell.addClass( 'sticky-col' );
 		}
 
-		this.headerButton = new OO.ui.ButtonWidget( {
-			framed: false,
-			label: this.headerText,
-			invisibleLabel: this.invisibleLabel,
-			classes: [ 'header-button' ]
-		} );
 		if ( this.sortable ) {
+			this.headerButton = new OO.ui.ButtonWidget( {
+				framed: false,
+				label: this.headerText,
+				invisibleLabel: this.invisibleLabel,
+				classes: [ 'header-button' ]
+			} );
 			this.headerButton.$element.css( 'margin-right', '20px' );
 			var direction = this.sorter.getValue().direction ?  this.sorter.getValue().direction : 'other';
-			$cell.attr( 'aria-sort', direction );
+			this.setSortValue( $cell, direction );
+		} else {
+			this.headerButton = new OO.ui.LabelWidget( {
+				label: this.headerText,
+				invisibleLabel: this.invisibleLabel,
+				classes: [ 'header-button' ]
+			} );
 		}
 
 		if ( this.sorter ) {
@@ -102,7 +108,7 @@
 				click: function () {
 					this.toggleSort();
 					var direction = this.sorter.getValue().direction ?  this.sorter.getValue().direction : 'other';
-					$cell.attr( 'aria-sort', direction );
+					this.setSortValue( $cell, direction );
 				}
 			} );
 		}
@@ -140,13 +146,23 @@
 		return $cell;
 	};
 
+	OOJSPlus.ui.data.column.Column.prototype.setSortValue = function ( $cell, direction ) {
+		if ( direction === 'ASC' ) {
+			$cell.attr( 'aria-sort', 'ascending' );
+		} else if ( direction === 'DESC' ) {
+			$cell.attr( 'aria-sort', 'descending' );
+		} else {
+			$cell.attr( 'aria-sort', 'none' );
+		}
+	}
+
 	OOJSPlus.ui.data.column.Column.prototype.createFilterLayout = function( data ) {
 		this.filterButton = new OO.ui.PopupButtonWidget( {
 			icon: 'funnel',
 			classes: [ 'filter-button' ],
 			framed: false,
 			$overlay: this.$overlay,
-			title: mw.message( 'oojsplus-data-grid-filter-label' ).text(),
+			title: mw.message( 'oojsplus-data-grid-filter-title', this.headerText ).parse(),
 			popup: {
 				head: false,
 				autoClose: this.autoClosePopup,

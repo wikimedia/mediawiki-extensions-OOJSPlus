@@ -67,5 +67,7 @@
 	"oojsplus-data-grid-filter-update-results": "$1 {{PLURAL:$1|Ergebnis|Ergebnisse}} gefunden",
 	"oojsplus-data-grid-filter-update-no-filter": "Kein Filter angewandt",
 	"oojsplus-data-grid-filter-close": "Schließen",
-	"oojsplus-data-grid-toolbar-settings-aria-label": "Einstellungen"
+	"oojsplus-data-grid-toolbar-settings-aria-label": "Einstellungen",
+	"oojsplus-data-grid-filter-title": "Filter $1",
+	"oojsplus-data-grid-filter-list-with-value": "Filter $1 mit Wert $2"
 }
