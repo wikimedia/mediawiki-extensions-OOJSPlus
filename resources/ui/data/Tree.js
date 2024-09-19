@@ -256,7 +256,6 @@
 		}
 		var element = node.$element.find( '> ul.tree-node-list' );
 		$( element ).hide();
-		$( node.$element ).attr( 'aria-expanded', 'false' );
 	};
 
 	OOJSPlus.ui.data.Tree.prototype.expandNode = function( name ) {
@@ -266,7 +265,6 @@
 		}
 		var element = node.$element.find( '> ul.tree-node-list' );
 		$( element ).show();
-		$( node.$element ).attr( 'aria-expanded', 'true' );
 	};
 
 	OOJSPlus.ui.data.Tree.prototype.assertNodeLoaded = function( name ) {
