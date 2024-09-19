@@ -51,7 +51,6 @@
 		this.$element.addClass( 'oojs-ui-data-tree-item' );
 		this.$element.attr( 'data-name', this.getName() );
 		this.$element.attr( 'role', 'treeitem' );
-		this.$element.attr( 'aria-expanded', this.expanded );
 		this.$element.append( this.$wrapper );
 	};
 
@@ -100,6 +99,8 @@
 				icon: this.expanded ? this.style.IconCollapse : this.style.IconExpand,
 				classes: [ 'oojsplus-data-tree-expander' ]
 			} );
+
+			this.expander.$button.attr( 'aria-expanded', this.expanded );
 			this.expander.connect( this, {
 				click: 'onExpanderClick'
 			} );
@@ -197,11 +198,13 @@
 		if ( this.expanded ) {
 			this.tree.collapseNode( this.getName() );
 			this.expander.setIcon( this.style.IconExpand );
+			this.expander.$button.attr( 'aria-expanded', 'false' );
 			this.expanded = false;
 		} else {
 			this.tree.assertNodeLoaded( this.name ).done( function() {
 				this.tree.expandNode( this.getName() );
 				this.expander.setIcon( this.style.IconCollapse );
+				this.expander.$button.attr( 'aria-expanded', 'true' );
 				this.expanded = true;
 			}.bind( this ) );
 		}
