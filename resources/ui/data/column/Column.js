@@ -107,8 +107,9 @@
 			this.headerButton.connect( this, {
 				click: function () {
 					this.toggleSort();
-					var direction = this.sorter.getValue().direction ?  this.sorter.getValue().direction : 'other';
+					direction = this.sorter.getValue().direction ?  this.sorter.getValue().direction : 'other';
 					this.setSortValue( $cell, direction );
+					this.emit( 'sort-update', $cell, direction );
 				}
 			} );
 		}
@@ -154,7 +155,7 @@
 		} else {
 			$cell.attr( 'aria-sort', 'none' );
 		}
-	}
+	};
 
 	OOJSPlus.ui.data.column.Column.prototype.createFilterLayout = function( data ) {
 		this.filterButton = new OO.ui.PopupButtonWidget( {

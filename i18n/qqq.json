@@ -68,5 +68,8 @@
 	"oojsplus-data-grid-filter-update-no-filter": "Label for no applied filter in grid",
 	"oojsplus-data-grid-toolbar-settings-aria-label": "Invisible label for settings button in grid",
 	"oojsplus-data-grid-filter-title": "Label for the filter button\n\nParameters:\n* $1 - name of filter",
-	"oojsplus-data-grid-filter-list-with-value": "Label to name filter with value\nParamters:\n* $1 - name of filter\n* $2 - value of filter"
+	"oojsplus-data-grid-filter-list-with-value": "Label to name filter with value\nParamters:\n* $1 - name of filter\n* $2 - value of filter",
+	"oojsplus-data-grid-sort-direction-none": "Label for announcing no sorting of a column\n\nParameters:\n* $1 - name of column",
+	"oojsplus-data-grid-sort-direction-desc": "Label for announcing descending sorting of a column\n\nParameters:\n* $1 - name of column",
+	"oojsplus-data-grid-sort-direction-asc": "Label for announcing ascending sorting of a column\n\nParameters:\n* $1 - name of column"
 }
