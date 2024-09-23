@@ -26,7 +26,10 @@
 		this.$element.addClass( 'oojsplus-data-gridWidget' );
 		this.$filterCnt = $( '<div>' ).attr( 'id', 'grid-filter-announcement' )
 			.attr( 'aria-live', 'polite' ).addClass( 'visually-hidden' );
+		this.$sortCnt =  $( '<div>' ).attr( 'id', 'grid-sorting-announcement' )
+			.attr( 'aria-live', 'polite' ).addClass( 'visually-hidden' );
 		this.$element.append( this.$filterCnt );
+		this.$element.append( this.$sortCnt );
 		this.$table = $( '<table>' ).addClass( 'oojsplus-data-gridWidget-table' );
 		this.$table.append( $( '<thead>' ).addClass( 'oojsplus-data-gridWidget-header' ) );
 		this.$table.append( $( '<tbody>' ).addClass( 'oojsplus-data-gridWidget-tbody' ) );
@@ -110,6 +113,9 @@
 			} else {
 				this.setItems( Object.values( data ) );
 			}
+			var filterAnnouncement = mw.message( 'oojsplus-data-grid-filter-update-results',
+				Object.keys( this.store.getData() ).length ).text();
+			this.$filterCnt.text( filterAnnouncement );
 		}.bind( this ) );
 
 		this.connect( this, {
@@ -485,6 +491,14 @@
 	};
 
 	OOJSPlus.ui.data.GridWidget.prototype.onSort = function( sorter, field ) {
+		var columnName = this.columns[ field ].headerText;
+		var directionMsg = mw.message( 'oojsplus-data-grid-sort-direction-desc', columnName ).text();
+		if ( !sorter ) {
+			directionMsg = mw.message( 'oojsplus-data-grid-sort-direction-none', columnName ).text();
+		} else if ( sorter.direction === 'ASC' ) {
+			directionMsg = mw.message( 'oojsplus-data-grid-sort-direction-asc', columnName ).text();
+		}
+		this.$sortCnt.text( directionMsg ).text();
 		this.clearItems();
 		this.store.sort( sorter, field );
 	};
@@ -502,7 +516,10 @@
 		var filters = this.store.getFilters();
 		var filterKeys = Object.keys( filters );
 		if ( filterKeys.length === 0 ) {
-			this.$filterCnt.text( mw.message( 'oojsplus-data-grid-filter-update-no-filter' ).text() );
+			var announcement = mw.message( 'oojsplus-data-grid-filter-update-no-filter' ).text();
+			announcement += mw.message( 'oojsplus-data-grid-filter-update-results',
+				Object.keys( this.store.getData() ).length ).text();
+			this.$filterCnt.text( announcement );
 		} else {
 			var filterNames = '';
 			filterKeys.forEach( key => {
