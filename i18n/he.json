@@ -65,5 +65,7 @@
 	"oojsplus-data-grid-filter-update-active-filter": "{{PLURAL:$1|הוחל מסנן אחד|הוחלו $1 מסננים}}: $2",
 	"oojsplus-data-grid-filter-update-results": "{{PLURAL:$1|נמצאה תוצאה אחת|נמצאו $1 תוצאות}}",
 	"oojsplus-data-grid-filter-update-no-filter": "לא הוחל מסנן",
-	"oojsplus-data-grid-toolbar-settings-aria-label": "הגדרות"
+	"oojsplus-data-grid-toolbar-settings-aria-label": "הגדרות",
+	"oojsplus-data-grid-filter-title": "סינון $1",
+	"oojsplus-data-grid-filter-list-with-value": "סינון $1 עם הערך $2"
 }

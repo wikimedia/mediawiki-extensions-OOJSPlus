@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"AnupamM",
 			"DiegoAmbrocio",
 			"Fitoschido",
 			"Harvest",
@@ -29,5 +30,6 @@
 	"oojsplus-dialog-action-add": "Añadir",
 	"oojsplus-dialog-action-cancel": "Cancelar",
 	"oojsplus-data-grid-toolbar-reload-label": "Recargar",
-	"oojsplus-data-grid-toolbar-settings-columns-label": "Columnas"
+	"oojsplus-data-grid-toolbar-settings-columns-label": "Columnas",
+	"oojsplus-data-grid-filter-title": "Filtro $1"
 }
