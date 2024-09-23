@@ -77,13 +77,14 @@ OOJSPlus.ui.data.filter.Number.prototype.clearValues = function() {
 };
 
 OOJSPlus.ui.data.filter.Number.prototype.matches = function( value ) {
+	var cmpValue = parseInt( this.value.value );
 	switch ( this.operator ) {
 		case 'eq':
-			return value === this.value.value;
+			return value === cmpValue;
 		case 'lt':
-			return value < this.value.value;
+			return value < cmpValue;
 		case 'gt':
-			return value > this.value.value;
+			return value > cmpValue;
 		default:
 			return true;
 	}

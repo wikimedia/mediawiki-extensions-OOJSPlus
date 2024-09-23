@@ -17,6 +17,9 @@ OOJSPlus.ui.data.sorter.Sorter.prototype.getValue = function() {
 
 OOJSPlus.ui.data.sorter.Sorter.prototype.sort = function( data, field ) {
 	return data.sort( function( a, b ) {
+		if ( typeof a[field] === 'number' && typeof b[field] === 'number' ) {
+			return this.direction === 'ASC' ? a[field] - b[field] : b[field] - a[field];
+		}
 		if ( this.direction === 'ASC' ) {
 			return a[field].localeCompare( b[field], undefined, { ignorePunctuation: true } );
 		}
