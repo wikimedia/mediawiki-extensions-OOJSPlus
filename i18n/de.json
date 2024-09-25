@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"Brettchenweber",
 			"Gebu",
 			"McDutchie",
 			"Mirzali",
@@ -71,6 +72,6 @@
 	"oojsplus-data-grid-filter-title": "Filter $1",
 	"oojsplus-data-grid-filter-list-with-value": "Filter $1 mit Wert $2",
 	"oojsplus-data-grid-sort-direction-none": "Spalte $1 nicht sortiert",
-	"oojsplus-data-grid-sort-direction-desc": "Column $1 aufsteigend sortiert",
-	"oojsplus-data-grid-sort-direction-asc": "Column $1 absteigend sortiert"
+	"oojsplus-data-grid-sort-direction-desc": "Spalte $1 aufsteigend sortiert",
+	"oojsplus-data-grid-sort-direction-asc": "Spalte $1 absteigend sortiert"
 }

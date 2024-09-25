@@ -67,5 +67,8 @@
 	"oojsplus-data-grid-filter-update-no-filter": "לא הוחל מסנן",
 	"oojsplus-data-grid-toolbar-settings-aria-label": "הגדרות",
 	"oojsplus-data-grid-filter-title": "סינון $1",
-	"oojsplus-data-grid-filter-list-with-value": "סינון $1 עם הערך $2"
+	"oojsplus-data-grid-filter-list-with-value": "סינון $1 עם הערך $2",
+	"oojsplus-data-grid-sort-direction-none": "העמודה $1 לא ממוינת",
+	"oojsplus-data-grid-sort-direction-desc": "העמודה $1 ממוינת בסדר יורד",
+	"oojsplus-data-grid-sort-direction-asc": "העמודה $1 ממוינת בסדר עולה"
 }
