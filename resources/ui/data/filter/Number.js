@@ -14,6 +14,9 @@ OOJSPlus.ui.data.filter.Number.prototype.getLayout = function() {
 	} );
 
 	return new OO.ui.FieldsetLayout( { items: [
+			new OO.ui.FieldLayout( new OO.ui.LabelWidget( {
+				label: mw.message( 'oojsplus-data-grid-filter-label' ).text()
+			} ) ),
 			new OO.ui.FieldLayout( this.operatorWidget, {
 				label: mw.message( 'oojsplus-data-grid-filter-operator' ).text(),
 				align: 'left'
