@@ -174,6 +174,9 @@
 			}
 		} );
 
+		this.filterButton.popup.$element.attr( 'aria-label',
+			mw.message( 'oojsplus-data-grid-filter-title', this.headerText ).parse() );
+
 		this.filterButton.popup.connect( this, {
 			toggle: function( visible ) {
 				this.emit( 'filterToggle', this.filterButton, visible );

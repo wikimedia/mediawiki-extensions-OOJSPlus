@@ -12,10 +12,16 @@ OOJSPlus.ui.data.filter.Boolean.prototype.getLayout = function() {
 		change: 'changeValue'
 	} );
 
-	return new OO.ui.FieldLayout( this.valueWidget, {
-		label: mw.message( 'oojsplus-data-grid-filter-boolean' ).text(),
-		align: 'left'
-	} )
+	return new OO.ui.FieldsetLayout( { items: [
+			new OO.ui.FieldLayout( new OO.ui.LabelWidget( {
+				label: mw.message( 'oojsplus-data-grid-filter-label' ).text()
+			} ) ),
+			new OO.ui.FieldLayout( this.valueWidget, {
+				label: mw.message( 'oojsplus-data-grid-filter-boolean' ).text(),
+				align: 'left'
+			} )
+		]
+	} );
 };
 
 OOJSPlus.ui.data.filter.Boolean.prototype.getFilterValue = function() {

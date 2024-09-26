@@ -14,7 +14,10 @@ OOJSPlus.ui.data.filter.String.prototype.getLayout = function() {
 		change: 'changeValue'
 	} );
 
-	return this.input;
+	return new OO.ui.FieldLayout( this.input, {
+		label: mw.message( 'oojsplus-data-grid-filter-label' ).text(),
+		align: 'top'
+	} );
 };
 
 OOJSPlus.ui.data.filter.String.prototype.getFilterValue = function() {
