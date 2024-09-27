@@ -6,10 +6,8 @@ OOJSPlus.ui.data.filter.Filter = function ( cfg ) {
 	this.filterName = '';
 	this.closePopupOnChange = cfg.closePopupOnChange || false;
 
-	this.label = new OO.ui.LabelWidget( { label: mw.message( 'oojsplus-data-grid-filter-label' ).text() } );
-
 	this.$element.append( new OO.ui.HorizontalLayout( {
-		items: [ this.label, this.getCloseButton(), this.getClearButton()  ],
+		items: [ this.getCloseButton(), this.getClearButton()  ],
 		classes: [ 'grid-filter-popup-head' ]
 	} ).$element );
 	this.$element.append( this.getLayout().$element );
