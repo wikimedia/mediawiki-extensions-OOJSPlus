@@ -66,5 +66,8 @@
 	"oojsplus-data-grid-filter-update-no-filter": "未套用篩選",
 	"oojsplus-data-grid-toolbar-settings-aria-label": "設定",
 	"oojsplus-data-grid-filter-title": "篩選$1",
-	"oojsplus-data-grid-filter-list-with-value": "篩選值為$2的$1"
+	"oojsplus-data-grid-filter-list-with-value": "篩選值為$2的$1",
+	"oojsplus-data-grid-sort-direction-none": "欄位$1未排序",
+	"oojsplus-data-grid-sort-direction-desc": "欄位$1以降序排序",
+	"oojsplus-data-grid-sort-direction-asc": "欄位$1以升序排序"
 }

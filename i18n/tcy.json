@@ -8,6 +8,8 @@
 	},
 	"oojsplus-data-grid-filter-update-results": "$1ದಾತ್ {{PLURAL:$1|result|ನಾಡಿನ ಫಲಿತಾಂಸೊ}}ಲು",
 	"oojsplus-data-grid-toolbar-settings-aria-label": "ಸಂಯೋಜನೆಲು",
+	"oojsplus-data-grid-filter-title": "ಅರಿಪೆ$1",
+	"oojsplus-data-grid-filter-list-with-value": "$2 ಮೌಲ್ಯೊಡು $1 ಫಿಲ್ಟರ್ ಮಲ್ಪುಲೆ",
 	"oojsplus-data-grid-sort-direction-none": "ಕಾಲಮ್ $1 ವಿಂಗಡಣೆ ಆಯಿಜಿ",
 	"oojsplus-data-grid-sort-direction-desc": "$1 ಕಾಲಮ್ ನ್ ಅವರೋಹಣ ಕ್ರಮೊಟು ವಿಂಗಡಣೆ ಮಲ್ತೆರ್",
 	"oojsplus-data-grid-sort-direction-asc": "$1 ಕಾಲಮ್ ನ್ ಆರೋಹಣ ಕ್ರಮೊಟು ವಿಂಗಡಣೆ ಮಲ್ತೆರ್"
