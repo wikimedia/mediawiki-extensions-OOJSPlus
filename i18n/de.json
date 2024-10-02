@@ -1,13 +1,13 @@
 {
 	"@metadata": {
 		"authors": [
+			"Brettchenweber",
 			"Gebu",
 			"McDutchie",
 			"Mirzali",
 			"Mschlindwein",
 			"TomatoCake",
-			"Zabe",
-			"Brettchenweber"
+			"Zabe"
 		]
 	},
 	"oojsplus-desc": "Stellt Widgets und Hilfsfunktionen für OOJS bereit",
