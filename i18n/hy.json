@@ -13,5 +13,6 @@
 	"oojsplus-data-grid-filter-clear": "Մաքրել",
 	"oojsplus-data-grid-toolbar-reload-label": "Վերբեռնել",
 	"oojsplus-data-paginator-page-count": "$1-ը $2-ից",
-	"oojsplus-data-grid-selection-column-label": "Ընտրել"
+	"oojsplus-data-grid-selection-column-label": "Ընտրել",
+	"oojsplus-data-grid-toolbar-settings-aria-label": "Կարգավորումներ"
 }

@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"Brettchenweber",
 			"Gebu",
 			"McDutchie",
 			"Mirzali",
@@ -67,5 +68,10 @@
 	"oojsplus-data-grid-filter-update-active-filter": "$1 {{PLURAL:$1|Filter}} angewandt: $2",
 	"oojsplus-data-grid-filter-update-results": "$1 {{PLURAL:$1|Ergebnis|Ergebnisse}} gefunden",
 	"oojsplus-data-grid-filter-update-no-filter": "Kein Filter angewandt",
-	"oojsplus-data-grid-toolbar-settings-aria-label": "Einstellungen"
+	"oojsplus-data-grid-toolbar-settings-aria-label": "Einstellungen",
+	"oojsplus-data-grid-filter-title": "Filter $1",
+	"oojsplus-data-grid-filter-list-with-value": "Filter $1 mit Wert $2",
+	"oojsplus-data-grid-sort-direction-none": "Spalte $1 nicht sortiert",
+	"oojsplus-data-grid-sort-direction-desc": "Spalte $1 aufsteigend sortiert",
+	"oojsplus-data-grid-sort-direction-asc": "Spalte $1 absteigend sortiert"
 }

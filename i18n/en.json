@@ -62,5 +62,10 @@
 	"oojsplus-data-grid-filter-update-active-filter": "$1 {{PLURAL:$1|filter|filters}} applied: $2",
 	"oojsplus-data-grid-filter-update-results": "$1 {{PLURAL:$1|result|results}} found",
 	"oojsplus-data-grid-filter-update-no-filter": "No filter applied",
-	"oojsplus-data-grid-toolbar-settings-aria-label": "Settings"
+	"oojsplus-data-grid-toolbar-settings-aria-label": "Settings",
+	"oojsplus-data-grid-filter-title": "Filter $1",
+	"oojsplus-data-grid-filter-list-with-value": "Filter $1 with value $2",
+	"oojsplus-data-grid-sort-direction-none": "Column $1 not sorted",
+	"oojsplus-data-grid-sort-direction-desc": "Column $1 sorted in descending order",
+	"oojsplus-data-grid-sort-direction-asc": "Column $1 sorted in ascending order"
 }
