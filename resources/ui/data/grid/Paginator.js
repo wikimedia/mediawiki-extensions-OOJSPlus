@@ -7,9 +7,7 @@
 		this.grid = cfg.grid;
 		this.pageSize = this.store.getPageSize();
 		this.total = 0;
-		this.loaded = 0;
 		this.rows = {};
-		this.range = { start: 0, end: 0 };
 		this.hasPages = false;
 
 		this.store.connect( this, {
@@ -20,72 +18,62 @@
 
 		this.navigation = new OO.ui.HorizontalLayout();
 		this.$element.addClass( 'oojsplus-data-paginator' );
+		this.$element.attr( 'aria-label',
+			mw.message( 'oojsplus-data-paginator-aria-label' ).text() );
 		this.$element.append( this.navigation.$element );
+
+		this.splitPageButtons = false;
 	};
 
 	OO.inheritClass( OOJSPlus.ui.data.grid.Paginator, OO.ui.Widget );
 
-	OOJSPlus.ui.data.grid.Paginator.static.tagName = 'div';
+	OOJSPlus.ui.data.grid.Paginator.static.tagName = 'nav';
 
 	OOJSPlus.ui.data.grid.Paginator.prototype.init = function() {
 		this.total = this.store.getTotal();
-		this.rows = this.store.getData();
-		this.loaded = Object.keys( this.rows ).length;
-		this.paginate();
-	};
+		this.numberOfPages = Math.ceil( this.total / this.pageSize );
 
-	OOJSPlus.ui.data.grid.Paginator.prototype.next = function() {
-		if ( this.currentPage + 1  > this.numberOfPages ) {
-			return;
+		this.grid.setItems( [] );
+		this.navigation.clearItems();
+
+		let initialData = this.store.getData();
+		// add first 25 rows (at most) in a non-async way
+		this.storeLoadCursor = Math.min(this.pageSize, this.total);
+		// record position where next load should start from
+
+		if ( this.total > this.pageSize ) {
+			// fill placeholders within rest of this.rows object
+			this.rows = Object.assign(
+				{},
+				...Array.from(
+					{ length: this.total },
+					(_, index) => ({ [index]: null })
+				)
+			);
+
+			for (let i = 0; i <	 this.pageSize; i++ ) {
+				this.rows[i] = initialData[i];
+			}
+			this.createControls();
+		} else {
+			this.rows = initialData;
 		}
-
-		this.currentPage++;
-		var start = this.pageSize * ( this.currentPage - 1 ),
-			end = ( start + this.pageSize > this.total ? this.total : start + this.pageSize ) - 1;
-		this.store.setOffset( ( this.currentPage - 1 ) * this.pageSize );
-
-		this.assertLoaded( end ).done( function( data ) {
-			this.rows = data;
-			this.range.start = start;
-			this.range.end = end;
-			this.loaded = Object.keys( this.rows ).length;
-			this.grid.clearItems();
-			this.grid.setItems( this.subsetRows( this.range ) );
-			this.updateControls();
-		}.bind( this ) ).fail( function () {
-			// In case call to get next page's data fails, we cannot switch page,
-			// so reset the page number to the one we are currently at (rollback page change)
-			this.currentPage--;
-			this.grid.setItems( [] );
-		}.bind( this ) );
-		this.emit( 'next' );
-	};
-
-	OOJSPlus.ui.data.grid.Paginator.prototype.assertLoaded = function( max ) {
-		if ( !this.rows.hasOwnProperty( max ) ) {
-			return this.store.load();
-		}
-
-		return $.Deferred().resolve( this.rows ).promise();
-	};
-
-	OOJSPlus.ui.data.grid.Paginator.prototype.previous = function() {
-		if ( this.currentPage === 1 ) {
-			return;
-		}
-
-		this.currentPage--;
-		this.range.start = this.pageSize * ( this.currentPage - 1 );
-		this.range.end = this.range.start + this.pageSize - 1;
-		this.grid.clearItems();
-		this.grid.setItems( this.subsetRows( this.range ) );
-		this.updateControls();
-		this.emit( 'previous' );
+		this.currentPage = 0;
+		this.createGridPage( 1 );
 	};
 
 	OOJSPlus.ui.data.grid.Paginator.prototype.createControls = function() {
-		this.currentPageWidget = new OO.ui.LabelWidget();
-		this.updatePageCount();
+		this.numberButtonSelectWidget = new OO.ui.ButtonSelectWidget();
+		this.updateNumberButtonSelect();
+
+		this.firstButton = new OO.ui.ButtonWidget( {
+			icon: 'doubleChevronStart',
+			title: mw.message( 'oojsplus-data-paginator-first' ).plain(),
+			disabled: true
+		} );
+		this.firstButton.connect( this, {
+			click: 'first'
+		} );
 
 		this.previousButton = new OO.ui.ButtonWidget( {
 			icon: 'previous',
@@ -104,45 +92,118 @@
 			click: 'next'
 		} );
 
+		this.lastButton = new OO.ui.ButtonWidget( {
+			icon: 'doubleChevronEnd',
+			title: mw.message( 'oojsplus-data-paginator-last' ).plain(),
+			disabled: true
+		} );
+		this.lastButton.connect( this, {
+			click: 'last'
+		} );
+
 		this.currentEntriesShown = new OO.ui.LabelWidget( {
 			classes: [ 'current-entries-visible' ]
 		} );
 
-		this.navigation.addItems( [ this.previousButton, this.currentPageWidget, this.nextButton, this.currentEntriesShown ] );
+		this.navigation.addItems( [
+			this.firstButton,
+			this.previousButton,
+			this.numberButtonSelectWidget,
+			this.nextButton,
+			this.lastButton,
+			this.currentEntriesShown
+		] );
 		this.hasPages = true;
 	};
 
-	OOJSPlus.ui.data.grid.Paginator.prototype.updatePageCount = function() {
-		this.currentPageWidget.setLabel(
-			mw.message( 'oojsplus-data-paginator-page-count', this.currentPage, this.numberOfPages ).plain()
+	OOJSPlus.ui.data.grid.Paginator.prototype.updateNumberButtonSelect = function() {
+		this.splitPageButtons = this.numberOfPages > 5 ? true : false;
+
+		for ( let i = 1; i <= this.numberOfPages; i++ ) {
+			let buttonTitle = mw.message(
+				'oojsplus-data-paginator-page-number-button-title',
+				i.toString()
+			).plain();
+			let buttonUnit = new OO.ui.ButtonOptionWidget( {
+				data: i,
+				label: i.toString(),
+				title: buttonTitle
+			} );
+			buttonUnit.$element.attr( 'aria-label', buttonTitle );
+			this.numberButtonSelectWidget.addItems( [buttonUnit] );
+		}
+		this.numberButtonSelectWidget.$element.attr(
+			'aria-label',
+			mw.message( 'oojsplus-data-paginator-page-number-switch-hint' ).text()
 		);
-		this.currentPageWidget.$element.attr( 'tabindex', 0 );
+		this.numberButtonSelectWidget.selectItem(
+			this.numberButtonSelectWidget.findFirstSelectableItem()
+		);
+		this.numberButtonSelectWidget.connect( this, {select: 'createGridPage'} );
 	};
 
-	OOJSPlus.ui.data.grid.Paginator.prototype.paginate = function() {
-		this.navigation.clearItems();
-		this.grid.setItems( [] );
+	OOJSPlus.ui.data.grid.Paginator.prototype.createGridPage = function ( input ) {
+		let pageNumber;
 
-		this.currentPage = 0;
-		this.currentRange = { start: 0, end: 0 };
-		this.numberOfPages = Math.ceil( this.total / this.pageSize );
-		if ( this.total > this.pageSize ) {
-			// There is more than one page
-			this.createControls();
+		if ( typeof input === 'object' ) {
+			pageNumber = input.data;
+		} else if ( typeof input === 'number' ) {
+			pageNumber = input;
+		} else {
+			throw new Error("Invalid input type for createGridPage()");
 		}
-		this.next();
+
+		if ( this.currentPage === pageNumber ) {
+			return;
+		}
+		let fallbackPage = this.currentPage;
+		this.currentPage = pageNumber;
+		if ( this.numberButtonSelectWidget ) {
+			this.numberButtonSelectWidget.selectItemByData( this.currentPage );
+		}
+
+		let start = this.pageSize * ( this.currentPage - 1 ),
+			end = ( start + this.pageSize > this.total ? this.total : start + this.pageSize ) - 1;
+
+		this.assertLoaded( start, end ).done( function() {
+			this.grid.clearItems();
+			this.grid.setItems( this.subsetRows( start, end ) );
+			this.updateControls();
+		}.bind( this ) ).fail( function () {
+			this.currentPage = fallbackPage;
+			this.grid.setItems( [] );
+			console.log('load failed!');
+		}.bind( this ) );
 	};
 
-	OOJSPlus.ui.data.grid.Paginator.prototype.subsetRows = function( range ) {
-		if ( this.loaded < range.end ) {
-			return [];
+	OOJSPlus.ui.data.grid.Paginator.prototype.assertLoaded = function( start, end ) {
+		let dfd = $.Deferred();
+
+		if ( this.rows[end] === null ) {
+			this.store.setOffset( start );
+			this.store.load().done((data) => {
+				for (let i = 0; i <= ( end - start ); i++) {
+					this.rows[start + i] = data[this.storeLoadCursor + i];
+				}
+				this.storeLoadCursor= this.storeLoadCursor + end - start + 1;
+				dfd.resolve(this.rows);
+			}).fail((e) => {
+				dfd.reject(e);
+			});
+		} else {
+			dfd.resolve(this.rows);
 		}
+
+		return dfd.promise();
+	};
+
+	OOJSPlus.ui.data.grid.Paginator.prototype.subsetRows = function( start, end ) {
 		var subset = [];
 		for ( var index in this.rows ) {
-			if ( !this.rows.hasOwnProperty( index ) ) {
+			if (this.rows[index] === null) {
 				continue;
 			}
-			if ( index < range.start || index > range.end ) {
+			if ( index < start || index > end ) {
 				continue;
 			}
 			subset.push( this.rows[index] );
@@ -151,14 +212,71 @@
 		return subset;
 	};
 
+	OOJSPlus.ui.data.grid.Paginator.prototype.first = function() {
+		if ( this.currentPage === 1 ) {
+			return;
+		}
+		this.createGridPage( 1 );
+	};
+
+	OOJSPlus.ui.data.grid.Paginator.prototype.previous = function() {
+		if ( this.currentPage === 1 ) {
+			return;
+		}
+		this.createGridPage( this.currentPage - 1);
+	};
+
+	OOJSPlus.ui.data.grid.Paginator.prototype.next = function() {
+		if ( this.currentPage + 1  > this.numberOfPages ) {
+			return;
+		}
+		this.createGridPage( this.currentPage + 1);
+	};
+
+	OOJSPlus.ui.data.grid.Paginator.prototype.last = function() {
+		if ( this.currentPage + 1  > this.numberOfPages ) {
+			return;
+		}
+		this.createGridPage( this.numberOfPages );
+	};
+
 	OOJSPlus.ui.data.grid.Paginator.prototype.updateControls = function() {
 		if ( !this.hasPages ) {
 			return;
 		}
 		this.nextButton.setDisabled( this.currentPage === this.numberOfPages );
+		this.lastButton.setDisabled( this.currentPage === this.numberOfPages );
 		this.previousButton.setDisabled( this.currentPage === 1 );
-		this.updatePageCount();
+		this.firstButton.setDisabled( this.currentPage === 1 );
 		this.calculateShowedEntries();
+
+		if ( !this.splitPageButtons ) {
+			return;
+		}
+
+		let minRange = 0;
+		if ( this.currentPage === 1 ) {
+			minRange = this.currentPage;
+		} else if ( this.currentPage === 2 ) {
+			minRange = this.currentPage - 1;
+		} else if ( this.currentPage === this.numberOfPages - 1 ) {
+			minRange = this.currentPage - 3;
+		} else if ( this.currentPage === this.numberOfPages ) {
+			minRange = this.currentPage - 4;
+		} else {
+			minRange = this.currentPage - 2;
+		}
+		let maxRange = minRange + 4;
+
+		this.numberButtonSelectWidget.items.forEach( function ( buttonUnit ) {
+			if ( minRange <= buttonUnit.data && buttonUnit.data <= maxRange ) {
+				buttonUnit.toggle( true );
+			} else {
+				if ( buttonUnit.isVisible() ) {
+					buttonUnit.toggle( false );
+				}
+			}
+		} );
 	};
 
 	OOJSPlus.ui.data.grid.Paginator.prototype.calculateShowedEntries = function() {
@@ -168,8 +286,14 @@
 			end = this.total;
 		}
 
-		this.currentEntriesShown.setLabel(
-			start + ' - ' + end + '/' + this.total
-		);
+		if ( end === start) {
+			this.currentEntriesShown.setLabel(
+				mw.message( 'oojsplus-data-paginator-page-showed-single-entry', start).plain()
+			);
+		} else {
+			this.currentEntriesShown.setLabel(
+				mw.message( 'oojsplus-data-paginator-page-showed-many-entries', start, end).plain()
+			);
+		}
 	};
 } )( mediaWiki, jQuery );
