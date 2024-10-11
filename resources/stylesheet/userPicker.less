@@ -2,8 +2,10 @@
 	display: inline-block;
 	min-height: 32px;
 	min-width: 100px;
+	width: 100%;
 	padding-top: 2px;
 	.user-image {
+		position: relative;
 		display: inline-block;
 		vertical-align: middle;
 		width: 32px;
@@ -20,13 +22,18 @@
 		}
 	}
 	.user-name-cnt {
-		display: inline-block;
-		vertical-align: middle;
-		text-align: left;
+		position: absolute;
+		top: calc( (100% - 1em)/2 );
+		white-space: pre;
 		.user-display {
 			display: block;
 			margin: 0;
 			line-height: 1;
 		}
+	}
+
+	.user-image .user-name-cnt,
+	.user-image-default .user-name-cnt {
+		left: 40px;
 	}
 }

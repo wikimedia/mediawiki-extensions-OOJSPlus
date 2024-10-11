@@ -16,21 +16,33 @@ OOJSPlus.ui.widget.UserWidget = function( cfg ) {
 		if ( this.showRawUsername && this.getDisplayName() !== this.user.user_name ) {
 			this.$nameBox.append( $( '<span>' ).addClass( 'user-username' ).text( this.user.user_name ) );
 		}
-		if ( this.showImage ) {
+
+		if ( this.showLink && this.showImage ) {
 			var $userImage = $( '<span>' ).addClass( 'user-image' );
 			if ( this.user.hasOwnProperty( 'user_image' ) && this.user.user_image ) {
-				$userImage.html(this.user.user_image );
+				$userImage.html( this.user.user_image );
+				$anchor = $userImage.find( 'a' ).first();
+				$( $anchor ).append( this.$nameBox );
+			} else {
+				var $defaultImage = $( '<div>' ).addClass( 'user-image-default' );
+				var $link = $( '<a>' ).attr( 'href', this.user.page_url ).append( this.$nameBox );
+				$defaultImage.append( $link );
+				$userImage.append( $defaultImage );
+			}
+			this.$element.append( $userImage );
+		} else if ( this.showLink ) {
+			var $link = $( '<a>' ).attr( 'href', this.user.page_url ).append( this.$nameBox );
+			this.$element.html( $link );
+		} else if ( this.showImage ) {
+			var $userImage = $( '<span>' ).addClass( 'user-image' );
+			if ( this.user.hasOwnProperty( 'user_image' ) && this.user.user_image ) {
+				$userImage.html( this.user.user_image );
 			} else {
 				$userImage.html( $( '<div>' ).addClass( 'user-image-default' ) );
 			}
 			this.$element.append( $userImage );
-		}
-		this.$element.append( this.$nameBox );
-
-		if ( this.showLink && this.user.hasOwnProperty( 'page_url' ) ) {
-			// Wrap content of this.$element in a link
-			var $link = $( '<a>' ).attr( 'href', this.user.page_url ).append( this.$element.html() );
-			this.$element.html( $link );
+		} else {
+			this.$element.append( this.$nameBox );
 		}
 		this.emit( 'loaded' );
 
