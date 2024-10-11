@@ -32,6 +32,5 @@
 	"oojsplus-data-grid-filter-number-value": "Valor",
 	"oojsplus-data-paginator-next": "Próxima página",
 	"oojsplus-data-paginator-previous": "Página anterior",
-	"oojsplus-data-grid-toolbar-reload-label": "Recarregar",
-	"oojsplus-data-paginator-page-count": "$1 de $2"
+	"oojsplus-data-grid-toolbar-reload-label": "Recarregar"
 }

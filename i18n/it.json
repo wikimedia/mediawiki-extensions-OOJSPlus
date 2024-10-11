@@ -12,7 +12,6 @@
 	"oojsplus-stepprogressbar-default-final-label": "Fatto",
 	"oojsplus-data-paginator-next": "Pagina successiva",
 	"oojsplus-data-paginator-previous": "Pagina precedente",
-	"oojsplus-data-paginator-page-count": "$1 di $2",
 	"oojsplus-data-grid-filter-boolean": "Valore",
 	"oojsplus-data-tree-item-remove-confirm-label": "Rimuovere l'elemento \"$1\"?",
 	"oojsplus-data-grid-filter-close": "Chiudi",
