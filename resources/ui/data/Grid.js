@@ -113,8 +113,7 @@
 			} else {
 				this.setItems( Object.values( data ) );
 			}
-			var filterAnnouncement = mw.message( 'oojsplus-data-grid-filter-update-results',
-				Object.keys( this.store.getData() ).length ).text();
+			var filterAnnouncement = mw.message( 'oojsplus-data-grid-filter-update-results', this.store.getTotal() ).text();
 			this.$filterCnt.text( filterAnnouncement );
 		}.bind( this ) );
 
@@ -125,6 +124,11 @@
 		if ( this.orderable ) {
 			this.$table.sorttable( {} );
 		}
+		this.$countAnnouncer = $( '<div>' ).attr( 'aria-live', 'polite' ).addClass( 'visually-hidden' );
+		this.$element.append( this.$countAnnouncer );
+		this.connect( this, {
+			datasetChange: 'announceCount'
+		} );
 	};
 
 	OO.inheritClass( OOJSPlus.ui.data.GridWidget, OO.ui.Widget );
@@ -517,8 +521,6 @@
 		var filterKeys = Object.keys( filters );
 		if ( filterKeys.length === 0 ) {
 			var announcement = mw.message( 'oojsplus-data-grid-filter-update-no-filter' ).text();
-			announcement += mw.message( 'oojsplus-data-grid-filter-update-results',
-				Object.keys( this.store.getData() ).length ).text();
 			this.$filterCnt.text( announcement );
 		} else {
 			var filterNames = '';
@@ -534,8 +536,6 @@
 			} );
 			var filterAnnouncement = mw.message( 'oojsplus-data-grid-filter-update-active-filter',
 				filterKeys.length, filterNames ).text();
-			filterAnnouncement += mw.message( 'oojsplus-data-grid-filter-update-results',
-				Object.keys( this.store.getData() ).length ).text();
 			this.$filterCnt.text( filterAnnouncement );
 		}
 	};
@@ -586,5 +586,11 @@
 			columnOrder.push( $( $ths[i] ).attr( 'data-field' ) );
 		}
 		return columnOrder;
+	};
+
+	OOJSPlus.ui.data.GridWidget.prototype.announceCount = function() {
+		var count = this.store.getTotal();
+		var countMsg = mw.message( 'oojsplus-data-grid-filter-update-results', count ).text();
+		this.$countAnnouncer.text( countMsg );
 	};
 } )( mediaWiki, jQuery );

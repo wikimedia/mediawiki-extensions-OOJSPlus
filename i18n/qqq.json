@@ -77,5 +77,8 @@
 	"oojsplus-data-grid-filter-list-with-value": "Label to name filter with value\nParamters:\n* $1 - name of filter\n* $2 - value of filter",
 	"oojsplus-data-grid-sort-direction-none": "Label for announcing no sorting of a column\n\nParameters:\n* $1 - name of column",
 	"oojsplus-data-grid-sort-direction-desc": "Label for announcing descending sorting of a column\n\nParameters:\n* $1 - name of column",
-	"oojsplus-data-grid-sort-direction-asc": "Label for announcing ascending sorting of a column\n\nParameters:\n* $1 - name of column"
+	"oojsplus-data-grid-sort-direction-asc": "Label for announcing ascending sorting of a column\n\nParameters:\n* $1 - name of column",
+	"oojsplus-data-grid-date-filter-announce-lt": "Announcement for selecting date filter. Filters for items before selected date\n $1 - Selected date",
+	"oojsplus-data-grid-date-filter-announce-gt": "Announcement for selecting date filter. Filters for items after selected date\n $1 - Selected date",
+	"oojsplus-data-grid-date-filter-announce-eq": "Announcement for selecting date filter. Filters for items on selected date\n $1 - Selected date"
 }
