@@ -64,6 +64,7 @@
 
 	OOJSPlus.ui.data.grid.Paginator.prototype.createControls = function() {
 		this.numberButtonSelectWidget = new OO.ui.ButtonSelectWidget();
+		this.numberButtonSelectWidget.$element.css('margin-right', '0');
 		this.updateNumberButtonSelect();
 
 		this.firstButton = new OO.ui.ButtonWidget( {
@@ -105,12 +106,16 @@
 			classes: [ 'current-entries-visible' ]
 		} );
 
-		this.navigation.addItems( [
+		let groupOfAllButtons = new OO.ui.ButtonGroupWidget();
+		groupOfAllButtons.addItems( [
 			this.firstButton,
 			this.previousButton,
 			this.numberButtonSelectWidget,
 			this.nextButton,
-			this.lastButton,
+			this.lastButton
+		] );
+		this.navigation.addItems( [
+			groupOfAllButtons,
 			this.currentEntriesShown
 		] );
 		this.hasPages = true;
