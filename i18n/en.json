@@ -67,7 +67,7 @@
 	"oojsplus-namespace-system-talk": "System talk namespaces",
 	"oojsplus-data-grid-filter-update-active-filter": "$1 {{PLURAL:$1|filter|filters}} applied: $2",
 	"oojsplus-data-grid-filter-update-results": "$1 {{PLURAL:$1|result|results}} found",
-	"oojsplus-data-grid-filter-update-no-filter": "No filter applied",
+	"oojsplus-data-grid-filter-update-no-filter": "No table filter applied",
 	"oojsplus-data-grid-toolbar-settings-aria-label": "Settings",
 	"oojsplus-data-grid-filter-title": "Filter $1",
 	"oojsplus-data-grid-filter-list-with-value": "Filter $1 with value $2",
