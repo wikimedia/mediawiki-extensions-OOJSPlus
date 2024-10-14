@@ -23,6 +23,7 @@
 	"oojsplus-data-grid-filter-label": "Filteren",
 	"oojsplus-data-grid-filter-clear": "Eidel maachen",
 	"oojsplus-data-grid-filter-number-value": "Wäert",
+	"oojsplus-data-paginator-last": "Lescht Säit",
 	"oojsplus-data-grid-grouper-no-group": "(keng Grupp)",
 	"oojsplus-data-grid-selection-column-label": "Eraussichen",
 	"oojsplus-data-grid-filter-update-results": "$1 {{PLURAL:$1|Resultat|Resultater}} fonnt",

@@ -1,8 +1,10 @@
 {
 	"@metadata": {
 		"authors": [
-			"Awdsweq123"
+			"Awdsweq123",
+			"Băng Tỏa"
 		]
 	},
-	"oojsplus-stepprogressbar-default-final-label": "Xong"
+	"oojsplus-stepprogressbar-default-final-label": "Xong",
+	"oojsplus-data-paginator-aria-label": "Điều hướng trang"
 }
