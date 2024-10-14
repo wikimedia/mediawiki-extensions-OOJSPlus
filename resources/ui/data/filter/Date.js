@@ -2,6 +2,9 @@ OOJSPlus.ui.data.filter.Date = function ( cfg ) {
 	OOJSPlus.ui.data.filter.Date.parent.call( this, cfg );
 	this.operator = cfg.operator || 'eq';
 	this.value = this.getFilterValue();
+	this.connect( this, {
+		change: 'announce'
+	} );
 };
 
 OO.inheritClass( OOJSPlus.ui.data.filter.Date, OOJSPlus.ui.data.filter.Number );
@@ -16,7 +19,7 @@ OOJSPlus.ui.data.filter.Date.prototype.getLayout = function() {
 		change: 'changeValue'
 	} );
 
-	return new OO.ui.FieldsetLayout( { items: [
+	var $layout = new OO.ui.FieldsetLayout( { items: [
 			new OO.ui.FieldLayout( new OO.ui.LabelWidget( {
 				label: mw.message( 'oojsplus-data-grid-filter-label' ).text()
 			} ) ),
@@ -27,6 +30,10 @@ OOJSPlus.ui.data.filter.Date.prototype.getLayout = function() {
 			this.input
 		]
 	} );
+	// `aria-atomic` will also announce changes to the grid dataset, as changing date will auto-apply filter
+	this.$announcer = $( '<div>' ).attr( 'aria-live', 'polite' ).attr( 'aria-atomic', 'true' ).addClass( 'visually-hidden' );
+	$layout	.$element.append( this.$announcer );
+	return $layout;
 };
 
 OOJSPlus.ui.data.filter.Date.prototype.changeOperator = function( operator ) {
@@ -62,6 +69,16 @@ OOJSPlus.ui.data.filter.Date.prototype.convertToFilterDate = function( value ) {
 	// Convert Y-m-d to Ymd
 	var date = value.split( '-' );
 	return date.join( '' );
+};
+
+OOJSPlus.ui.data.filter.Date.prototype.announce = function() {
+	var operator = this.operator;
+	var value = this.conditionValue;
+
+	// oojsplus-data-grid-date-filter-announce-lt
+	// oojsplus-data-grid-date-filter-announce-eq
+	// oojsplus-data-grid-date-filter-announce-qt
+	this.$announcer.text( mw.msg( 'oojsplus-data-grid-date-filter-announce-' + operator, value ) );
 };
 
 OOJSPlus.ui.data.registry.filterRegistry.register( 'date', OOJSPlus.ui.data.filter.Date );
