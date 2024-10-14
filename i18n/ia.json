@@ -41,7 +41,6 @@
 	"oojsplus-data-paginator-next": "Pagina sequente",
 	"oojsplus-data-paginator-previous": "Pagina precedente",
 	"oojsplus-data-grid-toolbar-reload-label": "Recargar",
-	"oojsplus-data-paginator-page-count": "$1 de $2",
 	"oojsplus-data-grid-filter-boolean": "Valor",
 	"oojsplus-formelement-type-user-picker": "Entrata de usator",
 	"oojsplus-formelement-type-group-picker": "Entrata de gruppo",
@@ -58,5 +57,14 @@
 	"oojsplus-namespace-content": "Spatios de nomines de contento",
 	"oojsplus-namespace-system": "Spatios de nomines del systema",
 	"oojsplus-namespace-content-talk": "Spatios de nomines de discussion de contento",
-	"oojsplus-namespace-system-talk": "Spatios de nomines de discussion del systema"
+	"oojsplus-namespace-system-talk": "Spatios de nomines de discussion del systema",
+	"oojsplus-data-grid-filter-update-active-filter": "$1 filtro{{PLURAL:$1||s}} applicate: $2",
+	"oojsplus-data-grid-filter-update-results": "$1 resultato{{PLURAL:$1||s}} trovate",
+	"oojsplus-data-grid-filter-update-no-filter": "Necun filtro applicate",
+	"oojsplus-data-grid-toolbar-settings-aria-label": "Parametros",
+	"oojsplus-data-grid-filter-title": "Filtro $1",
+	"oojsplus-data-grid-filter-list-with-value": "Filtro $1 con valor $2",
+	"oojsplus-data-grid-sort-direction-none": "Columna $1 non ordinate",
+	"oojsplus-data-grid-sort-direction-desc": "Columna $1 ordinate in ordine descendente",
+	"oojsplus-data-grid-sort-direction-asc": "Columna $1 ordinate in ordine ascendente"
 }
