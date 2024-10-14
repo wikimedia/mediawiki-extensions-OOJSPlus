@@ -220,7 +220,11 @@
 				"oojsplus-data-grid-filter-list-with-value",
 				"oojsplus-data-grid-sort-direction-none",
 				"oojsplus-data-grid-sort-direction-desc",
-				"oojsplus-data-grid-sort-direction-asc"
+				"oojsplus-data-grid-sort-direction-asc",
+				"oojsplus-data-grid-filter-update-results",
+				"oojsplus-data-grid-date-filter-announce-lt",
+				"oojsplus-data-grid-date-filter-announce-gt",
+				"oojsplus-data-grid-date-filter-announce-eq"
 			]
 		},
 		"ext.oOJSPlus.icons": {

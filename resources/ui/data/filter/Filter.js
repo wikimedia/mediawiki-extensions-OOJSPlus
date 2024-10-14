@@ -41,6 +41,10 @@ OOJSPlus.ui.data.filter.Filter.prototype.getName = function() {
 	return this.filterName;
 };
 
+OOJSPlus.ui.data.filter.Filter.prototype.setOverlay = function( $overlay ) {
+	this.$overlay = $overlay;
+};
+
 OOJSPlus.ui.data.filter.Filter.prototype.getClearButton = function() {
 	this.clearButton = new OO.ui.ButtonWidget( {
 		framed: true,

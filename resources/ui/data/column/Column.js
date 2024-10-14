@@ -173,6 +173,7 @@
 				autoFlip: false
 			}
 		} );
+		this.filter.setOverlay( this.$overlay );
 
 		this.filterButton.popup.$element.attr( 'aria-label',
 			mw.message( 'oojsplus-data-grid-filter-title', this.headerText ).parse() );
