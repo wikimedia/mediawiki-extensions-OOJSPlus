@@ -17,7 +17,7 @@ OOJSPlus.ui.widget.UserWidget = function( cfg ) {
 			this.$nameBox.append( $( '<span>' ).addClass( 'user-username' ).text( this.user.user_name ) );
 		}
 
-		if ( this.showLink && this.showImage ) {
+		if ( this.showImage ) {
 			var $userImage = $( '<span>' ).addClass( 'user-image' );
 			if ( this.user.hasOwnProperty( 'user_image' ) && this.user.user_image ) {
 				$userImage.html( this.user.user_image );
@@ -33,14 +33,6 @@ OOJSPlus.ui.widget.UserWidget = function( cfg ) {
 		} else if ( this.showLink ) {
 			var $link = $( '<a>' ).attr( 'href', this.user.page_url ).append( this.$nameBox );
 			this.$element.html( $link );
-		} else if ( this.showImage ) {
-			var $userImage = $( '<span>' ).addClass( 'user-image' );
-			if ( this.user.hasOwnProperty( 'user_image' ) && this.user.user_image ) {
-				$userImage.html( this.user.user_image );
-			} else {
-				$userImage.html( $( '<div>' ).addClass( 'user-image-default' ) );
-			}
-			this.$element.append( $userImage );
 		} else {
 			this.$element.append( this.$nameBox );
 		}
