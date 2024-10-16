@@ -76,5 +76,7 @@
 	"oojsplus-data-grid-sort-direction-asc": "Column $1 sorted in ascending order",
 	"oojsplus-data-grid-date-filter-announce-lt": "Before $1",
 	"oojsplus-data-grid-date-filter-announce-gt": "After $1",
-	"oojsplus-data-grid-date-filter-announce-eq": "On $1"
+	"oojsplus-data-grid-date-filter-announce-eq": "On $1",
+	"oojsplus-data-grid-filter-boolean-true": "Yes",
+	"oojsplus-data-grid-filter-boolean-false": "No"
 }
