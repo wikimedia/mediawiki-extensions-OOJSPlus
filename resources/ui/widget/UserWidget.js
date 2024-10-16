@@ -25,12 +25,16 @@ OOJSPlus.ui.widget.UserWidget = function( cfg ) {
 				$( $anchor ).append( this.$nameBox );
 			} else {
 				var $defaultImage = $( '<div>' ).addClass( 'user-image-default' );
-				var $link = $( '<a>' ).attr( 'href', this.user.page_url ).append( this.$nameBox );
-				$defaultImage.append( $link );
+				if ( this.user.hasOwnProperty( 'page_url' ) ) {
+					var $link = $( '<a>' ).attr( 'href', this.user.page_url ).append( this.$nameBox );
+					$defaultImage.append( $link );
+				} else {
+					$defaultImage.append( this.$nameBox );
+				}
 				$userImage.append( $defaultImage );
 			}
 			this.$element.append( $userImage );
-		} else if ( this.showLink ) {
+		} else if ( this.showLink && this.user.hasOwnProperty( 'page_url' ) ) {
 			var $link = $( '<a>' ).attr( 'href', this.user.page_url ).append( this.$nameBox );
 			this.$element.html( $link );
 		} else {
