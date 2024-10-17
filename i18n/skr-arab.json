@@ -19,5 +19,6 @@
 	"oojsplus-data-grid-toolbar-settings-columns-label": "کالم",
 	"oojsplus-data-grid-grouper-no-group": "(کوئی گروپ کائنی)",
 	"oojsplus-data-grid-selection-column-label": "چݨو",
-	"oojsplus-data-grid-toolbar-settings-aria-label": "ترتیباں"
+	"oojsplus-data-grid-toolbar-settings-aria-label": "ترتیباں",
+	"oojsplus-data-grid-date-filter-announce-eq": "$1 تے"
 }

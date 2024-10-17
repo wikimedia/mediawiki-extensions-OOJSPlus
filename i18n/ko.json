@@ -26,7 +26,10 @@
 	"oojsplus-data-grid-filter-label": "필터",
 	"oojsplus-data-paginator-next": "다음 페이지",
 	"oojsplus-data-paginator-previous": "이전 페이지",
+	"oojsplus-data-paginator-first": "처음 문서",
+	"oojsplus-data-paginator-last": "마지막 문서",
 	"oojsplus-data-grid-toolbar-reload-label": "다시 불러오기",
+	"oojsplus-data-paginator-page-number-button-title": "페이지 $1",
 	"oojsplus-data-grid-grouper-no-group": "(그룹 없음)",
 	"oojsplus-data-grid-selection-column-label": "선택",
 	"oojsplus-data-grid-filter-title": "필터 $1"
