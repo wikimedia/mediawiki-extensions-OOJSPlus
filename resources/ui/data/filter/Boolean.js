@@ -1,8 +1,8 @@
 OOJSPlus.ui.data.filter.Boolean = function ( cfg ) {
 	this.value = this.getFilterValue();
-	cfg.closePopupOnChange = true;
 	this.trueLabel = cfg.trueLabel || mw.message( 'oojsplus-data-grid-filter-boolean-true' ).text();
 	this.falseLabel = cfg.falseLabel || mw.message( 'oojsplus-data-grid-filter-boolean-false' ).text();
+	cfg.closePopupOnChange = false;
 	OOJSPlus.ui.data.filter.Boolean.parent.call( this, cfg );
 };
 
