@@ -1,6 +1,7 @@
 OOJSPlus.ui.data.column.Boolean = function ( cfg ) {
 	cfg = cfg || {};
 	cfg.align = 'center';
+	cfg.autoClosePopup = true;
 	OOJSPlus.ui.data.column.Boolean.parent.call( this, cfg );
 	this.showOnlyTrue = cfg.onlyShowTrue || false;
 	this.$element.addClass( 'boolean-column' );
