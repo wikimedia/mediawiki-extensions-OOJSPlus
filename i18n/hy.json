@@ -16,5 +16,7 @@
 	"oojsplus-data-grid-selection-column-label": "Ընտրել",
 	"oojsplus-data-grid-toolbar-settings-aria-label": "Կարգավորումներ",
 	"oojsplus-data-paginator-first": "Առաջին էջ",
-	"oojsplus-data-paginator-page-number-button-title": "Էջ $1"
+	"oojsplus-data-paginator-page-number-button-title": "Էջ $1",
+	"oojsplus-data-grid-filter-boolean-true": "Այո",
+	"oojsplus-data-grid-filter-boolean-false": "Ոչ"
 }

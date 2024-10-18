@@ -35,5 +35,7 @@
 	"oojsplus-data-paginator-page-showed-single-entry": "Показана запись $1.",
 	"oojsplus-data-grid-filter-update-no-filter": "Фильтр таблицы не применен",
 	"oojsplus-data-grid-date-filter-announce-lt": "До $1",
-	"oojsplus-data-grid-date-filter-announce-gt": "После $1"
+	"oojsplus-data-grid-date-filter-announce-gt": "После $1",
+	"oojsplus-data-grid-filter-boolean-true": "Да",
+	"oojsplus-data-grid-filter-boolean-false": "Нет"
 }
