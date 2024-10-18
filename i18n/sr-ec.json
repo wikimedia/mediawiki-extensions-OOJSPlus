@@ -13,5 +13,9 @@
 	"oojsplus-data-grid-selection-column-label": "Изабери",
 	"oojsplus-data-grid-filter-close": "Затвори",
 	"oojsplus-data-grid-toolbar-reload-label": "Освежи",
-	"oojsplus-data-grid-toolbar-settings-aria-label": "Подешавања"
+	"oojsplus-data-grid-toolbar-settings-aria-label": "Подешавања",
+	"oojsplus-data-paginator-first": "Прва страница",
+	"oojsplus-data-paginator-last": "Последња страница",
+	"oojsplus-data-paginator-page-number-button-title": "Страница $1",
+	"oojsplus-data-paginator-page-showed-many-entries": "Приказани уноси од $1 до $2."
 }

@@ -20,5 +20,8 @@
 	"oojsplus-data-grid-filter-list-with-value": "Filtro $1 con valore $2",
 	"oojsplus-data-grid-sort-direction-none": "Colonna $1 non ordinata",
 	"oojsplus-data-grid-sort-direction-desc": "Colonna $1 ordinata in ordine decrescente",
-	"oojsplus-data-grid-sort-direction-asc": "Colonna $1 ordinata in ordine crescente"
+	"oojsplus-data-grid-sort-direction-asc": "Colonna $1 ordinata in ordine crescente",
+	"oojsplus-data-grid-date-filter-announce-lt": "Prima di $1",
+	"oojsplus-data-grid-date-filter-announce-gt": "Dopo $1",
+	"oojsplus-data-grid-date-filter-announce-eq": "Il $1"
 }

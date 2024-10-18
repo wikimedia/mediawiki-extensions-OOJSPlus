@@ -28,5 +28,6 @@
 	"oojsplus-data-grid-filter-update-results": "$1 {{PLURAL:$1|Resultat|Resultater}} fonnt",
 	"oojsplus-data-grid-toolbar-settings-aria-label": "Astellungen",
 	"oojsplus-data-grid-filter-title": "Filter $1",
-	"oojsplus-data-grid-filter-list-with-value": "Filter $1 mam Wäert $2"
+	"oojsplus-data-grid-filter-list-with-value": "Filter $1 mam Wäert $2",
+	"oojsplus-data-paginator-last": "Lescht Säit"
 }
