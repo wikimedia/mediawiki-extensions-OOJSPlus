@@ -1,0 +1,12 @@
+{
+	"@metadata": {
+		"authors": [
+			"Abijeet Patro"
+		]
+	},
+	"oojsplus-data-paginator-first": "पहला पृष्ठ",
+	"oojsplus-data-paginator-last": "अंतिम पृष्ठ",
+	"oojsplus-data-grid-date-filter-announce-lt": "$1 से पहले",
+	"oojsplus-data-grid-filter-boolean-true": "हाँ",
+	"oojsplus-data-grid-filter-boolean-false": "नहीं"
+}
