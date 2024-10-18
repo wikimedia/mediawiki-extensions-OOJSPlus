@@ -30,5 +30,8 @@
 	"oojsplus-data-paginator-page-count": "$2 중 $1",
 	"oojsplus-data-grid-grouper-no-group": "(그룹 없음)",
 	"oojsplus-data-grid-selection-column-label": "선택",
-	"oojsplus-data-grid-filter-title": "필터 $1"
+	"oojsplus-data-grid-filter-title": "필터 $1",
+	"oojsplus-data-paginator-first": "처음 문서",
+	"oojsplus-data-paginator-last": "마지막 문서",
+	"oojsplus-data-paginator-page-number-button-title": "페이지 $1"
 }

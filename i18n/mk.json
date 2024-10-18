@@ -62,11 +62,21 @@
 	"oojsplus-namespace-system-talk": "Системски разговорни именски простори",
 	"oojsplus-data-grid-filter-update-active-filter": "{{PLURAL:$1|Применет $1 филтер|Применети $1 филтри}}: $2",
 	"oojsplus-data-grid-filter-update-results": "Пронајдов $1 {{PLURAL:$1|ставка|ставки}}",
-	"oojsplus-data-grid-filter-update-no-filter": "Немате применето филтер",
+	"oojsplus-data-grid-filter-update-no-filter": "Немате применето филтер за табелата",
 	"oojsplus-data-grid-toolbar-settings-aria-label": "Нагодувања",
 	"oojsplus-data-grid-filter-title": "Филтер $1",
 	"oojsplus-data-grid-filter-list-with-value": "Филтер $1 со вредноста $2",
 	"oojsplus-data-grid-sort-direction-none": "Без подредување на столбот $1",
 	"oojsplus-data-grid-sort-direction-desc": "Надолно подредување на столбот $1",
-	"oojsplus-data-grid-sort-direction-asc": "Нагорно подредување на столбот $1"
+	"oojsplus-data-grid-sort-direction-asc": "Нагорно подредување на столбот $1",
+	"oojsplus-data-paginator-aria-label": "Пагинатор",
+	"oojsplus-data-paginator-first": "Прва страница",
+	"oojsplus-data-paginator-last": "Последна страница",
+	"oojsplus-data-paginator-page-number-switch-hint": "Движете се лево и десно на овој елемент за да изберете број на страница",
+	"oojsplus-data-paginator-page-number-button-title": "Страница $1",
+	"oojsplus-data-paginator-page-showed-single-entry": "Прикажана е ставката $1.",
+	"oojsplus-data-paginator-page-showed-many-entries": "Прикажани се ставките $1 до $2.",
+	"oojsplus-data-grid-date-filter-announce-lt": "Пред $1",
+	"oojsplus-data-grid-date-filter-announce-gt": "По $1",
+	"oojsplus-data-grid-date-filter-announce-eq": "На $1"
 }

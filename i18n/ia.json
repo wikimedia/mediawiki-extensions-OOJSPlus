@@ -60,11 +60,21 @@
 	"oojsplus-namespace-system-talk": "Spatios de nomines de discussion del systema",
 	"oojsplus-data-grid-filter-update-active-filter": "$1 filtro{{PLURAL:$1||s}} applicate: $2",
 	"oojsplus-data-grid-filter-update-results": "$1 resultato{{PLURAL:$1||s}} trovate",
-	"oojsplus-data-grid-filter-update-no-filter": "Necun filtro applicate",
+	"oojsplus-data-grid-filter-update-no-filter": "Necun filtro de tabella applicate",
 	"oojsplus-data-grid-toolbar-settings-aria-label": "Parametros",
 	"oojsplus-data-grid-filter-title": "Filtro $1",
 	"oojsplus-data-grid-filter-list-with-value": "Filtro $1 con valor $2",
 	"oojsplus-data-grid-sort-direction-none": "Columna $1 non ordinate",
 	"oojsplus-data-grid-sort-direction-desc": "Columna $1 ordinate in ordine descendente",
-	"oojsplus-data-grid-sort-direction-asc": "Columna $1 ordinate in ordine ascendente"
+	"oojsplus-data-grid-sort-direction-asc": "Columna $1 ordinate in ordine ascendente",
+	"oojsplus-data-paginator-aria-label": "Paginator",
+	"oojsplus-data-paginator-first": "Prime pagina",
+	"oojsplus-data-paginator-last": "Ultime pagina",
+	"oojsplus-data-paginator-page-number-switch-hint": "Naviga verso sinistra e dextra sur iste elemento pro seliger le numero de pagina",
+	"oojsplus-data-paginator-page-number-button-title": "Pagina $1",
+	"oojsplus-data-paginator-page-showed-single-entry": "Es presentate le entrata $1.",
+	"oojsplus-data-paginator-page-showed-many-entries": "Es presentate le entratas de $1 a $2.",
+	"oojsplus-data-grid-date-filter-announce-lt": "Ante le $1",
+	"oojsplus-data-grid-date-filter-announce-gt": "Post le $1",
+	"oojsplus-data-grid-date-filter-announce-eq": "Le $1"
 }
