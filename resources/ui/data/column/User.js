@@ -1,5 +1,6 @@
 OOJSPlus.ui.data.column.User = function ( cfg ) {
 	cfg = cfg || {};
+	cfg.autoClosePopup = false;
 	OOJSPlus.ui.data.column.User.parent.call( this, cfg );
 
 	this.showImage = cfg.showImage || false;
