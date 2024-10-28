@@ -13,12 +13,16 @@
 	"oojsplus-data-grid-filter-number-value": "قدر",
 	"oojsplus-data-paginator-next": "اڳلا ورقہ",
 	"oojsplus-data-paginator-previous": "پچھلا ورقہ",
+	"oojsplus-data-paginator-first": "پہلا ورقہ",
+	"oojsplus-data-paginator-last": "چھیکڑی ورقہ",
 	"oojsplus-data-grid-filter-boolean": "قدر",
 	"oojsplus-formelement-type-group-picker": "گروپ ان پُٹ",
 	"oojsplus-data-grid-toolbar-settings-columns-label": "کالم",
 	"oojsplus-data-grid-grouper-no-group": "(کوئی گروپ کائنی)",
 	"oojsplus-data-grid-selection-column-label": "چݨو",
 	"oojsplus-data-grid-toolbar-settings-aria-label": "ترتیباں",
-	"oojsplus-data-paginator-last": "چھیکڑی ورقہ",
-	"oojsplus-data-grid-date-filter-announce-eq": "$1 تے"
+	"oojsplus-data-grid-date-filter-announce-gt": "$1 دے بعد",
+	"oojsplus-data-grid-date-filter-announce-eq": "$1 تے",
+	"oojsplus-data-grid-filter-boolean-true": "جیا",
+	"oojsplus-data-grid-filter-boolean-false": "کو"
 }
