@@ -5,6 +5,7 @@
 			"DreZhsh",
 			"Gomoko",
 			"Goombiis",
+			"Mahabarata",
 			"McDutchie",
 			"SleaY",
 			"Thibaut120094",
@@ -63,5 +64,5 @@
 	"oojsplus-data-grid-selection-column-label": "Sélectionner",
 	"oojsplus-data-grid-filter-close": "Fermer",
 	"oojsplus-data-grid-filter-update-results": "$1 {{PLURAL:$1|résultat|résultats}} {{PLURAL:$1|trouvé|trouvés}}",
-	"oojsplus-data-grid-filter-update-no-filter": "Aucun filtre appliqué"
+	"oojsplus-data-grid-filter-update-no-filter": "Aucun filtre de table appliqué"
 }

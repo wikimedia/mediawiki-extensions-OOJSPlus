@@ -32,5 +32,8 @@
 	"oojsplus-data-paginator-page-number-button-title": "페이지 $1",
 	"oojsplus-data-grid-grouper-no-group": "(그룹 없음)",
 	"oojsplus-data-grid-selection-column-label": "선택",
-	"oojsplus-data-grid-filter-title": "필터 $1"
+	"oojsplus-data-grid-filter-title": "필터 $1",
+	"oojsplus-data-grid-date-filter-announce-gt": "$1 이후",
+	"oojsplus-data-grid-filter-boolean-true": "예",
+	"oojsplus-data-grid-filter-boolean-false": "아니요"
 }
