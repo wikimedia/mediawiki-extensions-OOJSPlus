@@ -43,7 +43,6 @@
 	"oojsplus-data-paginator-next": "下一頁",
 	"oojsplus-data-paginator-previous": "上一頁",
 	"oojsplus-data-grid-toolbar-reload-label": "重新載入",
-	"oojsplus-data-paginator-page-count": "第 $1 頁，共 $2 頁",
 	"oojsplus-data-grid-filter-boolean": "值",
 	"oojsplus-formelement-type-user-picker": "使用者輸入",
 	"oojsplus-formelement-type-group-picker": "群組輸入",

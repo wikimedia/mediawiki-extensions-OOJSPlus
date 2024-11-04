@@ -9,7 +9,8 @@
 			"SleaY",
 			"Thibaut120094",
 			"Verdy p",
-			"Wladek92"
+			"Wladek92",
+			"Mahabarata"
 		]
 	},
 	"oojsplus-desc": "Fournit des widgets et des fonctions utilitaires pour OOJS.",
@@ -49,7 +50,6 @@
 	"oojsplus-data-paginator-next": "Page suivante",
 	"oojsplus-data-paginator-previous": "Page précédente",
 	"oojsplus-data-grid-toolbar-reload-label": "Recharger",
-	"oojsplus-data-paginator-page-count": "$1 sur $2",
 	"oojsplus-data-grid-filter-boolean": "Valeur",
 	"oojsplus-formelement-type-user-picker": "Entrée d’utilisateur",
 	"oojsplus-formelement-type-group-picker": "Entrée de groupe",
@@ -64,5 +64,5 @@
 	"oojsplus-data-grid-selection-column-label": "Sélectionner",
 	"oojsplus-data-grid-filter-close": "Fermer",
 	"oojsplus-data-grid-filter-update-results": "$1 {{PLURAL:$1|résultat|résultats}} {{PLURAL:$1|trouvé|trouvés}}",
-	"oojsplus-data-grid-filter-update-no-filter": "Aucun filtre appliqué"
+	"oojsplus-data-grid-filter-update-no-filter": "Aucun filtre de table appliqué"
 }

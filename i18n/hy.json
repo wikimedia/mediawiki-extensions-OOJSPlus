@@ -11,12 +11,11 @@
 	"oojsplus-dialog-action-cancel": "Չեղարկել",
 	"oojsplus-data-grid-filter-label": "Զտիչ",
 	"oojsplus-data-grid-filter-clear": "Մաքրել",
+	"oojsplus-data-paginator-first": "Առաջին էջ",
 	"oojsplus-data-grid-toolbar-reload-label": "Վերբեռնել",
-	"oojsplus-data-paginator-page-count": "$1-ը $2-ից",
+	"oojsplus-data-paginator-page-number-button-title": "Էջ $1",
 	"oojsplus-data-grid-selection-column-label": "Ընտրել",
 	"oojsplus-data-grid-toolbar-settings-aria-label": "Կարգավորումներ",
-	"oojsplus-data-paginator-first": "Առաջին էջ",
-	"oojsplus-data-paginator-page-number-button-title": "Էջ $1",
 	"oojsplus-data-grid-filter-boolean-true": "Այո",
 	"oojsplus-data-grid-filter-boolean-false": "Ոչ"
 }

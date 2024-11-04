@@ -38,6 +38,9 @@
 	"oojsplus-data-grid-filter-list-with-value": "$2 মান সহকারে $1 ছাঁকুন",
 	"oojsplus-data-grid-sort-direction-none": "কলাম $1 সাজানো হয়নি",
 	"oojsplus-data-grid-sort-direction-asc": "কলাম $1 ঊর্ধ্বক্রম অনুসারে সাজানো হয়েছে",
+	"oojsplus-data-grid-date-filter-announce-lt": "$1-এর আগে",
+	"oojsplus-data-grid-date-filter-announce-gt": "$1-এর পরে",
+	"oojsplus-data-grid-date-filter-announce-eq": "$1-এ",
 	"oojsplus-data-grid-filter-boolean-true": "হ্যাঁ",
 	"oojsplus-data-grid-filter-boolean-false": "না"
 }
