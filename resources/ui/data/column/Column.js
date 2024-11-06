@@ -142,6 +142,7 @@
 				}
 			} );
 			$cell.append( this.createFilterLayout( data ).$element );
+			this.headerButton.$element.addClass( 'filterable' );
 		}
 
 		return $cell;
