@@ -68,7 +68,7 @@ OOJSPlus.ui.widget.UserPickerWidget.prototype.getLookupCacheDataFromResponse = f
 OOJSPlus.ui.widget.UserPickerWidget.prototype.getValidity = function () {
 	if ( this.selectedUser ) {
 		return $.Deferred().resolve().promise();
-	} else if ( this.required ) {
+	} else if ( this.isRequired() ) {
 		return $.Deferred().reject().promise();
 	}
 	return $.Deferred().resolve().promise();
@@ -103,11 +103,12 @@ OOJSPlus.ui.widget.UserPickerWidget.prototype.setValue = function ( item ) {
 		this.setDisabled( true );
 		this.pushPending();
 		mws.commonwebapis.user.getByUsername( item ).done( function ( user ) {
-			if ( !user ) {
+			if ( !user || $.isEmptyObject( user ) ) {
 				// Cannot find user, just set value as-is
 				this.setDisabled( false );
 				this.popPending();
-				this.$input.val( item );
+				OOJSPlus.ui.widget.UserPickerWidget.parent.prototype.setValue.call( this, item );
+				this.selectedUser = null;
 				this.onEdit();
 				return;
 			}
@@ -119,6 +120,8 @@ OOJSPlus.ui.widget.UserPickerWidget.prototype.setValue = function ( item ) {
 		}.bind( this ) ).fail( function () {
 			this.popPending();
 			this.setDisabled( false );
+			OOJSPlus.ui.widget.UserPickerWidget.parent.prototype.setValue.call( this, item );
+			this.selectedUser = null;
 		}.bind( this ) );
 	} else {
 		OOJSPlus.ui.widget.UserPickerWidget.parent.prototype.setValue.call( this, item.getDisplayName() );
