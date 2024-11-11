@@ -34,9 +34,14 @@
 	"oojsplus-data-paginator-page-number-switch-hint": "পৃষ্ঠা নম্বর নির্বাচন করতে এই উপাদানটিতে বাম এবং ডানদিকে নেভিগেট করুন",
 	"oojsplus-data-paginator-page-number-button-title": "পৃষ্ঠা $1",
 	"oojsplus-data-paginator-page-showed-single-entry": "$1টি ভুক্তি দেখানো হচ্ছে।",
-	"oojsplus-data-paginator-page-showed-many-entries": "$1 থেকে $2 পর্যন্ত এন্ট্রি দেখানো হচ্ছে।",
+	"oojsplus-data-paginator-page-showed-many-entries": "$1 থেকে $2 পর্যন্ত ভুক্তি দেখানো হচ্ছে।",
 	"oojsplus-data-grid-filter-title": "ছাঁকনির আইডি",
 	"oojsplus-data-grid-filter-list-with-value": "$2 মান সহকারে $1 ছাঁকুন",
 	"oojsplus-data-grid-sort-direction-none": "কলাম $1 সাজানো হয়নি",
-	"oojsplus-data-grid-sort-direction-asc": "কলাম $1 ঊর্ধ্বক্রম অনুসারে সাজানো হয়েছে"
+	"oojsplus-data-grid-sort-direction-asc": "কলাম $1 ঊর্ধ্বক্রম অনুসারে সাজানো হয়েছে",
+	"oojsplus-data-grid-date-filter-announce-lt": "$1-এর আগে",
+	"oojsplus-data-grid-date-filter-announce-gt": "$1-এর পরে",
+	"oojsplus-data-grid-date-filter-announce-eq": "$1-এ",
+	"oojsplus-data-grid-filter-boolean-true": "হ্যাঁ",
+	"oojsplus-data-grid-filter-boolean-false": "না"
 }

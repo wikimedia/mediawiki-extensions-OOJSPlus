@@ -78,5 +78,7 @@
 	"oojsplus-data-paginator-page-showed-many-entries": "Прикажани се ставките $1 до $2.",
 	"oojsplus-data-grid-date-filter-announce-lt": "Пред $1",
 	"oojsplus-data-grid-date-filter-announce-gt": "По $1",
-	"oojsplus-data-grid-date-filter-announce-eq": "На $1"
+	"oojsplus-data-grid-date-filter-announce-eq": "На $1",
+	"oojsplus-data-grid-filter-boolean-true": "Да",
+	"oojsplus-data-grid-filter-boolean-false": "Не"
 }

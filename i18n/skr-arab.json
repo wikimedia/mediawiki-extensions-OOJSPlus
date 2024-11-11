@@ -20,5 +20,9 @@
 	"oojsplus-data-grid-selection-column-label": "چݨو",
 	"oojsplus-data-grid-toolbar-settings-aria-label": "ترتیباں",
 	"oojsplus-data-paginator-last": "چھیکڑی ورقہ",
-	"oojsplus-data-grid-date-filter-announce-eq": "$1 تے"
+	"oojsplus-data-grid-date-filter-announce-eq": "$1 تے",
+	"oojsplus-data-paginator-first": "پہلا ورقہ",
+	"oojsplus-data-grid-date-filter-announce-gt": "$1 دے بعد",
+	"oojsplus-data-grid-filter-boolean-true": "جیا",
+	"oojsplus-data-grid-filter-boolean-false": "کو"
 }

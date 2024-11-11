@@ -6,5 +6,7 @@
 	},
 	"oojsplus-dialog-action-add": "Աւելցնել",
 	"oojsplus-data-grid-toolbar-settings-aria-label": "Կարգաւորումներ",
-	"oojsplus-data-paginator-page-number-button-title": "Էջ $1"
+	"oojsplus-data-paginator-page-number-button-title": "Էջ $1",
+	"oojsplus-data-grid-filter-boolean-true": "Այո",
+	"oojsplus-data-grid-filter-boolean-false": "Ոչ"
 }
