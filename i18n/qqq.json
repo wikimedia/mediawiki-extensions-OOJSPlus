@@ -5,7 +5,8 @@
 			"Jon Harald Søby",
 			"McDutchie",
 			"Robby",
-			"Umherirrender"
+			"Umherirrender",
+			"Amire80"
 		]
 	},
 	"oojsplus-desc": "{{desc|name=OOJSPlus|url=https://www.mediawiki.org/wiki/Extension:OOJSPlus}}",
@@ -42,7 +43,7 @@
 	"oojsplus-data-grid-filter-label": "Label for the filter button\n{{identical|Filter}}",
 	"oojsplus-data-grid-filter-clear": "Label for the clear filter button",
 	"oojsplus-data-grid-filter-number-value": "Label for the filter field\n{{identical|Value}}",
-	"oojsplus-data-paginator-aria-label": " Label for the page switching widget",
+	"oojsplus-data-paginator-aria-label": "Label for the page switching widget",
 	"oojsplus-data-paginator-next": "Label for button to switch to next page",
 	"oojsplus-data-paginator-previous": "Label for button to switch to previous page",
 	"oojsplus-data-paginator-first": "Label for button to switch to first page",
@@ -80,7 +81,7 @@
 	"oojsplus-data-grid-sort-direction-asc": "Label for announcing ascending sorting of a column\n\nParameters:\n* $1 - name of column",
 	"oojsplus-data-grid-date-filter-announce-lt": "Announcement for selecting date filter. Filters for items before selected date\n $1 - Selected date",
 	"oojsplus-data-grid-date-filter-announce-gt": "Announcement for selecting date filter. Filters for items after selected date\n $1 - Selected date",
-	"oojsplus-data-grid-date-filter-announce-eq": "Announcement for selecting date filter. Filters for items on selected date\n $1 - Selected date",
+	"oojsplus-data-grid-date-filter-announce-eq": "Announcement for selecting date filter. Filters for items on selected date.\n* $1 - Selected date",
 	"oojsplus-data-grid-filter-boolean-true": "Filter options label for boolean field\n{{Identical|Yes}}",
 	"oojsplus-data-grid-filter-boolean-false": "Filter options label for boolean field\n{{Identical|No}}"
 }
