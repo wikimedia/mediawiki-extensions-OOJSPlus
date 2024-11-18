@@ -84,5 +84,7 @@
 	"oojsplus-data-grid-date-filter-announce-gt": "Nach dem $1",
 	"oojsplus-data-grid-date-filter-announce-eq": "Am $1",
 	"oojsplus-data-grid-filter-boolean-true": "Ja",
-	"oojsplus-data-grid-filter-boolean-false": "Nein"
+	"oojsplus-data-grid-filter-boolean-false": "Nein",
+	"oojsplus-data-grid-collapse-expand": "Ausklappen",
+	"oojsplus-data-grid-collapse-collapse": "Einklappen"
 }

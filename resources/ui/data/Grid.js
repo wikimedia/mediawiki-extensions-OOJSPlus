@@ -31,6 +31,7 @@
 		this.$element.append( this.$filterCnt );
 		this.$element.append( this.$sortCnt );
 		this.$table = $( '<table>' ).addClass( 'oojsplus-data-gridWidget-table' );
+		this.$table.append( $( '<caption>' ).addClass( 'oojsplus-data-gridWidget-caption' ) );
 		this.$table.append( $( '<thead>' ).addClass( 'oojsplus-data-gridWidget-header' ) );
 		this.$table.append( $( '<tbody>' ).addClass( 'oojsplus-data-gridWidget-tbody' ) );
 		this.$wrapper = $( '<div>' );
@@ -42,6 +43,7 @@
 
 		this.style = cfg.style || 'none';
 		this.noHeader = cfg.noHeader || false;
+		this.caption = cfg.caption || '';
 		this.border = cfg.border || 'none';
 		this.pageSize = cfg.pageSize || 25;
 		this.multiSelect = cfg.multiSelect || false;
@@ -52,6 +54,8 @@
 		this.data = cfg.data || [];
 		this.resizable = typeof cfg.resizable === 'undefined' ? true : cfg.resizable;
 		this.orderable = typeof cfg.orderable === 'undefined' ? true : cfg.orderable;
+		this.collapsible = cfg.collapsible || false;
+		this.collapsed = cfg.collapsed || false;
 		if ( this.noHeader ) {
 			// Cannot be orderable and/or resizable without header
 			this.orderable = false;
@@ -64,6 +68,7 @@
 
 		this.columns = {};
 		this.buildColumns( cfg.columns );
+		this.addCaption();
 		this.addHeader();
 		this.paginator = typeof cfg.paginator === 'undefined' ? this.makePaginator() : cfg.paginator;
 		if ( this.paginator ) {
@@ -129,6 +134,9 @@
 		this.connect( this, {
 			datasetChange: 'announceCount'
 		} );
+		if ( this.collapsible ) {
+			this.appendCollapseButton();
+		}
 	};
 
 	OO.inheritClass( OOJSPlus.ui.data.GridWidget, OO.ui.Widget );
@@ -258,6 +266,14 @@
 			}
 			this.columns[columnKey].setHasActiveFilter( fields.indexOf( columnKey ) !== -1 );
 		}
+	};
+
+	OOJSPlus.ui.data.GridWidget.prototype.addCaption = function() {
+		if ( this.caption.length === 0 ) {
+			return;
+		}
+		var $caption = this.$table.find( 'caption' );
+		$caption.append( this.caption );
 	};
 
 
@@ -592,5 +608,49 @@
 		var count = this.store.getTotal();
 		var countMsg = mw.message( 'oojsplus-data-grid-filter-update-results', count ).text();
 		this.$countAnnouncer.text( countMsg );
+	};
+
+	OOJSPlus.ui.data.GridWidget.prototype.appendCollapseButton = function() {
+		let label = mw.message( 'oojsplus-data-grid-collapse-collapse' ).text();
+		if ( this.collapsed ) {
+			label = mw.message( 'oojsplus-data-grid-collapse-expand' ).text();
+		}
+		this.$collapseButton = $( '<button>' ).addClass(
+			'oojsplus-data-grid-collapse mw-collapsible-toggle-default mw-collapsible-toggle'
+		);
+		this.$collapseButton.text( label );
+		this.$collapseButton.attr( 'aria-expanded', !this.collapsed );
+		this.$collapseButton.on( 'click', function () {
+			if ( this.collapsed ) {
+				this.collapsed = false;
+				this.$collapseButton.text( mw.message( 'oojsplus-data-grid-collapse-collapse' ).text() );
+				this.toggleTableVisibility();
+			} else {
+				this.collapsed = true;
+				this.$collapseButton.text( mw.message( 'oojsplus-data-grid-collapse-expand' ).text() );
+				this.toggleTableVisibility();
+			}
+			this.$collapseButton.attr( 'aria-expanded', !this.collapsed );
+		}.bind( this ) );
+		if ( this.collapsed ) {
+			this.toggleTableVisibility();
+		}
+		this.$element.prepend( this.$collapseButton );
+	};
+
+	OOJSPlus.ui.data.GridWidget.prototype.toggleTableVisibility = function() {
+		if ( this.collapsed ) {
+			var $header = this.$table.find( 'thead' );
+			$header.attr( 'style', 'display: none' );
+			var $body = this.$table.find( 'tbody' );
+			$body.attr( 'style', 'display: none' );
+			this.toolbar.$element.attr( 'style', 'display: none' );
+		} else {
+			var $header = this.$table.find( 'thead' );
+			$header.removeAttr( 'style' );
+			var $body = this.$table.find( 'tbody' );
+			$body.removeAttr( 'style' );
+			this.toolbar.$element.removeAttr( 'style' );
+		}
 	};
 } )( mediaWiki, jQuery );
