@@ -83,5 +83,7 @@
 	"oojsplus-data-grid-date-filter-announce-gt": "Announcement for selecting date filter. Filters for items after selected date\n* $1 - Selected date",
 	"oojsplus-data-grid-date-filter-announce-eq": "Announcement for selecting date filter. Filters for items on selected date.\n* $1 - Selected date",
 	"oojsplus-data-grid-filter-boolean-true": "Filter options label for boolean field\n{{Identical|Yes}}",
-	"oojsplus-data-grid-filter-boolean-false": "Filter options label for boolean field\n{{Identical|No}}"
+	"oojsplus-data-grid-filter-boolean-false": "Filter options label for boolean field\n{{Identical|No}}",
+	"oojsplus-data-grid-collapse-expand": "Label for button to expand table content",
+	"oojsplus-data-grid-collapse-collapse": "Label for button to collapse table content"
 }
