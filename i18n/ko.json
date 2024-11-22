@@ -37,5 +37,7 @@
 	"oojsplus-data-grid-date-filter-announce-lt": "$1 이전",
 	"oojsplus-data-grid-date-filter-announce-gt": "$1 이후",
 	"oojsplus-data-grid-filter-boolean-true": "예",
-	"oojsplus-data-grid-filter-boolean-false": "아니요"
+	"oojsplus-data-grid-filter-boolean-false": "아니요",
+	"oojsplus-data-grid-collapse-expand": "펼치기",
+	"oojsplus-data-grid-collapse-collapse": "접기"
 }
