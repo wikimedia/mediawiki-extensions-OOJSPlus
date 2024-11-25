@@ -24,5 +24,6 @@
 	"oojsplus-data-grid-date-filter-announce-gt": "$1 دے بعد",
 	"oojsplus-data-grid-date-filter-announce-eq": "$1 تے",
 	"oojsplus-data-grid-filter-boolean-true": "جیا",
-	"oojsplus-data-grid-filter-boolean-false": "کو"
+	"oojsplus-data-grid-filter-boolean-false": "کو",
+	"oojsplus-data-grid-collapse-collapse": "ولھیٹو"
 }

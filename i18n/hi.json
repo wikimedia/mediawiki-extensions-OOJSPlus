@@ -8,5 +8,7 @@
 	"oojsplus-data-paginator-last": "अंतिम पृष्ठ",
 	"oojsplus-data-grid-date-filter-announce-lt": "$1 से पहले",
 	"oojsplus-data-grid-filter-boolean-true": "हाँ",
-	"oojsplus-data-grid-filter-boolean-false": "नहीं"
+	"oojsplus-data-grid-filter-boolean-false": "नहीं",
+	"oojsplus-data-grid-collapse-expand": "विस्तार करें",
+	"oojsplus-data-grid-collapse-collapse": "छोटा करें"
 }

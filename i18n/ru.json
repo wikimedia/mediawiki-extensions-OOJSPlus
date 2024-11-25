@@ -35,5 +35,6 @@
 	"oojsplus-data-grid-date-filter-announce-lt": "До $1",
 	"oojsplus-data-grid-date-filter-announce-gt": "После $1",
 	"oojsplus-data-grid-filter-boolean-true": "Да",
-	"oojsplus-data-grid-filter-boolean-false": "Нет"
+	"oojsplus-data-grid-filter-boolean-false": "Нет",
+	"oojsplus-data-grid-collapse-collapse": "Свернуть"
 }
