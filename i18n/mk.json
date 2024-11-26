@@ -79,5 +79,7 @@
 	"oojsplus-data-grid-date-filter-announce-gt": "По $1",
 	"oojsplus-data-grid-date-filter-announce-eq": "На $1",
 	"oojsplus-data-grid-filter-boolean-true": "Да",
-	"oojsplus-data-grid-filter-boolean-false": "Не"
+	"oojsplus-data-grid-filter-boolean-false": "Не",
+	"oojsplus-data-grid-collapse-expand": "Расклопи",
+	"oojsplus-data-grid-collapse-collapse": "Склопи"
 }

@@ -24,5 +24,6 @@
 	"oojsplus-data-grid-date-filter-announce-gt": "Dopo $1",
 	"oojsplus-data-grid-date-filter-announce-eq": "Il $1",
 	"oojsplus-data-grid-filter-boolean-true": "Sì",
-	"oojsplus-data-grid-filter-boolean-false": "No"
+	"oojsplus-data-grid-filter-boolean-false": "No",
+	"oojsplus-data-grid-collapse-expand": "Espandi"
 }
