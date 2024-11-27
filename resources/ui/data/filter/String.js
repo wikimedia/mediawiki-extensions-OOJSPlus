@@ -24,6 +24,7 @@ OOJSPlus.ui.data.filter.String.prototype.getFilterValue = function() {
 	return {
 		value: this.conditionValue,
 		operator: this.operator,
+		comparison: this.operator,
 		type: 'string'
 	};
 };

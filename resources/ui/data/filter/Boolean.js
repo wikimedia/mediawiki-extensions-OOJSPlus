@@ -1,4 +1,5 @@
 OOJSPlus.ui.data.filter.Boolean = function ( cfg ) {
+	this.conditionValue = cfg.value || false;
 	this.value = this.getFilterValue();
 	this.trueLabel = cfg.trueLabel || mw.message( 'oojsplus-data-grid-filter-boolean-true' ).text();
 	this.falseLabel = cfg.falseLabel || mw.message( 'oojsplus-data-grid-filter-boolean-false' ).text();
@@ -32,14 +33,15 @@ OOJSPlus.ui.data.filter.Boolean.prototype.getLayout = function() {
 };
 
 OOJSPlus.ui.data.filter.Boolean.prototype.getFilterValue = function() {
-	var item = this.valueInput ? this.valueInput.findSelectedItem() : false;
-	var val = false;
+	var item = this.valueInput ? this.valueInput.findSelectedItem() : null;
+	var val = this.conditionValue;
 	if ( item ) {
 		val = item.getData();
 	}
 	return {
 		value: val,
 		operator: 'eq',
+		comparison: 'eq',
 		type: 'boolean'
 	};
 };

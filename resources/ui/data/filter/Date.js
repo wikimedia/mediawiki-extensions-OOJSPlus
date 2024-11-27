@@ -47,6 +47,7 @@ OOJSPlus.ui.data.filter.Date.prototype.getFilterValue = function() {
 	return {
 		value: this.convertToFilterDate( this.conditionValue ),
 		operator: this.operator,
+		comparison: this.operator,
 		type: 'date'
 	};
 };

@@ -56,7 +56,8 @@ OOJSPlus.ui.data.filter.Number.prototype.getFilterValue = function() {
 	return {
 		value: this.conditionValue,
 		operator: this.operator,
-		type: 'string'
+		comparison: this.operator,
+		type: 'numeric'
 	};
 };
 

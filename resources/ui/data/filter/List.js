@@ -29,6 +29,7 @@ OOJSPlus.ui.data.filter.List.prototype.getFilterValue = function() {
 	return {
 		value: this.conditionValue,
 		operator: 'in',
+		comparison: 'in',
 		type: 'list'
 	};
 };
