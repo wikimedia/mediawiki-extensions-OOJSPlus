@@ -8,6 +8,7 @@ OOJSPlus.ui.data.column.Action = function ( cfg ) {
 	this.label = cfg.label || '';
 	this.headerText = cfg.headerText || '';
 	this.invisibleHeader = cfg.invisibleHeader || false;
+	this.visibleOnHover = cfg.visibleOnHover || false;
 
 	this.$element.addClass( 'action-column' );
 };
@@ -21,6 +22,9 @@ OOJSPlus.ui.data.column.Action.prototype.bindToGrid = function( grid ) {
 OOJSPlus.ui.data.column.Action.prototype.renderCell = function( value, row ) {
 	$cell = OOJSPlus.ui.data.column.Action.parent.prototype.renderCell.call( this, value, row );
 	$cell.addClass( 'action-cell' );
+	if ( this.visibleOnHover ) {
+		$cell.addClass( 'action-cell-visible-on-hover' );
+	}
 	return $cell;
 };
 
@@ -41,7 +45,7 @@ OOJSPlus.ui.data.column.Action.prototype.getViewControls = function( value, row 
 };
 
 OOJSPlus.ui.data.column.Action.prototype.getHeader = function() {
-	var $cell = $( '<th>' ).addClass( 'oojsplus-data-gridWidget-cell oojsplus-data-gridWidget-column-header' );
+	var $cell = $( '<th>' ).addClass( 'oojsplus-data-gridWidget-cell oojsplus-data-gridWidget-column-header, oojsplus-data-gridWidget-action-column-header' );
 	if ( this.headerText.length <= 0 ) {
 		return $cell;
 	}

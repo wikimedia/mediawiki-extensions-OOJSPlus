@@ -25,6 +25,18 @@ OOJSPlus.ui.data.filter.List.prototype.getLayout = function() {
 	} );
 };
 
+OOJSPlus.ui.data.filter.List.prototype.setOptions = function( list ) {
+	this.list = list;
+	this.stopEvents();
+	this.input.setOptions( list.map( function( i ) {
+		if ( typeof i === 'object' ) {
+			return i;
+		}
+		return { data: i };
+	} ) );
+	this.resumeEvents();
+};
+
 OOJSPlus.ui.data.filter.List.prototype.getFilterValue = function() {
 	return {
 		value: this.conditionValue,
@@ -56,6 +68,18 @@ OOJSPlus.ui.data.filter.List.prototype.matches = function( value ) {
 		return false;
 	}
 	return this.value.value.indexOf( value ) !== -1;
+};
+
+OOJSPlus.ui.data.filter.List.prototype.stopEvents = function() {
+	this.input.disconnect( this, {
+		change: 'changeValue'
+	} );
+};
+
+OOJSPlus.ui.data.filter.List.prototype.resumeEvents = function() {
+	this.input.connect( this, {
+		change: 'changeValue'
+	} );
 };
 
 OOJSPlus.ui.data.registry.filterRegistry.register( 'list', OOJSPlus.ui.data.filter.List );

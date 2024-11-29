@@ -16,6 +16,7 @@
 OOJSPlus.ui.data.store.RemoteRestStore = function ( cfg ) {
 	this.path = cfg.path;
 	this.request = null;
+	this.buckets = {};
 
 	OOJSPlus.ui.data.store.RemoteRestStore.parent.call( this, cfg );
 };
@@ -41,6 +42,7 @@ OOJSPlus.ui.data.store.RemoteRestStore.prototype.doLoadData = function() {
 		this.request = null;
 		if ( response.hasOwnProperty( 'results' ) ) {
 			this.total = response.total;
+			this.buckets = response.buckets || {};
 			dfd.resolve( this.indexData( response.results ) );
 			return;
 		}
@@ -61,4 +63,8 @@ OOJSPlus.ui.data.store.RemoteRestStore.prototype.getRequestData = function() {
 		query: this.getQuery(),
 		sort: this.getSortForRemote()
 	};
+};
+
+OOJSPlus.ui.data.store.RemoteRestStore.prototype.getBuckets = function() {
+	return this.buckets;
 };
