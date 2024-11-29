@@ -177,7 +177,6 @@
 		}.bind( this ) ).fail( function () {
 			this.currentPage = fallbackPage;
 			this.grid.setItems( [] );
-			console.log('load failed!');
 		}.bind( this ) );
 	};
 

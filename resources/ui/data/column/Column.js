@@ -243,7 +243,7 @@
 		}
 
 		if ( typeof this.valueParser === 'function' ) {
-			return this.valueParser.call( this, value, row );
+			return this.valueParser.call( this, value, row, this.id );
 		}
 		return value;
 	};

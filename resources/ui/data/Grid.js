@@ -132,7 +132,7 @@
 		this.$countAnnouncer = $( '<div>' ).attr( 'aria-live', 'polite' ).addClass( 'visually-hidden' );
 		this.$element.append( this.$countAnnouncer );
 		this.connect( this, {
-			datasetChange: 'announceCount'
+			datasetChange: 'onDatasetChange'
 		} );
 		if ( this.collapsible ) {
 			this.appendCollapseButton();
@@ -568,7 +568,7 @@
 				this.selectedRows.push( e.data.item );
 			}
 		}
-		this.emit( 'rowSelected', e.data );
+		this.emit( 'rowSelected', e.data, this.getSelectedRows() );
 	};
 
 	OOJSPlus.ui.data.GridWidget.prototype.getSelectedRows = function( ) {
@@ -608,6 +608,11 @@
 		var count = this.store.getTotal();
 		var countMsg = mw.message( 'oojsplus-data-grid-filter-update-results', count ).text();
 		this.$countAnnouncer.text( countMsg );
+	};
+
+	OOJSPlus.ui.data.GridWidget.prototype.onDatasetChange = function() {
+		this.announceCount();
+		this.selectedRows = [];
 	};
 
 	OOJSPlus.ui.data.GridWidget.prototype.appendCollapseButton = function() {
