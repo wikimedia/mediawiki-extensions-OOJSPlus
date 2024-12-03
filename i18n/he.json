@@ -81,5 +81,7 @@
 	"oojsplus-data-grid-date-filter-announce-gt": "אחרי $1",
 	"oojsplus-data-grid-date-filter-announce-eq": "ב־$1",
 	"oojsplus-data-grid-filter-boolean-true": "כן",
-	"oojsplus-data-grid-filter-boolean-false": "לא"
+	"oojsplus-data-grid-filter-boolean-false": "לא",
+	"oojsplus-data-grid-collapse-expand": "הצגה",
+	"oojsplus-data-grid-collapse-collapse": "הסתרה"
 }
