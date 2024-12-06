@@ -90,5 +90,8 @@
 	"oojsplus-toolbar-save": "Label for save button in toolbar{{Identical|Save}}",
 	"oojsplus-toolbar-delete": "Label for delete button in toolbar{{Identical|Delete}}",
 	"oojsplus-toolbar-edit": "Label for edit button in toolbar{{Identical|Edit}}",
-	"oojsplus-toolbar-add": "Label for add button in toolbar{{Identical|Add}}"
+	"oojsplus-toolbar-add": "Label for add button in toolbar{{Identical|Add}}",
+	"oojsplus-data-grid-filter-date-on": "Filter options label for date field\n{{Identical|On}}",
+	"oojsplus-data-grid-filter-date-after": "Filter options label for date field\n{{Identical|After}}",
+	"oojsplus-data-grid-filter-date-before": "Filter options label for date field\n{{Identical|Before}}"
 }

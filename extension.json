@@ -229,7 +229,10 @@
 				"oojsplus-data-grid-filter-boolean-true",
 				"oojsplus-data-grid-filter-boolean-false",
 				"oojsplus-data-grid-collapse-expand",
-				"oojsplus-data-grid-collapse-collapse"
+				"oojsplus-data-grid-collapse-collapse",
+				"oojsplus-data-grid-filter-date-on",
+				"oojsplus-data-grid-filter-date-after",
+				"oojsplus-data-grid-filter-date-before"
 			]
 		},
 		"ext.oOJSPlus.icons": {

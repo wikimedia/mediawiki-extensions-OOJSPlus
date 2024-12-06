@@ -36,6 +36,29 @@ OOJSPlus.ui.data.filter.Date.prototype.getLayout = function() {
 	return $layout;
 };
 
+OOJSPlus.ui.data.filter.Date.prototype.makeOperatorWidget = function() {
+	this.operatorWidget = new OO.ui.ButtonSelectWidget( {
+		items: [
+			new OO.ui.ButtonOptionWidget( {
+				data: 'eq',
+				label: mw.message( 'oojsplus-data-grid-filter-date-on' ).text()
+			} ),
+			new OO.ui.ButtonOptionWidget( {
+				data: 'gt',
+				label: mw.message( 'oojsplus-data-grid-filter-date-after' ).text()
+			} ),
+			new OO.ui.ButtonOptionWidget( {
+				data: 'lt',
+				label: mw.message( 'oojsplus-data-grid-filter-date-before' ).text()
+			} )
+		]
+	} );
+	this.operatorWidget.selectItemByData( this.operator );
+	this.operatorWidget.connect( this, {
+		select: 'changeOperator'
+	} );
+};
+
 OOJSPlus.ui.data.filter.Date.prototype.changeOperator = function( operator ) {
 	this.operator = operator.getData();
 	if ( this.conditionValue ) {
