@@ -618,16 +618,17 @@
 		this.$collapseButton = $( '<button>' ).addClass(
 			'oojsplus-data-grid-collapse mw-collapsible-toggle-default mw-collapsible-toggle'
 		);
-		this.$collapseButton.text( label );
+		this.$collapseLabel = $( '<span>' ).addClass( 'mw-collapsible-text' ).text( label );
+		this.$collapseButton.append( this.$collapseLabel );
 		this.$collapseButton.attr( 'aria-expanded', !this.collapsed );
 		this.$collapseButton.on( 'click', function () {
 			if ( this.collapsed ) {
 				this.collapsed = false;
-				this.$collapseButton.text( mw.message( 'oojsplus-data-grid-collapse-collapse' ).text() );
+				this.$collapseLabel.text( mw.message( 'oojsplus-data-grid-collapse-collapse' ).text() );
 				this.toggleTableVisibility();
 			} else {
 				this.collapsed = true;
-				this.$collapseButton.text( mw.message( 'oojsplus-data-grid-collapse-expand' ).text() );
+				this.$collapseLabel.text( mw.message( 'oojsplus-data-grid-collapse-expand' ).text() );
 				this.toggleTableVisibility();
 			}
 			this.$collapseButton.attr( 'aria-expanded', !this.collapsed );
