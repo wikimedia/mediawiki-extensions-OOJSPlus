@@ -27,16 +27,20 @@
 		}
 	}
 	.user-name-cnt {
-		 display: inline;
-		 margin-left: 1em;
-		 min-height: 32px;
+		display: inline-block;
+		margin-left: 1em;
+		min-height: 32px;
+		vertical-align: middle;
 		 .user-display {
 			 font-weight: bold;
 		 }
 		 .user-username {
 			 font-size: 0.8em;
-			 color: #777;
-			 padding-left: 10px;
+			 color: #424242;
+			 display: block;
+			 &:before {
+				 content: '@';
+			 }
 		 }
 	 }
 	.user-image .bs-userminiprofile > a {
@@ -62,7 +66,7 @@
 		&.bs-whoisonline-marker-online, &.bs-whoisonline-marker-offline {
 			a::after {
 				left: 20px;
-				top: 18px;
+				top: 15px;
 
 			}
 		}
