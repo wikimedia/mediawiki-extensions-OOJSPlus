@@ -26,6 +26,19 @@
 			height: 32px;
 		}
 	}
+	.user-name-cnt {
+		 display: inline;
+		 margin-left: 1em;
+		 min-height: 32px;
+		 .user-display {
+			 font-weight: bold;
+		 }
+		 .user-username {
+			 font-size: 0.8em;
+			 color: #777;
+			 padding-left: 10px;
+		 }
+	 }
 	.user-image .bs-userminiprofile > a {
 		display: flex;
 	}
@@ -43,9 +56,10 @@
 			line-height: 1;
 		}
 	}
+
 	// Fix online marker for user widget
 	.bs-userminiprofile[data-bs-whoisonline-marker] {
-		&.bs-whoisonline-marker-online {
+		&.bs-whoisonline-marker-online, &.bs-whoisonline-marker-offline {
 			a::after {
 				left: 20px;
 				top: 18px;
