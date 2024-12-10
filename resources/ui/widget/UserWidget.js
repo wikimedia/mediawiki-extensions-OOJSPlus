@@ -6,12 +6,11 @@ OOJSPlus.ui.widget.UserWidget = function( cfg ) {
 
 	this.showRawUsername = cfg.showRawUsername === undefined ? true : cfg.showRawUsername;
 	this.showImage = cfg.showImage === undefined ? true : cfg.showImage;
-	this.showLink = cfg.showLink || false;
+	this.showLink = cfg.showLink === undefined ? true : cfg.showLink;
 
 	this.$element.addClass( 'oojsplus-user-widget' );
 	this.$nameBox = $( '<div>' ).addClass( 'user-name-cnt' );
 	this.assertUserData().done( function() {
-
 		this.$nameBox.append( $( '<span>' ).addClass( 'user-display' ).text( this.getDisplayName() ) );
 		if ( this.showRawUsername && this.getDisplayName() !== this.user.user_name ) {
 			this.$nameBox.append( $( '<span>' ).addClass( 'user-username' ).text( this.user.user_name ) );
@@ -21,19 +20,27 @@ OOJSPlus.ui.widget.UserWidget = function( cfg ) {
 			var $userImage = $( '<span>' ).addClass( 'user-image' );
 			if ( this.user.hasOwnProperty( 'user_image' ) && this.user.user_image ) {
 				$userImage.html( this.user.user_image );
-				$anchor = $userImage.find( 'a' ).first();
-				$( $anchor ).append( this.$nameBox );
+				if ( this.showLink ) {
+					var $anchor = $userImage.find( 'a' ).first();
+					$anchor.append( this.$nameBox );
+					this.$element.append( $userImage );
+				} else {
+					this.$element.append( $userImage );
+					this.$element.append( this.$nameBox );
+				}
 			} else {
 				var $defaultImage = $( '<div>' ).addClass( 'user-image-default' );
-				if ( this.user.hasOwnProperty( 'page_url' ) ) {
+				if ( this.showLink && this.user.hasOwnProperty( 'page_url' ) ) {
 					var $link = $( '<a>' ).attr( 'href', this.user.page_url ).append( this.$nameBox );
 					$defaultImage.append( $link );
+					$userImage.append( $defaultImage );
+					this.$element.append( $userImage );
 				} else {
-					$defaultImage.append( this.$nameBox );
+					$userImage.append( $defaultImage );
+					this.$element.append( $userImage );
+					this.$element.append( this.$nameBox );
 				}
-				$userImage.append( $defaultImage );
 			}
-			this.$element.append( $userImage );
 		} else if ( this.showLink && this.user.hasOwnProperty( 'page_url' ) ) {
 			var $link = $( '<a>' ).attr( 'href', this.user.page_url ).append( this.$nameBox );
 			this.$element.html( $link );
