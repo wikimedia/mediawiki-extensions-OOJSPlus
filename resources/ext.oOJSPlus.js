@@ -71,6 +71,8 @@
 		define: _define,
 		formelement: {},
 		ui: {
+			panel: {},
+			toolbar: { tool: {} },
 			data: {
 				column: {},
 				grid: {},

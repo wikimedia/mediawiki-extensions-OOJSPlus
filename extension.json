@@ -161,6 +161,7 @@
 				"ui/data/column/Date.js",
 				"ui/data/column/Icon.js",
 				"ui/data/column/Action.js",
+				"ui/data/column/SecondaryActions.js",
 				"ui/data/column/User.js",
 				"ui/data/column/Selection.js",
 				"ui/data/column/Image.js",
@@ -287,6 +288,30 @@
 			"dependencies": [
 				"oojs-ui",
 				"ext.oOJSPlus"
+			]
+		},
+		"ext.oOJSPlus.managerPanel": {
+			"scripts": [
+				"ui/toolbar/tool/ToolbarTool.js",
+				"ui/toolbar/ManagerToolbar.js",
+				"ui/panel/ManagerGrid.js"
+			],
+			"styles": [
+				"stylesheet/managerPanel.less"
+			],
+			"messages": [
+				"oojsplus-toolbar-cancel",
+				"oojsplus-toolbar-save",
+				"oojsplus-toolbar-delete",
+				"oojsplus-toolbar-edit",
+				"oojsplus-toolbar-add"
+			],
+			"dependencies": [
+				"oojs-ui",
+				"ext.oOJSPlus",
+				"oojs-ui.styles.icons-editing-core",
+				"oojs-ui.styles.icons-moderation",
+				"ext.oOJSPlus.data"
 			]
 		}
 	},

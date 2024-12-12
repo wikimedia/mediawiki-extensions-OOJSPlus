@@ -85,5 +85,10 @@
 	"oojsplus-data-grid-filter-boolean-true": "Filter options label for boolean field\n{{Identical|Yes}}",
 	"oojsplus-data-grid-filter-boolean-false": "Filter options label for boolean field\n{{Identical|No}}",
 	"oojsplus-data-grid-collapse-expand": "Label for button to expand table content",
-	"oojsplus-data-grid-collapse-collapse": "Label for button to collapse table content"
+	"oojsplus-data-grid-collapse-collapse": "Label for button to collapse table content",
+	"oojsplus-toolbar-cancel": "Label for cancel button in toolbar{{Identical|Cancel}}",
+	"oojsplus-toolbar-save": "Label for save button in toolbar{{Identical|Save}}",
+	"oojsplus-toolbar-delete": "Label for delete button in toolbar{{Identical|Delete}}",
+	"oojsplus-toolbar-edit": "Label for edit button in toolbar{{Identical|Edit}}",
+	"oojsplus-toolbar-add": "Label for add button in toolbar{{Identical|Add}}"
 }
