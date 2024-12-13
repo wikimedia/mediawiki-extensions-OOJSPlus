@@ -89,5 +89,10 @@
 	"oojsplus-data-grid-filter-boolean-true": "Oui",
 	"oojsplus-data-grid-filter-boolean-false": "Non",
 	"oojsplus-data-grid-collapse-expand": "Développer",
-	"oojsplus-data-grid-collapse-collapse": "Replier"
+	"oojsplus-data-grid-collapse-collapse": "Replier",
+	"oojsplus-toolbar-cancel": "Annuler",
+	"oojsplus-toolbar-save": "Enregistrer",
+	"oojsplus-toolbar-delete": "Supprimer",
+	"oojsplus-toolbar-edit": "Modifier",
+	"oojsplus-toolbar-add": "Ajouter"
 }

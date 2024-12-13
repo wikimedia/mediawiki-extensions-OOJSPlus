@@ -83,5 +83,10 @@
 	"oojsplus-data-grid-filter-boolean-true": "כן",
 	"oojsplus-data-grid-filter-boolean-false": "לא",
 	"oojsplus-data-grid-collapse-expand": "הצגה",
-	"oojsplus-data-grid-collapse-collapse": "הסתרה"
+	"oojsplus-data-grid-collapse-collapse": "הסתרה",
+	"oojsplus-toolbar-cancel": "ביטול",
+	"oojsplus-toolbar-save": "שמירה",
+	"oojsplus-toolbar-delete": "מחיקה",
+	"oojsplus-toolbar-edit": "עריכה",
+	"oojsplus-toolbar-add": "הוספה"
 }
