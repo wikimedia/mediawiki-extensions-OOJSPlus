@@ -36,7 +36,7 @@ OOJSPlus.ui.data.column.Selection.prototype.getViewControls = function( value, r
 				data: {
 					item: row
 				}
-			}
+			};
 			this.emit( 'selected', element );
 			this.grid.emit( 'selected', element );
 		}
