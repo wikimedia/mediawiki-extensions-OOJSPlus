@@ -88,5 +88,8 @@
 	"oojsplus-toolbar-save": "שמירה",
 	"oojsplus-toolbar-delete": "מחיקה",
 	"oojsplus-toolbar-edit": "עריכה",
-	"oojsplus-toolbar-add": "הוספה"
+	"oojsplus-toolbar-add": "הוספה",
+	"oojsplus-data-grid-filter-date-on": "מופעל",
+	"oojsplus-data-grid-filter-date-after": "אחרי",
+	"oojsplus-data-grid-filter-date-before": "לפני"
 }

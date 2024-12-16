@@ -91,5 +91,8 @@
 	"oojsplus-toolbar-save": "Speichern",
 	"oojsplus-toolbar-delete": "Löschen",
 	"oojsplus-toolbar-edit": "Bearbeiten",
-	"oojsplus-toolbar-add": "Hinzufügen"
+	"oojsplus-toolbar-add": "Hinzufügen",
+	"oojsplus-data-grid-filter-date-on": "Am",
+	"oojsplus-data-grid-filter-date-after": "Nach",
+	"oojsplus-data-grid-filter-date-before": "Vor"
 }
