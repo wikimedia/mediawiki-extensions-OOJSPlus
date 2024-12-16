@@ -72,7 +72,8 @@
 				"ui/widget/CategoryMultiSelectWidget.js",
 				"ui/widget/CategoryInputWidget.js",
 				"ui/widget/NamespaceInputWidget.js",
-				"ui/widget/ImageWidget.js"
+				"ui/widget/ImageWidget.js",
+				"ui/widget/ContributionWidget.js"
 			],
 			"messages": [
 				"oojsplus-namespace-content",
