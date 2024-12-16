@@ -45,6 +45,7 @@
 		this.border = cfg.border || 'none';
 		this.pageSize = cfg.pageSize || 25;
 		this.multiSelect = cfg.multiSelect || false;
+		this.multiSelectSelectedByDefault = cfg.multiSelectSelectedByDefault || false;
 		this.store = cfg.store || this.createLocalStore( cfg.data || [] );
 		this.sticky = false;
 		this.groupers = {};
@@ -142,7 +143,8 @@
 			multiselect.check = {
 				type: 'selection',
 				title: mw.message( 'oojsplus-data-grid-selection-column-label' ).text(),
-				actionId: 'checkRow'
+				actionId: 'checkRow',
+				selected: this.multiSelectSelectedByDefault
 			};
 			cfg = Object.assign( multiselect, cfg );
 		}
@@ -473,6 +475,9 @@
 			$row.append( $cell );
 		}
 
+		if ( this.multiSelect && this.multiSelectSelectedByDefault ) {
+			this.selectedRows.push( item );
+		}
 		if ( !this.multiSelect ) {
 			$row.on( 'click', { $row: $row, item: item },
 				this.clickOnRow.bind( this ) );
