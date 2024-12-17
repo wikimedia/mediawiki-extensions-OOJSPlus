@@ -184,7 +184,7 @@ OOJSPlus.ui.data.store.Store.prototype.multiFilter = function( data ) {
 };
 
 OOJSPlus.ui.data.store.Store.prototype.filter = function( filter, field ) {
-	if ( !filter.getValue() ) {
+	if ( !filter || !filter.getValue() ) {
 		if ( this.filters.hasOwnProperty( field ) ) {
 			delete( this.filters[field] );
 		}

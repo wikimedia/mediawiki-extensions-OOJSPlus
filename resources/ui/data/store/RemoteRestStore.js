@@ -49,7 +49,7 @@ OOJSPlus.ui.data.store.RemoteRestStore.prototype.doLoadData = function() {
 		dfd.reject();
 	}.bind( this ) ).fail( function( jgXHR, type, status ) {
 		this.request = null;
-		dfd.reject( { type: type, status: status } );
+		dfd.reject( { xhr: jgXHR, type: type, status: status } );
 	}.bind( this ) );
 
 	return dfd.promise();
