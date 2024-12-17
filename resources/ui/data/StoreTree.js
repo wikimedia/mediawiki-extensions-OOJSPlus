@@ -1,9 +1,9 @@
 ( function( mw, $ ) {
 	OOJSPlus.ui.data.StoreTree = function( cfg ) {
 		cfg = cfg || {};
-		cfg.allowDeletions = false;
-		cfg.allowAdditions = false;
-		cfg.fixed = true;
+		cfg.allowDeletions = typeof cfg.allowDeletions !== 'undefined' ? cfg.allowDeletions : false;
+		cfg.allowAdditions = typeof cfg.allowAdditions !== 'undefined' ? cfg.allowAdditions : false;
+		cfg.fixed = typeof cfg.fixed !== 'undefined' ? cfg.fixed : true;
 		cfg.data = [];
 
 		OOJSPlus.ui.data.StoreTree.parent.call( this, cfg );
