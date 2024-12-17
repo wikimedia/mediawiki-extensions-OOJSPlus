@@ -81,5 +81,13 @@
 	"oojsplus-data-grid-filter-boolean-true": "Да",
 	"oojsplus-data-grid-filter-boolean-false": "Не",
 	"oojsplus-data-grid-collapse-expand": "Расклопи",
-	"oojsplus-data-grid-collapse-collapse": "Склопи"
+	"oojsplus-data-grid-collapse-collapse": "Склопи",
+	"oojsplus-toolbar-cancel": "Откажи",
+	"oojsplus-toolbar-save": "Зачувај",
+	"oojsplus-toolbar-delete": "Избриши",
+	"oojsplus-toolbar-edit": "Уреди",
+	"oojsplus-toolbar-add": "Додај",
+	"oojsplus-data-grid-filter-date-on": "На",
+	"oojsplus-data-grid-filter-date-after": "По",
+	"oojsplus-data-grid-filter-date-before": "Пред"
 }

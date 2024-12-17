@@ -39,5 +39,10 @@
 	"oojsplus-data-grid-filter-boolean-true": "예",
 	"oojsplus-data-grid-filter-boolean-false": "아니요",
 	"oojsplus-data-grid-collapse-expand": "펼치기",
-	"oojsplus-data-grid-collapse-collapse": "접기"
+	"oojsplus-data-grid-collapse-collapse": "접기",
+	"oojsplus-toolbar-cancel": "취소",
+	"oojsplus-toolbar-save": "저장",
+	"oojsplus-toolbar-delete": "삭제",
+	"oojsplus-toolbar-edit": "편집",
+	"oojsplus-toolbar-add": "추가"
 }
