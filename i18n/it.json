@@ -25,5 +25,10 @@
 	"oojsplus-data-grid-date-filter-announce-eq": "Il $1",
 	"oojsplus-data-grid-filter-boolean-true": "Sì",
 	"oojsplus-data-grid-filter-boolean-false": "No",
-	"oojsplus-data-grid-collapse-expand": "Espandi"
+	"oojsplus-data-grid-collapse-expand": "Espandi",
+	"oojsplus-toolbar-cancel": "Annulla",
+	"oojsplus-toolbar-save": "Salva",
+	"oojsplus-toolbar-delete": "Cancella",
+	"oojsplus-toolbar-edit": "Modifica",
+	"oojsplus-toolbar-add": "Aggiungi"
 }
