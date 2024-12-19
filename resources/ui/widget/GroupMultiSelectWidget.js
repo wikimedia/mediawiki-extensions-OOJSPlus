@@ -96,6 +96,10 @@
 		return dfd.promise();
 	};
 
+	OOJSPlus.ui.widget.GroupMultiSelectWidget.prototype.onInputFocus = function () {
+		this.updateMenuItems();
+	};
+
 	/**
 	 * Update autocomplete menu with items
 	 *
@@ -121,50 +125,45 @@
 			} );
 		}
 
-		if ( inputValue.length > 0 ) {
-			this.pushPending();
+		this.pushPending();
 
-			mws.commonwebapis.group.query( {
-				query: inputValue,
-				filter: JSON.stringify( filters )
-			} ).done( function( response ) {
-				var selectedGroups = this.getSelectedGroups();
-				// Remove usernames, which are already selected from suggestions
-				var suggestions = response.map( function ( group ) {
-					if ( selectedGroups.indexOf( group.group_name ) === -1 ) {
-						// This is necessary in oder to match actual group names
-						return new OO.ui.MenuOptionWidget( {
-							data: group.group_name,
-							label: group.displayname || group.group_name,
-							id: group.group_name
-						} );
-					}
-					return undefined;
-				} ).filter( function ( item ) {
-					return item !== undefined;
-				} );
-
-				// Remove all items from menu add fill it with new
-				this.menu.clearItems();
-				this.menu.addItems( suggestions );
-
-				if ( suggestions.length ) {
-					// Enable Narrator focus on menu item, see T250762.
-					this.menu.$focusOwner.attr( 'aria-activedescendant', suggestions[ 0 ].$element.attr( 'id' ) );
+		mws.commonwebapis.group.query( {
+			query: inputValue,
+			filter: JSON.stringify( filters )
+		} ).done( function( response ) {
+			var selectedGroups = this.getSelectedGroups();
+			// Remove usernames, which are already selected from suggestions
+			var suggestions = response.map( function ( group ) {
+				if ( selectedGroups.indexOf( group.group_name ) === -1 ) {
+					// This is necessary in oder to match actual group names
+					return new OO.ui.MenuOptionWidget( {
+						data: group.group_name,
+						label: group.displayname || group.group_name,
+						id: group.group_name
+					} );
 				}
+				return undefined;
+			} ).filter( function ( item ) {
+				return item !== undefined;
+			} );
 
-				// Make the menu visible; it might not be if it was previously empty
-				this.menu.toggle( true );
-
-				this.popPending();
-			}.bind( this ) ).fail( function( e ) {
-				this.popPending();
-				console.error( e );
-			}.bind( this ) );
-		} else {
+			// Remove all items from menu add fill it with new
 			this.menu.clearItems();
-			this.menu.toggle( false );
-		}
+			this.menu.addItems( suggestions );
+
+			if ( suggestions.length ) {
+				// Enable Narrator focus on menu item, see T250762.
+				this.menu.$focusOwner.attr( 'aria-activedescendant', suggestions[ 0 ].$element.attr( 'id' ) );
+			}
+
+			// Make the menu visible; it might not be if it was previously empty
+			this.menu.toggle( true );
+
+			this.popPending();
+		}.bind( this ) ).fail( function( e ) {
+			this.popPending();
+			console.error( e );
+		}.bind( this ) );
 	};
 
 
