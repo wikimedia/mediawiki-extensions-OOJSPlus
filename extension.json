@@ -153,6 +153,7 @@
 				"ui/data/filter/Number.js",
 				"ui/data/filter/Boolean.js",
 				"ui/data/filter/List.js",
+				"ui/data/filter/TagList.js",
 				"ui/data/filter/User.js",
 				"ui/data/filter/Date.js",
 				"ui/data/column/Column.js",

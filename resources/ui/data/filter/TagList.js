@@ -1,0 +1,56 @@
+OOJSPlus.ui.data.filter.TagList = function ( cfg ) {
+	this.list = cfg.list || [];
+	cfg.$overlay = cfg.$overlay || true;
+	OOJSPlus.ui.data.filter.TagList.parent.call( this, cfg );
+	this.value = this.getFilterValue();
+};
+
+OO.inheritClass( OOJSPlus.ui.data.filter.TagList, OOJSPlus.ui.data.filter.List );
+
+OOJSPlus.ui.data.filter.TagList.prototype.getLayout = function() {
+	this.input = new OO.ui.MenuTagMultiselectWidget( {
+		options: this.list.map( function( i ) {
+			if ( typeof i === 'object' ) {
+				return i;
+			}
+			return { data: i };
+		} ),
+		allowArbitrary: false,
+		$overlay: true,
+		menu: { $overlay: true }
+	} );
+	this.input.connect( this, {
+		change: 'changeValue'
+	} );
+
+	return new OO.ui.FieldLayout( this.input, {
+		label: mw.message( 'oojsplus-data-grid-filter-label' ).text(),
+		align: 'top'
+	} );
+};
+
+OOJSPlus.ui.data.filter.TagList.prototype.setOptions = function( list ) {
+	this.list = list;
+	this.stopEvents();
+	this.input.menu.clearItems();
+	this.input.addOptions( this.list.map( function( i ) {
+		if ( typeof i === 'object' ) {
+			return i;
+		}
+		return { data: i };
+	} ) );
+	this.resumeEvents();
+};
+
+OOJSPlus.ui.data.filter.TagList.prototype.changeValue = function( value ) {
+	if ( !value || value.length === 0 ) {
+		this.input.menu.toggle( false );
+		value = [];
+	}
+
+	OOJSPlus.ui.data.filter.TagList.parent.prototype.changeValue.call( this, value.map( ( item ) =>  {
+		return item.getData();
+	} ) );
+};
+
+OOJSPlus.ui.data.registry.filterRegistry.register( 'tag_list', OOJSPlus.ui.data.filter.TagList );
