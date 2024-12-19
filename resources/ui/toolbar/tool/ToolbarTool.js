@@ -8,6 +8,7 @@ OOJSPlus.ui.toolbar.tool.ToolbarTool = function ( cfg ) {
 	this.icon = cfg.icon || '';
 	this.flags = cfg.flags || [];
 	this.title = cfg.title || '';
+	this.position = cfg.position || 'left';
 	this.displayBothIconAndLabel = cfg.displayBothIconAndLabel || false;
 	// Do not use callbacks unless necessary - it splits code in unpredictable ways
 	this.callback = cfg.callback || null;

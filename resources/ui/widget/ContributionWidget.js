@@ -8,7 +8,6 @@ OOJSPlus.ui.widget.ContributionWidget = function( timestamp, cfg ) {
 OO.inheritClass( OOJSPlus.ui.widget.ContributionWidget, OOJSPlus.ui.widget.UserWidget );
 
 OOJSPlus.ui.widget.ContributionWidget.prototype.render = function() {
-	console.log( this.user );
 	this.$nameBox.append( $( '<span>' ).addClass( 'user-display' ).text( this.getDisplayName() ) );
 	if ( this.showRawUsername && this.getDisplayName() !== this.user.user_name ) {
 		this.$nameBox.append( $( '<span>' ).addClass( 'user-username' ).text( this.user.user_name ) );
