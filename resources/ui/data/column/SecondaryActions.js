@@ -12,6 +12,7 @@ OOJSPlus.ui.data.column.SecondaryActions = function ( cfg ) {
 	this.actions = cfg.actions || [];
 	this.$overlay = cfg.$overlay || true;
 	this.$element.addClass( 'secondary-actions-column' );
+	this.$cell = null;
 };
 
 OO.inheritClass( OOJSPlus.ui.data.column.SecondaryActions, OOJSPlus.ui.data.column.Action );
@@ -21,17 +22,30 @@ OOJSPlus.ui.data.column.SecondaryActions.prototype.bindToGrid = function( grid )
 };
 
 OOJSPlus.ui.data.column.SecondaryActions.prototype.renderCell = function( value, row ) {
-	$cell = OOJSPlus.ui.data.column.SecondaryActions.parent.prototype.renderCell.call( this, value, row );
+	var $cell = OOJSPlus.ui.data.column.SecondaryActions.parent.prototype.renderCell.call( this, value, row );
 	$cell.addClass( 'secondary-actions-cell' );
 	return $cell;
 };
 
 OOJSPlus.ui.data.column.SecondaryActions.prototype.getViewControls = function( value, row ) {
 	var actions = this.actions.map( function( action ) {
-		if ( action instanceof OO.ui.MenuOptionWidget ) {
-			return action;
+		if ( typeof action.shouldShow === 'function' && !action.shouldShow( row ) ) {
+			return null;
 		}
-		return new OO.ui.MenuOptionWidget( action );
+		let item;
+		if ( action instanceof OO.ui.MenuOptionWidget ) {
+			item = action;
+		} else {
+			item = new OO.ui.MenuOptionWidget( action );
+		}
+
+		if ( typeof action.disabled === 'function' ) {
+			item.setDisabled( action.disabled( row ) );
+		}
+		return item;
+	} );
+	actions = actions.filter( function( action ) {
+		return action instanceof OO.ui.MenuOptionWidget;
 	} );
 
 	var button = new OO.ui.ButtonMenuSelectWidget( {
@@ -41,11 +55,13 @@ OOJSPlus.ui.data.column.SecondaryActions.prototype.getViewControls = function( v
 		framed: false,
 		title: this.title || '',
 		$overlay: this.$overlay,
+		classes: [ 'secondary-actions-button' ],
 		menu: {
-			items: actions
+			items: actions,
+			classes: [ 'secondary-actions-menu' ]
 		}
 	} );
-
+	this.wireFocusVisibility( button );
 	button.menu.connect( this, {
 		select: function( item ) {
 			if ( !item ) {

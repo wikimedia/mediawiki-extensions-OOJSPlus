@@ -15,6 +15,7 @@
 	 *     tools: {Array of OO.ui.ButtonWidget or subclasses of it (eg. OO.ui.PopupButtonWidget)}. Tools to add to the toolbar
 	 *     orderable: true|false, // Default to true
 	 *     resizable: true|false, // Default to true
+	 *	   actionsVisibleOnHover: true|false, // Default to false
 	 * }
 	 * @type {OOJSPlus.ui.data.GridWidget}
 	 */
@@ -57,6 +58,7 @@
 		this.orderable = typeof cfg.orderable === 'undefined' ? true : cfg.orderable;
 		this.collapsible = cfg.collapsible || false;
 		this.collapsed = cfg.collapsed || false;
+		this.actionsVisibleOnHover = cfg.actionsVisibleOnHover || false;
 		if ( this.noHeader ) {
 			// Cannot be orderable and/or resizable without header
 			this.orderable = false;
@@ -459,6 +461,9 @@
 		var $row = $( '<tr>' ).addClass( 'oojsplus-data-gridWidget-row' );
 		$( $row ).attr( 'id', this.getItemID( item ) );
 		$row.addClass( item.classes || [] );
+		if ( this.actionsVisibleOnHover ) {
+			$row.addClass( 'actions-visible-on-hover' );
+		}
 
 		if ( this.store.groupField ) {
 			if ( this.currentGroupHeader && this.currentGroupHeader.value === item[this.store.groupField] ) {
@@ -498,6 +503,8 @@
 			$row.on( 'click', { $row: $row, item: item },
 				this.clickOnRow.bind( this ) );
 		}
+		$row.on( 'mouseenter', this.mouseEnterRow.bind( this ) );
+		$row.on( 'mouseleave', this.mouseOutRow.bind( this ) );
 
 		this.$table.find( 'tbody.oojsplus-data-gridWidget-tbody' ).append( $row );
 	};
@@ -662,6 +669,26 @@
 			var $body = this.$table.find( 'tbody' );
 			$body.removeAttr( 'style' );
 			this.toolbar.$element.removeAttr( 'style' );
+		}
+	};
+
+	OOJSPlus.ui.data.GridWidget.prototype.setActionsVisibleOnHover = function( visible ) {
+		this.actionsVisibleOnHover = visible;
+	};
+
+	OOJSPlus.ui.data.GridWidget.prototype.mouseEnterRow = function( e ) {
+		if ( this.actionsVisibleOnHover ) {
+			$( '.secondary-actions-menu' ).addClass( 'oo-ui-element-hidden' );
+			// Hide all visible action cells
+			this.$element.find( '.action-cell.col-visible' ).removeClass( 'col-visible' );
+			$( e.currentTarget ).find( '.action-cell.action-cell-visible-on-hover' ).addClass( 'col-visible' );
+		}
+	};
+
+	OOJSPlus.ui.data.GridWidget.prototype.mouseOutRow = function( e ) {
+		if ( !$( e.relatedTarget ).closest( '.oo-ui-menuSelectWidget' ).length ) {
+			// Hide unless going to secondary action menu
+			$( e.currentTarget ).find( '.action-cell.action-cell-visible-on-hover' ).removeClass( 'col-visible' );
 		}
 	};
 } )( mediaWiki, jQuery );

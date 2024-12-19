@@ -58,7 +58,6 @@ OOJSPlus.ui.panel.ManagerGrid.prototype.makeGrid = function ( cfg ) {
 			if ( action === 'checkRow' ) {
 				return;
 			}
-			console.log( action, row );
 			this.onAction( action, row );
 		}
 	} );

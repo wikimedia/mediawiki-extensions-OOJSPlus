@@ -2,6 +2,8 @@ OOJSPlus.ui.toolbar.ManagerToolbar = function ( cfg ) {
 	cfg = cfg || {};
 
 	this.registeredActions = [];
+	this.leftActions = [];
+	this.rightActions = [];
 	this.toolFactory = new OO.ui.ToolFactory();
 	this.toolGroupFactory = new OO.ui.ToolGroupFactory();
 	this.tools = {};
@@ -19,18 +21,11 @@ OOJSPlus.ui.toolbar.ManagerToolbar = function ( cfg ) {
 		action.connect( this, { action: 'onActionSelect' } );
 		this.toolFactory.register( action.getToolObject() );
 		this.registeredActions.push( action.name );
-
-	}
-
-	this.saveable = cfg.saveable || false;
-	if ( this.saveable ) {
-		const saveTool = new OOJSPlus.ui.toolbar.tool.ToolbarTool( {
-			name: 'save',
-			title: mw.msg( 'oojsplus-toolbar-save' ),
-			flags: [ 'primary', 'progressive' ]
-		} );
-		saveTool.connect( this, { action: 'onSave' } );
-		this.toolFactory.register( saveTool.getToolObject() );
+		if ( action.position === 'right' ) {
+			this.rightActions.push( action.name );
+		} else {
+			this.leftActions.push( action.name );
+		}
 	}
 
 	this.cancelable = cfg.cancelable || false;
@@ -43,7 +38,21 @@ OOJSPlus.ui.toolbar.ManagerToolbar = function ( cfg ) {
 		} );
 		cancelTool.connect( this, { action: 'onCancel' } );
 		this.toolFactory.register( cancelTool.getToolObject() );
+		this.rightActions.push( 'cancel' );
 	}
+
+	this.saveable = cfg.saveable || false;
+	if ( this.saveable ) {
+		const saveTool = new OOJSPlus.ui.toolbar.tool.ToolbarTool( {
+			name: 'save',
+			title: mw.msg( 'oojsplus-toolbar-save' ),
+			flags: [ 'primary', 'progressive' ]
+		} );
+		saveTool.connect( this, { action: 'onSave' } );
+		this.toolFactory.register( saveTool.getToolObject() );
+		this.rightActions.push( 'save' );
+	}
+
 
 	OOJSPlus.ui.toolbar.ManagerToolbar.parent.call( this, this.toolFactory, this.toolGroupFactory );
 
@@ -54,8 +63,8 @@ OO.inheritClass( OOJSPlus.ui.toolbar.ManagerToolbar, OO.ui.Toolbar );
 
 OOJSPlus.ui.toolbar.ManagerToolbar.prototype.setup = function () {
 	OOJSPlus.ui.toolbar.ManagerToolbar.parent.prototype.setup.apply( this, [ [
-		this.getManagerActionsConfig(),
-		this.getDefaultActionsConfig()
+		this.getLeftActions(),
+		this.getRightActions()
 	] ] );
 };
 
@@ -64,21 +73,21 @@ OOJSPlus.ui.toolbar.ManagerToolbar.prototype.initialize = function () {
 	this.emit( 'initialize' );
 };
 
-OOJSPlus.ui.toolbar.ManagerToolbar.prototype.getManagerActionsConfig = function () {
+OOJSPlus.ui.toolbar.ManagerToolbar.prototype.getLeftActions = function () {
 	return {
 		name: 'manager-actions',
 		classes: [ 'manager-actions' ],
 		type: 'bar',
-		include: this.registeredActions
+		include: this.leftActions
 	};
 };
 
-OOJSPlus.ui.toolbar.ManagerToolbar.prototype.getDefaultActionsConfig = function () {
+OOJSPlus.ui.toolbar.ManagerToolbar.prototype.getRightActions = function () {
 	return {
 		name: 'actions',
 		classes: [ 'default-actions' ],
 		type: 'bar',
-		include: this.cancelable ? [ 'cancel', 'save' ] : [ 'save' ]
+		include: this.rightActions
 	};
 };
 
