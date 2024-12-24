@@ -36,5 +36,9 @@
 	"oojsplus-data-grid-date-filter-announce-gt": "После $1",
 	"oojsplus-data-grid-filter-boolean-true": "Да",
 	"oojsplus-data-grid-filter-boolean-false": "Нет",
-	"oojsplus-data-grid-collapse-collapse": "Свернуть"
+	"oojsplus-data-grid-collapse-collapse": "Свернуть",
+	"oojsplus-toolbar-cancel": "Отмена",
+	"oojsplus-toolbar-save": "Сохранить",
+	"oojsplus-toolbar-delete": "Удалить",
+	"oojsplus-toolbar-edit": "Править"
 }

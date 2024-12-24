@@ -17,5 +17,10 @@
 	"oojsplus-data-grid-selection-column-label": "Ընտրել",
 	"oojsplus-data-grid-toolbar-settings-aria-label": "Կարգավորումներ",
 	"oojsplus-data-grid-filter-boolean-true": "Այո",
-	"oojsplus-data-grid-filter-boolean-false": "Ոչ"
+	"oojsplus-data-grid-filter-boolean-false": "Ոչ",
+	"oojsplus-toolbar-cancel": "Չեղարկել",
+	"oojsplus-toolbar-save": "Հիշել",
+	"oojsplus-toolbar-delete": "Ջնջել",
+	"oojsplus-toolbar-edit": "Խմբագրել",
+	"oojsplus-toolbar-add": "Ավելացնել"
 }
