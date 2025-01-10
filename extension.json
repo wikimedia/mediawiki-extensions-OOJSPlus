@@ -298,6 +298,7 @@
 		},
 		"ext.oOJSPlus.managerPanel": {
 			"scripts": [
+				"ui/toolbar/tool/List.js",
 				"ui/toolbar/tool/ToolbarTool.js",
 				"ui/toolbar/ManagerToolbar.js",
 				"ui/panel/ManagerGrid.js"
