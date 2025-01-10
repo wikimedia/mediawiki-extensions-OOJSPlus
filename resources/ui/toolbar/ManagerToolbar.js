@@ -4,12 +4,18 @@ OOJSPlus.ui.toolbar.ManagerToolbar = function ( cfg ) {
 	this.registeredActions = [];
 	this.leftActions = [];
 	this.rightActions = [];
+	this.listActions = [];
 	this.toolFactory = new OO.ui.ToolFactory();
 	this.toolGroupFactory = new OO.ui.ToolGroupFactory();
 	this.tools = {};
 
 	cfg.actions = cfg.actions || [];
 	for ( var i = 0; i < cfg.actions.length; i++ ) {
+		if ( cfg.actions[ i ] instanceof OOJSPlus.ui.toolbar.tool.List ) {
+			this.listActions.push( cfg.actions[ i ].getDefinition() );
+			continue;
+		}
+
 		if ( !( cfg.actions[ i ] instanceof OOJSPlus.ui.toolbar.tool.ToolbarTool ) ) {
 			console.error(
 				'OOJSPlus.ui.toolbar.ManagerToolbar: action is not an instance of OOJSPlus.ui.toolbar.tool.ToolbarTool',
@@ -23,7 +29,7 @@ OOJSPlus.ui.toolbar.ManagerToolbar = function ( cfg ) {
 		this.registeredActions.push( action.name );
 		if ( action.position === 'right' ) {
 			this.rightActions.push( action.name );
-		} else {
+		} else if ( action.position !== 'none' ){
 			this.leftActions.push( action.name );
 		}
 	}
@@ -64,7 +70,8 @@ OO.inheritClass( OOJSPlus.ui.toolbar.ManagerToolbar, OO.ui.Toolbar );
 OOJSPlus.ui.toolbar.ManagerToolbar.prototype.setup = function () {
 	OOJSPlus.ui.toolbar.ManagerToolbar.parent.prototype.setup.apply( this, [ [
 		this.getLeftActions(),
-		this.getRightActions()
+		this.getRightActions(),
+		...this.listActions
 	] ] );
 };
 
