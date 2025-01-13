@@ -53,7 +53,7 @@ OOJSPlus.ui.toolbar.tool.ToolbarTool.prototype.getToolObject = function () {
 	tool.static.title = this.title;
 	tool.prototype.onSelect = function(){
 		if ( typeof self.callback === 'function' ) {
-			self.callback.call( this );
+			self.callback.call( this, this );
 		} else {
 			this.setActive( false );
 		}
