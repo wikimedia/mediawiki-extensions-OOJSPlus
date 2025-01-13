@@ -109,6 +109,7 @@ OOJSPlus.ui.panel.ManagerGrid.prototype.getAddAction = function ( cfg ) {
 	return new OOJSPlus.ui.toolbar.tool.ToolbarTool( $.extend(  {
 		name: 'add',
 		icon: 'add',
+		flags: [ 'progressive' ],
 		title: mw.msg( 'oojsplus-toolbar-add' )
 	}, cfg ) );
 };
