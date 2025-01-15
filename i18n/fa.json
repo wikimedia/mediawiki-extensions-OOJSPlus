@@ -29,5 +29,10 @@
 	"oojsplus-data-grid-filter-update-active-filter": "$1 پالایه {{PLURAL:$1|اعمال شد}}: $2",
 	"oojsplus-data-grid-filter-update-results": "$1 {{PLURAL:$1|نتیجه}} یافت شد",
 	"oojsplus-data-grid-filter-update-no-filter": "پالایه‌ای اعمال نشده است",
-	"oojsplus-data-grid-toolbar-settings-aria-label": "تنظیمات"
+	"oojsplus-data-grid-toolbar-settings-aria-label": "تنظیمات",
+	"oojsplus-toolbar-cancel": "لغو",
+	"oojsplus-toolbar-save": "ذخیره",
+	"oojsplus-toolbar-delete": "حذف",
+	"oojsplus-toolbar-edit": "ویرایش",
+	"oojsplus-toolbar-add": "افزودن"
 }

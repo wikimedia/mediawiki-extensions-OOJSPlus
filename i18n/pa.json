@@ -11,5 +11,13 @@
 	"oojsplus-data-grid-date-filter-announce-gt": "$1 ਤੋਂ ਬਾਅਦ",
 	"oojsplus-data-grid-date-filter-announce-eq": "$1 ਤੇ",
 	"oojsplus-data-grid-filter-boolean-true": "ਹਾਂ",
-	"oojsplus-data-grid-filter-boolean-false": "ਨਹੀਂ"
+	"oojsplus-data-grid-filter-boolean-false": "ਨਹੀਂ",
+	"oojsplus-toolbar-cancel": "ਰੱਦ ਕਰੋ",
+	"oojsplus-toolbar-save": "ਸਾਂਭੋ",
+	"oojsplus-toolbar-delete": "ਮਿਟਾਓ",
+	"oojsplus-toolbar-edit": "ਸੋਧੋ",
+	"oojsplus-toolbar-add": "ਜੋੜੋ",
+	"oojsplus-data-grid-filter-date-on": "'ਤੇ",
+	"oojsplus-data-grid-filter-date-after": "ਤੋਂ ਬਾਅਦ",
+	"oojsplus-data-grid-filter-date-before": "ਪਹਿਲਾਂ"
 }

@@ -24,5 +24,12 @@
 	"oojsplus-data-paginator-first": "پہلا ورقہ",
 	"oojsplus-data-grid-date-filter-announce-gt": "$1 دے بعد",
 	"oojsplus-data-grid-filter-boolean-true": "جیا",
-	"oojsplus-data-grid-filter-boolean-false": "کو"
+	"oojsplus-data-grid-filter-boolean-false": "کو",
+	"oojsplus-data-grid-collapse-expand": "ودھاؤ",
+	"oojsplus-data-grid-collapse-collapse": "ولھیٹو",
+	"oojsplus-toolbar-cancel": "منسوخ",
+	"oojsplus-toolbar-save": "بچاؤ",
+	"oojsplus-toolbar-delete": "مٹاؤ",
+	"oojsplus-toolbar-edit": "لکھو",
+	"oojsplus-toolbar-add": "شامل کرو"
 }

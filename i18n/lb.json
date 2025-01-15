@@ -42,5 +42,10 @@
 	"oojsplus-data-grid-filter-boolean": "Wäert",
 	"oojsplus-data-grid-toolbar-settings-columns-label": "Kolonnen",
 	"oojsplus-data-grid-filter-close": "Zoumaachen",
-	"oojsplus-data-grid-sort-direction-none": "Kolonn $1 net sortéiert"
+	"oojsplus-data-grid-sort-direction-none": "Kolonn $1 net sortéiert",
+	"oojsplus-toolbar-cancel": "Ofbriechen",
+	"oojsplus-toolbar-save": "Späicheren",
+	"oojsplus-toolbar-delete": "Läschen",
+	"oojsplus-toolbar-edit": "Änneren",
+	"oojsplus-toolbar-add": "Derbäisetzen"
 }

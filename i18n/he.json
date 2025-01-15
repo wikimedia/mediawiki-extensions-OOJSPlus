@@ -82,5 +82,15 @@
 	"oojsplus-data-grid-date-filter-announce-gt": "אחרי $1",
 	"oojsplus-data-grid-date-filter-announce-eq": "ב־$1",
 	"oojsplus-data-grid-filter-boolean-true": "כן",
-	"oojsplus-data-grid-filter-boolean-false": "לא"
+	"oojsplus-data-grid-filter-boolean-false": "לא",
+	"oojsplus-data-grid-collapse-expand": "הצגה",
+	"oojsplus-data-grid-collapse-collapse": "הסתרה",
+	"oojsplus-toolbar-cancel": "ביטול",
+	"oojsplus-toolbar-save": "שמירה",
+	"oojsplus-toolbar-delete": "מחיקה",
+	"oojsplus-toolbar-edit": "עריכה",
+	"oojsplus-toolbar-add": "הוספה",
+	"oojsplus-data-grid-filter-date-on": "מופעל",
+	"oojsplus-data-grid-filter-date-after": "אחרי",
+	"oojsplus-data-grid-filter-date-before": "לפני"
 }
