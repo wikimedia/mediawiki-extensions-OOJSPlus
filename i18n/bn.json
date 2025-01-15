@@ -42,5 +42,6 @@
 	"oojsplus-data-grid-date-filter-announce-gt": "$1-এর পরে",
 	"oojsplus-data-grid-date-filter-announce-eq": "$1-এ",
 	"oojsplus-data-grid-filter-boolean-true": "হ্যাঁ",
-	"oojsplus-data-grid-filter-boolean-false": "না"
+	"oojsplus-data-grid-filter-boolean-false": "না",
+	"oojsplus-data-grid-collapse-expand": "প্রসারণ"
 }

@@ -82,5 +82,15 @@
 	"oojsplus-data-grid-date-filter-announce-gt": "Na $1",
 	"oojsplus-data-grid-date-filter-announce-eq": "Op $1",
 	"oojsplus-data-grid-filter-boolean-true": "Ja",
-	"oojsplus-data-grid-filter-boolean-false": "Nee"
+	"oojsplus-data-grid-filter-boolean-false": "Nee",
+	"oojsplus-data-grid-collapse-expand": "Uitvouwen",
+	"oojsplus-data-grid-collapse-collapse": "Samenvouwen",
+	"oojsplus-toolbar-cancel": "Annuleren",
+	"oojsplus-toolbar-save": "Opslaan",
+	"oojsplus-toolbar-delete": "Verwijderen",
+	"oojsplus-toolbar-edit": "Bewerken",
+	"oojsplus-toolbar-add": "Toevoegen",
+	"oojsplus-data-grid-filter-date-on": "Op",
+	"oojsplus-data-grid-filter-date-after": "Na",
+	"oojsplus-data-grid-filter-date-before": "Vóór"
 }

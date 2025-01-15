@@ -83,5 +83,15 @@
 	"oojsplus-data-grid-date-filter-announce-gt": "Announcement for selecting date filter. Filters for items after selected date\n* $1 - Selected date",
 	"oojsplus-data-grid-date-filter-announce-eq": "Announcement for selecting date filter. Filters for items on selected date.\n* $1 - Selected date",
 	"oojsplus-data-grid-filter-boolean-true": "Filter options label for boolean field\n{{Identical|Yes}}",
-	"oojsplus-data-grid-filter-boolean-false": "Filter options label for boolean field\n{{Identical|No}}"
+	"oojsplus-data-grid-filter-boolean-false": "Filter options label for boolean field\n{{Identical|No}}",
+	"oojsplus-data-grid-collapse-expand": "Label for button to expand table content",
+	"oojsplus-data-grid-collapse-collapse": "Label for button to collapse table content",
+	"oojsplus-toolbar-cancel": "Label for cancel button in toolbar{{Identical|Cancel}}",
+	"oojsplus-toolbar-save": "Label for save button in toolbar{{Identical|Save}}",
+	"oojsplus-toolbar-delete": "Label for delete button in toolbar{{Identical|Delete}}",
+	"oojsplus-toolbar-edit": "Label for edit button in toolbar{{Identical|Edit}}",
+	"oojsplus-toolbar-add": "Label for add button in toolbar{{Identical|Add}}",
+	"oojsplus-data-grid-filter-date-on": "Filter options label for date field\n{{Identical|On}}",
+	"oojsplus-data-grid-filter-date-after": "Filter options label for date field\n{{Identical|After}}",
+	"oojsplus-data-grid-filter-date-before": "Filter options label for date field\n{{Identical|Before}}"
 }

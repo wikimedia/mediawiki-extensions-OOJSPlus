@@ -10,5 +10,6 @@
 	"oojsplus-dialog-action-create": "Räähti",
 	"oojsplus-dialog-action-add": "Lasseet",
 	"oojsplus-dialog-action-cancel": "Jooskâ",
-	"oojsplus-data-grid-filter-label": "Sillee"
+	"oojsplus-data-grid-filter-label": "Sillee",
+	"oojsplus-toolbar-save": "Vuorkkii"
 }
