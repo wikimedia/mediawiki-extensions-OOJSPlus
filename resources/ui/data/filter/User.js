@@ -33,6 +33,11 @@ OOJSPlus.ui.data.filter.User.prototype.getLayout = function() {
 	} );
 };
 
+OOJSPlus.ui.data.filter.User.prototype.setOverlay = function( $overlay ) {
+	this.$overlay = $overlay;
+	this.input.$overlay = $overlay;
+};
+
 OOJSPlus.ui.data.filter.User.prototype.setValue = function( value ) {
 	OOJSPlus.ui.data.filter.User.parent.prototype.setValue.call( this, value );
 	typeof value.value === 'object' ? this.input.setValue( value.value[0] ) : this.input.setValue( null );

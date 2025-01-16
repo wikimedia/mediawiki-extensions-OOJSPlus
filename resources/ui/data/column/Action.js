@@ -18,7 +18,7 @@ OOJSPlus.ui.data.column.Action = function ( cfg ) {
 OO.inheritClass( OOJSPlus.ui.data.column.Action, OOJSPlus.ui.data.column.Column );
 
 OOJSPlus.ui.data.column.Action.prototype.bindToGrid = function( grid ) {
-	this.grid = grid;
+	OOJSPlus.ui.data.column.Action.parent.prototype.bindToGrid.call( this, grid );
 	if ( this.visibleOnHover ) {
 		this.grid.setActionsVisibleOnHover( true );
 	}

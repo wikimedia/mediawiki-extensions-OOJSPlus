@@ -37,6 +37,7 @@
 		this.$table.append( $( '<tbody>' ).addClass( 'oojsplus-data-gridWidget-tbody' ) );
 		this.$wrapper = $( '<div>' );
 		this.$element.append( this.$wrapper.append( this.$table ) );
+		this.$overlay = cfg.$overlay || null;
 
 		OO.ui.mixin.PendingElement.call( this, {
 			$pending: $(this.$table).find( 'thead' )
@@ -149,7 +150,7 @@
 
 	OOJSPlus.ui.data.GridWidget.prototype.buildColumns = function( cfg ) {
 		if ( this.multiSelect ) {
-			var multiselect = {}
+			var multiselect = {};
 			multiselect.check = {
 				type: 'selection',
 				title: mw.message( 'oojsplus-data-grid-selection-column-label' ).text(),
@@ -174,8 +175,7 @@
 					console.error( 'OOJSPlus.data: Tried to instantiate non-registered column for type: ' + type );
 					columnClass = OOJSPlus.ui.data.registry.columnRegistry.lookup( 'text' );
 				}
-				columnWidget = new columnClass( $.extend( column, { resizable: this.resizable } ) );
-				columnWidget.bindToGrid( this );
+				columnWidget = new columnClass( $.extend( column, { resizable: this.resizable, $overlay: this.$overlay } ) );
 				if ( !columnWidget.canChangeVisibility() ) {
 					this.alwaysVisibleColumns.push( field );
 				}
@@ -190,6 +190,7 @@
 				filterToggle: 'onFilterToggle',
 				sort: 'onSort'
 			} );
+			columnWidget.bindToGrid( this );
 			this.columns[field] = columnWidget;
 		}
 	};
@@ -342,7 +343,7 @@
 			framed: false,
 			label: mw.message( 'oojsplus-data-grid-toolbar-settings-aria-label' ).text(),
 			invisibleLabel: true,
-			$overlay: this.$overlay,
+			$overlay: this.$overlay || true,
 			popup: {
 				head: true,
 				label: mw.message( "oojsplus-data-grid-toolbar-settings-columns-label" ).text(),

@@ -65,7 +65,7 @@ OOJSPlus.ui.data.filter.Boolean.prototype.matches = function( value ) {
 	return value === this.value.value;
 };
 
-OOJSPlus.ui.data.filter.Boolean.prototype.changeValue = function( value ) {
+OOJSPlus.ui.data.filter.Boolean.prototype.doChangeValue = function( value ) {
 	var value = value ? value.getData() : null;
 	var shouldClosePopup = this.closePopupOnChange;
 	if ( value === null ) {
@@ -80,5 +80,7 @@ OOJSPlus.ui.data.filter.Boolean.prototype.changeValue = function( value ) {
 
 	this.emit( 'change', this, shouldClosePopup );
 };
+
+
 
 OOJSPlus.ui.data.registry.filterRegistry.register( 'boolean', OOJSPlus.ui.data.filter.Boolean );
