@@ -1,4 +1,6 @@
-OOJSPlus.ui.data.filter.String = function ( cfg ) {
+	OOJSPlus.ui.data.filter.String = function ( cfg ) {
+	cfg = cfg || {};
+	cfg.delayChange = true;
 	OOJSPlus.ui.data.filter.String.parent.call( this, cfg );
 	this.operator = cfg.operator || 'ct';
 	this.value = this.getFilterValue();

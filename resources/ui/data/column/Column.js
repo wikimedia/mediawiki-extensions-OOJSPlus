@@ -32,7 +32,7 @@
 		this.type = cfg.type;
 		this.sticky = cfg.sticky || false;
 		this.hidden = cfg.hidden || false;
-		this.$overlay = cfg.$overlay || true;
+		this.$overlay = cfg.$overlay || null;
 		this.autoClosePopup = cfg.autoClosePopup || false;
 		this.maxLabelLength = cfg.maxLabelLength || false;
 		this.resizable = cfg.resizable || false;
@@ -74,8 +74,8 @@
 	OO.inheritClass( OOJSPlus.ui.data.column.Column, OO.ui.Widget );
 
 	OOJSPlus.ui.data.column.Column.prototype.bindToGrid = function( grid ) {
-		// STUB - Will be called after the column has been added to the grid.
-		// Sometimes columns might need the grid context to set themselves up
+		this.grid = grid;
+		this.$overlay = this.$overlay || grid.$element;
 	};
 
 	OOJSPlus.ui.data.column.Column.prototype.getHeader = function( data ) {
@@ -167,6 +167,7 @@
 			title: mw.message( 'oojsplus-data-grid-filter-title', this.headerText ).parse(),
 			popup: {
 				head: false,
+				anchor: false,
 				autoClose: this.autoClosePopup,
 				$content: this.filter.$element,
 				padded: true,
@@ -183,7 +184,10 @@
 			toggle: function( visible ) {
 				this.emit( 'filterToggle', this.filterButton, visible );
 				if ( visible ) {
-					this.filter.focus();
+					setTimeout( function() {
+						// Timeout is needed to make sure the focus is set after the popup is positioned
+						this.filter.focus();
+					}.bind( this ), 1 );
 				} else {
 					this.filterButton.focus();
 				}

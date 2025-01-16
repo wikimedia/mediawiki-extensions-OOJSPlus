@@ -13,10 +13,6 @@ OOJSPlus.ui.data.column.Selection = function ( cfg ) {
 
 OO.inheritClass( OOJSPlus.ui.data.column.Selection, OOJSPlus.ui.data.column.Action );
 
-OOJSPlus.ui.data.column.Selection.prototype.bindToGrid = function( grid ) {
-	this.grid = grid;
-};
-
 OOJSPlus.ui.data.column.Selection.prototype.renderCell = function( value, row ) {
 	$cell = OOJSPlus.ui.data.column.Selection.parent.prototype.renderCell.call( this, value, row );
 	$cell.addClass( 'selection-cell' );

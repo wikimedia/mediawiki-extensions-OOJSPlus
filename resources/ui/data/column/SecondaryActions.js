@@ -17,10 +17,6 @@ OOJSPlus.ui.data.column.SecondaryActions = function ( cfg ) {
 
 OO.inheritClass( OOJSPlus.ui.data.column.SecondaryActions, OOJSPlus.ui.data.column.Action );
 
-OOJSPlus.ui.data.column.SecondaryActions.prototype.bindToGrid = function( grid ) {
-	this.grid = grid;
-};
-
 OOJSPlus.ui.data.column.SecondaryActions.prototype.renderCell = function( value, row ) {
 	var $cell = OOJSPlus.ui.data.column.SecondaryActions.parent.prototype.renderCell.call( this, value, row );
 	$cell.addClass( 'secondary-actions-cell' );
