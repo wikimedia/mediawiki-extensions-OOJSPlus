@@ -5,6 +5,7 @@ OOJSPlus.ui.data.filter.Filter = function ( cfg ) {
 	this.value = this.getFilterValue();
 	this.filterName = '';
 	this.closePopupOnChange = cfg.closePopupOnChange || false;
+	this.delayChange = cfg.delayChange || false;
 
 	this.$element.append( new OO.ui.HorizontalLayout( {
 		items: [ this.getCloseButton(), this.getClearButton()  ],
@@ -89,6 +90,19 @@ OOJSPlus.ui.data.filter.Filter.prototype.setValue = function( value ) {
 };
 
 OOJSPlus.ui.data.filter.Filter.prototype.changeValue = function( value ) {
+	if ( !this.delayChange ) {
+		this.doChangeValue( value );
+		return;
+	}
+	if ( this.changeTimeout ) {
+		clearTimeout( this.changeTimeout );
+	}
+	this.changeTimeout = setTimeout( function() {
+		this.doChangeValue( value );
+	}.bind( this ), 500 );
+};
+
+OOJSPlus.ui.data.filter.Filter.prototype.doChangeValue = function( value ) {
 	var shouldClosePopup = this.closePopupOnChange;
 	if ( !value ) {
 		this.value = null;
@@ -104,7 +118,10 @@ OOJSPlus.ui.data.filter.Filter.prototype.changeValue = function( value ) {
 };
 
 OOJSPlus.ui.data.filter.Filter.prototype.clearValues = function() {
+	const delayChange = this.delayChange;
+	this.delayChange = false;
 	this.changeValue( '' );
+	this.delayChange = delayChange;
 };
 
 OOJSPlus.ui.data.filter.Filter.prototype.getFilterValue = function() {

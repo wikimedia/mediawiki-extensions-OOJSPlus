@@ -32,8 +32,4 @@ OOJSPlus.ui.data.column.Image.prototype.getViewControls = function( value, row )
 	return imageWidget;
 };
 
-OOJSPlus.ui.data.column.Image.prototype.bindToGrid = function( grid ) {
-	this.grid = grid;
-};
-
 OOJSPlus.ui.data.registry.columnRegistry.register( 'image', OOJSPlus.ui.data.column.Image );
