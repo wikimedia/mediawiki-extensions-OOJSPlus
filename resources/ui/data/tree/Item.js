@@ -105,7 +105,7 @@
 				click: 'onExpanderClick'
 			} );
 			this.$element.prepend( this.expander.$element );
-		} else if ( this.expander ) {
+		} else if ( this.expander && childrenCount === 0 ) {
 			this.expander.$element.remove();
 			this.expander = null;
 		}
@@ -180,7 +180,7 @@
 		} );
 
 		this.optionsPopup = new OO.ui.PopupButtonWidget( {
-		 	indicator: 'down',
+			icon: 'menu',
 			framed: false,
 			classes: [ 'tree-item-options-btn' ],
 			popup: {
