@@ -8,6 +8,7 @@ OOJSPlus.ui.toolbar.ManagerToolbar = function ( cfg ) {
 	this.toolFactory = new OO.ui.ToolFactory();
 	this.toolGroupFactory = new OO.ui.ToolGroupFactory();
 	this.tools = {};
+	this.sticky = typeof cfg.sticky === 'undefined' ? true : cfg.sticky;
 
 	cfg.actions = cfg.actions || [];
 	for ( var i = 0; i < cfg.actions.length; i++ ) {
@@ -63,6 +64,9 @@ OOJSPlus.ui.toolbar.ManagerToolbar = function ( cfg ) {
 	OOJSPlus.ui.toolbar.ManagerToolbar.parent.call( this, this.toolFactory, this.toolGroupFactory );
 
 	this.$element.addClass( 'oojsplus-manager-toolbar' );
+	if ( this.sticky ) {
+		this.observe();
+	}
 };
 
 OO.inheritClass( OOJSPlus.ui.toolbar.ManagerToolbar, OO.ui.Toolbar );
@@ -126,4 +130,24 @@ OOJSPlus.ui.toolbar.ManagerToolbar.prototype.setAbilities = function ( abilities
 
 OOJSPlus.ui.toolbar.ManagerToolbar.prototype.getTool = function ( name ) {
 	return this.tools[name];
+};
+
+OOJSPlus.ui.toolbar.ManagerToolbar.prototype.observe = function () {
+	const toolbar = this;
+	const $offsetElement = $( '.skin-bluespicediscovery #nb-pri' ); // eslint-disable-line no-jquery/no-global-selector
+	const offsetTop = $offsetElement.length ? $offsetElement.outerHeight() : 0;
+
+	$( window ).on( 'scroll', function () {
+		const windowTop = $( this ).scrollTop();
+		const contentWidth = $( '#mw-content-text' ).innerWidth(); // eslint-disable-line no-jquery/no-global-selector
+
+		if ( windowTop > offsetTop ) {
+			toolbar.$element.css( 'top', offsetTop );
+			toolbar.$element.css( 'position', 'fixed' );
+			toolbar.$element.css( 'width', contentWidth );
+			toolbar.$element.css( 'z-index', 11 );
+		} else {
+			toolbar.$element.removeAttr( 'style' );
+		}
+	} );
 };
