@@ -1,6 +1,8 @@
 OOJSPlus.ui.data.filter.User = function ( cfg ) {
+	cfg = cfg || {};
 	this.list = cfg.list || [];
 	this.$overlay = cfg.$overlay || true;
+	cfg.closePopupOnChange = true;
 	OOJSPlus.ui.data.filter.User.parent.call( this, cfg );
 };
 
