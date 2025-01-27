@@ -65,8 +65,13 @@ OOJSPlus.ui.widget.UserWidget.prototype.render = function() {
 		ext.userProfile &&
 		typeof ext.userProfile.openUserInfoPopup === 'function'
 	) {
-		$link.on( 'mouseover', function( event ) {
+		// This is not handled by the generic mechanism that uses data-bs-username,
+		// because we want to control whether the popup is opened on hover, depending on the context the widget is in
+		$link.on( 'mouseenter', function( event ) {
 			ext.userProfile.openUserInfoPopup( this.user.user_name, $link );
+		}.bind( this ) );
+		$link.on( 'mouseleave', function( event ) {
+			ext.userProfile.closeUserInfoPopup( this.user.user_name );
 		}.bind( this ) );
 	} else if ( !this.showProfileOnHover && $link ) {
 		// Prevent automatic profile popup if not requested
