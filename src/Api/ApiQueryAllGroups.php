@@ -2,10 +2,10 @@
 
 namespace OOJSPlus\Api;
 
-use ApiBase;
 use ApiQuery;
 use ApiQueryBase;
 use ApiQueryBlockInfoTrait;
+use MediaWiki\Api\ApiBase;
 use MWStake\MediaWiki\Component\Utils\Utility\GroupHelper;
 use MWStake\MediaWiki\Component\Utils\UtilityFactory;
 use Wikimedia\ParamValidator\ParamValidator;
