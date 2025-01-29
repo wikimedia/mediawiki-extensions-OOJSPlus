@@ -2,7 +2,7 @@
 
 namespace OOJSPlus\Api;
 
-use ApiQueryAllCategories as Base;
+use MediaWiki\Api\ApiQueryAllCategories as Base;
 
 class ApiQueryAllCategories extends Base {
 
