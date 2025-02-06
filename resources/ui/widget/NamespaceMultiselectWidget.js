@@ -42,11 +42,12 @@ OOJSPlus.ui.widget.NamespaceMultiSelectWidget.prototype.setValue = function( val
 		return;
 	}
 	if ( Array.isArray( value ) ) {
-		value = value.map( function ( v ) {
-			return { data: v, label: '-' };
+		value = value.map(  ( v ) => {
+			return { data: v, label: this.getNamespaceLabel( v ) };
 		} );
 	}
-	OOJSPlus.ui.widget.NamespaceMultiSelectWidget.parent.prototype.setValue.apply( this, value );
+
+	OOJSPlus.ui.widget.NamespaceMultiSelectWidget.parent.prototype.setValue.apply( this, [ value ] );
 };
 OOJSPlus.ui.widget.NamespaceMultiSelectWidget.prototype.updateHiddenInput = function () {
 	if ( '$hiddenInput' in this ) {
