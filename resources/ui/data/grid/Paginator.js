@@ -124,6 +124,12 @@
 	OOJSPlus.ui.data.grid.Paginator.prototype.updateNumberButtonSelect = function() {
 		this.splitPageButtons = this.numberOfPages > 5 ? true : false;
 
+		// Dummy button eliminating left side round corners of the first number button
+		let firstDummyButtonUnit = new OO.ui.ButtonOptionWidget( {
+			data: 0
+		} );
+		this.numberButtonSelectWidget.addItems( [firstDummyButtonUnit] );
+
 		for ( let i = 1; i <= this.numberOfPages; i++ ) {
 			let buttonTitle = mw.message(
 				'oojsplus-data-paginator-page-number-button-title',
@@ -137,6 +143,13 @@
 			buttonUnit.$element.attr( 'aria-label', buttonTitle );
 			this.numberButtonSelectWidget.addItems( [buttonUnit] );
 		}
+
+		// Dummy button eliminating right side round corners of the last number button
+		let lastDummyButtonUnit = new OO.ui.ButtonOptionWidget( {
+			data: this.numberOfPages + 1
+		} );
+		this.numberButtonSelectWidget.addItems( [lastDummyButtonUnit] );
+
 		this.numberButtonSelectWidget.$element.attr(
 			'aria-label',
 			mw.message( 'oojsplus-data-paginator-page-number-switch-hint' ).text()
