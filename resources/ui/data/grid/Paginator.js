@@ -21,8 +21,6 @@
 		this.$element.attr( 'aria-label',
 			mw.message( 'oojsplus-data-paginator-aria-label' ).text() );
 		this.$element.append( this.navigation.$element );
-
-		this.splitPageButtons = false;
 	};
 
 	OO.inheritClass( OOJSPlus.ui.data.grid.Paginator, OO.ui.Widget );
@@ -122,8 +120,6 @@
 	};
 
 	OOJSPlus.ui.data.grid.Paginator.prototype.updateNumberButtonSelect = function() {
-		this.splitPageButtons = this.numberOfPages > 5 ? true : false;
-
 		// Dummy button eliminating left side round corners of the first number button
 		let firstDummyButtonUnit = new OO.ui.ButtonOptionWidget( {
 			data: 0
@@ -268,23 +264,19 @@
 		this.firstButton.setDisabled( this.currentPage === 1 );
 		this.calculateShowedEntries();
 
-		if ( !this.splitPageButtons ) {
-			return;
-		}
-
 		let minRange = 0;
 		if ( this.currentPage === 1 ) {
 			minRange = this.currentPage;
 		} else if ( this.currentPage === 2 ) {
 			minRange = this.currentPage - 1;
 		} else if ( this.currentPage === this.numberOfPages - 1 ) {
-			minRange = this.currentPage - 3;
+			minRange = Math.max( this.currentPage - 3, 1 );
 		} else if ( this.currentPage === this.numberOfPages ) {
-			minRange = this.currentPage - 4;
+			minRange = Math.max( this.currentPage - 4, 1 );
 		} else {
 			minRange = this.currentPage - 2;
 		}
-		let maxRange = minRange + 4;
+		let maxRange = Math.min(minRange + 4, this.numberOfPages);
 
 		this.numberButtonSelectWidget.items.forEach( function ( buttonUnit ) {
 			if ( minRange <= buttonUnit.data && buttonUnit.data <= maxRange ) {
