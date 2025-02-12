@@ -96,3 +96,8 @@ OOJSPlus.ui.mixin.NamespaceOptions.prototype.getNamespaceOptions = function ( co
 
 	return options;
 };
+
+OOJSPlus.ui.mixin.NamespaceOptions.prototype.getNamespaceLabel = function ( ns ) {
+	var namespaces = mw.config.get( 'wgFormattedNamespaces' );
+	return namespaces[ ns ] || '-';
+};
