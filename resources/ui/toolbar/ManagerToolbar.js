@@ -39,13 +39,13 @@ OOJSPlus.ui.toolbar.ManagerToolbar = function ( cfg ) {
 	if ( this.cancelable ) {
 		const cancelTool = new OOJSPlus.ui.toolbar.tool.ToolbarTool( {
 			name: 'cancel',
-			icon: 'cancel',
+			icon: 'close',
 			title: mw.msg( 'oojsplus-toolbar-cancel' ),
 			flags: [ 'destructive' ]
 		} );
 		cancelTool.connect( this, { action: 'onCancel' } );
 		this.toolFactory.register( cancelTool.getToolObject() );
-		this.rightActions.push( 'cancel' );
+		this.leftActions.push( 'cancel' );
 	}
 
 	this.saveable = cfg.saveable || false;
