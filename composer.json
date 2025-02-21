@@ -21,7 +21,7 @@
 	"require": {
 		"composer/installers": "~1.0|~2",
 		"mwstake/mediawiki-component-formengine": "~2",
-		"mwstake/mediawiki-component-utils": "~2",
+		"mwstake/mediawiki-component-utils": "~3",
 		"mwstake/mediawiki-component-commonwebapis": "~3"
 	},
 	"require-dev": {
