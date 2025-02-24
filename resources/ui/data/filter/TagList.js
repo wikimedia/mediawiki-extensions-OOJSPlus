@@ -44,13 +44,13 @@ OOJSPlus.ui.data.filter.TagList.prototype.setOptions = function( list ) {
 
 OOJSPlus.ui.data.filter.TagList.prototype.changeValue = function( value ) {
 	if ( !value || value.length === 0 ) {
-		this.input.menu.toggle( false );
 		value = [];
 	}
 
 	OOJSPlus.ui.data.filter.TagList.parent.prototype.changeValue.call( this, value.map( ( item ) =>  {
 		return item.getData();
 	} ) );
+	this.input.menu.toggle( false );
 };
 
 OOJSPlus.ui.data.registry.filterRegistry.register( 'tag_list', OOJSPlus.ui.data.filter.TagList );
