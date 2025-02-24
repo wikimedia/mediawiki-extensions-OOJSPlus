@@ -79,6 +79,99 @@ OOJSPlus.ui.widget.UsersMultiselectWidget.prototype.setValidation = function ( v
 };
 
 /**
+ * Update autocomplete menu with items.
+ *
+ * @private
+ */
+OOJSPlus.ui.widget.UsersMultiselectWidget.prototype.updateMenuItems = function () {
+	const inputValue = this.input.getValue();
+
+	if ( inputValue === this.inputValue ) {
+		// Do not restart api query if nothing has changed in the input
+		return;
+	} else {
+		this.inputValue = inputValue;
+	}
+
+	this.api.abort(); // Abort all unfinished api requests
+
+	if ( inputValue.length > 0 ) {
+		this.pushPending();
+
+		this.getLookupRequest().done( ( response ) => {
+			let suggestions = response;
+			const selected = this.getSelectedUsernames();
+
+			// Remove usernames, which are already selected from suggestions
+			suggestions = suggestions.map( ( user ) => {
+				if ( selected.indexOf( user.user_name ) === -1 ) {
+					return new OO.ui.MenuOptionWidget( {
+						data: user.user_name,
+						label: user.user_real_name || user.user_name,
+						id: user.user_name
+					} );
+				}
+				return undefined;
+			} ).filter( ( item ) => item !== undefined );
+
+			// Remove all items from menu add fill it with new
+			this.menu.clearItems();
+			this.menu.addItems( suggestions );
+
+			if ( suggestions.length ) {
+				// Enable Narrator focus on menu item, see T250762.
+				this.menu.$focusOwner.attr( 'aria-activedescendant', suggestions[ 0 ].$element.attr( 'id' ) );
+			}
+
+			// Make the menu visible; it might not be if it was previously empty
+			this.menu.toggle( true );
+
+			this.popPending();
+		} ).fail( this.popPending.bind( this ) );
+	} else {
+		this.menu.clearItems();
+	}
+};
+
+OOJSPlus.ui.widget.UsersMultiselectWidget.prototype.getLookupRequest = function () {
+	var inputValue = this.value,
+		filters = [ {
+			type: 'boolean',
+			value: true,
+			operator: '==',
+			property: 'enabled',
+		} ];
+
+	if ( this.excludeGroups ) {
+		filters.push( {
+			type: 'list',
+			value: this.excludeGroups,
+			operator: 'nct',
+			property: 'groups',
+		} );
+	}
+	if ( this.groups ) {
+		filters.push( {
+			type: 'list',
+			value: this.groups,
+			operator: 'in',
+			property: 'groups',
+		} );
+	}
+
+	return this.makeLookup( {
+		query: inputValue,
+		filter: JSON.stringify( filters ),
+		limit: inputValue !== '' ? 10 : 5
+	} );
+};
+
+OOJSPlus.ui.widget.UsersMultiselectWidget.prototype.makeLookup = function ( data ) {
+	return mws.commonwebapis.user.query( data );
+};
+
+
+/**
  * Sets the 'invalid' flag appropriately.
  *
  * @param {boolean} [isValid] Optionally override validation result
