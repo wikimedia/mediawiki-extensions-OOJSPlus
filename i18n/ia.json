@@ -76,5 +76,17 @@
 	"oojsplus-data-grid-sort-direction-asc": "Columna $1 ordinate in ordine ascendente",
 	"oojsplus-data-grid-date-filter-announce-lt": "Ante le $1",
 	"oojsplus-data-grid-date-filter-announce-gt": "Post le $1",
-	"oojsplus-data-grid-date-filter-announce-eq": "Le $1"
+	"oojsplus-data-grid-date-filter-announce-eq": "Le $1",
+	"oojsplus-data-grid-filter-boolean-true": "Si",
+	"oojsplus-data-grid-filter-boolean-false": "No",
+	"oojsplus-data-grid-collapse-expand": "Expander",
+	"oojsplus-data-grid-collapse-collapse": "Contraher",
+	"oojsplus-toolbar-cancel": "Cancellar",
+	"oojsplus-toolbar-save": "Salveguardar",
+	"oojsplus-toolbar-delete": "Deler",
+	"oojsplus-toolbar-edit": "Modificar",
+	"oojsplus-toolbar-add": "Adder",
+	"oojsplus-data-grid-filter-date-on": "Le",
+	"oojsplus-data-grid-filter-date-after": "Post",
+	"oojsplus-data-grid-filter-date-before": "Ante"
 }
