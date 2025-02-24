@@ -76,7 +76,8 @@
 				"ui/widget/NamespaceMultiselectWidget.js",
 				"ui/widget/ImageWidget.js",
 				"ui/widget/ContributionWidget.js",
-				"ui/widget/HeadingLabel.js"
+				"ui/widget/HeadingLabel.js",
+				"ui/widget/NoContentPlaceholderWidget.js"
 			],
 			"messages": [
 				"oojsplus-namespace-content",
