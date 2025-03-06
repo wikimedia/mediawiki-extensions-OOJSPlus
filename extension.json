@@ -238,7 +238,8 @@
 				"oojsplus-data-grid-collapse-collapse",
 				"oojsplus-data-grid-filter-date-on",
 				"oojsplus-data-grid-filter-date-after",
-				"oojsplus-data-grid-filter-date-before"
+				"oojsplus-data-grid-filter-date-before",
+				"oojsplus-data-grid-no-results"
 			]
 		},
 		"ext.oOJSPlus.icons": {
