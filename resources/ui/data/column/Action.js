@@ -58,7 +58,7 @@ OOJSPlus.ui.data.column.Action.prototype.getViewControls = function( value, row 
 };
 
 OOJSPlus.ui.data.column.Action.prototype.getHeader = function() {
-	var $cell = $( '<th>' ).addClass( 'oojsplus-data-gridWidget-cell oojsplus-data-gridWidget-column-header, oojsplus-data-gridWidget-action-column-header' );
+	var $cell = $( '<th>' ).addClass( 'oojsplus-data-gridWidget-cell oojsplus-data-gridWidget-column-headers oojsplus-data-gridWidget-action-column-header' );
 	if ( this.headerText.length <= 0 ) {
 		return $cell;
 	}

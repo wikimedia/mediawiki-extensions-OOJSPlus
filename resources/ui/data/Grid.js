@@ -537,6 +537,12 @@
 	};
 
 	OOJSPlus.ui.data.GridWidget.prototype.setItems = function( data ) {
+		if ( data.length === 0 ) {
+			this.setLoading( false );
+			this.addEmptyRow();
+			this.emit( 'datasetChange' );
+			return;
+		}
 		this.clearItems();
 		this.addItemsInternally( data );
 		this.setColumnsVisibility( this.visibleColumns );
@@ -691,5 +697,20 @@
 			// Hide unless going to secondary action menu
 			$( e.currentTarget ).find( '.action-cell.action-cell-visible-on-hover' ).removeClass( 'col-visible' );
 		}
+	};
+
+	OOJSPlus.ui.data.GridWidget.prototype.addEmptyRow = function() {
+		var $body = this.$table.find( 'tbody' );
+		var $row = $( '<tr>' ).addClass( 'oojsplus-data-gridWidget-row' );
+		var columns = this.getCurrentColumnOrder();
+		var $cell = $( '<td>' ).attr( 'colspan', columns.length );
+		$cell.addClass( 'oojsplus-data-gridWidget-no-results' );
+		var placeHolderWidget = new OOJSPlus.ui.widget.NoContentPlaceholderWidget({
+			icon: 'grid-no-entries',
+			label: mw.message( 'oojsplus-data-grid-no-results' ).text()
+		} );
+		$cell.append( placeHolderWidget.$element );
+		$row.append( $cell );
+		$body.append( $row );
 	};
 } )( mediaWiki, jQuery );
