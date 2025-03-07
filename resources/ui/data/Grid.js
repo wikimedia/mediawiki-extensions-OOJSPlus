@@ -36,6 +36,10 @@
 		this.$table.append( $( '<thead>' ).addClass( 'oojsplus-data-gridWidget-header' ) );
 		this.$table.append( $( '<tbody>' ).addClass( 'oojsplus-data-gridWidget-tbody' ) );
 		this.$wrapper = $( '<div>' );
+
+		if ( $( document ).find( '#oojsplus-skeleton-cnt' ) ) {
+			$( '#oojsplus-skeleton-cnt' ).empty();
+		}
 		this.$element.append( this.$wrapper.append( this.$table ) );
 		this.$overlay = cfg.$overlay || null;
 
