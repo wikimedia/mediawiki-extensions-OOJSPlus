@@ -324,6 +324,11 @@
 				"oojs-ui.styles.icons-moderation",
 				"ext.oOJSPlus.data"
 			]
+		},
+		"ext.oojsplus.special.skeleton.styles": {
+			"styles": [
+				"stylesheet/skeleton.less"
+			]
 		}
 	},
 	"ResourceFileModulePaths": {
