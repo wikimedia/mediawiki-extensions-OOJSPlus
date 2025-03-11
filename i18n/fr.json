@@ -10,7 +10,8 @@
 			"SleaY",
 			"Thibaut120094",
 			"Verdy p",
-			"Wladek92"
+			"Wladek92",
+			"WillyM"
 		]
 	},
 	"oojsplus-desc": "Fournit des widgets et des fonctions utilitaires pour OOJS.",
@@ -97,5 +98,6 @@
 	"oojsplus-toolbar-add": "Ajouter",
 	"oojsplus-data-grid-filter-date-on": "Le",
 	"oojsplus-data-grid-filter-date-after": "Après le",
-	"oojsplus-data-grid-filter-date-before": "Avant le"
+	"oojsplus-data-grid-filter-date-before": "Avant le",
+	"oojsplus-data-grid-no-results": "Il n'y a pas encore d'entrées"
 }

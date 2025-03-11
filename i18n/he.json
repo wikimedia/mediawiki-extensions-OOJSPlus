@@ -91,5 +91,6 @@
 	"oojsplus-toolbar-add": "הוספה",
 	"oojsplus-data-grid-filter-date-on": "מופעל",
 	"oojsplus-data-grid-filter-date-after": "אחרי",
-	"oojsplus-data-grid-filter-date-before": "לפני"
+	"oojsplus-data-grid-filter-date-before": "לפני",
+	"oojsplus-data-grid-no-results": "אין עדיין רשומות"
 }
