@@ -49,7 +49,9 @@
 
 	OOJSPlus.ui.widget.GroupMultiSelectWidget.prototype.setValue = function ( value ) {
 		if ( !value ) {
-			return OOJSPlus.ui.widget.GroupMultiSelectWidget.parent.prototype.setValue.call( this, value );
+			// Value needs to be an array -> so add empty array if no value is given
+			// ERM41355
+			return OOJSPlus.ui.widget.GroupMultiSelectWidget.parent.prototype.setValue.call( this, [] );
 		}
 		this.setDisabled( true );
 		this.pushPending();
