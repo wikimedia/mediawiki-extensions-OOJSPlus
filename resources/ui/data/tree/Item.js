@@ -1,4 +1,4 @@
-( function( mw, $ ) {
+( function ( mw, $ ) {
 	OOJSPlus.ui.data.tree.Item = function ( cfg ) {
 		OOJSPlus.ui.data.tree.Item.parent.call( this, cfg );
 
@@ -10,7 +10,7 @@
 		this.level = cfg.level;
 		this.type = cfg.type;
 		this.leaf = cfg.leaf || false;
-		this.style = cfg.style || {}
+		this.style = cfg.style || {};
 		if ( !this.style.hasOwnProperty( 'IconExpand' ) ) {
 			this.style.IconExpand = 'add';
 		}
@@ -23,7 +23,7 @@
 		this.labelDelete = typeof cfg.labelDelete !== 'undefined' ? cfg.labelDelete : this.tree.labelDelete;
 		this.expanded = true;
 		if ( cfg.hasOwnProperty( 'expanded' ) ) {
-			this.expanded = cfg.expanded
+			this.expanded = cfg.expanded;
 		}
 
 		if ( this.buttonCfg.hasOwnProperty( 'classes' ) ) {
@@ -43,7 +43,7 @@
 
 	OOJSPlus.ui.data.tree.Item.static.tagName = 'li';
 
-	OOJSPlus.ui.data.tree.Item.prototype.init = function() {
+	OOJSPlus.ui.data.tree.Item.prototype.init = function () {
 		this.$element.children().remove();
 		this.$wrapper = $( '<div>' );
 		this.addLabel();
@@ -54,46 +54,46 @@
 		this.$element.append( this.$wrapper );
 	};
 
-	OOJSPlus.ui.data.tree.Item.prototype.setLevel = function( level ) {
+	OOJSPlus.ui.data.tree.Item.prototype.setLevel = function ( level ) {
 		this.level = level;
 		this.$element.attr( 'data-level', this.level );
 	};
 
-	OOJSPlus.ui.data.tree.Item.prototype.getLevel = function() {
+	OOJSPlus.ui.data.tree.Item.prototype.getLevel = function () {
 		return this.level;
 	};
 
-	OOJSPlus.ui.data.tree.Item.prototype.getName = function() {
+	OOJSPlus.ui.data.tree.Item.prototype.getName = function () {
 		return this.name;
 	};
 
-	OOJSPlus.ui.data.tree.Item.prototype.getLabel = function() {
+	OOJSPlus.ui.data.tree.Item.prototype.getLabel = function () {
 		return this.label;
 	};
 
-	OOJSPlus.ui.data.tree.Item.prototype.getIcon = function() {
+	OOJSPlus.ui.data.tree.Item.prototype.getIcon = function () {
 		return this.icon;
 	};
 
-	OOJSPlus.ui.data.tree.Item.prototype.getChildren = function() {
-		var $ul = this.$element.find( '> ul.tree-node-list' ),
+	OOJSPlus.ui.data.tree.Item.prototype.getChildren = function () {
+		const $ul = this.$element.find( '> ul.tree-node-list' ),
 			$children = $ul.find( '> li.oojs-ui-data-tree-item' ),
 			res = [];
 
-		for ( var i = 0; i < $children.length; i++ ) {
-			var name = $( $children[0] ).data( 'name' );
-			if ( this.tree.flat.hasOwnProperty( name ) ) {
-				res.push( this.tree.flat[name] );
+		for ( let i = 0; i < $children.length; i++ ) {
+			const name = $( $children[ 0 ] ).data( 'name' );
+			if ( this.tree.flat.hasOwnProperty( name ) ) { // eslint-disable-line es-x/no-array-prototype-flat
+				res.push( this.tree.flat[ name ] ); // eslint-disable-line es-x/no-array-prototype-flat
 			}
 		}
 
 		return res;
 	};
 
-	OOJSPlus.ui.data.tree.Item.prototype.possiblyAddExpander = function() {
-		var childrenCount = this.getChildren().length;
+	OOJSPlus.ui.data.tree.Item.prototype.possiblyAddExpander = function () {
+		const childrenCount = this.getChildren().length;
 
-		if ( ( !this.leaf || childrenCount > 0 ) && !this.expander  ) {
+		if ( ( !this.leaf || childrenCount > 0 ) && !this.expander ) {
 			this.expander = new OOJSPlus.ui.widget.ButtonWidget( {
 				framed: false,
 				icon: this.expanded ? this.style.IconCollapse : this.style.IconExpand,
@@ -111,45 +111,45 @@
 		}
 	};
 
-	OOJSPlus.ui.data.tree.Item.prototype.addLabel = function() {
+	OOJSPlus.ui.data.tree.Item.prototype.addLabel = function () {
 		this.labelWidget = new OOJSPlus.ui.widget.LinkWidget(
-			$.extend( {},
-			{
-				framed: false,
-				icon: this.getIcon(),
-			}, this.buttonCfg )
+			Object.assign( {},
+				{
+					framed: false,
+					icon: this.getIcon()
+				}, this.buttonCfg )
 		);
 
 		// Do not use OOJS event handler here - blocks propagation
-		this.labelWidget.$element.on( 'click', function( e ) {
+		this.labelWidget.$element.on( 'click', () => {
 			this.select();
 			this.emit( 'selected', this );
-		}.bind( this ) );
+		} );
 
-		this.labelWidget.$element.on( 'keyup', function( e ) {
-			if(( e.keyCode == 13 ) || ( e.keyCode == 32 )) {
+		this.labelWidget.$element.on( 'keyup', ( e ) => {
+			if ( ( e.key === 'Enter' ) || ( e.key === ' ' ) ) {
 				this.select();
 				this.emit( 'selected', this );
 			}
-		}.bind( this ) );
+		} );
 
 		this.$wrapper.append( this.labelWidget.$element );
 	};
 
-	OOJSPlus.ui.data.tree.Item.prototype.deselect = function() {
+	OOJSPlus.ui.data.tree.Item.prototype.deselect = function () {
 		this.$element.removeClass( 'item-selected' );
 	};
 
-	OOJSPlus.ui.data.tree.Item.prototype.select = function() {
+	OOJSPlus.ui.data.tree.Item.prototype.select = function () {
 		this.$element.addClass( 'item-selected' );
 	};
 
-	OOJSPlus.ui.data.tree.Item.prototype.possiblyAddOptions = function() {
-		var options = [];
+	OOJSPlus.ui.data.tree.Item.prototype.possiblyAddOptions = function () {
+		const options = [];
 		if ( this.allowDeletions ) {
 			this.removeNodeBtn = new OO.ui.ButtonWidget( {
 				framed: false,
-				label: this.labelDelete || mw.message( "oojsplus-data-tree-item-remove-label" ).text(),
+				label: this.labelDelete || mw.message( 'oojsplus-data-tree-item-remove-label' ).text(),
 				icon: 'close'
 			} );
 			this.removeNodeBtn.connect( this, {
@@ -160,7 +160,7 @@
 		if ( this.allowAdditions ) {
 			this.addSubnodeBtn = new OO.ui.ButtonWidget( {
 				framed: false,
-				label: this.labelAdd || mw.message( "oojsplus-data-tree-item-add-label" ).text(),
+				label: this.labelAdd || mw.message( 'oojsplus-data-tree-item-add-label' ).text(),
 				icon: 'add'
 			} );
 			this.addSubnodeBtn.connect( this, {
@@ -184,7 +184,7 @@
 			framed: false,
 			classes: [ 'tree-item-options-btn' ],
 			popup: {
-		 		$content: this.optionsPanel.$element,
+				$content: this.optionsPanel.$element,
 				width: 'auto',
 				align: 'forwards',
 				classes: [ 'tree-item-options-popup' ]
@@ -194,27 +194,27 @@
 		this.$wrapper.append( this.optionsPopup.$element );
 	};
 
-	OOJSPlus.ui.data.tree.Item.prototype.onExpanderClick = function() {
+	OOJSPlus.ui.data.tree.Item.prototype.onExpanderClick = function () {
 		if ( this.expanded ) {
 			this.tree.collapseNode( this.getName() );
 			this.expander.setIcon( this.style.IconExpand );
 			this.expander.$button.attr( 'aria-expanded', 'false' );
 			this.expanded = false;
 		} else {
-			this.tree.assertNodeLoaded( this.name ).done( function() {
+			this.tree.assertNodeLoaded( this.name ).done( () => {
 				this.tree.expandNode( this.getName() );
 				this.expander.setIcon( this.style.IconCollapse );
 				this.expander.$button.attr( 'aria-expanded', 'true' );
 				this.expanded = true;
-			}.bind( this ) );
+			} );
 		}
 	};
 
-	OOJSPlus.ui.data.tree.Item.prototype.onRemoveClick = function() {
-		var me = this;
+	OOJSPlus.ui.data.tree.Item.prototype.onRemoveClick = function () {
+		const me = this;
 		OO.ui.confirm(
 			mw.message( 'oojsplus-data-tree-item-remove-confirm-label', me.getLabel() ).plain()
-		).done( function ( confirmed ) {
+		).done( ( confirmed ) => {
 			if ( !confirmed ) {
 				return;
 			}
@@ -223,13 +223,13 @@
 		} );
 	};
 
-	OOJSPlus.ui.data.tree.Item.prototype.onAddSubnodeClick = function() {
+	OOJSPlus.ui.data.tree.Item.prototype.onAddSubnodeClick = function () {
 		this.optionsPopup.popup.toggle( false );
 		this.tree.addSubnode( this.getName() );
 	};
 
-	OOJSPlus.ui.data.tree.Item.prototype.onChildrenChanged = function() {
+	OOJSPlus.ui.data.tree.Item.prototype.onChildrenChanged = function () {
 		this.possiblyAddExpander();
 	};
 
-} )( mediaWiki, jQuery );
+}( mediaWiki, jQuery ) );

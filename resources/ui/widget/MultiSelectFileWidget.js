@@ -1,13 +1,13 @@
 ( function () {
 
-	OOJSPlus.ui.widget.MultiSelectFileWidget = function( config ) {
+	OOJSPlus.ui.widget.MultiSelectFileWidget = function ( config ) {
 		config = config || {};
 
 		this.uploadFiles = [];
 		// Parent constructor
-		OOJSPlus.ui.widget.MultiSelectFileWidget.parent.call( this, $.extend( {}, config, {} ) );
+		OOJSPlus.ui.widget.MultiSelectFileWidget.parent.call( this, Object.assign( {}, config, {} ) );
 		$( this.$input ).attr( 'multiple', 'true' );
-	}
+	};
 
 	OO.inheritClass( OOJSPlus.ui.widget.MultiSelectFileWidget, OO.ui.SelectFileInputWidget );
 	OO.mixinClass( OOJSPlus.ui.widget.MultiSelectFileWidget, OO.ui.mixin.PendingElement );
@@ -18,7 +18,7 @@
 		}
 
 		if ( files ) {
-			for ( var key in files ) {
+			for ( const key in files ) {
 				this.uploadFiles.push( files[ key ] );
 			}
 		} else {
@@ -26,17 +26,20 @@
 		}
 
 		this.emit( 'change', this.uploadFiles );
-	}
+	};
 
-	OOJSPlus.ui.widget.MultiSelectFileWidget.prototype.getValue = function() {
+	OOJSPlus.ui.widget.MultiSelectFileWidget.prototype.getValue = function () {
 		return this.uploadFiles;
-	}
+	};
 
 	/**
 	 * if tiff file is added reader.onload is not triggered and
 	 * deferred object is never resolved or rejected in parent.
 	 * So its necessary to override this
 	 * ERM40697
+	 *
+	 * @param {File} file
+	 * @return {jQuery.Promise}
 	 */
 	OOJSPlus.ui.widget.MultiSelectFileWidget.prototype.loadAndGetImageUrl = function ( file ) {
 		const deferred = $.Deferred(),

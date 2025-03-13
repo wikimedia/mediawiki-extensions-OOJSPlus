@@ -1,4 +1,4 @@
-OOJSPlus.ui.widget.UsersMultiselectWidget = function( cfg ) {
+OOJSPlus.ui.widget.UsersMultiselectWidget = function ( cfg ) {
 	cfg = cfg || {};
 
 	OOJSPlus.ui.widget.UsersMultiselectWidget.parent.call( this, cfg );
@@ -33,11 +33,11 @@ OOJSPlus.ui.widget.UsersMultiselectWidget.prototype.setValue = function ( valueO
 
 	this.clearItems();
 
-	var originalAllowArbitrary = this.allowArbitrary;
+	const originalAllowArbitrary = this.allowArbitrary;
 
 	this.allowArbitrary = true;
-	valueObject.forEach( function ( obj ) {
-		var data, label;
+	valueObject.forEach( ( obj ) => {
+		let data, label;
 
 		if ( typeof obj === 'string' ) {
 			data = label = obj;
@@ -47,7 +47,7 @@ OOJSPlus.ui.widget.UsersMultiselectWidget.prototype.setValue = function ( valueO
 		}
 
 		// Check if the item is in the menu
-		var menuItem = this.menu.getItemFromLabel( label ) || this.menu.findItemFromData( data );
+		const menuItem = this.menu.getItemFromLabel( label ) || this.menu.findItemFromData( data );
 		if ( menuItem ) {
 			// Menu item found, add the menu item
 			this.addTag( menuItem.getData(), menuItem.getLabel() );
@@ -58,7 +58,7 @@ OOJSPlus.ui.widget.UsersMultiselectWidget.prototype.setValue = function ( valueO
 			// allow for arbitrary values
 			this.addTag( data, label );
 		}
-	}.bind( this ) );
+	} );
 	this.allowArbitrary = originalAllowArbitrary;
 };
 
@@ -134,12 +134,12 @@ OOJSPlus.ui.widget.UsersMultiselectWidget.prototype.updateMenuItems = function (
 };
 
 OOJSPlus.ui.widget.UsersMultiselectWidget.prototype.getLookupRequest = function () {
-	var inputValue = this.value,
+	const inputValue = this.value,
 		filters = [ {
 			type: 'boolean',
 			value: true,
 			operator: '==',
-			property: 'enabled',
+			property: 'enabled'
 		} ];
 
 	if ( this.excludeGroups ) {
@@ -147,7 +147,7 @@ OOJSPlus.ui.widget.UsersMultiselectWidget.prototype.getLookupRequest = function 
 			type: 'list',
 			value: this.excludeGroups,
 			operator: 'nct',
-			property: 'groups',
+			property: 'groups'
 		} );
 	}
 	if ( this.groups ) {
@@ -155,7 +155,7 @@ OOJSPlus.ui.widget.UsersMultiselectWidget.prototype.getLookupRequest = function 
 			type: 'list',
 			value: this.groups,
 			operator: 'in',
-			property: 'groups',
+			property: 'groups'
 		} );
 	}
 
@@ -170,14 +170,13 @@ OOJSPlus.ui.widget.UsersMultiselectWidget.prototype.makeLookup = function ( data
 	return mws.commonwebapis.user.query( data );
 };
 
-
 /**
  * Sets the 'invalid' flag appropriately.
  *
  * @param {boolean} [isValid] Optionally override validation result
  */
 OOJSPlus.ui.widget.UsersMultiselectWidget.prototype.setValidityFlag = function ( isValid ) {
-	var widget = this,
+	const widget = this,
 		setFlag = function ( valid ) {
 			widget.setFlags( { invalid: !valid } );
 		};
@@ -185,9 +184,9 @@ OOJSPlus.ui.widget.UsersMultiselectWidget.prototype.setValidityFlag = function (
 	if ( isValid !== undefined ) {
 		setFlag( isValid );
 	} else {
-		this.getValidity().then( function () {
+		this.getValidity().then( () => {
 			setFlag( true );
-		}, function () {
+		}, () => {
 			setFlag( false );
 		} );
 	}
@@ -203,7 +202,7 @@ OOJSPlus.ui.widget.UsersMultiselectWidget.prototype.setValidityFlag = function (
  */
 OOJSPlus.ui.widget.UsersMultiselectWidget.prototype.getValidity = function () {
 	function rejectOrResolve( valid ) {
-		var deferred = $.Deferred(),
+		const deferred = $.Deferred(),
 			promise = valid ? deferred.resolve() : deferred.reject();
 		return promise.promise();
 	}
@@ -213,13 +212,11 @@ OOJSPlus.ui.widget.UsersMultiselectWidget.prototype.getValidity = function () {
 	}
 
 	// Run our checks if the browser thinks the field is valid
-	var result;
+	let result;
 	if ( this.validate instanceof Function ) {
 		result = this.validate( this.getValue() );
 		if ( result && typeof result.promise === 'function' ) {
-			return result.promise().then( function ( valid ) {
-				return rejectOrResolve( valid );
-			} );
+			return result.promise().then( ( valid ) => rejectOrResolve( valid ) );
 		}
 	} else {
 		// The only other type we accept is a RegExp, see #setValidation

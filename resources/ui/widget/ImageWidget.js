@@ -1,4 +1,4 @@
-OOJSPlus.ui.widget.ImageWidget = function( cfg ) {
+OOJSPlus.ui.widget.ImageWidget = function ( cfg ) {
 	this.width = cfg.width || 40;
 	this.height = cfg.height || 40;
 	this.fileName = cfg.fileName || '';
@@ -14,9 +14,9 @@ OOJSPlus.ui.widget.ImageWidget = function( cfg ) {
 	if ( this.fileUrl.length > 0 ) {
 		this.createWidget();
 	} else {
-		this.assertImageData().done( function() {
+		this.assertImageData().done( () => {
 			this.createWidget();
-		}.bind( this ) );
+		} );
 	}
 };
 
@@ -27,10 +27,10 @@ OO.mixinClass( OOJSPlus.ui.widget.ImageWidget, OO.EventEmitter );
 OOJSPlus.ui.widget.ImageWidget.static.tagName = 'div';
 
 OOJSPlus.ui.widget.ImageWidget.prototype.assertImageData = function () {
-	var dfd = $.Deferred();
-	var title = mw.Title.newFromText( 'File:' + this.fileName ),
-	imageInfoApi = new mw.Api();
-	apiParams = {
+	const dfd = $.Deferred();
+	const title = mw.Title.newFromText( 'File:' + this.fileName ),
+		imageInfoApi = new mw.Api();
+	const apiParams = {
 		action: 'query',
 		format: 'json',
 		prop: 'imageinfo',
@@ -38,37 +38,38 @@ OOJSPlus.ui.widget.ImageWidget.prototype.assertImageData = function () {
 		titles: title.getPrefixedText()
 	};
 	this.pushPending();
-	imageInfoApi.get( apiParams ).done( function ( data ) {
-		var pages = data.query.pages, p;
+	imageInfoApi.get( apiParams ).done( ( data ) => {
+		const pages = data.query.pages;
+		let p;
 		for ( p in pages ) {
 			this.fileUrl = pages[ p ].imageinfo[ 0 ].url;
 			this.descriptionUrl = pages[ p ].imageinfo[ 0 ].descriptionurl;
 		}
 		this.popPending();
 		dfd.resolve();
-	}.bind( this ) ).fail( function() {
+	} ).fail( () => {
 		this.popPending();
 		dfd.resolve();
-	}.bind( this ) );
+	} );
 
 	return dfd.promise();
 };
 
 OOJSPlus.ui.widget.ImageWidget.prototype.createWidget = function () {
-	var $imageBox = $( '<div>' ).addClass( 'image-cnt' );
+	const $imageBox = $( '<div>' ).addClass( 'image-cnt' );
 
-	$image = $( '<img>' ).addClass( 'oojsplus-image' )
-				.attr( 'alt', this.fileName )
-				.attr( 'src', this.fileUrl )
-				.attr( 'width', this.width )
-				.attr( 'height', this.height )
-				.attr( 'tabindex', 0 );
-	$( $image ).on( 'click keypress', function ( event ) {
-		if ( event.type === 'keypress'  && event.keyCode !== 13 ) {
+	const $image = $( '<img>' ).addClass( 'oojsplus-image' )
+		.attr( 'alt', this.fileName )
+		.attr( 'src', this.fileUrl )
+		.attr( 'width', this.width )
+		.attr( 'height', this.height )
+		.attr( 'tabindex', 0 );
+	$( $image ).on( 'click keypress', ( event ) => {
+		if ( event.type === 'keypress' && event.keyCode !== 13 ) {
 			return;
 		}
-		this.emit( "preview", this.fileName, this.fileUrl );
-	}.bind( this ) );
+		this.emit( 'preview', this.fileName, this.fileUrl );
+	} );
 
 	$( $imageBox ).append( $image );
 	this.$element.html( $imageBox );

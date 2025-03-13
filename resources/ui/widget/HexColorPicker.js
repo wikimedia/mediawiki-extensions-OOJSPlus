@@ -1,4 +1,4 @@
-( function( mw, $ ) {
+( function ( mw, $ ) {
 	OOJSPlus.ui.widget.HexColorPickerWidget = function ooJSPlusHexColorPickerWidget( cfg ) {
 		cfg = cfg || {};
 
@@ -15,7 +15,7 @@
 			clear: 'colorSelected'
 		} );
 
-		if( cfg.value ) {
+		if ( cfg.value ) {
 			this.setValue( cfg.value );
 		}
 
@@ -28,7 +28,7 @@
 	OO.mixinClass( OOJSPlus.ui.widget.HexColorPickerWidget, OOJSPlus.ui.mixin.ColorPickerPopup );
 	OO.mixinClass( OOJSPlus.ui.widget.HexColorPickerWidget, OO.EventEmitter );
 
-	OOJSPlus.ui.widget.HexColorPickerWidget.prototype.togglePicker = function( val ) {
+	OOJSPlus.ui.widget.HexColorPickerWidget.prototype.togglePicker = function ( val ) {
 		if ( typeof val !== 'undefined' ) {
 			this.popup.toggle( val );
 		} else {
@@ -38,11 +38,11 @@
 		this.emit( 'togglePicker', this.popup.isVisible() );
 	};
 
-	OOJSPlus.ui.widget.HexColorPickerWidget.prototype.onFocus = function() {
+	OOJSPlus.ui.widget.HexColorPickerWidget.prototype.onFocus = function () {
 		this.togglePicker( false );
 	};
 
-	OOJSPlus.ui.widget.HexColorPickerWidget.prototype.setValue = function( value, stopPropagation ) {
+	OOJSPlus.ui.widget.HexColorPickerWidget.prototype.setValue = function ( value, stopPropagation ) {
 		if ( typeof value === 'undefined' ) {
 			return;
 		}
@@ -64,14 +64,14 @@
 				this.colorSelected( {} );
 				return;
 			}
-			this.getValidity().done( function() {
+			this.getValidity().done( () => {
 				this.setPickerValue( { code: value } );
 				this.colorSelected( { code: value } );
-			}.bind( this ) );
+			} );
 		}
 	};
 
-	OOJSPlus.ui.widget.HexColorPickerWidget.prototype.colorSelected = function( value ) {
+	OOJSPlus.ui.widget.HexColorPickerWidget.prototype.colorSelected = function ( value ) {
 		this.togglePicker( false );
 		if ( typeof value === 'undefined' || !value.hasOwnProperty( 'code' ) ) {
 			this.$colorPreview.css( 'background-color', 'transparent' );
@@ -81,4 +81,4 @@
 		this.setValue( value.code, true );
 	};
 
-} ) ( mediaWiki, jQuery );
+}( mediaWiki, jQuery ) );

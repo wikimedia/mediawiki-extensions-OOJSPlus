@@ -1,33 +1,33 @@
-OOJSPlus.ui.mixin.NamespaceOptions = function() {};
+OOJSPlus.ui.mixin.NamespaceOptions = function () {};
 
 OO.initClass( OOJSPlus.ui.mixin.NamespaceOptions );
 
 OOJSPlus.ui.mixin.NamespaceOptions.prototype.getNamespaceOptions = function ( config ) {
-	var i = 0, name = '',
-		namespaces = mw.config.get( 'wgFormattedNamespaces' ),
-		options = [],
-		content = mw.config.get( 'wgContentNamespaces' ),
-		exclude = config.exclude || [],
-		groups = {
-			content: {
-				label: mw.msg( 'oojsplus-namespace-content' ),
-				options: []
-			},
-			system: {
-				label: mw.msg( 'oojsplus-namespace-system' ),
-				options: []
-			},
-			content_talk: {
-				label: mw.msg( 'oojsplus-namespace-content-talk' ),
-				options: []
-			},
-			system_talk: {
-				label: mw.msg( 'oojsplus-namespace-system-talk' ),
-				options: []
-			}
-		};
+	let i = 0, name = '';
+	const namespaces = mw.config.get( 'wgFormattedNamespaces' );
+	const options = [];
+	const content = mw.config.get( 'wgContentNamespaces' );
+	const exclude = config.exclude || [];
+	const groups = {
+		content: {
+			label: mw.msg( 'oojsplus-namespace-content' ),
+			options: []
+		},
+		system: {
+			label: mw.msg( 'oojsplus-namespace-system' ),
+			options: []
+		},
+		content_talk: { // eslint-disable-line camelcase
+			label: mw.msg( 'oojsplus-namespace-content-talk' ),
+			options: []
+		},
+		system_talk: { // eslint-disable-line camelcase
+			label: mw.msg( 'oojsplus-namespace-system-talk' ),
+			options: []
+		}
+	};
 
-	for ( var ns in namespaces ) {
+	for ( let ns in namespaces ) {
 		if ( !namespaces.hasOwnProperty( ns ) ) {
 			continue;
 		}
@@ -61,7 +61,7 @@ OOJSPlus.ui.mixin.NamespaceOptions.prototype.getNamespaceOptions = function ( co
 			label: mw.msg( 'namespacesall' )
 		} ) );
 	}
-	for ( var group in groups ) {
+	for ( const group in groups ) {
 		if ( !groups.hasOwnProperty( group ) ) {
 			continue;
 		}
@@ -69,9 +69,7 @@ OOJSPlus.ui.mixin.NamespaceOptions.prototype.getNamespaceOptions = function ( co
 			continue;
 		}
 		// Sort options
-		groups[ group ].options.sort( function ( a, b ) {
-			return a.label - b.label;
-		} );
+		groups[ group ].options.sort( ( a, b ) => a.label - b.label );
 		if ( groups[ group ].options.length ) {
 			if ( !config.hideHeadings ) {
 				options.push( new OO.ui.MenuSectionOptionWidget( {
@@ -98,6 +96,6 @@ OOJSPlus.ui.mixin.NamespaceOptions.prototype.getNamespaceOptions = function ( co
 };
 
 OOJSPlus.ui.mixin.NamespaceOptions.prototype.getNamespaceLabel = function ( ns ) {
-	var namespaces = mw.config.get( 'wgFormattedNamespaces' );
+	const namespaces = mw.config.get( 'wgFormattedNamespaces' );
 	return namespaces[ ns ] || '-';
 };

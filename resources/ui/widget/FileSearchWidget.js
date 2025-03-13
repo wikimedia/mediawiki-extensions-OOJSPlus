@@ -1,19 +1,19 @@
 /**
  * Usage:
  * new OOJSPlus.ui.widget.FileSearchWidget( {
- * 	// Options from parent
- * 	extensions: [ 'png', 'jpg' ], // limit to these extensions
- * 	mimeMajor: 'image', // limit to this major mime type
- * 	mimeMinor: 'jpeg', // limit to this minor mime type
+ *  // Options from parent
+ *  extensions: [ 'png', 'jpg' ], // limit to these extensions
+ *  mimeMajor: 'image', // limit to this major mime type
+ *  mimeMinor: 'jpeg', // limit to this minor mime type
  * } );
  *
  * Limitations:
  * - If value is set manually, eg. picker.setValue( 'Main Page' ), method 'getSelectedTitle` cannot be called
  *
- * @param cfg
+ * @param  {Object} cfg
  * @constructor
  */
-OOJSPlus.ui.widget.FileSearchWidget = function( cfg ) {
+OOJSPlus.ui.widget.FileSearchWidget = function ( cfg ) {
 	cfg.namespaces = [ 6 ];
 	cfg.contentPagesOnly = false;
 	OOJSPlus.ui.widget.FileSearchWidget.parent.call( this, cfg );

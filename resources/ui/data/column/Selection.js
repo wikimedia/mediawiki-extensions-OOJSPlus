@@ -13,22 +13,22 @@ OOJSPlus.ui.data.column.Selection = function ( cfg ) {
 
 OO.inheritClass( OOJSPlus.ui.data.column.Selection, OOJSPlus.ui.data.column.Action );
 
-OOJSPlus.ui.data.column.Selection.prototype.renderCell = function( value, row ) {
-	$cell = OOJSPlus.ui.data.column.Selection.parent.prototype.renderCell.call( this, value, row );
+OOJSPlus.ui.data.column.Selection.prototype.renderCell = function ( value, row ) {
+	const $cell = OOJSPlus.ui.data.column.Selection.parent.prototype.renderCell.call( this, value, row );
 	$cell.addClass( 'selection-cell' );
 	return $cell;
 };
 
-OOJSPlus.ui.data.column.Selection.prototype.getViewControls = function( value, row ) {
-	this.checkbox =  new OOJSPlus.ui.widget.CheckboxInputWidget( {
+OOJSPlus.ui.data.column.Selection.prototype.getViewControls = function ( value, row ) {
+	this.checkbox = new OOJSPlus.ui.widget.CheckboxInputWidget( {
 		title: this.title,
 		selected: this.selected,
 		accessKey: 't'
 	} );
 	this.checkbox.connect( this, {
-		change: function( selected ) {
+		change: function ( selected ) {
 			row.check = selected;
-			var element = {
+			const element = {
 				data: {
 					item: row
 				}
@@ -41,11 +41,11 @@ OOJSPlus.ui.data.column.Selection.prototype.getViewControls = function( value, r
 	return this.checkbox;
 };
 
-OOJSPlus.ui.data.column.Selection.prototype.getHeader = function() {
+OOJSPlus.ui.data.column.Selection.prototype.getHeader = function () {
 	return $( '<th>' ).addClass( 'oojsplus-data-gridWidget-cell oojsplus-data-gridWidget-column-header' );
 };
 
-OOJSPlus.ui.data.column.Selection.prototype.canChangeVisibility = function() {
+OOJSPlus.ui.data.column.Selection.prototype.canChangeVisibility = function () {
 	return false;
 };
 

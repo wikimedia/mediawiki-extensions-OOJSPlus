@@ -1,23 +1,29 @@
 .oojs-ui-data-tree-item {
 	display: block;
 	padding-left: 5px;
+
 	> div {
 		padding-left: 30px;
 	}
+
 	.tree-item-options-btn {
 		>.oo-ui-buttonElement-button {
-			&:focus, a:focus {
+			&:focus,
+			a:focus {
 				outline: transparent;
 				border-color: transparent !important;
 				box-shadow: none !important;
 			}
 		}
+
 		.tree-item-options-popup {
 			z-index: 1020;
+
 			.oo-ui-buttonWidget {
 				display: block;
 				margin-left: 0;
 			}
+
 			.oo-ui-labelElement-label {
 				font-weight: normal;
 			}
@@ -27,12 +33,16 @@
 			}
 		}
 	}
+
 	&.item-selected {
 		background-color: #eee;
+
 		a {
 			text-decoration: underline;
 		}
-		&:focus, a:focus {
+
+		&:focus,
+		a:focus {
 			outline: transparent;
 			border-color: transparent !important;
 			box-shadow: none !important;
@@ -46,8 +56,9 @@
 }
 
 .tree-node-list {
-	margin-left: 1.6em
+	margin-left: 1.6em;
 }
+
 .tree-root {
 	margin-left: 0;
 }

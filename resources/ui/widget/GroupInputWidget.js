@@ -1,9 +1,9 @@
 ( function () {
-	OOJSPlus.ui.widget.GroupInputWidget = function( config ) {
+	OOJSPlus.ui.widget.GroupInputWidget = function ( config ) {
 		config = config || {};
 		config.$overlay = config.$overlay || true;
 
-		OOJSPlus.ui.widget.GroupInputWidget.parent.call( this, $.extend( {}, config, { autocomplete: false } ) );
+		OOJSPlus.ui.widget.GroupInputWidget.parent.call( this, Object.assign( {}, config, { autocomplete: false } ) );
 
 		OO.ui.mixin.LookupElement.call( this, config );
 
@@ -34,13 +34,11 @@
 	 * @inheritdoc
 	 */
 	OOJSPlus.ui.widget.GroupInputWidget.prototype.focus = function () {
-		var retval;
-
 		// Prevent programmatic focus from opening the menu
 		this.setLookupsDisabled( true );
 
 		// Parent method
-		retval = OOJSPlus.ui.widget.GroupInputWidget.parent.prototype.focus.apply( this, arguments );
+		const retval = OOJSPlus.ui.widget.GroupInputWidget.parent.prototype.focus.apply( this, arguments );
 
 		this.setLookupsDisabled( false );
 
@@ -51,7 +49,7 @@
 	 * @inheritdoc
 	 */
 	OOJSPlus.ui.widget.GroupInputWidget.prototype.getLookupRequest = function () {
-		var inputValue = this.value;
+		const inputValue = this.value;
 
 		return new mw.Api().get( {
 			action: 'query',
@@ -66,11 +64,11 @@
 	};
 
 	OOJSPlus.ui.widget.GroupInputWidget.prototype.getLookupMenuOptionsFromData = function ( data ) {
-		var i, groupData,
-			items = [];
+		const items = [];
+		let i, groupData;
 
 		for ( i = 0; i < data.length; i++ ) {
-			groupData = data[i];
+			groupData = data[ i ];
 			items.push( new OO.ui.MenuOptionWidget( {
 				label: groupData.displaytext,
 				data: groupData.name

@@ -1,4 +1,4 @@
-OOJSPlus.ui.widget.HeadingLabel = function( cfg ) {
+OOJSPlus.ui.widget.HeadingLabel = function ( cfg ) {
 	cfg = cfg || {};
 
 	OOJSPlus.ui.widget.HeadingLabel.parent.call( this, cfg );

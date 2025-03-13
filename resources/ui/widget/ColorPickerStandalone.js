@@ -1,5 +1,5 @@
-( function( mw, $ ) {
-	OOJSPlus.ui.widget.ColorPickerStandaloneWidget = function( cfg ) {
+( function () {
+	OOJSPlus.ui.widget.ColorPickerStandaloneWidget = function ( cfg ) {
 		cfg = cfg || {};
 
 		OOJSPlus.ui.widget.ColorPickerStandaloneWidget.parent.call( this, cfg );
@@ -11,5 +11,4 @@
 
 	OOJSPlus.ui.widget.ColorPickerStandaloneWidget.static.tagName = 'div';
 
-
-} ) ( mediaWiki, jQuery );
+}() );

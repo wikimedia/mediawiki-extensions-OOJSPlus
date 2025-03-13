@@ -1,4 +1,4 @@
-OOJSPlus.ui.widget.ButtonSelectWidget = function( cfg ) {
+OOJSPlus.ui.widget.ButtonSelectWidget = function ( cfg ) {
 	cfg = cfg || {};
 
 	OOJSPlus.ui.widget.ButtonSelectWidget.parent.call( this, cfg );

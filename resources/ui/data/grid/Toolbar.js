@@ -1,11 +1,11 @@
-( function( mw, $ ) {
+( function ( mw ) {
 
-	OOJSPlus.ui.data.grid.Toolbar = function( cfg ) {
+	OOJSPlus.ui.data.grid.Toolbar = function ( cfg ) {
 		OOJSPlus.ui.data.grid.Toolbar.parent.call( this, cfg );
 
 		this.store = cfg.store;
 		this.store.connect( this, {
-			loaded: function() {
+			loaded: function () {
 				this.total = this.store.getTotal();
 				this.updateTotal();
 			}
@@ -17,13 +17,13 @@
 		this.totalWidget = new OO.ui.LabelWidget();
 		this.totalWidget.$element.addClass( 'row-count' );
 
-		var reloadBtn = new OO.ui.ButtonWidget( {
+		const reloadBtn = new OO.ui.ButtonWidget( {
 			title: mw.message( 'oojsplus-data-grid-toolbar-reload-label' ).text(),
 			icon: 'reload',
 			framed: false
 		} );
 		reloadBtn.connect( this, {
-			click: function() {
+			click: function () {
 				this.store.reload();
 			}
 		} );
@@ -43,21 +43,21 @@
 
 	OOJSPlus.ui.data.grid.Toolbar.static.tagName = 'div';
 
-	OOJSPlus.ui.data.grid.Toolbar.prototype.updateTotal = function() {
+	OOJSPlus.ui.data.grid.Toolbar.prototype.updateTotal = function () {
 		if ( !this.totalWidget ) {
 			return;
 		}
-		var labelMessage = mw.message( 'oojsplus-data-paginator-page-total-count-label', this.total ).parse();
+		const labelMessage = mw.message( 'oojsplus-data-paginator-page-total-count-label', this.total ).parse();
 		this.totalWidget.setLabel( labelMessage );
 	};
 
-	OOJSPlus.ui.data.grid.Toolbar.prototype.addTools = function( tools ) {
-		var validTools = [];
-		for ( var i = 0; i < tools.length; i++ ) {
-			if ( tools[i] instanceof OO.ui.ButtonWidget ) {
-				validTools.push( tools[i] );
+	OOJSPlus.ui.data.grid.Toolbar.prototype.addTools = function ( tools ) {
+		const validTools = [];
+		for ( let i = 0; i < tools.length; i++ ) {
+			if ( tools[ i ] instanceof OO.ui.ButtonWidget ) {
+				validTools.push( tools[ i ] );
 			}
 		}
 		this.staticControls.addItems( validTools );
 	};
-} )( mediaWiki, jQuery );
+}( mediaWiki ) );

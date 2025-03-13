@@ -1,20 +1,20 @@
-OOJSPlus.ui.widget.StoreDataTagMultiselectWidget = function( config ) {
+OOJSPlus.ui.widget.StoreDataTagMultiselectWidget = function ( config ) {
 	config = config || {};
 	config.menu = config.menu || {};
 	config.menu.filterFromInput = false;
 	// Parent constructor
-	OOJSPlus.ui.widget.StoreDataTagMultiselectWidget.parent.call( this, $.extend( {}, config, {} ) );
+	OOJSPlus.ui.widget.StoreDataTagMultiselectWidget.parent.call( this, Object.assign( {}, config, {} ) );
 	// Mixin constructors
-	OO.ui.mixin.PendingElement.call( this, $.extend( {}, config, { $pending: this.$handle } ) );
+	OO.ui.mixin.PendingElement.call( this, Object.assign( {}, config, { $pending: this.$handle } ) );
 
 	if ( 'name' in config ) {
 		// Use this instead of <input type="hidden">, because hidden inputs do not have separate
 		// 'value' and 'defaultValue' properties. The script on Special:Preferences
 		// (mw.special.preferences.confirmClose) checks this property to see if a field was changed.
 		this.$hiddenInput = $( '<textarea>' )
-		.addClass( 'oo-ui-element-hidden' )
-		.attr( 'name', config.name )
-		.appendTo( this.$element );
+			.addClass( 'oo-ui-element-hidden' )
+			.attr( 'name', config.name )
+			.appendTo( this.$element );
 		// Update with preset values
 		this.updateHiddenInput();
 		// Set the default value (it might be different from just being empty)
@@ -47,8 +47,8 @@ OOJSPlus.ui.widget.StoreDataTagMultiselectWidget.prototype.setValue = function (
 		value = [ value ];
 	}
 
-	for ( var i = 0; i < value.length; i++ ) {
-		this.addTag( value[i], value[i] );
+	for ( let i = 0; i < value.length; i++ ) {
+		this.addTag( value[ i ], value[ i ] );
 	}
 	this.emit( 'change', this.getValue() );
 };
@@ -59,7 +59,7 @@ OOJSPlus.ui.widget.StoreDataTagMultiselectWidget.prototype.setValue = function (
  * @private
  */
 OOJSPlus.ui.widget.StoreDataTagMultiselectWidget.prototype.updateMenuItems = function () {
-	var inputValue = this.input.getValue();
+	const inputValue = this.input.getValue();
 
 	if ( inputValue === this.inputValue ) {
 		// Do not restart api query if nothing has changed in the input
@@ -79,22 +79,20 @@ OOJSPlus.ui.widget.StoreDataTagMultiselectWidget.prototype.updateMenuItems = fun
 			sort: JSON.stringify( this.sort ),
 			limit: this.limit,
 			query: inputValue
-		} ).done( function ( response ) {
-			var results = response.results || [],
-				selected = this.getValue();
+		} ).done( ( response ) => {
+			const selected = this.getValue();
+			let results = response.results || [];
 			// Remove usernames, which are already selected from suggestions
-			results = results.map( function ( item ) {
-				if ( selected.indexOf( item[this.labelField] ) === -1 ) {
+			results = results.map( ( item ) => {
+				if ( selected.indexOf( item[ this.labelField ] ) === -1 ) {
 					// This is necessary in oder to match actual group names
 					return new OO.ui.MenuOptionWidget( {
-						data: item[this.labelField],
-						label: item[this.labelField]
+						data: item[ this.labelField ],
+						label: item[ this.labelField ]
 					} );
 				}
 				return undefined;
-			}.bind( this) ).filter( function ( item ) {
-				return item !== undefined;
-			} );
+			} ).filter( ( item ) => item !== undefined );
 
 			// Remove all items from menu add fill it with new
 			this.menu.clearItems();
@@ -109,14 +107,13 @@ OOJSPlus.ui.widget.StoreDataTagMultiselectWidget.prototype.updateMenuItems = fun
 			this.menu.toggle( true );
 
 			this.popPending();
-		}.bind( this ) ).fail( this.popPending.bind( this ) );
+		} ).fail( this.popPending.bind( this ) );
 
 	} else {
 		this.menu.clearItems();
 		this.menu.toggle( false );
 	}
 };
-
 
 OOJSPlus.ui.widget.StoreDataTagMultiselectWidget.prototype.onInputChange = function () {
 	OOJSPlus.ui.widget.StoreDataTagMultiselectWidget.parent.prototype.onInputChange.apply( this, arguments );

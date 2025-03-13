@@ -1,4 +1,4 @@
-OOJSPlus.ui.widget.NamespaceInputWidget = function( config ) {
+OOJSPlus.ui.widget.NamespaceInputWidget = function ( config ) {
 	OOJSPlus.ui.mixin.NamespaceOptions.call( this );
 	config = config || {};
 	config.$overlay = config.$overlay || true;
@@ -7,7 +7,7 @@ OOJSPlus.ui.widget.NamespaceInputWidget = function( config ) {
 	};
 	OOJSPlus.ui.widget.NamespaceInputWidget.parent.call( this, config );
 
-	var selectable = this.getMenu().findFirstSelectableItem();
+	const selectable = this.getMenu().findFirstSelectableItem();
 	if ( selectable ) {
 		this.setValue( selectable.getData() );
 	}
@@ -17,7 +17,7 @@ OOJSPlus.ui.widget.NamespaceInputWidget = function( config ) {
 OO.inheritClass( OOJSPlus.ui.widget.NamespaceInputWidget, OO.ui.DropdownWidget );
 OO.mixinClass( OOJSPlus.ui.widget.NamespaceInputWidget, OOJSPlus.ui.mixin.NamespaceOptions );
 
-OOJSPlus.ui.widget.NamespaceInputWidget.prototype.setValue = function( value ) {
+OOJSPlus.ui.widget.NamespaceInputWidget.prototype.setValue = function ( value ) {
 	if ( !value ) {
 		return;
 	}
@@ -25,8 +25,8 @@ OOJSPlus.ui.widget.NamespaceInputWidget.prototype.setValue = function( value ) {
 	this.getMenu().selectItemByData( value );
 };
 
-OOJSPlus.ui.widget.NamespaceInputWidget.prototype.getValue = function() {
-	var item = this.getMenu().findFirstSelectedItem();
+OOJSPlus.ui.widget.NamespaceInputWidget.prototype.getValue = function () {
+	const item = this.getMenu().findFirstSelectedItem();
 	if ( item ) {
 		return item.getData();
 	}

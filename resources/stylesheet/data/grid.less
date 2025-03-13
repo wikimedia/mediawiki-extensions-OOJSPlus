@@ -1,34 +1,42 @@
 .oojsplus-data-gridWidget {
 	background-color: white;
 	position: relative;
+
 	.grid-container {
 		padding-bottom: 10px;
 		width: 100%;
 		overflow-x: auto;
+
 		&.sticky-container {
 			.oojsplus-data-gridWidget-header {
 				position: relative;
 				z-index: 10;
 			}
 		}
+
 		.oojsplus-data-gridWidget-table {
 			min-width: 100%;
 			border-collapse: collapse;
 			border-spacing: 0;
+
 			.oojsplus-data-gridWidget-row {
 				&.actions-visible-on-hover {
 					.action-cell.action-cell-visible-on-hover > span {
 						opacity: 0;
 					}
+
 					.action-cell.col-visible > span {
 						opacity: 1;
 					}
 				}
+
 				.oojsplus-data-gridWidget-cell {
 					padding: 8px 5px;
+
 					.boolean-cell {
 						min-width: 20px;
 					}
+
 					&.sticky-col {
 						background-color: white;
 						position: -webkit-sticky;
@@ -39,13 +47,18 @@
 						z-index: 3;
 						background-clip: padding-box; /* fix for cell border */
 					}
+
 					.oojsplus-data-gridWidget-url-button {
-						a { white-space: break-spaces; }
+						a {
+							white-space: break-spaces;
+						}
 					}
 				}
+
 				&.row-selected td {
 					background-color: #e3e3e3 !important;
 				}
+
 				.oojsplus-data-gridWidget-no-results {
 					align-items: center;
 					height: 100%;
@@ -53,9 +66,10 @@
 					background-color: transparent !important;
 					margin-bottom: 20px;
 				}
+
 				.oo-ui-icon-grid-no-entries {
 					background-image: url( ./../../images/icons/no_entries_grid.svg );
-					background-color: rgba(62, 83, 137, 0.1);
+					background-color: rgba( 62, 83, 137, 0.1 );
 					background-repeat: no-repeat;
 					border-radius: 100%;
 					margin: 30px auto 15px;
@@ -72,79 +86,100 @@
 					position: relative;
 					border-bottom: 1px solid #e3e3e3;
 					border-right: 1px solid #e3e3e3 !important;
+
 					&:last-of-type,
 					&.oojsplus-data-gridWidget-action-column-header {
-						border-right: none !important;
+						border-right: none !important; // stylelint-disable-line declaration-property-value-disallowed-list
 					}
+
 					.header-button {
 						font-size: 1em;
 						margin-right: 4px;
 						white-space: break-spaces;
+
 						&.filterable {
 							margin-right: 23px;
 						}
+
 						a {
 							white-space: break-spaces;
 						}
 					}
+
 					.filter-button {
 						position: absolute;
-						top: 0px;
+						top: 0;
 						height: 100%;
 						right: 0;
+
 						a {
 							height: 100%;
 							vertical-align: middle;
 						}
 					}
+
 					.ui-resizable-handle {
-						right: 0px !important;
+						right: 0 !important;
 					}
 				}
 			}
+
 			&.style-differentiate-rows {
 				.oojsplus-data-gridWidget-row {
-					&:nth-child(odd) td {
-						background-color: #F0F0F0;
+					&:nth-child( odd ) td {
+						background-color: #f0f0f0;
 					}
+
 					&.row-selected td {
 						background-color: #e3e3e3 !important;
 					}
 				}
 			}
+
 			&.border-all {
 				border: 1px solid #e3e3e3 !important;
-				th, td {
+
+				th,
+				td {
 					border: 1px solid #e3e3e3 !important;
 				}
 			}
+
 			&.border-vertical {
-				th, td {
+				th,
+				td {
 					border-left: 1px solid #e3e3e3 !important;
 					border-right: 1px solid #e3e3e3 !important;
 				}
 			}
+
 			&.border-horizontal {
 				td {
 					border-top: 1px solid #e3e3e3 !important;
 					border-bottom: 1px solid #e3e3e3 !important;
 				}
 			}
+
 			.oo-ui-buttonElement.oo-ui-widget-enabled .oo-ui-iconElement-icon {
 				opacity: 0.8;
+
 				&.oo-ui-image-progressive {
 					opacity: 1;
 				}
 			}
+
 			> a.oo-ui-buttonElement-button:hover {
 				background-color: transparent;
 			}
+
 			.oo-ui-buttonElement-frameless a:hover {
 				background-color: transparent;
 			}
+
 			.oojsplus-data-gridWidget-group-header {
 				background-color: #f0f0f0;
 				font-weight: bold;
+
 				.oo-ui-horizontalLayout {
 					margin-left: 10px;
 				}
@@ -165,6 +200,7 @@
 		width: 100%;
 		height: 100%;
 		background-color: #ffffffa3;
+
 		.oo-ui-progressBarWidget {
 			margin: auto;
 		}
@@ -173,14 +209,18 @@
 
 .grid-filter-popup-head {
 	padding-top: 5px;
+
 	label {
 		margin-top: 5px;
 	}
+
 	.oo-ui-buttonWidget {
 		float: right;
+
 		&.grid-filter-popup-clear {
 			margin-right: 10px;
 		}
+
 		&.grid-filter-popup-close {
 			margin-right: 0;
 		}
@@ -195,7 +235,7 @@
 .grid-col-resizable-helper {
 	border-right: 2px solid grey;
 	z-index: 10000 !important;
-	background-color: rgba(255, 255, 255, 0.55);
+	background-color: rgba( 255, 255, 255, 0.55 );
 }
 
 /* Menus in filters */

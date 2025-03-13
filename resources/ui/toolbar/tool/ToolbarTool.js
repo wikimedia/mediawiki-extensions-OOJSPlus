@@ -25,18 +25,18 @@ OO.initClass( OOJSPlus.ui.toolbar.tool.ToolbarTool );
 OO.mixinClass( OOJSPlus.ui.toolbar.tool.ToolbarTool, OO.EventEmitter );
 
 OOJSPlus.ui.toolbar.tool.ToolbarTool.prototype.getToolObject = function () {
-	var self = this;
-	const tool = function() {
+	const self = this;
+	const tool = function () {
 		tool.super.apply( this, arguments );
 		if ( self.active ) {
 			this.setActive( true );
 		}
 		this.$element.addClass( 'oojsplus-toolbar-tool' );
 		if ( self.displayToggleCheckbox ) {
-			/*this.toggleCheckbox = new OO.ui.CheckboxInputWidget( {
+			/* this.toggleCheckbox = new OO.ui.CheckboxInputWidget( {
 				selected: self.active,
 				classes: [ 'oojsplus-toolbar-tool-checkbox' ]
-			} );*/
+			} ); */
 			this.toggleCheckbox = new OO.ui.IconWidget( {
 				icon: self.active ? 'check' : '',
 				classes: [ 'oojsplus-toolbar-tool-checkbox' ],
@@ -51,7 +51,7 @@ OOJSPlus.ui.toolbar.tool.ToolbarTool.prototype.getToolObject = function () {
 	tool.static.flags = this.flags;
 	tool.static.displayBothIconAndLabel = this.displayBothIconAndLabel || false;
 	tool.static.title = this.title;
-	tool.prototype.onSelect = function(){
+	tool.prototype.onSelect = function () {
 		if ( typeof self.callback === 'function' ) {
 			self.callback.call( this, this );
 		} else {
@@ -59,7 +59,7 @@ OOJSPlus.ui.toolbar.tool.ToolbarTool.prototype.getToolObject = function () {
 		}
 		self.emit( 'action', self.name );
 	};
-	tool.prototype.setActive = function( state ) {
+	tool.prototype.setActive = function ( state ) {
 		if ( this.toggleCheckbox ) {
 			this.toggleCheckbox.setIcon( state ? 'check' : '' );
 		}

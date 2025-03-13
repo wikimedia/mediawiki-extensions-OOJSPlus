@@ -1,16 +1,17 @@
 /**
  * {
- *     autoload: true, // Whether to autoload the store, or require explicit .load() call
- *     data: [], // Array of objects to load (not with RemoteStore)
- *     query: 'string', // Query to send to the server or locally filter specified {data}
- *     remoteFilter: true | false, // Whether to filter remotely or locally
- *     remoteSort: true | false, // Whether to sort remotely or locally
- *     pageSize: 25, // Number of items per page
- *     filter: { array_of_filters },
- *     sorter: { array_of_sorters },
- *     groupField: 'string' // Field to group by. If specified, store is responsible for properly sorting by groupField
- *     path: 'string', // REST API path (to be appended to {wiki/rest.php )
+ * autoload: true, // Whether to autoload the store, or require explicit .load() call
+ * data: [], // Array of objects to load (not with RemoteStore)
+ * query: 'string', // Query to send to the server or locally filter specified {data}
+ * remoteFilter: true | false, // Whether to filter remotely or locally
+ * remoteSort: true | false, // Whether to sort remotely or locally
+ * pageSize: 25, // Number of items per page
+ * filter: { array_of_filters },
+ * sorter: { array_of_sorters },
+ * groupField: 'string' // Field to group by. If specified, store is responsible for properly sorting by groupField
+ * path: 'string', // REST API path (to be appended to {wiki/rest.php )
  * }
+ *
  * @type {OOJSPlus.ui.data.store.Store}
  */
 OOJSPlus.ui.data.store.RemoteRestStore = function ( cfg ) {
@@ -23,22 +24,22 @@ OOJSPlus.ui.data.store.RemoteRestStore = function ( cfg ) {
 
 OO.inheritClass( OOJSPlus.ui.data.store.RemoteRestStore, OOJSPlus.ui.data.store.RemoteStore );
 
-OOJSPlus.ui.data.store.RemoteRestStore.prototype.doLoadData = function() {
-	var dfd = $.Deferred(),
+OOJSPlus.ui.data.store.RemoteRestStore.prototype.doLoadData = function () {
+	const dfd = $.Deferred(),
 		data = this.getRequestData();
 
 	this.request = $.ajax( {
 		method: 'GET',
 		url: mw.util.wikiScript( 'rest' ) + '/' + this.path,
 		data: data,
-		contentType: "application/json",
+		contentType: 'application/json',
 		dataType: 'json',
-		beforeSend: function() {
+		beforeSend: function () {
 			if ( this.request ) {
 				this.request.abort();
 			}
 		}.bind( this )
-	} ).done( function( response ) {
+	} ).done( ( response ) => {
 		this.request = null;
 		if ( response.hasOwnProperty( 'results' ) ) {
 			this.total = response.total;
@@ -47,15 +48,15 @@ OOJSPlus.ui.data.store.RemoteRestStore.prototype.doLoadData = function() {
 			return;
 		}
 		dfd.reject();
-	}.bind( this ) ).fail( function( jgXHR, type, status ) {
+	} ).fail( ( jgXHR, type, status ) => {
 		this.request = null;
 		dfd.reject( { xhr: jgXHR, type: type, status: status } );
-	}.bind( this ) );
+	} );
 
 	return dfd.promise();
 };
 
-OOJSPlus.ui.data.store.RemoteRestStore.prototype.getRequestData = function() {
+OOJSPlus.ui.data.store.RemoteRestStore.prototype.getRequestData = function () {
 	return {
 		start: this.offset,
 		limit: this.limit,
@@ -65,6 +66,6 @@ OOJSPlus.ui.data.store.RemoteRestStore.prototype.getRequestData = function() {
 	};
 };
 
-OOJSPlus.ui.data.store.RemoteRestStore.prototype.getBuckets = function() {
+OOJSPlus.ui.data.store.RemoteRestStore.prototype.getBuckets = function () {
 	return this.buckets;
 };
