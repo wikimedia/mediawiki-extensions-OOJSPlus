@@ -1,4 +1,4 @@
-	OOJSPlus.ui.data.filter.String = function ( cfg ) {
+OOJSPlus.ui.data.filter.String = function ( cfg ) {
 	cfg = cfg || {};
 	cfg.delayChange = true;
 	OOJSPlus.ui.data.filter.String.parent.call( this, cfg );
@@ -9,7 +9,7 @@
 
 OO.inheritClass( OOJSPlus.ui.data.filter.String, OOJSPlus.ui.data.filter.Filter );
 
-OOJSPlus.ui.data.filter.String.prototype.getLayout = function() {
+OOJSPlus.ui.data.filter.String.prototype.getLayout = function () {
 	this.input = new OO.ui.TextInputWidget();
 
 	this.input.connect( this, {
@@ -22,7 +22,7 @@ OOJSPlus.ui.data.filter.String.prototype.getLayout = function() {
 	} );
 };
 
-OOJSPlus.ui.data.filter.String.prototype.getFilterValue = function() {
+OOJSPlus.ui.data.filter.String.prototype.getFilterValue = function () {
 	return {
 		value: this.conditionValue,
 		operator: this.operator,
@@ -31,17 +31,17 @@ OOJSPlus.ui.data.filter.String.prototype.getFilterValue = function() {
 	};
 };
 
-OOJSPlus.ui.data.filter.String.prototype.setValue = function( value ) {
+OOJSPlus.ui.data.filter.String.prototype.setValue = function ( value ) {
 	OOJSPlus.ui.data.filter.String.parent.prototype.setValue.call( this, value );
 	this.input.setValue( value.value );
 	this.operator = value.operator;
 };
 
-OOJSPlus.ui.data.filter.String.prototype.clearValues = function() {
+OOJSPlus.ui.data.filter.String.prototype.clearValues = function () {
 	this.input.setValue( '' );
 };
 
-OOJSPlus.ui.data.filter.String.prototype.matches = function( value ) {
+OOJSPlus.ui.data.filter.String.prototype.matches = function ( value ) {
 	switch ( this.operator ) {
 		case 'eq':
 			return value.toLocaleLowerCase() === this.value.value.toLocaleLowerCase();

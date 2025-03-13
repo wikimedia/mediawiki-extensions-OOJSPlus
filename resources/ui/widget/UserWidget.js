@@ -1,4 +1,4 @@
-OOJSPlus.ui.widget.UserWidget = function( cfg ) {
+OOJSPlus.ui.widget.UserWidget = function ( cfg ) {
 	this.user = cfg || {};
 
 	OOJSPlus.ui.widget.UserWidget.parent.call( this, cfg );
@@ -11,9 +11,9 @@ OOJSPlus.ui.widget.UserWidget = function( cfg ) {
 
 	this.$element.addClass( 'oojsplus-user-widget' );
 	this.$nameBox = $( '<div>' ).addClass( 'user-name-cnt' );
-	this.assertUserData().done( function() {
+	this.assertUserData().done( () => {
 		this.render();
-	}.bind( this ) );
+	} );
 };
 
 OO.inheritClass( OOJSPlus.ui.widget.UserWidget, OO.ui.Widget );
@@ -21,14 +21,14 @@ OO.mixinClass( OOJSPlus.ui.widget.UserWidget, OO.ui.mixin.PendingElement );
 
 OOJSPlus.ui.widget.UserWidget.static.tagName = 'div';
 
-OOJSPlus.ui.widget.UserWidget.prototype.render = function() {
+OOJSPlus.ui.widget.UserWidget.prototype.render = function () {
 	this.$nameBox.append( $( '<span>' ).addClass( 'user-display' ).text( this.getDisplayName() ) );
 	if ( this.showRawUsername && this.getDisplayName() !== this.user.user_name ) {
 		this.$nameBox.append( $( '<span>' ).addClass( 'user-username' ).text( this.user.user_name ) );
 	}
 	let $link = null;
 	if ( this.showImage ) {
-		var $userImage = $( '<span>' ).addClass( 'user-image' );
+		const $userImage = $( '<span>' ).addClass( 'user-image' );
 		if ( this.user.hasOwnProperty( 'user_image' ) && this.user.user_image ) {
 			$userImage.html( this.user.user_image );
 			if ( this.showLink ) {
@@ -40,7 +40,7 @@ OOJSPlus.ui.widget.UserWidget.prototype.render = function() {
 				this.$element.append( this.$nameBox );
 			}
 		} else {
-			var $defaultImage = $( '<div>' ).addClass( 'user-image-default' );
+			const $defaultImage = $( '<div>' ).addClass( 'user-image-default' );
 			if ( this.showLink && this.user.hasOwnProperty( 'page_url' ) ) {
 				$link = $( '<a>' ).attr( 'href', this.user.page_url ).append( this.$nameBox );
 				$defaultImage.append( $link );
@@ -67,12 +67,12 @@ OOJSPlus.ui.widget.UserWidget.prototype.render = function() {
 	) {
 		// This is not handled by the generic mechanism that uses data-bs-username,
 		// because we want to control whether the popup is opened on hover, depending on the context the widget is in
-		$link.on( 'mouseenter', function( event ) {
+		$link.on( 'mouseenter', () => {
 			ext.userProfile.openUserInfoPopup( this.user.user_name, $link );
-		}.bind( this ) );
-		$link.on( 'mouseleave', function( event ) {
+		} );
+		$link.on( 'mouseleave', () => {
 			ext.userProfile.closeUserInfoPopup( this.user.user_name );
-		}.bind( this ) );
+		} );
 	} else if ( !this.showProfileOnHover && $link ) {
 		// Prevent automatic profile popup if not requested
 		$link.removeAttr( 'data-bs-username' );
@@ -85,7 +85,9 @@ OOJSPlus.ui.widget.UserWidget.prototype.getDisplayName = function () {
 };
 
 OOJSPlus.ui.widget.UserWidget.prototype.assertUserData = function () {
-	var dfd = $.Deferred(), required = [ 'user_name', 'user_real_name' ], misses = false;
+	const dfd = $.Deferred();
+	const required = [ 'user_name', 'user_real_name' ];
+	let misses = false;
 
 	if ( this.showImage ) {
 		required.push( 'user_image' );
@@ -93,23 +95,23 @@ OOJSPlus.ui.widget.UserWidget.prototype.assertUserData = function () {
 	if ( this.showLink ) {
 		required.push( 'page_url' );
 	}
-	for ( var i = 0; i < required.length; i++ ) {
+	for ( let i = 0; i < required.length; i++ ) {
 		if ( !this.user.hasOwnProperty( required[ i ] ) ) {
 			misses = true;
 		}
 	}
 	if ( misses ) {
 		this.pushPending();
-		mws.commonwebapis.user.getByUsername( this.user.user_name ).done( function ( data ) {
+		mws.commonwebapis.user.getByUsername( this.user.user_name ).done( ( data ) => {
 			if ( !$.isEmptyObject( data ) ) {
 				this.user = data;
 			}
 			this.popPending();
 			dfd.resolve();
-		}.bind( this ) ).fail( function() {
+		} ).fail( () => {
 			this.popPending();
 			dfd.resolve();
-		}.bind( this ) );
+		} );
 		return dfd.promise();
 	}
 

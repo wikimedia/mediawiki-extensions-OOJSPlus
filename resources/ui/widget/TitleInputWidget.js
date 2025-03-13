@@ -1,20 +1,20 @@
 /**
  * Usage:
  * new OOJSPlus.ui.widget.TitleInputWidget( {
- * 	namespaces: [ 0, 6 ], // Limit search to only NS_MAIN and NS_FILE
- * 	contentPagesOnly: false, // Whether to only search in pages in ContentNamespaces (default: true)
- * 	mustExist: false, // Whether to only allow existing pages (default: true): Use with `false` to allow creating new pages
- * 	prefix: '', // Prefix to add to the query (default: ''). Can be used to limit the search to eg. subpages of particular page
- * 	contentModels: [ 'wikitext', 'css' ] // Limit search to only pages with these content models
+ *  namespaces: [ 0, 6 ], // Limit search to only NS_MAIN and NS_FILE
+ *  contentPagesOnly: false, // Whether to only search in pages in ContentNamespaces (default: true)
+ *  mustExist: false, // Whether to only allow existing pages (default: true): Use with `false` to allow creating new pages
+ *  prefix: '', // Prefix to add to the query (default: ''). Can be used to limit the search to eg. subpages of particular page
+ *  contentModels: [ 'wikitext', 'css' ] // Limit search to only pages with these content models
  * } );
  *
  * Limitations:
  * - If value is set manually, eg. picker.setValue( 'Main Page' ), method 'getSelectedTitle` cannot be called
  *
- * @param cfg
+ * @param {Object} cfg
  * @constructor
  */
-OOJSPlus.ui.widget.TitleInputWidget = function( cfg ) {
+OOJSPlus.ui.widget.TitleInputWidget = function ( cfg ) {
 	cfg = cfg || {};
 	this.selectedTitle = null;
 	this.ignoreChange = false;
@@ -22,7 +22,7 @@ OOJSPlus.ui.widget.TitleInputWidget = function( cfg ) {
 	this.contentModels = cfg.contentModels || null;
 	this.validationOverride = false;
 
-	OOJSPlus.ui.widget.TitleInputWidget.parent.call( this, $.extend( {}, cfg, {
+	OOJSPlus.ui.widget.TitleInputWidget.parent.call( this, Object.assign( {}, cfg, {
 		autocomplete: false
 	} ) );
 
@@ -57,7 +57,7 @@ OOJSPlus.ui.widget.TitleInputWidget.prototype.abortRequest = function () {
 };
 
 OOJSPlus.ui.widget.TitleInputWidget.prototype.getValidity = function () {
-	var dfd = $.Deferred();
+	const dfd = $.Deferred();
 
 	if ( this.isRequired() && this.value === '' ) {
 		dfd.reject();
@@ -72,7 +72,7 @@ OOJSPlus.ui.widget.TitleInputWidget.prototype.getValidity = function () {
 	return dfd.promise();
 };
 
-OOJSPlus.ui.widget.TitleInputWidget.prototype.onLookupMenuToggle = function ( visible ) {
+OOJSPlus.ui.widget.TitleInputWidget.prototype.onLookupMenuToggle = function ( visible ) { // eslint-disable-line no-unused-vars
 	if ( this.lookupInputFocused ) {
 		this.focus();
 	}
@@ -87,7 +87,7 @@ OOJSPlus.ui.widget.TitleInputWidget.prototype.onLookupInputFocus = function () {
 };
 
 OOJSPlus.ui.widget.TitleInputWidget.prototype.focus = function () {
-	this.$input.focus();
+	this.$input.trigger( 'focus' );
 };
 
 OOJSPlus.ui.widget.TitleInputWidget.prototype.getLookupCacheDataFromResponse = function ( response ) {
@@ -129,7 +129,7 @@ OOJSPlus.ui.widget.TitleInputWidget.prototype.onLookupMenuChoose = function ( it
 };
 
 OOJSPlus.ui.widget.TitleInputWidget.prototype.onEdit = function () {
-	var value = this.$input.val();
+	const value = this.$input.val();
 	if ( value !== this.value ) {
 		this.validationOverride = false;
 		this.value = value;

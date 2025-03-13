@@ -7,9 +7,9 @@ OOJSPlus.ui.data.filter.TagList = function ( cfg ) {
 
 OO.inheritClass( OOJSPlus.ui.data.filter.TagList, OOJSPlus.ui.data.filter.List );
 
-OOJSPlus.ui.data.filter.TagList.prototype.getLayout = function() {
+OOJSPlus.ui.data.filter.TagList.prototype.getLayout = function () {
 	this.input = new OO.ui.MenuTagMultiselectWidget( {
-		options: this.list.map( function( i ) {
+		options: this.list.map( ( i ) => {
 			if ( typeof i === 'object' ) {
 				return i;
 			}
@@ -29,11 +29,11 @@ OOJSPlus.ui.data.filter.TagList.prototype.getLayout = function() {
 	} );
 };
 
-OOJSPlus.ui.data.filter.TagList.prototype.setOptions = function( list ) {
+OOJSPlus.ui.data.filter.TagList.prototype.setOptions = function ( list ) {
 	this.list = list;
 	this.stopEvents();
 	this.input.menu.clearItems();
-	this.input.addOptions( this.list.map( function( i ) {
+	this.input.addOptions( this.list.map( ( i ) => {
 		if ( typeof i === 'object' ) {
 			return i;
 		}
@@ -42,14 +42,12 @@ OOJSPlus.ui.data.filter.TagList.prototype.setOptions = function( list ) {
 	this.resumeEvents();
 };
 
-OOJSPlus.ui.data.filter.TagList.prototype.changeValue = function( value ) {
+OOJSPlus.ui.data.filter.TagList.prototype.changeValue = function ( value ) {
 	if ( !value || value.length === 0 ) {
 		value = [];
 	}
 
-	OOJSPlus.ui.data.filter.TagList.parent.prototype.changeValue.call( this, value.map( ( item ) =>  {
-		return item.getData();
-	} ) );
+	OOJSPlus.ui.data.filter.TagList.parent.prototype.changeValue.call( this, value.map( ( item ) => item.getData() ) );
 	this.input.menu.toggle( false );
 };
 

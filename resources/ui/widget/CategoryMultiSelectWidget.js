@@ -1,4 +1,4 @@
-OOJSPlus.ui.widget.CategoryMultiSelectWidget = function( config ) {
+OOJSPlus.ui.widget.CategoryMultiSelectWidget = function ( config ) {
 	config = config || {};
 	config.namespaces = null;
 	config.contentPagesOnly = false;
@@ -17,10 +17,11 @@ OOJSPlus.ui.widget.CategoryMultiSelectWidget.prototype.makeLookup = function ( q
 };
 
 OOJSPlus.ui.widget.CategoryMultiSelectWidget.prototype.getLookupMenuOptionsFromData = function ( data ) {
-	var len, i, items = [];
+	const items = [];
+	let len, i;
 
 	for ( i = 0, len = data.length; i < len; i++ ) {
-		items.push( new OO.ui.MenuOptionWidget( { data: data[i], label: data[i].title } ) );
+		items.push( new OO.ui.MenuOptionWidget( { data: data[ i ], label: data[ i ].title } ) );
 	}
 	return items;
 };

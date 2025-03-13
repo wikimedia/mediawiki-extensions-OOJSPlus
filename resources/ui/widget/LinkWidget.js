@@ -1,9 +1,9 @@
-OOJSPlus.ui.widget.LinkWidget = function( cfg ) {
+OOJSPlus.ui.widget.LinkWidget = function ( cfg ) {
 	cfg = cfg || {};
 
-	var text = cfg.label || '';
-	var classes = cfg.classes || [];
-	classes.push(  'oojsplus-ui-widget-linkwidget-label' );
+	const text = cfg.label || '';
+	const classes = cfg.classes || [];
+	classes.push( 'oojsplus-ui-widget-linkwidget-label' );
 
 	this.$link = $( '<a>' );
 
@@ -15,7 +15,7 @@ OOJSPlus.ui.widget.LinkWidget = function( cfg ) {
 		this.$link.attr( 'target', '_blank' );
 	}
 
-	var attrClasses = classes.join( ' ' );
+	const attrClasses = classes.join( ' ' );
 	this.$link.attr( 'class', attrClasses );
 
 	this.$link.append( $( '<span>' ).text( text ) );
@@ -25,10 +25,10 @@ OOJSPlus.ui.widget.LinkWidget = function( cfg ) {
 
 	OO.ui.mixin.IconElement.call( this, cfg );
 
-	OO.ui.mixin.TabIndexedElement.call( this, $.extend( {
+	OO.ui.mixin.TabIndexedElement.call( this, Object.assign( {
 		$tabIndexed: this.$link
 	}, cfg ) );
-	OO.ui.mixin.AccessKeyedElement.call( this, $.extend( {
+	OO.ui.mixin.AccessKeyedElement.call( this, Object.assign( {
 		$accessKeyed: this.$link
 	}, cfg ) );
 
@@ -43,13 +43,12 @@ OOJSPlus.ui.widget.LinkWidget = function( cfg ) {
 	} else {
 		this.setNoFollow( cfg.noFollow );
 	}
-}
+};
 
 OO.inheritClass( OOJSPlus.ui.widget.LinkWidget, OO.ui.LabelWidget );
 OO.mixinClass( OOJSPlus.ui.widget.LinkWidget, OO.ui.mixin.TabIndexedElement );
 OO.mixinClass( OOJSPlus.ui.widget.LinkWidget, OO.ui.mixin.AccessKeyedElement );
 OO.mixinClass( OOJSPlus.ui.widget.LinkWidget, OO.ui.mixin.IconElement );
-
 
 OOJSPlus.ui.widget.LinkWidget.static.tagName = 'span';
 
@@ -57,13 +56,11 @@ OOJSPlus.ui.widget.LinkWidget.prototype.setNoFollow = function ( noFollow ) {
 	noFollow = typeof noFollow === 'boolean' ? noFollow : true;
 
 	if ( noFollow !== this.noFollow ) {
-		var rel;
+		let rel;
 		if ( noFollow ) {
 			rel = this.rel.concat( [ 'nofollow' ] );
 		} else {
-			rel = this.rel.filter( function ( value ) {
-				return value !== 'nofollow';
-			} );
+			rel = this.rel.filter( ( value ) => value !== 'nofollow' );
 		}
 		this.setRel( rel );
 	}

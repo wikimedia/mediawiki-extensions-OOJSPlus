@@ -8,13 +8,13 @@ OOJSPlus.ui.data.filter.User = function ( cfg ) {
 
 OO.inheritClass( OOJSPlus.ui.data.filter.User, OOJSPlus.ui.data.filter.List );
 
-OOJSPlus.ui.data.filter.User.prototype.getLayout = function() {
+OOJSPlus.ui.data.filter.User.prototype.getLayout = function () {
 	this.input = new OOJSPlus.ui.widget.UserPickerWidget( {
-		$overlay: this.$overlay,
+		$overlay: this.$overlay
 	} );
 	this.input.lookupMenu.$element.css( 'z-index', 100000 );
 	this.input.lookupMenu.connect( this, {
-		toggle: function( visible ) {
+		toggle: function ( visible ) {
 			if ( visible && this.input.$input.val() === '' ) {
 				this.input.lookupMenu.toggle( false );
 			}
@@ -22,7 +22,7 @@ OOJSPlus.ui.data.filter.User.prototype.getLayout = function() {
 	} );
 	this.input.connect( this, {
 		choose: 'changeValue',
-		change: function( value ) {
+		change: function ( value ) {
 			if ( value === '' ) {
 				this.clearPicker();
 			}
@@ -35,31 +35,31 @@ OOJSPlus.ui.data.filter.User.prototype.getLayout = function() {
 	} );
 };
 
-OOJSPlus.ui.data.filter.User.prototype.setOverlay = function( $overlay ) {
+OOJSPlus.ui.data.filter.User.prototype.setOverlay = function ( $overlay ) {
 	this.$overlay = $overlay;
 	this.input.$overlay = $overlay;
 };
 
-OOJSPlus.ui.data.filter.User.prototype.setValue = function( value ) {
+OOJSPlus.ui.data.filter.User.prototype.setValue = function ( value ) {
 	OOJSPlus.ui.data.filter.User.parent.prototype.setValue.call( this, value );
-	typeof value.value === 'object' ? this.input.setValue( value.value[0] ) : this.input.setValue( null );
+	typeof value.value === 'object' ? this.input.setValue( value.value[ 0 ] ) : this.input.setValue( null ); // eslint-disable-line no-unused-expressions
 	this.input.setValue( value.value );
 };
 
-OOJSPlus.ui.data.filter.User.prototype.clearValues = function() {
+OOJSPlus.ui.data.filter.User.prototype.clearValues = function () {
 	OOJSPlus.ui.data.filter.User.parent.prototype.clearValues.call( this );
 	this.clearPicker();
 };
 
-OOJSPlus.ui.data.filter.User.prototype.changeValue = function( item ) {
-	var value = [];
+OOJSPlus.ui.data.filter.User.prototype.changeValue = function ( item ) {
+	let value = [];
 	if ( item ) {
 		value = [ item.getUsername() ];
 	}
 	OOJSPlus.ui.data.filter.User.parent.prototype.changeValue.call( this, value );
 };
 
-OOJSPlus.ui.data.filter.User.prototype.clearPicker = function() {
+OOJSPlus.ui.data.filter.User.prototype.clearPicker = function () {
 	this.input.abortRequest();
 	this.input.lookupMenu.toggle( false );
 	this.changeValue( null );

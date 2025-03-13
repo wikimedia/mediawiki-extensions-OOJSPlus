@@ -1,18 +1,19 @@
-( function( mw, $ ) {
+( function ( mw, $ ) {
 	/**
 	 * Usage:
 	 * new OOJSPlus.ui.widget.RangeWidget( {
-	 *	min: 0,
-	 *	max: 100,
-	 *	value: 30,
-	 *	step: 5,
-	 *	valueMask: '%v %', // %v will be replaced with actual value
-	 *	nullValue: 'auto' // What to show when value is 0
+	 * min: 0,
+	 * max: 100,
+	 * value: 30,
+	 * step: 5,
+	 * valueMask: '%v %', // %v will be replaced with actual value
+	 * nullValue: 'auto' // What to show when value is 0
 	 * } );
-	 * @param cfg
+	 *
+	 * @param {Object} cfg
 	 * @constructor
 	 */
-	OOJSPlus.ui.widget.RangeWidget = function( cfg ) {
+	OOJSPlus.ui.widget.RangeWidget = function ( cfg ) {
 		this.min = cfg.min || 0;
 		this.max = cfg.max || 999999999;
 		this.step = cfg.step || 1;
@@ -37,16 +38,16 @@
 
 	OO.inheritClass( OOJSPlus.ui.widget.RangeWidget, OO.ui.InputWidget );
 
-	OOJSPlus.ui.widget.RangeWidget.prototype.onChange = function( e ) {
+	OOJSPlus.ui.widget.RangeWidget.prototype.onChange = function ( e ) {
 		this.setValue( e.target.value );
 		this.emit( 'change', this.value );
 	};
 
-	OOJSPlus.ui.widget.RangeWidget.prototype.getValue = function() {
+	OOJSPlus.ui.widget.RangeWidget.prototype.getValue = function () {
 		return this.value;
 	};
 
-	OOJSPlus.ui.widget.RangeWidget.prototype.setValue = function( raw ) {
+	OOJSPlus.ui.widget.RangeWidget.prototype.setValue = function ( raw ) {
 		OOJSPlus.ui.widget.RangeWidget.parent.prototype.setValue.call( this, raw );
 
 		if ( raw === null ) {
@@ -56,18 +57,18 @@
 		if ( this.value === 0 && this.nullValue ) {
 			return this.$value.html( this.nullValue );
 		}
-		var value = this.parseValue();
+		const value = this.parseValue();
 		this.$value.html( value );
 	};
 
-	OOJSPlus.ui.widget.RangeWidget.prototype.parseValue = function() {
+	OOJSPlus.ui.widget.RangeWidget.prototype.parseValue = function () {
 		if ( this.valueMask.includes( '%v' ) ) {
 			return this.valueMask.replace( '%v', this.value.toString() );
 		}
 		return this.value;
 	};
 
-	OOJSPlus.ui.widget.RangeWidget.prototype.createSliderContainer = function() {
+	OOJSPlus.ui.widget.RangeWidget.prototype.createSliderContainer = function () {
 		this.$sliderContainer = $( '<div>' ).addClass( 'oojsplus-range-widget-input' );
 		this.$input = $( '<input>' )
 			.attr( 'type', 'range' )
@@ -79,11 +80,10 @@
 		this.$sliderContainer.append( this.$input );
 	};
 
-	OOJSPlus.ui.widget.RangeWidget.prototype.createValuePanel = function() {
+	OOJSPlus.ui.widget.RangeWidget.prototype.createValuePanel = function () {
 		this.$valueContainer = $( '<div>' ).addClass( 'oojsplus-range-widget-value' );
 		this.$value = $( '<span>' );
 		this.$valueContainer.append( this.$value );
 	};
 
-
-} ) ( mediaWiki, jQuery );
+}( mediaWiki, jQuery ) );

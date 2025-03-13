@@ -13,7 +13,7 @@ OOJSPlus.ui.toolbar.tool.List = function ( cfg ) {
 OO.initClass( OOJSPlus.ui.toolbar.tool.List );
 
 OOJSPlus.ui.toolbar.tool.List.prototype.getDefinition = function () {
-	return {
+	return { // eslint-disable-line mediawiki/class-doc
 		type: this.type,
 		indicator: this.indicator,
 		icon: this.icon,

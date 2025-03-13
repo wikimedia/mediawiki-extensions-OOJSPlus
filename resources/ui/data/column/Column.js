@@ -1,28 +1,30 @@
-( function( mw, $ ) {
+( function ( mw, $ ) {
 	/**
 	 * Column definition:
 	 * dataKey : {
-	 *     headerText: "Column header text",
-	 *     type: "text" | "number" | "boolean" | "url" | "user" | "date" | "icon" | "action",
-	 *     align: "left" | "center" | "right",
-	 *     // Optional properties:
-	 *     sortable: true | false,
-	 *     filter: {
-	 *          type: "text" | "number" | "boolean" | "list" | "user"
-	 *     },
-	 *     sticky: true | false, // Only on first column
-	 *     width: {number},
-	 *     // If you want to display a different value than the one in the data model, you can specify the "display" property
-	 *     display: {string},
-	 *     html: true | false, // Only for type "text", if true, the value is treated as HTML
-	 *     valueParser: function ( value, row ) {
-	 *          //return {string} | {OO.ui.Widget} | {OO.ui.HtmlSnippet}
-	 *     },
-	 *     urlProperty: {string}, // Only for type "url", data key that holds the URL
-	 *     onlyShowTrue: true | false, // Only for type "boolean", if true, only show true values, show nothing for false
-	 *     hidden: true|false, // Hide by default. Default to `false`
+	 * headerText: "Column header text",
+	 * type: "text" | "number" | "boolean" | "url" | "user" | "date" | "icon" | "action",
+	 * align: "left" | "center" | "right",
+	 * // Optional properties:
+	 * sortable: true | false,
+	 * filter: {
+	 * type: "text" | "number" | "boolean" | "list" | "user"
+	 * },
+	 * sticky: true | false, // Only on first column
+	 * width: {number},
+	 * // If you want to display a different value than the one in the data model, you can specify the "display" property
+	 * display: {string},
+	 * html: true | false, // Only for type "text", if true, the value is treated as HTML
+	 * valueParser: function ( value, row ) {
+	 * //return {string} | {OO.ui.Widget} | {OO.ui.HtmlSnippet}
+	 * },
+	 * urlProperty: {string}, // Only for type "url", data key that holds the URL
+	 * onlyShowTrue: true | false, // Only for type "boolean", if true, only show true values, show nothing for false
+	 * hidden: true|false, // Hide by default. Default to `false`
 	 *
 	 * }
+	 *
+	 * @param {Object} cfg
 	 */
 	OOJSPlus.ui.data.column.Column = function ( cfg ) {
 		OOJSPlus.ui.data.column.Column.parent.call( this, cfg );
@@ -42,7 +44,7 @@
 		if ( cfg.filter instanceof OOJSPlus.ui.data.filter.Filter ) {
 			this.setFilter( cfg.filter );
 		} else if ( !$.isEmptyObject( cfg.filter ) ) {
-			var filterFactory = new OOJSPlus.ui.data.FilterFactory();
+			const filterFactory = new OOJSPlus.ui.data.FilterFactory();
 			this.setFilter( filterFactory.makeFilter( cfg.filter ) );
 		} else {
 			this.filter = null;
@@ -73,18 +75,19 @@
 
 	OO.inheritClass( OOJSPlus.ui.data.column.Column, OO.ui.Widget );
 
-	OOJSPlus.ui.data.column.Column.prototype.bindToGrid = function( grid ) {
+	OOJSPlus.ui.data.column.Column.prototype.bindToGrid = function ( grid ) {
 		this.grid = grid;
 		this.$overlay = this.$overlay || grid.$element;
 	};
 
-	OOJSPlus.ui.data.column.Column.prototype.getHeader = function( data ) {
-		var $cell = $( '<th>' ).addClass( 'oojsplus-data-gridWidget-cell oojsplus-data-gridWidget-column-header' );
+	OOJSPlus.ui.data.column.Column.prototype.getHeader = function ( data ) {
+		const $cell = $( '<th>' ).addClass( 'oojsplus-data-gridWidget-cell oojsplus-data-gridWidget-column-header' );
 		this.setWidth( $cell );
 		if ( this.sticky ) {
 			$cell.addClass( 'sticky-col' );
 		}
 
+		let direction;
 		if ( this.sortable ) {
 			this.headerButton = new OO.ui.ButtonWidget( {
 				framed: false,
@@ -93,7 +96,7 @@
 				classes: [ 'header-button' ]
 			} );
 			this.headerButton.$element.css( 'margin-right', '20px' );
-			var direction = this.sorter.getValue().direction ?  this.sorter.getValue().direction : 'other';
+			direction = this.sorter.getValue().direction ? this.sorter.getValue().direction : 'other';
 			this.setSortValue( $cell, direction );
 		} else {
 			this.headerButton = new OO.ui.LabelWidget( {
@@ -107,7 +110,7 @@
 			this.headerButton.connect( this, {
 				click: function () {
 					this.toggleSort();
-					direction = this.sorter.getValue().direction ?  this.sorter.getValue().direction : 'other';
+					direction = this.sorter.getValue().direction ? this.sorter.getValue().direction : 'other';
 					this.setSortValue( $cell, direction );
 					this.emit( 'sort-update', $cell, direction );
 				}
@@ -116,7 +119,7 @@
 		$cell.append( this.headerButton.$element );
 
 		if ( this.resizable ) {
-			var resizeCfg = {
+			const resizeCfg = {
 				handles: 'e',
 				helper: 'grid-col-resizable-helper',
 				stop: function ( e, ui ) {
@@ -135,7 +138,7 @@
 		}
 		if ( this.filter ) {
 			this.filter.connect( this, {
-				closePopup: function() {
+				closePopup: function () {
 					if ( this.filterButton ) {
 						this.filterButton.getPopup().toggle( false );
 					}
@@ -158,7 +161,7 @@
 		}
 	};
 
-	OOJSPlus.ui.data.column.Column.prototype.createFilterLayout = function( data ) {
+	OOJSPlus.ui.data.column.Column.prototype.createFilterLayout = function ( data ) { // eslint-disable-line no-unused-vars
 		this.filterButton = new OO.ui.PopupButtonWidget( {
 			icon: 'funnel',
 			classes: [ 'filter-button' ],
@@ -181,13 +184,13 @@
 			mw.message( 'oojsplus-data-grid-filter-title', this.headerText ).parse() );
 
 		this.filterButton.popup.connect( this, {
-			toggle: function( visible ) {
+			toggle: function ( visible ) {
 				this.emit( 'filterToggle', this.filterButton, visible );
 				if ( visible ) {
-					setTimeout( function() {
+					setTimeout( () => {
 						// Timeout is needed to make sure the focus is set after the popup is positioned
 						this.filter.focus();
-					}.bind( this ), 1 );
+					}, 1 );
 				} else {
 					this.filterButton.focus();
 				}
@@ -197,15 +200,15 @@
 		return this.filterButton;
 	};
 
-	OOJSPlus.ui.data.column.Column.prototype.onFilterChange = function( filter, closePopup ) {
+	OOJSPlus.ui.data.column.Column.prototype.onFilterChange = function ( filter, closePopup ) {
 		this.emit( 'filter', filter, this.id );
 		if ( closePopup ) {
 			this.filterButton.getPopup().toggle( false );
 		}
 	};
 
-	OOJSPlus.ui.data.column.Column.prototype.renderCell = function( value, row ) {
-		var $cell = $( '<td>' ).addClass( 'oojsplus-data-gridWidget-cell' );
+	OOJSPlus.ui.data.column.Column.prototype.renderCell = function ( value, row ) {
+		const $cell = $( '<td>' ).addClass( 'oojsplus-data-gridWidget-cell' );
 		$cell.attr( 'data-column', this.id );
 		if ( this.align !== 'left' ) {
 			$cell.css( { 'text-align': this.align } );
@@ -221,11 +224,11 @@
 		return $cell;
 	};
 
-	OOJSPlus.ui.data.column.Column.prototype.getCellContent = function( value, row ) {
+	OOJSPlus.ui.data.column.Column.prototype.getCellContent = function ( value, row ) {
 		value = this.getDisplayText( value, row );
 		if ( value instanceof OO.ui.Element ) {
 			return value.$element;
-		} else if( value instanceof OO.ui.HtmlSnippet ) {
+		} else if ( value instanceof OO.ui.HtmlSnippet ) {
 			return value.toString() || '';
 		}
 
@@ -236,23 +239,23 @@
 		return this.getViewControls( value, row ).$element;
 	};
 
-	OOJSPlus.ui.data.column.Column.prototype.getViewControls = function( value, row ) {
+	OOJSPlus.ui.data.column.Column.prototype.getViewControls = function ( value, row ) { // eslint-disable-line no-unused-vars
 		return new OOJSPlus.ui.widget.ExpandableLabelWidget( { label: value || '', maxLength: this.maxLabelLength } );
 	};
 
-	OOJSPlus.ui.data.column.Column.prototype.getDisplayText = function( value, row ) {
+	OOJSPlus.ui.data.column.Column.prototype.getDisplayText = function ( value, row ) {
 		row = row || {};
 		if ( this.display && row.hasOwnProperty( this.display ) ) {
-			value = row[this.display];
+			value = row[ this.display ];
 		}
 
 		if ( typeof this.valueParser === 'function' ) {
-			return this.valueParser.call( this, value, row, this.id );
+			return this.valueParser.call( this, value, row, this.id ); // eslint-disable-line no-useless-call
 		}
 		return value;
 	};
 
-	OOJSPlus.ui.data.column.Column.prototype.setFilter = function( value ) {
+	OOJSPlus.ui.data.column.Column.prototype.setFilter = function ( value ) {
 		if ( value instanceof OOJSPlus.ui.data.filter.Filter ) {
 			this.filter = value;
 			this.filter.setName( this.headerText );
@@ -270,24 +273,24 @@
 		}
 	};
 
-	OOJSPlus.ui.data.column.Column.prototype.getType = function() {
+	OOJSPlus.ui.data.column.Column.prototype.getType = function () {
 		return this.type;
 	};
 
-	OOJSPlus.ui.data.column.Column.prototype.toggleSort = function( clearOnly ) {
+	OOJSPlus.ui.data.column.Column.prototype.toggleSort = function ( clearOnly ) {
 		clearOnly = clearOnly || false;
-		var sortOptions = this.getSortOptions(),
-			directions = sortOptions.directions,
-			indicators = sortOptions.indicators,
-			index = directions.indexOf( this.sortingDirection ),
-			newIndex = index + 1 === directions.length ? 0 : index + 1,
-			indicator = indicators[newIndex];
+		const sortOptions = this.getSortOptions();
+		const directions = sortOptions.directions;
+		const indicators = sortOptions.indicators;
+		const index = directions.indexOf( this.sortingDirection );
+		let newIndex = index + 1 === directions.length ? 0 : index + 1;
+		let indicator = indicators[ newIndex ];
 
 		if ( clearOnly ) {
 			newIndex = 0;
-			indicator = indicators[0];
+			indicator = indicators[ 0 ];
 		}
-		this.sortingDirection = directions[newIndex];
+		this.sortingDirection = directions[ newIndex ];
 		this.headerButton.setIndicator( indicator );
 		this.sorter.setDirection( this.sortingDirection );
 
@@ -296,19 +299,19 @@
 		}
 	};
 
-	OOJSPlus.ui.data.column.Column.prototype.getSorter = function() {
+	OOJSPlus.ui.data.column.Column.prototype.getSorter = function () {
 		return this.sorter;
 	};
 
-	OOJSPlus.ui.data.column.Column.prototype.setHasActiveFilter = function( active ) {
+	OOJSPlus.ui.data.column.Column.prototype.setHasActiveFilter = function ( active ) {
 		if ( !this.filterButton ) {
 			return;
 		}
-		this.filterButton.setFlags( { 'primary': active, 'progressive': active } );
+		this.filterButton.setFlags( { primary: active, progressive: active } );
 	};
 
-	OOJSPlus.ui.data.column.Column.prototype.setWidth = function( $item ) {
-		if( this.width ) {
+	OOJSPlus.ui.data.column.Column.prototype.setWidth = function ( $item ) {
+		if ( this.width ) {
 			$item.css( 'width', this.width + 'px' );
 			$item.css( 'min-width', this.width + 'px' );
 		}
@@ -320,18 +323,18 @@
 		}
 	};
 
-	OOJSPlus.ui.data.column.Column.prototype.canChangeVisibility = function() {
+	OOJSPlus.ui.data.column.Column.prototype.canChangeVisibility = function () {
 		return !this.sticky;
 	};
 
-	OOJSPlus.ui.data.column.Column.prototype.getVisibility = function() {
+	OOJSPlus.ui.data.column.Column.prototype.getVisibility = function () {
 		return this.canChangeVisibility() ? ( this.hidden ? 'hidden' : 'visible' ) : 'visible';
 	};
 
-	OOJSPlus.ui.data.column.Column.prototype.getSortOptions = function() {
+	OOJSPlus.ui.data.column.Column.prototype.getSortOptions = function () {
 		return {
 			directions: [ null, 'ASC', 'DESC' ],
 			indicators: [ '', 'up', 'down' ]
 		};
 	};
-} )( mediaWiki, jQuery );
+}( mediaWiki, jQuery ) );

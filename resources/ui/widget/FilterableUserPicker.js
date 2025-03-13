@@ -1,6 +1,6 @@
-OOJSPlus.ui.widget.FilterableUserPicker = function( config ) {
-	//Deprecated since 4.2.3 - Use OOJSPlus.ui.widget.EnhanchedUserPickerWidget instead
-	OOJSPlus.ui.widget.FilterableUserPicker.parent.call( this, $.extend( {}, config, {} ) );
+OOJSPlus.ui.widget.FilterableUserPicker = function ( config ) {
+	// Deprecated since 4.2.3 - Use OOJSPlus.ui.widget.EnhanchedUserPickerWidget instead
+	OOJSPlus.ui.widget.FilterableUserPicker.parent.call( this, Object.assign( {}, config, {} ) );
 
 	this.rights = config.rights || null;
 	this.groups = config.groups || null;
@@ -9,14 +9,13 @@ OOJSPlus.ui.widget.FilterableUserPicker = function( config ) {
 
 OO.inheritClass( OOJSPlus.ui.widget.FilterableUserPicker, mw.widgets.UserInputWidget );
 
-
 /**
  * @inheritdoc
  */
 OOJSPlus.ui.widget.FilterableUserPicker.prototype.getLookupRequest = function () {
-	var inputValue = this.value;
+	const inputValue = this.value;
 
-	var data = {
+	const data = {
 		action: 'query',
 		list: 'allusers',
 		// Prefix of list=allusers is case sensitive. Normalise first

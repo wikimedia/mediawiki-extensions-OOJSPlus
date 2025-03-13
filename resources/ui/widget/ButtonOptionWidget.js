@@ -1,4 +1,4 @@
-OOJSPlus.ui.widget.ButtonOptionWidget = function( cfg ) {
+OOJSPlus.ui.widget.ButtonOptionWidget = function ( cfg ) {
 	cfg = cfg || {};
 	cfg.framed = false;
 	OOJSPlus.ui.widget.ButtonOptionWidget.parent.call( this, cfg );

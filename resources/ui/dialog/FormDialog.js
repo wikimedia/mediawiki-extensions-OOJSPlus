@@ -1,6 +1,6 @@
 ( function ( mw, $ ) {
 
-	OOJSPlus.ui.dialog.FormDialog = function( config ) {
+	OOJSPlus.ui.dialog.FormDialog = function ( config ) {
 		OOJSPlus.ui.dialog.FormDialog.parent.call( this, config );
 
 		this.titleLabel = config.title || '';
@@ -14,13 +14,13 @@
 
 	OOJSPlus.ui.dialog.FormDialog.prototype.getSetupProcess = function ( data ) {
 		data = data || {};
-		data = $.extend( data, {
+		data = Object.assign( data, {
 			title: this.getTitle()
 		} );
 		return OOJSPlus.ui.dialog.FormDialog.parent.prototype.getSetupProcess.call( this, data );
 	};
 
-	OOJSPlus.ui.dialog.FormDialog.prototype.initialize = function() {
+	OOJSPlus.ui.dialog.FormDialog.prototype.initialize = function () {
 		OOJSPlus.ui.dialog.FormDialog.parent.prototype.initialize.call( this );
 
 		this.content = new OO.ui.PanelLayout( { padded: true, expanded: false } );
@@ -33,27 +33,27 @@
 		this.content.$element.append( this.fieldset.$element );
 		this.$body.append( this.content.$element );
 
-		var actions = this._compileActions( this.getActions() );
+		const actions = this._compileActions( this.getActions() );
 		this.actions.add( this.getActionWidgets( actions ) );
 	};
 
-	OOJSPlus.ui.dialog.FormDialog.prototype.getTitle = function() {
+	OOJSPlus.ui.dialog.FormDialog.prototype.getTitle = function () {
 		return this.titleLabel;
 	};
 
-	OOJSPlus.ui.dialog.FormDialog.prototype.getFormItems = function() {
+	OOJSPlus.ui.dialog.FormDialog.prototype.getFormItems = function () {
 		return [];
 	};
 
-	OOJSPlus.ui.dialog.FormDialog.prototype._compileActions = function( actionKeys ) {
-		var actions = [],
+	OOJSPlus.ui.dialog.FormDialog.prototype._compileActions = function ( actionKeys ) {
+		const actions = [],
 			definitions = this.getActionDefinitions();
 
-		for ( var i = 0; i < actionKeys.length; i++ ) {
-			if ( definitions.hasOwnProperty( actionKeys[i] ) ) {
-				var definition = definitions[actionKeys[i]];
+		for ( let i = 0; i < actionKeys.length; i++ ) {
+			if ( definitions.hasOwnProperty( actionKeys[ i ] ) ) {
+				const definition = definitions[ actionKeys[ i ] ];
 				if ( !definition.hasOwnProperty( 'id' ) ) {
-					definition.id = this.getElementId() + '-action-' + actionKeys[i];
+					definition.id = this.getElementId() + '-action-' + actionKeys[ i ];
 				}
 				actions.push( definition );
 			}
@@ -62,16 +62,16 @@
 		return actions;
 	};
 
-	OOJSPlus.ui.dialog.FormDialog.prototype.getActions = function() {
+	OOJSPlus.ui.dialog.FormDialog.prototype.getActions = function () {
 		return [ 'cancel', 'done' ];
 	};
 
-	OOJSPlus.ui.dialog.FormDialog.prototype.showErrors = function( errors ) {
+	OOJSPlus.ui.dialog.FormDialog.prototype.showErrors = function ( errors ) {
 		OOJSPlus.ui.dialog.FormDialog.parent.prototype.showErrors.call( this, errors );
 		this.updateSize();
 	};
 
-	OOJSPlus.ui.dialog.FormDialog.prototype.getActionDefinitions = function() {
+	OOJSPlus.ui.dialog.FormDialog.prototype.getActionDefinitions = function () {
 		return {
 			done: { action: 'done', label: mw.message( 'oojsplus-dialog-action-done' ).plain(),
 				flags: [ 'primary', 'progressive' ] },
@@ -81,17 +81,17 @@
 				flags: [ 'primary', 'progressive' ] },
 			add: { action: 'add', label: mw.message( 'oojsplus-dialog-action-add' ).plain(),
 				flags: [ 'primary', 'progressive' ] },
-			cancel: { action: 'cancel', label:  mw.message( 'oojsplus-dialog-action-cancel' ).plain(),
+			cancel: { action: 'cancel', label: mw.message( 'oojsplus-dialog-action-cancel' ).plain(),
 				flags: 'safe' }
 		};
 	};
 
-	OOJSPlus.ui.dialog.FormDialog.prototype.setTitle = function( title ) {
+	OOJSPlus.ui.dialog.FormDialog.prototype.setTitle = function ( title ) {
 		this.title.setLabel( title );
 		this.titleLabel = title;
 	};
 
-	OOJSPlus.ui.dialog.FormDialog.prototype.show = function() {
+	OOJSPlus.ui.dialog.FormDialog.prototype.show = function () {
 		if ( !this.windowManager ) {
 			this.windowManager = new OO.ui.WindowManager( {
 				modal: true
@@ -104,27 +104,26 @@
 	};
 
 	/**
-	 *
-	 * @param string action
-	 * @returns OO.ui.Process|null if not handling
+	 * @param {string} action
+	 * @return {OO.ui.Process|null} if not handling
 	 */
-	OOJSPlus.ui.dialog.FormDialog.prototype.onAction = function( action ) {
+	OOJSPlus.ui.dialog.FormDialog.prototype.onAction = function ( action ) { // eslint-disable-line no-unused-vars
 		return null;
 	};
 
 	OOJSPlus.ui.dialog.FormDialog.prototype.getActionProcess = function ( action ) {
 		return OOJSPlus.ui.dialog.FormDialog.parent.prototype.getActionProcess.call( this, action ).next(
-			function() {
+			() => {
 				if ( action === 'cancel' ) {
 					this.close( { action: action } );
 				} else {
-					var process = this.onAction( action );
+					const process = this.onAction( action );
 					if ( process === null ) {
 						return OOJSPlus.ui.dialog.FormDialog.prototype.getActionProcess.call( this, action );
 					}
 					return process;
 				}
-			}.bind( this )
+			}
 		);
 	};
 

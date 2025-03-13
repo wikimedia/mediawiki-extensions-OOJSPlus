@@ -1,16 +1,15 @@
 /**
- * @param cfg
+ * @param  {Object} cfg
  * {
  *     grid: instance of OOJSPlus.ui.data.GridWidget or { columns: {}, store: OOJSPlus.ui.data.store.Store },
  *     toolbar: instance of OOJSPlus.ui.toolbar.ManagerToolbar or { actions: [] }, or omit and override `getToolbarActions()`
  *     expanded: boolean,
  *     padded: boolean
  * }
- *
  */
 OOJSPlus.ui.panel.ManagerGrid = function ( cfg ) {
 	cfg = cfg || {};
-	cfg = $.extend( cfg, { expanded: false, padded: true } );
+	cfg = Object.assign( cfg, { expanded: false, padded: true } );
 	OOJSPlus.ui.panel.ManagerGrid.parent.call( this, cfg );
 	this.$element.addClass( 'oojsplus-manager-grid' );
 
@@ -48,13 +47,13 @@ OOJSPlus.ui.panel.ManagerGrid.prototype.makeGrid = function ( cfg ) {
 		if ( !this.store ) {
 			throw new Error( 'No store provided for ManagerGrid' );
 		}
-		this.grid = new OOJSPlus.ui.data.GridWidget( $.extend( { multiSelect: true, border: 'horizontal' }, cfg.grid ) );
+		this.grid = new OOJSPlus.ui.data.GridWidget( Object.assign( { multiSelect: true, border: 'horizontal' }, cfg.grid ) );
 	}
 	this.grid.connect( this, {
-		rowSelected: function( item ) {
+		rowSelected: function ( item ) {
 			this.onItemSelected( item, this.grid.getSelectedRows() );
 		},
-		action: function( action, row ) {
+		action: function ( action, row ) {
 			if ( action === 'checkRow' ) {
 				return;
 			}
@@ -65,7 +64,7 @@ OOJSPlus.ui.panel.ManagerGrid.prototype.makeGrid = function ( cfg ) {
 	this.$element.append( this.grid.$element );
 };
 
-OOJSPlus.ui.panel.ManagerGrid.prototype.onAction = function ( action, onRow ) {
+OOJSPlus.ui.panel.ManagerGrid.prototype.onAction = function ( action, onRow ) { // eslint-disable-line no-unused-vars
 	// onRow is the row if action was clicked in the "row action" section
 	// otherwise, if user just selected rows and clicked on an action in the toolbar
 	// use `this.grid.getSelectedRows()`
@@ -80,7 +79,7 @@ OOJSPlus.ui.panel.ManagerGrid.prototype.onCancel = function () {
 	// STUB
 };
 
-OOJSPlus.ui.panel.ManagerGrid.prototype.onItemSelected = function ( item, selectedItems ) {
+OOJSPlus.ui.panel.ManagerGrid.prototype.onItemSelected = function ( item, selectedItems ) { // eslint-disable-line no-unused-vars
 	// When selected by clicking on checkboxes
 	// useful for setting abilities - this.setAbilities( { actionKey: boolean, ... } );
 	// or hiding/showing actions - this.toolbar.getTool( actionKey ).toggle( false )
@@ -106,7 +105,7 @@ OOJSPlus.ui.panel.ManagerGrid.prototype.setAbilities = function ( abilities ) {
 
 // Default actions - for convienence
 OOJSPlus.ui.panel.ManagerGrid.prototype.getAddAction = function ( cfg ) {
-	return new OOJSPlus.ui.toolbar.tool.ToolbarTool( $.extend(  {
+	return new OOJSPlus.ui.toolbar.tool.ToolbarTool( Object.assign( {
 		name: 'add',
 		icon: 'add',
 		flags: [ 'progressive' ],
@@ -115,15 +114,15 @@ OOJSPlus.ui.panel.ManagerGrid.prototype.getAddAction = function ( cfg ) {
 };
 
 OOJSPlus.ui.panel.ManagerGrid.prototype.getEditAction = function ( cfg ) {
-	return new OOJSPlus.ui.toolbar.tool.ToolbarTool( $.extend( {
+	return new OOJSPlus.ui.toolbar.tool.ToolbarTool( Object.assign( {
 		name: 'edit',
 		icon: 'edit',
-		title: mw.msg( 'oojsplus-toolbar-edit' ),
+		title: mw.msg( 'oojsplus-toolbar-edit' )
 	}, cfg ) );
 };
 
 OOJSPlus.ui.panel.ManagerGrid.prototype.getDeleteAction = function ( cfg ) {
-	return new OOJSPlus.ui.toolbar.tool.ToolbarTool( $.extend( {
+	return new OOJSPlus.ui.toolbar.tool.ToolbarTool( Object.assign( {
 		name: 'delete',
 		icon: 'trash',
 		title: mw.msg( 'oojsplus-toolbar-delete' ),

@@ -6,7 +6,7 @@ OOJSPlus.ui.data.column.Date = function ( cfg ) {
 
 OO.inheritClass( OOJSPlus.ui.data.column.Date, OOJSPlus.ui.data.column.Column );
 
-OOJSPlus.ui.data.column.Date.prototype.sort = function( a, b ) {
+OOJSPlus.ui.data.column.Date.prototype.sort = function ( a, b ) {
 	if ( a < b ) {
 		return -1;
 	}
@@ -17,4 +17,3 @@ OOJSPlus.ui.data.column.Date.prototype.sort = function( a, b ) {
 };
 
 OOJSPlus.ui.data.registry.columnRegistry.register( 'date', OOJSPlus.ui.data.column.Date );
-

@@ -1,20 +1,20 @@
 ( function () {
-	OOJSPlus.ui.widget.ExpandablePanel = function( config ) {
+	OOJSPlus.ui.widget.ExpandablePanel = function ( config ) {
 		config = config || {};
 		this.$cnt = config.$content || '';
-		delete( config.$content );
+		delete ( config.$content );
 		// Parent constructor
-		OOJSPlus.ui.widget.ExpandablePanel.parent.call( this, $.extend( {}, config, {} ) );
+		OOJSPlus.ui.widget.ExpandablePanel.parent.call( this, Object.assign( {}, config, {} ) );
 		this.collapsed = config.collapsed || false;
 		this.button = new OO.ui.ButtonWidget( {
 			label: config.label || '',
-			icon: config.icon  || '',
+			icon: config.icon || '',
 			framed: false,
 			indicator: this.collapsed ? 'down' : 'up',
 			classes: [ 'expander-button' ]
 		} );
 		this.button.connect( this, {
-			click: function() {
+			click: function () {
 				this.collapsed = !this.collapsed;
 				this.$area.toggle();
 				this.button.setIndicator( this.collapsed ? 'down' : 'up' );

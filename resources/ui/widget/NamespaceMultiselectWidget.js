@@ -1,4 +1,4 @@
-OOJSPlus.ui.widget.NamespaceMultiSelectWidget = function( config ) {
+OOJSPlus.ui.widget.NamespaceMultiSelectWidget = function ( config ) {
 	config = config || {};
 	config.menu = config.menu || {};
 	config.hideHeadings = true;
@@ -6,7 +6,7 @@ OOJSPlus.ui.widget.NamespaceMultiSelectWidget = function( config ) {
 	config.allowArbitrary = false;
 	config.menu.filterFromInput = true;
 	// Parent constructor
-	OOJSPlus.ui.widget.NamespaceMultiSelectWidget.parent.call( this, $.extend( {}, config, {} ) );
+	OOJSPlus.ui.widget.NamespaceMultiSelectWidget.parent.call( this, Object.assign( {}, config, {} ) );
 
 	if ( 'name' in config ) {
 		// Use this instead of <input type="hidden">, because hidden inputs do not have separate
@@ -37,14 +37,12 @@ OO.inheritClass( OOJSPlus.ui.widget.NamespaceMultiSelectWidget, OO.ui.MenuTagMul
 OO.mixinClass( OOJSPlus.ui.widget.NamespaceMultiSelectWidget, OO.ui.mixin.PendingElement );
 OO.mixinClass( OOJSPlus.ui.widget.NamespaceMultiSelectWidget, OOJSPlus.ui.mixin.NamespaceOptions );
 
-OOJSPlus.ui.widget.NamespaceMultiSelectWidget.prototype.setValue = function( value ) {
+OOJSPlus.ui.widget.NamespaceMultiSelectWidget.prototype.setValue = function ( value ) {
 	if ( !value ) {
 		return;
 	}
 	if ( Array.isArray( value ) ) {
-		value = value.map(  ( v ) => {
-			return { data: v, label: this.getNamespaceLabel( v ) };
-		} );
+		value = value.map( ( v ) => ( { data: v, label: this.getNamespaceLabel( v ) } ) );
 	}
 
 	OOJSPlus.ui.widget.NamespaceMultiSelectWidget.parent.prototype.setValue.apply( this, [ value ] );

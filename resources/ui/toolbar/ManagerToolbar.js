@@ -11,26 +11,26 @@ OOJSPlus.ui.toolbar.ManagerToolbar = function ( cfg ) {
 	this.sticky = typeof cfg.sticky === 'undefined' ? true : cfg.sticky;
 
 	cfg.actions = cfg.actions || [];
-	for ( var i = 0; i < cfg.actions.length; i++ ) {
+	for ( let i = 0; i < cfg.actions.length; i++ ) {
 		if ( cfg.actions[ i ] instanceof OOJSPlus.ui.toolbar.tool.List ) {
 			this.listActions.push( cfg.actions[ i ].getDefinition() );
 			continue;
 		}
 
 		if ( !( cfg.actions[ i ] instanceof OOJSPlus.ui.toolbar.tool.ToolbarTool ) ) {
-			console.error(
+			console.error( // eslint-disable-line no-console
 				'OOJSPlus.ui.toolbar.ManagerToolbar: action is not an instance of OOJSPlus.ui.toolbar.tool.ToolbarTool',
 				cfg.actions[ i ]
 			);
 			continue;
 		}
-		var action = cfg.actions[ i ];
+		const action = cfg.actions[ i ];
 		action.connect( this, { action: 'onActionSelect' } );
 		this.toolFactory.register( action.getToolObject() );
 		this.registeredActions.push( action.name );
 		if ( action.position === 'right' ) {
 			this.rightActions.push( action.name );
-		} else if ( action.position !== 'none' ){
+		} else if ( action.position !== 'none' ) {
 			this.leftActions.push( action.name );
 		}
 	}
@@ -59,7 +59,6 @@ OOJSPlus.ui.toolbar.ManagerToolbar = function ( cfg ) {
 		this.toolFactory.register( saveTool.getToolObject() );
 		this.rightActions.push( 'save' );
 	}
-
 
 	OOJSPlus.ui.toolbar.ManagerToolbar.parent.call( this, this.toolFactory, this.toolGroupFactory );
 
@@ -115,31 +114,31 @@ OOJSPlus.ui.toolbar.ManagerToolbar.prototype.onCancel = function () {
 };
 
 OOJSPlus.ui.toolbar.ManagerToolbar.prototype.setAbilities = function ( abilities ) {
-	for ( var action in abilities ) {
+	for ( const action in abilities ) {
 		if ( !abilities.hasOwnProperty( action ) ) {
 			continue;
 		}
 		if ( !this.tools.hasOwnProperty( action ) ) {
-			console.error( 'OOJSPlus.ui.toolbar.ManagerToolbar: action not found', action );
+			console.error( 'OOJSPlus.ui.toolbar.ManagerToolbar: action not found', action ); // eslint-disable-line no-console
 			continue;
 		}
-		this.tools[action].setDisabled( !abilities[action] );
+		this.tools[ action ].setDisabled( !abilities[ action ] );
 
 	}
 };
 
 OOJSPlus.ui.toolbar.ManagerToolbar.prototype.getTool = function ( name ) {
-	return this.tools[name];
+	return this.tools[ name ];
 };
 
 OOJSPlus.ui.toolbar.ManagerToolbar.prototype.observe = function () {
 	const toolbar = this;
-	const $offsetElement = $( '.skin-bluespicediscovery #nb-pri' ); // eslint-disable-line no-jquery/no-global-selector
+	const $offsetElement = $( '.skin-bluespicediscovery #nb-pri' );
 	const offsetTop = $offsetElement.length ? $offsetElement.outerHeight() : 0;
 
 	$( window ).on( 'scroll', function () {
 		const windowTop = $( this ).scrollTop();
-		const contentWidth = $( '#mw-content-text' ).innerWidth(); // eslint-disable-line no-jquery/no-global-selector
+		const contentWidth = $( '#mw-content-text' ).innerWidth();
 
 		if ( windowTop > offsetTop ) {
 			toolbar.$element.css( 'top', offsetTop );

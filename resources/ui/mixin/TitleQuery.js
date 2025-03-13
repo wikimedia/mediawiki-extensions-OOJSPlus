@@ -1,4 +1,4 @@
-OOJSPlus.ui.mixin.TitleQuery = function( cfg ) {
+OOJSPlus.ui.mixin.TitleQuery = function ( cfg ) {
 	cfg = cfg || {};
 	this.namespaces = cfg.namespaces || null;
 	this.contentPagesOnly = cfg.hasOwnProperty( 'contentPagesOnly' ) ? cfg.contentPagesOnly : true;
@@ -13,17 +13,17 @@ OOJSPlus.ui.mixin.TitleQuery.prototype.extractNamespaceText = function ( value )
 	if ( value.indexOf( ':' ) === -1 ) {
 		return [ null, value ];
 	}
-	var parts = value.split( ':' ),
+	const parts = value.split( ':' ),
 		ns = parts.shift(),
 		title = parts.join( ':' );
 	return [ ns, title ];
 };
 
 OOJSPlus.ui.mixin.TitleQuery.prototype.getLookupRequest = function () {
-	var inputValue = this.getRawValue(),
+	let inputValue = this.getRawValue(),
 		filters = [];
 
-	var parsed = this.extractNamespaceText( inputValue ),
+	const parsed = this.extractNamespaceText( inputValue ),
 		explicitNamespace = parsed[ 0 ];
 	inputValue = this.prefix + parsed[ 1 ];
 	if ( explicitNamespace !== null ) {
@@ -49,7 +49,7 @@ OOJSPlus.ui.mixin.TitleQuery.prototype.getLookupRequest = function () {
 			type: 'list',
 			value: this.namespaces,
 			operator: 'in',
-			property: 'namespace',
+			property: 'namespace'
 		} );
 	}
 	if ( this.contentModels ) {
@@ -57,7 +57,7 @@ OOJSPlus.ui.mixin.TitleQuery.prototype.getLookupRequest = function () {
 			type: 'list',
 			value: this.contentModels,
 			operator: 'in',
-			property: 'content_model',
+			property: 'content_model'
 		} );
 	}
 
@@ -77,10 +77,11 @@ OOJSPlus.ui.mixin.TitleQuery.prototype.extendFilters = function ( filters ) {
 };
 
 OOJSPlus.ui.mixin.TitleQuery.prototype.getLookupMenuOptionsFromData = function ( data ) {
-	var len, i, items = [];
+	const items = [];
+	let len, i;
 
 	for ( i = 0, len = data.length; i < len; i++ ) {
-		items.push( new OO.ui.MenuOptionWidget( { data: data[i], label: data[i].prefixed } ) );
+		items.push( new OO.ui.MenuOptionWidget( { data: data[ i ], label: data[ i ].prefixed } ) );
 	}
 	return items;
 };

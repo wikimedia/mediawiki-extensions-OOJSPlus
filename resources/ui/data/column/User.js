@@ -9,18 +9,18 @@ OOJSPlus.ui.data.column.User = function ( cfg ) {
 
 OO.inheritClass( OOJSPlus.ui.data.column.User, OOJSPlus.ui.data.column.Column );
 
-OOJSPlus.ui.data.column.User.prototype.renderCell = function( value, row ) {
-	var $cell = OOJSPlus.ui.data.column.User.parent.prototype.renderCell.call( this, value, row );
+OOJSPlus.ui.data.column.User.prototype.renderCell = function ( value, row ) {
+	const $cell = OOJSPlus.ui.data.column.User.parent.prototype.renderCell.call( this, value, row );
 	$cell.addClass( 'user-cell' );
 	return $cell;
 };
 
-OOJSPlus.ui.data.column.User.prototype.getViewControls = function( value ) {
+OOJSPlus.ui.data.column.User.prototype.getViewControls = function ( value ) {
 	if ( !value ) {
 		return OOJSPlus.ui.data.column.User.parent.prototype.getViewControls.call( this, '' );
 	}
 	return new OOJSPlus.ui.widget.UserWidget( {
-		user_name: value,
+		user_name: value, // eslint-disable-line camelcase
 		showImage: this.showImage,
 		showLink: true,
 		showRawUsername: false

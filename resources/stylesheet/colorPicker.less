@@ -12,11 +12,13 @@
 	cursor: pointer;
 	position: relative;
 	vertical-align: top;
-	&:before {
-		content: "\25A0";
+
+	&::before {
+		content: '\25A0';
 		margin-left: -10px;
 	}
-	&:after {
+
+	&::after {
 		content: '';
 		position: absolute;
 		top: 0;
@@ -26,9 +28,11 @@
 		width: @color-size;
 		height: @color-size;
 		box-shadow: inset 0 0 0 0 @border-color;
-		transition: box-shadow .1s ease;
+		transition: box-shadow 0.1s ease;
 	}
-	&:hover:after, &.selected:after {
+
+	&:hover::after,
+	&.selected::after {
 		box-shadow: inset 0 0 0 3px @border-color;
 	}
 }
@@ -40,15 +44,18 @@
 		&:hover {
 			background-color: @control-hover-color;
 		}
+
 		a {
 			text-align: center;
 			width: 100%;
+
 			span.oo-ui-iconElement-icon {
 				width: 100%;
 				background-size: 20px;
 				left: 0;
 			}
 		}
+
 		.color-sample {
 			width: 10px;
 			height: 20px;
@@ -65,6 +72,7 @@
 .oojsplus-color-picker-widget {
 	margin-left: 5px !important;
 	margin-right: 5px !important;
+
 	.oojsplus-color-current {
 		height: 4px;
 		width: 80%;
@@ -74,12 +82,15 @@
 		line-height: 0;
 		font-size: 100px;
 		overflow: hidden;
-		&:before {
-			content: "\25A0";
+
+		&::before {
+			content: '\25A0';
 			margin-left: -10px;
 		}
 	}
-	&:focus, a:focus {
+
+	&:focus,
+	a:focus {
 		border-color: transparent !important;
 		outline: transparent !important;
 		-webkit-box-shadow: none !important;
@@ -91,6 +102,7 @@
 .oojsplus-hex-color-picker-widget {
 	display: table;
 	width: 140px;
+
 	.oojsplus-hex-color-current {
 		display: table-cell;
 		width: 30px;
@@ -98,6 +110,7 @@
 		border: 1px solid grey;
 		border-radius: 100px;
 	}
+
 	.oo-ui-inputWidget-input {
 		display: table-cell;
 		width: 100px;
@@ -120,48 +133,62 @@
 /**
  COLOR CLASSES
  */
- .col-white {
-	color: #ffffff;
+.col-white {
+	color: #fff;
 }
+
 .col-blue-light {
 	color: #97bfe7;
 }
+
 .col-blue {
 	color: #5185b9;
 }
+
 .col-blue-dark {
 	color: #0060df;
 }
+
 .col-blue-navy {
 	color: #3e5389;
 }
+
 .col-orange {
 	color: #e49c00;
 }
+
 .col-turquoise {
 	color: #259596;
 }
+
 .col-green {
 	color: #3fb34c;
 }
+
 .col-purple {
 	color: #cd41cb;
 }
+
 .col-red {
 	color: #b73a3a;
 }
+
 .col-grey-light {
 	color: #d2d2d2;
 }
+
 .col-grey-medium {
 	color: #acacac;
 }
+
 .col-grey {
 	color: #787878;
 }
+
 .col-grey-dark {
 	color: #434343;
 }
+
 .col-black {
-	color: #000000;
+	color: #000;
 }
