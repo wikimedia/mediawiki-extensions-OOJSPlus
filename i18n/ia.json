@@ -88,5 +88,6 @@
 	"oojsplus-toolbar-add": "Adder",
 	"oojsplus-data-grid-filter-date-on": "Le",
 	"oojsplus-data-grid-filter-date-after": "Post",
-	"oojsplus-data-grid-filter-date-before": "Ante"
+	"oojsplus-data-grid-filter-date-before": "Ante",
+	"oojsplus-data-grid-no-results": "Il non ha ancora entratas"
 }
