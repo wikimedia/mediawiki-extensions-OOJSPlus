@@ -541,17 +541,17 @@
 	};
 
 	OOJSPlus.ui.data.GridWidget.prototype.setItems = function ( data ) {
-		if ( data.length === 0 ) {
-			this.setLoading( false );
-			this.addEmptyRow();
-			this.emit( 'datasetChange' );
-			return;
-		}
 		this.clearItems();
-		this.addItemsInternally( data );
-		this.setColumnsVisibility( this.visibleColumns );
 		this.setLoading( false );
-		this.adjustFilterAnnouncement();
+
+		if ( data.length === 0 ) {
+			this.addEmptyRow();
+		} else {
+			this.addItemsInternally( data );
+			this.setColumnsVisibility( this.visibleColumns );
+			this.adjustFilterAnnouncement();
+		}
+
 		this.emit( 'datasetChange' );
 	};
 
