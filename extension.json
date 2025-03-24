@@ -1,6 +1,6 @@
 {
 	"name": "OOJSPlus",
-	"version": "3.0.0-alpha",
+	"version": "4.0.0-alpha",
 	"license-name": "GPL-3.0-only",
 	"author": [
 		"[https://www.hallowelt.com Hallo Welt! GmbH]"
@@ -8,7 +8,7 @@
 	"url": "https://en.wiki.bluespice.com/wiki/Reference:OOJSPlus",
 	"descriptionmsg": "oojsplus-desc",
 	"requires": {
-		"MediaWiki": ">= 1.39.0"
+		"MediaWiki": ">= 1.43.0"
 	},
 	"callback": "OOJSPlus\\Extension::callback",
 	"MessagesDirs": {
