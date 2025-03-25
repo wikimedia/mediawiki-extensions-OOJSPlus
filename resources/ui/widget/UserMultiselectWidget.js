@@ -134,7 +134,7 @@ OOJSPlus.ui.widget.UsersMultiselectWidget.prototype.updateMenuItems = function (
 };
 
 OOJSPlus.ui.widget.UsersMultiselectWidget.prototype.getLookupRequest = function () {
-	const inputValue = this.value,
+	const inputValue = this.inputValue;
 		filters = [ {
 			type: 'boolean',
 			value: true,
