@@ -89,5 +89,8 @@
 	"oojsplus-data-grid-filter-date-on": "On",
 	"oojsplus-data-grid-filter-date-after": "After",
 	"oojsplus-data-grid-filter-date-before": "Before",
-	"oojsplus-data-grid-no-results": "There are no entries yet"
+	"oojsplus-data-grid-no-results": "There are no entries yet",
+	"oojsplus-sort-direction-asc": "Sorting in ascending order",
+	"oojsplus-sort-direction-desc": "Sorting in descending order",
+	"oojsplus-field-label-query": "Search..."
 }
