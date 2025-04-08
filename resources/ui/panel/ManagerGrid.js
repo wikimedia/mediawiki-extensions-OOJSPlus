@@ -9,7 +9,7 @@
  */
 OOJSPlus.ui.panel.ManagerGrid = function ( cfg ) {
 	cfg = cfg || {};
-	cfg = Object.assign( cfg, { expanded: false, padded: true } );
+	cfg = Object.assign( { expanded: false, padded: true }, cfg );
 	OOJSPlus.ui.panel.ManagerGrid.parent.call( this, cfg );
 	this.$element.addClass( 'oojsplus-manager-grid' );
 
