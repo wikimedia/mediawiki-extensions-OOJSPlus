@@ -12,6 +12,11 @@
 		this.$itemsContainer = new $( '<div>' ).addClass( 'oojsplus-data-tree-items' );
 		this.expanded = true;
 		this.$containTo = false;
+
+		if ( $( document ).find( '#oojsplus-skeleton-cnt' ) ) {
+			$( '#oojsplus-skeleton-cnt' ).empty();
+		}
+
 		if ( !this.fixed ) {
 			this.$containTo = cfg.$containTo === 'self' ? this.$element : cfg.$containTo || false;
 			if ( this.$containTo ) {
