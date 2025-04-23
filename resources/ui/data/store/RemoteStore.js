@@ -84,3 +84,37 @@ OOJSPlus.ui.data.store.RemoteStore.prototype.getSortForRemote = function() {
 OOJSPlus.ui.data.store.RemoteStore.prototype.getTotal = function() {
 	return this.total;
 };
+
+OOJSPlus.ui.data.store.RemoteStore.prototype.loadAll = function( chunk ) {
+	chunk = chunk || 50;
+
+	var oldLimit = this.limit;
+	var oldOffset = this.offset;
+	this.limit = chunk;
+	this.offset = 0;
+
+	var dfd = $.Deferred();
+	// Load recursively until all data is loaded
+	this.loadRecursively( dfd ).done( function( data ) {
+		this.limit = oldLimit;
+		this.offset = oldOffset;
+		dfd.resolve( data );
+	}.bind( this ) );
+
+	return dfd.promise();
+};
+
+OOJSPlus.ui.data.store.RemoteStore.prototype.loadRecursively = function( dfd, prevLength ) {
+	this.load().done( function( data ) {
+		var resCount = Object.keys( data ).length;
+		if ( resCount < this.limit || ( prevLength && resCount === prevLength ) ) {
+			dfd.resolve( data );
+		} else {
+			this.offset += this.limit;
+			this.loadRecursively( dfd, resCount );
+		}
+	}.bind( this ) ).fail( function( e ) {
+		dfd.reject( e );
+	} );
+	return dfd.promise();
+};
