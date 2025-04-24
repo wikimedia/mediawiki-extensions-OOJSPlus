@@ -93,5 +93,6 @@
 	"oojsplus-toolbar-add": "Label for add button in toolbar{{Identical|Add}}",
 	"oojsplus-data-grid-filter-date-on": "Filter options label for date field\n{{Identical|On}}",
 	"oojsplus-data-grid-filter-date-after": "Filter options label for date field\n{{Identical|After}}",
-	"oojsplus-data-grid-filter-date-before": "Filter options label for date field\n{{Identical|Before}}"
+	"oojsplus-data-grid-filter-date-before": "Filter options label for date field\n{{Identical|Before}}",
+	"oojsplus-data-grid-no-results": "Label for grid when no results are available"
 }

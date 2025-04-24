@@ -10,5 +10,6 @@
 	"oojsplus-data-grid-filter-label": "Silli",
 	"oojsplus-data-grid-filter-clear": "Gurre",
 	"oojsplus-data-paginator-next": "Čuovvovaš siidu",
-	"oojsplus-toolbar-save": "Vurke"
+	"oojsplus-toolbar-save": "Vurke",
+	"oojsplus-data-grid-selection-column-label": "Vállje"
 }

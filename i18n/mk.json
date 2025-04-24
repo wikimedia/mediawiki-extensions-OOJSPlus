@@ -90,5 +90,6 @@
 	"oojsplus-toolbar-add": "Додај",
 	"oojsplus-data-grid-filter-date-on": "На",
 	"oojsplus-data-grid-filter-date-after": "По",
-	"oojsplus-data-grid-filter-date-before": "Пред"
+	"oojsplus-data-grid-filter-date-before": "Пред",
+	"oojsplus-data-grid-no-results": "Сè уште нема записи"
 }

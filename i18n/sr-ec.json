@@ -69,5 +69,6 @@
 	"oojsplus-toolbar-edit": "Уреди",
 	"oojsplus-toolbar-add": "Додај",
 	"oojsplus-data-grid-filter-date-after": "После",
-	"oojsplus-data-grid-filter-date-before": "Пре"
+	"oojsplus-data-grid-filter-date-before": "Пре",
+	"oojsplus-data-grid-no-results": "Још увек нема уноса"
 }

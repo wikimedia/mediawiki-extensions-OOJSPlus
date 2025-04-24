@@ -94,5 +94,6 @@
 	"oojsplus-toolbar-add": "Hinzufügen",
 	"oojsplus-data-grid-filter-date-on": "Am",
 	"oojsplus-data-grid-filter-date-after": "Nach",
-	"oojsplus-data-grid-filter-date-before": "Vor"
+	"oojsplus-data-grid-filter-date-before": "Vor",
+	"oojsplus-data-grid-no-results": "Es sind noch keine Einträge vorhanden"
 }

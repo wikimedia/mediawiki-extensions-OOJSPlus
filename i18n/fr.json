@@ -10,6 +10,7 @@
 			"SleaY",
 			"Thibaut120094",
 			"Verdy p",
+			"WillyM",
 			"Wladek92"
 		]
 	},
@@ -98,5 +99,6 @@
 	"oojsplus-toolbar-add": "Ajouter",
 	"oojsplus-data-grid-filter-date-on": "Le",
 	"oojsplus-data-grid-filter-date-after": "Après le",
-	"oojsplus-data-grid-filter-date-before": "Avant le"
+	"oojsplus-data-grid-filter-date-before": "Avant le",
+	"oojsplus-data-grid-no-results": "Il n'y a pas encore d'entrées"
 }

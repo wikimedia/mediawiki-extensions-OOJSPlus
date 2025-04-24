@@ -34,5 +34,6 @@
 	"oojsplus-toolbar-save": "ذخیره",
 	"oojsplus-toolbar-delete": "حذف",
 	"oojsplus-toolbar-edit": "ویرایش",
-	"oojsplus-toolbar-add": "افزودن"
+	"oojsplus-toolbar-add": "افزودن",
+	"oojsplus-data-grid-no-results": "هنوز مدخلی موجود نیست"
 }
