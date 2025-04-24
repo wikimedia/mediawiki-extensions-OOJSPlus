@@ -8,6 +8,15 @@
 	}
 }
 
+@keyframes shimmertree {
+	0% {
+	  background-position: -200% 0;
+	}
+	100% {
+	  background-position: 200% 0;
+	}
+}
+
 .oojs-skeleton--grid {
 	display: inline-block;
 	background-color: #ddd;
@@ -85,4 +94,37 @@
 		background-color: #a2a9b1;
 		display: flex;
 	}
+}
+
+.oojs-skeleton--tree-line {
+	background: linear-gradient( 90deg, #DADDE3, #eaecf0, #DADDE3 );
+	background-size: 200% 100%;
+	animation: shimmertree 2s infinite;
+	height: 20px;
+	margin: 6px 0;
+	border-radius: 4px;
+}
+
+.oojs-skeleton--tree {
+	padding-left: 20px;
+}
+
+.oojs-skeleton--tree-item {
+	margin-bottom: 8px;
+	position: relative;
+}
+
+.oojs-skeleton--tree-item::before {
+	content: "";
+	position: absolute;
+	left: -12px;
+	top: 6px;
+	width: 8px;
+	height: 8px;
+	background-color: #DADDE3;
+	border-radius: 50%;
+}
+
+.oojs-skeleton--tree-item-last::before {
+	background-color: transparent;
 }
