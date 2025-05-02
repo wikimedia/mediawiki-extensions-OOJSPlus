@@ -176,7 +176,10 @@
 				"ui/data/grid/Toolbar.js",
 				"ui/data/tree/Item.js",
 				"ui/data/Tree.js",
-				"ui/data/StoreTree.js"
+				"ui/data/StoreTree.js",
+				"ui/data/store/NavigationTreeStore.js",
+				"ui/data/tree/NavigationTreeItem.js",
+				"ui/data/NavigationTree.js"
 			],
 			"styles": [
 				"stylesheet/data/main.less",
@@ -328,6 +331,15 @@
 		"ext.oojsplus.special.skeleton.styles": {
 			"styles": [
 				"stylesheet/skeleton.less"
+			]
+		},
+		"ext.oojsplus.navigation.treePanel": {
+			"scripts": [
+				"ui/panel/NavigationTreePanel.js"
+			],
+			"dependencies": [
+				"oojs-ui",
+				"ext.oOJSPlus.data"
 			]
 		}
 	},
