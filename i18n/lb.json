@@ -47,5 +47,22 @@
 	"oojsplus-toolbar-save": "Späicheren",
 	"oojsplus-toolbar-delete": "Läschen",
 	"oojsplus-toolbar-edit": "Änneren",
-	"oojsplus-toolbar-add": "Derbäisetzen"
+	"oojsplus-toolbar-add": "Derbäisetzen",
+	"oojsplus-dialog-action-create": "Uleeën",
+	"oojsplus-data-grid-widget-popup-title": "Méi Elementer",
+	"oojsplus-formelement-type-user-picker": "Benotzerinput",
+	"oojsplus-data-tree-item-remove-confirm-label": "Element „$1“ ewechhuelen?",
+	"oojsplus-data-grid-filter-update-active-filter": "$1 {{PLURAL:$1|Filter|Filteren}} applizéiert: $2",
+	"oojsplus-data-grid-filter-update-no-filter": "Keen Tabellefilter applizéiert",
+	"oojsplus-data-grid-sort-direction-desc": "Kolonn $1 ofsteigend sortéiert",
+	"oojsplus-data-grid-sort-direction-asc": "Kolonn $1 opsteigend sortéiert",
+	"oojsplus-data-grid-date-filter-announce-lt": "Virum $1",
+	"oojsplus-data-grid-date-filter-announce-gt": "Nom $1",
+	"oojsplus-data-grid-date-filter-announce-eq": "Um $1",
+	"oojsplus-data-grid-collapse-expand": "Opklappen",
+	"oojsplus-data-grid-collapse-collapse": "Zesummeklappen",
+	"oojsplus-data-grid-filter-date-on": "Um",
+	"oojsplus-data-grid-filter-date-after": "Nom",
+	"oojsplus-data-grid-filter-date-before": "Virum",
+	"oojsplus-data-grid-no-results": "Et gëtt nach keng Anträg"
 }
