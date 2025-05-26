@@ -305,7 +305,8 @@
 				"oojsplus-dialog-action-delete",
 				"oojsplus-dialog-action-create",
 				"oojsplus-dialog-action-add",
-				"oojsplus-dialog-action-cancel"
+				"oojsplus-dialog-action-cancel",
+				"oojsplus-dialog-action-back"
 			]
 		},
 		"ext.oOJSPlus.IDGenerator": {
