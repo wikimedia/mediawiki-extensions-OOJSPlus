@@ -81,8 +81,10 @@
 				flags: [ 'primary', 'progressive' ] },
 			add: { action: 'add', label: mw.message( 'oojsplus-dialog-action-add' ).plain(),
 				flags: [ 'primary', 'progressive' ] },
-			cancel: { action: 'cancel', label: mw.message( 'oojsplus-dialog-action-cancel' ).plain(),
-				flags: 'safe' }
+			cancel: { action: 'cancel', title: mw.message( 'oojsplus-dialog-action-cancel' ).plain(),
+				flags: [ 'safe', 'close' ] },
+			back: { action: 'back', label: mw.message( 'oojsplus-dialog-action-back' ).plain(),
+				flags: [ 'safe' ] }
 		};
 	};
 

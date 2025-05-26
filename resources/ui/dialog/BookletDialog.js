@@ -90,10 +90,10 @@
 		}
 
 		this.currentPage = page;
-		this.currentPage.setData( data || {} );
 		this.booklet.setPage( name );
 		this.setTitle( page.getTitle() );
 		this.setSize( page.getSize() );
+		this.currentPage.setData( data || {} );
 		this.actions.setMode( name );
 		this.mode = name;
 		this.abilities = this.mergeAbilities( page.getAbilities() );
