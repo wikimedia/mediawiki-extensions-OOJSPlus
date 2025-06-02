@@ -96,6 +96,13 @@
 	}
 }
 
+.oojs-skeleton--cards .oojs-skeleton--toolbar {
+	height: 40px;
+	background: linear-gradient( 90deg, #DADDE3, #eaecf0, #DADDE3 );
+	background-size: 200% 100%;
+	animation: shimmer 2s infinite;
+}
+
 .oojs-skeleton--tree-line {
 	background: linear-gradient( 90deg, #DADDE3, #eaecf0, #DADDE3 );
 	background-size: 200% 100%;
@@ -127,4 +134,38 @@
 
 .oojs-skeleton--tree-item-last::before {
 	background-color: transparent;
+}
+
+.oojs-skeleton--cards-cnt {
+	display: flex;
+	flex-wrap: wrap;
+	width: 100%;
+	justify-content: space-between;
+	margin-top: 15px;
+}
+
+.oojs-skeleton--card {
+	width: 300px;
+	border-radius: 12px;
+	overflow: hidden;
+	background: linear-gradient( 90deg, #DADDE3, #eaecf0, #DADDE3 );
+	background-size: 200% 100%;
+	animation: shimmer 2s infinite;
+	padding: 16px;
+	box-sizing: border-box;
+	margin: 10px 0;
+}
+
+.oojs-skeleton--card-title {
+	height: 20px;
+	margin: 8px 0;
+	width: 80%;
+	background-color: #fff;
+}
+
+.oojs-skeleton--card-desc {
+	height: 10px;
+	margin: 8px 0;
+	width: 60%;
+	background-color: #fff;
 }
