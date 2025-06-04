@@ -95,5 +95,6 @@
 	"oojsplus-field-label-query": "Search...",
 	"oojsplus-data-navigation-tree-expander-label": "Subpages",
 	"oojsplus-data-tree-expander-label": "Submenu",
-	"oojsplus-dialog-action-back": "Back"
+	"oojsplus-dialog-action-back": "Back",
+	"oojsplus-formelement-type-percent": "Percent"
 }
