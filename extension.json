@@ -84,7 +84,8 @@
 				"ui/booklet/Booklet.js",
 				"ui/widget/FilterableComboBoxWidget.js",
 				"ui/widget/BatchOptionWidget.js",
-				"ui/widget/GroupedSelectWidget.js"
+				"ui/widget/GroupedSelectWidget.js",
+				"ui/widget/PercentInput.js"
 			],
 			"messages": [
 				"oojsplus-namespace-content",
@@ -271,7 +272,8 @@
 				"ui/formelement/GroupMultiselect.js",
 				"ui/formelement/UserMultiselect.js",
 				"ui/formelement/TitleMultiselect.js",
-				"ui/formelement/DatePicker.js"
+				"ui/formelement/DatePicker.js",
+				"ui/formelement/Percent.js"
 			],
 			"messages": [
 				"oojsplus-formelement-type-user-picker",
@@ -279,7 +281,8 @@
 				"oojsplus-formelement-type-group-multiselect",
 				"oojsplus-formelement-type-user-multiselect",
 				"oojsplus-formelement-type-title-multiselect",
-				"oojsplus-formelement-type-date-picker"
+				"oojsplus-formelement-type-date-picker",
+				"oojsplus-formelement-type-percent"
 			],
 			"dependencies": [
 				"ext.forms.formelements.bootstrap",
