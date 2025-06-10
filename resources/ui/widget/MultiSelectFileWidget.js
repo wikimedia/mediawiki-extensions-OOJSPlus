@@ -17,7 +17,7 @@
 			return;
 		}
 
-		if ( files ) {
+		if ( Array.isArray( files ) && files.length > 0 ) {
 			for ( const key in files ) {
 				this.uploadFiles.push( files[ key ] );
 			}
