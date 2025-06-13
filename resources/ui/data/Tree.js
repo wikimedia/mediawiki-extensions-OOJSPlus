@@ -105,7 +105,10 @@
 	OOJSPlus.ui.data.Tree.prototype.doDraw = function ( items, parent, labelledby, expanded ) {
 		const $ul = $( '<ul>' ).addClass( 'tree-node-list' );
 		$ul.attr( 'id', this.idGenerator.generate() );
-		$ul.attr( 'role', 'tree' );
+
+		if ( parent ) {
+			$ul.attr( 'role', 'group' );
+		}
 
 		if ( labelledby ) {
 			$ul.attr( 'aria-labelledby', labelledby );
@@ -165,7 +168,9 @@
 			const $li = items[ name ].widget.$element;
 			const $labelEl = $( $li ).find( '> div > .oojsplus-data-tree-label' );
 			const itemId = $labelEl.attr( 'id' );
+
 			$li.append( this.doDraw( items[ name ].children || {}, items[ name ].widget, itemId, this.expanded ) );
+
 			$ul.append( $li );
 			// Once we add children, re-evaluate parent
 			this.reEvaluateParent( name );

@@ -97,5 +97,7 @@
 	"oojsplus-data-grid-no-results": "Label for grid when no results are available",
 	"oojsplus-sort-direction-asc": "Label for sorting in ascending order",
 	"oojsplus-sort-direction-desc": "Label for sorting in descending order",
-	"oojsplus-field-label-query": "Query field placeholder"
+	"oojsplus-field-label-query": "Query field placeholder",
+	"oojsplus-data-navigation-tree-expander-label": "Label for expand button for navigation tree item",
+	"oojsplus-data-tree-expander-label": "Label for expand button for tree item"
 }
