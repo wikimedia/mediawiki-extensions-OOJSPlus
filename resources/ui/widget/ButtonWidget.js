@@ -4,7 +4,7 @@
 
 		OOJSPlus.ui.widget.ButtonWidget.parent.call( this, cfg );
 
-		const role = cfg.role || 'none';
+		const role = cfg.role || 'button';
 		this.$button.attr( 'role', role );
 	};
 

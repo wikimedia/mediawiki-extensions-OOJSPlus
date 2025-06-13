@@ -17,6 +17,8 @@
 	OOJSPlus.ui.data.tree.NavigationTreeItem.prototype.possiblyAddExpander = function () {
 		if ( !this.leaf && !this.expander ) {
 			this.expander = new OOJSPlus.ui.widget.ButtonWidget( {
+				label: mw.message( 'oojsplus-data-navigation-tree-expander-label' ).text(),
+				invisibleLabel: true,
 				framed: false,
 				icon: this.expanded ? this.style.IconCollapse : this.style.IconExpand,
 				classes: [ 'oojsplus-data-tree-expander', this.expanded ? 'expanded' : 'collapsed' ]

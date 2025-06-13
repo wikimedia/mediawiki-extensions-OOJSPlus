@@ -50,7 +50,6 @@
 		this.possiblyAddOptions();
 		this.$element.addClass( 'oojs-ui-data-tree-item' );
 		this.$element.attr( 'data-name', this.getName() );
-		this.$element.attr( 'role', 'treeitem' );
 		this.$element.append( this.$wrapper );
 	};
 
@@ -95,6 +94,8 @@
 
 		if ( ( !this.leaf || childrenCount > 0 ) && !this.expander ) {
 			this.expander = new OOJSPlus.ui.widget.ButtonWidget( {
+				label: mw.message( 'oojsplus-data-tree-expander-label' ).text(),
+				invisibleLabel: true,
 				framed: false,
 				icon: this.expanded ? this.style.IconCollapse : this.style.IconExpand,
 				classes: [ 'oojsplus-data-tree-expander' ]
@@ -104,7 +105,7 @@
 			this.expander.connect( this, {
 				click: 'onExpanderClick'
 			} );
-			this.$element.prepend( this.expander.$element );
+			this.$wrapper.prepend( this.expander.$element );
 		} else if ( this.expander && childrenCount === 0 ) {
 			this.expander.$element.remove();
 			this.expander = null;
