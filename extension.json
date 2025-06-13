@@ -78,7 +78,8 @@
 				"ui/widget/ContributionWidget.js",
 				"ui/widget/HeadingLabel.js",
 				"ui/widget/NoContentPlaceholderWidget.js",
-				"ui/widget/SortWidget.js"
+				"ui/widget/SortWidget.js",
+				"ui/widget/OutlineSelectWidget.js"
 			],
 			"messages": [
 				"oojsplus-namespace-content",
@@ -248,7 +249,9 @@
 				"oojsplus-data-grid-filter-date-after",
 				"oojsplus-data-grid-filter-date-before",
 				"oojsplus-data-grid-no-results",
-				"oojsplus-field-label-query"
+				"oojsplus-field-label-query",
+				"oojsplus-data-navigation-tree-expander-label",
+				"oojsplus-data-tree-expander-label"
 			]
 		},
 		"ext.oOJSPlus.icons": {

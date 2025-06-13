@@ -98,5 +98,7 @@
 	"oojsplus-data-grid-no-results": "Es sind noch keine Einträge vorhanden",
 	"oojsplus-sort-direction-asc": "In aufsteigender Reihenfolge sortieren",
 	"oojsplus-sort-direction-desc": "In absteigender Reihenfolge sortieren",
-	"oojsplus-field-label-query": "Suche …"
+	"oojsplus-field-label-query": "Suche …",
+	"oojsplus-data-navigation-tree-expander-label": "Unterseiten",
+	"oojsplus-data-tree-expander-label": "Untermenü"
 }
