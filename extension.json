@@ -77,13 +77,16 @@
 				"ui/widget/ImageWidget.js",
 				"ui/widget/ContributionWidget.js",
 				"ui/widget/HeadingLabel.js",
-				"ui/widget/NoContentPlaceholderWidget.js"
+				"ui/widget/NoContentPlaceholderWidget.js",
+				"ui/widget/SortWidget.js"
 			],
 			"messages": [
 				"oojsplus-namespace-content",
 				"oojsplus-namespace-system",
 				"oojsplus-namespace-content-talk",
-				"oojsplus-namespace-system-talk"
+				"oojsplus-namespace-system-talk",
+				"oojsplus-sort-direction-asc",
+				"oojsplus-sort-direction-desc"
 			],
 			"styles": [
 				"stylesheet/rangeWidget.less",
@@ -101,7 +104,8 @@
 				"ext.oOJSPlus",
 				"ext.mws.commonwebapis",
 				"oojs-ui.styles.icons-content",
-				"oojs-ui.styles.icons-interactions"
+				"oojs-ui.styles.icons-interactions",
+				"oojs-ui.styles.icons-movement"
 			]
 		},
 		"ext.oOJSPlus.widgets.stepProgressBar": {
@@ -173,6 +177,7 @@
 				"ui/data/column/Image.js",
 				"ui/data/Grid.js",
 				"ui/data/grid/Paginator.js",
+				"ui/data/grid/ExternalFilter.js",
 				"ui/data/grid/Toolbar.js",
 				"ui/data/tree/Item.js",
 				"ui/data/Tree.js",
@@ -242,7 +247,8 @@
 				"oojsplus-data-grid-filter-date-on",
 				"oojsplus-data-grid-filter-date-after",
 				"oojsplus-data-grid-filter-date-before",
-				"oojsplus-data-grid-no-results"
+				"oojsplus-data-grid-no-results",
+				"oojsplus-field-label-query"
 			]
 		},
 		"ext.oOJSPlus.icons": {

@@ -94,5 +94,8 @@
 	"oojsplus-data-grid-filter-date-on": "Filter options label for date field\n{{Identical|On}}",
 	"oojsplus-data-grid-filter-date-after": "Filter options label for date field\n{{Identical|After}}",
 	"oojsplus-data-grid-filter-date-before": "Filter options label for date field\n{{Identical|Before}}",
-	"oojsplus-data-grid-no-results": "Label for grid when no results are available"
+	"oojsplus-data-grid-no-results": "Label for grid when no results are available",
+	"oojsplus-sort-direction-asc": "Label for sorting in ascending order",
+	"oojsplus-sort-direction-desc": "Label for sorting in descending order",
+	"oojsplus-field-label-query": "Query field placeholder"
 }
