@@ -95,5 +95,8 @@
 	"oojsplus-data-grid-filter-date-on": "Am",
 	"oojsplus-data-grid-filter-date-after": "Nach",
 	"oojsplus-data-grid-filter-date-before": "Vor",
-	"oojsplus-data-grid-no-results": "Es sind noch keine Einträge vorhanden"
+	"oojsplus-data-grid-no-results": "Es sind noch keine Einträge vorhanden",
+	"oojsplus-sort-direction-asc": "In aufsteigender Reihenfolge sortieren",
+	"oojsplus-sort-direction-desc": "In absteigender Reihenfolge sortieren",
+	"oojsplus-field-label-query": "Suche …"
 }

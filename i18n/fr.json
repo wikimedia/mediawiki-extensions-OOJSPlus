@@ -2,6 +2,7 @@
 	"@metadata": {
 		"authors": [
 			"BlueCamille",
+			"Derugon",
 			"DreZhsh",
 			"Gomoko",
 			"Goombiis",
@@ -99,5 +100,8 @@
 	"oojsplus-data-grid-filter-date-on": "Le",
 	"oojsplus-data-grid-filter-date-after": "Après le",
 	"oojsplus-data-grid-filter-date-before": "Avant le",
-	"oojsplus-data-grid-no-results": "Il n'y a pas encore d'entrées"
+	"oojsplus-data-grid-no-results": "Il n'y a pas encore d'entrées",
+	"oojsplus-sort-direction-asc": "Tri par ordre croissant",
+	"oojsplus-sort-direction-desc": "Trier par ordre décroissant",
+	"oojsplus-field-label-query": "Rechercher…"
 }
