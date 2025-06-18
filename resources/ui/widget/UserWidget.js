@@ -1,5 +1,6 @@
 OOJSPlus.ui.widget.UserWidget = function ( cfg ) {
 	this.user = cfg || {};
+	this.user._exists = false;
 
 	OOJSPlus.ui.widget.UserWidget.parent.call( this, cfg );
 	OO.ui.mixin.PendingElement.call( this, {} );
@@ -22,6 +23,9 @@ OO.mixinClass( OOJSPlus.ui.widget.UserWidget, OO.ui.mixin.PendingElement );
 OOJSPlus.ui.widget.UserWidget.static.tagName = 'div';
 
 OOJSPlus.ui.widget.UserWidget.prototype.render = function () {
+	if ( !this.user._exists ) {
+		this.$element.addClass( 'user-not-found' );
+	}
 	this.$nameBox.append( $( '<span>' ).addClass( 'user-display' ).text( this.getDisplayName() ) );
 	if ( this.showRawUsername && this.getDisplayName() !== this.user.user_name ) {
 		this.$nameBox.append( $( '<span>' ).addClass( 'user-username' ).text( this.user.user_name ) );
@@ -105,6 +109,7 @@ OOJSPlus.ui.widget.UserWidget.prototype.assertUserData = function () {
 		mws.commonwebapis.user.getByUsername( this.user.user_name ).done( ( data ) => {
 			if ( !$.isEmptyObject( data ) ) {
 				this.user = data;
+				this.user._exists = true;
 			}
 			this.popPending();
 			dfd.resolve();
