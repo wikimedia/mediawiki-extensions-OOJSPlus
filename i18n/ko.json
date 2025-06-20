@@ -44,5 +44,6 @@
 	"oojsplus-toolbar-save": "저장",
 	"oojsplus-toolbar-delete": "삭제",
 	"oojsplus-toolbar-edit": "편집",
-	"oojsplus-toolbar-add": "추가"
+	"oojsplus-toolbar-add": "추가",
+	"oojsplus-field-label-query": "검색..."
 }
