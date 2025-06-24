@@ -3,6 +3,7 @@
 		"authors": [
 			"Alshamiri1",
 			"Asma",
+			"Mohammed Qays",
 			"Mohanad",
 			"Mohanad Kh",
 			"ديفيد"
@@ -55,5 +56,8 @@
 	"oojsplus-data-tree-item-remove-confirm-label": "هل تريد إزالة العنصر \" $1 \"؟",
 	"oojsplus-data-grid-filter-operator": "نوع المقارنة",
 	"oojsplus-data-grid-toolbar-settings-columns-label": "اعمدة",
-	"oojsplus-data-grid-grouper-no-group": "(لا مجموعة)"
+	"oojsplus-data-grid-grouper-no-group": "(لا مجموعة)",
+	"oojsplus-sort-direction-asc": "الفرز حسب الترتيب التصاعدي",
+	"oojsplus-sort-direction-desc": "الفرز حسب الترتيب التنازلي",
+	"oojsplus-field-label-query": "بحث..."
 }
