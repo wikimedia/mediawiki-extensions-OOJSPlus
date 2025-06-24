@@ -5,7 +5,8 @@
 			"DiegoAmbrocio",
 			"Fitoschido",
 			"Harvest",
-			"No se"
+			"No se",
+			"Chroma"
 		]
 	},
 	"oojsplus-desc": "Proporciona «widgets» y funciones utilitarias para OOJS",
@@ -31,5 +32,6 @@
 	"oojsplus-dialog-action-cancel": "Cancelar",
 	"oojsplus-data-grid-toolbar-reload-label": "Recargar",
 	"oojsplus-data-grid-toolbar-settings-columns-label": "Columnas",
-	"oojsplus-data-grid-filter-title": "Filtro $1"
+	"oojsplus-data-grid-filter-title": "Filtro $1",
+	"oojsplus-field-label-query": "Buscar..."
 }

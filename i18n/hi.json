@@ -15,5 +15,6 @@
 	"oojsplus-toolbar-save": "सहेजें",
 	"oojsplus-toolbar-delete": "हटाएँ",
 	"oojsplus-toolbar-edit": "सम्पादन",
-	"oojsplus-toolbar-add": "जोड़ें"
+	"oojsplus-toolbar-add": "जोड़ें",
+	"oojsplus-field-label-query": "खोजें..."
 }
