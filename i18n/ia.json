@@ -89,5 +89,8 @@
 	"oojsplus-data-grid-filter-date-on": "Le",
 	"oojsplus-data-grid-filter-date-after": "Post",
 	"oojsplus-data-grid-filter-date-before": "Ante",
-	"oojsplus-data-grid-no-results": "Il non ha ancora entratas"
+	"oojsplus-data-grid-no-results": "Il non ha ancora entratas",
+	"oojsplus-sort-direction-asc": "Ordinar in senso ascendente",
+	"oojsplus-sort-direction-desc": "Ordinar in senso descendente",
+	"oojsplus-field-label-query": "Cercar…"
 }

@@ -90,5 +90,8 @@
 	"oojsplus-data-grid-filter-date-on": "На",
 	"oojsplus-data-grid-filter-date-after": "По",
 	"oojsplus-data-grid-filter-date-before": "Пред",
-	"oojsplus-data-grid-no-results": "Сè уште нема записи"
+	"oojsplus-data-grid-no-results": "Сè уште нема записи",
+	"oojsplus-sort-direction-asc": "Подреди по нагорен редослед",
+	"oojsplus-sort-direction-desc": "Подреди по надолен редослед",
+	"oojsplus-field-label-query": "Пребарај..."
 }
