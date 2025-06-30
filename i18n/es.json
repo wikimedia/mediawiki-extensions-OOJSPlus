@@ -2,11 +2,11 @@
 	"@metadata": {
 		"authors": [
 			"AnupamM",
+			"Chroma",
 			"DiegoAmbrocio",
 			"Fitoschido",
 			"Harvest",
-			"No se",
-			"Chroma"
+			"No se"
 		]
 	},
 	"oojsplus-desc": "Proporciona «widgets» y funciones utilitarias para OOJS",

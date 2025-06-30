@@ -2,6 +2,7 @@
 	"@metadata": {
 		"authors": [
 			"BlueCamille",
+			"Derugon",
 			"DreZhsh",
 			"Gomoko",
 			"Goombiis",
@@ -11,8 +12,7 @@
 			"Thibaut120094",
 			"Verdy p",
 			"WillyM",
-			"Wladek92",
-			"Derugon"
+			"Wladek92"
 		]
 	},
 	"oojsplus-desc": "Fournit des widgets et des fonctions utilitaires pour OOJS.",
