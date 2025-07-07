@@ -139,5 +139,6 @@
 	"oojsplus-chip-title-label": "Title label for filter pill\nParameter:\n* $1 - name of filter",
 	"oojsplus-data-grid-toolbar-page-size-custom": "Label for custom page size in page size selection in data grid toolbar\nParameter:\n* $1 - number of rows",
 	"oojsplus-data-tree-item-more-actions-title": "Button title for entry actions",
-	"oojsplus-data-tree-item-more-actions-label": "Label for button to show all entry actions\n* $1 - name of entry"
+	"oojsplus-data-tree-item-more-actions-label": "Label for button to show all entry actions\n* $1 - name of entry",
+	"oojsplus-data-gridwidget-header-checkbox-title": "Title for the checkbox in the header of a grid widget to select all items"
 }
