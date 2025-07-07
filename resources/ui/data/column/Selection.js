@@ -7,6 +7,8 @@ OOJSPlus.ui.data.column.Selection = function ( cfg ) {
 	this.id = cfg.actionId;
 	this.label = cfg.label || '';
 	this.selected = cfg.selected || false;
+	this.checkboxes = [];
+	this.ignoreHeaderCheckChanges = false;
 
 	this.$element.addClass( 'selection-column' );
 };
@@ -33,16 +35,49 @@ OOJSPlus.ui.data.column.Selection.prototype.getViewControls = function ( value, 
 					item: row
 				}
 			};
+			if ( !selected ) {
+				this.ignoreHeaderCheckChanges = true;
+				this.headerCheckbox.setSelected( false );
+				this.ignoreHeaderCheckChanges = false;
+			}
 			this.emit( 'selected', element );
 			this.grid.emit( 'selected', element );
 		}
 	} );
 
+	this.checkboxes.push( this.checkbox );
+
 	return this.checkbox;
 };
 
 OOJSPlus.ui.data.column.Selection.prototype.getHeader = function () {
-	return $( '<th>' ).addClass( 'oojsplus-data-gridWidget-cell oojsplus-data-gridWidget-column-header' );
+	const $headerCheck = $( '<th>' ).addClass( 'oojsplus-data-gridWidget-cell oojsplus-data-gridWidget-column-header' );
+	this.headerCheckbox = new OOJSPlus.ui.widget.CheckboxInputWidget( {
+		title: mw.msg( 'oojsplus-data-gridwidget-header-checkbox-title' )
+	} );
+	this.headerCheckbox.$element.attr( 'aria-label', mw.msg( 'oojsplus-data-gridwidget-header-checkbox-title' ) );
+	this.headerCheckbox.connect( this, {
+		change: function ( selected ) {
+			if ( this.ignoreHeaderCheckChanges ) {
+				return;
+			}
+			this.checkboxes.forEach( ( checkbox ) => {
+				checkbox.setSelected( selected );
+			} );
+		}
+	} );
+	this.grid.connect( this, {
+		clearRows: function () {
+			this.checkboxes = [];
+		},
+		datasetChange: function () {
+			this.ignoreHeaderCheckChanges = true;
+			this.headerCheckbox.setSelected( false );
+			this.ignoreHeaderCheckChanges = false;
+		}
+	} );
+	$headerCheck.append( this.headerCheckbox.$element );
+	return $headerCheck;
 };
 
 OOJSPlus.ui.data.column.Selection.prototype.canChangeVisibility = function () {
