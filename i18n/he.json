@@ -92,5 +92,8 @@
 	"oojsplus-data-grid-filter-date-on": "מופעל",
 	"oojsplus-data-grid-filter-date-after": "אחרי",
 	"oojsplus-data-grid-filter-date-before": "לפני",
-	"oojsplus-data-grid-no-results": "אין עדיין רשומות"
+	"oojsplus-data-grid-no-results": "אין עדיין רשומות",
+	"oojsplus-sort-direction-asc": "מיון בסדר עולה",
+	"oojsplus-sort-direction-desc": "מיון בסדר יורד",
+	"oojsplus-field-label-query": "חיפוש..."
 }
