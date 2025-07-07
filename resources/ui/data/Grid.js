@@ -549,6 +549,7 @@
 
 	OOJSPlus.ui.data.GridWidget.prototype.clearItems = function () {
 		this.$table.find( 'tbody.oojsplus-data-gridWidget-tbody' ).find( 'tr' ).remove();
+		this.emit( 'clearRows' );
 	};
 
 	OOJSPlus.ui.data.GridWidget.prototype.onCellClick = function ( e ) {

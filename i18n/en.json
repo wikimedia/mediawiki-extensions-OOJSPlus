@@ -134,5 +134,6 @@
 	"oojsplus-chip-title-label": "Show all entries in $1",
 	"oojsplus-data-grid-toolbar-page-size-custom": "{{PLURAL:$1|$1 row|$1 rows}}",
 	"oojsplus-data-tree-item-more-actions-title": "More actions",
-	"oojsplus-data-tree-item-more-actions-label": "More actions for entry $1"
+	"oojsplus-data-tree-item-more-actions-label": "More actions for entry $1",
+	"oojsplus-data-gridwidget-header-checkbox-title": "Select/deselect all rows on this page"
 }
