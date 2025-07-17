@@ -19,6 +19,7 @@
 	 * filtering: { // optional
 	 *  showQueryField: true|false, // Default to true
 	 *  queryPlaceholder: 'Search...', // Placeholder for the query field
+	 * stateId: {string}, // Id of the state to use for saving the grid state
 	 * }
 	 * filtering: null // no filter toolbar at all
 	 *
@@ -35,6 +36,7 @@
 		this.$table.append( $( '<thead>' ).addClass( 'oojsplus-data-gridWidget-header' ) );
 		this.$table.append( $( '<tbody>' ).addClass( 'oojsplus-data-gridWidget-tbody' ) );
 		this.$wrapper = $( '<div>' );
+		this.stateId = cfg.stateId || null;
 
 		if ( $( document ).find( '#oojsplus-skeleton-cnt' ) ) {
 			$( '#oojsplus-skeleton-cnt' ).empty();
@@ -71,6 +73,8 @@
 			this.orderable = false;
 			this.resizable = false;
 		}
+
+		this.state = this.getStateIfApplicable();
 		this.alwaysVisibleColumns = [];
 		this.visibleColumns = [];
 
@@ -188,6 +192,10 @@
 		if ( this.collapsible ) {
 			this.appendCollapseButton();
 		}
+
+		this.connect( this, {
+			stateChange: 'onStateChange'
+		} );
 	};
 
 	OO.inheritClass( OOJSPlus.ui.data.GridWidget, OO.ui.Widget );
@@ -222,11 +230,23 @@
 					console.error( 'OOJSPlus.data: Tried to instantiate non-registered column for type: ' + type ); // eslint-disable-line no-console
 					columnClass = OOJSPlus.ui.data.registry.columnRegistry.lookup( 'text' );
 				}
+
+				if (
+					this.state.size &&
+					this.state.size.hasOwnProperty( field ) &&
+					this.resizable
+				) {
+					column.width = this.state.size[ field ];
+				}
 				columnWidget = new columnClass( Object.assign( column, { resizable: this.resizable, $overlay: this.$overlay } ) ); // eslint-disable-line new-cap
 				if ( !columnWidget.canChangeVisibility() ) {
 					this.alwaysVisibleColumns.push( field );
 				}
-				if ( columnWidget.getVisibility() === 'visible' ) {
+				if ( this.state.columns ) {
+					if ( this.state.columns.includes( field ) ) {
+						this.visibleColumns.push( field );
+					}
+				} else if ( columnWidget.getVisibility() === 'visible' ) {
 					this.visibleColumns.push( field );
 				}
 			} else {
@@ -401,6 +421,7 @@
 			}
 			this.doSetColumnVisibility( field, visible.indexOf( field ) !== -1 );
 		}
+		this.emit( 'stateChange', { columns: this.visibleColumns } );
 	};
 
 	OOJSPlus.ui.data.GridWidget.prototype.doSetColumnVisibility = function ( field, visible ) {
@@ -715,5 +736,32 @@
 		$cell.append( placeHolderWidget.$element );
 		$row.append( $cell );
 		$body.append( $row );
+	};
+
+	OOJSPlus.ui.data.GridWidget.prototype.onStateChange = function ( state ) {
+		if ( !this.stateId ) {
+			return;
+		}
+		const stateManager = new OOJSPlus.ui.data.StateManager();
+		const oldState = stateManager.getState( this.stateId );
+		if ( !oldState ) {
+			stateManager.setState( this.stateId, state );
+			return;
+		}
+		// Merge old state with new state
+		state = Object.assign( {}, oldState, state );
+		stateManager.setState( this.stateId, state );
+	};
+
+	OOJSPlus.ui.data.GridWidget.prototype.getStateIfApplicable = function () {
+		if ( !this.stateId ) {
+			return {};
+		}
+		const stateManager = new OOJSPlus.ui.data.StateManager();
+		const state = stateManager.getState( this.stateId );
+		if ( !state ) {
+			return {};
+		}
+		return state;
 	};
 }( mediaWiki, jQuery ) );
