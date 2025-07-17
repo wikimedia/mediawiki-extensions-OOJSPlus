@@ -38,6 +38,7 @@
 		this.autoClosePopup = cfg.autoClosePopup || false;
 		this.maxLabelLength = cfg.maxLabelLength || false;
 		this.resizable = cfg.resizable || false;
+		this.hasHeader = false;
 
 		this.headerText = cfg.headerText || '';
 		this.invisibleLabel = cfg.invisibleLabel || false;
@@ -81,6 +82,7 @@
 	};
 
 	OOJSPlus.ui.data.column.Column.prototype.getHeader = function ( data ) {
+		this.hasHeader = true;
 		const $cell = $( '<th>' ).addClass( 'oojsplus-data-gridWidget-cell oojsplus-data-gridWidget-column-header' );
 		this.setWidth( $cell );
 		if ( this.sticky ) {
@@ -119,6 +121,8 @@
 		$cell.append( this.headerButton.$element );
 
 		if ( this.resizable ) {
+			const grid = this.grid;
+			const columnId = this.id;
 			const resizeCfg = {
 				handles: 'e',
 				helper: 'grid-col-resizable-helper',
@@ -126,6 +130,7 @@
 					// After resizing, set also the min-width of the cell
 					// That is the only way to make the table overflow (and therefore set the correct width)
 					$( this ).css( 'min-width', ui.size.width );
+					grid && grid.emit( 'stateChange', { size: { [columnId]: ui.size.width } } );
 				}
 			};
 			if ( this.minWidth ) {
@@ -220,7 +225,9 @@
 			$cell.addClass( 'sticky-col' );
 		}
 
-		this.setWidth( $cell );
+		if ( !this.hasHeader ) {
+			this.setWidth( $cell );
+		}
 		return $cell;
 	};
 
