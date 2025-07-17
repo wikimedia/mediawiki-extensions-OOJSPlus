@@ -34,6 +34,7 @@ OOJSPlus.ui.data.column.Action.prototype.renderCell = function ( value, row ) {
 	if ( this.visibleOnHover ) {
 		$cell.addClass( 'action-cell-visible-on-hover' );
 	}
+	this.setWidth( $cell );
 	return $cell;
 };
 
