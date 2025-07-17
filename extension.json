@@ -155,6 +155,7 @@
 		},
 		"ext.oOJSPlus.data": {
 			"scripts": [
+				"ui/data/StateManager.js",
 				"ui/data/lib/jquery.sorttable.js",
 				"ui/data/store/Store.js",
 				"ui/data/store/RemoteStore.js",
