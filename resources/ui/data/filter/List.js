@@ -48,7 +48,9 @@ OOJSPlus.ui.data.filter.List.prototype.getFilterValue = function () {
 
 OOJSPlus.ui.data.filter.List.prototype.setValue = function ( value ) {
 	OOJSPlus.ui.data.filter.List.parent.prototype.setValue.call( this, value );
+	this.stopEvents();
 	this.input.setValue( value.value );
+	this.resumeEvents();
 };
 
 OOJSPlus.ui.data.filter.List.prototype.changeValue = function ( value ) {
@@ -79,6 +81,19 @@ OOJSPlus.ui.data.filter.List.prototype.resumeEvents = function () {
 	this.input.connect( this, {
 		change: 'changeValue'
 	} );
+};
+
+OOJSPlus.ui.data.filter.List.prototype.getDisplayValue = function () {
+	if ( this.value && this.value.value ) {
+		const labels = [];
+		for ( let i = 0; i < this.list.length; i++ ) {
+			if ( this.value.value.indexOf( this.list[ i ].data ) !== -1 ) {
+				labels.push( this.list[ i ].label || this.list[ i ].data );
+			}
+		}
+		return labels.join( ', ' );
+	}
+	return '';
 };
 
 OOJSPlus.ui.data.registry.filterRegistry.register( 'list', OOJSPlus.ui.data.filter.List );

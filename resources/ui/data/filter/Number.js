@@ -94,4 +94,13 @@ OOJSPlus.ui.data.filter.Number.prototype.matches = function ( value ) {
 	}
 };
 
+OOJSPlus.ui.data.filter.Number.prototype.getDisplayValue = function () {
+	if ( this.value && this.value.value !== undefined && this.value.value !== null ) {
+		const operatorLabel = this.operator === 'lt' ? '>' :
+			this.operator === 'gt' ? '>' : '';
+		return operatorLabel + this.value.value.toString();
+	}
+	return null;
+};
+
 OOJSPlus.ui.data.registry.filterRegistry.register( 'number', OOJSPlus.ui.data.filter.Number );

@@ -70,15 +70,24 @@ OOJSPlus.ui.data.filter.Boolean.prototype.doChangeValue = function ( value ) {
 	let shouldClosePopup = this.closePopupOnChange;
 	if ( value === null ) {
 		this.value = null;
-		this.clearButton.setDisabled( true );
 		shouldClosePopup = true;
 	} else {
 		this.conditionValue = value;
 		this.value = this.getFilterValue();
-		this.clearButton.setDisabled( false );
 	}
 
 	this.emit( 'change', this, shouldClosePopup );
+};
+
+OOJSPlus.ui.data.filter.Boolean.prototype.getDisplayValue = function () {
+	if ( Object.keys( this.value ).includes( 'value' ) && this.value.value !== undefined ) {
+		if ( this.value.value === true ) {
+			return this.trueLabel;
+		} else if ( this.value.value === false ) {
+			return this.falseLabel;
+		}
+	}
+	return '';
 };
 
 OOJSPlus.ui.data.registry.filterRegistry.register( 'boolean', OOJSPlus.ui.data.filter.Boolean );

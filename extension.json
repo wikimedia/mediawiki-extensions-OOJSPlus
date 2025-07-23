@@ -78,22 +78,20 @@
 				"ui/widget/ContributionWidget.js",
 				"ui/widget/HeadingLabel.js",
 				"ui/widget/NoContentPlaceholderWidget.js",
-				"ui/widget/SortWidget.js",
 				"ui/widget/OutlineSelectWidget.js",
 				"ui/widget/NumberInputWidget.js",
 				"ui/booklet/Booklet.js",
 				"ui/widget/FilterableComboBoxWidget.js",
 				"ui/widget/BatchOptionWidget.js",
 				"ui/widget/GroupedSelectWidget.js",
-				"ui/widget/PercentInput.js"
+				"ui/widget/PercentInput.js",
+				"ui/widget/DropdownMenuOption.js"
 			],
 			"messages": [
 				"oojsplus-namespace-content",
 				"oojsplus-namespace-system",
 				"oojsplus-namespace-content-talk",
-				"oojsplus-namespace-system-talk",
-				"oojsplus-sort-direction-asc",
-				"oojsplus-sort-direction-desc"
+				"oojsplus-namespace-system-talk"
 			],
 			"styles": [
 				"stylesheet/rangeWidget.less",
@@ -161,6 +159,8 @@
 				"ui/data/store/RemoteStore.js",
 				"ui/data/store/RemoteRestStore.js",
 				"ui/data/sorter/Sorter.js",
+				"ui/data/sorter/SortItem.js",
+				"ui/data/sorter/SortSelector.js",
 				"ui/data/FilterFactory.js",
 				"ui/data/filter/Filter.js",
 				"ui/data/filter/String.js",
@@ -170,6 +170,8 @@
 				"ui/data/filter/TagList.js",
 				"ui/data/filter/User.js",
 				"ui/data/filter/Date.js",
+				"ui/data/filter/FilterItem.js",
+				"ui/data/filter/FilterSelector.js",
 				"ui/data/column/Column.js",
 				"ui/data/column/Text.js",
 				"ui/data/column/Number.js",
@@ -205,6 +207,7 @@
 				"ext.oOJSPlus.IDGenerator",
 				"oojs-ui.styles.icons-layout",
 				"oojs-ui.styles.icons-interactions",
+				"oojs-ui.styles.icons-movement",
 				"mediawiki.widgets.DateInputWidget",
 				"ext.oOJSPlus.icons"
 			],
@@ -233,7 +236,6 @@
 				"oojsplus-data-grid-toolbar-settings-columns-label",
 				"oojsplus-data-grid-grouper-no-group",
 				"oojsplus-data-grid-selection-column-label",
-				"oojsplus-data-grid-filter-close",
 				"oojsplus-data-grid-filter-update-active-filter",
 				"oojsplus-data-grid-filter-update-results",
 				"oojsplus-data-grid-filter-update-no-filter",
@@ -257,7 +259,10 @@
 				"oojsplus-data-grid-no-results",
 				"oojsplus-field-label-query",
 				"oojsplus-data-navigation-tree-expander-label",
-				"oojsplus-data-tree-expander-label"
+				"oojsplus-data-tree-expander-label",
+				"oojsplus-data-sorter-remove",
+				"oojsplus-data-sorter-picker",
+				"oojsplus-data-filter-picker"
 			]
 		},
 		"ext.oOJSPlus.icons": {
