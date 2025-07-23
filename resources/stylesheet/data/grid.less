@@ -246,12 +246,41 @@
 .oojsplus-ExternalFilter {
 	display: flex;
 	flex-wrap: nowrap;
-	.oo-ui-textInputWidget-type-search {
-		max-width: unset;
-		flex-grow: 1;
-		input {
+	padding: 10px 0;
+	.oojsplus-data-gridWidget-filter-section {
+		&>:last-child {
+			padding-right: 10px;
+			margin-right: 10px;
+		}
+		display: flex;
+		flex-wrap: wrap;
+		&.auto-size {
+			flex-grow: 1;
+		}
+		.oo-ui-textInputWidget-type-search {
+			max-width: unset;
+			flex-grow: 1;
+			input {
+				width: 100%;
+			}
+		}
+		.oojsplus-data-sorter-item,
+		.oojsplus-data-filter-item {
+			.oo-ui-buttonWidget a {
+				min-height: 35px;
+			}
+		}
+	}
+	.oojsplus-data-filter-sorter-options {
+		.oojsplus-data-filter-sorter-options-label {
+			padding: 5px;
+			border-bottom: 1px solid #e3e3e3;
 			width: 100%;
 		}
 	}
+	.oojsplus-data-filter-item,
+	.oojsplus-data-sorter-item {
+		display: flex;
 
+	}
 }

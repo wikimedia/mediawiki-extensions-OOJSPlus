@@ -39,6 +39,7 @@ OOJSPlus.ui.data.filter.String.prototype.setValue = function ( value ) {
 
 OOJSPlus.ui.data.filter.String.prototype.clearValues = function () {
 	this.input.setValue( '' );
+	OOJSPlus.ui.data.filter.String.parent.prototype.clearValues.call( this );
 };
 
 OOJSPlus.ui.data.filter.String.prototype.matches = function ( value ) {

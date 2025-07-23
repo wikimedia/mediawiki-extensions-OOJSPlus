@@ -76,13 +76,12 @@ OOJSPlus.ui.data.filter.Date.prototype.getFilterValue = function () {
 };
 
 OOJSPlus.ui.data.filter.Date.prototype.setValue = function ( value ) {
-	OOJSPlus.ui.data.filter.String.parent.prototype.setValue.call( this, value );
-	this.input.setValue( value.value );
+	OOJSPlus.ui.data.filter.Filter.prototype.setValue.call( this, value );
 	this.operator = value.operator;
 };
 
 OOJSPlus.ui.data.filter.Date.prototype.clearValues = function () {
-	this.input.setDate( null );
+	OOJSPlus.ui.data.filter.Filter.prototype.clearValues.call( this );
 	this.input.resetUI();
 };
 
@@ -93,6 +92,14 @@ OOJSPlus.ui.data.filter.Date.prototype.convertToFilterDate = function ( value ) 
 	// Convert Y-m-d to Ymd
 	const date = value.split( '-' );
 	return date.join( '' );
+};
+
+OOJSPlus.ui.data.filter.Date.prototype.getDisplayValue = function () {
+	if ( this.value && this.value.value ) {
+		// Convert Ymd to Y-m-d
+		const value = this.value.value;
+		return value.slice( 0, 4 ) + '-' + value.slice( 4, 6 ) + '-' + value.slice( 6 );
+	}
 };
 
 OOJSPlus.ui.data.filter.Date.prototype.announce = function () {

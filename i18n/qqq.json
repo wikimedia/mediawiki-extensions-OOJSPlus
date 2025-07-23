@@ -65,7 +65,6 @@
 	"oojsplus-data-grid-toolbar-settings-columns-label": "Field label",
 	"oojsplus-data-grid-grouper-no-group": "Label for the grid group if no group name is specified",
 	"oojsplus-data-grid-selection-column-label": "Label for selection column",
-	"oojsplus-data-grid-filter-close": "Used as title of a button",
 	"oojsplus-namespace-content": "Grouping label for content namespace",
 	"oojsplus-namespace-system": "Grouping label for system namespace",
 	"oojsplus-namespace-content-talk": "Grouping label for content talk namespace",
@@ -95,11 +94,12 @@
 	"oojsplus-data-grid-filter-date-after": "Filter options label for date field\n{{Identical|After}}",
 	"oojsplus-data-grid-filter-date-before": "Filter options label for date field\n{{Identical|Before}}",
 	"oojsplus-data-grid-no-results": "Label for grid when no results are available",
-	"oojsplus-sort-direction-asc": "Label for sorting in ascending order",
-	"oojsplus-sort-direction-desc": "Label for sorting in descending order",
 	"oojsplus-field-label-query": "Query field placeholder",
 	"oojsplus-data-navigation-tree-expander-label": "Label for expand button for navigation tree item",
 	"oojsplus-data-tree-expander-label": "Label for expand button for tree item",
 	"oojsplus-dialog-action-back": "Label for action back in dialog\n\n{{Identical|Back}}",
-	"oojsplus-formelement-type-percent": "Label for the Percent form element"
+	"oojsplus-formelement-type-percent": "Label for the Percent form element",
+	"oojsplus-data-sorter-remove": "Button label",
+	"oojsplus-data-sorter-picker": "Button label",
+	"oojsplus-data-filter-picker": "Label for filter option layout"
 }

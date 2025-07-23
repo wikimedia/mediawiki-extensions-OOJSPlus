@@ -60,7 +60,6 @@
 	"oojsplus-data-grid-toolbar-settings-columns-label": "Columns",
 	"oojsplus-data-grid-grouper-no-group": "(no group)",
 	"oojsplus-data-grid-selection-column-label": "Select",
-	"oojsplus-data-grid-filter-close": "Close",
 	"oojsplus-namespace-content": "Content namespaces",
 	"oojsplus-namespace-system": "System namespaces",
 	"oojsplus-namespace-content-talk": "Content talk namespaces",
@@ -90,11 +89,12 @@
 	"oojsplus-data-grid-filter-date-after": "After",
 	"oojsplus-data-grid-filter-date-before": "Before",
 	"oojsplus-data-grid-no-results": "There are no entries yet",
-	"oojsplus-sort-direction-asc": "Sorting in ascending order",
-	"oojsplus-sort-direction-desc": "Sorting in descending order",
-	"oojsplus-field-label-query": "Search...",
 	"oojsplus-data-navigation-tree-expander-label": "Subpages",
 	"oojsplus-data-tree-expander-label": "Submenu",
 	"oojsplus-dialog-action-back": "Back",
-	"oojsplus-formelement-type-percent": "Percent"
+	"oojsplus-formelement-type-percent": "Percent",
+	"oojsplus-field-label-query": "Search...",
+	"oojsplus-data-sorter-remove": "Remove sort",
+	"oojsplus-data-sorter-picker": "Sort by field",
+	"oojsplus-data-filter-picker": "Filter by field"
 }

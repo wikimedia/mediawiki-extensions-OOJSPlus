@@ -127,3 +127,8 @@
 	/* @embed */
 	background-image: url( ../images/icons/cross.png );
 }
+
+.oo-ui-icon-sort {
+	/* @embed */
+	background-image: url( ../images/icons/sort.svg );
+}
