@@ -79,7 +79,10 @@
 				"ui/widget/HeadingLabel.js",
 				"ui/widget/NoContentPlaceholderWidget.js",
 				"ui/widget/SortWidget.js",
-				"ui/widget/OutlineSelectWidget.js"
+				"ui/widget/OutlineSelectWidget.js",
+				"ui/widget/NumberInputWidget.js",
+				"ui/booklet/Booklet.js",
+				"ui/widget/FilterableComboBoxWidget.js"
 			],
 			"messages": [
 				"oojsplus-namespace-content",
