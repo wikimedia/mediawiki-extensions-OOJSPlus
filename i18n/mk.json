@@ -93,5 +93,7 @@
 	"oojsplus-data-grid-no-results": "Сè уште нема записи",
 	"oojsplus-sort-direction-asc": "Подреди по нагорен редослед",
 	"oojsplus-sort-direction-desc": "Подреди по надолен редослед",
-	"oojsplus-field-label-query": "Пребарај..."
+	"oojsplus-field-label-query": "Пребарај...",
+	"oojsplus-data-navigation-tree-expander-label": "Потстраници",
+	"oojsplus-data-tree-expander-label": "Подмени"
 }

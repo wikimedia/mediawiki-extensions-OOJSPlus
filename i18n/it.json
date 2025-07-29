@@ -30,5 +30,7 @@
 	"oojsplus-toolbar-save": "Salva",
 	"oojsplus-toolbar-delete": "Cancella",
 	"oojsplus-toolbar-edit": "Modifica",
-	"oojsplus-toolbar-add": "Aggiungi"
+	"oojsplus-toolbar-add": "Aggiungi",
+	"oojsplus-data-navigation-tree-expander-label": "Sottopagine",
+	"oojsplus-data-tree-expander-label": "Sottomenu"
 }
