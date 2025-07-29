@@ -78,7 +78,6 @@
 				"ui/widget/ContributionWidget.js",
 				"ui/widget/HeadingLabel.js",
 				"ui/widget/NoContentPlaceholderWidget.js",
-				"ui/widget/SortWidget.js",
 				"ui/widget/OutlineSelectWidget.js"
 			],
 			"messages": [
