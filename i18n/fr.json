@@ -103,5 +103,7 @@
 	"oojsplus-data-grid-no-results": "Il n'y a pas encore d'entrées",
 	"oojsplus-sort-direction-asc": "Tri par ordre croissant",
 	"oojsplus-sort-direction-desc": "Trier par ordre décroissant",
-	"oojsplus-field-label-query": "Rechercher…"
+	"oojsplus-field-label-query": "Rechercher…",
+	"oojsplus-data-navigation-tree-expander-label": "Sous-pages",
+	"oojsplus-data-tree-expander-label": "Sous-menu"
 }

@@ -92,5 +92,7 @@
 	"oojsplus-data-grid-no-results": "Il non ha ancora entratas",
 	"oojsplus-sort-direction-asc": "Ordinar in senso ascendente",
 	"oojsplus-sort-direction-desc": "Ordinar in senso descendente",
-	"oojsplus-field-label-query": "Cercar…"
+	"oojsplus-field-label-query": "Cercar…",
+	"oojsplus-data-navigation-tree-expander-label": "Subpaginas",
+	"oojsplus-data-tree-expander-label": "Submenu"
 }
