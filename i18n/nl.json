@@ -93,5 +93,10 @@
 	"oojsplus-data-grid-filter-date-on": "Op",
 	"oojsplus-data-grid-filter-date-after": "Na",
 	"oojsplus-data-grid-filter-date-before": "Vóór",
-	"oojsplus-data-grid-no-results": "Er zijn nog geen vermeldingen"
+	"oojsplus-data-grid-no-results": "Er zijn nog geen vermeldingen",
+	"oojsplus-sort-direction-asc": "Sorteren in oplopende volgorde",
+	"oojsplus-sort-direction-desc": "Sorteren in aflopende volgorde",
+	"oojsplus-field-label-query": "Zoeken...",
+	"oojsplus-data-navigation-tree-expander-label": "Subpagina’s",
+	"oojsplus-data-tree-expander-label": "Submenu"
 }
