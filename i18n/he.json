@@ -4,6 +4,7 @@
 			"Amire80",
 			"Ex-Diktator",
 			"Freddy9",
+			"Neriah",
 			"YaronSh"
 		]
 	},
@@ -95,5 +96,7 @@
 	"oojsplus-data-grid-no-results": "אין עדיין רשומות",
 	"oojsplus-sort-direction-asc": "מיון בסדר עולה",
 	"oojsplus-sort-direction-desc": "מיון בסדר יורד",
-	"oojsplus-field-label-query": "חיפוש..."
+	"oojsplus-field-label-query": "חיפוש...",
+	"oojsplus-data-navigation-tree-expander-label": "דפי־משנה",
+	"oojsplus-data-tree-expander-label": "תפריט־משנה"
 }
