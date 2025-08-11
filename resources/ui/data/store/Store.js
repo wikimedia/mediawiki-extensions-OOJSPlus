@@ -70,7 +70,7 @@ OOJSPlus.ui.data.store.Store.prototype.reload = function () {
 };
 
 OOJSPlus.ui.data.store.Store.prototype.doLoadData = function () {
-	let data = this.filterIfLocal( this.originalData.concat( [] ) );
+	let data = this.filterIfLocal( this.originalData.slice() );
 	data = this.sortIfLocal( data );
 	return $.Deferred().resolve( this.indexData( data ) ).promise();
 };
@@ -110,7 +110,7 @@ OOJSPlus.ui.data.store.Store.prototype.indexData = function ( data ) {
 };
 
 OOJSPlus.ui.data.store.Store.prototype.getTotal = function () {
-	return Object.values( this.data ).length;
+	return Object.values( this.originalData ).length;
 };
 
 OOJSPlus.ui.data.store.Store.prototype.getData = function () {
