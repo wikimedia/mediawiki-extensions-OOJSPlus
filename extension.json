@@ -82,7 +82,9 @@
 				"ui/widget/OutlineSelectWidget.js",
 				"ui/widget/NumberInputWidget.js",
 				"ui/booklet/Booklet.js",
-				"ui/widget/FilterableComboBoxWidget.js"
+				"ui/widget/FilterableComboBoxWidget.js",
+				"ui/widget/BatchOptionWidget.js",
+				"ui/widget/GroupedSelectWidget.js"
 			],
 			"messages": [
 				"oojsplus-namespace-content",

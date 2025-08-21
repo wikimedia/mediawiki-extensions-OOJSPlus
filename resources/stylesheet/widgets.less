@@ -180,7 +180,24 @@
 	}
 }
 
-.enhanced-ui-preferences-content .oo-ui-menuLayout-static.oo-ui-menuLayout-after.oojsplus-booklet,
-.enhanced-ui-preferences-content .oo-ui-menuLayout-static.oo-ui-menuLayout-before.oojsplus-booklet {
+.oo-ui-menuLayout-static.oo-ui-menuLayout-after.oojsplus-booklet,
+.oo-ui-menuLayout-static.oo-ui-menuLayout-before.oojsplus-booklet {
 	display: block;
+}
+
+.oojsplus-widget-batch-option-widget.oo-ui-menuOptionWidget.oo-ui-widget-enabled {
+	justify-content: space-between;
+	display: flex;
+
+	.oo-ui-optionWidget.oo-ui-labelElement > .oo-ui-labelElement-label {
+		display: initial;
+	}
+
+	&.oo-ui-optionWidget-selected {
+		color: var(--color-progressive, #36c);
+	}
+
+	.oojsplus-widget-batch-option-badge {
+		line-height: 1.42857143em;
+	}
 }
