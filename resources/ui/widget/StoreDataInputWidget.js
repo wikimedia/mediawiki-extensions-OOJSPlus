@@ -16,6 +16,7 @@
 		this.lookupMenu.$element.addClass( 'oojsplus-widget-storeDataInputWidget-menu' );
 		this.queryMinChars = config.queryMinChars || 0;
 		this.queryAction = config.queryAction;
+		this.useQueryParam = config.useQueryParam || false;
 		this.additionalQueryParams = config.additionalQueryParams || {};
 		this.limit = config.limit || 9999;
 		this.labelField = config.labelField;
@@ -115,12 +116,16 @@
 			}, this.additionalQueryParams );
 
 		if ( inputValue.trim() !== '' ) {
-			queryData.filter = JSON.stringify( [ {
-				comparison: 'ct',
-				value: inputValue,
-				property: this.labelField,
-				type: 'string'
-			} ] );
+			if ( this.useQueryParam ) {
+				queryData.query = inputValue;
+			} else {
+				queryData.filter = JSON.stringify( [ {
+					comparison: 'ct',
+					value: inputValue,
+					property: this.labelField,
+					type: 'string'
+				} ] );
+			}
 		}
 
 		return new mw.Api().get( queryData );
