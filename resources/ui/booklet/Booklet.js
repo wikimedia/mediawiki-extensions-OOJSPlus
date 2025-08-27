@@ -2,6 +2,8 @@
 	OOJSPlus.ui.booklet.Booklet = function ( cfg ) {
 		config = cfg || {};
 		OOJSPlus.ui.booklet.Booklet.super.call( this, config );
+		this.clearContentPanel();
+		this.clearMenuPanel();
 
 		this.currentPageName = null;
 		this.pages = {};
