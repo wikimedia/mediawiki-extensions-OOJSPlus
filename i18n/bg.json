@@ -15,5 +15,6 @@
 	"oojsplus-color-picker-color-pink": "Розово",
 	"oojsplus-color-picker-clear-label": "Изчистване на цвета",
 	"oojsplus-color-picker-label": "Средство за избиране на цвят",
-	"oojsplus-data-grid-toolbar-settings-aria-label": "Настройки"
+	"oojsplus-data-grid-toolbar-settings-aria-label": "Настройки",
+	"oojsplus-toolbar-cancel": "Отказ"
 }
