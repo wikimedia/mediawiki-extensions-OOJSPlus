@@ -62,6 +62,7 @@
 		this.data = cfg.data || [];
 		this.resizable = typeof cfg.resizable === 'undefined' ? true : cfg.resizable;
 		this.orderable = typeof cfg.orderable === 'undefined' ? true : cfg.orderable;
+		this.selectable = typeof cfg.selectable === 'undefined' ? true : cfg.selectable;
 		this.collapsible = cfg.collapsible || false;
 		this.collapsed = cfg.collapsed || false;
 		this.actionsVisibleOnHover = cfg.actionsVisibleOnHover || false;
@@ -131,9 +132,11 @@
 			this.$filterCnt.text( filterAnnouncement );
 		} );
 
-		this.connect( this, {
-			selected: 'clickOnRow'
-		} );
+		if ( this.selectable ) {
+			this.connect( this, {
+				selected: 'clickOnRow'
+			} );
+		}
 
 		if ( this.orderable ) {
 			this.$table.sorttable( {} );
@@ -490,21 +493,23 @@
 			}
 			const $cell = this.columns[ columnField ].renderCell( item[ columnField ], item );
 			$cell.attr( 'data-field', columnField );
-			$cell.on( 'click', {
-				$cell: $cell,
-				item: item
-			}, this.onCellClick.bind( this ) );
-			$cell.on( 'dblclick', {
-				$cell: $cell,
-				item: item
-			}, this.onCellDblClick.bind( this ) );
+			if ( this.selectable ) {
+				$cell.on( 'click', {
+					$cell: $cell,
+					item: item
+				}, this.onCellClick.bind( this ) );
+				$cell.on( 'dblclick', {
+					$cell: $cell,
+					item: item
+				}, this.onCellDblClick.bind( this ) );
+			}
 			$row.append( $cell );
 		}
 
 		if ( this.multiSelect && this.multiSelectSelectedByDefault ) {
 			this.selectedRows.push( item );
 		}
-		if ( !this.multiSelect ) {
+		if ( !this.multiSelect && this.selectable ) {
 			$row.on( 'click', { $row: $row, item: item },
 				this.clickOnRow.bind( this ) );
 		}
