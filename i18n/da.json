@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Saederup92"
+			"Saederup92",
+			"Steenth"
 		]
 	},
 	"oojsplus-color-picker-color-blue": "Blå",
@@ -10,5 +11,6 @@
 	"oojsplus-color-picker-color-yellow": "Gul",
 	"oojsplus-color-picker-color-pink": "Lyserød",
 	"oojsplus-data-tree-item-remove-label": "Fjern",
-	"oojsplus-stepprogressbar-default-final-label": "Udført"
+	"oojsplus-stepprogressbar-default-final-label": "Udført",
+	"oojsplus-dialog-action-back": "Tilbage"
 }
