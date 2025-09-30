@@ -98,5 +98,6 @@
 	"oojsplus-sort-direction-desc": "מיון בסדר יורד",
 	"oojsplus-field-label-query": "חיפוש...",
 	"oojsplus-data-navigation-tree-expander-label": "דפי־משנה",
-	"oojsplus-data-tree-expander-label": "תפריט־משנה"
+	"oojsplus-data-tree-expander-label": "תפריט־משנה",
+	"oojsplus-dialog-action-back": "חזרה"
 }
