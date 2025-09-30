@@ -23,5 +23,6 @@
 	"oojsplus-toolbar-delete": "Ջնջել",
 	"oojsplus-toolbar-edit": "Խմբագրել",
 	"oojsplus-toolbar-add": "Ավելացնել",
-	"oojsplus-data-navigation-tree-expander-label": "Ենթաէջեր"
+	"oojsplus-data-navigation-tree-expander-label": "Ենթաէջեր",
+	"oojsplus-dialog-action-back": "Հետ"
 }

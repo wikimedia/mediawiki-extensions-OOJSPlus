@@ -40,5 +40,6 @@
 	"oojsplus-toolbar-cancel": "Отмена",
 	"oojsplus-toolbar-save": "Сохранить",
 	"oojsplus-toolbar-delete": "Удалить",
-	"oojsplus-toolbar-edit": "Править"
+	"oojsplus-toolbar-edit": "Править",
+	"oojsplus-dialog-action-back": "Назад"
 }
