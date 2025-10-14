@@ -169,7 +169,13 @@
 			const $labelEl = $( $li ).find( '> div > .oojsplus-data-tree-label' );
 			const itemId = $labelEl.attr( 'id' );
 
-			$li.append( this.doDraw( items[ name ].children || {}, items[ name ].widget, itemId, this.expanded ) );
+			if ( !this.fixed ) {
+				$li.append( this.doDraw( items[ name ].children || {}, items[ name ].widget, itemId, this.expanded ) );
+			} else {
+				if ( Object.keys( items[ name ].children ).length > 0 ) {
+					$li.append( this.doDraw( items[ name ].children, items[ name ].widget, itemId, this.expanded ) );
+				}
+			}
 
 			$ul.append( $li );
 			// Once we add children, re-evaluate parent
