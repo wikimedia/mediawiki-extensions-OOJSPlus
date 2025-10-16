@@ -96,5 +96,6 @@
 	"oojsplus-field-label-query": "Пребарај...",
 	"oojsplus-data-navigation-tree-expander-label": "Потстраници",
 	"oojsplus-data-tree-expander-label": "Подмени",
-	"oojsplus-dialog-action-back": "Назад"
+	"oojsplus-dialog-action-back": "Назад",
+	"oojsplus-formelement-type-percent": "Постоток"
 }
