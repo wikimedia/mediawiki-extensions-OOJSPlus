@@ -96,5 +96,6 @@
 	"oojsplus-sort-direction-desc": "按降冪排序",
 	"oojsplus-field-label-query": "搜尋…",
 	"oojsplus-data-navigation-tree-expander-label": "子頁面",
-	"oojsplus-data-tree-expander-label": "子選單"
+	"oojsplus-data-tree-expander-label": "子選單",
+	"oojsplus-dialog-action-back": "返回"
 }

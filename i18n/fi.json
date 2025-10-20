@@ -3,6 +3,7 @@
 		"authors": [
 			"Antsa",
 			"MITO",
+			"Minilammas",
 			"Moj"
 		]
 	},
@@ -18,5 +19,6 @@
 	"oojsplus-dialog-action-cancel": "Peruuta",
 	"oojsplus-data-grid-filter-label": "Suodatin",
 	"oojsplus-data-grid-filter-clear": "Tyhjennä",
-	"oojsplus-data-grid-filter-number-value": "Arvo"
+	"oojsplus-data-grid-filter-number-value": "Arvo",
+	"oojsplus-dialog-action-back": "Takaisin"
 }

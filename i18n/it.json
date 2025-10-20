@@ -32,5 +32,6 @@
 	"oojsplus-toolbar-edit": "Modifica",
 	"oojsplus-toolbar-add": "Aggiungi",
 	"oojsplus-data-navigation-tree-expander-label": "Sottopagine",
-	"oojsplus-data-tree-expander-label": "Sottomenu"
+	"oojsplus-data-tree-expander-label": "Sottomenu",
+	"oojsplus-dialog-action-back": "Indietro"
 }

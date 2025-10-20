@@ -25,7 +25,7 @@
 	"oojsplusdemos": "عروض OOJSPlus",
 	"oojsplus-data-tree-item-remove-label": "إزالة",
 	"oojsplus-data-tree-item-add-label": "إضافة عنصر فرعي جديد",
-	"oojsplus-stepprogressbar-default-final-label": "تم",
+	"oojsplus-stepprogressbar-default-final-label": "نُفّذ",
 	"apihelp-query+allgroups-summary": "يسرد جميع المجموعات المعلنة في الويكي",
 	"apihelp-query+allgroups-param-prefix": "مصطلح البحث البادئة",
 	"apihelp-query+allgroups-param-contains": "ابحث عن كافة مجموعات المستخدمين التي تحتوي على هذه القيمة.",
@@ -35,7 +35,7 @@
 	"apihelp-query+allgroups-paramvalue-prop-displaytext": "نص العرض للمجموعة",
 	"apihelp-query+allgroups-example": "قائمة المجموعات التي تبدأ بـ \"s\"",
 	"apihelp-query+allcategories-param-contains": "ابحث عن جميع عناوين الفئات التي تحتوي على هذه القيمة.",
-	"oojsplus-dialog-action-done": "تم",
+	"oojsplus-dialog-action-done": "نُفّذ",
 	"oojsplus-dialog-action-delete": "حذف",
 	"oojsplus-dialog-action-create": "أنشئ",
 	"oojsplus-dialog-action-add": "أضف",
@@ -60,5 +60,6 @@
 	"oojsplus-data-grid-grouper-no-group": "(لا مجموعة)",
 	"oojsplus-sort-direction-asc": "الفرز حسب الترتيب التصاعدي",
 	"oojsplus-sort-direction-desc": "الفرز حسب الترتيب التنازلي",
-	"oojsplus-field-label-query": "بحث..."
+	"oojsplus-field-label-query": "بحث...",
+	"oojsplus-dialog-action-back": "رجوع"
 }

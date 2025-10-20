@@ -100,5 +100,6 @@
 	"oojsplus-sort-direction-desc": "In absteigender Reihenfolge sortieren",
 	"oojsplus-field-label-query": "Suche …",
 	"oojsplus-data-navigation-tree-expander-label": "Unterseiten",
-	"oojsplus-data-tree-expander-label": "Untermenü"
+	"oojsplus-data-tree-expander-label": "Untermenü",
+	"oojsplus-dialog-action-back": "Zurück"
 }

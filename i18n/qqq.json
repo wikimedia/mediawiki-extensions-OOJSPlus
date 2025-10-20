@@ -99,5 +99,7 @@
 	"oojsplus-sort-direction-desc": "Label for sorting in descending order",
 	"oojsplus-field-label-query": "Query field placeholder",
 	"oojsplus-data-navigation-tree-expander-label": "Label for expand button for navigation tree item",
-	"oojsplus-data-tree-expander-label": "Label for expand button for tree item"
+	"oojsplus-data-tree-expander-label": "Label for expand button for tree item",
+	"oojsplus-dialog-action-back": "Label for action back in dialog\n\n{{Identical|Back}}",
+	"oojsplus-formelement-type-percent": "Label for the Percent form element"
 }

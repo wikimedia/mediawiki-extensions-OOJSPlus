@@ -71,5 +71,6 @@
 	"oojsplus-data-grid-filter-date-after": "После",
 	"oojsplus-data-grid-filter-date-before": "Пре",
 	"oojsplus-data-grid-no-results": "Још увек нема уноса",
-	"oojsplus-field-label-query": "Претрага..."
+	"oojsplus-field-label-query": "Претрага...",
+	"oojsplus-dialog-action-back": "Назад"
 }
