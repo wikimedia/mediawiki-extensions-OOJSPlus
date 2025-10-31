@@ -101,5 +101,9 @@
 	"oojsplus-field-label-query": "Suche …",
 	"oojsplus-data-navigation-tree-expander-label": "Unterseiten",
 	"oojsplus-data-tree-expander-label": "Untermenü",
-	"oojsplus-dialog-action-back": "Zurück"
+	"oojsplus-dialog-action-back": "Zurück",
+	"oojsplus-formelement-type-percent": "Prozent",
+	"oojsplus-data-sorter-remove": "Sortierung entfernen",
+	"oojsplus-data-sorter-picker": "Sortiert nach Feld",
+	"oojsplus-data-filter-picker": "Filter nach Felder"
 }
