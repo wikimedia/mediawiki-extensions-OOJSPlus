@@ -61,7 +61,6 @@
 	"oojsplus-data-grid-toolbar-settings-columns-label": "Столбови",
 	"oojsplus-data-grid-grouper-no-group": "(без група)",
 	"oojsplus-data-grid-selection-column-label": "Избери",
-	"oojsplus-data-grid-filter-close": "Затвори",
 	"oojsplus-namespace-content": "Содржински именски простори",
 	"oojsplus-namespace-system": "Системски именски простори",
 	"oojsplus-namespace-content-talk": "Содржински разговорни именски простори",
@@ -91,11 +90,9 @@
 	"oojsplus-data-grid-filter-date-after": "По",
 	"oojsplus-data-grid-filter-date-before": "Пред",
 	"oojsplus-data-grid-no-results": "Сè уште нема записи",
-	"oojsplus-sort-direction-asc": "Подреди по нагорен редослед",
-	"oojsplus-sort-direction-desc": "Подреди по надолен редослед",
-	"oojsplus-field-label-query": "Пребарај...",
 	"oojsplus-data-navigation-tree-expander-label": "Потстраници",
 	"oojsplus-data-tree-expander-label": "Подмени",
 	"oojsplus-dialog-action-back": "Назад",
-	"oojsplus-formelement-type-percent": "Постоток"
+	"oojsplus-formelement-type-percent": "Постоток",
+	"oojsplus-field-label-query": "Пребарај..."
 }

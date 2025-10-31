@@ -94,11 +94,11 @@
 	"oojsplus-data-grid-filter-date-after": "Filter options label for date field\n{{Identical|After}}",
 	"oojsplus-data-grid-filter-date-before": "Filter options label for date field\n{{Identical|Before}}",
 	"oojsplus-data-grid-no-results": "Label for grid when no results are available",
-	"oojsplus-field-label-query": "Query field placeholder",
 	"oojsplus-data-navigation-tree-expander-label": "Label for expand button for navigation tree item",
 	"oojsplus-data-tree-expander-label": "Label for expand button for tree item",
 	"oojsplus-dialog-action-back": "Label for action back in dialog\n\n{{Identical|Back}}",
 	"oojsplus-formelement-type-percent": "Label for the Percent form element",
+	"oojsplus-field-label-query": "Query field placeholder",
 	"oojsplus-data-sorter-remove": "Button label",
 	"oojsplus-data-sorter-picker": "Button label",
 	"oojsplus-data-filter-picker": "Label for filter option layout"

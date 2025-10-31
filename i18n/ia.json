@@ -60,7 +60,6 @@
 	"oojsplus-data-grid-toolbar-settings-columns-label": "Columnas",
 	"oojsplus-data-grid-grouper-no-group": "(necun gruppo)",
 	"oojsplus-data-grid-selection-column-label": "Selection",
-	"oojsplus-data-grid-filter-close": "Clauder",
 	"oojsplus-namespace-content": "Spatios de nomines de contento",
 	"oojsplus-namespace-system": "Spatios de nomines del systema",
 	"oojsplus-namespace-content-talk": "Spatios de nomines de discussion de contento",
@@ -90,11 +89,9 @@
 	"oojsplus-data-grid-filter-date-after": "Post",
 	"oojsplus-data-grid-filter-date-before": "Ante",
 	"oojsplus-data-grid-no-results": "Il non ha ancora entratas",
-	"oojsplus-sort-direction-asc": "Ordinar in senso ascendente",
-	"oojsplus-sort-direction-desc": "Ordinar in senso descendente",
-	"oojsplus-field-label-query": "Cercar…",
 	"oojsplus-data-navigation-tree-expander-label": "Subpaginas",
 	"oojsplus-data-tree-expander-label": "Submenu",
 	"oojsplus-dialog-action-back": "Retro",
-	"oojsplus-formelement-type-percent": "Percentage"
+	"oojsplus-formelement-type-percent": "Percentage",
+	"oojsplus-field-label-query": "Cercar…"
 }

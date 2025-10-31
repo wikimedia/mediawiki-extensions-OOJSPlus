@@ -62,7 +62,6 @@
 	"oojsplus-data-grid-toolbar-settings-columns-label": "欄",
 	"oojsplus-data-grid-grouper-no-group": "（無群組）",
 	"oojsplus-data-grid-selection-column-label": "選擇",
-	"oojsplus-data-grid-filter-close": "關閉",
 	"oojsplus-namespace-content": "內容命名空間",
 	"oojsplus-namespace-system": "系統命名空間",
 	"oojsplus-namespace-content-talk": "內容討論命名空間",
@@ -92,10 +91,8 @@
 	"oojsplus-data-grid-filter-date-after": "之後",
 	"oojsplus-data-grid-filter-date-before": "之前",
 	"oojsplus-data-grid-no-results": "暫無項目",
-	"oojsplus-sort-direction-asc": "按升冪排序",
-	"oojsplus-sort-direction-desc": "按降冪排序",
-	"oojsplus-field-label-query": "搜尋…",
 	"oojsplus-data-navigation-tree-expander-label": "子頁面",
 	"oojsplus-data-tree-expander-label": "子選單",
-	"oojsplus-dialog-action-back": "返回"
+	"oojsplus-dialog-action-back": "返回",
+	"oojsplus-field-label-query": "搜尋…"
 }

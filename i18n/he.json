@@ -64,7 +64,6 @@
 	"oojsplus-data-grid-toolbar-settings-columns-label": "עמודות",
 	"oojsplus-data-grid-grouper-no-group": "(ללא קבוצה)",
 	"oojsplus-data-grid-selection-column-label": "בחירה",
-	"oojsplus-data-grid-filter-close": "סגירה",
 	"oojsplus-namespace-content": "מרחבי שם של תוכן",
 	"oojsplus-namespace-system": "מרחבי שם של מערכת",
 	"oojsplus-namespace-content-talk": "מרחבי שם לשיחות על תוכן",
@@ -94,10 +93,8 @@
 	"oojsplus-data-grid-filter-date-after": "אחרי",
 	"oojsplus-data-grid-filter-date-before": "לפני",
 	"oojsplus-data-grid-no-results": "אין עדיין רשומות",
-	"oojsplus-sort-direction-asc": "מיון בסדר עולה",
-	"oojsplus-sort-direction-desc": "מיון בסדר יורד",
-	"oojsplus-field-label-query": "חיפוש...",
 	"oojsplus-data-navigation-tree-expander-label": "דפי־משנה",
 	"oojsplus-data-tree-expander-label": "תפריט־משנה",
-	"oojsplus-dialog-action-back": "חזרה"
+	"oojsplus-dialog-action-back": "חזרה",
+	"oojsplus-field-label-query": "חיפוש..."
 }

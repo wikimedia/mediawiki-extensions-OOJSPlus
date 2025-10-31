@@ -66,7 +66,6 @@
 	"oojsplus-data-grid-toolbar-settings-columns-label": "Spalten",
 	"oojsplus-data-grid-grouper-no-group": "(keine Gruppe)",
 	"oojsplus-data-grid-selection-column-label": "Auswählen",
-	"oojsplus-data-grid-filter-close": "Schließen",
 	"oojsplus-namespace-content": "Inhaltsnamensräume",
 	"oojsplus-namespace-system": "Systemnamensräume",
 	"oojsplus-namespace-content-talk": "Inhaltsdiskussionsnamensräume",
@@ -96,10 +95,12 @@
 	"oojsplus-data-grid-filter-date-after": "Nach",
 	"oojsplus-data-grid-filter-date-before": "Vor",
 	"oojsplus-data-grid-no-results": "Es sind noch keine Einträge vorhanden",
-	"oojsplus-sort-direction-asc": "In aufsteigender Reihenfolge sortieren",
-	"oojsplus-sort-direction-desc": "In absteigender Reihenfolge sortieren",
-	"oojsplus-field-label-query": "Suche …",
 	"oojsplus-data-navigation-tree-expander-label": "Unterseiten",
 	"oojsplus-data-tree-expander-label": "Untermenü",
-	"oojsplus-dialog-action-back": "Zurück"
+	"oojsplus-dialog-action-back": "Zurück",
+	"oojsplus-formelement-type-percent": "Prozent",
+	"oojsplus-field-label-query": "Suche …",
+	"oojsplus-data-sorter-remove": "Sortierung entfernen",
+	"oojsplus-data-sorter-picker": "Sortiert nach Feld",
+	"oojsplus-data-filter-picker": "Filter nach Felder"
 }

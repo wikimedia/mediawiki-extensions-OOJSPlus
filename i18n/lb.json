@@ -39,7 +39,6 @@
 	"oojsplus-data-grid-toolbar-settings-columns-label": "Kolonnen",
 	"oojsplus-data-grid-grouper-no-group": "(keng Grupp)",
 	"oojsplus-data-grid-selection-column-label": "Eraussichen",
-	"oojsplus-data-grid-filter-close": "Zoumaachen",
 	"oojsplus-data-grid-filter-update-active-filter": "$1 {{PLURAL:$1|Filter|Filteren}} applizéiert: $2",
 	"oojsplus-data-grid-filter-update-results": "$1 {{PLURAL:$1|Resultat|Resultater}} fonnt",
 	"oojsplus-data-grid-filter-update-no-filter": "Keen Tabellefilter applizéiert",
