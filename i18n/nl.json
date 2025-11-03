@@ -97,5 +97,8 @@
 	"oojsplus-data-tree-expander-label": "Submenu",
 	"oojsplus-dialog-action-back": "Terug",
 	"oojsplus-formelement-type-percent": "Procent",
-	"oojsplus-field-label-query": "Zoeken..."
+	"oojsplus-field-label-query": "Zoeken...",
+	"oojsplus-data-sorter-remove": "Sorteren verwijderen",
+	"oojsplus-data-sorter-picker": "Sorteren op veld",
+	"oojsplus-data-filter-picker": "Filteren op veld"
 }

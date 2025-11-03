@@ -93,5 +93,8 @@
 	"oojsplus-data-tree-expander-label": "Submenu",
 	"oojsplus-dialog-action-back": "Retro",
 	"oojsplus-formelement-type-percent": "Percentage",
-	"oojsplus-field-label-query": "Cercar…"
+	"oojsplus-field-label-query": "Cercar…",
+	"oojsplus-data-sorter-remove": "Remover ordinamento",
+	"oojsplus-data-sorter-picker": "Ordinar per campo",
+	"oojsplus-data-filter-picker": "Filtrar per campo"
 }
