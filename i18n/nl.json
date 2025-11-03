@@ -100,5 +100,8 @@
 	"oojsplus-data-navigation-tree-expander-label": "Subpagina’s",
 	"oojsplus-data-tree-expander-label": "Submenu",
 	"oojsplus-dialog-action-back": "Terug",
-	"oojsplus-formelement-type-percent": "Procent"
+	"oojsplus-formelement-type-percent": "Procent",
+	"oojsplus-data-sorter-remove": "Sorteren verwijderen",
+	"oojsplus-data-sorter-picker": "Sorteren op veld",
+	"oojsplus-data-filter-picker": "Filteren op veld"
 }

@@ -97,5 +97,8 @@
 	"oojsplus-data-navigation-tree-expander-label": "Потстраници",
 	"oojsplus-data-tree-expander-label": "Подмени",
 	"oojsplus-dialog-action-back": "Назад",
-	"oojsplus-formelement-type-percent": "Постоток"
+	"oojsplus-formelement-type-percent": "Постоток",
+	"oojsplus-data-sorter-remove": "Отстрани подредување",
+	"oojsplus-data-sorter-picker": "Подреди по поле",
+	"oojsplus-data-filter-picker": "Филтрирај по поле"
 }

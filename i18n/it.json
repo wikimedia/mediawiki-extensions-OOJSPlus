@@ -33,5 +33,8 @@
 	"oojsplus-toolbar-add": "Aggiungi",
 	"oojsplus-data-navigation-tree-expander-label": "Sottopagine",
 	"oojsplus-data-tree-expander-label": "Sottomenu",
-	"oojsplus-dialog-action-back": "Indietro"
+	"oojsplus-dialog-action-back": "Indietro",
+	"oojsplus-data-sorter-remove": "Rimuovi ordinamento",
+	"oojsplus-data-sorter-picker": "Ordina per campo",
+	"oojsplus-data-filter-picker": "Filtra per campo"
 }
