@@ -58,8 +58,6 @@
 	"oojsplus-data-grid-filter-operator": "نوع المقارنة",
 	"oojsplus-data-grid-toolbar-settings-columns-label": "اعمدة",
 	"oojsplus-data-grid-grouper-no-group": "(لا مجموعة)",
-	"oojsplus-sort-direction-asc": "الفرز حسب الترتيب التصاعدي",
-	"oojsplus-sort-direction-desc": "الفرز حسب الترتيب التنازلي",
-	"oojsplus-field-label-query": "بحث...",
-	"oojsplus-dialog-action-back": "رجوع"
+	"oojsplus-dialog-action-back": "رجوع",
+	"oojsplus-field-label-query": "بحث..."
 }

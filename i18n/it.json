@@ -14,7 +14,6 @@
 	"oojsplus-data-paginator-previous": "Pagina precedente",
 	"oojsplus-data-grid-filter-boolean": "Valore",
 	"oojsplus-data-tree-item-remove-confirm-label": "Rimuovere l'elemento \"$1\"?",
-	"oojsplus-data-grid-filter-close": "Chiudi",
 	"oojsplus-data-grid-filter-title": "Filtro $1",
 	"oojsplus-data-grid-filter-list-with-value": "Filtro $1 con valore $2",
 	"oojsplus-data-grid-sort-direction-none": "Colonna $1 non ordinata",
@@ -33,5 +32,8 @@
 	"oojsplus-toolbar-add": "Aggiungi",
 	"oojsplus-data-navigation-tree-expander-label": "Sottopagine",
 	"oojsplus-data-tree-expander-label": "Sottomenu",
-	"oojsplus-dialog-action-back": "Indietro"
+	"oojsplus-dialog-action-back": "Indietro",
+	"oojsplus-data-sorter-remove": "Rimuovi ordinamento",
+	"oojsplus-data-sorter-picker": "Ordina per campo",
+	"oojsplus-data-filter-picker": "Filtra per campo"
 }

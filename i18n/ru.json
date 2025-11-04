@@ -28,7 +28,6 @@
 	"oojsplus-data-paginator-page-number-button-title": "Страница $1",
 	"oojsplus-data-paginator-page-showed-single-entry": "Показана запись $1.",
 	"oojsplus-data-tree-item-remove-confirm-label": "Удалить элемент \"$1\"?",
-	"oojsplus-data-grid-filter-close": "Закрыть",
 	"oojsplus-data-grid-filter-update-no-filter": "Фильтр таблицы не применен",
 	"oojsplus-data-grid-filter-title": "Фильтр $1",
 	"oojsplus-data-grid-filter-list-with-value": "Фильтр $1 со значением $2",

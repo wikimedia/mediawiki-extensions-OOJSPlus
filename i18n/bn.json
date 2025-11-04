@@ -44,7 +44,7 @@
 	"oojsplus-data-grid-filter-boolean-true": "হ্যাঁ",
 	"oojsplus-data-grid-filter-boolean-false": "না",
 	"oojsplus-data-grid-collapse-expand": "প্রসারণ",
-	"oojsplus-field-label-query": "অনুসন্ধান...",
 	"oojsplus-data-navigation-tree-expander-label": "উপপাতা",
-	"oojsplus-data-tree-expander-label": "উপমেনু"
+	"oojsplus-data-tree-expander-label": "উপমেনু",
+	"oojsplus-field-label-query": "অনুসন্ধান..."
 }
