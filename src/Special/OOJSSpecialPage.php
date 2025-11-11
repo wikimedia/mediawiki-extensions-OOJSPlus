@@ -39,7 +39,6 @@ abstract class OOJSSpecialPage extends SpecialPage {
 	}
 
 	/**
-	 *
 	 * @return void
 	 */
 	protected function buildSkeleton() {
