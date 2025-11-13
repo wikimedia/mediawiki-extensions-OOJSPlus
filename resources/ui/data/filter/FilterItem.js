@@ -12,7 +12,7 @@ OOJSPlus.ui.data.filter.FilterItem = function ( cfg ) {
 		popup: {
 			head: false,
 			anchor: true,
-			autoClose: cfg.autoClosePopup || true,
+			autoClose: cfg.autoClosePopup ?? false,
 			$content: this.filter.$element,
 			padded: true,
 			autoFlip: false,
