@@ -46,9 +46,10 @@ OOJSPlus.ui.widget.UserWidget.prototype.render = function () {
 		} else {
 			const $defaultImage = $( '<div>' ).addClass( 'user-image-default' );
 			if ( this.showLink && this.user.hasOwnProperty( 'page_url' ) ) {
-				$link = $( '<a>' ).attr( 'href', this.user.page_url ).append( this.$nameBox );
-				$defaultImage.append( $link );
-				$userImage.append( $defaultImage );
+				$link = $( '<a>' ).attr( 'href', this.user.page_url );
+				$link.append( $defaultImage );
+				$link.append( this.$nameBox );
+				$userImage.append( $link );
 				this.$element.append( $userImage );
 			} else {
 				$userImage.append( $defaultImage );
