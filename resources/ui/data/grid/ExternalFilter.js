@@ -127,6 +127,7 @@ OOJSPlus.ui.data.grid.ExternalFilter.prototype.onSort = function ( field, direct
 		sorter = new OOJSPlus.ui.data.sorter.Sorter( { direction: direction } );
 	}
 	this.store.sort( sorter, field );
+	this.emit( 'columnSort', field, direction );
 };
 
 /**
@@ -150,6 +151,7 @@ OOJSPlus.ui.data.grid.ExternalFilter.prototype.addSortItems = function ( sorters
 		this.sortItems[ field ].$element.show();
 		this.sortItems[ field ].setDirection( sorter.direction );
 		this.sortWidget.optionInstances[ field ].setDisabled( true );
+		this.emit( 'columnSort', field, sorter.direction );
 	} );
 };
 

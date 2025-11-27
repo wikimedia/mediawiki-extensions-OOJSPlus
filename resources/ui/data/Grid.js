@@ -42,7 +42,7 @@
 
 		this.$filterWidgetCnt = $( '<div>' ).addClass( 'oojsplus-data-gridWidget-filter-widget' );
 		this.$element.append( this.$filterWidgetCnt, this.$wrapper.append( this.$table ) );
-		this.$overlay = cfg.$overlay || true;
+		this.$overlay = cfg.$overlay || false;
 
 		OO.ui.mixin.PendingElement.call( this, {
 			$pending: $( this.$table ).find( 'thead' )
@@ -120,6 +120,22 @@
 		}
 		if ( !this.noFilter ) {
 			this.externalFilter = new OOJSPlus.ui.data.grid.ExternalFilter( this.externalFilterConfig );
+			this.externalFilter.connect( this, {
+				columnSort: ( column, direction ) => {
+					const selector = 'th[data-field="' + column + '"]';
+					if ( this.columns[column].grid.$table.find( selector ).length < 1 ) {
+						return;
+					}
+					const $columnHeader = this.columns[ column ].grid.$table.find( selector )[ 0 ];
+					if ( direction.toLowerCase() === 'asc' ) {
+						$( $columnHeader ).attr( 'aria-sort', 'ascending' );
+					} else if ( direction.toLowerCase() === 'desc' ) {
+						$( $columnHeader ).attr( 'aria-sort', 'descending' );
+					} else {
+						$( $columnHeader ).attr( 'aria-sort', 'none' );
+					}
+				}
+			} );
 			this.$filterWidgetCnt.append( this.externalFilter.$element );
 		}
 
@@ -352,11 +368,12 @@
 			change: 'setColumnsVisibility'
 		} );
 
-		const settingsPanel = new OO.ui.PanelLayout( {
-			expanded: false,
-			padded: false
-		} );
-		settingsPanel.$element.append( columnsWidget.$element );
+		const columnsField = new OO.ui.FieldLayout( columnsWidget,
+			{
+				label: mw.message( 'oojsplus-data-grid-toolbar-show-widgets-label' ).text(),
+				align: 'top'
+			}
+		);
 
 		return new OO.ui.PopupButtonWidget( {
 			icon: 'settings',
@@ -364,11 +381,9 @@
 			framed: false,
 			label: mw.message( 'oojsplus-data-grid-toolbar-settings-aria-label' ).text(),
 			invisibleLabel: true,
-			$overlay: this.$overlay || true,
+			$overlay: this.$overlay || false,
 			popup: {
-				head: true,
-				label: mw.message( 'oojsplus-data-grid-toolbar-settings-columns-label' ).text(),
-				$content: settingsPanel.$element,
+				$content: columnsField.$element,
 				padded: true,
 				align: 'backwards',
 				autoFlip: true,
