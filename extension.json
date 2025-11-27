@@ -280,7 +280,8 @@
 				"oojsplus-data-grid-filter-number-operator-input-label",
 				"oojsplus-data-grid-filter-number-operator-eq-label",
 				"oojsplus-data-grid-filter-number-operator-gt-label",
-				"oojsplus-data-grid-filter-number-operator-lt-label"
+				"oojsplus-data-grid-filter-number-operator-lt-label",
+				"oojsplus-data-grid-toolbar-show-widgets-label"
 			]
 		},
 		"ext.oOJSPlus.icons": {
