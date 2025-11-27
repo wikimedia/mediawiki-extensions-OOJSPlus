@@ -97,5 +97,9 @@
 	"oojsplus-field-label-query": "搜尋…",
 	"oojsplus-data-navigation-tree-expander-label": "子頁面",
 	"oojsplus-data-tree-expander-label": "子選單",
-	"oojsplus-dialog-action-back": "返回"
+	"oojsplus-dialog-action-back": "返回",
+	"oojsplus-formelement-type-percent": "百分比",
+	"oojsplus-data-sorter-remove": "移除排序",
+	"oojsplus-data-sorter-picker": "依欄位排序",
+	"oojsplus-data-filter-picker": "依欄位篩選"
 }
