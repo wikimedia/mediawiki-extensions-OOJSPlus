@@ -7,7 +7,7 @@ OOJSPlus.ui.data.sorter.SortItem = function ( key, label, direction ) {
 		label: label,
 		icon: 'sort',
 		indicator: direction === 'ASC' ? 'up' : 'down',
-		title: mw.msg( 'oojsplus-sort-direction-' + direction.toLowerCase() )
+		title: mw.msg( 'oojsplus-data-grid-sort-direction-' + direction.toLowerCase(), label )
 	} );
 	this.sortButton.connect( this, {
 		click: 'onSortClick'
@@ -36,9 +36,9 @@ OOJSPlus.ui.data.sorter.SortItem.prototype.onSortClick = function () {
 OOJSPlus.ui.data.sorter.SortItem.prototype.setDirection = function ( direction ) {
 	this.direction = ( direction || 'ASC' ).toUpperCase();
 	this.sortButton.setIndicator( this.direction === 'ASC' ? 'up' : 'down' );
-	// oojsplus-sort-direction-asc
-	// oojsplus-sort-direction-desc
-	this.sortButton.setTitle( mw.msg( 'oojsplus-sort-direction-' + this.direction.toLowerCase() ) );
+	// oojsplus-data-grid-sort-direction-asc
+	// oojsplus-data-grid-sort-direction-desc
+	this.sortButton.setTitle( mw.msg( 'oojsplus-data-grid-sort-direction-' + this.direction.toLowerCase(), this.label ) );
 };
 
 OOJSPlus.ui.data.sorter.SortItem.prototype.onRemoveClick = function () {

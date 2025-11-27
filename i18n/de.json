@@ -120,5 +120,6 @@
 	"oojsplus-data-grid-filter-number-operator-input-label": "Art des Vergleichs",
 	"oojsplus-data-grid-filter-number-operator-eq-label": "Gleich",
 	"oojsplus-data-grid-filter-number-operator-gt-label": "Größer als",
-	"oojsplus-data-grid-filter-number-operator-lt-label": "Kleiner als"
+	"oojsplus-data-grid-filter-number-operator-lt-label": "Kleiner als",
+	"oojsplus-data-grid-toolbar-show-widgets-label": "Spalten anzeigen"
 }
