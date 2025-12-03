@@ -132,3 +132,8 @@
 	/* @embed */
 	background-image: url( ../images/icons/sort.svg );
 }
+
+.oo-ui-icon-number {
+	/* @embed */
+	background-image: url( ../images/icons/number.svg );
+}
