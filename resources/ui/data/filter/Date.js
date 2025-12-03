@@ -1,4 +1,7 @@
 OOJSPlus.ui.data.filter.Date = function ( cfg ) {
+	cfg = cfg || {};
+	cfg.icon = 'calendar';
+	cfg.autoClosePopup = false;
 	OOJSPlus.ui.data.filter.Date.parent.call( this, cfg );
 	this.operator = cfg.operator || 'eq';
 	this.value = this.getFilterValue();
@@ -12,23 +15,26 @@ OO.inheritClass( OOJSPlus.ui.data.filter.Date, OOJSPlus.ui.data.filter.Number );
 OOJSPlus.ui.data.filter.Date.prototype.getLayout = function () {
 	this.makeOperatorWidget();
 
-	this.input = new mw.widgets.CalendarWidget();
+	this.conditionValue = new Date().toISOString().substring( 0, 10 );
+	this.input = new OOJSPlus.ui.widget.DateInputWidget( {
+		value: this.conditionValue
+	} );
 	this.input.$element.addClass( 'oojsplus-date-filter' );
-	this.input.upButton.$element.remove();
 	this.input.connect( this, {
 		change: 'changeValue'
 	} );
 
-	const $layout = new OO.ui.FieldsetLayout( { items: [
-		new OO.ui.FieldLayout( new OO.ui.LabelWidget( {
-			label: mw.message( 'oojsplus-data-grid-filter-label' ).text()
-		} ) ),
-		new OO.ui.FieldLayout( this.operatorWidget, {
-			label: mw.message( 'oojsplus-data-grid-filter-operator' ).text(),
-			align: 'left'
-		} ),
-		this.input
-	]
+	const $layout = new OO.ui.FieldsetLayout( {
+		items: [
+			new OO.ui.FieldLayout( this.input, {
+				label: mw.msg( 'oojsplus-data-grid-filter-date-input-label' ),
+				align: 'top'
+			} ),
+			new OO.ui.FieldLayout( this.operatorWidget, {
+				label: mw.msg( 'oojsplus-data-grid-filter-date-operator-input-label' ),
+				align: 'top'
+			} )
+		]
 	} );
 	// `aria-atomic` will also announce changes to the grid dataset, as changing date will auto-apply filter
 	this.$announcer = $( '<div>' ).attr( 'aria-live', 'polite' ).attr( 'aria-atomic', 'true' ).addClass( 'visually-hidden' );
@@ -37,33 +43,32 @@ OOJSPlus.ui.data.filter.Date.prototype.getLayout = function () {
 };
 
 OOJSPlus.ui.data.filter.Date.prototype.makeOperatorWidget = function () {
-	this.operatorWidget = new OO.ui.ButtonSelectWidget( {
-		items: [
-			new OO.ui.ButtonOptionWidget( {
+	this.operatorWidget = new OO.ui.DropdownInputWidget( {
+		options: [
+			{
 				data: 'eq',
-				label: mw.message( 'oojsplus-data-grid-filter-date-on' ).text()
-			} ),
-			new OO.ui.ButtonOptionWidget( {
+				label: mw.msg( 'oojsplus-data-grid-filter-date-operator-eq-label' )
+			},
+			{
 				data: 'gt',
-				label: mw.message( 'oojsplus-data-grid-filter-date-after' ).text()
-			} ),
-			new OO.ui.ButtonOptionWidget( {
+				label: mw.msg( 'oojsplus-data-grid-filter-date-operator-gt-label' )
+			},
+			{
 				data: 'lt',
-				label: mw.message( 'oojsplus-data-grid-filter-date-before' ).text()
-			} )
-		]
+				label: mw.msg( 'oojsplus-data-grid-filter-date-operator-lt-label' )
+			}
+		],
+		$overlay: true
 	} );
-	this.operatorWidget.selectItemByData( this.operator );
+	this.operatorWidget.setValue( this.operator );
 	this.operatorWidget.connect( this, {
-		select: 'changeOperator'
+		change: 'changeOperator'
 	} );
 };
 
 OOJSPlus.ui.data.filter.Date.prototype.changeOperator = function ( operator ) {
-	this.operator = operator.getData();
-	if ( this.conditionValue ) {
-		this.changeValue( this.conditionValue );
-	}
+	this.operator = operator;
+	this.changeValue( this.conditionValue );
 };
 
 OOJSPlus.ui.data.filter.Date.prototype.getFilterValue = function () {
@@ -82,7 +87,7 @@ OOJSPlus.ui.data.filter.Date.prototype.setValue = function ( value ) {
 
 OOJSPlus.ui.data.filter.Date.prototype.clearValues = function () {
 	OOJSPlus.ui.data.filter.Filter.prototype.clearValues.call( this );
-	this.input.resetUI();
+	this.input.setValue( '' );
 };
 
 OOJSPlus.ui.data.filter.Date.prototype.convertToFilterDate = function ( value ) {
@@ -96,9 +101,9 @@ OOJSPlus.ui.data.filter.Date.prototype.convertToFilterDate = function ( value ) 
 
 OOJSPlus.ui.data.filter.Date.prototype.getDisplayValue = function () {
 	if ( this.value && this.value.value ) {
-		// Convert Ymd to Y-m-d
-		const value = this.value.value;
-		return value.slice( 0, 4 ) + '-' + value.slice( 4, 6 ) + '-' + value.slice( 6 );
+		const language = mw.user.options.get( 'language' );
+		const value = new Date( this.conditionValue ).toLocaleDateString( [ language, 'en' ] );
+		return mw.msg( 'oojsplus-data-grid-date-filter-operator-label-' + this.operator, value );
 	}
 };
 

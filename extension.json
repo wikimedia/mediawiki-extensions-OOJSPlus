@@ -85,7 +85,8 @@
 				"ui/widget/BatchOptionWidget.js",
 				"ui/widget/GroupedSelectWidget.js",
 				"ui/widget/PercentInput.js",
-				"ui/widget/DropdownMenuOption.js"
+				"ui/widget/DropdownMenuOption.js",
+				"ui/widget/DateInputWidget.js"
 			],
 			"messages": [
 				"oojsplus-namespace-content",
@@ -208,6 +209,7 @@
 				"oojs-ui.styles.icons-layout",
 				"oojs-ui.styles.icons-interactions",
 				"oojs-ui.styles.icons-movement",
+				"oojs-ui.styles.icons-user",
 				"mediawiki.widgets.DateInputWidget",
 				"ext.oOJSPlus.icons"
 			],
@@ -219,8 +221,6 @@
 				"oojsplus-data-grid-widget-popup-title",
 				"oojsplus-data-grid-filter-label",
 				"oojsplus-data-grid-filter-clear",
-				"oojsplus-data-grid-filter-operator",
-				"oojsplus-data-grid-filter-number-value",
 				"oojsplus-data-paginator-aria-label",
 				"oojsplus-data-paginator-next",
 				"oojsplus-data-paginator-previous",
@@ -262,7 +262,25 @@
 				"oojsplus-data-tree-expander-label",
 				"oojsplus-data-sorter-remove",
 				"oojsplus-data-sorter-picker",
-				"oojsplus-data-filter-picker"
+				"oojsplus-data-filter-picker",
+				"oojsplus-data-grid-date-filter-operator-label-eq",
+				"oojsplus-data-grid-date-filter-operator-label-gt",
+				"oojsplus-data-grid-date-filter-operator-label-lt",
+				"oojsplus-data-grid-number-filter-operator-label-eq",
+				"oojsplus-data-grid-number-filter-operator-label-gt",
+				"oojsplus-data-grid-number-filter-operator-label-lt",
+				"oojsplus-data-grid-filter-input-label",
+				"oojsplus-data-grid-filter-number-input-label",
+				"oojsplus-data-grid-filter-user-input-label",
+				"oojsplus-data-grid-filter-date-input-label",
+				"oojsplus-data-grid-filter-date-operator-input-label",
+				"oojsplus-data-grid-filter-date-operator-eq-label",
+				"oojsplus-data-grid-filter-date-operator-gt-label",
+				"oojsplus-data-grid-filter-date-operator-lt-label",
+				"oojsplus-data-grid-filter-number-operator-input-label",
+				"oojsplus-data-grid-filter-number-operator-eq-label",
+				"oojsplus-data-grid-filter-number-operator-gt-label",
+				"oojsplus-data-grid-filter-number-operator-lt-label"
 			]
 		},
 		"ext.oOJSPlus.icons": {
