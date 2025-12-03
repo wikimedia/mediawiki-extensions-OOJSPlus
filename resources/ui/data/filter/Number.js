@@ -1,6 +1,10 @@
 OOJSPlus.ui.data.filter.Number = function ( cfg ) {
+	cfg = cfg || {};
+	cfg.icon = cfg.icon || 'number';
 	this.operator = cfg.operator || 'eq';
 	this.value = this.getFilterValue();
+	cfg.autoClosePopup = false;
+
 	OOJSPlus.ui.data.filter.Number.parent.call( this, cfg );
 };
 
@@ -14,41 +18,39 @@ OOJSPlus.ui.data.filter.Number.prototype.getLayout = function () {
 	} );
 
 	return new OO.ui.FieldsetLayout( { items: [
-		new OO.ui.FieldLayout( new OO.ui.LabelWidget( {
-			label: mw.message( 'oojsplus-data-grid-filter-label' ).text()
-		} ) ),
-		new OO.ui.FieldLayout( this.operatorWidget, {
-			label: mw.message( 'oojsplus-data-grid-filter-operator' ).text(),
-			align: 'left'
-		} ),
 		new OO.ui.FieldLayout( this.input, {
-			label: mw.message( 'oojsplus-data-grid-filter-number-value' ).text(),
-			align: 'left'
+			label: mw.msg( 'oojsplus-data-grid-filter-number-input-label' ),
+			align: 'top'
+		} ),
+		new OO.ui.FieldLayout( this.operatorWidget, {
+			label: mw.msg( 'oojsplus-data-grid-filter-number-operator-input-label' ),
+			align: 'top'
 		} )
 	]
 	} );
 };
 
 OOJSPlus.ui.data.filter.Number.prototype.makeOperatorWidget = function () {
-	this.operatorWidget = new OO.ui.ButtonSelectWidget( {
-		items: [
-			new OO.ui.ButtonOptionWidget( {
+	this.operatorWidget =  new OO.ui.DropdownInputWidget( {
+		options: [
+			{
 				data: 'eq',
-				label: '='
-			} ),
-			new OO.ui.ButtonOptionWidget( {
+				label: mw.msg( 'oojsplus-data-grid-filter-number-operator-eq-label' )
+			},
+			{
 				data: 'gt',
-				label: '>'
-			} ),
-			new OO.ui.ButtonOptionWidget( {
+				label: mw.msg( 'oojsplus-data-grid-filter-number-operator-gt-label' )
+			},
+			{
 				data: 'lt',
-				label: '<'
-			} )
-		]
+				label: mw.msg( 'oojsplus-data-grid-filter-number-operator-lt-label' )
+			}
+		],
+		$overlay: true
 	} );
-	this.operatorWidget.selectItemByData( this.operator );
+	this.operatorWidget.setValue( this.operator );
 	this.operatorWidget.connect( this, {
-		select: 'changeOperator'
+		change: 'changeOperator'
 	} );
 };
 
@@ -62,7 +64,7 @@ OOJSPlus.ui.data.filter.Number.prototype.getFilterValue = function () {
 };
 
 OOJSPlus.ui.data.filter.Number.prototype.changeOperator = function ( operator ) {
-	this.operator = operator.getData();
+	this.operator = operator;
 	if ( this.input.getValue() !== '' ) {
 		this.changeValue( this.input.getValue() );
 	}
@@ -96,9 +98,8 @@ OOJSPlus.ui.data.filter.Number.prototype.matches = function ( value ) {
 
 OOJSPlus.ui.data.filter.Number.prototype.getDisplayValue = function () {
 	if ( this.value && this.value.value !== undefined && this.value.value !== null ) {
-		const operatorLabel = this.operator === 'lt' ? '>' :
-			this.operator === 'gt' ? '>' : '';
-		return operatorLabel + this.value.value.toString();
+		const operatorLabel = mw.msg( 'oojsplus-data-grid-number-filter-operator-label-' + this.operator, this.value.value.toString() );
+		return operatorLabel;
 	}
 	return null;
 };

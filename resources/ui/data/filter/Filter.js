@@ -3,9 +3,10 @@ OOJSPlus.ui.data.filter.Filter = function ( cfg ) {
 	this.type = cfg.type;
 	this.conditionValue = cfg.value || '';
 	this.value = this.getFilterValue();
-	this.filterName = '';
+	this.filterName = cfg.filterName || '';
 	this.closePopupOnChange = cfg.autoClosePopup || false;
 	this.delayChange = cfg.delayChange || false;
+	this.icon = cfg.icon || 'funnel';
 
 	this.$element.append( this.getLayout().$element );
 };

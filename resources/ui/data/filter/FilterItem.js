@@ -5,13 +5,14 @@ OOJSPlus.ui.data.filter.FilterItem = function ( cfg ) {
 
 	this.popupButton = new OO.ui.PopupButtonWidget( {
 		classes: [ 'oojsplus-data-grid-filter-button' ],
-		icon: 'funnel',
+		icon: cfg.filter.icon || 'funnel',
 		label: cfg.label,
 		title: mw.message( 'oojsplus-data-grid-filter-title', cfg.label ).text(),
 		$overlay: cfg.$overlay || true,
 		popup: {
 			head: false,
 			anchor: true,
+			classes: [ 'oojsplus-data-grid-filter-button-popup' ],
 			autoClose: cfg.autoClosePopup ?? false,
 			$content: this.filter.$element,
 			padded: true,
@@ -43,6 +44,7 @@ OOJSPlus.ui.data.filter.FilterItem = function ( cfg ) {
 		click: function () {
 			this.updateLabel( null );
 			this.filter.clearValues();
+			this.popupButton.getPopup().toggle( false );
 			this.emit( 'clear', this.key );
 		}
 	} );
@@ -77,7 +79,7 @@ OOJSPlus.ui.data.filter.FilterItem.prototype.updateLabel = function ( value ) {
 		if ( value.length > 20 ) {
 			value = value.slice( 0, 20 ) + '...';
 		}
-		this.popupButton.setLabel( this.keyLabel + ': ' + value );
+		this.popupButton.setLabel( value );
 	} else {
 		this.popupButton.setLabel( this.keyLabel );
 	}

@@ -230,6 +230,7 @@
 						if ( column.autoClosePopup ) {
 							column.filter.autoClosePopup = true;
 						}
+						column.filter.filterName = column.headerText;
 						filter = filterFactory.makeFilter( column.filter );
 					}
 					if ( filter ) {
