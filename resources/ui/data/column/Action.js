@@ -11,6 +11,10 @@ OOJSPlus.ui.data.column.Action = function ( cfg ) {
 	this.visibleOnHover = cfg.visibleOnHover || false;
 	this.shouldShow = cfg.shouldShow || null;
 	this.disabledCallback = cfg.disabled || null;
+	this.destructive = cfg.destructive || false;
+	if ( this.id === 'delete' ) {
+		this.destructive = true;
+	}
 
 	this.$element.addClass( 'action-column' );
 };
@@ -43,6 +47,10 @@ OOJSPlus.ui.data.column.Action.prototype.getViewControls = function ( value, row
 		title: this.title,
 		framed: false
 	} );
+
+	if ( this.destructive ) {
+		item.setFlags( 'destructive' );
+	}
 
 	if ( typeof this.disabledCallback === 'function' ) {
 		item.setDisabled( this.disabledCallback( row ) );
