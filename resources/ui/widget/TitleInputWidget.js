@@ -88,6 +88,7 @@ OOJSPlus.ui.widget.TitleInputWidget.prototype.onLookupInputFocus = function () {
 
 OOJSPlus.ui.widget.TitleInputWidget.prototype.focus = function () {
 	this.$input.trigger( 'focus' );
+	return this;
 };
 
 OOJSPlus.ui.widget.TitleInputWidget.prototype.getLookupCacheDataFromResponse = function ( response ) {
@@ -135,6 +136,10 @@ OOJSPlus.ui.widget.TitleInputWidget.prototype.onEdit = function () {
 		this.value = value;
 		this.emit( 'change', value );
 	}
+};
+
+OOJSPlus.ui.widget.TitleInputWidget.prototype.abortRequest = function () {
+	OOJSPlus.ui.widget.TitleInputWidget.parent.prototype.abortRequest.call( this );
 };
 
 OOJSPlus.ui.widget.TitleInputWidget.prototype.getValue = function () {
