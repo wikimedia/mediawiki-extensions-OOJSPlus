@@ -1,3 +1,5 @@
+@import 'mediawiki.skin.variables.less';
+
 .oojsplus-ui-widget-buttonselectwidget {
 	display: table;
 	width: 100%;
@@ -261,3 +263,16 @@
 .oojsplus-ui-widget-skeleton__line {
 	animation: oojsplus-ui-widget-skeleton-pulse 1.5s infinite ease-in-out;
 }
+.oojsplus-title-widget-menu-option {
+	.oojsplus-title-widget-menu-option-namespace, .oojsplus-title-widget-menu-option-basetitle {
+		color: var( --color-subtle, #747474 );
+		font-size: @font-size-x-small;
+	}
+	.oojsplus-title-widget-menu-option-namespace {
+		font-weight: bold;
+	}
+	&.oojsplus-title-widget-menu-option-missing {
+		color: var( --color-link-red, #980202 ) !important;
+	}
+}
+

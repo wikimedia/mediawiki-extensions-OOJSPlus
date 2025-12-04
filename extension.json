@@ -62,6 +62,7 @@
 				"ui/widget/ButtonOptionWidget.js",
 				"ui/widget/ToggleMultiSelectInputWidget.js",
 				"ui/widget/MenuOptionWithDescription.js",
+				"ui/widget/TitleWidgetMenuOption.js",
 				"ui/mixin/TitleQuery.js",
 				"ui/mixin/NamespaceOptions.js",
 				"ui/widget/TitleInputWidget.js",
@@ -87,7 +88,11 @@
 				"ui/widget/PercentInput.js",
 				"ui/widget/DropdownMenuOption.js",
 				"ui/widget/DateInputWidget.js",
-				"ui/widget/SkeletonWidget.js"
+				"ui/widget/SkeletonWidget.js",
+				{
+					"name": "oojsplus.widget.config.js",
+					"callback": "OOJSPlus\\Extension::getWidgetConfig"
+				}
 			],
 			"messages": [
 				"oojsplus-namespace-content",
@@ -390,6 +395,12 @@
 	"ResourceFileModulePaths": {
 		"localBasePath": "resources",
 		"remoteExtPath": "OOJSPlus/resources"
+	},
+	"config": {
+		"OOJSPlusUseSplitTitleInputWidgetOptions": {
+			"value": false,
+			"description": "Split title into namespace, title and subpage when displaying options in TitleInputWidget"
+		}
 	},
 	"load_composer_autoloader": true,
 	"manifest_version": 2

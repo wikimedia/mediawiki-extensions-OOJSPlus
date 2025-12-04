@@ -22,7 +22,7 @@ OOJSPlus.ui.widget.CategoryInputWidget.prototype.getLookupMenuOptionsFromData = 
 	let len, i;
 
 	for ( i = 0, len = data.length; i < len; i++ ) {
-		items.push( new OO.ui.MenuOptionWidget( { data: data[ i ], label: data[ i ].title } ) );
+		items.push( this.getMenuOption( { data: data[ i ], label: data[ i ].title }  ) );
 	}
 	return items;
 };
