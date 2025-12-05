@@ -4,7 +4,8 @@
 			"Antsa",
 			"MITO",
 			"Minilammas",
-			"Moj"
+			"Moj",
+			"Yupik"
 		]
 	},
 	"oojsplus-color-picker-color-blue": "Sininen",
@@ -21,5 +22,6 @@
 	"oojsplus-data-grid-filter-clear": "Tyhjennä",
 	"oojsplus-data-grid-filter-number-operator": "Tyyppi",
 	"oojsplus-data-grid-filter-number-value": "Arvo",
-	"oojsplus-dialog-action-back": "Takaisin"
+	"oojsplus-dialog-action-back": "Takaisin",
+	"oojsplus-toolbar-add": "Lisää"
 }
