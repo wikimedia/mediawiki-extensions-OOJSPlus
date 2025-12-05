@@ -12,5 +12,7 @@
 	"oojsplus-dialog-action-cancel": "Jooskâ",
 	"oojsplus-data-grid-filter-label": "Sillee",
 	"oojsplus-data-grid-selection-column-label": "Valjii",
-	"oojsplus-toolbar-save": "Vuorkkii"
+	"oojsplus-toolbar-save": "Vuorkkii",
+	"oojsplus-toolbar-add": "Lasseet",
+	"oojsplus-field-label-query": "Uusâ..."
 }

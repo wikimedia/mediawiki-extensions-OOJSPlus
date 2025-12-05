@@ -11,5 +11,7 @@
 	"oojsplus-data-grid-filter-clear": "Gurre",
 	"oojsplus-data-paginator-next": "Čuovvovaš siidu",
 	"oojsplus-data-grid-selection-column-label": "Vállje",
-	"oojsplus-toolbar-save": "Vurke"
+	"oojsplus-toolbar-save": "Vurke",
+	"oojsplus-toolbar-add": "Lasit",
+	"oojsplus-field-label-query": "Oza..."
 }
