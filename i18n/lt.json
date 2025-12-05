@@ -31,7 +31,6 @@
 	"oojsplus-data-grid-widget-popup-title": "Daugiau elementų",
 	"oojsplus-data-grid-filter-label": "Filtras",
 	"oojsplus-data-grid-filter-clear": "Išvalyti",
-	"oojsplus-data-grid-filter-number-value": "Reikšmė",
 	"oojsplus-data-paginator-next": "Kitas puslapis",
 	"oojsplus-data-paginator-previous": "Ankstesnis puslapis",
 	"oojsplus-data-grid-toolbar-reload-label": "Įkelti iš naujo",
@@ -43,7 +42,6 @@
 	"oojsplus-formelement-type-title-multiselect": "Kelių pavadinimų pasirinkimas",
 	"oojsplus-formelement-type-date-picker": "Datos rinkiklis",
 	"oojsplus-data-tree-item-remove-confirm-label": "Pašalinti elementą „$1“?",
-	"oojsplus-data-grid-filter-operator": "Palyginimo tipas",
 	"oojsplus-data-grid-toolbar-settings-columns-label": "Stulpeliai",
 	"oojsplus-data-grid-grouper-no-group": "(nėra grupės)"
 }
