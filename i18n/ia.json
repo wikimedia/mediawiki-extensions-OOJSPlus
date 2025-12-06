@@ -69,7 +69,7 @@
 	"oojsplus-data-grid-filter-update-results": "$1 resultato{{PLURAL:$1||s}} trovate",
 	"oojsplus-data-grid-filter-update-no-filter": "Necun filtro de tabella applicate",
 	"oojsplus-data-grid-toolbar-settings-aria-label": "Parametros",
-	"oojsplus-data-grid-filter-title": "Filtro $1",
+	"oojsplus-data-grid-filter-title": "Filtrar per $1",
 	"oojsplus-data-grid-filter-list-with-value": "Filtro $1 con valor $2",
 	"oojsplus-data-grid-sort-direction-none": "Columna $1 non ordinate",
 	"oojsplus-data-grid-sort-direction-desc": "Columna $1 ordinate in ordine descendente",
