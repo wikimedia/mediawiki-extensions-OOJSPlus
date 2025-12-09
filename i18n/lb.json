@@ -44,7 +44,7 @@
 	"oojsplus-data-grid-filter-update-results": "$1 {{PLURAL:$1|Resultat|Resultater}} fonnt",
 	"oojsplus-data-grid-filter-update-no-filter": "Keen Tabellefilter applizéiert",
 	"oojsplus-data-grid-toolbar-settings-aria-label": "Astellungen",
-	"oojsplus-data-grid-filter-title": "Filter $1",
+	"oojsplus-data-grid-filter-title": "Filteren no $1",
 	"oojsplus-data-grid-filter-list-with-value": "Filter $1 mam Wäert $2",
 	"oojsplus-data-grid-sort-direction-none": "Kolonn $1 net sortéiert",
 	"oojsplus-data-grid-sort-direction-desc": "Kolonn $1 ofsteigend sortéiert",
@@ -68,5 +68,7 @@
 	"oojsplus-data-navigation-tree-expander-label": "Ënnersäiten",
 	"oojsplus-data-tree-expander-label": "Ënnermenü",
 	"oojsplus-dialog-action-back": "Zeréck",
-	"oojsplus-formelement-type-percent": "Prozent"
+	"oojsplus-formelement-type-percent": "Prozent",
+	"oojsplus-data-grid-filter-number-input-label": "Zuel",
+	"oojsplus-data-grid-filter-user-input-label": "Benotzer"
 }
