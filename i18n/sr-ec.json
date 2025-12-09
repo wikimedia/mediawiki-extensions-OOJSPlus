@@ -72,5 +72,19 @@
 	"oojsplus-data-grid-filter-date-before": "Пре",
 	"oojsplus-data-grid-no-results": "Још увек нема уноса",
 	"oojsplus-field-label-query": "Претрага...",
-	"oojsplus-dialog-action-back": "Назад"
+	"oojsplus-dialog-action-back": "Назад",
+	"oojsplus-data-grid-date-filter-operator-label-gt": "Од $1",
+	"oojsplus-data-grid-date-filter-operator-label-lt": "До $1",
+	"oojsplus-data-grid-number-filter-operator-label-eq": "Једнако $1",
+	"oojsplus-data-grid-number-filter-operator-label-gt": "Веће од $1",
+	"oojsplus-data-grid-number-filter-operator-label-lt": "Мање од $1",
+	"oojsplus-data-grid-filter-number-input-label": "Број",
+	"oojsplus-data-grid-filter-user-input-label": "Корисник",
+	"oojsplus-data-grid-filter-date-input-label": "Датум",
+	"oojsplus-data-grid-filter-date-operator-gt-label": "Од данашњег дана",
+	"oojsplus-data-grid-filter-date-operator-lt-label": "До овог дана",
+	"oojsplus-data-grid-filter-number-operator-input-label": "Врста упоредбе",
+	"oojsplus-data-grid-filter-number-operator-eq-label": "Једнако",
+	"oojsplus-data-grid-filter-number-operator-gt-label": "Веће од",
+	"oojsplus-data-grid-filter-number-operator-lt-label": "Мање од"
 }
