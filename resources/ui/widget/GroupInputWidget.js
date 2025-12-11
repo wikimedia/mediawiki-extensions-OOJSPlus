@@ -1,7 +1,6 @@
 ( function () {
 	OOJSPlus.ui.widget.GroupInputWidget = function ( config ) {
 		config = config || {};
-		config.$overlay = config.$overlay || true;
 
 		OOJSPlus.ui.widget.GroupInputWidget.parent.call( this, Object.assign( {}, config, { autocomplete: false } ) );
 
