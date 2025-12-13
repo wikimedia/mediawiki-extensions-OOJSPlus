@@ -122,5 +122,6 @@
 	"oojsplus-data-grid-filter-number-operator-input-label": "Label for input field to select number operator",
 	"oojsplus-data-grid-filter-number-operator-eq-label": "Label for number comparison type",
 	"oojsplus-data-grid-filter-number-operator-gt-label": "Label for number comparison type",
-	"oojsplus-data-grid-filter-number-operator-lt-label": "Label for number comparison type"
+	"oojsplus-data-grid-filter-number-operator-lt-label": "Label for number comparison type",
+	"oojsplus-data-grid-toolbar-show-widgets-label": "Label for checkbox widget to select visible columns"
 }
