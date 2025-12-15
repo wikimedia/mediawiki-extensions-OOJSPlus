@@ -74,7 +74,7 @@
 	"oojsplus-data-grid-filter-update-results": "{{PLURAL:$1|Eén resultaat|$1 resultaten}} gevonden",
 	"oojsplus-data-grid-filter-update-no-filter": "Er is geen tabelfilter toegepast",
 	"oojsplus-data-grid-toolbar-settings-aria-label": "Instellingen",
-	"oojsplus-data-grid-filter-title": "Filter $1",
+	"oojsplus-data-grid-filter-title": "Filteren op $1",
 	"oojsplus-data-grid-filter-list-with-value": "Filter $1 met waarde $2",
 	"oojsplus-data-grid-sort-direction-none": "Kolom $1 niet gesorteerd",
 	"oojsplus-data-grid-sort-direction-desc": "Kolom $1 gesorteerd in aflopende volgorde",

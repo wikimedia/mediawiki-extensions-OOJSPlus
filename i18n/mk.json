@@ -119,5 +119,6 @@
 	"oojsplus-data-grid-filter-number-operator-input-label": "Вид на споредба",
 	"oojsplus-data-grid-filter-number-operator-eq-label": "Еднакво на",
 	"oojsplus-data-grid-filter-number-operator-gt-label": "Поголемо од",
-	"oojsplus-data-grid-filter-number-operator-lt-label": "Помало од"
+	"oojsplus-data-grid-filter-number-operator-lt-label": "Помало од",
+	"oojsplus-data-grid-toolbar-show-widgets-label": "Прикажи столбови"
 }

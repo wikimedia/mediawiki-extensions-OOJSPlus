@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"Asteralee",
 			"Beta16"
 		]
 	},
@@ -37,5 +38,8 @@
 	"oojsplus-dialog-action-back": "Indietro",
 	"oojsplus-data-sorter-remove": "Rimuovi ordinamento",
 	"oojsplus-data-sorter-picker": "Ordina per campo",
-	"oojsplus-data-filter-picker": "Filtra per campo"
+	"oojsplus-data-filter-picker": "Filtra per campo",
+	"oojsplus-data-grid-filter-number-input-label": "Numero",
+	"oojsplus-data-grid-filter-user-input-label": "Utente",
+	"oojsplus-data-grid-filter-date-input-label": "Data"
 }
