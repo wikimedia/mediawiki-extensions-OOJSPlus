@@ -114,5 +114,6 @@
 	"oojsplus-data-grid-filter-number-operator-input-label": "比較類型",
 	"oojsplus-data-grid-filter-number-operator-eq-label": "等於",
 	"oojsplus-data-grid-filter-number-operator-gt-label": "大於",
-	"oojsplus-data-grid-filter-number-operator-lt-label": "小於"
+	"oojsplus-data-grid-filter-number-operator-lt-label": "小於",
+	"oojsplus-data-grid-toolbar-show-widgets-label": "顯示欄位"
 }

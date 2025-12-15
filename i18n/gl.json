@@ -112,5 +112,6 @@
 	"oojsplus-data-grid-filter-number-operator-input-label": "Tipo de comparación",
 	"oojsplus-data-grid-filter-number-operator-eq-label": "Igual a",
 	"oojsplus-data-grid-filter-number-operator-gt-label": "Maior que",
-	"oojsplus-data-grid-filter-number-operator-lt-label": "Menor que"
+	"oojsplus-data-grid-filter-number-operator-lt-label": "Menor que",
+	"oojsplus-data-grid-toolbar-show-widgets-label": "Mostrar as columnas"
 }

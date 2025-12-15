@@ -68,5 +68,6 @@
 	"oojsplus-dialog-action-back": "Zeréck",
 	"oojsplus-formelement-type-percent": "Prozent",
 	"oojsplus-data-grid-filter-number-input-label": "Zuel",
-	"oojsplus-data-grid-filter-user-input-label": "Benotzer"
+	"oojsplus-data-grid-filter-user-input-label": "Benotzer",
+	"oojsplus-data-grid-toolbar-show-widgets-label": "Kolonne weisen"
 }

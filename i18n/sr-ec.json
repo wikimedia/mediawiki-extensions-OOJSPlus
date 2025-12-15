@@ -70,6 +70,7 @@
 	"oojsplus-data-grid-no-results": "Још увек нема уноса",
 	"oojsplus-dialog-action-back": "Назад",
 	"oojsplus-field-label-query": "Претрага...",
+	"oojsplus-data-grid-date-filter-operator-label-eq": "На $1",
 	"oojsplus-data-grid-date-filter-operator-label-gt": "Од $1",
 	"oojsplus-data-grid-date-filter-operator-label-lt": "До $1",
 	"oojsplus-data-grid-number-filter-operator-label-eq": "Једнако $1",
