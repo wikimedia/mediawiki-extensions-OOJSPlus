@@ -85,5 +85,6 @@
 	"oojsplus-data-grid-filter-number-operator-input-label": "Врста упоредбе",
 	"oojsplus-data-grid-filter-number-operator-eq-label": "Једнако",
 	"oojsplus-data-grid-filter-number-operator-gt-label": "Веће од",
-	"oojsplus-data-grid-filter-number-operator-lt-label": "Мање од"
+	"oojsplus-data-grid-filter-number-operator-lt-label": "Мање од",
+	"oojsplus-data-grid-date-filter-operator-label-eq": "На $1"
 }
