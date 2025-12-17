@@ -41,5 +41,6 @@
 	"oojsplus-data-filter-picker": "Filtra per campo",
 	"oojsplus-data-grid-filter-number-input-label": "Numero",
 	"oojsplus-data-grid-filter-user-input-label": "Utente",
-	"oojsplus-data-grid-filter-date-input-label": "Data"
+	"oojsplus-data-grid-filter-date-input-label": "Data",
+	"oojsplus-data-grid-toolbar-show-widgets-label": "Mostra colonne"
 }
