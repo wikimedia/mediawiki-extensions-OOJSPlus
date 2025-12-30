@@ -2,6 +2,7 @@
 	"@metadata": {
 		"authors": [
 			"AnupamM",
+			"Avengium",
 			"Chroma",
 			"DiegoAmbrocio",
 			"Fitoschido",
@@ -33,5 +34,6 @@
 	"oojsplus-data-grid-toolbar-reload-label": "Recargar",
 	"oojsplus-data-grid-toolbar-settings-columns-label": "Columnas",
 	"oojsplus-data-grid-filter-title": "Filtro $1",
-	"oojsplus-field-label-query": "Buscar..."
+	"oojsplus-field-label-query": "Buscar...",
+	"oojsplus-data-grid-toolbar-show-widgets-label": "Mostrar columnas"
 }
