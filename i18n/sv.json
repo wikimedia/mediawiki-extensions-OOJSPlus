@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"WikiPhoenix"
+			"WikiPhoenix",
+			"Stefan2255"
 		]
 	},
 	"oojsplus-data-delete-row-prompt": "Är du säker på att du vill radera denna rad?",
