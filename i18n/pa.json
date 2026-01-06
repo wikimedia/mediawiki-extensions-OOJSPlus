@@ -5,6 +5,8 @@
 		]
 	},
 	"oojsplus-data-paginator-aria-label": "ਵਰਕਾ-ਬਦਲੋ",
+	"oojsplus-data-paginator-next": "ਅਗਲਾ ਵਰਕਾ",
+	"oojsplus-data-paginator-previous": "ਪਿਛਲਾ ਵਰਕਾ",
 	"oojsplus-data-paginator-first": "ਮੁਢਲਾ ਵਰਕਾ",
 	"oojsplus-data-paginator-last": "ਪਿਛਲੇ ਵਰਕੇ ਉਤੇ ਜਾਓ",
 	"oojsplus-data-grid-date-filter-announce-lt": "$1 ਤੋਂ ਪਹਿਲਾਂ",
