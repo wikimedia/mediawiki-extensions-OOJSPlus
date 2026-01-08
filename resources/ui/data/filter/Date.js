@@ -21,7 +21,7 @@ OOJSPlus.ui.data.filter.Date.prototype.getLayout = function () {
 	} );
 	this.input.$element.addClass( 'oojsplus-date-filter' );
 	this.input.connect( this, {
-		change: 'changeValue'
+		change: 'inputChangeValue'
 	} );
 
 	const $layout = new OO.ui.FieldsetLayout( {
@@ -40,6 +40,14 @@ OOJSPlus.ui.data.filter.Date.prototype.getLayout = function () {
 	this.$announcer = $( '<div>' ).attr( 'aria-live', 'polite' ).attr( 'aria-atomic', 'true' ).addClass( 'visually-hidden' );
 	$layout.$element.append( this.$announcer );
 	return $layout;
+};
+
+// Prevent closing filter if delete is used in calendar popup
+OOJSPlus.ui.data.filter.Date.prototype.inputChangeValue = function ( value ) {
+	if ( !value ) {
+		return;
+	}
+	this.changeValue( value );
 };
 
 OOJSPlus.ui.data.filter.Date.prototype.makeOperatorWidget = function () {
