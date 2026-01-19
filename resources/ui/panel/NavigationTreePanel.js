@@ -16,21 +16,23 @@ OOJSPlus.ui.panel.NavigationTreePanel.prototype.setupTree = function () {
 		'oojsplus-panel-nav-tree-cnt' );
 	this.$element.append( this.$treeCnt );
 
+	const rootNS = mw.config.get( 'wgCanonicalNamespace' );
 	const pageName = mw.config.get( 'wgPageName' );
 	const pageRoot = pageName.split( '/' );
-	const ns = mw.config.get( 'wgCanonicalNamespace' );
-
 	let root = pageRoot[0];
-	if ( ns === '' ) {
-		root = ns + ':' + pageRoot[0];
+
+	if ( rootNS === '' ) {
+		root = ':' + root;
 	}
 
 	const expandPaths = [];
-	let subpageName = root;
-	expandPaths.push( subpageName );
-	for ( let i = 1; i < pageRoot.length - 1; i++ ) {
-		subpageName += '/' + pageRoot[ i ];
+	if ( pageRoot.length > 1 ) {
+		let subpageName = root;
 		expandPaths.push( subpageName );
+		for ( let i = 1; i < pageRoot.length - 1; i++ ) {
+			subpageName += '/' + pageRoot[ i ];
+			expandPaths.push( subpageName );
+		}
 	}
 	this.store.getExpandedPath( root, expandPaths ).done( ( data ) => {
 		this.pages = data;
