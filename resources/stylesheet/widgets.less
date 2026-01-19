@@ -172,3 +172,39 @@
 		font-size: 1em;
 	}
 }
+
+.oojsplus-ui-widget-skeleton {
+	opacity: 0.6;
+}
+
+.oojsplus-ui-widget-skeleton--hidden {
+	display: none;
+}
+
+.oojsplus-ui-widget-skeleton__line {
+	height: 20px;
+	background: linear-gradient( 90deg, #DADDE3, #eaecf0, #DADDE3 );
+	margin: 6px 0;
+	border-radius: 4px;
+}
+
+/* Variant: List */
+.oojsplus-ui-widget-skeleton--list .oojsplus-ui-widget-skeleton__line {
+	width: 80%;
+}
+
+@keyframes oojsplus-ui-widget-skeleton-pulse {
+	0% { opacity: 0.4; }
+	50% { opacity: 0.7; }
+	100% { opacity: 0.4; }
+}
+
+@media ( prefers-reduced-motion: reduce ) {
+	.oojsplus-ui-widget-skeleton__line {
+		animation: none;
+	}
+}
+
+.oojsplus-ui-widget-skeleton__line {
+	animation: oojsplus-ui-widget-skeleton-pulse 1.5s infinite ease-in-out;
+}

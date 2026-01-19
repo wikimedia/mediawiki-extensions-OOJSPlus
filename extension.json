@@ -78,7 +78,8 @@
 				"ui/widget/ContributionWidget.js",
 				"ui/widget/HeadingLabel.js",
 				"ui/widget/NoContentPlaceholderWidget.js",
-				"ui/widget/OutlineSelectWidget.js"
+				"ui/widget/OutlineSelectWidget.js",
+				"ui/widget/SkeletonWidget.js"
 			],
 			"messages": [
 				"oojsplus-namespace-content",
