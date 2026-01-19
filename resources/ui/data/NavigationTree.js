@@ -4,8 +4,11 @@
 		cfg.classes = [ 'oojsplus-data-navigation-tree' ];
 		cfg.allowDeletions = false;
 		cfg.allowAdditions = false;
-		cfg.data = this.prepareData ( cfg.data );
+		cfg.data = this.prepareData( cfg.data );
 		cfg.fixed = true;
+		this.localStorageKey = cfg.localStorageKey || 'navigation-tree';
+		this.stateful = cfg.stateful || false;
+		this.maxLevel = cfg.maxLevel || 9;
 
 		OOJSPlus.ui.data.NavigationTree.super.call( this, cfg );
 
@@ -23,9 +26,10 @@
 			let expanded = false;
 
 			// eslint-disable-next-line no-prototype-builtins
-			if ( ( item.hasOwnProperty( 'leaf' ) && item.leaf === false ) &&
+			if ( ( ( item.hasOwnProperty( 'leaf' ) && item.leaf === false ) &&
 				// eslint-disable-next-line no-prototype-builtins
-				( item.hasOwnProperty( 'children' ) && item.children.length > 0 )
+				( item.hasOwnProperty( 'children' ) && item.children.length > 0 ) ) &&
+				lvl < this.maxLevel
 			) {
 				isLeaf = false;
 				expanded = true;
@@ -69,6 +73,14 @@
 
 		const $element = node.$element.find( '> ul.tree-node-list' );
 		if ( $( $element[ 0 ] ).children().length === 0 ) {
+			const skeleton = new OOJSPlus.ui.widget.SkeletonWidget( {
+				variant: 'list',
+				rows: 3,
+				visible: true
+			} );
+			node.$element.append( skeleton.$element );
+			node.$element.attr( 'aria-busy', true );
+
 			this.store.getSubElements( node.elementId ).done( ( result ) => {
 				const $ul = $( '<ul>' ).addClass( 'tree-node-list' );
 				const data = this.prepareData( result );
@@ -86,8 +98,10 @@
 						nodes[ nodeElement ].widget, itemId, this.expanded ) );
 					$( $ul ).append( $li );
 					this.reEvaluateParent( nodeElement );
-					node.$element.append( $ul )
+					node.$element.append( $ul );
 				}
+				skeleton.hide();
+				node.$element.removeAttr( 'aria-busy' );
 			} );
 		} else {
 			$( $element ).show();
@@ -96,12 +110,15 @@
 
 	OOJSPlus.ui.data.NavigationTree.prototype.prepareData = function ( pages ) {
 		const data = [];
+		let visitedPage = mw.config.get( 'wgPageName' );
+		if ( mw.config.get( 'wgCanonicalNamespace') === '' ) {
+			visitedPage = ':' + visitedPage;
+		}
 		for ( const i in pages ) {
 			const title = pages[ i ].title.split( '/' );
 			let label = title[ title.length - 1 ];
 			const classes = [];
-
-			if ( pages[ i ].title === mw.config.get( 'wgPageName' ) ) {
+			if ( pages[ i ].id === visitedPage ) {
 				classes.push( 'active' );
 			}
 

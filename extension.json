@@ -86,7 +86,8 @@
 				"ui/widget/GroupedSelectWidget.js",
 				"ui/widget/PercentInput.js",
 				"ui/widget/DropdownMenuOption.js",
-				"ui/widget/DateInputWidget.js"
+				"ui/widget/DateInputWidget.js",
+				"ui/widget/SkeletonWidget.js"
 			],
 			"messages": [
 				"oojsplus-namespace-content",

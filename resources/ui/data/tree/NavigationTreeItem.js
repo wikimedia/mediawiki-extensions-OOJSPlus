@@ -35,18 +35,61 @@
 	};
 
 	OOJSPlus.ui.data.tree.NavigationTreeItem.prototype.onExpanderClick = function () {
+		const expandedItems = localStorage.getItem( 'expanded-navigation-tree' );
+		const key = this.tree.localStorageKey;
+		const name = this.getName();
+		let expandedItemsList = {};
+		if ( expandedItems !== null ) {
+			expandedItemsList = JSON.parse( expandedItems );
+		}
 		if ( this.expanded ) {
-			this.tree.collapseNode( this.getName() );
+			this.tree.collapseNode( name );
 			this.expander.$element.removeClass( 'expanded' );
 			this.expander.$element.addClass( 'collapsed' );
 			this.expander.$button.attr( 'aria-expanded', 'false' );
 			this.expanded = false;
+			// remove from localstorage
+			if ( this.tree.stateful ) {
+				if ( expandedItemsList.hasOwnProperty( key ) ) {
+					const index = expandedItemsList[ key ].indexOf( name );
+					if ( index > -1 ) {
+						expandedItemsList[ key ].splice( index, 1 );
+						for ( let item = expandedItemsList[ key ] -1; item >= 0; item-- ) {
+							if ( expandedItemsList[ key ][ item ].startsWith( name ) ) {
+								const itemIndex = expandedItemsList[ key ].indexOf( expandedItemsList[ key ][ item ] );
+								if ( itemIndex > -1 ) {
+									expandedItemsList[ key ].splice( itemIndex, 1 );
+								}
+							}
+						}
+					}
+					if ( expandedItemsList[ key ].length === 0 ) {
+						delete( expandedItems[ key ] );
+					}
+				}
+			}
 		} else {
-			this.tree.expandNode( this.getName() );
+			this.tree.expandNode( name );
 			this.expander.$element.removeClass( 'collapsed' );
 			this.expander.$element.addClass( 'expanded' );
 			this.expander.$button.attr( 'aria-expanded', 'true' );
 			this.expanded = true;
+			// save to localstorage
+			if ( this.tree.stateful ) {
+				if ( expandedItemsList.hasOwnProperty( key ) ) {
+					expandedItemsList[ key ].push( name );
+				} else {
+					expandedItemsList[ key ] = [];
+					expandedItemsList[ key ].push( name );
+				}
+			}
+		}
+		if ( this.tree.stateful ) {
+			if ( Object.keys( expandedItemsList ).length === 0 ) {
+				localStorage.removeItem( 'expanded-navigation-tree' );
+			} else {
+				localStorage.setItem( 'expanded-navigation-tree', JSON.stringify( expandedItemsList ) );
+			}
 		}
 	};
 }( mediaWiki, jQuery ) );

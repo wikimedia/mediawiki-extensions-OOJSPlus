@@ -1,7 +1,9 @@
 OOJSPlus.ui.data.store.NavigationTreeStore = function ( cfg ) {
-	cfg =  cfg || {};
+	cfg = cfg || {};
 	cfg.request = null;
 	OOJSPlus.ui.data.store.NavigationTreeStore.parent.call( this, cfg );
+
+	this.$skeleton = $( '<div>' );
 };
 
 OO.inheritClass( OOJSPlus.ui.data.store.NavigationTreeStore, OOJSPlus.ui.data.store.RemoteRestStore );
@@ -67,7 +69,7 @@ OOJSPlus.ui.data.store.NavigationTreeStore.prototype.getExpandPathsForRemote = f
 OOJSPlus.ui.data.store.NavigationTreeStore.prototype.getExpandedPath = function ( pageName, expandPaths ) {
 	this.node = pageName;
 	this.filters = [];
-	this.limit = 999;
+	this.limit = -1;
 	this.offset = 0;
 	this.expandPaths = expandPaths;
 
@@ -77,7 +79,7 @@ OOJSPlus.ui.data.store.NavigationTreeStore.prototype.getExpandedPath = function 
 OOJSPlus.ui.data.store.NavigationTreeStore.prototype.getSubElements = function ( pageName ) {
 	this.node = pageName;
 	this.filters = [];
-	this.limit = 999;
+	this.limit = -1;
 	this.offset = 0;
 	this.expandPaths = [];
 
