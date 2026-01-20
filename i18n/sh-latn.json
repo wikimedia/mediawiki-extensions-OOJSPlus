@@ -1,10 +1,11 @@
 {
 	"@metadata": {
 		"authors": [
+			"Aca",
 			"Winston Sung"
 		]
 	},
-	"oojsplus-desc": "Daje sučeljske elemente i pomagala za OOJS",
+	"oojsplus-desc": "Daje elemente interfejsa i pomagala za OOJS",
 	"oojsplus-color-picker-clear-label": "Ukloni boju",
 	"oojsplus-color-picker-label": "Izbiratelj boje",
 	"oojsplus-data-delete-row-prompt": "Želite li da obrišete ovu nizu?",
