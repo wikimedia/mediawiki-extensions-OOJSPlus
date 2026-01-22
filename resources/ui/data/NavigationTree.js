@@ -125,8 +125,12 @@
 				classes.push( 'leaf' );
 			}
 
+			if ( pages[ i ].display_title ) {
+				label = pages[ i ].display_title;
+			}
+
 			if ( pages[ i ].label ) {
-				label = pages[ i ].label
+				label = pages[ i ].label;
 			}
 
 			// eslint-disable-next-line mediawiki/class-doc
