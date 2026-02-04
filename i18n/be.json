@@ -1,8 +1,10 @@
 {
 	"@metadata": {
 		"authors": [
-			"Kareyac"
+			"Kareyac",
+			"Ucukor"
 		]
 	},
-	"oojsplus-dialog-action-add": "Дадаць"
+	"oojsplus-dialog-action-add": "Дадаць",
+	"oojsplus-dialog-action-cancel": "Скасаваць"
 }
