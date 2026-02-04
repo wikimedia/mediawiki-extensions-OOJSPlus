@@ -1,8 +1,10 @@
 {
 	"@metadata": {
 		"authors": [
-			"Renessaince"
+			"Renessaince",
+			"Ucukor"
 		]
 	},
-	"oojsplus-data-grid-toolbar-settings-aria-label": "Налады"
+	"oojsplus-data-grid-toolbar-settings-aria-label": "Налады",
+	"oojsplus-toolbar-cancel": "Скасаваць"
 }
