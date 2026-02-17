@@ -1,19 +1,20 @@
 {
 	"@metadata": {
 		"authors": [
+			"Asteralee",
 			"BlueCamille",
 			"Derugon",
 			"DreZhsh",
 			"Gomoko",
 			"Goombiis",
 			"Mahabarata",
+			"Marphy 123",
 			"McDutchie",
 			"SleaY",
 			"Thibaut120094",
 			"Verdy p",
 			"WillyM",
-			"Wladek92",
-			"Marphy 123"
+			"Wladek92"
 		]
 	},
 	"oojsplus-desc": "Fournit des widgets et des fonctions utilitaires pour OOJS.",
@@ -103,5 +104,9 @@
 	"oojsplus-data-grid-no-results": "Il n'y a pas encore d'entrées",
 	"oojsplus-data-navigation-tree-expander-label": "Sous-pages",
 	"oojsplus-data-tree-expander-label": "Sous-menu",
-	"oojsplus-field-label-query": "Rechercher…"
+	"oojsplus-field-label-query": "Rechercher…",
+	"oojsplus-data-grid-date-filter-operator-label-gt": "De $1",
+	"oojsplus-data-grid-filter-number-input-label": "Nombre",
+	"oojsplus-data-grid-filter-user-input-label": "Utilisateur",
+	"oojsplus-data-grid-filter-date-input-label": "Date"
 }

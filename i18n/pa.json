@@ -19,5 +19,7 @@
 	"oojsplus-toolbar-add": "ਜੋੜੋ",
 	"oojsplus-data-grid-filter-date-on": "'ਤੇ",
 	"oojsplus-data-grid-filter-date-after": "ਤੋਂ ਬਾਅਦ",
-	"oojsplus-data-grid-filter-date-before": "ਪਹਿਲਾਂ"
+	"oojsplus-data-grid-filter-date-before": "ਪਹਿਲਾਂ",
+	"oojsplus-data-paginator-next": "ਅਗਲਾ ਵਰਕਾ",
+	"oojsplus-data-paginator-previous": "ਪਿਛਲਾ ਵਰਕਾ"
 }

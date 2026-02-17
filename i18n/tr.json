@@ -6,7 +6,9 @@
 			"Can",
 			"Hedda",
 			"Mirzali",
-			"MuratTheTurkish"
+			"MuratTheTurkish",
+			"Sakblue",
+			"SaldırganSincap"
 		]
 	},
 	"oojsplus-desc": "OOJS için küçük araçlar ve yardımcı işlevler sağlar",
@@ -20,7 +22,7 @@
 	"oojsplus-color-picker-clear-label": "Rengi temizle",
 	"oojsplus-color-picker-label": "Renk seçici",
 	"oojsplus-data-delete-row-prompt": "Bu satırı silmek istediğinize emin misiniz?",
-	"oojsplus-data-paginator-page-total-count-label": "{{PLURAL:$1|$1 satır|$1 satır}}",
+	"oojsplus-data-paginator-page-total-count-label": "{{PLURAL:$1|$1 giriş}}",
 	"oojsplusdemos": "OOJSPlus demoları",
 	"oojsplus-data-tree-item-remove-label": "Kaldır",
 	"oojsplus-data-tree-item-add-label": "Yeni alt öğe ekle",
@@ -30,5 +32,7 @@
 	"oojsplus-dialog-action-create": "Oluştur",
 	"oojsplus-dialog-action-add": "Ekle",
 	"oojsplus-dialog-action-cancel": "İptal",
-	"oojsplus-data-grid-grouper-no-group": "(grup yok)"
+	"oojsplus-data-grid-grouper-no-group": "(grup yok)",
+	"oojsplus-data-sorter-picker": "Alana göre sırala",
+	"oojsplus-data-filter-picker": "Alana göre filtrele"
 }

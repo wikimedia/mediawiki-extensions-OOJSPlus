@@ -36,5 +36,8 @@
 	"oojsplus-toolbar-add": "افزودن",
 	"oojsplus-data-grid-no-results": "هنوز مدخلی موجود نیست",
 	"oojsplus-data-navigation-tree-expander-label": "زیرصفحه‌ها",
-	"oojsplus-data-tree-expander-label": "زیرمنو"
+	"oojsplus-data-tree-expander-label": "زیرمنو",
+	"oojsplus-data-sorter-remove": "حذف مرتب‌سازی",
+	"oojsplus-data-sorter-picker": "مرتب‌سازی بر پایهٔ فیلد",
+	"oojsplus-data-filter-picker": "پالایش بر پایهٔ فیلد"
 }

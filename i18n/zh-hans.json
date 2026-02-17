@@ -2,14 +2,15 @@
 	"@metadata": {
 		"authors": [
 			"A Chinese Wikipedian",
+			"GuoPC",
 			"LittlePaw365",
 			"Looong",
 			"McDutchie",
+			"TeaSummer",
 			"Wzl19371",
 			"Xyb",
 			"Yining Chen",
-			"沈澄心",
-			"GuoPC"
+			"沈澄心"
 		]
 	},
 	"oojsplus-desc": "为OOJS提供小部件和实用功能",
@@ -76,7 +77,7 @@
 	"oojsplus-data-grid-filter-update-results": "找到$1{{PLURAL:$1|个结果}}",
 	"oojsplus-data-grid-filter-update-no-filter": "未应用表格筛选",
 	"oojsplus-data-grid-toolbar-settings-aria-label": "设置",
-	"oojsplus-data-grid-filter-title": "筛选条件$1",
+	"oojsplus-data-grid-filter-title": "按$1筛选",
 	"oojsplus-data-grid-filter-list-with-value": "筛选值为$2的条件$1",
 	"oojsplus-data-grid-sort-direction-none": "$1列未排序",
 	"oojsplus-data-grid-sort-direction-desc": "$1列以降序排序",
@@ -100,5 +101,28 @@
 	"oojsplus-data-navigation-tree-expander-label": "子页面",
 	"oojsplus-data-tree-expander-label": "子菜单",
 	"oojsplus-dialog-action-back": "返回",
-	"oojsplus-field-label-query": "搜索…"
+	"oojsplus-field-label-query": "搜索…",
+	"oojsplus-formelement-type-percent": "百分比",
+	"oojsplus-data-sorter-remove": "移除排序",
+	"oojsplus-data-sorter-picker": "按字段排序",
+	"oojsplus-data-filter-picker": "按字段筛选",
+	"oojsplus-data-grid-date-filter-operator-label-eq": "于$1",
+	"oojsplus-data-grid-date-filter-operator-label-gt": "自$1",
+	"oojsplus-data-grid-date-filter-operator-label-lt": "直到$1",
+	"oojsplus-data-grid-number-filter-operator-label-eq": "等于$1",
+	"oojsplus-data-grid-number-filter-operator-label-gt": "大于$1",
+	"oojsplus-data-grid-number-filter-operator-label-lt": "小于$1",
+	"oojsplus-data-grid-filter-input-label": "按$1筛选",
+	"oojsplus-data-grid-filter-number-input-label": "数字",
+	"oojsplus-data-grid-filter-user-input-label": "用户",
+	"oojsplus-data-grid-filter-date-input-label": "日期",
+	"oojsplus-data-grid-filter-date-operator-input-label": "日期筛选类型",
+	"oojsplus-data-grid-filter-date-operator-eq-label": "在此日",
+	"oojsplus-data-grid-filter-date-operator-gt-label": "自此日",
+	"oojsplus-data-grid-filter-date-operator-lt-label": "直到此日",
+	"oojsplus-data-grid-filter-number-operator-input-label": "比较类型",
+	"oojsplus-data-grid-filter-number-operator-eq-label": "等于",
+	"oojsplus-data-grid-filter-number-operator-gt-label": "大于",
+	"oojsplus-data-grid-filter-number-operator-lt-label": "小于",
+	"oojsplus-data-grid-toolbar-show-widgets-label": "显示列"
 }
