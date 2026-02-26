@@ -99,8 +99,8 @@
 	"oojsplus-data-grid-date-filter-operator-label-eq": "ב־$1",
 	"oojsplus-data-grid-date-filter-operator-label-lt": "עד $1",
 	"oojsplus-data-grid-number-filter-operator-label-eq": "שווה $1",
-	"oojsplus-data-grid-number-filter-operator-label-gt": "גדול יותר מ-$1",
-	"oojsplus-data-grid-number-filter-operator-label-lt": "קטן יותר מ-$1",
+	"oojsplus-data-grid-number-filter-operator-label-gt": "גדול מ־$1",
+	"oojsplus-data-grid-number-filter-operator-label-lt": "קטן מ־$1",
 	"oojsplus-data-grid-filter-input-label": "סינון לפי $1",
 	"oojsplus-data-grid-filter-number-input-label": "מספר",
 	"oojsplus-data-grid-filter-user-input-label": "משתמש",
@@ -110,6 +110,6 @@
 	"oojsplus-data-grid-filter-date-operator-gt-label": "מהיום הזה",
 	"oojsplus-data-grid-filter-date-operator-lt-label": "עד היום הזה",
 	"oojsplus-data-grid-filter-number-operator-input-label": "סוג ההשוואה",
-	"oojsplus-data-grid-filter-number-operator-gt-label": "גדול יותר מ",
-	"oojsplus-data-grid-filter-number-operator-lt-label": "קטן יותר מ"
+	"oojsplus-data-grid-filter-number-operator-gt-label": "גדול מ־",
+	"oojsplus-data-grid-filter-number-operator-lt-label": "קטן מ־"
 }
