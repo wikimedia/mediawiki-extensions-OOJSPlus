@@ -6,7 +6,7 @@
 		if ( cfg.description ) {
 			this.$element.append( $( '<span>' )
 				.addClass( 'oojs-plus-menu-option-with-description-description' )
-				.text( cfg.description ) );
+				.html( cfg.description ) );
 		}
 	};
 
