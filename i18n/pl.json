@@ -4,13 +4,30 @@
 			"Rail",
 			"Railfail536",
 			"Rzuwig",
-			"WaldiSt"
+			"WaldiSt",
+			"Woytecr"
 		]
 	},
+	"oojsplus-color-picker-color-blue": "Niebieski",
+	"oojsplus-color-picker-color-red": "Czerwony",
+	"oojsplus-color-picker-color-green": "Zielony",
+	"oojsplus-color-picker-color-yellow": "Żółty",
+	"oojsplus-color-picker-color-olive": "Oliwkowy",
+	"oojsplus-color-picker-color-pink": "Różowy",
 	"oojsplus-data-delete-row-prompt": "Czy na pewno chcesz usunąć ten wiersz?",
-	"oojsplus-data-paginator-page-total-count-label": "{{PLURAL:$1|$1 wiersz|$1 wiersze|$1 wierszy}}",
+	"oojsplus-data-paginator-page-total-count-label": "{{PLURAL:$1|$1 wpis|$1 wpisy|$1 wpisów}}",
 	"oojsplus-data-tree-item-remove-label": "Usuń",
 	"oojsplus-stepprogressbar-default-final-label": "Gotowe",
 	"oojsplus-data-grid-filter-label": "Filtr",
-	"oojsplus-data-grid-filter-boolean": "Wartość"
+	"oojsplus-data-paginator-next": "Następna strona",
+	"oojsplus-data-paginator-previous": "Poprzednia strona",
+	"oojsplus-data-paginator-first": "Pierwsza strona",
+	"oojsplus-data-paginator-last": "Ostatnia strona",
+	"oojsplus-data-grid-filter-boolean": "Wartość",
+	"oojsplus-toolbar-cancel": "Anuluj",
+	"oojsplus-toolbar-save": "Zapisz",
+	"oojsplus-toolbar-delete": "Usuń",
+	"oojsplus-toolbar-add": "Dodaj",
+	"oojsplus-data-grid-filter-date-after": "Po",
+	"oojsplus-data-grid-filter-date-before": "Przed"
 }
