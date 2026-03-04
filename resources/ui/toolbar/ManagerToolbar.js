@@ -133,7 +133,7 @@ OOJSPlus.ui.toolbar.ManagerToolbar.prototype.getTool = function ( name ) {
 
 OOJSPlus.ui.toolbar.ManagerToolbar.prototype.observe = function () {
 	const toolbar = this;
-	const $offsetElement = $( '.skin-bluespicediscovery #nb-pri' );
+	const $offsetElement = $( '.base-bluespicediscovery #nb-pri' );
 	const offsetTop = $offsetElement.length ? $offsetElement.outerHeight() : 0;
 
 	$( window ).on( 'scroll', function () {
