@@ -106,9 +106,9 @@
 	"oojsplus-data-grid-filter-user-input-label": "משתמש",
 	"oojsplus-data-grid-filter-date-input-label": "תאריך",
 	"oojsplus-data-grid-filter-date-operator-input-label": "סוג סינון התאריך",
-	"oojsplus-data-grid-filter-date-operator-eq-label": "בדיוק ביום הזה",
-	"oojsplus-data-grid-filter-date-operator-gt-label": "מהיום הזה",
-	"oojsplus-data-grid-filter-date-operator-lt-label": "עד היום הזה",
+	"oojsplus-data-grid-filter-date-operator-eq-label": "ביום הזה",
+	"oojsplus-data-grid-filter-date-operator-gt-label": "אחרי היום הזה",
+	"oojsplus-data-grid-filter-date-operator-lt-label": "לפני היום הזה",
 	"oojsplus-data-grid-filter-number-operator-input-label": "סוג ההשוואה",
 	"oojsplus-data-grid-filter-number-operator-gt-label": "גדול מ־",
 	"oojsplus-data-grid-filter-number-operator-lt-label": "קטן מ־"
