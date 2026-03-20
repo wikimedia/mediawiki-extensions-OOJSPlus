@@ -11,6 +11,8 @@
 			// B/C
 			config.groupTypes = [ config.groupType ];
 		}
+
+		this.allowEveryoneOption = config.allowEveryoneOption || false;
 		this.groupTypes = config.groupTypes || [];
 		// Mixin constructors
 		OO.ui.mixin.PendingElement.call( this, Object.assign( {}, config, { $pending: this.$handle } ) );
@@ -131,7 +133,8 @@
 
 		mws.commonwebapis.group.query( {
 			query: inputValue,
-			filter: JSON.stringify( filters )
+			filter: JSON.stringify( filters ),
+			allowEveryone: this.allowEveryoneOption
 		} ).done( ( response ) => {
 			const selectedGroups = this.getSelectedGroups();
 			// Remove usernames, which are already selected from suggestions
