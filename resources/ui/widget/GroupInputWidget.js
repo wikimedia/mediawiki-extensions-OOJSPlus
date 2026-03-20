@@ -6,6 +6,8 @@
 
 		OO.ui.mixin.LookupElement.call( this, config );
 
+		this.allowEveryoneOption = config.allowEveryoneOption || false;
+
 		this.$element.addClass( 'oojsplus-widget-groupInputWidget' );
 		this.lookupMenu.$element.addClass( 'oojsplus-widget-groupInputWidget-menu' );
 	};
@@ -25,6 +27,7 @@
 	OOJSPlus.ui.widget.GroupInputWidget.prototype.onLookupMenuChoose = function ( item ) {
 		this.closeLookupMenu();
 		this.setLookupsDisabled( true );
+		this.selectedGroup = item.getData();
 		this.setValue( item.getData() );
 		this.setLookupsDisabled( false );
 	};
@@ -44,22 +47,24 @@
 		return retval;
 	};
 
+	OOJSPlus.ui.widget.GroupInputWidget.prototype.onEdit = function () {
+		this.emit( 'change', this.$input.val() );
+	}
+
 	/**
 	 * @inheritdoc
 	 */
 	OOJSPlus.ui.widget.GroupInputWidget.prototype.getLookupRequest = function () {
-		const inputValue = this.value;
+		const inputValue = this.$input.val();
 
-		return new mw.Api().get( {
-			action: 'query',
-			list: 'allgroups',
-			agcontains: inputValue,
-			agprop: 'displaytext'
+		return mws.commonwebapis.group.query( {
+			query: inputValue,
+			allowEveryone: this.allowEveryoneOption
 		} );
 	};
 
 	OOJSPlus.ui.widget.GroupInputWidget.prototype.getLookupCacheDataFromResponse = function ( response ) {
-		return response.query.allgroups || {};
+		return response || {};
 	};
 
 	OOJSPlus.ui.widget.GroupInputWidget.prototype.getLookupMenuOptionsFromData = function ( data ) {
@@ -69,12 +74,31 @@
 		for ( i = 0; i < data.length; i++ ) {
 			groupData = data[ i ];
 			items.push( new OO.ui.MenuOptionWidget( {
-				label: groupData.displaytext,
-				data: groupData.name
+				label: groupData.displayname || groupData.group_name,
+				data: groupData.group_name
 			} ) );
 		}
 
 		return items;
+	};
+
+	OOJSPlus.ui.widget.GroupInputWidget.prototype.getValue = function () {
+		return this.selectedGroup || this.$input.val();
+	};
+
+	OOJSPlus.ui.widget.GroupInputWidget.prototype.setValue = async function ( value ) {
+		if ( !value ) {
+			OOJSPlus.ui.widget.GroupInputWidget.parent.prototype.setValue.call( this, '' );
+			return;
+		}
+		mws.commonwebapis.group.getByGroupName( value ).done( ( data ) => {
+			if ( data && data.displayname ) {
+				this.$input.val( data.displayname );
+			} else {
+				this.$input.val( value );
+			}
+			this.selectedGroup = value;
+		} );
 	};
 
 }() );
