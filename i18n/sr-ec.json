@@ -87,5 +87,6 @@
 	"oojsplus-data-grid-filter-number-operator-eq-label": "Једнако",
 	"oojsplus-data-grid-filter-number-operator-gt-label": "Веће од",
 	"oojsplus-data-grid-filter-number-operator-lt-label": "Мање од",
-	"oojsplus-data-grid-date-filter-operator-label-eq": "На $1"
+	"oojsplus-data-grid-date-filter-operator-label-eq": "На $1",
+	"oojsplus-data-grid-filter-date-operator-eq-label": "На данашњи дан"
 }
