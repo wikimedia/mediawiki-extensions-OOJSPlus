@@ -115,18 +115,32 @@
 	};
 
 	OOJSPlus.ui.data.StoreTree.prototype.parseResultItem = function ( item ) {
-		const me = this;
-		if ( item.items.length > 0 ) {
-			item.items.forEach( function ( part, index ) {
-				this[ index ] = me.parseResultItem( part );
-			}, item.items );
+		const me = this,
+			treeItem = {
+				name: item.id,
+				label: item.text,
+				leaf: item.leaf
+			};
+
+		if ( Object.prototype.hasOwnProperty.call( item, 'items' ) ) {
+			treeItem.items = item.items;
+
+			if ( Array.isArray( item.items ) && item.items.length > 0 ) {
+				item.items.forEach( function ( part, index ) {
+					this[ index ] = me.parseResultItem( part );
+				}, item.items );
+			}
 		}
-		return {
-			name: item.id,
-			label: item.text,
-			leaf: item.leaf,
-			items: item.items
-		};
+
+		if ( Object.prototype.hasOwnProperty.call( item, 'exists' ) ) {
+			treeItem.exists = item.exists;
+		}
+
+		if ( Object.prototype.hasOwnProperty.call( item, 'tracking' ) ) {
+			treeItem.tracking = item.tracking;
+		}
+
+		return treeItem;
 	};
 
 }( mediaWiki, jQuery ) );
