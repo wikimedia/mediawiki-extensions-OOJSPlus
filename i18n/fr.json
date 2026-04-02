@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"Asteralee",
 			"BlueCamille",
 			"Derugon",
 			"DreZhsh",
@@ -106,5 +107,9 @@
 	"oojsplus-sort-direction-desc": "Trier par ordre décroissant",
 	"oojsplus-field-label-query": "Rechercher…",
 	"oojsplus-data-navigation-tree-expander-label": "Sous-pages",
-	"oojsplus-data-tree-expander-label": "Sous-menu"
+	"oojsplus-data-tree-expander-label": "Sous-menu",
+	"oojsplus-data-grid-date-filter-operator-label-gt": "De $1",
+	"oojsplus-data-grid-filter-number-input-label": "Nombre",
+	"oojsplus-data-grid-filter-user-input-label": "Utilisateur",
+	"oojsplus-data-grid-filter-date-input-label": "Date"
 }

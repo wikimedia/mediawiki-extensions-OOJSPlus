@@ -1,10 +1,11 @@
 {
 	"@metadata": {
 		"authors": [
+			"Aca",
 			"Winston Sung"
 		]
 	},
-	"oojsplus-desc": "Daje sučeljske elemente i pomagala za OOJS",
+	"oojsplus-desc": "Daje elemente interfejsa i pomagala za OOJS",
 	"oojsplus-color-picker-clear-label": "Ukloni boju",
 	"oojsplus-color-picker-label": "Izbiratelj boje",
 	"oojsplus-data-delete-row-prompt": "Želite li da obrišete ovu nizu?",
@@ -24,7 +25,7 @@
 	"oojsplus-data-grid-filter-number-value": "Vrijednost",
 	"oojsplus-data-paginator-next": "Sljedeća stranica",
 	"oojsplus-data-paginator-previous": "Prethodna stranica",
-	"oojsplus-data-grid-toolbar-reload-label": "Ponovno učitaj",
+	"oojsplus-data-grid-toolbar-reload-label": "Ponovo učitaj",
 	"oojsplus-data-grid-filter-boolean": "Vrijednost",
 	"oojsplus-data-grid-toolbar-settings-columns-label": "Stupaca"
 }
