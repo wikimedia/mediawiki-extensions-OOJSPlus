@@ -16,5 +16,7 @@
 	"oojsplus-toolbar-delete": "हटाएँ",
 	"oojsplus-toolbar-edit": "सम्पादन",
 	"oojsplus-toolbar-add": "जोड़ें",
-	"oojsplus-field-label-query": "खोजें..."
+	"oojsplus-field-label-query": "खोजें...",
+	"oojsplus-data-grid-filter-date-operator-eq-label": "आज के दिन",
+	"oojsplus-data-grid-filter-date-operator-lt-label": "इस दिन से पहले"
 }
