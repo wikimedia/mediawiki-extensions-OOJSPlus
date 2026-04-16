@@ -113,5 +113,9 @@
 	"oojsplus-data-grid-filter-number-operator-eq-label": "Equals",
 	"oojsplus-data-grid-filter-number-operator-gt-label": "Bigger than",
 	"oojsplus-data-grid-filter-number-operator-lt-label": "Smaller than",
-	"oojsplus-data-grid-toolbar-show-widgets-label": "Show columns"
+	"oojsplus-data-grid-toolbar-show-widgets-label": "Show columns",
+	"oojsplus-group-widget-type-label": "Group",
+	"oojsplus-usergroupmultiselect-group-tag-type-group": "Group",
+	"oojsplus-usergroupmultiselect-user-section-label": "Users",
+	"oojsplus-usergroupmultiselect-group-section-label": "Groups"
 }

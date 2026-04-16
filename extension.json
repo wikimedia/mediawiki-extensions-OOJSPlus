@@ -56,6 +56,7 @@
 				"ui/widget/ExpandablePanel.js",
 				"ui/widget/ExpandableLabelWidget.js",
 				"ui/widget/UserWidget.js",
+				"ui/widget/GroupWidget.js",
 				"ui/widget/UserMenuOption.js",
 				"ui/widget/UserMultiselectWidget.js",
 				"ui/widget/UserPicker.js",
@@ -95,13 +96,18 @@
 				{
 					"name": "oojsplus.widget.config.js",
 					"callback": "OOJSPlus\\Extension::getWidgetConfig"
-				}
+				},
+				"ui/widget/UserGroupMultiselect.js"
 			],
 			"messages": [
 				"oojsplus-namespace-content",
 				"oojsplus-namespace-system",
 				"oojsplus-namespace-content-talk",
-				"oojsplus-namespace-system-talk"
+				"oojsplus-namespace-system-talk",
+				"oojsplus-group-widget-type-label",
+				"oojsplus-usergroupmultiselect-group-tag-type-group",
+				"oojsplus-usergroupmultiselect-user-section-label",
+				"oojsplus-usergroupmultiselect-group-section-label"
 			],
 			"styles": [
 				"stylesheet/rangeWidget.less",
@@ -112,6 +118,7 @@
 			"dependencies": [
 				"mediawiki.widgets.UserInputWidget",
 				"mediawiki.widgets.UsersMultiselectWidget",
+				"mediawiki.widgets.DateInputWidget",
 				"mediawiki.widgets",
 				"ext.oOJSPlus.widgets.colorPicker",
 				"ext.oOJSPlus.widgets.stepProgressBar",
