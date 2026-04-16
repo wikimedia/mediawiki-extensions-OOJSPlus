@@ -13,16 +13,15 @@ abstract class OOJSSpecialPage extends SpecialPage {
 
 	/**
 	 * @param string $name
-	 * @param string $restriction
-	 * @param bool $listed
-	 * @param bool $function
-	 * @param string $file
-	 * @param bool $includable
+	 * @param string $restriction Deprecated since 1.46
+	 * @param bool $listed Deprecated since 1.46
+	 * @param bool $function Deprecated since 1.46
+	 * @param string $file Deprecated since 1.46
+	 * @param bool $includable Deprecated since 1.46
 	 */
 	public function __construct( $name = '', $restriction = '', $listed = true,
 	$function = false, $file = '', $includable = false ) {
-		parent::__construct( $name, $restriction, $listed,
-		$function, $file, $includable );
+		parent::__construct( ...func_get_args() );
 
 		$this->templateParser = new TemplateParser(
 			dirname( __DIR__, 2 ) . '/resources/templates'
@@ -48,12 +47,11 @@ abstract class OOJSSpecialPage extends SpecialPage {
 			$this->getTemplateName(),
 			[]
 		);
-		$skeletonCnt = Html::openElement( 'div', [
-			'id' => 'oojsplus-skeleton-cnt'
-		] );
-		$skeletonCnt .= $skeleton;
-		$skeletonCnt .= Html::closeElement( 'div' );
-		$this->getOutput()->addHTML( $skeletonCnt );
+		$this->getOutput()->addHTML(
+			Html::rawElement( 'div', [ 'id' => 'oojsplus-skeleton-cnt' ],
+				$skeleton
+			)
+		);
 	}
 
 	/**
