@@ -118,5 +118,9 @@
 	"oojsplus-data-grid-filter-number-operator-eq-label": "Label for number comparison type",
 	"oojsplus-data-grid-filter-number-operator-gt-label": "Label for number comparison type",
 	"oojsplus-data-grid-filter-number-operator-lt-label": "Label for number comparison type",
-	"oojsplus-data-grid-toolbar-show-widgets-label": "Label for checkbox widget to select visible columns"
+	"oojsplus-data-grid-toolbar-show-widgets-label": "Label for checkbox widget to select visible columns",
+	"oojsplus-group-widget-type-label": "Type label shown by GroupWidget",
+	"oojsplus-usergroupmultiselect-group-tag-type-group": "Label indicating that selected option is a group",
+	"oojsplus-usergroupmultiselect-user-section-label": "Dropdown group label",
+	"oojsplus-usergroupmultiselect-group-section-label": "Dropdown group label"
 }
