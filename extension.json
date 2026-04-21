@@ -29,6 +29,9 @@
 	"AutoloadNamespaces": {
 		"OOJSPlus\\": "src/"
 	},
+	"TestAutoloadNamespaces": {
+		"OOJSPlus\\Tests\\": "tests/phpunit/"
+	},
 	"ResourceModules": {
 		"ext.oOJSPlus": {
 			"scripts": [
