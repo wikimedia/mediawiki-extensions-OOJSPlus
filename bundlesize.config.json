@@ -1,6 +1,18 @@
 [
 	{
+		"resourceModule": "ext.oOJSPlus",
+		"maxSize": "2 kB"
+	},
+	{
 		"resourceModule": "ext.oOJSPlus.widgets",
 		"maxSize": "16 kB"
+	},
+	{
+		"resourceModule": "ext.oOJSPlus.widgets.colorPicker",
+		"maxSize": "4 kB"
+	},
+	{
+		"resourceModule": "ext.oOJSPlus.widgets.stepProgressBar",
+		"maxSize": "2 kB"
 	}
 ]
