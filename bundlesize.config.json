@@ -5,7 +5,7 @@
 	},
 	{
 		"resourceModule": "ext.oOJSPlus.widgets",
-		"maxSize": "16 kB"
+		"maxSize": "20 kB"
 	},
 	{
 		"resourceModule": "ext.oOJSPlus.widgets.colorPicker",
