@@ -119,5 +119,9 @@
 	"oojsplus-data-grid-filter-number-operator-eq-label": "Gleich",
 	"oojsplus-data-grid-filter-number-operator-gt-label": "Größer als",
 	"oojsplus-data-grid-filter-number-operator-lt-label": "Kleiner als",
-	"oojsplus-data-grid-toolbar-show-widgets-label": "Spalten anzeigen"
+	"oojsplus-data-grid-toolbar-show-widgets-label": "Spalten anzeigen",
+	"oojsplus-group-widget-type-label": "Gruppe",
+	"oojsplus-usergroupmultiselect-group-tag-type-group": "Gruppe",
+	"oojsplus-usergroupmultiselect-user-section-label": "Benutzer",
+	"oojsplus-usergroupmultiselect-group-section-label": "Gruppen"
 }
