@@ -70,5 +70,9 @@
 	"oojsplus-formelement-type-percent": "Prozent",
 	"oojsplus-data-grid-filter-number-input-label": "Zuel",
 	"oojsplus-data-grid-filter-user-input-label": "Benotzer",
-	"oojsplus-data-grid-toolbar-show-widgets-label": "Kolonne weisen"
+	"oojsplus-data-grid-toolbar-show-widgets-label": "Kolonne weisen",
+	"oojsplus-group-widget-type-label": "Grupp",
+	"oojsplus-usergroupmultiselect-group-tag-type-group": "Grupp",
+	"oojsplus-usergroupmultiselect-user-section-label": "Benotzer",
+	"oojsplus-usergroupmultiselect-group-section-label": "Gruppen"
 }
