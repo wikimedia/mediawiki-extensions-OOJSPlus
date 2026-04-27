@@ -18,6 +18,6 @@ class Extension {
 			->getMainConfig();
 		return 'OOJSPlus.ui.widget._config = ' . json_encode( [
 			'useSplitTitleOption' => $config->get( 'OOJSPlusUseSplitTitleInputWidgetOptions' ),
-		] );
+		] ) . ';';
 	}
 }
