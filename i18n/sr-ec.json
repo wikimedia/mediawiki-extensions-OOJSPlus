@@ -85,5 +85,9 @@
 	"oojsplus-data-grid-filter-number-operator-input-label": "Врста упоредбе",
 	"oojsplus-data-grid-filter-number-operator-eq-label": "Једнако",
 	"oojsplus-data-grid-filter-number-operator-gt-label": "Веће од",
-	"oojsplus-data-grid-filter-number-operator-lt-label": "Мање од"
+	"oojsplus-data-grid-filter-number-operator-lt-label": "Мање од",
+	"oojsplus-group-widget-type-label": "Група",
+	"oojsplus-usergroupmultiselect-group-tag-type-group": "Група",
+	"oojsplus-usergroupmultiselect-user-section-label": "Корисници",
+	"oojsplus-usergroupmultiselect-group-section-label": "Групе"
 }
