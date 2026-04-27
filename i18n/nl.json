@@ -122,5 +122,9 @@
 	"oojsplus-data-grid-filter-number-operator-eq-label": "Gelijk aan",
 	"oojsplus-data-grid-filter-number-operator-gt-label": "Groter dan",
 	"oojsplus-data-grid-filter-number-operator-lt-label": "Kleiner dan",
-	"oojsplus-data-grid-toolbar-show-widgets-label": "Kolommen weergeven"
+	"oojsplus-data-grid-toolbar-show-widgets-label": "Kolommen weergeven",
+	"oojsplus-group-widget-type-label": "Groep",
+	"oojsplus-usergroupmultiselect-group-tag-type-group": "Groep",
+	"oojsplus-usergroupmultiselect-user-section-label": "Gebruikers",
+	"oojsplus-usergroupmultiselect-group-section-label": "Groepen"
 }
