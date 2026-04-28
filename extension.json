@@ -97,7 +97,8 @@
 					"name": "oojsplus.widget.config.js",
 					"callback": "OOJSPlus\\Extension::getWidgetConfig"
 				},
-				"ui/widget/UserGroupMultiselect.js"
+				"ui/widget/UserGroupMultiselect.js",
+				"ui/widget/UserGroupPicker.js"
 			],
 			"messages": [
 				"oojsplus-namespace-content",
