@@ -354,7 +354,8 @@
 				"ui/dialog/FormDialog.js",
 				"ui/booklet/DialogBookletPage.js",
 				"ui/booklet/DialogBooklet.js",
-				"ui/dialog/BookletDialog.js"
+				"ui/dialog/BookletDialog.js",
+				"ui/dialog/ConfirmWithOptOutDialog.js"
 			],
 			"dependencies": [
 				"oojs-ui",
@@ -366,7 +367,9 @@
 				"oojsplus-dialog-action-create",
 				"oojsplus-dialog-action-add",
 				"oojsplus-dialog-action-cancel",
-				"oojsplus-dialog-action-back"
+				"oojsplus-dialog-action-back",
+				"oojsplus-ui-dialog-confirm-with-opt-out-opt-out-label",
+				"oojsplus-ui-dialog-confirm-with-opt-out-save-error"
 			]
 		},
 		"ext.oOJSPlus.IDGenerator": {
