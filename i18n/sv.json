@@ -5,10 +5,6 @@
 			"WikiPhoenix"
 		]
 	},
-	"oojsplus-data-delete-row-prompt": "Är du säker på att du vill radera denna rad?",
-	"oojsplus-data-paginator-page-total-count-label": "{{PLURAL:$1|$1 post|$1 poster}}",
-	"oojsplus-data-tree-item-remove-label": "Ta bort",
-	"oojsplus-data-grid-toolbar-show-widgets-label": "Visa kolumner",
 	"oojsplus-desc": "Tillhandahåller widgets och verktygsfunktioner för OOJS",
 	"oojsplus-color-picker-color-blue": "Blå",
 	"oojsplus-color-picker-color-red": "Röd",
@@ -19,7 +15,10 @@
 	"oojsplus-color-picker-color-pink": "Rosa",
 	"oojsplus-color-picker-clear-label": "Rensa färgen",
 	"oojsplus-color-picker-label": "Färgväljare",
+	"oojsplus-data-delete-row-prompt": "Är du säker på att du vill radera denna rad?",
+	"oojsplus-data-paginator-page-total-count-label": "{{PLURAL:$1|$1 post|$1 poster}}",
 	"oojsplusdemos": "OOJSPlus-demonstrationer",
+	"oojsplus-data-tree-item-remove-label": "Ta bort",
 	"oojsplus-data-tree-item-add-label": "Lägg till nytt underobjekt",
 	"oojsplus-stepprogressbar-default-final-label": "Klar",
 	"apihelp-query+allgroups-summary": "Listar alla grupper som deklarerats på wikin",
@@ -114,5 +113,6 @@
 	"oojsplus-data-grid-filter-number-operator-input-label": "Typ av jämförelse",
 	"oojsplus-data-grid-filter-number-operator-eq-label": "Lika med",
 	"oojsplus-data-grid-filter-number-operator-gt-label": "Större än",
-	"oojsplus-data-grid-filter-number-operator-lt-label": "Mindre än"
+	"oojsplus-data-grid-filter-number-operator-lt-label": "Mindre än",
+	"oojsplus-data-grid-toolbar-show-widgets-label": "Visa kolumner"
 }
