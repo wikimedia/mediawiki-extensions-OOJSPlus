@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"23artashes",
 			"Kareyac"
 		]
 	},
@@ -25,5 +26,9 @@
 	"oojsplus-toolbar-edit": "Խմբագրել",
 	"oojsplus-toolbar-add": "Ավելացնել",
 	"oojsplus-data-navigation-tree-expander-label": "Ենթաէջեր",
-	"oojsplus-dialog-action-back": "Հետ"
+	"oojsplus-dialog-action-back": "Հետ",
+	"oojsplus-group-widget-type-label": "Խումբ",
+	"oojsplus-usergroupmultiselect-group-tag-type-group": "Խումբ",
+	"oojsplus-usergroupmultiselect-user-section-label": "Մասնակիցներ",
+	"oojsplus-usergroupmultiselect-group-section-label": "Խմբեր"
 }

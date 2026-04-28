@@ -42,5 +42,9 @@
 	"oojsplus-data-grid-filter-number-input-label": "Numero",
 	"oojsplus-data-grid-filter-user-input-label": "Utente",
 	"oojsplus-data-grid-filter-date-input-label": "Data",
-	"oojsplus-data-grid-toolbar-show-widgets-label": "Mostra colonne"
+	"oojsplus-data-grid-toolbar-show-widgets-label": "Mostra colonne",
+	"oojsplus-group-widget-type-label": "Gruppo",
+	"oojsplus-usergroupmultiselect-group-tag-type-group": "Gruppo",
+	"oojsplus-usergroupmultiselect-user-section-label": "Utenti",
+	"oojsplus-usergroupmultiselect-group-section-label": "Gruppi"
 }
