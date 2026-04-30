@@ -16,5 +16,6 @@
 	"oojsplus-color-picker-clear-label": "Изчистване на цвета",
 	"oojsplus-color-picker-label": "Средство за избиране на цвят",
 	"oojsplus-data-grid-toolbar-settings-aria-label": "Настройки",
-	"oojsplus-toolbar-cancel": "Отказ"
+	"oojsplus-toolbar-cancel": "Отказ",
+	"oojsplus-field-label-query": "Търсене..."
 }

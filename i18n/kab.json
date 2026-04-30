@@ -1,8 +1,12 @@
 {
 	"@metadata": {
 		"authors": [
+			"ButterflyOfFire",
 			"K Messaoudi"
 		]
 	},
-	"oojsplus-color-picker-color-red": "Azeggaɣ"
+	"oojsplus-color-picker-color-red": "Azeggaɣ",
+	"oojsplus-usergroupmultiselect-group-tag-type-group": "Agraw",
+	"oojsplus-usergroupmultiselect-user-section-label": "Iseqdacen",
+	"oojsplus-usergroupmultiselect-group-section-label": "Groups"
 }
