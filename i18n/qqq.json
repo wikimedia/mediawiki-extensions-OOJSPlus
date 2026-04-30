@@ -122,5 +122,8 @@
 	"oojsplus-group-widget-type-label": "Type label shown by GroupWidget",
 	"oojsplus-usergroupmultiselect-group-tag-type-group": "Label indicating that selected option is a group",
 	"oojsplus-usergroupmultiselect-user-section-label": "Dropdown group label",
-	"oojsplus-usergroupmultiselect-group-section-label": "Dropdown group label"
+	"oojsplus-usergroupmultiselect-group-section-label": "Dropdown group label",
+	"oojsplus-ui-dialog-confirm-with-opt-out-opt-out-label": "Generic label for opt-out checkbox in confirmation dialogs\n{{Identical|Don't ask again}}",
+	"oojsplus-ui-dialog-confirm-with-opt-out-save-error": "Error message shown when user tries to save their choice in confirmation dialog with opt-out checkbox, but an error occurs",
+	"oojsplus-formelement-type-user-group-multiselect": "Label for the form element"
 }

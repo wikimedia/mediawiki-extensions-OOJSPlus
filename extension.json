@@ -315,7 +315,8 @@
 				"ui/formelement/UserMultiselect.js",
 				"ui/formelement/TitleMultiselect.js",
 				"ui/formelement/DatePicker.js",
-				"ui/formelement/Percent.js"
+				"ui/formelement/Percent.js",
+				"ui/formelement/UserGroupMultiselect.js"
 			],
 			"messages": [
 				"oojsplus-formelement-type-user-picker",
