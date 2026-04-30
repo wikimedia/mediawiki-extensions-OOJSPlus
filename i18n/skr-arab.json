@@ -32,5 +32,7 @@
 	"oojsplus-toolbar-edit": "لکھو",
 	"oojsplus-toolbar-add": "شامل کرو",
 	"oojsplus-data-navigation-tree-expander-label": "ذیلی ورقے",
-	"oojsplus-field-label-query": "ڳولو۔۔۔"
+	"oojsplus-field-label-query": "ڳولو۔۔۔",
+	"oojsplus-group-widget-type-label": "گروپ",
+	"oojsplus-usergroupmultiselect-group-tag-type-group": "گروپ"
 }
