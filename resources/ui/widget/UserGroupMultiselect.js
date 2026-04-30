@@ -26,6 +26,8 @@
 		this.groupLookupRequest = null;
 		this.previousTagValue = this.getInternalValue().join( '\n' );
 
+		this.allowEveryoneOption = config.allowEveryone || false;
+
 		if ( 'name' in config ) {
 			// Use this instead of <input type="hidden">, because hidden inputs do not have separate
 			// 'value' and 'defaultValue' properties. The script on Special:Preferences
@@ -160,8 +162,14 @@
 		const groupWidget = new OOJSPlus.ui.widget.GroupWidget( {
 			group_name: parsedValue.key,
 			displayname: item.getLabel(),
-			showRawGroupName: false
+			showRawGroupName: false,
+			showTypeLabel: false
 		} );
+		const icon = new OO.ui.IconWidget( {
+			icon: 'userGroup'
+		} );
+		item.$element.find( '.oo-ui-iconWidget' ).remove();
+		icon.$element.insertBefore( item.$label );
 		item.$label.empty().append( groupWidget.$element );
 		item.$element.addClass( 'oojsplus-usergroupmultiselect-group-tag' );
 	};
@@ -295,7 +303,8 @@
 		} );
 		this.groupLookupRequest = mws.commonwebapis.group.query( {
 			query: inputValue,
-			filter: JSON.stringify( groupFilters )
+			filter: JSON.stringify( groupFilters ),
+			allowEveryone: this.allowEveryoneOption
 		} );
 
 		const userLookupDfd = $.Deferred(),

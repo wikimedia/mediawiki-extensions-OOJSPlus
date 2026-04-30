@@ -119,7 +119,6 @@ OOJSPlus.ui.toolbar.ManagerToolbar.prototype.setAbilities = function ( abilities
 			continue;
 		}
 		if ( !this.tools.hasOwnProperty( action ) ) {
-			console.error( 'OOJSPlus.ui.toolbar.ManagerToolbar: action not found', action ); // eslint-disable-line no-console
 			continue;
 		}
 		this.tools[ action ].setDisabled( !abilities[ action ] );
