@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Ykhwong"
+			"Ykhwong",
+			"Tensama0415"
 		]
 	},
 	"oojsplus-desc": "OOJS의 소도구 및 유틸리티 기능을 제공합니다",
@@ -33,7 +34,7 @@
 	"oojsplus-data-grid-grouper-no-group": "(그룹 없음)",
 	"oojsplus-data-grid-selection-column-label": "선택",
 	"oojsplus-data-grid-filter-update-no-filter": "적용된 테이블 필터 없음",
-	"oojsplus-data-grid-filter-title": "필터 $1",
+	"oojsplus-data-grid-filter-title": "$1로 필터링",
 	"oojsplus-data-grid-date-filter-announce-lt": "$1 이전",
 	"oojsplus-data-grid-date-filter-announce-gt": "$1 이후",
 	"oojsplus-data-grid-filter-boolean-true": "예",
