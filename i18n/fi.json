@@ -5,6 +5,7 @@
 			"MITO",
 			"Minilammas",
 			"Moj",
+			"Wikipeedikko",
 			"Yupik"
 		]
 	},
@@ -21,5 +22,8 @@
 	"oojsplus-data-grid-filter-label": "Suodatin",
 	"oojsplus-data-grid-filter-clear": "Tyhjennä",
 	"oojsplus-toolbar-add": "Lisää",
-	"oojsplus-dialog-action-back": "Takaisin"
+	"oojsplus-dialog-action-back": "Takaisin",
+	"oojsplus-group-widget-type-label": "Ryhmä",
+	"oojsplus-usergroupmultiselect-group-tag-type-group": "Ryhmä",
+	"oojsplus-usergroupmultiselect-user-section-label": "Käyttäjät"
 }
