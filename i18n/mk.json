@@ -107,12 +107,16 @@
 	"oojsplus-data-grid-filter-user-input-label": "Корисник",
 	"oojsplus-data-grid-filter-date-input-label": "Датум",
 	"oojsplus-data-grid-filter-date-operator-input-label": "Вид на датумско филтрирање",
-	"oojsplus-data-grid-filter-date-operator-eq-label": "Точно на овој ден",
-	"oojsplus-data-grid-filter-date-operator-gt-label": "Од овој ден",
-	"oojsplus-data-grid-filter-date-operator-lt-label": "До овој ден",
+	"oojsplus-data-grid-filter-date-operator-eq-label": "На овој ден",
+	"oojsplus-data-grid-filter-date-operator-gt-label": "По овој ден",
+	"oojsplus-data-grid-filter-date-operator-lt-label": "Пред овој ден",
 	"oojsplus-data-grid-filter-number-operator-input-label": "Вид на споредба",
 	"oojsplus-data-grid-filter-number-operator-eq-label": "Еднакво на",
 	"oojsplus-data-grid-filter-number-operator-gt-label": "Поголемо од",
 	"oojsplus-data-grid-filter-number-operator-lt-label": "Помало од",
-	"oojsplus-data-grid-toolbar-show-widgets-label": "Прикажи столбови"
+	"oojsplus-data-grid-toolbar-show-widgets-label": "Прикажи столбови",
+	"oojsplus-group-widget-type-label": "Група",
+	"oojsplus-usergroupmultiselect-group-tag-type-group": "Група",
+	"oojsplus-usergroupmultiselect-user-section-label": "Корисници",
+	"oojsplus-usergroupmultiselect-group-section-label": "Групи"
 }
