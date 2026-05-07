@@ -232,6 +232,7 @@
 			"messages": [
 				"oojsplus-data-delete-row-prompt",
 				"oojsplus-data-paginator-page-total-count-label",
+				"oojsplus-data-paginator-page-total-count-label-approximate",
 				"oojsplus-data-tree-item-remove-label",
 				"oojsplus-data-tree-item-add-label",
 				"oojsplus-data-grid-widget-popup-title",
@@ -297,7 +298,10 @@
 				"oojsplus-data-grid-filter-number-operator-eq-label",
 				"oojsplus-data-grid-filter-number-operator-gt-label",
 				"oojsplus-data-grid-filter-number-operator-lt-label",
-				"oojsplus-data-grid-toolbar-show-widgets-label"
+				"oojsplus-data-grid-toolbar-show-widgets-label",
+				"oojsplus-data-grid-toolbar-page-size-25",
+				"oojsplus-data-grid-toolbar-page-size-50",
+				"oojsplus-data-grid-toolbar-page-size-100"
 			]
 		},
 		"ext.oOJSPlus.icons": {

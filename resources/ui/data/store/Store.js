@@ -38,6 +38,8 @@ OOJSPlus.ui.data.store.Store = function ( cfg ) {
 
 	this.offset = 0;
 	this.limit = cfg.pageSize || 25;
+
+	this.suppressEvents = false;
 };
 
 OO.initClass( OOJSPlus.ui.data.store.Store );
@@ -45,13 +47,19 @@ OO.mixinClass( OOJSPlus.ui.data.store.Store, OO.EventEmitter );
 
 OOJSPlus.ui.data.store.Store.prototype.load = function () {
 	const dfd = $.Deferred();
-	this.emit( 'loading' );
+	if ( !this.suppressEvents ) {
+		this.emit( 'loading' );
+	}
 	this.doLoadData().done( ( data ) => {
 		this.data = Object.assign( {}, this.data, data );
-		this.emit( 'loaded', this.data );
+		if ( !this.suppressEvents ) {
+			this.emit( 'loaded', this.data );
+		}
 		dfd.resolve( this.data );
 	} ).fail( ( e ) => {
-		this.emit( 'loadFailed', e );
+		if ( !this.suppressEvents ) {
+			this.emit( 'loadFailed', e );
+		}
 		dfd.reject( e );
 	} );
 
@@ -61,9 +69,14 @@ OOJSPlus.ui.data.store.Store.prototype.load = function () {
 OOJSPlus.ui.data.store.Store.prototype.reload = function () {
 	this.data = {};
 	this.offset = 0;
+	if ( !this.suppressEvents ) {
+		this.emit('beforeReload');
+	}
 	const loadPromise = this.load();
 	loadPromise.done( ( data ) => {
-		this.emit( 'reload', data );
+		if ( !this.suppressEvents ) {
+			this.emit( 'reload', data );
+		}
 	} );
 
 	return loadPromise;
@@ -74,7 +87,16 @@ OOJSPlus.ui.data.store.Store.prototype.doLoadData = function () {
 	data = this.sortIfLocal( data );
 	const pagedData = data.slice( this.offset, this.offset + this.limit );
 
-	return $.Deferred().resolve( this.indexData( pagedData ) ).promise();
+	const indexed = this.indexData( pagedData );
+	if ( !this.suppressEvents ) {
+		this.emit('metadataChange', {
+			total: this.getTotal(),
+			continue: null,
+			totalApproximated: false,
+			pageSize: this.limit
+		});
+	}
+	return $.Deferred().resolve( indexed ).promise();
 };
 
 OOJSPlus.ui.data.store.Store.prototype.setData = function ( data ) {
@@ -104,8 +126,13 @@ OOJSPlus.ui.data.store.Store.prototype.sortIfLocal = function ( data ) {
 OOJSPlus.ui.data.store.Store.prototype.indexData = function ( data ) {
 	const indexed = {},
 		initIndex = $.isEmptyObject( this.data ) ? -1 : Math.max( ...Object.keys( this.data ) );
+	let finalIndex = initIndex + 1;
 	for ( let i = 0; i < data.length; i++ ) {
 		indexed[ i + initIndex + 1 ] = data[ i ];
+		finalIndex = i + initIndex + 1;
+	}
+	if ( !this.suppressEvents ) {
+		this.emit('dataAppended', indexed, initIndex + 1, finalIndex);
 	}
 
 	return indexed;
@@ -243,4 +270,8 @@ OOJSPlus.ui.data.store.Store.prototype.sort = function ( sorter, field ) {
 		this.sorters[ field ] = sorter;
 	}
 	return this.reload();
+};
+
+OOJSPlus.ui.data.store.Store.prototype.setLimit = function ( limit ) {
+	this.limit = limit;
 };
