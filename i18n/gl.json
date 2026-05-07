@@ -117,5 +117,8 @@
 	"oojsplus-group-widget-type-label": "Grupo",
 	"oojsplus-usergroupmultiselect-group-tag-type-group": "Grupo",
 	"oojsplus-usergroupmultiselect-user-section-label": "Usuarios",
-	"oojsplus-usergroupmultiselect-group-section-label": "Grupos"
+	"oojsplus-usergroupmultiselect-group-section-label": "Grupos",
+	"oojsplus-ui-dialog-confirm-with-opt-out-opt-out-label": "Non me preguntedes máis",
+	"oojsplus-ui-dialog-confirm-with-opt-out-save-error": "Non se puido gardar a túa preferencia. Inténtao de novo.",
+	"oojsplus-formelement-type-user-group-multiselect": "Selección múltiple de grupos/usuarios"
 }
