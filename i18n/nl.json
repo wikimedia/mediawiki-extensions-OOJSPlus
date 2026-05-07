@@ -127,5 +127,8 @@
 	"oojsplus-group-widget-type-label": "Groep",
 	"oojsplus-usergroupmultiselect-group-tag-type-group": "Groep",
 	"oojsplus-usergroupmultiselect-user-section-label": "Gebruikers",
-	"oojsplus-usergroupmultiselect-group-section-label": "Groepen"
+	"oojsplus-usergroupmultiselect-group-section-label": "Groepen",
+	"oojsplus-ui-dialog-confirm-with-opt-out-opt-out-label": "Vraag het me niet nog een keer",
+	"oojsplus-ui-dialog-confirm-with-opt-out-save-error": "Het opslaan van uw voorkeur is mislukt, probeer het opnieuw.",
+	"oojsplus-formelement-type-user-group-multiselect": "Meerdere groepen of gebruikers kiezen"
 }
