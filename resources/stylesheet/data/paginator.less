@@ -5,22 +5,17 @@
 	border-top: 1px solid #e3e3e3;
 	display: flex;
 	justify-content: space-between;
-	flex-wrap: wrap;
 
-	.oojsplus-data-paginator {
-		flex-grow: 1;
+	.oo-ui-labelWidget {
+		&.row-count {
+			border: 1px solid #939393;
+			padding: 3px 10px 3px 10px;
+			border-radius: 26px;
+		}
 	}
 
 	.static-controls {
-		text-align: right;
-
-		.oo-ui-labelWidget {
-			&.row-count {
-				border: 1px solid #939393;
-				padding: 3px 10px 3px 10px;
-				border-radius: 26px;
-			}
-		}
+		flex-wrap: nowrap;
 
 		> .oo-ui-buttonElement-frameless > .oo-ui-buttonElement-button {
 			&:hover {

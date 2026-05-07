@@ -21,6 +21,7 @@
 	"oojsplus-color-picker-label": "Default label of a color-picker widget",
 	"oojsplus-data-delete-row-prompt": "Prompt text before user deletes a row in a grid",
 	"oojsplus-data-paginator-page-total-count-label": "Label for the total number of rows in a grid data source. \n $1 = Number of rows",
+	"oojsplus-data-paginator-page-total-count-label-approximate": "Label for the total number of rows in a grid data source, when total number is an approximation \n $1 = Number of rows",
 	"oojsplusdemos": "Title for OOJSPlusDemos special page",
 	"oojsplus-data-tree-item-remove-label": "Tree label for the button in item options that removed the selected node\n{{Identical|Remove}}",
 	"oojsplus-data-tree-item-add-label": "Tree label for the button in item options that adds new subnode to the selected node",
@@ -125,5 +126,8 @@
 	"oojsplus-usergroupmultiselect-group-section-label": "Dropdown group label",
 	"oojsplus-ui-dialog-confirm-with-opt-out-opt-out-label": "Generic label for opt-out checkbox in confirmation dialogs\n{{Identical|Don't ask again}}",
 	"oojsplus-ui-dialog-confirm-with-opt-out-save-error": "Error message shown when user tries to save their choice in confirmation dialog with opt-out checkbox, but an error occurs",
-	"oojsplus-formelement-type-user-group-multiselect": "Label for the form element"
+	"oojsplus-formelement-type-user-group-multiselect": "Label for the form element",
+	"oojsplus-data-grid-toolbar-page-size-25": "Label for page size 25 in page size selection in data grid toolbar",
+	"oojsplus-data-grid-toolbar-page-size-50": "Label for page size 50 in page size selection in data grid toolbar",
+	"oojsplus-data-grid-toolbar-page-size-100": "Label for page size 100 in page size selection in data grid toolbar"
 }
