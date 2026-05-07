@@ -113,5 +113,12 @@
 	"oojsplus-data-grid-filter-number-operator-eq-label": "Equala",
 	"oojsplus-data-grid-filter-number-operator-gt-label": "Superior a",
 	"oojsplus-data-grid-filter-number-operator-lt-label": "Inferior a",
-	"oojsplus-data-grid-toolbar-show-widgets-label": "Monstrar columnas"
+	"oojsplus-data-grid-toolbar-show-widgets-label": "Monstrar columnas",
+	"oojsplus-group-widget-type-label": "Gruppo",
+	"oojsplus-usergroupmultiselect-group-tag-type-group": "Gruppo",
+	"oojsplus-usergroupmultiselect-user-section-label": "Usatores",
+	"oojsplus-usergroupmultiselect-group-section-label": "Gruppos",
+	"oojsplus-ui-dialog-confirm-with-opt-out-opt-out-label": "Non demandar me lo de novo",
+	"oojsplus-ui-dialog-confirm-with-opt-out-save-error": "Fallimento de salveguardar tu preferentia, per favor tenta lo de novo.",
+	"oojsplus-formelement-type-user-group-multiselect": "Selector de usatores/gruppos multiple"
 }
