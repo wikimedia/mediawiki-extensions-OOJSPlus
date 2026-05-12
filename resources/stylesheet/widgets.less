@@ -281,14 +281,21 @@
 }
 
 .oojsplus-title-widget-menu-option {
+	font-size: var( --content-font-size, 1em );
+
 	.oojsplus-title-widget-menu-option-namespace,
 	.oojsplus-title-widget-menu-option-basetitle {
-		color: var( --color-subtle, #747474 );
-		font-size: @font-size-x-small;
+		color: var( --color-subtle, #54595d );
+		font-size: 0.9em;
 	}
 
 	.oojsplus-title-widget-menu-option-namespace {
 		font-weight: bold;
+
+		&::after {
+			content: '·';
+			margin-left: 5px;
+		}
 	}
 
 	&.oojsplus-title-widget-menu-option-missing {
