@@ -25,5 +25,7 @@
 	"oojsplus-dialog-action-back": "Takaisin",
 	"oojsplus-group-widget-type-label": "Ryhmä",
 	"oojsplus-usergroupmultiselect-group-tag-type-group": "Ryhmä",
-	"oojsplus-usergroupmultiselect-user-section-label": "Käyttäjät"
+	"oojsplus-usergroupmultiselect-user-section-label": "Käyttäjät",
+	"oojsplus-ui-dialog-confirm-with-opt-out-opt-out-label": "Älä kysy uudelleen",
+	"oojsplus-ui-dialog-confirm-with-opt-out-save-error": "Asetuksen tallentaminen epäonnistui. Yritä uudelleen."
 }
