@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"Les Meloures",
 			"Robby",
 			"Volvox"
 		]
@@ -14,7 +15,7 @@
 	"oojsplus-color-picker-color-pink": "Rosa",
 	"oojsplus-color-picker-clear-label": "Faarf läschen",
 	"oojsplus-data-delete-row-prompt": "Sidd Dir sécher, datt Dir dës Zeil läsche wëllt?",
-	"oojsplus-data-paginator-page-total-count-label": "{{PLURAL:$1|$1 Antrag|$1 Anträg}}",
+	"oojsplus-data-paginator-page-total-count-label": "{{PLURAL:$1|$1 Ännerung|$1 Ännerungen}}",
 	"oojsplusdemos": "OOJSPlus-Demoen",
 	"oojsplus-data-tree-item-remove-label": "Ewechhuelen",
 	"oojsplus-stepprogressbar-default-final-label": "Fäerdeg",
@@ -63,7 +64,7 @@
 	"oojsplus-data-grid-filter-date-on": "Um",
 	"oojsplus-data-grid-filter-date-after": "Nom",
 	"oojsplus-data-grid-filter-date-before": "Virum",
-	"oojsplus-data-grid-no-results": "Et gëtt nach keng Anträg",
+	"oojsplus-data-grid-no-results": "Et gëtt nach keng Ännerungen",
 	"oojsplus-data-navigation-tree-expander-label": "Ënnersäiten",
 	"oojsplus-data-tree-expander-label": "Ënnermenü",
 	"oojsplus-dialog-action-back": "Zeréck",

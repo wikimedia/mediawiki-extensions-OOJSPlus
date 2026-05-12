@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"Bisang",
 			"Tensama0415",
 			"Ykhwong"
 		]
@@ -100,5 +101,6 @@
 	"oojsplus-group-widget-type-label": "그룹",
 	"oojsplus-usergroupmultiselect-group-tag-type-group": "그룹",
 	"oojsplus-usergroupmultiselect-user-section-label": "사용자",
-	"oojsplus-usergroupmultiselect-group-section-label": "그룹"
+	"oojsplus-usergroupmultiselect-group-section-label": "그룹",
+	"oojsplus-ui-dialog-confirm-with-opt-out-save-error": "설정을 저장하는 데 실패했습니다. 다시 시도해주세요."
 }
