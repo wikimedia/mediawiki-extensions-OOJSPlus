@@ -168,7 +168,9 @@
 			}
 		} );
 		this.store.load().done( ( data ) => {
-			if ( !( this.paginator instanceof OOJSPlus.ui.data.grid.Paginator ) ) {
+			if ( this.paginator instanceof OOJSPlus.ui.data.grid.Paginator ) {
+				this.paginator.init();
+			} else {
 				this.setItems( Object.values( data ) );
 			}
 		} );

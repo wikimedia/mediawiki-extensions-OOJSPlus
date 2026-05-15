@@ -42,8 +42,9 @@ OOJSPlus.ui.data.store.RemoteRestStore.prototype.doLoadData = function () {
 	} ).done( ( response ) => {
 		this.request = null;
 		if ( response.hasOwnProperty( 'results' ) ) {
+			this.total = response.total;
 			this.buckets = response.buckets || {};
-			dfd.resolve( this.processResponse( response ) );
+			dfd.resolve( this.indexData( response.results ) );
 			return;
 		}
 		dfd.reject();
@@ -56,9 +57,13 @@ OOJSPlus.ui.data.store.RemoteRestStore.prototype.doLoadData = function () {
 };
 
 OOJSPlus.ui.data.store.RemoteRestStore.prototype.getRequestData = function () {
-	const data = OOJSPlus.ui.data.store.RemoteRestStore.parent.prototype.getRequestData.call( this );
-	delete data.action; // Not needed for REST API, remove it to avoid confusion on the server side
-	return data;
+	return {
+		start: this.offset,
+		limit: this.limit,
+		filter: this.getFiltersForRemote(),
+		query: this.getQuery(),
+		sort: this.getSortForRemote()
+	};
 };
 
 OOJSPlus.ui.data.store.RemoteRestStore.prototype.getBuckets = function () {
