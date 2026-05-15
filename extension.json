@@ -202,7 +202,6 @@
 			"messages": [
 				"oojsplus-data-delete-row-prompt",
 				"oojsplus-data-paginator-page-total-count-label",
-				"oojsplus-data-paginator-page-total-count-label-approximate",
 				"oojsplus-data-tree-item-remove-label",
 				"oojsplus-data-tree-item-add-label",
 				"oojsplus-data-grid-widget-popup-title",
@@ -249,10 +248,7 @@
 				"oojsplus-data-grid-no-results",
 				"oojsplus-field-label-query",
 				"oojsplus-data-navigation-tree-expander-label",
-				"oojsplus-data-tree-expander-label",
-				"oojsplus-data-grid-toolbar-page-size-25",
-				"oojsplus-data-grid-toolbar-page-size-50",
-				"oojsplus-data-grid-toolbar-page-size-100"
+				"oojsplus-data-tree-expander-label"
 			]
 		},
 		"ext.oOJSPlus.icons": {
