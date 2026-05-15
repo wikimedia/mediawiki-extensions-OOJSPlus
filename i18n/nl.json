@@ -20,6 +20,7 @@
 	"oojsplus-color-picker-label": "Kleurenkiezer",
 	"oojsplus-data-delete-row-prompt": "Weet u zeker dat u deze rij wilt verwijderen?",
 	"oojsplus-data-paginator-page-total-count-label": "$1 rij{{PLURAL:$1||en}}",
+	"oojsplus-data-paginator-page-total-count-label-approximate": "~ $1 {{PLURAL:$1|item|items}}",
 	"oojsplusdemos": "OOJSPlus-demo’s",
 	"oojsplus-data-tree-item-remove-label": "Verwijderen",
 	"oojsplus-data-tree-item-add-label": "Nieuw deelelement toevoegen",
@@ -124,5 +125,8 @@
 	"oojsplus-usergroupmultiselect-group-section-label": "Groepen",
 	"oojsplus-ui-dialog-confirm-with-opt-out-opt-out-label": "Vraag het me niet nog een keer",
 	"oojsplus-ui-dialog-confirm-with-opt-out-save-error": "Het opslaan van uw voorkeur is mislukt, probeer het opnieuw.",
-	"oojsplus-formelement-type-user-group-multiselect": "Meerdere groepen of gebruikers kiezen"
+	"oojsplus-formelement-type-user-group-multiselect": "Meerdere groepen of gebruikers kiezen",
+	"oojsplus-data-grid-toolbar-page-size-25": "25 rijen",
+	"oojsplus-data-grid-toolbar-page-size-50": "50 rijen",
+	"oojsplus-data-grid-toolbar-page-size-100": "100 rijen"
 }
