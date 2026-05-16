@@ -1,0 +1,12 @@
+{
+	"@metadata": {
+		"authors": [
+			"AhmedG612"
+		]
+	},
+	"oojsplus-data-paginator-page-total-count-label-approximate": "~ {{PLURAL:$1|$1 gelitaan|$1 gelitaanno}}",
+	"oojsplus-dialog-action-add": "Ku dar",
+	"oojsplus-data-grid-toolbar-page-size-25": "25 saf",
+	"oojsplus-data-grid-toolbar-page-size-50": "50 saf",
+	"oojsplus-data-grid-toolbar-page-size-100": "100 saf"
+}
