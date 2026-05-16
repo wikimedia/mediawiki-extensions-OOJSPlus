@@ -75,5 +75,8 @@
 	"oojsplus-group-widget-type-label": "Grupp",
 	"oojsplus-usergroupmultiselect-group-tag-type-group": "Grupp",
 	"oojsplus-usergroupmultiselect-user-section-label": "Benotzer",
-	"oojsplus-usergroupmultiselect-group-section-label": "Gruppen"
+	"oojsplus-usergroupmultiselect-group-section-label": "Gruppen",
+	"oojsplus-data-grid-toolbar-page-size-25": "25 Zeilen",
+	"oojsplus-data-grid-toolbar-page-size-50": "50 Zeilen",
+	"oojsplus-data-grid-toolbar-page-size-100": "100 Zeilen"
 }

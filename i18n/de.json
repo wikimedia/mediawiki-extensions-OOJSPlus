@@ -128,5 +128,6 @@
 	"oojsplus-usergroupmultiselect-group-section-label": "Gruppen",
 	"oojsplus-ui-dialog-confirm-with-opt-out-opt-out-label": "Frag mich nicht noch einmal",
 	"oojsplus-ui-dialog-confirm-with-opt-out-save-error": "{{#FORMAL:Deine|Ihre}} Einstellungen konnten nicht gespeichert werden. Bitte {{#FORMAL:versuche|versuchen Sie}} es erneut.",
-	"oojsplus-formelement-type-user-group-multiselect": "Mehrfachauswahl Benutzer/Gruppe"
+	"oojsplus-formelement-type-user-group-multiselect": "Mehrfachauswahl Benutzer/Gruppe",
+	"oojsplus-data-paginator-page-total-count-label-approximate": "~ {{PLURAL:$1|$1 Eintrag|$1 Einträge}}"
 }

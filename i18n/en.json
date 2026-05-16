@@ -120,5 +120,9 @@
 	"oojsplus-usergroupmultiselect-group-section-label": "Groups",
 	"oojsplus-ui-dialog-confirm-with-opt-out-opt-out-label": "Do not ask me again",
 	"oojsplus-ui-dialog-confirm-with-opt-out-save-error": "Failed to save your preference, please try again.",
-	"oojsplus-formelement-type-user-group-multiselect": "User/Group multiselect"
+	"oojsplus-formelement-type-user-group-multiselect": "User/Group multiselect",
+	"oojsplus-data-paginator-page-total-count-label-approximate": "~ {{PLURAL:$1|$1 entry|$1 entries}}",
+	"oojsplus-data-grid-toolbar-page-size-25": "25 rows",
+	"oojsplus-data-grid-toolbar-page-size-50": "50 rows",
+	"oojsplus-data-grid-toolbar-page-size-100": "100 rows"
 }

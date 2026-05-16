@@ -126,5 +126,9 @@
 	"oojsplus-usergroupmultiselect-group-section-label": "Groepen",
 	"oojsplus-ui-dialog-confirm-with-opt-out-opt-out-label": "Vraag het me niet nog een keer",
 	"oojsplus-ui-dialog-confirm-with-opt-out-save-error": "Het opslaan van uw voorkeur is mislukt, probeer het opnieuw.",
-	"oojsplus-formelement-type-user-group-multiselect": "Meerdere groepen of gebruikers kiezen"
+	"oojsplus-formelement-type-user-group-multiselect": "Meerdere groepen of gebruikers kiezen",
+	"oojsplus-data-paginator-page-total-count-label-approximate": "~ $1 {{PLURAL:$1|item|items}}",
+	"oojsplus-data-grid-toolbar-page-size-25": "25 rijen",
+	"oojsplus-data-grid-toolbar-page-size-50": "50 rijen",
+	"oojsplus-data-grid-toolbar-page-size-100": "100 rijen"
 }
