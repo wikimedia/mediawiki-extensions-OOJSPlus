@@ -125,5 +125,9 @@
 	"oojsplus-usergroupmultiselect-group-section-label": "Gruppos",
 	"oojsplus-ui-dialog-confirm-with-opt-out-opt-out-label": "Non demandar me lo de novo",
 	"oojsplus-ui-dialog-confirm-with-opt-out-save-error": "Fallimento de salveguardar tu preferentia, per favor tenta lo de novo.",
-	"oojsplus-formelement-type-user-group-multiselect": "Selector de usatores/gruppos multiple"
+	"oojsplus-formelement-type-user-group-multiselect": "Selector de usatores/gruppos multiple",
+	"oojsplus-data-paginator-page-total-count-label-approximate": "~ $1 entrata{{PLURAL:$1||s}}",
+	"oojsplus-data-grid-toolbar-page-size-25": "25 lineas",
+	"oojsplus-data-grid-toolbar-page-size-50": "50 lineas",
+	"oojsplus-data-grid-toolbar-page-size-100": "100 lineas"
 }
