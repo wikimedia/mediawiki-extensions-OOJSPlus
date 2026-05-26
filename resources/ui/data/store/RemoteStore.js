@@ -10,6 +10,7 @@
  * sorter: { array_of_sorters },
  * groupField: 'string' // Field to group by. If specified, store is responsible for properly sorting by groupField
  * action: 'string', // Action API action name
+ * cacheResults: bool // If true, primary results will be cached. Default: false
  * }
  *
  * @type {OOJSPlus.ui.data.store.Store}
@@ -21,7 +22,8 @@ OOJSPlus.ui.data.store.RemoteStore = function ( cfg ) {
 	this.totalApproximated = false;
 	this.continue = null;
 	this.nextContinue = null;
-	this.noCache = !!cfg.noCache;
+	this.cacheResults = cfg.cacheResults || false;
+	this.queryId = cfg.queryId || null;
 
 	OOJSPlus.ui.data.store.RemoteStore.parent.call( this, cfg );
 };
@@ -58,8 +60,11 @@ OOJSPlus.ui.data.store.RemoteStore.prototype.getRequestData = function () {
 	if ( this.groupField ) {
 		data.group = JSON.stringify( { property: this.groupField, direction: 'ASC' } );
 	}
-	if ( this.noCache ) {
+	if ( !this.cacheResults ) {
 		data['no-cache'] = 1;
+	}
+	if ( this.cacheResults && this.queryId ) {
+		data['query-id'] = this.queryId;
 	}
 	return data;
 };
@@ -68,12 +73,14 @@ OOJSPlus.ui.data.store.RemoteStore.prototype.processResponse = function ( respon
 	this.total = response.total;
 	this.totalApproximated = !!response.total_approximate;
 	this.nextContinue = response.continue || null;
+	this.queryId = response.query_id || null;
 	if ( !this.suppressEvents ) {
 		this.emit( 'metadataChange', {
 			total: this.total,
 			continue: response.continue || null,
 			totalApproximated: this.totalApproximated,
-			pageSize: this.limit
+			pageSize: this.limit,
+			queryId: this.queryId
 		} );
 	}
 	return this.indexData( response.results );
@@ -81,6 +88,15 @@ OOJSPlus.ui.data.store.RemoteStore.prototype.processResponse = function ( respon
 
 OOJSPlus.ui.data.store.RemoteStore.prototype.setData = function () {
 	throw new Error( 'Cannot set data of a remote store' );
+};
+
+OOJSPlus.ui.data.store.Store.prototype.reloadNoCache = function () {
+	// Will purge previous cache if any
+	const origCache = this.cacheResults;
+	this.cacheResults = false;
+	const loadPromise = this.reload();
+	this.cacheResults = origCache;
+	return loadPromise;
 };
 
 OOJSPlus.ui.data.store.RemoteStore.prototype.getFiltersForRemote = function () {
