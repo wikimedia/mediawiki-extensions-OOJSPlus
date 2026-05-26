@@ -20,7 +20,11 @@
 		} );
 		reloadBtn.connect( this, {
 			click: function () {
-				this.store.reload();
+				if ( this.store instanceof OOJSPlus.ui.data.store.RemoteStore ) {
+					this.store.reloadNoCache();
+				} else {
+					this.store.reload();
+				}
 			}
 		} );
 
