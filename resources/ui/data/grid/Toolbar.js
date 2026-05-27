@@ -36,7 +36,7 @@
 				if ( this.eventsDisabled ) {
 					return;
 				}
-				this.store.setLimit( value );
+				this.store.setLimit( parseInt( value ) );
 				this.store.reload();
 			}
 		} );
