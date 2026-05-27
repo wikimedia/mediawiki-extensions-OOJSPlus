@@ -129,9 +129,7 @@
 			}
 		} );
 		this.store.load().done( ( data ) => {
-			if ( this.paginator instanceof OOJSPlus.ui.data.grid.Paginator ) {
-				this.paginator.init();
-			} else {
+			if ( !( this.paginator instanceof OOJSPlus.ui.data.grid.Paginator ) ) {
 				this.setItems( Object.values( data ) );
 			}
 			const filterAnnouncement = mw.message( 'oojsplus-data-grid-filter-update-results', this.store.getTotal() ).text();
