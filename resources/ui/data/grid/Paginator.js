@@ -8,6 +8,9 @@ OOJSPlus.ui.data.grid.Paginator = function ( cfg ) {
 	this.pages = [];
 	this.data = {};
 	this.currentPageIndex = 0;
+	this.continues = {};
+	this.currentTotal = 0;
+	this.currentPageSize = this.store.limit;
 
 	this.store.connect( this, {
 		// Reload happens when dataset changes (filter conditions change, sorting, setting data...)
@@ -22,6 +25,15 @@ OOJSPlus.ui.data.grid.Paginator = function ( cfg ) {
 	this.$element.attr( 'aria-label',
 		mw.message( 'oojsplus-data-paginator-aria-label' ).text() );
 	this.$element.append( this.navigation.$element );
+
+	this.firstButton = new OO.ui.ButtonWidget( {
+		icon: 'first',
+		title: mw.message( 'oojsplus-data-paginator-first' ).plain(),
+		disabled: true
+	} );
+	this.firstButton.connect( this, {
+		click: 'first'
+	} );
 
 	this.previousButton = new OO.ui.ButtonWidget( {
 		icon: 'previous',
@@ -48,6 +60,7 @@ OOJSPlus.ui.data.grid.Paginator = function ( cfg ) {
 	this.totalWidget.$element.addClass( 'row-count' );
 
 	this.navigation.addItems( [
+		this.firstButton,
 		this.previousButton,
 		this.nextButton,
 		this.currentEntriesShown,
@@ -64,6 +77,16 @@ OOJSPlus.ui.data.grid.Paginator.prototype.beforeInit = function () {
 	this.pages = [];
 	this.data = {};
 	this.currentPageIndex = 0;
+	this.continues = {};
+	this.currentTotal = 0;
+};
+
+OOJSPlus.ui.data.grid.Paginator.prototype.first = function () {
+	if ( this.currentPageIndex === 0 ) {
+		return;
+	}
+	this.currentPageIndex = 1;
+	this.previous();
 };
 
 OOJSPlus.ui.data.grid.Paginator.prototype.previous = function () {
@@ -71,8 +94,14 @@ OOJSPlus.ui.data.grid.Paginator.prototype.previous = function () {
 		return;
 	}
 	this.emit( 'navigationStarted', 'prev' );
+	this.disableControls();
 	this.currentPageIndex--;
+	this.store.offset = this.pages[ this.currentPageIndex ][ 0 ];
 	this.showRange( this.pages[ this.currentPageIndex ][ 0 ], this.pages[ this.currentPageIndex ][ 1 ] );
+	if ( this.continues.hasOwnProperty( this.currentPageIndex ) ) {
+		this.currentContinue = this.continues[ this.currentPageIndex ];
+	}
+	this.enableControls();
 	this.emit( 'navigationDone', 'prev' );
 };
 
@@ -87,9 +116,16 @@ OOJSPlus.ui.data.grid.Paginator.prototype.next = async function () {
 	this.disableControls();
 	this.store.continue = this.currentContinue;
 	this.store.offset = this.store.offset + this.store.limit;
-	await this.store.load();
-	this.previousButton.setDisabled( false );
 	this.currentPageIndex++;
+	if ( this.pages.length >= this.currentPageIndex + 1 ) {
+		if ( this.continues.hasOwnProperty( this.currentPageIndex ) ) {
+			this.currentContinue = this.continues[ this.currentPageIndex ];
+		}
+		this.showRange( this.pages[ this.currentPageIndex ][ 0 ], this.pages[ this.currentPageIndex ][ 1 ] );
+	} else {
+		await this.store.load();
+	}
+	this.previousButton.setDisabled( false );
 	this.enableControls();
 	this.emit( 'navigationDone', 'next' );
 };
@@ -101,7 +137,12 @@ OOJSPlus.ui.data.grid.Paginator.prototype.onDataAppended = function ( data, star
 };
 
 OOJSPlus.ui.data.grid.Paginator.prototype.onMetadataChange = function ( metadata ) {
+	if ( ( metadata.pageSize || 25 ) !== this.currentPageSize ) {
+		this.beforeInit();
+	}
+	this.continues[this.currentPageIndex ] = metadata.continue;
 	this.currentContinue = metadata.continue;
+	this.currentPageSize = metadata.pageSize || 25;
 	this.updateTotal( metadata.total, metadata.totalApproximated );
 	this.updateControls();
 };
@@ -120,10 +161,12 @@ OOJSPlus.ui.data.grid.Paginator.prototype.enableControls = function () {
 	}
 	if ( this.currentPageIndex > 0 ) {
 		this.previousButton.setDisabled( false );
+		this.firstButton.setDisabled( false );
 	}
 };
 
 OOJSPlus.ui.data.grid.Paginator.prototype.disableControls = function () {
+	this.firstButton.setDisabled( true );
 	this.nextButton.setDisabled( true );
 	this.previousButton.setDisabled( true );
 };
@@ -157,10 +200,14 @@ OOJSPlus.ui.data.grid.Paginator.prototype.showRange = function ( start, end ) {
 			mw.message( 'oojsplus-data-paginator-page-showed-many-entries', start + 1, end + 1).text()
 		);
 	}
+	if ( end > this.currentTotal ) {
+		this.updateTotal( end + 1, true );
+	}
 	this.$element.show();
 };
 
 OOJSPlus.ui.data.grid.Paginator.prototype.updateTotal = function ( total, isApproximate ) {
+	this.currentTotal = total;
 	if ( !this.totalWidget ) {
 		return;
 	}

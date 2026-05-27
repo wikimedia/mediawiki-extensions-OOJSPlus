@@ -273,5 +273,6 @@ OOJSPlus.ui.data.store.Store.prototype.sort = function ( sorter, field ) {
 };
 
 OOJSPlus.ui.data.store.Store.prototype.setLimit = function ( limit ) {
+	this.offset = 0;
 	this.limit = limit;
 };
