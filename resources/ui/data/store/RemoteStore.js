@@ -72,7 +72,8 @@ OOJSPlus.ui.data.store.RemoteStore.prototype.processResponse = function ( respon
 		this.emit( 'metadataChange', {
 			total: this.total,
 			continue: response.continue || null,
-			totalApproximated: this.totalApproximated
+			totalApproximated: this.totalApproximated,
+			pageSize: this.limit
 		} );
 	}
 	return this.indexData( response.results );
@@ -155,4 +156,9 @@ OOJSPlus.ui.data.store.RemoteStore.prototype.loadRecursively = function( dfd, pr
 		dfd.reject( e );
 	} );
 	return dfd.promise();
+};
+
+OOJSPlus.ui.data.store.RemoteStore.prototype.setLimit = function ( limit ) {
+	this.continue = null;
+	OOJSPlus.ui.data.store.RemoteStore.parent.prototype.setLimit.call( this, limit );
 };
