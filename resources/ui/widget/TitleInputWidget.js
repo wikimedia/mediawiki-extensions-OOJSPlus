@@ -115,6 +115,12 @@ OOJSPlus.ui.widget.TitleInputWidget.prototype.setValue = function ( item ) {
 		this.validationOverride = true;
 	} else {
 		OOJSPlus.ui.widget.TitleInputWidget.parent.prototype.setValue.call( this, item.getData().prefixed );
+		if ( this.$input.val() === item.getData().prefixed ) {
+			// OO.ui.InputWidget.prototype.setValue does not emit change if no text change detected,
+			// but if a user pastes exact title text then selects that title, the selection action
+			// cannot trigger e.g activation of buttons. A force emit of change is needed in this case.
+			this.emit( 'change', this.value );
+		}
 		this.selectedTitle = item.getData();
 	}
 };
