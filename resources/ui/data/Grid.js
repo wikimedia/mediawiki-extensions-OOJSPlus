@@ -113,35 +113,7 @@
 				}
 			} );
 		}
-		if (
-			!this.noFilter &&
-			Object.keys( this.externalFilterConfig.sortOptions ).length === 0 &&
-			Object.keys( this.externalFilterConfig.filterOptions ).length === 0 &&
-			!this.externalFilterConfig.showQueryField
-		) {
-			// Implicit no filter (nothing to filter/sort/query on)
-			this.noFilter = true;
-		}
-		if ( !this.noFilter ) {
-			this.externalFilter = new OOJSPlus.ui.data.grid.ExternalFilter( this.externalFilterConfig );
-			this.externalFilter.connect( this, {
-				columnSort: ( column, direction ) => {
-					const selector = 'th[data-field="' + column + '"]';
-					if ( this.columns[column].grid.$table.find( selector ).length < 1 ) {
-						return;
-					}
-					const $columnHeader = this.columns[ column ].grid.$table.find( selector )[ 0 ];
-					if ( direction.toLowerCase() === 'asc' ) {
-						$( $columnHeader ).attr( 'aria-sort', 'ascending' );
-					} else if ( direction.toLowerCase() === 'desc' ) {
-						$( $columnHeader ).attr( 'aria-sort', 'descending' );
-					} else {
-						$( $columnHeader ).attr( 'aria-sort', 'none' );
-					}
-				}
-			} );
-			this.$filterWidgetCnt.append( this.externalFilter.$element );
-		}
+		this.buildExternalFilter();
 
 		this.toolbar = typeof cfg.toolbar === 'undefined' ?
 			this.makeToolbar( ( cfg.tools || [] ).concat( this.getGridSettingsWidget() ) ) : cfg.toolbar;
@@ -761,5 +733,37 @@
 			return {};
 		}
 		return state;
+	};
+
+	OOJSPlus.ui.data.GridWidget.prototype.buildExternalFilter = function () {
+		if (
+			!this.noFilter &&
+			Object.keys( this.externalFilterConfig.sortOptions ).length === 0 &&
+			Object.keys( this.externalFilterConfig.filterOptions ).length === 0 &&
+			!this.externalFilterConfig.showQueryField
+		) {
+			// Implicit no filter (nothing to filter/sort/query on)
+			this.noFilter = true;
+		}
+		if ( !this.noFilter ) {
+			this.externalFilter = new OOJSPlus.ui.data.grid.ExternalFilter( this.externalFilterConfig );
+			this.externalFilter.connect( this, {
+				columnSort: ( column, direction ) => {
+					const selector = 'th[data-field="' + column + '"]';
+					if ( this.columns[column].grid.$table.find( selector ).length < 1 ) {
+						return;
+					}
+					const $columnHeader = this.columns[ column ].grid.$table.find( selector )[ 0 ];
+					if ( direction.toLowerCase() === 'asc' ) {
+						$( $columnHeader ).attr( 'aria-sort', 'ascending' );
+					} else if ( direction.toLowerCase() === 'desc' ) {
+						$( $columnHeader ).attr( 'aria-sort', 'descending' );
+					} else {
+						$( $columnHeader ).attr( 'aria-sort', 'none' );
+					}
+				}
+			} );
+			this.$filterWidgetCnt.append( this.externalFilter.$element );
+		}
 	};
 }( mediaWiki, jQuery ) );
