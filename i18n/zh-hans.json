@@ -127,5 +127,16 @@
 	"oojsplus-data-grid-filter-number-operator-eq-label": "等于",
 	"oojsplus-data-grid-filter-number-operator-gt-label": "大于",
 	"oojsplus-data-grid-filter-number-operator-lt-label": "小于",
-	"oojsplus-data-grid-toolbar-show-widgets-label": "显示列"
+	"oojsplus-data-grid-toolbar-show-widgets-label": "显示列",
+	"oojsplus-data-paginator-page-total-count-label-approximate": "约{{PLURAL:$1|$1条}}",
+	"oojsplus-group-widget-type-label": "组",
+	"oojsplus-usergroupmultiselect-group-tag-type-group": "组",
+	"oojsplus-usergroupmultiselect-user-section-label": "用户",
+	"oojsplus-usergroupmultiselect-group-section-label": "组",
+	"oojsplus-ui-dialog-confirm-with-opt-out-opt-out-label": "不再询问我",
+	"oojsplus-ui-dialog-confirm-with-opt-out-save-error": "保存参数设置失败，请重试。",
+	"oojsplus-formelement-type-user-group-multiselect": "用户/组多选",
+	"oojsplus-data-grid-toolbar-page-size-25": "25行",
+	"oojsplus-data-grid-toolbar-page-size-50": "50行",
+	"oojsplus-data-grid-toolbar-page-size-100": "100行"
 }
