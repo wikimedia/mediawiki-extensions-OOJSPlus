@@ -6,6 +6,7 @@
 		]
 	},
 	"oojsplus-data-grid-filter-label": "Фільтар",
+	"oojsplus-data-grid-toolbar-reload-label": "Пераладаваць",
 	"oojsplus-data-grid-toolbar-settings-aria-label": "Налады",
 	"oojsplus-data-grid-filter-title": "Фільтар водле $1",
 	"oojsplus-toolbar-cancel": "Скасаваць",

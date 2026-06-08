@@ -47,7 +47,7 @@
 	"oojsplus-data-paginator-previous": "Vorige pagina",
 	"oojsplus-data-paginator-first": "Eerste pagina",
 	"oojsplus-data-paginator-last": "Laatste pagina",
-	"oojsplus-data-grid-toolbar-reload-label": "Herladen",
+	"oojsplus-data-grid-toolbar-reload-label": "Vernieuwen",
 	"oojsplus-data-paginator-page-number-switch-hint": "Navigeer naar links en rechts op dit element om het paginanummer te selecteren",
 	"oojsplus-data-paginator-page-number-button-title": "Pagina $1",
 	"oojsplus-data-paginator-page-showed-single-entry": "Vermelding $1 wordt weergegeven.",
