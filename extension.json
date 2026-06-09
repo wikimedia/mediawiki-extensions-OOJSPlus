@@ -129,7 +129,6 @@
 			"dependencies": [
 				"mediawiki.widgets.UserInputWidget",
 				"mediawiki.widgets.UsersMultiselectWidget",
-				"mediawiki.widgets.DateInputWidget",
 				"mediawiki.widgets",
 				"ext.oOJSPlus.widgets.colorPicker",
 				"ext.oOJSPlus.widgets.stepProgressBar",
@@ -240,7 +239,6 @@
 				"oojs-ui.styles.icons-interactions",
 				"oojs-ui.styles.icons-movement",
 				"oojs-ui.styles.icons-user",
-				"mediawiki.widgets.DateInputWidget",
 				"ext.oOJSPlus.icons"
 			],
 			"messages": [
