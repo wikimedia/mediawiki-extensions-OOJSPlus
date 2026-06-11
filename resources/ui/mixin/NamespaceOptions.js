@@ -32,7 +32,7 @@ OOJSPlus.ui.mixin.NamespaceOptions.prototype.getNamespaceOptions = function ( co
 			continue;
 		}
 		ns = Number( ns );
-		if ( ns < 0 || exclude.indexOf( ns ) !== -1 ) {
+		if ( ns < 0 || exclude.includes( ns ) ) {
 			continue;
 		}
 		name = namespaces[ ns ];
@@ -40,7 +40,7 @@ OOJSPlus.ui.mixin.NamespaceOptions.prototype.getNamespaceOptions = function ( co
 			name = mw.msg( 'blanknamespace' );
 		}
 
-		if ( content.indexOf( ns ) !== -1 || content.indexOf( ns - 1 ) !== -1 ) {
+		if ( content.includes( ns ) || content.includes( ns - 1 ) ) {
 			if ( ns % 2 === 0 ) {
 				groups.content.options.push( { data: ns, label: name } );
 			} else {
@@ -65,7 +65,7 @@ OOJSPlus.ui.mixin.NamespaceOptions.prototype.getNamespaceOptions = function ( co
 		if ( !groups.hasOwnProperty( group ) ) {
 			continue;
 		}
-		if ( config.groups && config.groups.indexOf( group ) === -1 ) {
+		if ( config.groups && !config.groups.includes( group ) ) {
 			continue;
 		}
 		// Sort options

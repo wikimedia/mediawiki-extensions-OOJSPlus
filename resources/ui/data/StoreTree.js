@@ -71,7 +71,7 @@
 		} else if ( item.isLeaf ) {
 			dfd.resolve();
 		} else {
-			if ( this.loadedNodes.indexOf( name ) !== -1 ) {
+			if ( this.loadedNodes.includes( name ) ) {
 				dfd.resolve();
 			} else {
 				this.load( name ).done( ( data ) => {
