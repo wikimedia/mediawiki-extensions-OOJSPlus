@@ -325,7 +325,7 @@
 			const items = [],
 				userItems = users.map( ( user ) => {
 					const data = this.serializeValue( 'user', user.user_name );
-					if ( selected.indexOf( data ) === -1 ) {
+					if ( !selected.includes( data ) ) {
 						const item = new OOJSPlus.ui.widget.UserMenuOptionWidget( user );
 						item.data = data;
 						item.getData = function () {
@@ -341,7 +341,7 @@
 				} ).filter( ( item ) => item !== undefined ),
 				groupItems = groups.map( ( group ) => {
 					const data = this.serializeValue( 'group', group.group_name );
-					if ( selected.indexOf( data ) === -1 ) {
+					if ( !selected.includes( data ) ) {
 						return new OO.ui.MenuOptionWidget( {
 							data: data,
 							label: group.displayname || group.group_name,

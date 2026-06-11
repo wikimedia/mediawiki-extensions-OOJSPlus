@@ -75,7 +75,7 @@ OOJSPlus.ui.widget.LinkWidget.prototype.setRel = function ( rel ) {
 
 	this.rel = rel;
 
-	this.noFollow = rel.indexOf( 'nofollow' ) !== -1;
+	this.noFollow = rel.includes( 'nofollow' );
 	this.$link.attr( 'rel', rel.join( ' ' ) || null );
 
 	return this;

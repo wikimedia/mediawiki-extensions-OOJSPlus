@@ -104,7 +104,7 @@ OOJSPlus.ui.widget.UsersMultiselectWidget.prototype.updateMenuItems = function (
 
 			// Remove usernames, which are already selected from suggestions
 			suggestions = suggestions.map( ( user ) => {
-				if ( selected.indexOf( user.user_name ) === -1 ) {
+				if ( !selected.includes( user.user_name ) ) {
 					return new OO.ui.MenuOptionWidget( {
 						data: user.user_name,
 						label: user.user_real_name || user.user_name,

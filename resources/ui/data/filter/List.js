@@ -72,7 +72,7 @@ OOJSPlus.ui.data.filter.List.prototype.matches = function ( value ) {
 	if ( !this.value.value ) {
 		return false;
 	}
-	return this.value.value.indexOf( value ) !== -1;
+	return this.value.value.includes( value );
 };
 
 OOJSPlus.ui.data.filter.List.prototype.stopEvents = function () {
@@ -91,7 +91,7 @@ OOJSPlus.ui.data.filter.List.prototype.getDisplayValue = function () {
 	if ( this.value && this.value.value ) {
 		const labels = [];
 		for ( let i = 0; i < this.list.length; i++ ) {
-			if ( this.value.value.indexOf( this.list[ i ].data ) !== -1 ) {
+			if ( this.value.value.includes( this.list[ i ].data ) ) {
 				labels.push( this.list[ i ].label || this.list[ i ].data );
 			}
 		}

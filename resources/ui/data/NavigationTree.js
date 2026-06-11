@@ -133,8 +133,7 @@
 				label = pages[ i ].label;
 			}
 
-			// eslint-disable-next-line mediawiki/class-doc
-			const entry = {
+			const entry = { // eslint-disable-line mediawiki/class-doc
 				id: pages[ i ].id,
 				title: pages[ i ].prefixed,
 				name: pages[ i ].id,
