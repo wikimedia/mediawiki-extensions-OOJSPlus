@@ -10,7 +10,7 @@ OOJSPlus.ui.mixin.TitleQuery = function ( cfg ) {
 OO.initClass( OOJSPlus.ui.mixin.TitleQuery );
 
 OOJSPlus.ui.mixin.TitleQuery.prototype.extractNamespaceText = function ( value ) {
-	if ( value.indexOf( ':' ) === -1 ) {
+	if ( !value.includes( ':' ) ) {
 		return [ null, value ];
 	}
 	const parts = value.split( ':' ),

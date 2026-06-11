@@ -94,7 +94,7 @@ OOJSPlus.ui.widget.TitleMultiselectWidget.prototype.updateMenuItems = function (
 
 			const items = this.getLookupMenuOptionsFromData( response );
 			for ( let i = 0; i < items.length; i++ ) {
-				if ( selected.indexOf( items[ i ].data.prefixed ) !== -1 ) {
+				if ( selected.includes( items[ i ].data.prefixed ) ) {
 					// Remove item if already selected
 					items.splice( i, 1 );
 				}

@@ -66,7 +66,7 @@ OOJSPlus.ui.data.filter.List.prototype.matches = function ( value ) {
 	if ( !this.value.value ) {
 		return false;
 	}
-	return this.value.value.indexOf( value ) !== -1;
+	return this.value.value.includes( value );
 };
 
 OOJSPlus.ui.data.filter.List.prototype.stopEvents = function () {

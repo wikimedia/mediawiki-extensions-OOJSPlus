@@ -126,7 +126,7 @@
 					modeActions[ pageActions[ ii ] ] = [];
 				}
 				modeActions[ pageActions[ ii ] ].push( pages[ i ].getName() );
-				if ( keys.indexOf( pageActions[ ii ] ) !== -1 ) {
+				if ( keys.includes( pageActions[ ii ] ) ) {
 					continue;
 				}
 				keys.push( pageActions[ ii ] );
