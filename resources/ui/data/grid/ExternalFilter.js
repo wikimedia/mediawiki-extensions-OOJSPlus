@@ -1,6 +1,5 @@
 /**
- *
- * @param cfg
+ * @param {Object} cfg
  * {
  *     @param {OOJSPlus.ui.data.store.DataStore} store
  *     @param {boolean} [showQueryField=false] Whether to show the query input field
@@ -55,46 +54,46 @@ OOJSPlus.ui.data.grid.ExternalFilter = function ( cfg ) {
 		this.sortWidget = new OOJSPlus.ui.data.sorter.SortSelector( {
 			options: this.sortOptions
 		} );
-		Object.entries( this.sortOptions ).map( ( [ key, label ] ) => {
-			const item = new OOJSPlus.ui.data.sorter.SortItem(key, label, 'ASC');
+		Object.entries( this.sortOptions ).forEach( ( [ key, label ] ) => {
+			const item = new OOJSPlus.ui.data.sorter.SortItem( key, label, 'ASC' );
 			item.connect( this, {
-				clear: ( key ) => {
+				clear: ( key ) => { // eslint-disable-line no-shadow
 					this.onSort( key, null );
 				},
-				sort: ( key, direction ) => {
+				sort: ( key, direction ) => { // eslint-disable-line no-shadow
 					this.onSort( key, direction );
 				}
 			} );
 			this.sortItems[ key ] = item;
 		} );
-		this.$sortCnt.append( Object.values( this.sortItems ).map( item => item.$element ) );
+		this.$sortCnt.append( Object.values( this.sortItems ).map( ( item ) => item.$element ) );
 		this.sortWidget.connect( this, {
-			sortAdded: function( key ) {
+			sortAdded: function ( key ) {
 				this.onSort( key, 'ASC' );
 			}
 		} );
 		this.$element.append( this.sortWidget.$element );
 	}
 	if ( Object.keys( this.filterOptions ).length ) {
-		Object.entries( this.filterOptions ).map( ( [ key, config ] ) => {
+		Object.entries( this.filterOptions ).forEach( ( [ key, config ] ) => {
 			const item = new OOJSPlus.ui.data.filter.FilterItem( config );
 			item.connect( this, {
-				filterChange: ( f, key ) => {
+				filterChange: ( f, key ) => { // eslint-disable-line no-shadow
 					this.store.filter( f, key );
 				},
-				clear: ( key ) => {
+				clear: ( key ) => { // eslint-disable-line no-shadow
 					this.filterItems[ key ].$element.hide();
 					this.filterSelector.optionInstances[ key ].setDisabled( false );
 				}
 			} );
 			this.filterItems[ key ] = item;
 		} );
-		this.$filterCnt.append( Object.values( this.filterItems ).map( item => item.$element ) );
+		this.$filterCnt.append( Object.values( this.filterItems ).map( ( item ) => item.$element ) );
 		this.filterSelector = new OOJSPlus.ui.data.filter.FilterSelector( {
 			options: this.filterOptions
 		} );
 		this.filterSelector.connect( this, {
-			filterAdded: function( key ) {
+			filterAdded: function ( key ) {
 				if ( !this.filterItems[ key ] ) {
 					return;
 				}
@@ -132,19 +131,21 @@ OOJSPlus.ui.data.grid.ExternalFilter.prototype.onSort = function ( field, direct
 
 /**
  * Happens when store is loaded, show current sorters from the store
+ *
+ * @param {Object} sorters
  */
 OOJSPlus.ui.data.grid.ExternalFilter.prototype.addSortItems = function ( sorters ) {
 	if ( Object.keys( this.sortItems ).length === 0 ) {
 		return;
 	}
-	Object.values( this.sortItems ).forEach( item => {
+	Object.values( this.sortItems ).forEach( ( item ) => {
 		item.$element.hide();
 	} );
-	Object.values( this.sortWidget.optionInstances ).forEach( option => {
+	Object.values( this.sortWidget.optionInstances ).forEach( ( option ) => {
 		option.setDisabled( false );
 	} );
 
-	Object.entries( sorters ).map( ( [ field, sorter ] ) => {
+	Object.entries( sorters ).forEach( ( [ field, sorter ] ) => {
 		if ( !this.sortOptions[ field ] ) {
 			return;
 		}
@@ -157,19 +158,21 @@ OOJSPlus.ui.data.grid.ExternalFilter.prototype.addSortItems = function ( sorters
 
 /**
  * Happens when store is loaded, show current filters from the store
+ *
+ * @param {Object} filters
  */
 OOJSPlus.ui.data.grid.ExternalFilter.prototype.addFilterItems = function ( filters ) {
 	if ( Object.keys( this.filterItems ).length === 0 ) {
-		return null;
+		return;
 	}
-	Object.values( this.filterItems ).forEach( item => {
+	Object.values( this.filterItems ).forEach( ( item ) => {
 		item.$element.hide();
 	} );
-	Object.values( this.filterSelector.optionInstances ).forEach( option => {
+	Object.values( this.filterSelector.optionInstances ).forEach( ( option ) => {
 		option.setDisabled( false );
 	} );
 
-	Object.entries( filters ).map( ( [ field, filter ] ) => {
+	Object.entries( filters ).forEach( ( [ field, filter ] ) => {
 		if ( !this.filterItems[ field ] ) {
 			return;
 		}

@@ -83,5 +83,5 @@
 
 	OOJSPlus.ui.data.grid.Toolbar.prototype.setEventsDisabled = function ( disabled ) {
 		this.eventsDisabled = disabled;
-	}
+	};
 }( mediaWiki ) );

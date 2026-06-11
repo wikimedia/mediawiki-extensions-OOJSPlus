@@ -15,7 +15,7 @@ OO.inheritClass( OOJSPlus.ui.data.filter.Date, OOJSPlus.ui.data.filter.Number );
 OOJSPlus.ui.data.filter.Date.prototype.getLayout = function () {
 	this.makeOperatorWidget();
 
-	this.conditionValue = new Date().toISOString().substring( 0, 10 );
+	this.conditionValue = new Date().toISOString().slice( 0, 10 );
 	this.input = new OOJSPlus.ui.widget.DateInputWidget( {
 		value: this.conditionValue
 	} );
@@ -111,7 +111,7 @@ OOJSPlus.ui.data.filter.Date.prototype.getDisplayValue = function () {
 	if ( this.value && this.value.value ) {
 		const language = mw.user.options.get( 'language' );
 		const value = new Date( this.conditionValue ).toLocaleDateString( [ language, 'en' ] );
-		return mw.msg( 'oojsplus-data-grid-date-filter-operator-label-' + this.operator, value );
+		return mw.msg( 'oojsplus-data-grid-date-filter-operator-label-' + this.operator, value ); // eslint-disable-line mediawiki/msg-doc
 	}
 };
 
@@ -119,7 +119,6 @@ OOJSPlus.ui.data.filter.Date.prototype.announce = function () {
 	const operator = this.operator;
 	const value = this.conditionValue;
 
-	// The following messages are used here:
 	// * oojsplus-data-grid-date-filter-announce-lt
 	// * oojsplus-data-grid-date-filter-announce-eq
 	// * oojsplus-data-grid-date-filter-announce-qt

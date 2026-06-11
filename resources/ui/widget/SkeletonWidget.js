@@ -4,10 +4,10 @@ OOJSPlus.ui.widget.SkeletonWidget = function ( config ) {
 	this.variant = config.variant || 'text';
 	this.rows = config.rows || 1;
 
-	this.$element
-	.addClass( 'oojsplus-ui-widget-skeleton' )
-	.addClass( 'oojsplus-ui-widget-skeleton--' + this.variant )
-	.attr( 'aria-hidden', 'true' );
+	this.$element // eslint-disable-line mediawiki/class-doc
+		.addClass( 'oojsplus-ui-widget-skeleton' )
+		.addClass( 'oojsplus-ui-widget-skeleton--' + this.variant )
+		.attr( 'aria-hidden', 'true' );
 
 	this.render();
 

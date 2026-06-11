@@ -25,9 +25,8 @@
 			let isLeaf = true;
 			let expanded = false;
 
-			// eslint-disable-next-line no-prototype-builtins
 			if ( ( ( item.hasOwnProperty( 'leaf' ) && item.leaf === false ) &&
-				// eslint-disable-next-line no-prototype-builtins
+
 				( item.hasOwnProperty( 'children' ) && item.children.length > 0 ) ) &&
 				lvl < this.maxLevel
 			) {
@@ -87,7 +86,7 @@
 				const nodes = this.build( data, node.level + 1 );
 
 				for ( const nodeElement in nodes ) {
-					// eslint-disable-next-line no-prototype-builtins
+
 					if ( !nodes.hasOwnProperty( nodeElement ) ) {
 						continue;
 					}
@@ -111,7 +110,7 @@
 	OOJSPlus.ui.data.NavigationTree.prototype.prepareData = function ( pages ) {
 		const data = [];
 		let visitedPage = mw.config.get( 'wgPageName' );
-		if ( mw.config.get( 'wgCanonicalNamespace') === '' ) {
+		if ( mw.config.get( 'wgCanonicalNamespace' ) === '' ) {
 			visitedPage = ':' + visitedPage;
 		}
 		for ( const i in pages ) {

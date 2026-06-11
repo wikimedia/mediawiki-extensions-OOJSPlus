@@ -1,15 +1,15 @@
 ( function () {
 
 	/**
-	 *
+	 * @param {Object} config
 	 * @example
 	 * // A OOJSPlus.ui.widget.GroupedSelectWidget with three options.
 	 * const dropdownInput = new OOJSPlus.ui.widget.GroupedSelectWidget( {
 	 *     options: [
- 	 *        { data: 'a', label: 'First' },
- 	 *        { data: 'b', label: 'Second' },
- 	 *        { optgroup: 'Group label' },
- 	 *        { data: 'c', label: 'First sub-item' }
+	 *        { data: 'a', label: 'First' },
+	 *        { data: 'b', label: 'Second' },
+	 *        { optgroup: 'Group label' },
+	 *        { data: 'c', label: 'First sub-item' }
 	 *     ]
 	 * } );}
 	 */
@@ -67,7 +67,7 @@
 	};
 
 	OOJSPlus.ui.widget.GroupedSelectWidget.prototype.createMenuOptionWidget = function ( opt ) {
-		//const optValue = this.cleanUpValue( opt.data );
+		// const optValue = this.cleanUpValue( opt.data );
 		return new OOJSPlus.ui.widget.BatchOptionWidget( {
 			data: opt.data,
 			label: opt.label ? opt.label : opt.data,

@@ -1,3 +1,4 @@
+/* eslint-disable camelcase */
 ( function () {
 
 	OOJSPlus.ui.widget.UserGroupMultiselectWidget = function ( config ) {

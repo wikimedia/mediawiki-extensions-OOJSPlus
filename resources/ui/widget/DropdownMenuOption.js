@@ -1,5 +1,5 @@
 OOJSPlus.ui.widget.DropdownMenuOption = function ( key, label, cfg ) {
-	cfg	= cfg || {};
+	cfg = cfg || {};
 	this.key = key;
 
 	OOJSPlus.ui.widget.DropdownMenuOption.parent.call( this, Object.assign( {

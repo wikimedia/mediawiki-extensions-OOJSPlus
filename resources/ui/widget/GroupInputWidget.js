@@ -49,7 +49,7 @@
 
 	OOJSPlus.ui.widget.GroupInputWidget.prototype.onEdit = function () {
 		this.emit( 'change', this.$input.val() );
-	}
+	};
 
 	/**
 	 * @inheritdoc

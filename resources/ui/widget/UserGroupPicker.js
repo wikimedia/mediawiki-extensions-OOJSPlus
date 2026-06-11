@@ -49,7 +49,7 @@
 		if ( currentTagValue !== this.previousTagValue ) {
 			const value = this.deserializeValue( currentTagValue );
 			if ( value && value.type === 'user' ) {
-				this.decorateUserTag( currentTagValue, { user_name: value.key } );
+				this.decorateUserTag( currentTagValue, { user_name: value.key } ); // eslint-disable-line camelcase
 			} else if ( value && value.type === 'group' ) {
 				this.decorateGroupTag( currentTagValue );
 			}

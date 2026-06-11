@@ -61,10 +61,10 @@ OOJSPlus.ui.data.store.RemoteStore.prototype.getRequestData = function () {
 		data.group = JSON.stringify( { property: this.groupField, direction: 'ASC' } );
 	}
 	if ( !this.cacheResults ) {
-		data['no-cache'] = 1;
+		data[ 'no-cache' ] = 1;
 	}
 	if ( this.cacheResults && this.queryId ) {
-		data['query-id'] = this.queryId;
+		data[ 'query-id' ] = this.queryId;
 	}
 	return data;
 };
@@ -131,11 +131,11 @@ OOJSPlus.ui.data.store.RemoteStore.prototype.getTotal = function () {
 	return this.total;
 };
 
-OOJSPlus.ui.data.store.RemoteStore.prototype.loadAll = function( chunk ) {
+OOJSPlus.ui.data.store.RemoteStore.prototype.loadAll = function ( chunk ) {
 	chunk = chunk || 50;
 
-	var oldLimit = this.limit;
-	var oldOffset = this.offset;
+	const oldLimit = this.limit;
+	const oldOffset = this.offset;
 	const oldContinue = this.continue || null;
 
 	this.suppressEvents = true;
@@ -143,24 +143,24 @@ OOJSPlus.ui.data.store.RemoteStore.prototype.loadAll = function( chunk ) {
 	this.offset = 0;
 	this.continue = [];
 
-	var dfd = $.Deferred();
+	const dfd = $.Deferred();
 	// Load recursively until all data is loaded
-	this.loadRecursively( dfd ).done( function( data ) {
+	this.loadRecursively( dfd ).done( ( data ) => {
 		this.limit = oldLimit;
 		this.offset = oldOffset;
 		this.continue = oldContinue;
 		this.suppressEvents = false;
 		dfd.resolve( data );
-	}.bind( this ) ).fail( function( e ) {
+	} ).fail( () => {
 		this.suppressEvents = false;
-	}.bind( this ) );
+	} );
 
 	return dfd.promise();
 };
 
-OOJSPlus.ui.data.store.RemoteStore.prototype.loadRecursively = function( dfd, prevLength ) {
-	this.load().done( function( data ) {
-		var resCount = Object.keys( data ).length;
+OOJSPlus.ui.data.store.RemoteStore.prototype.loadRecursively = function ( dfd, prevLength ) {
+	this.load().done( ( data ) => {
+		const resCount = Object.keys( data ).length;
 		if ( resCount < this.limit || ( prevLength && resCount === prevLength ) ) {
 			dfd.resolve( data );
 		} else {
@@ -168,7 +168,7 @@ OOJSPlus.ui.data.store.RemoteStore.prototype.loadRecursively = function( dfd, pr
 			this.continue = this.nextContinue;
 			this.loadRecursively( dfd, resCount );
 		}
-	}.bind( this ) ).fail( function( e ) {
+	} ).fail( ( e ) => {
 		dfd.reject( e );
 	} );
 	return dfd.promise();
