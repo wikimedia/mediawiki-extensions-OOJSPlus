@@ -125,7 +125,7 @@
 		if ( this.sticky ) {
 			classes += ' sticky-container';
 		}
-		this.$wrapper.addClass( classes ); // eslint-disable-line mediawiki/class-doc
+		this.$wrapper.addClass( classes );
 		if ( this.toolbar instanceof OOJSPlus.ui.data.grid.Toolbar ) {
 			this.$element.append( this.toolbar.$element );
 		}
@@ -488,7 +488,7 @@
 	OOJSPlus.ui.data.GridWidget.prototype.appendItem = function ( item ) {
 		const $row = $( '<tr>' ).addClass( 'oojsplus-data-gridWidget-row' );
 		$( $row ).attr( 'id', this.getItemID( item ) );
-		$row.addClass( item.classes || [] ); // eslint-disable-line mediawiki/class-doc
+		$row.addClass( item.classes || [] );
 		if ( this.actionsVisibleOnHover ) {
 			$row.addClass( 'actions-visible-on-hover' );
 		}

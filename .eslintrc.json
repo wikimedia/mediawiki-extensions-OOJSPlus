@@ -28,6 +28,7 @@
 		"no-jquery/variable-pattern": "off",
 		"no-prototype-builtins": "off",
 		"no-underscore-dangle": "off",
-		"mediawiki/no-unlabeled-buttonwidget": "off"
+		"mediawiki/no-unlabeled-buttonwidget": "off",
+		"no-jquery/no-done-fail": "warn"
 	}
 }

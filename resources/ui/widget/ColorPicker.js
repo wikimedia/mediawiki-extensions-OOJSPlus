@@ -65,7 +65,7 @@
 			return this.$currentColorShow.css( 'color', this.getValue().code );
 		} else if ( this.getValue().hasOwnProperty( 'class' ) && this.getValue().class !== '' ) {
 			this.$currentColorShow.css( 'color', '' );
-			return this.$currentColorShow.addClass( this.getValue().class ); // eslint-disable-line mediawiki/class-doc
+			return this.$currentColorShow.addClass( this.getValue().class );
 		}
 	};
 

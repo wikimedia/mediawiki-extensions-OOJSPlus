@@ -83,7 +83,7 @@
 				$color.addClass( 'selected' );
 			}
 			if ( colorDef.hasOwnProperty( 'class' ) ) {
-				$color.addClass( colorDef.class ); // eslint-disable-line mediawiki/class-doc
+				$color.addClass( colorDef.class );
 			} else if ( colorDef.hasOwnProperty( 'code' ) ) {
 				$color.css( 'color', colorDef.code );
 			}

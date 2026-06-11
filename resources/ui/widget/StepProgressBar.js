@@ -45,7 +45,7 @@
 
 	OOJSPlus.ui.widget.StepProgressBar.prototype.addStep = function ( name, config ) {
 		const classes = [ 'steps-progress-step', 'todo', 'disabled' ].concat( config.classes || [] );
-		const $stepItem = $( '<li>' ) // eslint-disable-line mediawiki/class-doc
+		const $stepItem = $( '<li>' )
 			.addClass( classes )
 			.attr( 'data-step-name', name )
 			.html( config.label );
