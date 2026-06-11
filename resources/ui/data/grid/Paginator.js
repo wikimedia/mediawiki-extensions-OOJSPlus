@@ -140,7 +140,7 @@ OOJSPlus.ui.data.grid.Paginator.prototype.onMetadataChange = function ( metadata
 	if ( ( metadata.pageSize || 25 ) !== this.currentPageSize ) {
 		this.beforeInit();
 	}
-	this.continues[this.currentPageIndex ] = metadata.continue;
+	this.continues[ this.currentPageIndex ] = metadata.continue;
 	this.currentContinue = metadata.continue;
 	this.currentPageSize = metadata.pageSize || 25;
 	this.updateTotal( metadata.total, metadata.totalApproximated );
@@ -197,7 +197,7 @@ OOJSPlus.ui.data.grid.Paginator.prototype.showRange = function ( start, end ) {
 		);
 	} else {
 		this.currentEntriesShown.setLabel(
-			mw.message( 'oojsplus-data-paginator-page-showed-many-entries', start + 1, end + 1).text()
+			mw.message( 'oojsplus-data-paginator-page-showed-many-entries', start + 1, end + 1 ).text()
 		);
 	}
 	if ( end > this.currentTotal ) {

@@ -190,7 +190,7 @@
 
 .oojsplus-ui-widget-skeleton__line {
 	height: 20px;
-	background: linear-gradient( 90deg, #DADDE3, #eaecf0, #DADDE3 );
+	background: linear-gradient( 90deg, #dadde3, #eaecf0, #dadde3 );
 	margin: 6px 0;
 	border-radius: 4px;
 }
@@ -201,12 +201,20 @@
 }
 
 @keyframes oojsplus-ui-widget-skeleton-pulse {
-	0% { opacity: 0.4; }
-	50% { opacity: 0.7; }
-	100% { opacity: 0.4; }
+	0% {
+		opacity: 0.4;
+	}
+
+	50% {
+		opacity: 0.7;
+	}
+
+	100% {
+		opacity: 0.4;
+	}
 }
 
-@media ( prefers-reduced-motion: reduce ) {
+@media ( prefers-reduced-motion: reduce ) { /* stylelint-disable-line plugin/no-unsupported-browser-features */
 	.oojsplus-ui-widget-skeleton__line {
 		animation: none;
 	}

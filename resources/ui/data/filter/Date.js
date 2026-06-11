@@ -99,7 +99,6 @@ OOJSPlus.ui.data.filter.Date.prototype.announce = function () {
 	const operator = this.operator;
 	const value = this.conditionValue;
 
-	// The following messages are used here:
 	// * oojsplus-data-grid-date-filter-announce-lt
 	// * oojsplus-data-grid-date-filter-announce-eq
 	// * oojsplus-data-grid-date-filter-announce-qt

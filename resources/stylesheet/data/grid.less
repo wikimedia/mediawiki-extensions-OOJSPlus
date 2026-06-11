@@ -39,8 +39,8 @@
 
 					&.sticky-col {
 						background-color: white;
-						position: -webkit-sticky;
-						position: sticky;
+						position: -webkit-sticky; /* stylelint-disable-line plugin/no-unsupported-browser-features */
+						position: sticky; /* stylelint-disable-line plugin/no-unsupported-browser-features */
 						/* Needed to accommodate the border, padding below increased as to not change the layout */
 						left: -2px;
 						padding: 10px 5px;
@@ -199,7 +199,7 @@
 		left: 0;
 		width: 100%;
 		height: 100%;
-		background-color: #ffffffa3;
+		background-color: #ffffffa3; /* stylelint-disable-line plugin/no-unsupported-browser-features */
 
 		.oo-ui-progressBarWidget {
 			margin: auto;

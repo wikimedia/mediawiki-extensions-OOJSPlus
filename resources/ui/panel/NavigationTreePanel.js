@@ -19,7 +19,7 @@ OOJSPlus.ui.panel.NavigationTreePanel.prototype.setupTree = function () {
 	const rootNS = mw.config.get( 'wgCanonicalNamespace' );
 	const pageName = mw.config.get( 'wgPageName' );
 	const pageRoot = pageName.split( '/' );
-	let root = pageRoot[0];
+	let root = pageRoot[ 0 ];
 
 	if ( rootNS === '' ) {
 		root = ':' + root;

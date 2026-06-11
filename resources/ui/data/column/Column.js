@@ -130,7 +130,7 @@
 					// After resizing, set also the min-width of the cell
 					// That is the only way to make the table overflow (and therefore set the correct width)
 					$( this ).css( 'min-width', ui.size.width );
-					grid && grid.emit( 'stateChange', { size: { [columnId]: ui.size.width } } );
+					grid && grid.emit( 'stateChange', { size: { [ columnId ]: ui.size.width } } ); // eslint-disable-line no-unused-expressions
 				}
 			};
 			if ( this.minWidth ) {
