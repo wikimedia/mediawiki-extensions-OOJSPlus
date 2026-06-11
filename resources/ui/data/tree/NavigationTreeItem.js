@@ -1,4 +1,4 @@
-( function ( mw, $ ) {
+( function ( mw ) {
 	OOJSPlus.ui.data.tree.NavigationTreeItem = function ( cfg ) {
 		cfg.style.IconExpand = 'next';
 		cfg.style.IconCollapse = 'expand';
@@ -54,7 +54,7 @@
 					const index = expandedItemsList[ key ].indexOf( name );
 					if ( index > -1 ) {
 						expandedItemsList[ key ].splice( index, 1 );
-						for ( let item = expandedItemsList[ key ] -1; item >= 0; item-- ) {
+						for ( let item = expandedItemsList[ key ] - 1; item >= 0; item-- ) {
 							if ( expandedItemsList[ key ][ item ].startsWith( name ) ) {
 								const itemIndex = expandedItemsList[ key ].indexOf( expandedItemsList[ key ][ item ] );
 								if ( itemIndex > -1 ) {
@@ -64,7 +64,7 @@
 						}
 					}
 					if ( expandedItemsList[ key ].length === 0 ) {
-						delete( expandedItems[ key ] );
+						delete ( expandedItems[ key ] );
 					}
 				}
 			}
@@ -92,4 +92,4 @@
 			}
 		}
 	};
-}( mediaWiki, jQuery ) );
+}( mediaWiki ) );

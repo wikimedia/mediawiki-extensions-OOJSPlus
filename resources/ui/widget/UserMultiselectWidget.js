@@ -135,12 +135,12 @@ OOJSPlus.ui.widget.UsersMultiselectWidget.prototype.updateMenuItems = function (
 
 OOJSPlus.ui.widget.UsersMultiselectWidget.prototype.getLookupRequest = function () {
 	const inputValue = this.inputValue;
-		filters = [ {
-			type: 'boolean',
-			value: true,
-			operator: '==',
-			property: 'enabled'
-		} ];
+	const filters = [ {
+		type: 'boolean',
+		value: true,
+		operator: '==',
+		property: 'enabled'
+	} ];
 
 	if ( this.excludeGroups ) {
 		filters.push( {

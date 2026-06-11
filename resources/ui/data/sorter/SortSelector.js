@@ -26,13 +26,13 @@ OOJSPlus.ui.data.sorter.SortSelector.prototype.initOptions = function ( options 
 	} );
 	popupPanel.$element.append( new OO.ui.LabelWidget( {
 		label: mw.msg( 'oojsplus-data-sorter-picker' ),
-		classes: [ 'oojsplus-data-filter-sorter-options-label' ],
+		classes: [ 'oojsplus-data-filter-sorter-options-label' ]
 	} ).$element );
 	for ( const [ key, label ] of Object.entries( options ) ) {
 		const option = new OOJSPlus.ui.widget.DropdownMenuOption( key, label );
 		this.optionInstances[ key ] = option;
 		option.connect( this, {
-			select: ( option ) => {
+			select: ( option ) => { // eslint-disable-line no-shadow
 				this.emit( 'sortAdded', option.key );
 			}
 		} );

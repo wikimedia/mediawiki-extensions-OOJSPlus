@@ -13,7 +13,8 @@
 		"stylelint-config-wikimedia": "0.17.2"
 	},
 	"eslintIgnore": [
-		"resources/ui/data/lib/jquery.sorttable.js",
+		"doc/**",
+		"resources/ui/data/lib/**",
 		"vendor/**"
 	]
 }

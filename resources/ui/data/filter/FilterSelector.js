@@ -26,13 +26,13 @@ OOJSPlus.ui.data.filter.FilterSelector.prototype.initOptions = function ( option
 	} );
 	popupPanel.$element.append( new OO.ui.LabelWidget( {
 		label: mw.msg( 'oojsplus-data-filter-picker' ),
-		classes: [ 'oojsplus-data-filter-sorter-options-label' ],
+		classes: [ 'oojsplus-data-filter-sorter-options-label' ]
 	} ).$element );
 	for ( const [ key, config ] of Object.entries( options ) ) {
 		const option = new OOJSPlus.ui.widget.DropdownMenuOption( key, config.label );
 		this.optionInstances[ key ] = option;
 		option.connect( this, {
-			select: ( option ) => {
+			select: ( option ) => { // eslint-disable-line no-shadow
 				this.getPopup().toggle( false );
 				this.emit( 'filterAdded', option.key );
 			}

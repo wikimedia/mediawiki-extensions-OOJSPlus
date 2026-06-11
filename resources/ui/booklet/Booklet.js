@@ -1,6 +1,6 @@
 ( function () {
 	OOJSPlus.ui.booklet.Booklet = function ( cfg ) {
-		config = cfg || {};
+		const config = cfg || {};
 		OOJSPlus.ui.booklet.Booklet.super.call( this, config );
 		this.clearContentPanel();
 		this.clearMenuPanel();
