@@ -95,7 +95,9 @@
 					"callback": "OOJSPlus\\Extension::getWidgetConfig"
 				},
 				"ui/widget/UserGroupMultiselect.js",
-				"ui/widget/UserGroupPicker.js"
+				"ui/widget/UserGroupPicker.js",
+				"ui/widget/ChipWidget.js",
+				"ui/widget/FilterBarWidget.js"
 			],
 			"messages": [
 				"oojsplus-namespace-content",
@@ -105,7 +107,12 @@
 				"oojsplus-group-widget-type-label",
 				"oojsplus-usergroupmultiselect-group-tag-type-group",
 				"oojsplus-usergroupmultiselect-user-section-label",
-				"oojsplus-usergroupmultiselect-group-section-label"
+				"oojsplus-usergroupmultiselect-group-section-label",
+				"oojsplus-widget-filterbar-show-number-label",
+				"oojsplus-widget-filterbar-search-input-label",
+				"oojsplus-widget-filterbar-search-placeholder-label",
+				"oojsplus-widget-filterbar-show-all",
+				"oojsplus-chip-title-label"
 			],
 			"styles": [
 				"stylesheet/rangeWidget.less",

@@ -124,5 +124,10 @@
 	"oojsplus-formelement-type-user-group-multiselect": "User/Group multiselect",
 	"oojsplus-data-grid-toolbar-page-size-25": "25 rows",
 	"oojsplus-data-grid-toolbar-page-size-50": "50 rows",
-	"oojsplus-data-grid-toolbar-page-size-100": "100 rows"
+	"oojsplus-data-grid-toolbar-page-size-100": "100 rows",
+	"oojsplus-widget-filterbar-show-number-label": "+ $1",
+	"oojsplus-widget-filterbar-search-input-label": "Search for filter element",
+	"oojsplus-widget-filterbar-search-placeholder-label": "Find",
+	"oojsplus-widget-filterbar-show-all": "Show all",
+	"oojsplus-chip-title-label": "Show all entries in $1"
 }
