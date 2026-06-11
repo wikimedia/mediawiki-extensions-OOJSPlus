@@ -136,7 +136,7 @@
 			const selectedGroups = this.getSelectedGroups();
 			// Remove usernames, which are already selected from suggestions
 			const suggestions = response.map( ( group ) => {
-				if ( selectedGroups.indexOf( group.group_name ) === -1 ) {
+				if ( !selectedGroups.includes( group.group_name ) ) {
 					// This is necessary in oder to match actual group names
 					return new OO.ui.MenuOptionWidget( {
 						data: group.group_name,

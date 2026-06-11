@@ -84,7 +84,7 @@ OOJSPlus.ui.widget.StoreDataTagMultiselectWidget.prototype.updateMenuItems = fun
 			let results = response.results || [];
 			// Remove usernames, which are already selected from suggestions
 			results = results.map( ( item ) => {
-				if ( selected.indexOf( item[ this.labelField ] ) === -1 ) {
+				if ( !selected.includes( item[ this.labelField ] ) ) {
 					// This is necessary in oder to match actual group names
 					return new OO.ui.MenuOptionWidget( {
 						data: item[ this.labelField ],
