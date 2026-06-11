@@ -70,7 +70,7 @@ OOJSPlus.ui.data.store.Store.prototype.reload = function () {
 	this.data = {};
 	this.offset = 0;
 	if ( !this.suppressEvents ) {
-		this.emit('beforeReload');
+		this.emit( 'beforeReload' );
 	}
 	const loadPromise = this.load();
 	loadPromise.done( ( data ) => {
@@ -89,12 +89,12 @@ OOJSPlus.ui.data.store.Store.prototype.doLoadData = function () {
 
 	const indexed = this.indexData( pagedData );
 	if ( !this.suppressEvents ) {
-		this.emit('metadataChange', {
+		this.emit( 'metadataChange', {
 			total: this.getTotal(),
 			continue: null,
 			totalApproximated: false,
 			pageSize: this.limit
-		});
+		} );
 	}
 	return $.Deferred().resolve( indexed ).promise();
 };
@@ -132,7 +132,7 @@ OOJSPlus.ui.data.store.Store.prototype.indexData = function ( data ) {
 		finalIndex = i + initIndex + 1;
 	}
 	if ( !this.suppressEvents ) {
-		this.emit('dataAppended', indexed, initIndex + 1, finalIndex);
+		this.emit( 'dataAppended', indexed, initIndex + 1, finalIndex );
 	}
 
 	return indexed;

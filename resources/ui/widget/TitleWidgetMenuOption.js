@@ -34,7 +34,7 @@ OOJSPlus.ui.widget.TitleWidgetMenuOption.prototype.boldQueryMatch = function ( l
 	if ( !query ) {
 		return label;
 	}
-	const escapedQuery = query.replace( /[-\/\\^$*+?.()|[\]{}]/g, '\\$&' );
+	const escapedQuery = query.replace( /[-\/\\^$*+?.()|[\]{}]/g, '\\$&' ); // eslint-disable-line no-useless-escape
 	const regex = new RegExp( `(${ escapedQuery })`, 'gi' );
 	return label.replace( regex, '<strong>$1</strong>' );
 };

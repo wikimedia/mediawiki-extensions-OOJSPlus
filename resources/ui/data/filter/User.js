@@ -46,7 +46,7 @@ OOJSPlus.ui.data.filter.User.prototype.setValue = function ( value ) {
 	OOJSPlus.ui.data.filter.User.parent.prototype.setValue.call( this, value );
 	typeof value.value === 'object' ? this.input.setValue( value.value[ 0 ] ) : this.input.setValue( null ); // eslint-disable-line no-unused-expressions
 	if ( value.value.length > 0 ) {
-		this.input.setValue( value.value[0] );
+		this.input.setValue( value.value[ 0 ] );
 	} else {
 		this.input.setValue( value.value );
 	}

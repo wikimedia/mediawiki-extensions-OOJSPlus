@@ -750,7 +750,7 @@
 			this.externalFilter.connect( this, {
 				columnSort: ( column, direction ) => {
 					const selector = 'th[data-field="' + column + '"]';
-					if ( this.columns[column].grid.$table.find( selector ).length < 1 ) {
+					if ( this.columns[ column ].grid.$table.find( selector ).length < 1 ) {
 						return;
 					}
 					const $columnHeader = this.columns[ column ].grid.$table.find( selector )[ 0 ];

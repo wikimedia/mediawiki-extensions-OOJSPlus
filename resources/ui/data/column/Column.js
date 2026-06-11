@@ -56,7 +56,7 @@
 		this.grid = grid;
 	};
 
-	OOJSPlus.ui.data.column.Column.prototype.getHeader = function ( data ) {
+	OOJSPlus.ui.data.column.Column.prototype.getHeader = function ( data ) { // eslint-disable-line no-unused-vars
 		this.hasHeader = true;
 		const $cell = $( '<th>' ).addClass( 'oojsplus-data-gridWidget-cell oojsplus-data-gridWidget-column-header' );
 		this.setWidth( $cell );
@@ -81,7 +81,7 @@
 					// After resizing, set also the min-width of the cell
 					// That is the only way to make the table overflow (and therefore set the correct width)
 					$( this ).css( 'min-width', ui.size.width );
-					grid && grid.emit( 'stateChange', { size: { [columnId]: ui.size.width } } );
+					grid && grid.emit( 'stateChange', { size: { [ columnId ]: ui.size.width } } ); // eslint-disable-line no-unused-expressions
 				}
 			};
 			if ( this.minWidth ) {

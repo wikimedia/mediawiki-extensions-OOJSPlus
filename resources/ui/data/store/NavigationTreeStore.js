@@ -25,7 +25,7 @@ OOJSPlus.ui.data.store.NavigationTreeStore.prototype.doLoadData = function () {
 		}.bind( this )
 	} ).done( ( response ) => {
 		this.request = null;
-		// eslint-disable-next-line no-prototype-builtins
+
 		if ( response.hasOwnProperty( 'results' ) ) {
 			dfd.resolve( this.processResponse( response ) );
 			return;

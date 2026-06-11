@@ -11,7 +11,7 @@ OOJSPlus.ui.widget.FilterableComboBoxWidget.prototype.onMenuChoose = function ( 
 OOJSPlus.ui.widget.FilterableComboBoxWidget.prototype.setValueByData = function ( data ) {
 	const options = this.getMenu().getItems();
 	const item = options.find( ( opt ) => opt.data === data );
-	if( !item ) {
+	if ( !item ) {
 		this.setValue( '' );
 		return;
 	}

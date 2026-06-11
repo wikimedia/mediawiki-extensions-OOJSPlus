@@ -6,7 +6,7 @@ OOJSPlus.ui.widget.PercentInputWidget = function ( cfg ) {
 	OOJSPlus.ui.widget.PercentInputWidget.parent.call( this, cfg );
 	this.$element.addClass( 'oojsplus-ui-widget-percent' );
 	this.$element.find( '.oo-ui-numberInputWidget-field' )
-		.append( $( '<span>' ).text( '%' ).css( 'padding-left', '10px') );
+		.append( $( '<span>' ).text( '%' ).css( 'padding-left', '10px' ) );
 };
 
 OO.inheritClass( OOJSPlus.ui.widget.PercentInputWidget, OO.ui.NumberInputWidget );

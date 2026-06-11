@@ -31,7 +31,7 @@ OOJSPlus.ui.data.filter.Number.prototype.getLayout = function () {
 };
 
 OOJSPlus.ui.data.filter.Number.prototype.makeOperatorWidget = function () {
-	this.operatorWidget =  new OO.ui.DropdownInputWidget( {
+	this.operatorWidget = new OO.ui.DropdownInputWidget( {
 		options: [
 			{
 				data: 'eq',
@@ -98,7 +98,7 @@ OOJSPlus.ui.data.filter.Number.prototype.matches = function ( value ) {
 
 OOJSPlus.ui.data.filter.Number.prototype.getDisplayValue = function () {
 	if ( this.value && this.value.value !== undefined && this.value.value !== null ) {
-		const operatorLabel = mw.msg( 'oojsplus-data-grid-number-filter-operator-label-' + this.operator, this.value.value.toString() );
+		const operatorLabel = mw.msg( 'oojsplus-data-grid-number-filter-operator-label-' + this.operator, this.value.value.toString() ); // eslint-disable-line mediawiki/msg-doc
 		return operatorLabel;
 	}
 	return null;

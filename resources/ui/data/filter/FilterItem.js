@@ -55,7 +55,7 @@ OOJSPlus.ui.data.filter.FilterItem = function ( cfg ) {
 	} );
 
 	this.filter.connect( this, {
-		change: function( f, shouldClose ) {
+		change: function ( f, shouldClose ) {
 			this.emit( 'filterChange', f, this.key );
 			this.updateLabel( f.getDisplayValue() );
 			if ( shouldClose ) {

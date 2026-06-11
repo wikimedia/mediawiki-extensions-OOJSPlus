@@ -1,10 +1,14 @@
 {
 	"root": true,
 	"extends": [
-		"wikimedia/client-es6",
+		"wikimedia/client",
 		"wikimedia/jquery",
 		"wikimedia/mediawiki"
 	],
+	"parserOptions": {
+		"sourceType": "commonjs",
+		"ecmaVersion": 2020
+	},
 	"globals": {
 		"ext": "readonly",
 		"jQuery": "readonly",
@@ -14,12 +18,16 @@
 	},
 	"rules": {
 		"es-x/no-array-prototype-includes": "off",
+		"es-x/no-async-functions": "off",
+		"es-x/no-nullish-coalescing-operators": "off",
+		"es-x/no-object-entries": "off",
 		"es-x/no-object-values": "off",
 		"max-len": "off",
 		"no-jquery/no-class-state": "off",
 		"no-jquery/no-global-selector": "off",
 		"no-jquery/variable-pattern": "off",
 		"no-prototype-builtins": "off",
-		"no-underscore-dangle": "off"
+		"no-underscore-dangle": "off",
+		"mediawiki/no-unlabeled-buttonwidget": "off"
 	}
 }
