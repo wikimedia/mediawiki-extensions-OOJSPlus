@@ -123,5 +123,9 @@
 	"oojsplus-usergroupmultiselect-group-section-label": "Групи",
 	"oojsplus-ui-dialog-confirm-with-opt-out-opt-out-label": "Не ме прашувај повеќе",
 	"oojsplus-ui-dialog-confirm-with-opt-out-save-error": "Не успеав да ја зачувам поставката; обидете се повторно.",
-	"oojsplus-formelement-type-user-group-multiselect": "Повеќекратно избирање по корисници/група"
+	"oojsplus-formelement-type-user-group-multiselect": "Повеќекратно избирање по корисници/група",
+	"oojsplus-data-paginator-page-total-count-label-approximate": "~ {{PLURAL:$1|$1 ставка|$1 ставки}}",
+	"oojsplus-data-grid-toolbar-page-size-25": "25 редови",
+	"oojsplus-data-grid-toolbar-page-size-50": "50 редови",
+	"oojsplus-data-grid-toolbar-page-size-100": "100 редови"
 }
