@@ -5,7 +5,9 @@
 	},
 	{
 		"resourceModule": "ext.oOJSPlus.widgets",
-		"maxSize": "20 kB"
+		"maxSize": "20 kB",
+		"@note": "Ignore ext.mws.commonwebapis",
+		"ignoreDependencies": true
 	},
 	{
 		"resourceModule": "ext.oOJSPlus.widgets.colorPicker",
