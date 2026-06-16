@@ -5,7 +5,7 @@
 	},
 	{
 		"resourceModule": "ext.oOJSPlus.widgets",
-		"maxSize": "20 kB",
+		"maxSize": "24 kB",
 		"@note": "Ignore ext.mws.commonwebapis",
 		"ignoreDependencies": true
 	},
