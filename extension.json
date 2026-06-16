@@ -87,6 +87,7 @@
 				"ui/widget/NumberInputWidget.js",
 				"ui/booklet/Booklet.js",
 				"ui/widget/FilterableComboBoxWidget.js",
+				"ui/widget/FilterWidget.js",
 				"ui/widget/BatchOptionWidget.js",
 				"ui/widget/GroupedSelectWidget.js",
 				"ui/widget/PercentInput.js",
@@ -103,6 +104,8 @@
 				"ui/widget/FilterBarWidget.js"
 			],
 			"messages": [
+				"oojsplus-filter-widget-aria-label",
+				"oojsplus-filter-widget-count-aria-label",
 				"oojsplus-namespace-content",
 				"oojsplus-namespace-system",
 				"oojsplus-namespace-content-talk",
