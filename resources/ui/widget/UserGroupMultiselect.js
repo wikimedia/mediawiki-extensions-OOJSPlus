@@ -297,16 +297,8 @@
 
 		this.pushPending();
 
-		this.userLookupRequest = mws.commonwebapis.user.query( {
-			query: inputValue,
-			filter: JSON.stringify( userFilters ),
-			limit: inputValue !== '' ? 10 : 5
-		} );
-		this.groupLookupRequest = mws.commonwebapis.group.query( {
-			query: inputValue,
-			filter: JSON.stringify( groupFilters ),
-			allowEveryone: this.allowEveryoneOption
-		} );
+		this.userLookupRequest = this.getUserQueryRequest( inputValue, userFilters );
+		this.groupLookupRequest = this.getGroupQueryResult( inputValue, groupFilters );
 
 		const userLookupDfd = $.Deferred(),
 			groupLookupDfd = $.Deferred();
@@ -410,4 +402,19 @@
 		this.previousTagValue = currentTagValue;
 	};
 
+	OOJSPlus.ui.widget.UserGroupMultiselectWidget.prototype.getUserQueryRequest = function ( inputValue, userFilters ) {
+		return mws.commonwebapis.user.query( {
+			query: inputValue,
+			filter: JSON.stringify( userFilters ),
+			limit: inputValue !== '' ? 10 : 5
+		} );
+	};
+
+	OOJSPlus.ui.widget.UserGroupMultiselectWidget.prototype.getGroupQueryResult = function ( inputValue, groupFilters ) {
+		return mws.commonwebapis.group.query( {
+			query: inputValue,
+			filter: JSON.stringify( groupFilters ),
+			allowEveryone: this.allowEveryoneOption
+		} );
+	};
 }() );
