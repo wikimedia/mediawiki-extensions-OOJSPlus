@@ -67,13 +67,14 @@
 	};
 
 	OOJSPlus.ui.widget.GroupedSelectWidget.prototype.createMenuOptionWidget = function ( opt ) {
-		// const optValue = this.cleanUpValue( opt.data );
-		return new OOJSPlus.ui.widget.BatchOptionWidget( {
+		return new OOJSPlus.ui.widget.BatchOptionWidget( { // eslint-disable-line mediawiki/class-doc
 			data: opt.data,
 			label: opt.label ? opt.label : opt.data,
 			batch: opt.batch ? opt.batch : undefined,
 			batchText: opt.batchText ? opt.batchText : '',
-			selected: opt.selected || false
+			selected: opt.selected || false,
+			classes: opt.classes || [],
+			attr: opt.attr || []
 		} );
 	};
 
