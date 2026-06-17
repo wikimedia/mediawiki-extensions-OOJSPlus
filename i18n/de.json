@@ -132,5 +132,10 @@
 	"oojsplus-usergroupmultiselect-group-section-label": "Gruppen",
 	"oojsplus-ui-dialog-confirm-with-opt-out-opt-out-label": "Frag mich nicht noch einmal",
 	"oojsplus-ui-dialog-confirm-with-opt-out-save-error": "{{#FORMAL:Deine|Ihre}} Einstellungen konnten nicht gespeichert werden. Bitte {{#FORMAL:versuche|versuchen Sie}} es erneut.",
-	"oojsplus-formelement-type-user-group-multiselect": "Mehrfachauswahl Benutzer/Gruppe"
+	"oojsplus-formelement-type-user-group-multiselect": "Mehrfachauswahl Benutzer/Gruppe",
+	"oojsplus-widget-filterbar-show-number-label": "+ $1",
+	"oojsplus-widget-filterbar-search-input-label": "Nach Filterelement suchen",
+	"oojsplus-widget-filterbar-search-placeholder-label": "Finde",
+	"oojsplus-widget-filterbar-show-all": "Alles anzeigen",
+	"oojsplus-chip-title-label": "Alle Einträge in $1 anzeigen"
 }
