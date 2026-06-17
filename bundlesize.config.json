@@ -20,5 +20,11 @@
 	{
 		"resourceModule": "ext.oOJSPlus.dialogs",
 		"maxSize": "4 kB"
+	},
+	{
+		"resourceModule": "ext.oOJSPlus.formelements",
+		"maxSize": "2 kB",
+		"@note": "Ignore ext.forms* mwstake/mediawiki-component-formengine",
+		"ignoreDependencies": true
 	}
 ]
