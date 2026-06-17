@@ -16,5 +16,9 @@
 	{
 		"resourceModule": "ext.oOJSPlus.widgets.stepProgressBar",
 		"maxSize": "2 kB"
+	},
+	{
+		"resourceModule": "ext.oOJSPlus.dialogs",
+		"maxSize": "4 kB"
 	}
 ]
