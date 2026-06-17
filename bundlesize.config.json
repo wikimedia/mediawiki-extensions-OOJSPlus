@@ -19,7 +19,9 @@
 	},
 	{
 		"resourceModule": "ext.oOJSPlus.dialogs",
-		"maxSize": "4 kB"
+		"maxSize": "4 kB",
+		"@note": "Ignore oojs-ui*",
+		"ignoreDependencies": true
 	},
 	{
 		"resourceModule": "ext.oOJSPlus.formelements",
