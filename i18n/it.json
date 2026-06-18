@@ -48,5 +48,7 @@
 	"oojsplus-usergroupmultiselect-group-section-label": "Gruppi",
 	"oojsplus-data-grid-toolbar-page-size-25": "25 righe",
 	"oojsplus-data-grid-toolbar-page-size-50": "50 righe",
-	"oojsplus-data-grid-toolbar-page-size-100": "100 righe"
+	"oojsplus-data-grid-toolbar-page-size-100": "100 righe",
+	"oojsplus-widget-filterbar-search-placeholder-label": "Trova",
+	"oojsplus-widget-filterbar-show-all": "Mostra tutto"
 }
