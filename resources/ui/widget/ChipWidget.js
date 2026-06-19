@@ -4,6 +4,7 @@ OOJSPlus.ui.widget.ChipWidget = function ( config ) {
 		mw.message( 'oojsplus-chip-title-label', config.label || '' ).text();
 	OOJSPlus.ui.widget.ChipWidget.parent.call( this, config );
 	this.selected = config.selected || false;
+	this.canUnselect = config.canUnselect || false;
 	this.name = config.name || '';
 
 	OO.ui.mixin.LabelElement.call( this, config );
@@ -22,6 +23,24 @@ OOJSPlus.ui.widget.ChipWidget = function ( config ) {
 	if ( this.selected ) {
 		this.$element.addClass( 'oojsplus-chip-widget-selected' );
 		this.$element.attr( 'aria-pressed', true );
+	}
+	if ( this.canUnselect ) {
+		this.closeButton = new OO.ui.ButtonWidget( {
+			framed: false,
+			icon: 'close',
+			tabIndex: -1,
+			title: OO.ui.msg( 'ooui-item-remove' ),
+			label: '',
+			invisibleLabel: true,
+			classes: [ 'oojsplus-chip-widget-remove-btn' ]
+		} );
+		this.closeButton.connect( this, {
+			click: 'unselect'
+		} );
+		if ( !this.selected ) {
+			this.closeButton.toggle( false );
+		}
+		this.$element.append( this.closeButton.$element );
 	}
 };
 
@@ -50,6 +69,9 @@ OOJSPlus.ui.widget.ChipWidget.prototype.select = function () {
 	this.selected = true;
 	this.$element.addClass( 'oojsplus-chip-widget-selected' );
 	this.$element.attr( 'aria-pressed', true );
+	if ( this.canUnselect ) {
+		this.closeButton.toggle( true );
+	}
 	this.emit( 'select', this.label );
 };
 
@@ -57,7 +79,10 @@ OOJSPlus.ui.widget.ChipWidget.prototype.unselect = function () {
 	this.selected = false;
 	this.$element.removeClass( 'oojsplus-chip-widget-selected' );
 	this.$element.attr( 'aria-pressed', false );
-	this.emit( 'unselect', this.label );
+	if ( this.canUnselect ) {
+		this.closeButton.toggle( false );
+		this.emit( 'unselect', this.label );
+	}
 };
 
 OOJSPlus.ui.widget.ChipWidget.prototype.getName = function () {
