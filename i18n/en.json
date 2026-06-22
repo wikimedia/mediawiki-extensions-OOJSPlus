@@ -134,5 +134,7 @@
 	"oojsplus-widget-filterbar-search-input-label": "Search for filter element",
 	"oojsplus-widget-filterbar-search-placeholder-label": "Find",
 	"oojsplus-widget-filterbar-show-all": "Show all",
-	"oojsplus-chip-title-label": "Show all entries in $1"
+	"oojsplus-chip-title-label": "Show all entries in $1",
+	"oojsplus-filter-widget-aria-label": "Filter",
+	"oojsplus-filter-widget-count-aria-label": "contains {{PLURAL:$1|one item|$1 items}}"
 }

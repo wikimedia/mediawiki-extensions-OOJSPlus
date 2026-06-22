@@ -139,5 +139,7 @@
 	"oojsplus-widget-filterbar-search-input-label": "Label for search input",
 	"oojsplus-widget-filterbar-search-placeholder-label": "Placeholder label for search input",
 	"oojsplus-widget-filterbar-show-all": "Label for selector button to show all elements",
-	"oojsplus-chip-title-label": "Title label for filter pill\nParameter:\n* $1 - name of filter"
+	"oojsplus-chip-title-label": "Title label for filter pill\nParameter:\n* $1 - name of filter",
+	"oojsplus-filter-widget-aria-label": "Aria label for the filter select widget",
+	"oojsplus-filter-widget-count-aria-label": "Aria label for the filter option counter\n\nParameters:\n* $1 - number of entries in this filter option"
 }
