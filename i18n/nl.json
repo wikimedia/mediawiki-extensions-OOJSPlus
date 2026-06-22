@@ -130,5 +130,9 @@
 	"oojsplus-data-paginator-page-total-count-label-approximate": "~ $1 {{PLURAL:$1|item|items}}",
 	"oojsplus-data-grid-toolbar-page-size-25": "25 rijen",
 	"oojsplus-data-grid-toolbar-page-size-50": "50 rijen",
-	"oojsplus-data-grid-toolbar-page-size-100": "100 rijen"
+	"oojsplus-data-grid-toolbar-page-size-100": "100 rijen",
+	"oojsplus-widget-filterbar-search-input-label": "Naar filterelement zoeken",
+	"oojsplus-widget-filterbar-search-placeholder-label": "Zoeken",
+	"oojsplus-widget-filterbar-show-all": "Alles weergeven",
+	"oojsplus-chip-title-label": "Alle items in $1 weergeven"
 }
