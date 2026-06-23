@@ -16,6 +16,7 @@
 	"oojsplus-color-picker-label": "Selector de cores",
 	"oojsplus-data-delete-row-prompt": "Queres eliminar esta fila?",
 	"oojsplus-data-paginator-page-total-count-label": "{{PLURAL:$1|unha entrada|$1 entradas}}",
+	"oojsplus-data-paginator-page-total-count-label-approximate": "aproximadamente {{PLURAL:$1|unha entrada|$1 entradas}}",
 	"oojsplusdemos": "Demostracións de OOJSPlus",
 	"oojsplus-data-tree-item-remove-label": "Eliminar",
 	"oojsplus-data-tree-item-add-label": "Engadir un subelemento novo",
@@ -121,12 +122,7 @@
 	"oojsplus-ui-dialog-confirm-with-opt-out-opt-out-label": "Non me preguntedes máis",
 	"oojsplus-ui-dialog-confirm-with-opt-out-save-error": "Non se puido gardar a túa preferencia. Inténtao de novo.",
 	"oojsplus-formelement-type-user-group-multiselect": "Selección múltiple de grupos/usuarios",
-	"oojsplus-data-paginator-page-total-count-label-approximate": "aproximadamente {{PLURAL:$1|unha entrada|$1 entradas}}",
 	"oojsplus-data-grid-toolbar-page-size-25": "25 filas",
 	"oojsplus-data-grid-toolbar-page-size-50": "50 filas",
-	"oojsplus-data-grid-toolbar-page-size-100": "100 filas",
-	"oojsplus-widget-filterbar-search-input-label": "Procurar para filtrar os elementos",
-	"oojsplus-widget-filterbar-search-placeholder-label": "Procurar",
-	"oojsplus-widget-filterbar-show-all": "Mostrar todo",
-	"oojsplus-chip-title-label": "Mostrar todas as entradas en $1"
+	"oojsplus-data-grid-toolbar-page-size-100": "100 filas"
 }
