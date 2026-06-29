@@ -41,7 +41,8 @@ OOJSPlus.ui.widget.FilterBarWidget.prototype.setupNoActiveFilterPill = function 
 	this.noActiveFilterChip = new OOJSPlus.ui.widget.ChipWidget( {
 		label: this.noFilterActiveLabel,
 		canUnselect: false,
-		selected: !this.selectedOptions.length > 0
+		selected: !this.selectedOptions.length > 0,
+		classes: [ 'oojsplus-filter-bar-no-active-filter' ]
 	} );
 	this.noActiveFilterChip.connect( this, {
 		select: () => {
@@ -90,7 +91,7 @@ OOJSPlus.ui.widget.FilterBarWidget.prototype.addChipElements = function ( elemen
 			select: () => {
 				this.selectChip( filter );
 				if ( this.expandedVersion ) {
-					const item = this.menu.getItemFromLabel( filter.getName() );
+					const item = this.menu.findItemFromData( filter.getName() );
 					if ( item ) {
 						this.menu.selectItem( item );
 					}
@@ -123,7 +124,7 @@ OOJSPlus.ui.widget.FilterBarWidget.prototype.selectChip = function ( filter ) {
 
 OOJSPlus.ui.widget.FilterBarWidget.prototype.unselectChip = function ( filter ) {
 	if ( this.expandedVersion ) {
-		const item = this.menu.getItemFromLabel( filter.getLabel() );
+		const item = this.menu.findItemFromData( filter.getName() );
 		if ( item ) {
 			this.menu.unselectItem( item );
 		}
@@ -147,11 +148,9 @@ OOJSPlus.ui.widget.FilterBarWidget.prototype.unselectChip = function ( filter ) 
 OOJSPlus.ui.widget.FilterBarWidget.prototype.setElements = function () {
 	const optionWidgets = [];
 	for ( const element in this.filterElements ) {
-		let isSelected = this.filterElements[ element ].selected ?
+		const isSelected = this.filterElements[ element ].selected ?
 			this.filterElements[ element ].selected : false;
-		if ( !this.selectedOptions.includes( this.filterElements[ element ].data ) ) {
-			isSelected = false;
-		}
+
 		const option = new OO.ui.MenuOptionWidget( {
 			data: this.filterElements[ element ].data,
 			label: this.filterElements[ element ].label,
@@ -166,15 +165,18 @@ OOJSPlus.ui.widget.FilterBarWidget.prototype.selectOption = function ( item ) {
 	if ( !item ) {
 		return;
 	}
-	if ( this.activeFilterElement.getName() === item.data ) {
+	const itemData = item.getData();
+	const itemLabel = item.getLabel();
+
+	if ( this.activeFilterElement.getName() === itemData ) {
 		return;
 	}
 	if ( !this.multiSelect ) {
 		this.activeFilterElement.unselect();
 	}
 	const filter = new OOJSPlus.ui.widget.ChipWidget( {
-		label: item.data,
-		name: item.data,
+		label: itemLabel,
+		name: itemData,
 		selected: true,
 		canUnselect: this.allowUnselect || false
 	} );
@@ -186,7 +188,7 @@ OOJSPlus.ui.widget.FilterBarWidget.prototype.selectOption = function ( item ) {
 			this.unselectChip( filter );
 		}
 	} );
-	const found = this.filterChips.find( ( chip ) => chip.getName() === item.data );
+	const found = this.filterChips.find( ( chip ) => chip.getName() === itemData );
 	if ( found ) {
 		found.select();
 		return;
@@ -202,11 +204,11 @@ OOJSPlus.ui.widget.FilterBarWidget.prototype.selectOption = function ( item ) {
 			const lastChip = this.filterChips.shift();
 			lastChip.$element.remove();
 		}
-		return this.emit( 'select', item.data );
+		return this.emit( 'select', itemData );
 	}
 	this.selectedOptions.push( filter.getName() );
 	this.$filterCnt.children().last().before( filter.$element );
-	this.emit( 'select', item.data );
+	this.emit( 'select', itemData );
 };
 
 OOJSPlus.ui.widget.FilterBarWidget.prototype.setupPopupContent = function () {
@@ -215,7 +217,7 @@ OOJSPlus.ui.widget.FilterBarWidget.prototype.setupPopupContent = function () {
 
 	this.menu = new OOJSPlus.ui.widget.OutlineSelectWidget();
 	this.menu.connect( this, {
-		select: 'selectOption'
+		choose: 'selectOption'
 	} );
 	this.setElements();
 	this.$content.append( this.menu.$element );
