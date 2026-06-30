@@ -127,9 +127,5 @@
 	"oojsplus-formelement-type-user-group-multiselect": "사용자/그룹 다중 선택",
 	"oojsplus-data-grid-toolbar-page-size-25": "25줄",
 	"oojsplus-data-grid-toolbar-page-size-50": "50줄",
-	"oojsplus-data-grid-toolbar-page-size-100": "100줄",
-	"oojsplus-widget-filterbar-search-input-label": "필터 요소 검색",
-	"oojsplus-widget-filterbar-search-placeholder-label": "찾기",
-	"oojsplus-widget-filterbar-show-all": "모두 보기",
-	"oojsplus-chip-title-label": "$1의 항목을 모두 보기"
+	"oojsplus-data-grid-toolbar-page-size-100": "100줄"
 }

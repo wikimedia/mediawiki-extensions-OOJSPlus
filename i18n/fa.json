@@ -39,9 +39,5 @@
 	"oojsplus-data-tree-expander-label": "زیرمنو",
 	"oojsplus-data-sorter-remove": "حذف مرتب‌سازی",
 	"oojsplus-data-sorter-picker": "مرتب‌سازی بر پایهٔ فیلد",
-	"oojsplus-data-filter-picker": "پالایش بر پایهٔ فیلد",
-	"oojsplus-widget-filterbar-search-input-label": "جستجوی عنصر پالایه",
-	"oojsplus-widget-filterbar-search-placeholder-label": "یافتن",
-	"oojsplus-widget-filterbar-show-all": "نمایش همه",
-	"oojsplus-chip-title-label": "نمایش تمام مدخل‌ها در $1"
+	"oojsplus-data-filter-picker": "پالایش بر پایهٔ فیلد"
 }
