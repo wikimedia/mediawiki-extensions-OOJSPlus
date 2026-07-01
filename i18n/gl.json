@@ -124,5 +124,9 @@
 	"oojsplus-formelement-type-user-group-multiselect": "Selección múltiple de grupos/usuarios",
 	"oojsplus-data-grid-toolbar-page-size-25": "25 filas",
 	"oojsplus-data-grid-toolbar-page-size-50": "50 filas",
-	"oojsplus-data-grid-toolbar-page-size-100": "100 filas"
+	"oojsplus-data-grid-toolbar-page-size-100": "100 filas",
+	"oojsplus-widget-filterbar-search-input-label": "Procurar para filtrar os elementos",
+	"oojsplus-widget-filterbar-search-placeholder-label": "Procurar",
+	"oojsplus-widget-filterbar-show-all": "Mostrar todo",
+	"oojsplus-chip-title-label": "Mostrar todas as entradas en $1"
 }
