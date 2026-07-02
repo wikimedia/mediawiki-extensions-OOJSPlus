@@ -187,6 +187,7 @@
 		this.clearItems();
 		if ( normalizedValue.length === 0 ) {
 			this.emit( 'change', this.getValue() );
+			this.emit( 'valueSet', this.getValue() );
 			return;
 		}
 
@@ -227,10 +228,12 @@
 			this.setDisabled( false );
 			this.popPending();
 			this.emit( 'change', this.getValue() );
+			this.emit( 'valueSet', this.getValue() );
 		} ).catch( () => {
 			this.setDisabled( false );
 			this.popPending();
 			this.emit( 'change', this.getValue() );
+			this.emit( 'valueSet', this.getValue() );
 		} );
 
 		return;
