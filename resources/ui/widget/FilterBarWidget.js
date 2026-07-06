@@ -38,10 +38,15 @@ OOJSPlus.ui.widget.FilterBarWidget.prototype.setupFilter = function () {
 };
 
 OOJSPlus.ui.widget.FilterBarWidget.prototype.setupNoActiveFilterPill = function () {
+	let isActive = !this.selectedOptions.length > 0;
+	if ( this.visibleFilter.length > 0 ) {
+		const hasSelected = this.visibleFilter.some( ( item ) => item.selected );
+		isActive = !hasSelected;
+	}
 	this.noActiveFilterChip = new OOJSPlus.ui.widget.ChipWidget( {
 		label: this.noFilterActiveLabel,
 		canUnselect: false,
-		selected: !this.selectedOptions.length > 0,
+		selected: isActive,
 		classes: [ 'oojsplus-filter-bar-no-active-filter' ]
 	} );
 	this.noActiveFilterChip.connect( this, {
@@ -103,6 +108,12 @@ OOJSPlus.ui.widget.FilterBarWidget.prototype.addChipElements = function ( elemen
 		} );
 		this.filterChips.push( filter );
 		this.$filterCnt.append( filter.$element );
+		if ( !this.multiSelect ) {
+			continue;
+		}
+		if ( filter.selected ) {
+			this.selectedOptions.push( filter.getName() );
+		}
 	}
 
 	this.$element.append( this.$filterCnt );
@@ -206,6 +217,7 @@ OOJSPlus.ui.widget.FilterBarWidget.prototype.selectOption = function ( item ) {
 		}
 		return this.emit( 'select', itemData );
 	}
+
 	this.selectedOptions.push( filter.getName() );
 	this.$filterCnt.children().last().before( filter.$element );
 	this.emit( 'select', itemData );
