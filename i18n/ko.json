@@ -17,6 +17,8 @@
 	"oojsplus-color-picker-color-pink": "분홍색",
 	"oojsplus-color-picker-clear-label": "색 지우기",
 	"oojsplus-color-picker-label": "색 선택기",
+	"oojsplus-filter-widget-aria-label": "필터",
+	"oojsplus-filter-widget-count-aria-label": "{{PLURAL:$1|항목 $1개}} 포함",
 	"oojsplus-data-delete-row-prompt": "이 행을 삭제하겠습니까?",
 	"oojsplus-data-paginator-page-total-count-label": "{{PLURAL:$1|$1개 항목}}",
 	"oojsplus-data-paginator-page-total-count-label-approximate": "~ {{PLURAL:$1|$1개 항목}}",

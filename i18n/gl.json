@@ -14,6 +14,8 @@
 	"oojsplus-color-picker-color-pink": "Rosa",
 	"oojsplus-color-picker-clear-label": "Quitar a cor",
 	"oojsplus-color-picker-label": "Selector de cores",
+	"oojsplus-filter-widget-aria-label": "Filtro",
+	"oojsplus-filter-widget-count-aria-label": "contén {{PLURAL:$1|un elemento|$1 elementos}}",
 	"oojsplus-data-delete-row-prompt": "Queres eliminar esta fila?",
 	"oojsplus-data-paginator-page-total-count-label": "{{PLURAL:$1|unha entrada|$1 entradas}}",
 	"oojsplus-data-paginator-page-total-count-label-approximate": "aproximadamente {{PLURAL:$1|unha entrada|$1 entradas}}",

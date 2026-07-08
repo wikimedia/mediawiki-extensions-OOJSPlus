@@ -23,6 +23,8 @@
 	"oojsplus-color-picker-color-pink": "粉红色",
 	"oojsplus-color-picker-clear-label": "清除颜色",
 	"oojsplus-color-picker-label": "拾色器",
+	"oojsplus-filter-widget-aria-label": "过滤器",
+	"oojsplus-filter-widget-count-aria-label": "包含{{PLURAL:$1|一个项目|$1个项目}}",
 	"oojsplus-data-delete-row-prompt": "确定要删除该行吗？",
 	"oojsplus-data-paginator-page-total-count-label": "{{PLURAL:$1|$1个条目}}",
 	"oojsplus-data-paginator-page-total-count-label-approximate": "约{{PLURAL:$1|$1条}}",
@@ -133,5 +135,9 @@
 	"oojsplus-formelement-type-user-group-multiselect": "用户/组多选",
 	"oojsplus-data-grid-toolbar-page-size-25": "25行",
 	"oojsplus-data-grid-toolbar-page-size-50": "50行",
-	"oojsplus-data-grid-toolbar-page-size-100": "100行"
+	"oojsplus-data-grid-toolbar-page-size-100": "100行",
+	"oojsplus-widget-filterbar-search-input-label": "搜索筛选元素",
+	"oojsplus-widget-filterbar-search-placeholder-label": "查找",
+	"oojsplus-widget-filterbar-show-all": "显示全部",
+	"oojsplus-chip-title-label": "显示$1下的所有条目"
 }
