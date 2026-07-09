@@ -128,5 +128,7 @@
 	"oojsplus-widget-filterbar-search-input-label": "Procurar para filtrar os elementos",
 	"oojsplus-widget-filterbar-search-placeholder-label": "Procurar",
 	"oojsplus-widget-filterbar-show-all": "Mostrar todo",
-	"oojsplus-chip-title-label": "Mostrar todas as entradas en $1"
+	"oojsplus-chip-title-label": "Mostrar todas as entradas en $1",
+	"oojsplus-filter-widget-aria-label": "Filtro",
+	"oojsplus-filter-widget-count-aria-label": "contén {{PLURAL:$1|un elemento|$1 elementos}}"
 }

@@ -131,5 +131,7 @@
 	"oojsplus-widget-filterbar-search-input-label": "필터 요소 검색",
 	"oojsplus-widget-filterbar-search-placeholder-label": "찾기",
 	"oojsplus-widget-filterbar-show-all": "모두 보기",
-	"oojsplus-chip-title-label": "$1의 항목을 모두 보기"
+	"oojsplus-chip-title-label": "$1의 항목을 모두 보기",
+	"oojsplus-filter-widget-aria-label": "필터",
+	"oojsplus-filter-widget-count-aria-label": "{{PLURAL:$1|항목 $1개}} 포함"
 }
