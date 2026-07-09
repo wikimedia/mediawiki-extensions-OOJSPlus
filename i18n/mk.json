@@ -127,5 +127,11 @@
 	"oojsplus-data-paginator-page-total-count-label-approximate": "~ {{PLURAL:$1|$1 ставка|$1 ставки}}",
 	"oojsplus-data-grid-toolbar-page-size-25": "25 редови",
 	"oojsplus-data-grid-toolbar-page-size-50": "50 редови",
-	"oojsplus-data-grid-toolbar-page-size-100": "100 редови"
+	"oojsplus-data-grid-toolbar-page-size-100": "100 редови",
+	"oojsplus-filter-widget-aria-label": "Филтрирај",
+	"oojsplus-filter-widget-count-aria-label": "содржи {{PLURAL:$1|една ставка|$1 ставки}}",
+	"oojsplus-widget-filterbar-search-input-label": "Пребарај филтерски елемент",
+	"oojsplus-widget-filterbar-search-placeholder-label": "Најди",
+	"oojsplus-widget-filterbar-show-all": "Прикажи сè",
+	"oojsplus-chip-title-label": "Прикажи ги сите ставки во $1"
 }

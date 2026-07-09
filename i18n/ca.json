@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Fitoschido"
+			"Fitoschido",
+			"Lluis Cat"
 		]
 	},
 	"oojsplus-color-picker-color-blue": "Blau",
@@ -14,5 +15,6 @@
 	"oojsplus-data-paginator-page-total-count-label": "{{PLURAL:$1|$1 fila|$1 files}}",
 	"oojsplusdemos": "Demostracions de l’OOJSPlus",
 	"oojsplus-data-tree-item-add-label": "Afegeix un subelement nou",
-	"oojsplus-stepprogressbar-default-final-label": "Fet"
+	"oojsplus-stepprogressbar-default-final-label": "Fet",
+	"oojsplus-widget-filterbar-search-placeholder-label": "Cerca"
 }

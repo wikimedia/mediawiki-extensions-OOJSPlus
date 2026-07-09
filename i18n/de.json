@@ -134,5 +134,10 @@
 	"oojsplus-widget-filterbar-search-input-label": "Nach Filterelement suchen",
 	"oojsplus-widget-filterbar-search-placeholder-label": "Finde",
 	"oojsplus-widget-filterbar-show-all": "Alles anzeigen",
-	"oojsplus-chip-title-label": "Alle Einträge in $1 anzeigen"
+	"oojsplus-chip-title-label": "Alle Einträge in $1 anzeigen",
+	"oojsplus-filter-widget-aria-label": "Filter",
+	"oojsplus-filter-widget-count-aria-label": "enthält {{PLURAL:$1|1 Objekt|$1 Objekte}}",
+	"oojsplus-data-grid-toolbar-page-size-25": "25 Zeilen",
+	"oojsplus-data-grid-toolbar-page-size-50": "50 Zeilen",
+	"oojsplus-data-grid-toolbar-page-size-100": "100 Zeilen"
 }
