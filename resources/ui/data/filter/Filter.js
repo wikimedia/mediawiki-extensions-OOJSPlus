@@ -9,6 +9,7 @@ OOJSPlus.ui.data.filter.Filter = function ( cfg ) {
 	this.icon = cfg.icon || 'funnel';
 
 	this.$element.append( this.getLayout().$element );
+	this.$element.addClass( 'oojsplus-filter' );
 };
 
 OO.inheritClass( OOJSPlus.ui.data.filter.Filter, OO.ui.Widget );

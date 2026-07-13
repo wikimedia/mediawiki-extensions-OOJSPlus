@@ -104,6 +104,16 @@ OOJSPlus.ui.data.grid.ExternalFilter = function ( cfg ) {
 		} );
 		this.$element.append( this.filterSelector.$element );
 	}
+
+	// On click outside the filters, close all open popups
+	$( document ).on( 'click', ( e ) => {
+		const $target = $( e.target );
+		if ( !$target.closest( '.oojsplus-filter' ).length ) {
+			Object.values( this.filterItems ).forEach( ( item ) => {
+				item.togglePopup( false );
+			} );
+		}
+	} );
 };
 
 OO.inheritClass( OOJSPlus.ui.data.grid.ExternalFilter, OO.ui.Widget );
