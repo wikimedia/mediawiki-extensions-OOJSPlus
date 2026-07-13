@@ -332,33 +332,16 @@
 	};
 
 	OOJSPlus.ui.data.GridWidget.prototype.getGridSettingsWidget = function () {
-		const options = [];
-		for ( const field in this.columns ) {
-			if ( !this.columns.hasOwnProperty( field ) ) {
-				continue;
-			}
-			if ( this.alwaysVisibleColumns.includes( field ) ) {
-				continue;
-			}
-			if ( this.columns[ field ].type === 'action' || this.columns[ field ].type === 'selection' ) {
-				// Do not allow hiding of "system" columns
-				continue;
-			}
-			options.push( {
-				data: field,
-				label: this.columns[ field ].headerText || field
-			} );
-		}
-		const columnsWidget = new OO.ui.CheckboxMultiselectInputWidget( {
-			options: options,
+		this.columnsVisibilityWidget = new OO.ui.CheckboxMultiselectInputWidget( {
+			options: this.getColumnVisibilityOptions(),
 			value: this.visibleColumns
 		} );
 
-		columnsWidget.connect( this, {
+		this.columnsVisibilityWidget.connect( this, {
 			change: 'setColumnsVisibility'
 		} );
 
-		const columnsField = new OO.ui.FieldLayout( columnsWidget,
+		const columnsField = new OO.ui.FieldLayout( this.columnsVisibilityWidget,
 			{
 				label: mw.message( 'oojsplus-data-grid-toolbar-show-widgets-label' ).text(),
 				align: 'top'
@@ -380,6 +363,27 @@
 				verticalPosition: 'top'
 			}
 		} );
+	};
+
+	OOJSPlus.ui.data.GridWidget.prototype.getColumnVisibilityOptions = function () {
+		const options = [];
+		for ( const field in this.columns ) {
+			if ( !this.columns.hasOwnProperty( field ) ) {
+				continue;
+			}
+			if ( this.alwaysVisibleColumns.includes( field ) ) {
+				continue;
+			}
+			if ( this.columns[ field ].type === 'action' || this.columns[ field ].type === 'selection' ) {
+				// Do not allow hiding of "system" columns
+				continue;
+			}
+			options.push( {
+				data: field,
+				label: this.columns[ field ].headerText || field
+			} );
+		}
+		return options;
 	};
 
 	OOJSPlus.ui.data.GridWidget.prototype.setColumnsVisibility = function ( visible ) {
