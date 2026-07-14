@@ -54,21 +54,7 @@ OOJSPlus.ui.data.store.NamespaceTreeStore.prototype.getRequestData = function ()
 	};
 };
 
-OOJSPlus.ui.data.store.NavigationTreeStore.prototype.loadNS = function ( nsId, expandPaths ) {
-	this.filters = [ {
-		operator: 'eq',
-		value: nsId,
-		property: 'namespace',
-		type: 'numeric'
-	} ];
-	this.limit = -1;
-	this.offset = 0;
-	this.expandPaths = expandPaths;
-
-	return this.reload();
-};
-
-OOJSPlus.ui.data.store.NavigationTreeStore.prototype.queryPagesInNS = function ( nsId, search ) {
+OOJSPlus.ui.data.store.NamespaceTreeStore.prototype.queryPagesInNS = function ( nsId, search ) {
 	this.filters = [
 		{
 			operator: 'eq',
