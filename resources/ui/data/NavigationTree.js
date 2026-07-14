@@ -8,7 +8,7 @@
 		cfg.fixed = true;
 		this.localStorageKey = cfg.localStorageKey || 'navigation-tree';
 		this.stateful = cfg.stateful || false;
-		this.maxLevel = cfg.maxLevel || 9;
+		this.maxLevel = cfg.hasOwnProperty( 'maxLevel' ) ? cfg.maxLevel : 9;
 
 		OOJSPlus.ui.data.NavigationTree.super.call( this, cfg );
 
@@ -25,14 +25,15 @@
 			let isLeaf = true;
 			let expanded = false;
 
-			if ( ( ( item.hasOwnProperty( 'leaf' ) && item.leaf === false ) &&
-
-				( item.hasOwnProperty( 'children' ) && item.children.length > 0 ) ) &&
+			if ( ( item.hasOwnProperty( 'leaf' ) && item.leaf === false ) &&
 				lvl < this.maxLevel
 			) {
 				isLeaf = false;
+			}
+			if ( item.hasOwnProperty( 'children' ) && item.children.length > 0 ) {
 				expanded = true;
 			}
+
 			const widget = this.createItemWidget( item, lvl, isLeaf,
 				this.idGenerator.generate(), expanded );
 			widget.connect( this, {
@@ -54,14 +55,14 @@
 
 	OOJSPlus.ui.data.NavigationTree.prototype.createItemWidget = function (
 		item, lvl, isLeaf, labelledby, expanded ) {
-		return new OOJSPlus.ui.data.tree.NavigationTreeItem( Object.assign( {}, {
+		return new OOJSPlus.ui.data.tree.NavigationTreeItem( Object.assign( {}, item, {
 			level: lvl,
 			leaf: isLeaf,
 			tree: this,
 			labelledby: labelledby,
 			expanded: expanded,
 			style: this.style
-		}, item ) );
+		} ) );
 	};
 
 	OOJSPlus.ui.data.NavigationTree.prototype.expandNode = function ( name ) {

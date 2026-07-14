@@ -94,3 +94,17 @@ OOJSPlus.ui.data.store.NavigationTreeStore.prototype.reload = function () {
 
 	return loadPromise;
 };
+
+OOJSPlus.ui.data.store.NavigationTreeStore.prototype.loadNS = function ( nsId, expandPaths ) {
+	this.filters = [ {
+		operator: 'eq',
+		value: nsId,
+		property: 'namespace',
+		type: 'numeric'
+	} ];
+	this.limit = -1;
+	this.offset = 0;
+	this.expandPaths = expandPaths;
+
+	return this.reload();
+};
