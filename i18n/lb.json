@@ -77,5 +77,6 @@
 	"oojsplus-usergroupmultiselect-group-section-label": "Gruppen",
 	"oojsplus-data-grid-toolbar-page-size-25": "25 Zeilen",
 	"oojsplus-data-grid-toolbar-page-size-50": "50 Zeilen",
-	"oojsplus-data-grid-toolbar-page-size-100": "100 Zeilen"
+	"oojsplus-data-grid-toolbar-page-size-100": "100 Zeilen",
+	"oojsplus-data-paginator-page-total-count-label-approximate": "~ {{PLURAL:$1|$1 Antrag|$1 Anträg}}"
 }
