@@ -17,6 +17,8 @@
 	"oojsplus-color-picker-color-pink": "분홍색",
 	"oojsplus-color-picker-clear-label": "색 지우기",
 	"oojsplus-color-picker-label": "색 선택기",
+	"oojsplus-filter-widget-aria-label": "필터",
+	"oojsplus-filter-widget-count-aria-label": "{{PLURAL:$1|항목 $1개}} 포함",
 	"oojsplus-data-delete-row-prompt": "이 행을 삭제하겠습니까?",
 	"oojsplus-data-paginator-page-total-count-label": "{{PLURAL:$1|$1개 항목}}",
 	"oojsplus-data-paginator-page-total-count-label-approximate": "~ {{PLURAL:$1|$1개 항목}}",
@@ -131,7 +133,5 @@
 	"oojsplus-widget-filterbar-search-input-label": "필터 요소 검색",
 	"oojsplus-widget-filterbar-search-placeholder-label": "찾기",
 	"oojsplus-widget-filterbar-show-all": "모두 보기",
-	"oojsplus-chip-title-label": "$1의 항목을 모두 보기",
-	"oojsplus-filter-widget-aria-label": "필터",
-	"oojsplus-filter-widget-count-aria-label": "{{PLURAL:$1|항목 $1개}} 포함"
+	"oojsplus-chip-title-label": "$1의 항목을 모두 보기"
 }

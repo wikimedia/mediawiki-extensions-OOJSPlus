@@ -7,7 +7,7 @@
 			"बडा काजी"
 		]
 	},
+	"oojsplus-filter-widget-count-aria-label": "{{PLURAL:$1| एउटा वस्तु| $1 वस्तुहरू}} समावेश गर्दछ।",
 	"oojsplus-dialog-action-delete": "मेट्ने",
-	"oojsplus-dialog-action-add": "थप्नुहोस्",
-	"oojsplus-filter-widget-count-aria-label": "{{PLURAL:$1| एउटा वस्तु| $1 वस्तुहरू}} समावेश गर्दछ।"
+	"oojsplus-dialog-action-add": "थप्नुहोस्"
 }

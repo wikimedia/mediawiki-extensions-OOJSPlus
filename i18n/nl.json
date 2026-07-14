@@ -18,6 +18,8 @@
 	"oojsplus-color-picker-color-pink": "Roze",
 	"oojsplus-color-picker-clear-label": "Kleur wissen",
 	"oojsplus-color-picker-label": "Kleurenkiezer",
+	"oojsplus-filter-widget-aria-label": "Filter",
+	"oojsplus-filter-widget-count-aria-label": "bevat {{PLURAL:$1|één vermelding|$1 vermeldingen}}",
 	"oojsplus-data-delete-row-prompt": "Weet u zeker dat u deze rij wilt verwijderen?",
 	"oojsplus-data-paginator-page-total-count-label": "$1 rij{{PLURAL:$1||en}}",
 	"oojsplus-data-paginator-page-total-count-label-approximate": "~ $1 {{PLURAL:$1|item|items}}",
@@ -132,7 +134,5 @@
 	"oojsplus-widget-filterbar-search-input-label": "Naar filterelement zoeken",
 	"oojsplus-widget-filterbar-search-placeholder-label": "Zoeken",
 	"oojsplus-widget-filterbar-show-all": "Alles weergeven",
-	"oojsplus-chip-title-label": "Alle items in $1 weergeven",
-	"oojsplus-filter-widget-aria-label": "Filter",
-	"oojsplus-filter-widget-count-aria-label": "bevat {{PLURAL:$1|één vermelding|$1 vermeldingen}}"
+	"oojsplus-chip-title-label": "Alle items in $1 weergeven"
 }

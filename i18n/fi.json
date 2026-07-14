@@ -14,6 +14,7 @@
 	"oojsplus-color-picker-color-green": "Vihreä",
 	"oojsplus-color-picker-color-olive": "Oliivi",
 	"oojsplus-color-picker-color-pink": "Pinkki",
+	"oojsplus-filter-widget-aria-label": "Suodatin",
 	"oojsplus-dialog-action-done": "Valmis",
 	"oojsplus-dialog-action-delete": "Poista",
 	"oojsplus-dialog-action-create": "Luo",
@@ -28,7 +29,6 @@
 	"oojsplus-usergroupmultiselect-user-section-label": "Käyttäjät",
 	"oojsplus-ui-dialog-confirm-with-opt-out-opt-out-label": "Älä kysy uudelleen",
 	"oojsplus-ui-dialog-confirm-with-opt-out-save-error": "Asetuksen tallentaminen epäonnistui. Yritä uudelleen.",
-	"oojsplus-filter-widget-aria-label": "Suodatin",
 	"oojsplus-widget-filterbar-search-input-label": "Etsi suodatinelementtiä",
 	"oojsplus-widget-filterbar-search-placeholder-label": "Etsi",
 	"oojsplus-widget-filterbar-show-all": "Näytä kaikki"
