@@ -294,6 +294,51 @@
 		$( element ).show();
 	};
 
+	OOJSPlus.ui.data.Tree.prototype.expandPathToNode = function ( name ) {
+		const target = this.getItem( name );
+		if ( !target ) {
+			return;
+		}
+
+		let $parentLi = target.$element.parent().closest( 'li.oojs-ui-data-tree-item' );
+		while ( $parentLi.length ) {
+			const parentName = $parentLi.data( 'name' );
+			const parent = this.getItem( parentName );
+			if ( parent ) {
+				this.expandNode( parentName );
+				if ( parent.expander ) {
+					parent.expander.setIcon( parent.style.IconCollapse );
+					parent.expander.$button.attr( 'aria-expanded', 'true' );
+				}
+				parent.expanded = true;
+			}
+
+			$parentLi = $parentLi.parent().closest( 'li.oojs-ui-data-tree-item' );
+		}
+	};
+
+	OOJSPlus.ui.data.Tree.prototype.scrollToNode = function ( name ) {
+		const node = this.getItem( name );
+		if ( !node ) {
+			return;
+		}
+		this.expandPathToNode( name );
+		const element = node.$element.get( 0 );
+		if ( element && typeof element.scrollIntoView === 'function' ) {
+			element.scrollIntoView( {
+				block: 'center',
+				inline: 'nearest'
+			} );
+		}
+	};
+
+	OOJSPlus.ui.data.Tree.prototype.scrollToSelected = function () {
+		if ( !this.selectedItem ) {
+			return;
+		}
+		this.scrollToNode( this.selectedItem.getName() );
+	};
+
 	OOJSPlus.ui.data.Tree.prototype.assertNodeLoaded = function ( name ) {
 		const dfd = $.Deferred();
 
