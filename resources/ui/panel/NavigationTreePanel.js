@@ -57,5 +57,6 @@ OOJSPlus.ui.panel.NavigationTreePanel.prototype.updatePages = function () {
 		store: this.store,
 		includeRedirect: false
 	} );
+	this.pageTree = pageTree;
 	this.$treeCnt.append( pageTree.$element );
 };
