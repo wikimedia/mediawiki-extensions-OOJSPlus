@@ -222,6 +222,7 @@
 				"ui/data/StoreTree.js",
 				"ui/data/store/NavigationTreeStore.js",
 				"ui/data/tree/NavigationTreeItem.js",
+				"ui/data/tree/NavigationTreeItemAction.js",
 				"ui/data/NavigationTree.js",
 				"ui/data/store/NamespaceTreeStore.js"
 			],

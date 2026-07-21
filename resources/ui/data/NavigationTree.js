@@ -1,4 +1,7 @@
 ( function ( mw, $ ) {
+	const ItemAction = OOJSPlus.ui.data.NavigationTree && OOJSPlus.ui.data.NavigationTree.ItemAction ?
+		OOJSPlus.ui.data.NavigationTree.ItemAction : null;
+
 	OOJSPlus.ui.data.NavigationTree = function ( cfg ) {
 		cfg = cfg || {};
 		cfg.classes = [ 'oojsplus-data-navigation-tree' ];
@@ -9,6 +12,7 @@
 		this.localStorageKey = cfg.localStorageKey || 'navigation-tree';
 		this.stateful = cfg.stateful || false;
 		this.maxLevel = cfg.hasOwnProperty( 'maxLevel' ) ? cfg.maxLevel : 9;
+		this.itemActions = cfg.itemActions || [];
 
 		OOJSPlus.ui.data.NavigationTree.super.call( this, cfg );
 
@@ -16,6 +20,9 @@
 	};
 
 	OO.inheritClass( OOJSPlus.ui.data.NavigationTree, OOJSPlus.ui.data.Tree );
+	if ( ItemAction ) {
+		OOJSPlus.ui.data.NavigationTree.ItemAction = ItemAction;
+	}
 
 	OOJSPlus.ui.data.NavigationTree.prototype.build = function ( data, lvl ) {
 		const nodes = {};
@@ -105,6 +112,48 @@
 			} );
 		} else {
 			$( $element ).show();
+		}
+	};
+
+	OOJSPlus.ui.data.NavigationTree.prototype.getItemActions = function () {
+		return this.itemActions;
+	};
+
+	OOJSPlus.ui.data.NavigationTree.prototype.setItemActions = function ( actions ) {
+		this.itemActions = Array.isArray( actions ) ? actions : [];
+		this.refreshItemActions();
+	};
+
+	OOJSPlus.ui.data.NavigationTree.prototype.addItemAction = function ( action ) {
+		if ( !action ) {
+			return;
+		}
+		this.itemActions.push( action );
+		this.refreshItemActions();
+	};
+
+	OOJSPlus.ui.data.NavigationTree.prototype.removeItemAction = function ( actionName ) {
+		this.itemActions = this.itemActions.filter( ( action ) => {
+			if ( !action ) {
+				return false;
+			}
+			if ( action === actionName ) {
+				return false;
+			}
+			if ( typeof action.getName === 'function' ) {
+				return action.getName() !== actionName;
+			}
+			return true;
+		} );
+		this.refreshItemActions();
+	};
+
+	OOJSPlus.ui.data.NavigationTree.prototype.refreshItemActions = function () {
+		for ( const name in this.flat ) { // eslint-disable-line es-x/no-array-prototype-flat
+			if ( !this.flat.hasOwnProperty( name ) ) { // eslint-disable-line es-x/no-array-prototype-flat
+				continue;
+			}
+			this.flat[ name ].renderItemActions(); // eslint-disable-line es-x/no-array-prototype-flat
 		}
 	};
 

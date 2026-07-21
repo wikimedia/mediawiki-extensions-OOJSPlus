@@ -14,6 +14,16 @@
 
 	OO.inheritClass( OOJSPlus.ui.data.tree.NavigationTreeItem, OOJSPlus.ui.data.tree.Item );
 
+	OOJSPlus.ui.data.tree.NavigationTreeItem.prototype.init = function () {
+		this.$element.children().remove();
+		this.$wrapper = $( '<div>' );
+		this.addLabel();
+		this.possiblyAddOptions();
+		this.$element.addClass( 'oojs-ui-data-tree-item' );
+		this.$element.attr( 'data-name', this.getName() );
+		this.$element.append( this.$wrapper );
+	};
+
 	OOJSPlus.ui.data.tree.NavigationTreeItem.prototype.possiblyAddExpander = function () {
 		if ( !this.leaf && !this.expander ) {
 			this.expander = new OOJSPlus.ui.widget.ButtonWidget( {
@@ -31,6 +41,36 @@
 		} else if ( this.expander ) {
 			this.expander.$element.remove();
 			this.expander = null;
+		}
+	};
+
+	OOJSPlus.ui.data.tree.NavigationTreeItem.prototype.renderItemActions = function () {
+		const actions = this.tree.getItemActions();
+		if ( this.$actionContainer ) {
+			this.$actionContainer.remove();
+			this.$actionContainer = null;
+		}
+
+		if ( actions.length === 0 ) {
+			return;
+		}
+
+		this.$actionContainer = $( '<div>' ).addClass( 'oojsplus-data-tree-item-actions' );
+		for ( let i = 0; i < actions.length; i++ ) {
+			const action = actions[ i ];
+			const button = action.createButton( this );
+
+			if ( !button ) {
+				continue;
+			}
+			this.$actionContainer.append( button.$element );
+		}
+
+		if ( this.$actionContainer.children().length > 0 ) {
+			this.$wrapper.append( this.$actionContainer );
+		} else {
+			this.$actionContainer.remove();
+			this.$actionContainer = null;
 		}
 	};
 

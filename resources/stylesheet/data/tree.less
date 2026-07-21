@@ -2,11 +2,32 @@
 	display: block;
 	padding-left: 5px;
 
-	> div {
+	> div:not( .oojsplus-ui-widget-skeleton ) {
 		padding-left: 30px;
+		display: flex;
+		align-items: center;
+		gap: 4px;
+	}
+
+	.oojsplus-data-tree-label {
+		flex: 1 1 auto;
+		min-width: 0;
+	}
+
+	.oojsplus-data-tree-item-actions {
+		display: inline-flex;
+		align-items: center;
+		gap: 2px;
+		margin-left: auto;
+
+		.oo-ui-buttonElement {
+			margin-left: 0;
+		}
 	}
 
 	.tree-item-options-btn {
+		margin-left: 0;
+
 		>.oo-ui-buttonElement-button {
 			&:focus,
 			a:focus {
@@ -65,4 +86,17 @@
 
 .tree-root {
 	margin-left: 0;
+}
+
+.oojs-ui-data-tree-item .action-tree-item {
+	position: absolute;
+	right: 0;
+	top: 0;
+	opacity: 0;
+	width: 0;
+}
+
+.oojs-ui-data-tree-item > div:hover .action-tree-item {
+	opacity: 1;
+	width: 30px;
 }
