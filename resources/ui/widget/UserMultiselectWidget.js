@@ -5,7 +5,7 @@ OOJSPlus.ui.widget.UsersMultiselectWidget = function ( cfg ) {
 
 	OO.ui.mixin.RequiredElement.call( this, cfg );
 
-	this.setValidation( cfg.validate || 'non-empty' );
+	this.setValidation( cfg.validate || ( cfg.required ? 'non-empty' : null ) );
 
 	this.$element.addClass( 'oojsplus-userMultiSelect-widget' );
 };
