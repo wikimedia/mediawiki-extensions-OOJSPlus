@@ -173,7 +173,7 @@ OOJSPlus.ui.widget.FilterWidget.prototype.optionsFromGroupObject = function ( gr
 };
 
 OOJSPlus.ui.widget.FilterWidget.prototype.normalizeItemConfig = function ( item, groupType ) {
-	const option = { // eslint-disable-line mediawiki/class-doc
+	const option = {
 		data: item.data !== undefined ? item.data : ( groupType ? groupType + '-' + item.key : item.key ),
 		label: item.label !== undefined ? item.label : item.key,
 		classes: item.classes !== undefined ? item.classes : [],

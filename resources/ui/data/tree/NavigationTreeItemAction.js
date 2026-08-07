@@ -47,7 +47,7 @@
 	};
 
 	OOJSPlus.ui.data.NavigationTreeItemAction.prototype.getButtonConfig = function ( itemWidget ) {
-		return { // eslint-disable-line mediawiki/class-doc
+		return {
 			framed: false,
 			icon: this.getIcon( itemWidget ),
 			label: this.getLabel( itemWidget ),

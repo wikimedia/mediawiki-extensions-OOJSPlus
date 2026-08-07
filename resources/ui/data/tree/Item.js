@@ -81,8 +81,8 @@
 
 		for ( let i = 0; i < $children.length; i++ ) {
 			const name = $( $children[ 0 ] ).data( 'name' );
-			if ( this.tree.flat.hasOwnProperty( name ) ) { // eslint-disable-line es-x/no-array-prototype-flat
-				res.push( this.tree.flat[ name ] ); // eslint-disable-line es-x/no-array-prototype-flat
+			if ( this.tree.flat.hasOwnProperty( name ) ) {
+				res.push( this.tree.flat[ name ] );
 			}
 		}
 

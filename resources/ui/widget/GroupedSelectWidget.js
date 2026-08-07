@@ -67,7 +67,7 @@
 	};
 
 	OOJSPlus.ui.widget.GroupedSelectWidget.prototype.createMenuOptionWidget = function ( opt ) {
-		return new OOJSPlus.ui.widget.BatchOptionWidget( { // eslint-disable-line mediawiki/class-doc
+		return new OOJSPlus.ui.widget.BatchOptionWidget( {
 			data: opt.data,
 			label: opt.label ? opt.label : opt.data,
 			batch: opt.batch ? opt.batch : undefined,

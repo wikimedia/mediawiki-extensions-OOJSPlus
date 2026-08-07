@@ -49,7 +49,6 @@
 				}
 			} );
 
-			// eslint-disable-next-line es-x/no-array-prototype-flat
 			this.flat[ widget.getName() ] = widget;
 			nodes[ widget.getName() ] = {
 				widget: widget,
@@ -149,11 +148,11 @@
 	};
 
 	OOJSPlus.ui.data.NavigationTree.prototype.refreshItemActions = function () {
-		for ( const name in this.flat ) { // eslint-disable-line es-x/no-array-prototype-flat
-			if ( !this.flat.hasOwnProperty( name ) ) { // eslint-disable-line es-x/no-array-prototype-flat
+		for ( const name in this.flat ) {
+			if ( !this.flat.hasOwnProperty( name ) ) {
 				continue;
 			}
-			this.flat[ name ].renderItemActions(); // eslint-disable-line es-x/no-array-prototype-flat
+			this.flat[ name ].renderItemActions();
 		}
 	};
 

@@ -29,6 +29,7 @@
 		"no-prototype-builtins": "off",
 		"no-underscore-dangle": "off",
 		"mediawiki/no-unlabeled-buttonwidget": "off",
-		"no-jquery/no-done-fail": "warn"
+		"no-jquery/no-done-fail": "warn",
+		"no-jquery/no-jquery-ui": "warn"
 	}
 }

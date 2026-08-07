@@ -29,7 +29,7 @@
 		this.style = cfg.style || {};
 
 		// Flat list of nodes
-		this.flat = {}; // eslint-disable-line es-x/no-array-prototype-flat
+		this.flat = {};
 		this.$element.append( this.$itemsContainer );
 		this.draw( this.build( this.data ), this.labelledby );
 
@@ -70,7 +70,7 @@
 					this.setSelected( item );
 				}
 			} );
-			this.flat[ widget.getName() ] = widget; // eslint-disable-line es-x/no-array-prototype-flat
+			this.flat[ widget.getName() ] = widget;
 			nodes[ widget.getName() ] = {
 				widget: widget,
 				children: !isLeaf ? this.build( item.items || [], lvl + 1 ) : {}
@@ -127,7 +127,7 @@
 				start: function ( e, ui ) {
 					tree.$itemsContainer.addClass( 'in-drag' );
 					$( ui.item ).addClass( 'dragged' );
-					tree.onDragStart( tree.flat[ $( ui.item ).data( 'name' ) ], $( this ), e, ui ); // eslint-disable-line es-x/no-array-prototype-flat
+					tree.onDragStart( tree.flat[ $( ui.item ).data( 'name' ) ], $( this ), e, ui );
 				},
 				over: function ( e, ui ) {
 					tree.onDragOver( $( this ), e, ui );
@@ -138,7 +138,7 @@
 				stop: function ( e, ui ) {
 					tree.$itemsContainer.removeClass( 'in-drag' );
 					$( ui.item ).removeClass( 'dragged' );
-					tree.onDragStop( tree.flat[ $( ui.item ).data( 'name' ) ], $( this ), e, ui ); // eslint-disable-line es-x/no-array-prototype-flat
+					tree.onDragStop( tree.flat[ $( ui.item ).data( 'name' ) ], $( this ), e, ui );
 				},
 				receive: function ( e, ui ) {
 					// When dropping to another level
@@ -192,7 +192,7 @@
 	OOJSPlus.ui.data.Tree.prototype._onListUpdate = function ( $targetList, e, ui, crossDrop ) {
 		const $item = $( ui.item );
 		const $parent = $targetList.data( 'level' ) === 0 ? null : $targetList.parent( 'li.oojs-ui-data-tree-item' );
-		const itemWidget = this.flat[ $item.data( 'name' ) ]; // eslint-disable-line es-x/no-array-prototype-flat
+		const itemWidget = this.flat[ $item.data( 'name' ) ];
 		let $previous = null;
 
 		if ( $item.index() > 0 ) {
@@ -202,7 +202,7 @@
 		this.onDrop(
 			$targetList, itemWidget,
 			$previous ? this.getItem( $previous.data( 'name' ) ) : null,
-			$parent ? this.flat[ $parent.data( 'name' ) ] : null, // eslint-disable-line es-x/no-array-prototype-flat
+			$parent ? this.flat[ $parent.data( 'name' ) ] : null,
 			crossDrop || false
 		);
 	};
@@ -270,10 +270,10 @@
 	};
 
 	OOJSPlus.ui.data.Tree.prototype.getItem = function ( name ) {
-		if ( !this.flat.hasOwnProperty( name ) ) { // eslint-disable-line es-x/no-array-prototype-flat
+		if ( !this.flat.hasOwnProperty( name ) ) {
 			return null;
 		}
-		return this.flat[ name ]; // eslint-disable-line es-x/no-array-prototype-flat
+		return this.flat[ name ];
 	};
 
 	OOJSPlus.ui.data.Tree.prototype.collapseNode = function ( name ) {
@@ -342,7 +342,7 @@
 	OOJSPlus.ui.data.Tree.prototype.assertNodeLoaded = function ( name ) {
 		const dfd = $.Deferred();
 
-		if ( this.flat.hasOwnProperty( name ) ) { // eslint-disable-line es-x/no-array-prototype-flat
+		if ( this.flat.hasOwnProperty( name ) ) {
 			dfd.resolve();
 		} else {
 			dfd.reject();
@@ -353,10 +353,10 @@
 	OOJSPlus.ui.data.Tree.prototype.removeNode = function ( name ) {
 		const node = this.getItem( name );
 		const subnodes = node.getChildren();
-		delete ( this.flat[ name ] ); // eslint-disable-line es-x/no-array-prototype-flat
+		delete ( this.flat[ name ] );
 		this.$itemsContainer.find( 'li[data-name="' + name + '"]' ).remove();
 		for ( let i = 0; i < subnodes.length; i++ ) {
-			delete ( this.flat[ subnodes[ i ] ] ); // eslint-disable-line es-x/no-array-prototype-flat
+			delete ( this.flat[ subnodes[ i ] ] );
 		}
 		this.emit( 'nodeRemoved', node );
 	};
@@ -383,7 +383,7 @@
 			}
 		} );
 
-		this.flat[ widget.getName() ] = widget; // eslint-disable-line es-x/no-array-prototype-flat
+		this.flat[ widget.getName() ] = widget;
 		const drawingConfig = {};
 		drawingConfig[ widget.getName() ] = {
 			widget: widget,
