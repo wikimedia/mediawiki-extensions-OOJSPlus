@@ -41,6 +41,19 @@ OOJSPlus.ui.data.filter.String.prototype.setValue = function ( value ) {
 	this.operator = value.operator;
 };
 
+OOJSPlus.ui.data.filter.String.prototype.doChangeValue = function ( value ) {
+	let shouldClosePopup = this.closePopupOnChange;
+	if ( !value ) {
+		this.value = null;
+		shouldClosePopup = false;
+	} else {
+		this.conditionValue = value;
+		this.value = this.getFilterValue();
+	}
+
+	this.emit( 'change', this, shouldClosePopup );
+};
+
 OOJSPlus.ui.data.filter.String.prototype.clearValues = function () {
 	this.input.setValue( '' );
 	OOJSPlus.ui.data.filter.String.parent.prototype.clearValues.call( this );
