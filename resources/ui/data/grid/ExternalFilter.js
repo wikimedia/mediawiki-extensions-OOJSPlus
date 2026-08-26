@@ -34,6 +34,10 @@ OOJSPlus.ui.data.grid.ExternalFilter = function ( cfg ) {
 
 	this.filterItems = {};
 	this.sortItems = {};
+	// Keys of filter items that should stay visible even if their value is currently empty,
+	// e.g. added manually via the filter selector or already active from a previous store load.
+	// Only explicitly removing a filter (via its "clear"/remove button) should hide it again.
+	this.activeFilterKeys = new Set();
 
 	if ( this.showQueryField ) {
 		this.input = new OO.ui.SearchInputWidget( {
@@ -82,6 +86,7 @@ OOJSPlus.ui.data.grid.ExternalFilter = function ( cfg ) {
 					this.store.filter( f, key );
 				},
 				clear: ( key ) => { // eslint-disable-line no-shadow
+					this.activeFilterKeys.delete( key );
 					this.filterItems[ key ].$element.hide();
 					this.filterSelector.optionInstances[ key ].setDisabled( false );
 				}
@@ -97,6 +102,7 @@ OOJSPlus.ui.data.grid.ExternalFilter = function ( cfg ) {
 				if ( !this.filterItems[ key ] ) {
 					return;
 				}
+				this.activeFilterKeys.add( key );
 				this.filterItems[ key ].$element.show();
 				this.filterSelector.optionInstances[ key ].setDisabled( true );
 				this.filterItems[ key ].togglePopup( true );
@@ -165,20 +171,26 @@ OOJSPlus.ui.data.grid.ExternalFilter.prototype.addFilterItems = function ( filte
 	if ( Object.keys( this.filterItems ).length === 0 ) {
 		return;
 	}
-	Object.values( this.filterItems ).forEach( ( item ) => {
-		item.$element.hide();
-	} );
-	Object.values( this.filterSelector.optionInstances ).forEach( ( option ) => {
-		option.setDisabled( false );
+
+	// Fields with an active filter value should stay visible on future reloads,
+	// even after their value is temporarily cleared (e.g. user backspaced the query).
+	Object.keys( filters ).forEach( ( field ) => {
+		if ( this.filterItems[ field ] ) {
+			this.activeFilterKeys.add( field );
+		}
 	} );
 
-	Object.entries( filters ).forEach( ( [ field, filter ] ) => {
-		if ( !this.filterItems[ field ] ) {
-			return;
+	Object.entries( this.filterItems ).forEach( ( [ field, item ] ) => {
+		if ( this.activeFilterKeys.has( field ) ) {
+			item.$element.show();
+			this.filterSelector.optionInstances[ field ].setDisabled( true );
+			if ( filters[ field ] ) {
+				item.setValue( filters[ field ].getValue() );
+			}
+		} else {
+			item.$element.hide();
+			this.filterSelector.optionInstances[ field ].setDisabled( false );
 		}
-		this.filterItems[ field ].$element.show();
-		this.filterItems[ field ].setValue( filter.getValue() );
-		this.filterSelector.optionInstances[ field ].setDisabled( true );
 	} );
 };
 
