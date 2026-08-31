@@ -5,6 +5,7 @@
 	border-top: 1px solid #e3e3e3;
 	display: flex;
 	justify-content: space-between;
+	flex-wrap: nowrap;
 
 	.oo-ui-labelWidget {
 		&.row-count {
@@ -34,5 +35,11 @@
 
 	.current-entries-visible {
 		color: #747474;
+	}
+
+	.oojsplus-data-paginator {
+		.oo-ui-horizontalLayout {
+			flex-wrap: nowrap;
+		}
 	}
 }
