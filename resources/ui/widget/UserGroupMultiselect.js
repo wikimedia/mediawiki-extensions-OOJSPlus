@@ -13,6 +13,7 @@
 		this.api = config.api || new mw.Api();
 		this.groups = config.groups || null;
 		this.excludeGroups = config.excludeGroups || null;
+		this.returnJson = config.returnJson || false;
 
 		this.showUserImage = typeof config.showUserImage === 'boolean' ? config.showUserImage : true;
 
@@ -78,9 +79,13 @@
 	};
 
 	OOJSPlus.ui.widget.UserGroupMultiselectWidget.prototype.getValue = function () {
-		return this.getInternalValue().map(
+		const res = this.getInternalValue().map(
 			this.deserializeValue.bind( this )
 		).filter( ( value ) => value !== null );
+		if ( this.returnJson ) {
+			return JSON.stringify( res );
+		}
+		return res;
 	};
 
 	OOJSPlus.ui.widget.UserGroupMultiselectWidget.prototype.getTagItemFromData = function ( data ) {
@@ -180,6 +185,9 @@
 			return OOJSPlus.ui.widget.UserGroupMultiselectWidget.parent.prototype.setValue.call( this, [] );
 		}
 
+		if ( typeof value === 'string' ) {
+			value = JSON.parse( value );
+		}
 		value = Array.isArray( value ) ? value : [ value ];
 		const normalizedValue = value.map( this.normalizeValueItem.bind( this ) )
 			.filter( ( item ) => item !== null );
