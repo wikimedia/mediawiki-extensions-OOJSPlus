@@ -22,6 +22,7 @@
 		this.$element.addClass( 'oojs-ui-data-tree-item' );
 		this.$element.attr( 'data-name', this.getName() );
 		this.$element.append( this.$wrapper );
+		this.renderItemActions();
 	};
 
 	OOJSPlus.ui.data.tree.NavigationTreeItem.prototype.possiblyAddExpander = function () {
