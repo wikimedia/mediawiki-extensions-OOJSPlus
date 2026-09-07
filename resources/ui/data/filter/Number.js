@@ -83,14 +83,16 @@ OOJSPlus.ui.data.filter.Number.prototype.clearValues = function () {
 };
 
 OOJSPlus.ui.data.filter.Number.prototype.matches = function ( value ) {
+	// Type juggle value to correct type so that strict equality checks are accurate.
+	const parsedValue = parseInt( value );
 	const cmpValue = parseInt( this.value.value );
 	switch ( this.operator ) {
 		case 'eq':
-			return value === cmpValue;
+			return parsedValue === cmpValue;
 		case 'lt':
-			return value < cmpValue;
+			return parsedValue < cmpValue;
 		case 'gt':
-			return value > cmpValue;
+			return parsedValue > cmpValue;
 		default:
 			return true;
 	}
