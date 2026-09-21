@@ -440,3 +440,39 @@
 	min-width: 14px;
 	width: 1em;
 }
+
+.oojsplus-date-widget-has-placeholder {
+	position: relative;
+
+	.oojsplus-date-widget-placeholder {
+		display: none;
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		left: 1px;
+		right: 2.5em;
+		align-items: center;
+		padding: 0 8px;
+		overflow: hidden;
+		white-space: nowrap;
+		text-overflow: ellipsis;
+		color: var( --color-placeholder, #72777d );
+		pointer-events: none;
+	}
+
+	&.oojsplus-date-widget-empty:not( .oojsplus-date-widget-typing ) {
+		.oojsplus-date-widget-placeholder {
+			display: flex;
+		}
+
+		input {
+			-webkit-text-fill-color: transparent;
+
+			&::-webkit-datetime-edit-day-field,
+			&::-webkit-datetime-edit-month-field,
+			&::-webkit-datetime-edit-year-field {
+				background-color: transparent;
+			}
+		}
+	}
+}
