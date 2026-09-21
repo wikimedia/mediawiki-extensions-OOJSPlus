@@ -118,7 +118,8 @@
 				"oojsplus-widget-filterbar-search-input-label",
 				"oojsplus-widget-filterbar-search-placeholder-label",
 				"oojsplus-widget-filterbar-show-all",
-				"oojsplus-chip-title-label"
+				"oojsplus-chip-title-label",
+				"oojsplus-date-input-placeholder"
 			],
 			"styles": [
 				"stylesheet/rangeWidget.less",

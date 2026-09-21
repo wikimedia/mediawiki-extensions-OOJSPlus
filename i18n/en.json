@@ -137,5 +137,6 @@
 	"oojsplus-data-tree-item-more-actions-label": "More actions for entry $1",
 	"oojsplus-data-gridwidget-header-checkbox-title": "Select/deselect all rows on this page",
 	"oojsplus-data-grid-column-boolean-checked-aria-label": "Yes",
-	"oojsplus-data-grid-column-boolean-unchecked-aria-label": "No"
+	"oojsplus-data-grid-column-boolean-unchecked-aria-label": "No",
+	"oojsplus-date-input-placeholder": "No date selected"
 }
