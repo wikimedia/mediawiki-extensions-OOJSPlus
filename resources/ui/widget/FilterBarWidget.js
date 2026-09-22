@@ -5,7 +5,7 @@ OOJSPlus.ui.widget.FilterBarWidget = function ( config ) {
 		mw.message( 'oojsplus-widget-filterbar-show-all' ).text();
 	this.allowUnselect = config.allowUnselect || false;
 	this.multiSelect = config.multiSelect || false;
-	this.selectedOptions = config.selected || [];
+	this.selectedOptions = Array.from( new Set( config.selected || [] ) );
 	this.visibleFilter = config.visibleFilter || [];
 	this.activeFilterElement = null;
 	this.expandedVersion = this.filterElements.length >= 7;
@@ -111,7 +111,7 @@ OOJSPlus.ui.widget.FilterBarWidget.prototype.addChipElements = function ( elemen
 		if ( !this.multiSelect ) {
 			continue;
 		}
-		if ( filter.selected ) {
+		if ( filter.selected && !this.selectedOptions.includes( filter.getName() ) ) {
 			this.selectedOptions.push( filter.getName() );
 		}
 	}
