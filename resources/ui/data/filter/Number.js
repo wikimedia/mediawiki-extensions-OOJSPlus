@@ -79,7 +79,7 @@ OOJSPlus.ui.data.filter.Number.prototype.setValue = function ( value ) {
 OOJSPlus.ui.data.filter.Number.prototype.clearValues = function () {
 	this.input.setValue( '' );
 	this.operator = 'eq';
-	this.operatorWidget.selectItemByData( this.operator );
+	this.operatorWidget.setValue( this.operator );
 };
 
 OOJSPlus.ui.data.filter.Number.prototype.matches = function ( value ) {
