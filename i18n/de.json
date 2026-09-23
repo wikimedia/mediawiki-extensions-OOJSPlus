@@ -137,5 +137,7 @@
 	"oojsplus-widget-filterbar-search-input-label": "Nach Filterelement suchen",
 	"oojsplus-widget-filterbar-search-placeholder-label": "Finde",
 	"oojsplus-widget-filterbar-show-all": "Alles anzeigen",
-	"oojsplus-chip-title-label": "Alle Einträge in $1 anzeigen"
+	"oojsplus-chip-title-label": "Alle Einträge in $1 anzeigen",
+	"oojsplus-data-tree-item-more-actions-title": "Weitere Aktionen",
+	"oojsplus-data-tree-item-more-actions-label": "Weitere Aktionen für Eintrag $1"
 }

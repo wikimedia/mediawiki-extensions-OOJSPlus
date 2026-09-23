@@ -147,17 +147,6 @@
 
 	OOJSPlus.ui.data.tree.Item.prototype.possiblyAddOptions = function () {
 		const options = [];
-		if ( this.allowDeletions ) {
-			this.removeNodeBtn = new OO.ui.ButtonWidget( {
-				framed: false,
-				label: this.labelDelete || mw.message( 'oojsplus-data-tree-item-remove-label' ).text(),
-				icon: 'close'
-			} );
-			this.removeNodeBtn.connect( this, {
-				click: 'onRemoveClick'
-			} );
-			options.push( this.removeNodeBtn );
-		}
 		if ( this.allowAdditions ) {
 			this.addSubnodeBtn = new OO.ui.ButtonWidget( {
 				framed: false,
@@ -168,6 +157,18 @@
 				click: 'onAddSubnodeClick'
 			} );
 			options.push( this.addSubnodeBtn.$element );
+		}
+		if ( this.allowDeletions ) {
+			this.removeNodeBtn = new OO.ui.ButtonWidget( {
+				framed: false,
+				label: this.labelDelete || mw.message( 'oojsplus-data-tree-item-remove-label' ).text(),
+				icon: 'trash',
+				flags: [ 'destructive' ]
+			} );
+			this.removeNodeBtn.connect( this, {
+				click: 'onRemoveClick'
+			} );
+			options.push( this.removeNodeBtn );
 		}
 		if ( options.length === 0 ) {
 			return;
@@ -184,6 +185,9 @@
 			icon: 'menu',
 			framed: false,
 			classes: [ 'tree-item-options-btn' ],
+			title: mw.message( 'oojsplus-data-tree-item-more-actions-title' ).text(),
+			label: mw.message( 'oojsplus-data-tree-item-more-actions-label', this.label ).text(),
+			invisibleLabel: true,
 			popup: {
 				$content: this.optionsPanel.$element,
 				width: 'auto',

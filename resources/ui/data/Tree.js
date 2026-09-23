@@ -106,10 +106,6 @@
 		const $ul = $( '<ul>' ).addClass( 'tree-node-list' );
 		$ul.attr( 'id', this.idGenerator.generate() );
 
-		if ( parent ) {
-			$ul.attr( 'role', 'group' );
-		}
-
 		if ( labelledby ) {
 			$ul.attr( 'aria-labelledby', labelledby );
 		}
