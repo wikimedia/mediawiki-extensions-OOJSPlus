@@ -310,7 +310,9 @@
 				"oojsplus-data-grid-toolbar-show-widgets-label",
 				"oojsplus-data-grid-toolbar-page-size-25",
 				"oojsplus-data-grid-toolbar-page-size-50",
-				"oojsplus-data-grid-toolbar-page-size-100"
+				"oojsplus-data-grid-toolbar-page-size-100",
+				"oojsplus-data-tree-item-more-actions-title",
+				"oojsplus-data-tree-item-more-actions-label"
 			]
 		},
 		"ext.oOJSPlus.icons": {
