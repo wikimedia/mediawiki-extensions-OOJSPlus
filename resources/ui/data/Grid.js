@@ -517,6 +517,10 @@
 		const $row = $( '<tr>' ).addClass( 'oojsplus-data-gridWidget-row' );
 		$( $row ).attr( 'id', this.getItemID( item ) );
 		$row.addClass( item.classes || [] ); // eslint-disable-line mediawiki/class-doc
+		if ( this.multiSelect && !item.hasOwnProperty( 'check' ) ) {
+			// Keep selection state on the item, so it survives re-rendering of the rows
+			item.check = this.multiSelectSelectedByDefault;
+		}
 		if ( this.actionsVisibleOnHover ) {
 			$row.addClass( 'actions-visible-on-hover' );
 		}
@@ -554,7 +558,7 @@
 			$row.append( $cell );
 		}
 
-		if ( this.multiSelect && this.multiSelectSelectedByDefault ) {
+		if ( this.multiSelect && item.check && this.selectedRows.indexOf( item ) === -1 ) {
 			this.selectedRows.push( item );
 		}
 		if ( !this.multiSelect && this.selectable ) {
@@ -653,7 +657,9 @@
 
 	OOJSPlus.ui.data.GridWidget.prototype.onDatasetChange = function () {
 		this.announceCount();
-		this.selectedRows = [];
+		if ( !this.multiSelect ) {
+			this.selectedRows = [];
+		}
 	};
 
 	OOJSPlus.ui.data.GridWidget.prototype.appendCollapseButton = function () {
