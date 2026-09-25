@@ -18,6 +18,10 @@
 	 * valueParser: function ( value, row ) {
 	 * //return {string} | {OO.ui.Widget} | {OO.ui.HtmlSnippet}
 	 * },
+	 * ariaLabel: {string} | function ( value, row ) { // Only for type "icon"
+	 * },
+	 * title: {string} | function ( value, row ) { // Only for type "icon"
+	 * },
 	 * urlProperty: {string}, // Only for type "url", data key that holds the URL
 	 * onlyShowTrue: true | false, // Only for type "boolean", if true, only show true values, show nothing for false
 	 * hidden: true|false, // Hide by default. Default to `false`
