@@ -22,7 +22,7 @@ OOJSPlus.ui.data.column.Selection.prototype.renderCell = function ( value, row )
 OOJSPlus.ui.data.column.Selection.prototype.getViewControls = function ( value, row ) {
 	this.checkbox = new OOJSPlus.ui.widget.CheckboxInputWidget( {
 		title: this.title,
-		selected: this.selected,
+		selected: row.hasOwnProperty( 'check' ) ? !!row.check : this.selected,
 		accessKey: 't'
 	} );
 	this.checkbox.connect( this, {
