@@ -28,12 +28,23 @@
 			}
 		} );
 
+		const defaultPageSizes = [ 25, 50, 100 ];
+		// * oojsplus-data-grid-toolbar-page-size-25
+		// * oojsplus-data-grid-toolbar-page-size-50
+		// * oojsplus-data-grid-toolbar-page-size-100
+		const options = defaultPageSizes.map( ( size ) => ( {
+			data: size,
+			label: mw.message( 'oojsplus-data-grid-toolbar-page-size-' + size ).text()
+		} ) );
+		const actualSize = this.store.limit || defaultPageSizes[ 0 ];
+		if ( defaultPageSizes.indexOf( actualSize ) === -1 ) { // eslint-disable-line unicorn/prefer-includes
+			options.unshift( {
+				data: actualSize,
+				label: mw.message( 'oojsplus-data-grid-toolbar-page-size-custom', actualSize ).text()
+			} );
+		}
 		this.pageSizePicker = new OO.ui.DropdownInputWidget( {
-			options: [
-				{ data: 25, label: mw.message( 'oojsplus-data-grid-toolbar-page-size-25' ).text() },
-				{ data: 50, label: mw.message( 'oojsplus-data-grid-toolbar-page-size-50' ).text() },
-				{ data: 100, label: mw.message( 'oojsplus-data-grid-toolbar-page-size-100' ).text() }
-			]
+			options: options
 		} );
 		this.pageSizePicker.connect( this, {
 			change: function ( value ) {
