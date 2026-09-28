@@ -137,6 +137,7 @@
 	"oojsplus-widget-filterbar-search-placeholder-label": "Placeholder label for search input",
 	"oojsplus-widget-filterbar-show-all": "Label for selector button to show all elements",
 	"oojsplus-chip-title-label": "Title label for filter pill\nParameter:\n* $1 - name of filter",
+	"oojsplus-data-grid-toolbar-page-size-custom": "Label for custom page size in page size selection in data grid toolbar\nParameter:\n* $1 - number of rows",
 	"oojsplus-data-tree-item-more-actions-title": "Button title for entry actions",
 	"oojsplus-data-tree-item-more-actions-label": "Label for button to show all entry actions\n* $1 - name of entry"
 }

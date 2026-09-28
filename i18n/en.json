@@ -132,6 +132,7 @@
 	"oojsplus-widget-filterbar-search-placeholder-label": "Find",
 	"oojsplus-widget-filterbar-show-all": "Show all",
 	"oojsplus-chip-title-label": "Show all entries in $1",
+	"oojsplus-data-grid-toolbar-page-size-custom": "{{PLURAL:$1|$1 row|$1 rows}}",
 	"oojsplus-data-tree-item-more-actions-title": "More actions",
 	"oojsplus-data-tree-item-more-actions-label": "More actions for entry $1"
 }
