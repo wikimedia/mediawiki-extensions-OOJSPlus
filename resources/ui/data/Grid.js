@@ -534,7 +534,7 @@
 			$row.append( $cell );
 		}
 
-		if ( this.multiSelect && item.check && this.selectedRows.indexOf( item ) === -1 ) {
+		if ( this.multiSelect && item.check && !this.selectedRows.includes( item ) ) {
 			this.selectedRows.push( item );
 		}
 		if ( !this.multiSelect && this.selectable ) {
