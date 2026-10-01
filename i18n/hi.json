@@ -18,5 +18,6 @@
 	"oojsplus-toolbar-add": "जोड़ें",
 	"oojsplus-field-label-query": "खोजें...",
 	"oojsplus-data-grid-filter-date-operator-eq-label": "आज के दिन",
-	"oojsplus-data-grid-filter-date-operator-lt-label": "इस दिन से पहले"
+	"oojsplus-data-grid-filter-date-operator-lt-label": "इस दिन से पहले",
+	"oojsplus-data-tree-item-more-actions-title": "अन्य विकल्प"
 }
