@@ -81,6 +81,7 @@
 	"oojsplus-data-grid-toolbar-page-size-25": "25 Zeilen",
 	"oojsplus-data-grid-toolbar-page-size-50": "50 Zeilen",
 	"oojsplus-data-grid-toolbar-page-size-100": "100 Zeilen",
+	"oojsplus-data-grid-toolbar-page-size-custom": "{{PLURAL:$1|$1 Zeil|$1 Zeilen}}",
 	"oojsplus-data-tree-item-more-actions-title": "Méi Aktiounen",
 	"oojsplus-data-tree-item-more-actions-label": "Méi Aktioune fir den Antrag $1"
 }

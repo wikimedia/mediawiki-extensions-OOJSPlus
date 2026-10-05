@@ -50,5 +50,6 @@
 	"oojsplus-data-grid-toolbar-page-size-100": "100 righe",
 	"oojsplus-widget-filterbar-search-placeholder-label": "Trova",
 	"oojsplus-widget-filterbar-show-all": "Mostra tutto",
+	"oojsplus-data-grid-toolbar-page-size-custom": "{{PLURAL:$1|$1 riga|$1 righe}}",
 	"oojsplus-data-tree-item-more-actions-title": "Altre azioni"
 }
