@@ -134,5 +134,6 @@
 	"oojsplus-widget-filterbar-search-input-label": "Naar filterelement zoeken",
 	"oojsplus-widget-filterbar-search-placeholder-label": "Zoeken",
 	"oojsplus-widget-filterbar-show-all": "Alles weergeven",
-	"oojsplus-chip-title-label": "Alle items in $1 weergeven"
+	"oojsplus-chip-title-label": "Alle items in $1 weergeven",
+	"oojsplus-data-grid-toolbar-page-size-custom": "{{PLURAL:$1|$1 rij|$1 rijen}}"
 }

@@ -27,7 +27,7 @@
 	"oojsplus-filter-widget-count-aria-label": "包含{{PLURAL:$1|一个项目|$1个项目}}",
 	"oojsplus-data-delete-row-prompt": "确定要删除该行吗？",
 	"oojsplus-data-paginator-page-total-count-label": "{{PLURAL:$1|$1个条目}}",
-	"oojsplus-data-paginator-page-total-count-label-approximate": "约{{PLURAL:$1|$1条}}",
+	"oojsplus-data-paginator-page-total-count-label-approximate": "约{{PLURAL:$1|$1个条目}}",
 	"oojsplusdemos": "OOJSPlus展示版本",
 	"oojsplus-data-tree-item-remove-label": "移除",
 	"oojsplus-data-tree-item-add-label": "添加新的子项目",
@@ -57,7 +57,7 @@
 	"oojsplus-data-grid-toolbar-reload-label": "重新加载",
 	"oojsplus-data-paginator-page-number-switch-hint": "在此元素上左右导航以选择页码",
 	"oojsplus-data-paginator-page-number-button-title": "第$1页",
-	"oojsplus-data-paginator-page-showed-single-entry": "显示项目$1。",
+	"oojsplus-data-paginator-page-showed-single-entry": "显示条目$1。",
 	"oojsplus-data-paginator-page-showed-many-entries": "显示项目$1至$2。",
 	"oojsplus-data-grid-filter-boolean": "值",
 	"oojsplus-formelement-type-user-picker": "用户输入",
@@ -139,5 +139,9 @@
 	"oojsplus-widget-filterbar-search-input-label": "搜索筛选元素",
 	"oojsplus-widget-filterbar-search-placeholder-label": "查找",
 	"oojsplus-widget-filterbar-show-all": "显示全部",
-	"oojsplus-chip-title-label": "显示$1下的所有条目"
+	"oojsplus-chip-title-label": "显示$1下的所有条目",
+	"oojsplus-data-grid-toolbar-page-size-custom": "{{PLURAL:$1|$1行}}",
+	"oojsplus-data-tree-item-more-actions-title": "更多操作",
+	"oojsplus-data-tree-item-more-actions-label": "条目$1的更多操作",
+	"oojsplus-data-gridwidget-header-checkbox-title": "选择/取消选择本页面上的所有行"
 }

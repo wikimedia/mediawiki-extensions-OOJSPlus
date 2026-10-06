@@ -130,5 +130,9 @@
 	"oojsplus-widget-filterbar-search-input-label": "Procurar para filtrar os elementos",
 	"oojsplus-widget-filterbar-search-placeholder-label": "Procurar",
 	"oojsplus-widget-filterbar-show-all": "Mostrar todo",
-	"oojsplus-chip-title-label": "Mostrar todas as entradas en $1"
+	"oojsplus-chip-title-label": "Mostrar todas as entradas en $1",
+	"oojsplus-data-grid-toolbar-page-size-custom": "{{PLURAL:$1|$1 fila|$1 filas}}",
+	"oojsplus-data-tree-item-more-actions-title": "Máis accións",
+	"oojsplus-data-tree-item-more-actions-label": "Máis accións para a entrada «$1»",
+	"oojsplus-data-gridwidget-header-checkbox-title": "Seleccionar/Deseleccionar todas as filas desta páxina"
 }
