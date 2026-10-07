@@ -133,5 +133,8 @@
 	"oojsplus-widget-filterbar-search-input-label": "필터 요소 검색",
 	"oojsplus-widget-filterbar-search-placeholder-label": "찾기",
 	"oojsplus-widget-filterbar-show-all": "모두 보기",
-	"oojsplus-chip-title-label": "$1의 항목을 모두 보기"
+	"oojsplus-chip-title-label": "$1의 항목을 모두 보기",
+	"oojsplus-data-grid-toolbar-page-size-custom": "{{PLURAL:$1|$1개 행}}",
+	"oojsplus-data-tree-item-more-actions-title": "더 많은 작업",
+	"oojsplus-data-gridwidget-header-checkbox-title": "이 문서의 모든 행을 선택/선택 해제"
 }
