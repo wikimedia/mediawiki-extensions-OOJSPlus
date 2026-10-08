@@ -45,7 +45,13 @@ OOJSPlus.ui.data.filter.FilterItem = function ( cfg ) {
 			this.updateLabel( null );
 			this.filter.clearValues();
 			this.popupButton.getPopup().toggle( false );
-			this.emit( 'clear', this.key );
+			if ( this.filter instanceof OOJSPlus.ui.data.filter.Number ) {
+				// We don't want to close the FieldLayout. We want to retain
+				// it so that users can retry filtering other values without
+				// reopening the filter from scratch.
+			} else {
+				this.emit( 'clear', this.key );
+			}
 		}
 	} );
 	this.filter.setOverlay( cfg.$overlay );
