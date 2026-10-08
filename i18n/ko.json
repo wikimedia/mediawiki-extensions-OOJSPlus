@@ -136,5 +136,6 @@
 	"oojsplus-chip-title-label": "$1의 항목을 모두 보기",
 	"oojsplus-data-grid-toolbar-page-size-custom": "{{PLURAL:$1|$1개 행}}",
 	"oojsplus-data-tree-item-more-actions-title": "더 많은 작업",
+	"oojsplus-data-tree-item-more-actions-label": "항목 $1에 대한 더 많은 작업",
 	"oojsplus-data-gridwidget-header-checkbox-title": "이 문서의 모든 행을 선택/선택 해제"
 }
