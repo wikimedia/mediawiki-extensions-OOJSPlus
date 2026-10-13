@@ -43,5 +43,6 @@
 	"oojsplus-widget-filterbar-search-input-label": "جستجوی عنصر پالایه",
 	"oojsplus-widget-filterbar-search-placeholder-label": "یافتن",
 	"oojsplus-widget-filterbar-show-all": "نمایش همه",
-	"oojsplus-chip-title-label": "نمایش تمام مدخل‌ها در $1"
+	"oojsplus-chip-title-label": "نمایش تمام مدخل‌ها در $1",
+	"oojsplus-data-grid-toolbar-page-size-custom": "{{PLURAL:$1|$1 ردیف}}"
 }
