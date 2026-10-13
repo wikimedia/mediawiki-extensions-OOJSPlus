@@ -89,7 +89,8 @@ OOJSPlus.ui.widget.FilterBarWidget.prototype.addChipElements = function ( elemen
 		const filter = new OOJSPlus.ui.widget.ChipWidget( {
 			label: elements[ element ].label,
 			name: elements[ element ].data,
-			canUnselect: this.allowUnselect,
+			canUnselect: elements[ element ].allowUnselect !== undefined ?
+				elements[ element ].allowUnselect : this.allowUnselect,
 			selected: elements[ element ].selected ? elements[ element ].selected : false
 		} );
 		filter.connect( this, {
