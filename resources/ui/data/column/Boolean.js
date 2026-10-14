@@ -4,6 +4,10 @@ OOJSPlus.ui.data.column.Boolean = function ( cfg ) {
 	cfg.autoClosePopup = true;
 	OOJSPlus.ui.data.column.Boolean.parent.call( this, cfg );
 	this.showOnlyTrue = cfg.onlyShowTrue || false;
+	this.trueAriaLabel = cfg.trueAriaLabel ||
+		mw.msg( 'oojsplus-data-grid-column-boolean-checked-aria-label' );
+	this.falseAriaLabel = cfg.falseAriaLabel ||
+		mw.msg( 'oojsplus-data-grid-column-boolean-unchecked-aria-label' );
 	this.$element.addClass( 'boolean-column' );
 };
 
@@ -22,7 +26,7 @@ OOJSPlus.ui.data.column.Boolean.prototype.getViewControls = function ( value ) {
 	const widget = new OO.ui.IconWidget( {
 		icon: value ? 'color-check' : this.showOnlyTrue ? '' : 'color-cross'
 	} );
-	widget.$element.attr( 'aria-label', value ? 'checked' : 'unchecked' );
+	widget.$element.attr( 'aria-label', value ? this.trueAriaLabel : this.falseAriaLabel );
 	return widget;
 };
 

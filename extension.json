@@ -317,7 +317,9 @@
 				"oojsplus-data-grid-toolbar-page-size-custom",
 				"oojsplus-data-tree-item-more-actions-title",
 				"oojsplus-data-tree-item-more-actions-label",
-				"oojsplus-data-gridwidget-header-checkbox-title"
+				"oojsplus-data-gridwidget-header-checkbox-title",
+				"oojsplus-data-grid-column-boolean-checked-aria-label",
+				"oojsplus-data-grid-column-boolean-unchecked-aria-label"
 			]
 		},
 		"ext.oOJSPlus.icons": {
