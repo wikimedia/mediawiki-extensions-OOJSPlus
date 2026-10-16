@@ -12,5 +12,7 @@
 	"oojsplus-data-grid-toolbar-page-size-custom": "{{PLURAL:$1|$1 saf|$1 safaf}}",
 	"oojsplus-data-tree-item-more-actions-title": "Hawlo dheeraad ah",
 	"oojsplus-data-tree-item-more-actions-label": "Hawlo dheeraad ah oo loogu talagalay gelinta $1",
-	"oojsplus-data-gridwidget-header-checkbox-title": "Dooro/ka saar doorashada dhammaan safafka boggan"
+	"oojsplus-data-gridwidget-header-checkbox-title": "Dooro/ka saar doorashada dhammaan safafka boggan",
+	"oojsplus-data-grid-column-boolean-checked-aria-label": "Haa",
+	"oojsplus-data-grid-column-boolean-unchecked-aria-label": "Maya"
 }
