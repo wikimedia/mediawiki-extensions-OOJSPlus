@@ -6,7 +6,7 @@ OOJSPlus.ui.data.filter.Filter = function ( cfg ) {
 	this.filterName = cfg.filterName || '';
 	this.closePopupOnChange = cfg.autoClosePopup || false;
 	this.delayChange = cfg.delayChange || false;
-	this.icon = cfg.icon || 'funnel';
+	this.icon = cfg.icon || 'filter';
 
 	this.$element.append( this.getLayout().$element );
 	this.$element.addClass( 'oojsplus-filter' );

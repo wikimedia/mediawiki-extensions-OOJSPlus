@@ -5,7 +5,7 @@ OOJSPlus.ui.data.filter.FilterItem = function ( cfg ) {
 
 	this.popupButton = new OO.ui.PopupButtonWidget( {
 		classes: [ 'oojsplus-data-grid-filter-button' ],
-		icon: cfg.filter.icon || 'funnel',
+		icon: cfg.filter.icon || 'filter',
 		label: cfg.label,
 		title: mw.message( 'oojsplus-data-grid-filter-title', cfg.label ).text(),
 		$overlay: cfg.$overlay || true,
