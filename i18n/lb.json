@@ -55,7 +55,7 @@
 	"oojsplus-data-grid-filter-boolean-true": "Jo",
 	"oojsplus-data-grid-filter-boolean-false": "Nee",
 	"oojsplus-data-grid-collapse-expand": "Opklappen",
-	"oojsplus-data-grid-collapse-collapse": "Zesummeklappen",
+	"oojsplus-data-grid-collapse-collapse": "Zouklappen",
 	"oojsplus-toolbar-cancel": "Ofbriechen",
 	"oojsplus-toolbar-save": "Späicheren",
 	"oojsplus-toolbar-delete": "Läschen",
@@ -79,5 +79,12 @@
 	"oojsplus-data-grid-toolbar-page-size-25": "25 Zeilen",
 	"oojsplus-data-grid-toolbar-page-size-50": "50 Zeilen",
 	"oojsplus-data-grid-toolbar-page-size-100": "100 Zeilen",
-	"oojsplus-data-paginator-page-total-count-label-approximate": "~ {{PLURAL:$1|$1 Antrag|$1 Anträg}}"
+	"oojsplus-data-paginator-page-total-count-label-approximate": "~ {{PLURAL:$1|$1 Antrag|$1 Anträg}}",
+	"oojsplus-field-label-query": "Sichen...",
+	"oojsplus-data-sorter-picker": "No Feld sortéieren",
+	"oojsplus-data-grid-toolbar-page-size-custom": "{{PLURAL:$1|$1 Zeil|$1 Zeilen}}",
+	"oojsplus-data-tree-item-more-actions-title": "Méi Aktiounen",
+	"oojsplus-data-tree-item-more-actions-label": "Méi Aktioune fir den Antrag $1",
+	"oojsplus-data-grid-column-boolean-checked-aria-label": "Jo",
+	"oojsplus-data-grid-column-boolean-unchecked-aria-label": "Nee"
 }

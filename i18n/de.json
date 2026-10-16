@@ -139,5 +139,11 @@
 	"oojsplus-filter-widget-count-aria-label": "enthält {{PLURAL:$1|1 Objekt|$1 Objekte}}",
 	"oojsplus-data-grid-toolbar-page-size-25": "25 Zeilen",
 	"oojsplus-data-grid-toolbar-page-size-50": "50 Zeilen",
-	"oojsplus-data-grid-toolbar-page-size-100": "100 Zeilen"
+	"oojsplus-data-grid-toolbar-page-size-100": "100 Zeilen",
+	"oojsplus-data-grid-toolbar-page-size-custom": "{{PLURAL:$1|$1 Zeile|$1 Zeilen}}",
+	"oojsplus-data-tree-item-more-actions-title": "Weitere Aktionen",
+	"oojsplus-data-tree-item-more-actions-label": "Weitere Aktionen für Eintrag $1",
+	"oojsplus-data-gridwidget-header-checkbox-title": "Alle Zeilen auf dieser Seite auswählen/abwählen",
+	"oojsplus-data-grid-column-boolean-checked-aria-label": "Ja",
+	"oojsplus-data-grid-column-boolean-unchecked-aria-label": "Nein"
 }

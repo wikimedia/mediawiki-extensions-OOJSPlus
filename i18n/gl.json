@@ -130,5 +130,11 @@
 	"oojsplus-widget-filterbar-show-all": "Mostrar todo",
 	"oojsplus-chip-title-label": "Mostrar todas as entradas en $1",
 	"oojsplus-filter-widget-aria-label": "Filtro",
-	"oojsplus-filter-widget-count-aria-label": "contén {{PLURAL:$1|un elemento|$1 elementos}}"
+	"oojsplus-filter-widget-count-aria-label": "contén {{PLURAL:$1|un elemento|$1 elementos}}",
+	"oojsplus-data-grid-toolbar-page-size-custom": "{{PLURAL:$1|$1 fila|$1 filas}}",
+	"oojsplus-data-tree-item-more-actions-title": "Máis accións",
+	"oojsplus-data-tree-item-more-actions-label": "Máis accións para a entrada «$1»",
+	"oojsplus-data-gridwidget-header-checkbox-title": "Seleccionar/Deseleccionar todas as filas desta páxina",
+	"oojsplus-data-grid-column-boolean-checked-aria-label": "Si",
+	"oojsplus-data-grid-column-boolean-unchecked-aria-label": "Non"
 }

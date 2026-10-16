@@ -133,5 +133,9 @@
 	"oojsplus-widget-filterbar-search-input-label": "Пребарај филтерски елемент",
 	"oojsplus-widget-filterbar-search-placeholder-label": "Најди",
 	"oojsplus-widget-filterbar-show-all": "Прикажи сè",
-	"oojsplus-chip-title-label": "Прикажи ги сите ставки во $1"
+	"oojsplus-chip-title-label": "Прикажи ги сите ставки во $1",
+	"oojsplus-data-grid-toolbar-page-size-custom": "{{PLURAL:$1|$1 ред|$1 реда}}",
+	"oojsplus-data-tree-item-more-actions-title": "Повеќе дејства",
+	"oojsplus-data-tree-item-more-actions-label": "Повеќе дејства за ставката $1",
+	"oojsplus-data-gridwidget-header-checkbox-title": "Избери/поништи ги сите редови на оваа страница"
 }
