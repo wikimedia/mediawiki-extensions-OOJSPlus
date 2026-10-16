@@ -38,15 +38,38 @@ OO.mixinClass( OOJSPlus.ui.widget.NamespaceMultiSelectWidget, OO.ui.mixin.Pendin
 OO.mixinClass( OOJSPlus.ui.widget.NamespaceMultiSelectWidget, OOJSPlus.ui.mixin.NamespaceOptions );
 
 OOJSPlus.ui.widget.NamespaceMultiSelectWidget.prototype.setValue = function ( value ) {
-	if ( !value ) {
-		return;
-	}
-	if ( Array.isArray( value ) ) {
-		value = value.map( ( v ) => ( { data: v, label: this.getNamespaceLabel( v ) } ) );
+	if ( value === null || typeof value === 'undefined' ) {
+		OOJSPlus.ui.widget.NamespaceMultiSelectWidget.parent.prototype.setValue.call( this, [] );
+		return this;
 	}
 
-	OOJSPlus.ui.widget.NamespaceMultiSelectWidget.parent.prototype.setValue.apply( this, [ value ] );
+	const input = Array.isArray( value ) ? value : [ value ];
+	const normalized = input.map( ( item ) => {
+		if (
+			item &&
+			typeof item === 'object' &&
+			Object.prototype.hasOwnProperty.call( item, 'data' ) &&
+			Object.prototype.hasOwnProperty.call( item, 'label' )
+		) {
+			return item;
+		}
+
+		let namespaceId = item;
+		if ( typeof namespaceId === 'string' && /^-?\d+$/.test( namespaceId.trim() ) ) {
+			namespaceId = parseInt( namespaceId, 10 );
+		}
+
+		const label = this.getNamespaceLabel( namespaceId );
+		return {
+			data: namespaceId,
+			label: label || String( namespaceId )
+		};
+	} );
+
+	OOJSPlus.ui.widget.NamespaceMultiSelectWidget.parent.prototype.setValue.call( this, normalized );
+	return this;
 };
+
 OOJSPlus.ui.widget.NamespaceMultiSelectWidget.prototype.updateHiddenInput = function () {
 	if ( '$hiddenInput' in this ) {
 		this.$hiddenInput.val( this.getValue().join( ',' ) );
