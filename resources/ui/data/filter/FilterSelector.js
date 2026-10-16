@@ -1,7 +1,7 @@
 OOJSPlus.ui.data.filter.FilterSelector = function ( cfg ) {
 	cfg = cfg || {};
 	cfg.title = mw.msg( 'oojsplus-data-filter-picker' );
-	cfg.icon = 'funnel';
+	cfg.icon = 'filter';
 	cfg.framed = false;
 
 	this.options = cfg.options || [];
