@@ -64,7 +64,7 @@
 	"oojsplus-data-paginator-last": "最末页",
 	"oojsplus-data-paginator-page-number-switch-hint": "在此元素上左右导航以选择页码",
 	"oojsplus-data-paginator-page-number-button-title": "第$1页",
-	"oojsplus-data-paginator-page-showed-single-entry": "显示项目$1。",
+	"oojsplus-data-paginator-page-showed-single-entry": "显示条目$1。",
 	"oojsplus-data-paginator-page-showed-many-entries": "显示项目$1至$2。",
 	"oojsplus-formelement-type-group-picker": "组输入",
 	"oojsplus-formelement-type-group-multiselect": "组多选",
@@ -128,7 +128,7 @@
 	"oojsplus-data-grid-filter-number-operator-gt-label": "大于",
 	"oojsplus-data-grid-filter-number-operator-lt-label": "小于",
 	"oojsplus-data-grid-toolbar-show-widgets-label": "显示列",
-	"oojsplus-data-paginator-page-total-count-label-approximate": "约{{PLURAL:$1|$1条}}",
+	"oojsplus-data-paginator-page-total-count-label-approximate": "约{{PLURAL:$1|$1个条目}}",
 	"oojsplus-group-widget-type-label": "组",
 	"oojsplus-usergroupmultiselect-group-tag-type-group": "组",
 	"oojsplus-usergroupmultiselect-user-section-label": "用户",
@@ -144,5 +144,11 @@
 	"oojsplus-widget-filterbar-search-input-label": "搜索筛选元素",
 	"oojsplus-widget-filterbar-search-placeholder-label": "查找",
 	"oojsplus-widget-filterbar-show-all": "显示全部",
-	"oojsplus-chip-title-label": "显示$1下的所有条目"
+	"oojsplus-chip-title-label": "显示$1下的所有条目",
+	"oojsplus-data-grid-toolbar-page-size-custom": "{{PLURAL:$1|$1行}}",
+	"oojsplus-data-tree-item-more-actions-title": "更多操作",
+	"oojsplus-data-tree-item-more-actions-label": "条目$1的更多操作",
+	"oojsplus-data-gridwidget-header-checkbox-title": "选择/取消选择本页面上的所有行",
+	"oojsplus-data-grid-column-boolean-checked-aria-label": "是",
+	"oojsplus-data-grid-column-boolean-unchecked-aria-label": "否"
 }

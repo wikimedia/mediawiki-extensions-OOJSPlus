@@ -139,5 +139,6 @@
 	"oojsplus-widget-filterbar-show-all": "Alles weergeven",
 	"oojsplus-chip-title-label": "Alle items in $1 weergeven",
 	"oojsplus-filter-widget-aria-label": "Filter",
-	"oojsplus-filter-widget-count-aria-label": "bevat {{PLURAL:$1|één vermelding|$1 vermeldingen}}"
+	"oojsplus-filter-widget-count-aria-label": "bevat {{PLURAL:$1|één vermelding|$1 vermeldingen}}",
+	"oojsplus-data-grid-toolbar-page-size-custom": "{{PLURAL:$1|$1 rij|$1 rijen}}"
 }
