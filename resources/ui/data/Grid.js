@@ -544,6 +544,7 @@
 		$row.on( 'mouseenter', this.mouseEnterRow.bind( this ) );
 		$row.on( 'mouseleave', this.mouseOutRow.bind( this ) );
 
+		this.emit( 'appendRow', $row, item );
 		this.$table.find( 'tbody.oojsplus-data-gridWidget-tbody' ).append( $row );
 	};
 
