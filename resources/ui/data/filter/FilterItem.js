@@ -38,7 +38,7 @@ OOJSPlus.ui.data.filter.FilterItem = function ( cfg ) {
 
 	this.removeButton = new OO.ui.ButtonWidget( {
 		icon: 'close',
-		title: mw.message( 'oojsplus-data-grid-filter-clear' ).text()
+		title: mw.message( 'oojsplus-data-grid-filter-close' ).text()
 	} );
 	this.removeButton.connect( this, {
 		click: function () {
