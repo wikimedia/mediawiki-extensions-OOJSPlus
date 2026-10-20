@@ -1,0 +1,9 @@
+{
+	"@metadata": {
+		"authors": [
+			"KormiSK"
+		]
+	},
+	"oojsplus-data-grid-column-boolean-checked-aria-label": "Áno",
+	"oojsplus-data-grid-column-boolean-unchecked-aria-label": "Nie"
+}
