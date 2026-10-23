@@ -148,5 +148,6 @@
 	"oojsplus-data-tree-item-more-actions-label": "Weitere Aktionen für Eintrag $1",
 	"oojsplus-data-gridwidget-header-checkbox-title": "Alle Zeilen auf dieser Seite auswählen/abwählen",
 	"oojsplus-data-grid-column-boolean-checked-aria-label": "Ja",
-	"oojsplus-data-grid-column-boolean-unchecked-aria-label": "Nein"
+	"oojsplus-data-grid-column-boolean-unchecked-aria-label": "Nein",
+	"oojsplus-date-input-placeholder": "Kein Datum ausgewählt"
 }
