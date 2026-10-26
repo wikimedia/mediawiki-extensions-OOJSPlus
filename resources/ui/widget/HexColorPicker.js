@@ -76,6 +76,7 @@
 		if ( typeof value === 'undefined' || !value.hasOwnProperty( 'code' ) ) {
 			this.$colorPreview.css( 'background-color', 'transparent' );
 			this.setValue( '', true );
+			return;
 		}
 		this.$colorPreview.css( 'background-color', value.code );
 		this.setValue( value.code, true );
