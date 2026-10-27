@@ -11,5 +11,6 @@
 	"oojsplus-data-grid-filter-label": "Фільтар",
 	"oojsplus-data-grid-filter-title": "Фільтар водле $1",
 	"oojsplus-data-grid-filter-input-label": "Фільтар водле $1",
-	"oojsplus-data-grid-toolbar-reload-label": "Пераладаваць"
+	"oojsplus-data-grid-toolbar-reload-label": "Пераладаваць",
+	"oojsplus-data-tree-item-remove-label": "Прыбраць"
 }
