@@ -147,5 +147,6 @@
 	"oojsplus-data-tree-item-more-actions-label": "条目$1的更多操作",
 	"oojsplus-data-gridwidget-header-checkbox-title": "选择/取消选择本页面上的所有行",
 	"oojsplus-data-grid-column-boolean-checked-aria-label": "是",
-	"oojsplus-data-grid-column-boolean-unchecked-aria-label": "否"
+	"oojsplus-data-grid-column-boolean-unchecked-aria-label": "否",
+	"oojsplus-date-input-placeholder": "未选择日期"
 }

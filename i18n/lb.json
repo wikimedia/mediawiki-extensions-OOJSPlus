@@ -86,5 +86,6 @@
 	"oojsplus-data-tree-item-more-actions-title": "Méi Aktiounen",
 	"oojsplus-data-tree-item-more-actions-label": "Méi Aktioune fir den Antrag $1",
 	"oojsplus-data-grid-column-boolean-checked-aria-label": "Jo",
-	"oojsplus-data-grid-column-boolean-unchecked-aria-label": "Nee"
+	"oojsplus-data-grid-column-boolean-unchecked-aria-label": "Nee",
+	"oojsplus-date-input-placeholder": "Keen Datum erausgesicht"
 }

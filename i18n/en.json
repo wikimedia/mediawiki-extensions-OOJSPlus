@@ -138,5 +138,6 @@
 	"oojsplus-data-gridwidget-header-checkbox-title": "Select/deselect all rows on this page",
 	"oojsplus-data-grid-column-boolean-checked-aria-label": "Yes",
 	"oojsplus-data-grid-column-boolean-unchecked-aria-label": "No",
-	"oojsplus-date-input-placeholder": "No date selected"
+	"oojsplus-date-input-placeholder": "No date selected",
+	"oojsplus-data-grid-filter-close": "Close"
 }
