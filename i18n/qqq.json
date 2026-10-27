@@ -143,5 +143,6 @@
 	"oojsplus-data-gridwidget-header-checkbox-title": "Title for the checkbox in the header of a grid widget to select all items",
 	"oojsplus-data-grid-column-boolean-checked-aria-label": "Aria-label for boolean column for value true",
 	"oojsplus-data-grid-column-boolean-unchecked-aria-label": "Aria-label for boolean column for value false",
-	"oojsplus-date-input-placeholder": "Placeholder shown in an empty date input field"
+	"oojsplus-date-input-placeholder": "Placeholder shown in an empty date input field",
+	"oojsplus-data-grid-filter-close": "Title for the button that removes a filter from the active filters\n{{Identical|Close}}"
 }

@@ -32,5 +32,6 @@
 	"oojsplus-widget-filterbar-search-input-label": "Etsi suodatinelementtiä",
 	"oojsplus-widget-filterbar-search-placeholder-label": "Etsi",
 	"oojsplus-widget-filterbar-show-all": "Näytä kaikki",
-	"oojsplus-data-grid-toolbar-page-size-custom": "{{PLURAL:$1|$1 rivi|$1 riviä}}"
+	"oojsplus-data-grid-toolbar-page-size-custom": "{{PLURAL:$1|$1 rivi|$1 riviä}}",
+	"oojsplus-date-input-placeholder": "Päivämäärää ei ole valittu"
 }
