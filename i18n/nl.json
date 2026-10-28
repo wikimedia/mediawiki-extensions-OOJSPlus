@@ -43,7 +43,6 @@
 	"oojsplus-dialog-action-cancel": "Annuleren",
 	"oojsplus-data-grid-widget-popup-title": "Meer elementen",
 	"oojsplus-data-grid-filter-label": "Filters",
-	"oojsplus-data-grid-filter-clear": "Wissen",
 	"oojsplus-data-paginator-aria-label": "Bladeraar",
 	"oojsplus-data-paginator-next": "Volgende pagina",
 	"oojsplus-data-paginator-previous": "Vorige pagina",
@@ -135,5 +134,7 @@
 	"oojsplus-widget-filterbar-search-placeholder-label": "Zoeken",
 	"oojsplus-widget-filterbar-show-all": "Alles weergeven",
 	"oojsplus-chip-title-label": "Alle items in $1 weergeven",
-	"oojsplus-data-grid-toolbar-page-size-custom": "{{PLURAL:$1|$1 rij|$1 rijen}}"
+	"oojsplus-data-grid-toolbar-page-size-custom": "{{PLURAL:$1|$1 rij|$1 rijen}}",
+	"oojsplus-data-grid-column-boolean-checked-aria-label": "Ja",
+	"oojsplus-data-grid-column-boolean-unchecked-aria-label": "Nee"
 }

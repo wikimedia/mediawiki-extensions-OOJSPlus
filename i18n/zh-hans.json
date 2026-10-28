@@ -48,7 +48,6 @@
 	"oojsplus-dialog-action-cancel": "取消",
 	"oojsplus-data-grid-widget-popup-title": "更多项目",
 	"oojsplus-data-grid-filter-label": "筛选",
-	"oojsplus-data-grid-filter-clear": "清除",
 	"oojsplus-data-paginator-aria-label": "分页",
 	"oojsplus-data-paginator-next": "下一页",
 	"oojsplus-data-paginator-previous": "上一页",
@@ -143,5 +142,8 @@
 	"oojsplus-data-grid-toolbar-page-size-custom": "{{PLURAL:$1|$1行}}",
 	"oojsplus-data-tree-item-more-actions-title": "更多操作",
 	"oojsplus-data-tree-item-more-actions-label": "条目$1的更多操作",
-	"oojsplus-data-gridwidget-header-checkbox-title": "选择/取消选择本页面上的所有行"
+	"oojsplus-data-gridwidget-header-checkbox-title": "选择/取消选择本页面上的所有行",
+	"oojsplus-data-grid-column-boolean-checked-aria-label": "是",
+	"oojsplus-data-grid-column-boolean-unchecked-aria-label": "否",
+	"oojsplus-date-input-placeholder": "未选择日期"
 }

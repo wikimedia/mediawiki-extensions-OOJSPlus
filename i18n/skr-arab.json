@@ -9,7 +9,6 @@
 	"oojsplus-color-picker-color-green": "ساوا",
 	"oojsplus-color-picker-color-yellow": "پیلا",
 	"oojsplus-data-tree-item-remove-label": "ہٹاؤ",
-	"oojsplus-data-grid-filter-clear": "صاف",
 	"oojsplus-data-paginator-next": "اڳلا ورقہ",
 	"oojsplus-data-paginator-previous": "پچھلا ورقہ",
 	"oojsplus-data-paginator-first": "پہلا ورقہ",
@@ -35,5 +34,7 @@
 	"oojsplus-field-label-query": "ڳولو۔۔۔",
 	"oojsplus-group-widget-type-label": "گروپ",
 	"oojsplus-usergroupmultiselect-group-tag-type-group": "گروپ",
-	"oojsplus-widget-filterbar-search-placeholder-label": "لبھو"
+	"oojsplus-widget-filterbar-search-placeholder-label": "لبھو",
+	"oojsplus-data-grid-column-boolean-checked-aria-label": "جیا",
+	"oojsplus-data-grid-column-boolean-unchecked-aria-label": "کو"
 }
