@@ -51,5 +51,6 @@
 	"oojsplus-widget-filterbar-search-placeholder-label": "Trova",
 	"oojsplus-widget-filterbar-show-all": "Mostra tutto",
 	"oojsplus-data-grid-toolbar-page-size-custom": "{{PLURAL:$1|$1 riga|$1 righe}}",
-	"oojsplus-data-tree-item-more-actions-title": "Altre azioni"
+	"oojsplus-data-tree-item-more-actions-title": "Altre azioni",
+	"oojsplus-data-grid-filter-close": "Chiudi"
 }

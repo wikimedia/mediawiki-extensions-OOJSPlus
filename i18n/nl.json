@@ -139,5 +139,6 @@
 	"oojsplus-filter-widget-count-aria-label": "bevat {{PLURAL:$1|één vermelding|$1 vermeldingen}}",
 	"oojsplus-data-grid-toolbar-page-size-custom": "{{PLURAL:$1|$1 rij|$1 rijen}}",
 	"oojsplus-data-grid-column-boolean-checked-aria-label": "Ja",
-	"oojsplus-data-grid-column-boolean-unchecked-aria-label": "Nee"
+	"oojsplus-data-grid-column-boolean-unchecked-aria-label": "Nee",
+	"oojsplus-data-grid-filter-close": "Sluiten"
 }

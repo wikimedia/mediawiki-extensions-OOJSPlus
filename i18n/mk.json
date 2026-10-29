@@ -137,5 +137,6 @@
 	"oojsplus-data-grid-toolbar-page-size-custom": "{{PLURAL:$1|$1 ред|$1 реда}}",
 	"oojsplus-data-tree-item-more-actions-title": "Повеќе дејства",
 	"oojsplus-data-tree-item-more-actions-label": "Повеќе дејства за ставката $1",
-	"oojsplus-data-gridwidget-header-checkbox-title": "Избери/поништи ги сите редови на оваа страница"
+	"oojsplus-data-gridwidget-header-checkbox-title": "Избери/поништи ги сите редови на оваа страница",
+	"oojsplus-data-grid-filter-close": "Затвори"
 }
