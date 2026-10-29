@@ -63,5 +63,6 @@
 	"oojsplus-toolbar-add": "Dodaj",
 	"oojsplus-data-grid-filter-date-after": "Posle",
 	"oojsplus-data-grid-filter-date-before": "Pre",
-	"oojsplus-data-grid-no-results": "Još uvek nema unosa"
+	"oojsplus-data-grid-no-results": "Još uvek nema unosa",
+	"oojsplus-data-grid-filter-close": "Zatvori"
 }

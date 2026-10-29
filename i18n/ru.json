@@ -38,5 +38,6 @@
 	"oojsplus-toolbar-save": "Сохранить",
 	"oojsplus-toolbar-delete": "Удалить",
 	"oojsplus-toolbar-edit": "Править",
-	"oojsplus-dialog-action-back": "Назад"
+	"oojsplus-dialog-action-back": "Назад",
+	"oojsplus-data-grid-filter-close": "Закрыть"
 }
