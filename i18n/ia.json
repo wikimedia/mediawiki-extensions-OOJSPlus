@@ -124,5 +124,6 @@
 	"oojsplus-formelement-type-user-group-multiselect": "Selector de usatores/gruppos multiple",
 	"oojsplus-data-grid-toolbar-page-size-25": "25 lineas",
 	"oojsplus-data-grid-toolbar-page-size-50": "50 lineas",
-	"oojsplus-data-grid-toolbar-page-size-100": "100 lineas"
+	"oojsplus-data-grid-toolbar-page-size-100": "100 lineas",
+	"oojsplus-data-grid-filter-close": "Clauder"
 }

@@ -89,5 +89,6 @@
 	"oojsplus-group-widget-type-label": "Група",
 	"oojsplus-usergroupmultiselect-group-tag-type-group": "Група",
 	"oojsplus-usergroupmultiselect-user-section-label": "Корисници",
-	"oojsplus-usergroupmultiselect-group-section-label": "Групе"
+	"oojsplus-usergroupmultiselect-group-section-label": "Групе",
+	"oojsplus-data-grid-filter-close": "Затвори"
 }

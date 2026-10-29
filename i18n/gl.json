@@ -137,5 +137,6 @@
 	"oojsplus-data-gridwidget-header-checkbox-title": "Seleccionar/Deseleccionar todas as filas desta páxina",
 	"oojsplus-data-grid-column-boolean-checked-aria-label": "Si",
 	"oojsplus-data-grid-column-boolean-unchecked-aria-label": "Non",
-	"oojsplus-date-input-placeholder": "Non se seleccionou ningunha data"
+	"oojsplus-date-input-placeholder": "Non se seleccionou ningunha data",
+	"oojsplus-data-grid-filter-close": "Pechar"
 }

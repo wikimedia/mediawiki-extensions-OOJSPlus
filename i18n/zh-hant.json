@@ -133,5 +133,6 @@
 	"oojsplus-widget-filterbar-search-input-label": "搜尋篩選元件",
 	"oojsplus-widget-filterbar-search-placeholder-label": "尋找",
 	"oojsplus-widget-filterbar-show-all": "顯示全部",
-	"oojsplus-chip-title-label": "顯示$1內的所有項目"
+	"oojsplus-chip-title-label": "顯示$1內的所有項目",
+	"oojsplus-data-grid-filter-close": "關閉"
 }

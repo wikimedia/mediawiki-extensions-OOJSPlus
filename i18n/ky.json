@@ -10,5 +10,6 @@
 	"oojsplus-dialog-action-add": "Кошуу",
 	"oojsplus-dialog-action-cancel": "Жокко чыгаруу",
 	"oojsplus-data-grid-filter-user-input-label": "Колдонуучу",
-	"oojsplus-data-grid-filter-date-input-label": "Дата"
+	"oojsplus-data-grid-filter-date-input-label": "Дата",
+	"oojsplus-data-grid-filter-close": "Жабуу"
 }
