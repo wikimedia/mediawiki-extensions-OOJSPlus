@@ -11,6 +11,7 @@
 		OO.ui.mixin.PendingElement.call( this, Object.assign( {}, config, { $pending: this.$handle } ) );
 
 		this.api = config.api || new mw.Api();
+		this.entityTypes = config.entityTypes || [ 'user', 'group' ];
 		this.groups = config.groups || null;
 		this.excludeGroups = config.excludeGroups || null;
 		this.returnJson = config.returnJson || false;
@@ -308,8 +309,10 @@
 
 		this.pushPending();
 
-		this.userLookupRequest = this.getUserQueryRequest( inputValue, userFilters );
-		this.groupLookupRequest = this.getGroupQueryResult( inputValue, groupFilters );
+		this.userLookupRequest = this.entityTypes.includes( 'user' ) ?
+			this.getUserQueryRequest( inputValue, userFilters ) : $.Deferred().resolve( [] ).promise();
+		this.groupLookupRequest = this.entityTypes.includes( 'group' ) ?
+			this.getGroupQueryResult( inputValue, groupFilters ) : $.Deferred().resolve( [] ).promise();
 
 		const userLookupDfd = $.Deferred(),
 			groupLookupDfd = $.Deferred();
