@@ -49,6 +49,7 @@
 	"oojsplus-dialog-action-cancel": "Annuler",
 	"oojsplus-data-grid-widget-popup-title": "Davantage d’éléments",
 	"oojsplus-data-grid-filter-label": "Filtrer",
+	"oojsplus-data-grid-filter-close": "Fermer",
 	"oojsplus-data-paginator-aria-label": "Paginator",
 	"oojsplus-data-paginator-next": "Page suivante",
 	"oojsplus-data-paginator-previous": "Page précédente",
@@ -105,6 +106,5 @@
 	"oojsplus-data-grid-date-filter-operator-label-gt": "De $1",
 	"oojsplus-data-grid-filter-number-input-label": "Nombre",
 	"oojsplus-data-grid-filter-user-input-label": "Utilisateur",
-	"oojsplus-data-grid-filter-date-input-label": "Date",
-	"oojsplus-data-grid-filter-close": "Fermer"
+	"oojsplus-data-grid-filter-date-input-label": "Date"
 }

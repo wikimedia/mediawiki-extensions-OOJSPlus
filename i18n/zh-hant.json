@@ -42,6 +42,7 @@
 	"oojsplus-dialog-action-cancel": "取消",
 	"oojsplus-data-grid-widget-popup-title": "更多項目",
 	"oojsplus-data-grid-filter-label": "篩選",
+	"oojsplus-data-grid-filter-close": "關閉",
 	"oojsplus-data-paginator-aria-label": "分頁器",
 	"oojsplus-data-paginator-next": "下一頁",
 	"oojsplus-data-paginator-previous": "上一頁",
@@ -132,6 +133,5 @@
 	"oojsplus-widget-filterbar-search-input-label": "搜尋篩選元件",
 	"oojsplus-widget-filterbar-search-placeholder-label": "尋找",
 	"oojsplus-widget-filterbar-show-all": "顯示全部",
-	"oojsplus-chip-title-label": "顯示$1內的所有項目",
-	"oojsplus-data-grid-filter-close": "關閉"
+	"oojsplus-chip-title-label": "顯示$1內的所有項目"
 }

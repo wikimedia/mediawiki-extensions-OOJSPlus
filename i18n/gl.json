@@ -39,6 +39,7 @@
 	"oojsplus-dialog-action-cancel": "Cancelar",
 	"oojsplus-data-grid-widget-popup-title": "Máis elementos",
 	"oojsplus-data-grid-filter-label": "Filtrar",
+	"oojsplus-data-grid-filter-close": "Pechar",
 	"oojsplus-data-paginator-aria-label": "Paxinador",
 	"oojsplus-data-paginator-next": "Páxina seguinte",
 	"oojsplus-data-paginator-previous": "Páxina anterior",
@@ -136,6 +137,5 @@
 	"oojsplus-data-gridwidget-header-checkbox-title": "Seleccionar/Deseleccionar todas as filas desta páxina",
 	"oojsplus-data-grid-column-boolean-checked-aria-label": "Si",
 	"oojsplus-data-grid-column-boolean-unchecked-aria-label": "Non",
-	"oojsplus-date-input-placeholder": "Non se seleccionou ningunha data",
-	"oojsplus-data-grid-filter-close": "Pechar"
+	"oojsplus-date-input-placeholder": "Non se seleccionou ningunha data"
 }

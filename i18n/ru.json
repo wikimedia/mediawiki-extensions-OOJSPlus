@@ -20,6 +20,7 @@
 	"oojsplus-dialog-action-add": "Добавить",
 	"oojsplus-dialog-action-cancel": "Отмена",
 	"oojsplus-data-grid-filter-label": "Фильтр",
+	"oojsplus-data-grid-filter-close": "Закрыть",
 	"oojsplus-data-paginator-first": "Первая страница",
 	"oojsplus-data-paginator-last": "Последняя страница",
 	"oojsplus-data-grid-toolbar-reload-label": "Обновить",
@@ -38,6 +39,5 @@
 	"oojsplus-toolbar-save": "Сохранить",
 	"oojsplus-toolbar-delete": "Удалить",
 	"oojsplus-toolbar-edit": "Править",
-	"oojsplus-dialog-action-back": "Назад",
-	"oojsplus-data-grid-filter-close": "Закрыть"
+	"oojsplus-dialog-action-back": "Назад"
 }
