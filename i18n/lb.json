@@ -88,5 +88,8 @@
 	"oojsplus-data-grid-column-boolean-checked-aria-label": "Jo",
 	"oojsplus-data-grid-column-boolean-unchecked-aria-label": "Nee",
 	"oojsplus-date-input-placeholder": "Keen Datum erausgesicht",
-	"oojsplus-data-grid-filter-close": "Zoumaachen"
+	"oojsplus-data-grid-filter-close": "Zoumaachen",
+	"oojsplus-data-grid-filter-date-operator-eq-label": "Op dësem Dag",
+	"oojsplus-data-grid-filter-date-operator-gt-label": "No dësem Dag",
+	"oojsplus-data-grid-filter-date-operator-lt-label": "Virun dësem Dag"
 }
