@@ -10,6 +10,7 @@
 		"no-descending-specificity": null,
 		"no-duplicate-selectors": null,
 		"selector-class-pattern": null,
-		"declaration-property-value-keyword-no-deprecated": null
+		"declaration-property-value-keyword-no-deprecated": null,
+		"wikimedia/selector-class-prefix": null
 	}
 }
