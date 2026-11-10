@@ -136,8 +136,8 @@
 	"oojsplus-data-tree-item-more-actions-title": "Повеќе дејства",
 	"oojsplus-data-tree-item-more-actions-label": "Повеќе дејства за ставката $1",
 	"oojsplus-data-gridwidget-header-checkbox-title": "Избери/поништи ги сите редови на оваа страница",
-	"oojsplus-data-grid-filter-close": "Затвори",
 	"oojsplus-data-grid-column-boolean-checked-aria-label": "Да",
 	"oojsplus-data-grid-column-boolean-unchecked-aria-label": "Не",
-	"oojsplus-date-input-placeholder": "Не е избран датум"
+	"oojsplus-date-input-placeholder": "Не е избран датум",
+	"oojsplus-data-grid-filter-close": "Затвори"
 }
