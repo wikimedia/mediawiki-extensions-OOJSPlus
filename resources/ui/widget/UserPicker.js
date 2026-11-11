@@ -124,8 +124,11 @@ OOJSPlus.ui.widget.UserPickerWidget.prototype.setValue = function ( item ) {
 			this.selectedUser = null;
 		} );
 	} else {
-		OOJSPlus.ui.widget.UserPickerWidget.parent.prototype.setValue.call( this, item.getDisplayName() );
+		const ignoreChange = this.ignoreChange;
+		this.ignoreChange = true;
 		this.selectedUser = item;
+		OOJSPlus.ui.widget.UserPickerWidget.parent.prototype.setValue.call( this, item.getDisplayName() );
+		this.ignoreChange = ignoreChange;
 	}
 };
 
