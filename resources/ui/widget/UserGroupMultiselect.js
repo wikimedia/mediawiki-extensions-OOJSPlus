@@ -172,11 +172,6 @@
 			showRawGroupName: false,
 			showTypeLabel: false
 		} );
-		const icon = new OO.ui.IconWidget( {
-			icon: 'userGroup'
-		} );
-		item.$element.find( '.oo-ui-iconWidget' ).remove();
-		icon.$element.insertBefore( item.$label );
 		item.$label.empty().append( groupWidget.$element );
 		item.$element.addClass( 'oojsplus-usergroupmultiselect-group-tag' );
 	};
