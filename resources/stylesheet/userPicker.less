@@ -32,7 +32,7 @@
 
 	.user-name-cnt {
 		display: inline-flex;
-		margin-left: 1em;
+		margin-left: 6px;
 		min-height: 32px;
 		vertical-align: middle;
 		flex-wrap: wrap;
@@ -62,7 +62,7 @@
 
 	.user-image .user-name-cnt {
 		position: relative;
-		margin-left: 1em;
+		margin-left: 6px;
 		display: flex;
 		flex-wrap: wrap;
 		align-items: center;
@@ -93,10 +93,17 @@
 }
 
 .oojsplus-group-widget {
-	display: inline-block;
+	display: inline-flex;
+	align-items: center;
+	gap: 0.35em;
 	min-width: 100px;
+	vertical-align: middle;
 	width: 100%;
 	position: relative;
+
+	.group-icon {
+		flex: 0 0 auto;
+	}
 
 	.group-name-cnt {
 		display: inline-flex;

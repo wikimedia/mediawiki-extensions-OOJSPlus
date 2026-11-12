@@ -8,6 +8,7 @@ OOJSPlus.ui.widget.GroupWidget = function ( cfg ) {
 
 	this.showRawGroupName = cfg.showRawGroupName || false;
 	this.showTypeLabel = cfg.showTypeLabel === undefined ? true : cfg.showTypeLabel;
+	this.showIcon = cfg.showIcon === undefined ? true : cfg.showIcon;
 	this.groupTypeLabel = cfg.groupTypeLabel || mw.msg( 'oojsplus-group-widget-type-label' );
 
 	this.$element.addClass( 'oojsplus-group-widget' );
@@ -25,6 +26,13 @@ OOJSPlus.ui.widget.GroupWidget.static.tagName = 'div';
 OOJSPlus.ui.widget.GroupWidget.prototype.render = function () {
 	if ( !this.group._exists ) {
 		this.$element.addClass( 'group-not-found' );
+	}
+	if ( this.showIcon ) {
+		this.$element.append(
+			new OO.ui.IconWidget( {
+				icon: 'userGroup'
+			} ).$element.addClass( 'group-icon' )
+		);
 	}
 	if ( this.showTypeLabel ) {
 		this.$nameBox.append(
