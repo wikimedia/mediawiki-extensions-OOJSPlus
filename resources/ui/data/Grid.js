@@ -497,6 +497,9 @@
 			// Keep selection state on the item, so it survives re-rendering of the rows
 			item.check = this.multiSelectSelectedByDefault;
 		}
+		if ( this.multiSelect ) {
+			$row.toggleClass( 'row-selected', !!item.check );
+		}
 		if ( this.actionsVisibleOnHover ) {
 			$row.addClass( 'actions-visible-on-hover' );
 		}
@@ -590,6 +593,7 @@
 			} else {
 				this.selectedRows.push( e.data.item );
 			}
+			e.data.$row.toggleClass( 'row-selected', positionInArray < 0 );
 		}
 		this.emit( 'rowSelected', e.data, this.getSelectedRows() );
 	};

@@ -1,5 +1,7 @@
+@import 'mediawiki.skin.variables.less';
+
 .oojsplus-data-gridWidget {
-	background-color: white;
+	background-color: @background-color-base;
 	position: relative;
 
 	.grid-container {
@@ -30,7 +32,7 @@
 				}
 
 				&:hover {
-					background-color: #f8f9fa;
+					background-color: @background-color-interactive-subtle--hover;
 				}
 
 				&:hover:has( .oojsplus-data-gridWidget-no-results ) {
@@ -45,7 +47,7 @@
 					}
 
 					&.sticky-col {
-						background-color: white;
+						background-color: @background-color-base;
 						position: -webkit-sticky; /* stylelint-disable-line plugin/no-unsupported-browser-features */
 						position: sticky; /* stylelint-disable-line plugin/no-unsupported-browser-features */
 						/* Needed to accommodate the border, padding below increased as to not change the layout */
@@ -63,7 +65,7 @@
 				}
 
 				&.row-selected td {
-					background-color: #eaecf0 !important;
+					background-color: @background-color-progressive-subtle !important;
 				}
 
 				.oojsplus-data-gridWidget-no-results {
@@ -96,8 +98,8 @@
 							font-weight: normal;
 						}
 						position: relative;
-						border-bottom: 1px solid #c8ccd1;
-						border-right: 1px solid #c8ccd1 !important;
+						border-bottom: 1px solid @border-color-subtle;
+						border-right: 1px solid @border-color-subtle !important;
 
 						&:last-of-type,
 						&.oojsplus-data-gridWidget-action-column-header {
@@ -140,36 +142,40 @@
 			&.style-differentiate-rows {
 				.oojsplus-data-gridWidget-row {
 					&:nth-child( odd ) td {
-						background-color: #f0f0f0;
+						background-color: @background-color-interactive-subtle;
+					}
+
+					&:nth-child( odd ):hover td {
+						background-color: @background-color-interactive-subtle--hover;
 					}
 
 					&.row-selected td {
-						background-color: #c8ccd1 !important;
+						background-color: @background-color-progressive-subtle !important;
 					}
 				}
 			}
 
 			&.border-all {
-				border: 1px solid #c8ccd1 !important;
+				border: 1px solid @border-color-subtle !important;
 
 				th,
 				td {
-					border: 1px solid #c8ccd1 !important;
+					border: 1px solid @border-color-subtle !important;
 				}
 			}
 
 			&.border-vertical {
 				th,
 				td {
-					border-left: 1px solid #c8ccd1 !important;
-					border-right: 1px solid #c8ccd1 !important;
+					border-left: 1px solid @border-color-subtle !important;
+					border-right: 1px solid @border-color-subtle !important;
 				}
 			}
 
 			&.border-horizontal {
 				td {
-					border-top: 1px solid #c8ccd1 !important;
-					border-bottom: 1px solid #c8ccd1 !important;
+					border-top: 1px solid @border-color-subtle !important;
+					border-bottom: 1px solid @border-color-subtle !important;
 				}
 			}
 
@@ -190,7 +196,7 @@
 			}
 
 			.oojsplus-data-gridWidget-group-header {
-				background-color: #f0f0f0;
+				background-color: @background-color-interactive-subtle;
 				font-weight: bold;
 
 				.oo-ui-horizontalLayout {
@@ -246,7 +252,7 @@
 }
 
 .grid-col-resizable-helper {
-	border-right: 2px solid grey;
+	border-right: 2px solid @border-color-emphasized;
 	z-index: 10000 !important;
 	background-color: rgba( 255, 255, 255, 0.55 );
 }
@@ -301,7 +307,7 @@
 	.oojsplus-data-filter-sorter-options {
 		.oojsplus-data-filter-sorter-options-label {
 			padding: 5px;
-			border-bottom: 1px solid #c8ccd1;
+			border-bottom: 1px solid @border-color-subtle;
 			width: 100%;
 		}
 	}

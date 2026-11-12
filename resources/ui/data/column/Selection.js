@@ -27,11 +27,13 @@ OOJSPlus.ui.data.column.Selection.prototype.getViewControls = function ( value, 
 		selected: row.hasOwnProperty( 'check' ) ? !!row.check : this.selected,
 		accessKey: 't'
 	} );
+	const checkbox = this.checkbox;
 	this.checkbox.connect( this, {
 		change: function ( selected ) {
 			row.check = selected;
 			const element = {
 				data: {
+					$row: checkbox.$element.closest( 'tr' ),
 					item: row
 				}
 			};
