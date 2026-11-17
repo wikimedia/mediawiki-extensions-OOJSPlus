@@ -24,13 +24,19 @@ OOJSPlus.ui.data.store.RemoteRestStore = function ( cfg ) {
 
 OO.inheritClass( OOJSPlus.ui.data.store.RemoteRestStore, OOJSPlus.ui.data.store.RemoteStore );
 
+OOJSPlus.ui.data.store.RemoteRestStore.prototype.getRequestUrl = function () {
+	const baseUrl = mw.util.wikiScript( 'rest' ).replace( /\/+$/, '' );
+	const path = String( this.path || '' ).replace( /^\/+/, '' );
+	return `${ baseUrl }/${ path }`;
+};
+
 OOJSPlus.ui.data.store.RemoteRestStore.prototype.doLoadData = function () {
 	const dfd = $.Deferred(),
 		data = this.getRequestData();
 
 	this.request = $.ajax( {
 		method: 'GET',
-		url: mw.util.wikiScript( 'rest' ) + '/' + this.path,
+		url: this.getRequestUrl(),
 		data: data,
 		contentType: 'application/json',
 		dataType: 'json',
