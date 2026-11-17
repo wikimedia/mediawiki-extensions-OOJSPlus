@@ -187,6 +187,7 @@
 				"ui/data/store/Store.js",
 				"ui/data/store/RemoteStore.js",
 				"ui/data/store/RemoteRestStore.js",
+				"ui/data/store/ForeignRestRemoteStore.js",
 				"ui/data/sorter/Sorter.js",
 				"ui/data/sorter/SortItem.js",
 				"ui/data/sorter/SortSelector.js",
