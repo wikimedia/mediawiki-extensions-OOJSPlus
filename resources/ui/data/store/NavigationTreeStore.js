@@ -57,10 +57,6 @@ OOJSPlus.ui.data.store.NavigationTreeStore.prototype.getFiltersForRemote = funct
 	}
 };
 
-OOJSPlus.ui.data.store.NavigationTreeStore.prototype.getSortForRemote = function () {
-	return JSON.stringify( [ { property: 'name', direction: 'ASC' } ] );
-};
-
 OOJSPlus.ui.data.store.NavigationTreeStore.prototype.getExpandPathsForRemote = function () {
 	return JSON.stringify( this.expandPaths );
 };
