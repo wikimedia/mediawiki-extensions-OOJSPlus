@@ -38,18 +38,16 @@ OOJSPlus.ui.data.filter.FilterItem = function ( cfg ) {
 
 	this.removeButton = new OO.ui.ButtonWidget( {
 		icon: 'close',
-		title: mw.message( 'oojsplus-data-grid-filter-close' ).text()
+		title: this.filter.retainOnClear ?
+			mw.message( 'oojsplus-data-grid-filter-clear' ).text() :
+			mw.message( 'oojsplus-data-grid-filter-close' ).text()
 	} );
 	this.removeButton.connect( this, {
 		click: function () {
 			this.updateLabel( null );
 			this.filter.clearValues();
 			this.popupButton.getPopup().toggle( false );
-			if ( this.filter instanceof OOJSPlus.ui.data.filter.Number ) {
-				// We don't want to close the FieldLayout. We want to retain
-				// it so that users can retry filtering other values without
-				// reopening the filter from scratch.
-			} else {
+			if ( !this.filter.retainOnClear ) {
 				this.emit( 'clear', this.key );
 			}
 		}
