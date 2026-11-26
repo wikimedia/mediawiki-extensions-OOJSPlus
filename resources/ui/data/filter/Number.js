@@ -4,6 +4,7 @@ OOJSPlus.ui.data.filter.Number = function ( cfg ) {
 	this.operator = cfg.operator || 'eq';
 	this.value = this.getFilterValue();
 	cfg.autoClosePopup = false;
+	cfg.retainOnClear = true;
 
 	OOJSPlus.ui.data.filter.Number.parent.call( this, cfg );
 };
