@@ -44,7 +44,7 @@
 	"oojsplus-dialog-action-cancel": "Label for action cancel in dialog\n\n{{Identical|Cancel}}",
 	"oojsplus-data-grid-widget-popup-title": "Label for popup button to see all added items",
 	"oojsplus-data-grid-filter-label": "Label for the filter button\n{{identical|Filter}}",
-	"oojsplus-data-grid-filter-clear": "Label for the clear filter button",
+	"oojsplus-data-grid-filter-clear": "Title for the button that clears the value of a filter that stays in the active filters (e.g. number filters)\n{{Identical|Clear}}",
 	"oojsplus-data-paginator-aria-label": "Label for the page switching widget",
 	"oojsplus-data-paginator-next": "Label for button to switch to next page",
 	"oojsplus-data-paginator-previous": "Label for button to switch to previous page",
